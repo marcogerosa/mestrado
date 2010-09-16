@@ -1,0 +1,34 @@
+%% ------------------------------------------------------------------------- %%
+\chapter{Test-Driven Development}
+\label{cap:tdd}
+
+Test-Driven Development (TDD) é uma prática de desenvolvimento de software, onde o programador deve apenas escrever
+código novo se houver um teste automatizado estiver falhando e deve eliminar duplicação. Essas duas regras implicam
+no seguinte ciclo: o programador primeiro deve escrever um pequeno teste que falhe (ou que até mesmo não compile), em seguida
+deve fazer o teste passar de maneira mais rápida possível e, por fim, deve refatorar toda a duplicação criada quando o programador
+estava simplesmente fazendo o teste passar e possivelmente não escreveu o código mais claro possível \cite{TDDByExample}. 
+Esse ciclo é também conhecido como Vermelho-Verde-Refatora (ou Red-Green-Refactor), já que lembram as cores que geralmente o programador 
+vê quando faz TDD: o vermelho geralmente significa que o teste está falhando e o verde quando o teste foi executado com sucesso. 
+
+Ao fazer TDD, o programador é obrigado a escrever um teste antes de escrever o código que será testado. TDD faz com que esse 
+simples processo sirva para ajudar o time a entender as funcionalidades que os uauários do sistema precisam, e 
+a entregar essas funcionalidades de maneira confiável e previsível \cite{GOOS}. TDD usa os testes para clarificar as expectativas
+sobre o que um pedaço de código deve fazer [3].
+
+Test-Driven Development (TDD) é uma importante prática na Programação Extrema (XP) \cite{XPExplained}. E como sugerido pelas práticas ágeis,
+o design de um software deve emergir junto com a evolução do software. E, para responder rapidamente à essas mudanças, é necessário
+um feedback constante e TDD provê isso fazendo com que os programadores constantemente escrevem um pequeno teste que falha e então faça
+ele passar. TDD é considerado uma estratégia essencial para designs emergentes pois, ao escrever um teste antes do código, os programadores
+contemplam e decidem não somente sobre a interface (como nomes de classes e métodos, tipos de retorno e exceções lançadas), mas também no
+comportamento que se espera de uma determinada classe (como o resultado esperado de acordo com determinadas entradas) [13].
+
+Conforme o sistema é desenvolvido, TDD possibilita um feedback sobre a qualidade tanto da implementação quanto do design. Segundo 
+Freeman \cite{GOOS}, escrever testes (i) clarifica o critério de aceitação para o próximo pedaço de software; (ii) encoraja o programador
+a escrever componentes fracamente acoplados, de maneira que eles possam ser testados de maneira isolada, e em um nível maior, combinados
+com outros componentes; (iii) cria uma especificação executável sobre o que o código faz; e (iv) cria uma suíte de testes de regressão.
+Já o processo de rodar os testes possibilita (i) a detecção de erros enquanto o contexto está recente na mente do programador, e (ii)
+faz com que o programador saiba quando terminou seu trabalho, diminuindo assim o risco de implementar funcionalidades desnecessárias.
+
+
+\section{bla} 
+\label{sec:bla}
