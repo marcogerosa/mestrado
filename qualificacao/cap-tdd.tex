@@ -30,12 +30,76 @@ Já o processo de rodar os testes possibilita (i) a detecção de erros enquanto o 
 faz com que o programador saiba quando terminou seu trabalho, diminuindo assim o risco de implementar funcionalidades desnecessárias.
 
 
-\section{bla} 
-\label{sec:bla}
+\section{O Ciclo} 
+\label{sec:tdd-ciclo}
 
+De forma mais ampla, podemos definir o ciclo de TDD da seguinte maneira: (i) adicione um teste; (ii) rode todos os testes e veja o 
+novo teste falhar; (iii) escreva o código mais simples que faça o teste passar; (iv) rode todos os testes e veja o novo teste passar; 
+(v) refatore para remover duplicação de dados e de código.
+
+As sub-seções abaixo visam explicar cada passo do ciclo de forma mais detalhada, explicando a motivação e o esperado 
+em cada um deles.
+
+\subsection{Adicionar um teste}
+
+O primeiro passo do ciclo é escrever um teste para uma nova funcionalidade. Para isso, o programador deve primeiro entender a funcionalidade 
+que ele deseja implementar, e dessa forma entender melhor o requisito antes de escrever qualquer linha de código.
+
+Esse teste falhará, afinal a funcionalidade ainda não foi implementada. 
+
+\subsection{Rodar todos os testes e ver o novo teste falhar}
+
+Nesse momento o programador roda todos os seus testes de unidade e verifica se o teste escrito no passo anterior realmente falhou. Em um
+primeiro momento esse passo pode parecer desnecessário, pois o programador escreveu um teste para uma funcionalidade que ele ainda nem
+implementou, e portanto o teste irá falhar. 
+
+Mas, na prática, esse teste pode não falhar, indicando alguns possíveis problemas, como: talvez o código da classe que está sendo testada
+não está reagindo da maneira que o programador pensou que estava (afinal ele esperava por um determinado comportamento quando na verdade a
+classe apresentou outro); problemas na implementação do teste, afinal teste também é código, e assim como o código de produção, ele é
+totalmente suscetível a falhas.
+
+Portanto, pode-se concluir que ver o novo teste falhar ajuda o programar a validar tanto o código de teste quanto o seu conhecimento
+sobre a classe que está sendo testada. 
+
+\subsection{Escreva o código mais simples que faça o teste passar}
+
+O programador deve então escrever o código mais simples possível que faça o teste passar. Nesse momento o programador não deve estar
+focado em escrever a solução mais clara (pois isso será feito em um passo posterior), e sim realmente a mais simples.
+
+O objetivo desse passo é evitar que o programador, ao invés de resolver o problema de maneira simples, por algum motivo
+implemente uma solução mais complexa, e com isso acrescentando complexidade desnecessária no código. Algumas técnicas como
+"Implementação Óbvia" (TODO complementar) e "Triangularização" (TODO complementar) \cite{TDDByExample} podem ajudar o programador
+na tarefa de escrever a implementação mais simples possível.
+
+\subsection{Rode todos os testes e veja o novo teste passar}
+
+Assim que o programador escrever o código mais simples que faça o teste passar, ele deve rodar a suíte de testes novamente
+para verificar que a nova implementação realmente faz o teste passar. Nesse ponto é importante que o programador rode a suíte 
+completa de testes, pois a implementação pode ter feito o novo teste passar, mas pode ter quebrado testes antigos que já existiam na suíte. 
+
+Caso algum teste antigo quebre, o programador deve então voltar um passo atrás, e tentar novamente escrever o código mais simples
+que faça o teste que está quebrado passar.
+
+\subsection{Refatore para remover duplicação de dados e de código}
+
+No último passo do ciclo o programador agora deve refatorar o código escrito, procurando remover as duplicações de código ou de dados. 
+Conforme comentado acima, o código escrito anteriormente era o mais simples, mas não necessariamente o mais claro possível.
+
+Esse é um dos principais passos no ciclo, já que é aqui que o programador se preocupa em melhorar o seu código, tornando-o
+mais claro e, por consequência, facilitando sua evolução.
+
+
+
+---
 explicar mais a fundo o ciclo, se baseando no artigo de paris
 
-exemplo parecido com o do money
+baby steps
+
+red/green bar patterns (beck)
+
+definir codigo de producao?
+
+exemplo parecido com o do money (simples e dpeois completo)
 
 definições frouxas
 
@@ -57,3 +121,4 @@ refatoracao tanto de baixo nivel quanto de alto nivel
 
 visao do martin sobre tdd
 
+ron jefrries clean code that works
