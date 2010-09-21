@@ -13,14 +13,18 @@ vê quando faz TDD: o vermelho geralmente significa que o teste está falhando e o
 Ao fazer TDD, o programador é obrigado a escrever um teste antes de escrever o código que será testado. TDD faz com que esse 
 simples processo sirva para ajudar o time a entender as funcionalidades que os usuários do sistema precisam, e 
 a entregar essas funcionalidades de maneira confiável e previsível \cite{GOOS}. TDD usa os testes para clarificar as expectativas
-sobre o que um pedaço de código deve fazer [3].
+sobre o que um pedaço de código deve fazer [TODO 3]. Além disso, ele cria uma medida concreta de falha, que são os testes de 
+unidade que estão falhando). Com essa medida em mãos, o objetivo do programador naquele momento é simplesmente fazer o teste passar. É um
+objetivo claro e bem definido, e permite ao programador focar naquele pequeno pedaço de funcionalidade e no trecho de código que ele 
+deve escrever para fazer o teste passar \cite{TDDByExample}. 
 
-Test-Driven Development (TDD) é uma importante prática na Programação Extrema (XP) \cite{XPExplained}. E como sugerido pelas práticas ágeis,
-o design de um software deve emergir junto com a evolução do software. E, para responder rapidamente à essas mudanças, é necessário
-um feedback constante e TDD provê isso fazendo com que os programadores constantemente escrevem um pequeno teste que falha e então faça
-ele passar. TDD é considerado uma estratégia essencial para designs emergentes pois, ao escrever um teste antes do código, os programadores
-contemplam e decidem não somente sobre a interface (como nomes de classes e métodos, tipos de retorno e exceções lançadas), mas também no
-comportamento que se espera de uma determinada classe (como o resultado esperado de acordo com determinadas entradas) [13].
+Além disso, TDD permite que o desenvolvedor obtenha feedback sobre o design do sistema. Como sugerido pelas práticas ágeis,
+o design de um software deve emergir junto com sua evolução. E, para responder rapidamente à essas mudanças, é necessário
+um feedback constante sobre a qualidade do design. Por esse motivo, TDD é considerado uma importante prática na Programação 
+Extrema (XP) \cite{XPExplained} e uma estratégia essencial para designs emergentes pois, 
+ao escrever um teste antes do código, os programadores contemplam e decidem não somente sobre a interface (como nomes de classes e 
+métodos, tipos de retorno e exceções lançadas), mas também no comportamento que se espera de uma determinada classe 
+(como o resultado esperado de acordo com determinadas entradas) [TODO 13]. 
 
 Conforme o sistema é desenvolvido, TDD possibilita um feedback sobre a qualidade tanto da implementação quanto do design. Segundo 
 Freeman \cite{GOOS}, escrever testes (i) clarifica o critério de aceitação para o próximo pedaço de software; (ii) encoraja o programador
@@ -28,7 +32,6 @@ a escrever componentes fracamente acoplados, de maneira que eles possam ser test
 com outros componentes; (iii) cria uma especificação executável sobre o que o código faz; e (iv) cria uma suíte de testes de regressão.
 Já o processo de rodar os testes possibilita (i) a detecção de erros enquanto o contexto está recente na mente do programador, e (ii)
 faz com que o programador saiba quando terminou seu trabalho, diminuindo assim o risco de implementar funcionalidades desnecessárias.
-
 
 \section{O Ciclo} 
 \label{sec:tdd-ciclo}
@@ -83,19 +86,127 @@ que faça o teste que está quebrado passar.
 \subsection{Refatore para remover duplicação de dados e de código}
 
 No último passo do ciclo o programador agora deve refatorar o código escrito, procurando remover as duplicações de código ou de dados. 
-Conforme comentado acima, o código escrito anteriormente era o mais simples, mas não necessariamente o mais claro possível.
+Conforme comentado acima, o código escrito anteriormente era o mais simples, mas não necessariamente o mais claro possível. O programador
+nesse momento tem total liberdade para refatorar, já que tem uma suíte de testes para garantir que o comportamento não será alterado.
 
 Esse é um dos principais passos no ciclo, já que é aqui que o programador se preocupa em melhorar o seu código, tornando-o
 mais claro e, por consequência, facilitando sua evolução.
 
+\section{Passos de bebê}
 
+TDD sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em inglês, \textit{baby steps}): deve-se escrever testes 
+sempre para a menor funcionalidade possível, escrever o código mais simples que faça o teste passar e fazer sempre 
+apenas uma refatoração por vez. 
+
+A justificativa para tal é que quanto maior o passo que o programador dá, mais tempo ele leva para concluir esse passo e, 
+consequentemente ele fica mais tempo sem feedback sobre o código. Além disso, faz com que o programador não crie 
+soluções mais complexas do que elas precisam ser, tornando o código à longo prazo o mais simples possível.
+
+Em seu livro sobre TDD, Kent Beck sugere a seguinte abordagem inicial para uma classe \textit{Dinheiro}, que permite uma operação de 
+multiplicação \cite{TDDByExample}:
+
+\begin{lstlisting}[frame=trbl]
+    public void testaMultiplicacao() {
+		Dinheiro cinco = new Dinheiro(5);
+		cinco.vezes(2);
+		assertEquals(10, dinheiro.valor);
+	}
+\end{lstlisting}
+
+Nesse momento ocorrem alguns erros de compilação já que a classe Dinheiro ainda não foi escrita. Em seguida, Beck escreve
+a seguinte classe:
+
+\begin{lstlisting}[frame=trbl]
+	class Dinheiro {
+		public int valor;
+		
+		Dinheiro(int valor) {
+		}
+		
+		void vezes(int multiplicador) {
+		}
+	}
+\end{lstlisting}
+
+Nesse momento não existem mais erros de compilação, e é possível executar e ver o teste falhar. O teste falha pois ele esperava
+que o atributo \textit{valor} retornasse 10, mas retornou 0. Nesse momento, Beck faz o teste passar da forma mais simples possível,
+que é simplesmente inicializar o atributo \textit{valor} da classe \textit{Dinheiro} com o valor 10.
+
+\begin{lstlisting}[frame=trbl]
+	public int valor = 10;
+\end{lstlisting}
+
+Agora com o teste passando, Beck começa então o passo de refatoração, visando remover duplicação de dados e de código. No exemplo,
+existe a clara duplicação de dados entre a classe e o código de teste: o valor 10, que surgiu da multiplicação do 5 por 2. 
+
+\begin{lstlisting}[frame=trbl]
+	public int valor = 5 * 2;
+\end{lstlisting}
+
+Nesse momento, Beck percebe que não há como remover a duplicação em apenas um passo. Ele então, move a multiplicação para dentro
+do método \textit{vezes}:
+
+\begin{lstlisting}[frame=trbl]
+	public int valor;
+	
+	void vezes(int multiplicador) {
+		valor = 5 * 2;
+	}
+\end{lstlisting}
+
+Finalmente ele extrai o valor 5 do parâmetro que é passado para o construtor:
+
+\begin{lstlisting}[frame=trbl]
+class Dinheiro {
+	public int valor;
+	
+	Dinheiro(int valor) {
+		this.valor = valor;
+	}
+	
+	void vezes(int multiplicador) {
+		valor = valor * 2;
+	}
+}
+\end{lstlisting}
+
+Por fim, ele remove o 2 e multiplica agora pelo \textit{multiplicador}:
+
+\begin{lstlisting}[frame=trbl]
+class Dinheiro {
+	public int valor;
+	
+	Dinheiro(int valor) {
+		this.valor = valor;
+	}
+	
+	void vezes(int multiplicador) {
+		valor = valor * multiplicador;
+	}
+}
+\end{lstlisting}
+
+O único teste ainda continua passando, provando que a refatoração foi feita com sucesso. Pode-se observar através
+do exemplo acima que os passos dados foram sempre os menores e mais simples possíveis, ou \textit{passos de bebê}, por assim dizer. 
+Veja que, mesmo após diversos passos de refatoração, ainda é possível encontrar problemas de design, como o atributo \textit{valor}
+declarado como público. Seriam necessários outras rodadas de refatoração para eliminar esse problema.
+
+Uma confusão comum de programadores que experimentam TDD pela primeira vez é a de que fazer passos de bebê o tempo todo faz
+com que a produtividade diminua. De fato, fazer passos de bebê durante todo o ciclo faz com que o tempo de desenvolvimento aumente,
+já que muitos desses passos são simples demais e poderiam ser pulados por um programador mais experiente. Mas TDD não força o programador
+a dar passos de bebê o tempo todo. TDD permite que o mesmo dê passos de bebê quando achar necessário \cite{TDDByExample}: caso
+o programador esteja confiante sobre o trecho de código que está escrevendo naquele momento, ele pode dar um passo maior; mas caso ele
+não esteja tão confiante, TDD permite a ele ir mais devagar e dar passos de bebê, obtendo feedback mais rápido sobre o código que está escrevendo. 
+
+No exemplo acima, o método \textit{vezes} poderia ser considerado simples por um programador experiente, que optaria por chegar à
+mesma solução acima de maneira mais rápida, tomando passos maiores.
 
 ---
 explicar mais a fundo o ciclo, se baseando no artigo de paris
 
-baby steps
+tdd patterns e red/green bar patterns (beck)
 
-red/green bar patterns (beck)
+lista de proximas coisas a fazer
 
 definir codigo de producao?
 
