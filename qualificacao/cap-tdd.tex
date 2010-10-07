@@ -2,22 +2,44 @@
 \chapter{Test-Driven Development}
 \label{cap:tdd}
 
-Test-Driven Development (TDD) é uma prática de desenvolvimento de software, onde o programador deve apenas escrever
-um código novo se houver um teste automatizado falhando, e deve também constantemente remover duplicação de dados e de código. 
+Test-Driven Development (TDD) é a arte de produzir testes automatizados para código de produção, usando
+esse processo para guiar o design e a programação. Para cada pequeno pedaço de funcionalidade, o desenvolvedor
+deve primeiro escrever um teste que especifique e valide o que o código irá fazer. O programador então produz
+somente o código necessário para fazer esse teste passar. Então ele refatora (simplifica e clareia) tanto o
+código de produção quanto o código de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
+
+TDD é uma importante prática na Programação Extrema (XP) \cite{XPExplained} já que, como sugerido pelas práticas
+ágeis, o design de um software deve emergir conforme o software cresce. E, para responder rapidamente a essas
+alterações, é necessário um constante \textit{feedback} sobre a qualidade interna e externa do código, e TDD
+provê isso já que TDD faz com que o teste de unidade seja o primeiro cliente real da classe que o programador ainda
+vai implementar, e isso faz com que ele pense melhor a respeito do comportamento que ele espera dessa classe. Além disso,
+a suíte de testes gerada dá segurança ao programador no momento de uma refatoração pois, caso ele cometa um erro,
+algum dos testes provavelmente irá falhar, avisando-o imediatamente sobre o problema.
+
+TDD faz com que esse simples processo de escrever um teste antes de escrever o código
+sirva para ajudar o time a entender as funcionalidades que os usuários do sistema precisam e 
+a entregar essas funcionalidades de maneira confiável e previsível \cite{GOOS}. TDD usa os testes para clarificar as expectativas
+sobre o que um pedaço de código deve fazer [TODO 3]. Além disso, ele cria uma medida concreta de falha, que são os testes de 
+unidade que estão falhando. Com essa medida em mãos, o objetivo do programador naquele momento é simplesmente fazer o teste passar. É um
+objetivo claro e bem definido, e permite ao programador focar naquele pequeno pedaço de funcionalidade e no trecho de código que ele 
+deve escrever para fazer o teste passar \cite{TDDByExample}. 
+
+Na prática, TDD obriga que o programador escreva
+um código novo apenas se houver um teste automatizado falhando, e faz com que ele remova duplicação de dados e de código constantemente. 
 Essas duas regras implicam no seguinte ciclo: o programador primeiro deve escrever um pequeno teste que falhe (ou que até mesmo não compile), 
 em seguida deve fazer o teste passar de maneira mais rápida possível e, por fim, deve refatorar toda a duplicação criada \cite{TDDByExample}. 
 Esse ciclo é também conhecido como Vermelho-Verde-Refatora (ou Red-Green-Refactor), já que lembram as cores que o programador geralmente 
 vê quando faz TDD: o vermelho geralmente significa que o teste está falhando e o verde quando o teste foi executado com sucesso. 
 
-Ao fazer TDD, o programador é obrigado a escrever um teste antes de escrever o código. TDD faz com que esse simples processo 
-sirva para ajudar o time a entender as funcionalidades que os usuários do sistema precisam, e 
-a entregar essas funcionalidades de maneira confiável e previsível \cite{GOOS}. TDD usa os testes para clarificar as expectativas
-sobre o que um pedaço de código deve fazer [TODO 3]. Além disso, ele cria uma medida concreta de falha, que são os testes de 
-unidade que estão falhando). Com essa medida em mãos, o objetivo do programador naquele momento é simplesmente fazer o teste passar. É um
-objetivo claro e bem definido, e permite ao programador focar naquele pequeno pedaço de funcionalidade e no trecho de código que ele 
-deve escrever para fazer o teste passar \cite{TDDByExample}. 
+TDD apareceu para o mundo de desenvolvimento de softwares em 2001, quando Kent Beck publicou seu trabalho sobre Programação Extrema \cite{XPExplained},
+onde TDD era uma das práticas citadas por ele como essenciais para o processo de desenvolvimento. Conhecida também
+por \textit{Test-First Programming} (Programação Testando Primeiro), \textit{Test-Driven Design} (Design Guiado pelos Testes) ou 
+\textit{Test-First Design} (Design Testando Primeiro), sua popularidade cresceu junto com o aumento de popularidade da própria Programação Extrema. 
+Mas, nos últimos tempos, TDD tem recebido uma grande atenção entre os pesquisadores e profissionais da indústria, mesmo em equipes não-ágeis, já que
+é dito que a sua prática aumenta tanto a qualidade interna do código, aumentando sua coesão, diminuindo seu acoplamento e tornando
+o código mais simples, quanto a qualidade externa, diminuindo o número de defeitos.
 
-% levar esse paragrafo para parte sobre design
+% levar esses paragrafos para parte sobre design
 TDD permite também que o desenvolvedor obtenha feedback sobre o design do sistema. Como sugerido pelas práticas ágeis,
 o design de um software deve emergir junto com sua evolução. E, para responder rapidamente à essas mudanças, é necessário
 um feedback constante sobre a qualidade do design. Por esse motivo, TDD é considerado uma importante prática na Programação 
@@ -33,12 +55,37 @@ com outros componentes; (iii) cria uma especificação executável sobre o que o có
 Já o processo de rodar os testes possibilita (i) a detecção de erros enquanto o contexto está recente na mente do programador, e (ii)
 faz com que o programador saiba quando terminou seu trabalho, diminuindo assim o risco de implementar funcionalidades desnecessárias.
 
+
+\section{Definições incompletas} 
+\label{sec:tdd-definicoes-incompletas}
+
+Apesar de sua popularidade, existem muitas definições incompletas sobre TDD. A maioria delas de maneira geral levam em conta
+apenas a parte do teste, e dizem apenas
+que "TDD é uma prática de desenvolvimento de software na qual o programador deve escrever um teste antes de escrever o código".
+Definições como essa não definem todos os pontos-chave da prática, como a utilização desse processo para guiar o design e
+a obrigação de sempre escrever o código mais simples possível.
+
+Janzen \cite{tdd-taxonomy} exemplica esse problema mostrando a definição no livro \textit{JUnit in Action} \cite{junit-in-action}:
+\textit{Test-Driven Development é uma prática de programação que instrui desenvolvedores a escrever código novo apenas se um teste
+automatizado estiver falhando, e a eliminar duplicação. O objetivo de TDD é "código claro que funcione"}. 
+Entretanto, muitos autores lembram que TDD é na verdade uma prática de design \cite{tdd-taxonomy} \cite{aim-fire}, 
+e citam sempre a famosa frase do Ward Cunningham, um dos pioneiros da Programação Extrema:
+\textit{Programação Teste Primeiro (Test-First Programming) não é uma prática de testes}. 
+
+Entender que TDD é na verdade sobre análise e design seja talvez a parte mais complicada e desafiadora para novos adotantes da prática. 
+
 \section{O Ciclo} 
 \label{sec:tdd-ciclo}
 
-De forma mais ampla, podemos definir o ciclo de TDD da seguinte maneira: (i) adicione um teste; (ii) rode todos os testes e veja o 
-novo teste falhar; (iii) escreva o código mais simples que faça o teste passar; (iv) rode todos os testes e veja o novo teste passar; 
-(v) refatore para remover duplicação de dados e de código.
+De forma mais ampla, podemos definir o ciclo de TDD da seguinte maneira:
+
+\begin{enumerate}
+	\item adicione um teste; 
+	\item rode todos os testes e veja o novo teste falhar; 
+	\item escreva o código mais simples que faça o teste passar; 
+	\item rode todos os testes e veja o novo teste passar; 
+	\item refatore para remover duplicação de dados e de código.
+\end{enumerate}
 
 As sub-seções abaixo visam explicar cada passo do ciclo de forma mais detalhada, explicando a motivação e o esperado 
 em cada um deles.
@@ -47,8 +94,12 @@ em cada um deles.
 
 O primeiro passo do ciclo é escrever um teste para uma nova funcionalidade. Para isso, o programador deve primeiro entender a funcionalidade 
 que ele deseja implementar, e dessa forma entender melhor o requisito antes de escrever qualquer linha de código.
-
 Esse teste falhará, afinal a funcionalidade ainda não foi implementada. 
+
+Esse é um passo muito importante do processo, já que o teste que o programador vai escrever é o primeiro cliente da classe que está
+prestes a implementar. Nesse momento o programador decide não somente sobre a interface que essa classe terá (como nomes dos métodos,
+parâmetros, tipos de retorno e exceções a serem lançadas) como também sobre o comportamento que ele espera dessa classe (como 
+os resultados de acordo com as diferentes entradas) \cite{GOOS}.
 
 \subsection{Rodar todos os testes e ver o novo teste falhar}
 
@@ -60,7 +111,6 @@ Mas, na prática, esse teste pode não falhar, indicando alguns possíveis problema
 não está reagindo da maneira que o programador pensou que estava (afinal ele esperava por um determinado comportamento quando na verdade a
 classe apresentou outro); problemas na implementação do teste, afinal teste também é código, e assim como o código de produção, ele é
 totalmente suscetível a falhas.
-
 Portanto, pode-se concluir que ver o novo teste falhar ajuda o programar a validar tanto o código de teste quanto o seu conhecimento
 sobre a classe que está sendo testada. 
 
@@ -71,28 +121,41 @@ focado em escrever a solução mais clara (pois isso será feito em um passo poster
 
 O objetivo desse passo é evitar que o programador, ao invés de resolver o problema de maneira simples, por algum motivo
 implemente uma solução mais complexa, e com isso acrescentando complexidade desnecessária no código. Algumas técnicas como
-"Implementação Óbvia" (TODO complementar) e "Triangularização" (TODO complementar) \cite{TDDByExample} podem ajudar o programador
-na tarefa de escrever a implementação mais simples possível.
+\textit{Implementação Óbvia} e \textit{Triangularização} \cite{TDDByExample}, discutidas com mais detalhes na seção \ref{sec:tdd-patterns}, 
+podem ajudar o programador na tarefa de escrever a implementação mais simples possível.
+
+Muitas vezes esse passo é mal entendido pelos programadores, que acabam por confundir o "mais simples" pelo o "mais simplório". 
+A ideia de passos de bebê \cite{TDDByExample} é melhor detalhada na seção \ref{sec:tdd-baby-steps}.
 
 \subsection{Rode todos os testes e veja o novo teste passar}
 
 Assim que o programador escrever o código mais simples que faça o teste passar, ele deve rodar a suíte de testes novamente
 para verificar que a nova implementação realmente faz o teste passar. Nesse ponto é importante que o programador rode a suíte 
 completa de testes, pois a implementação pode ter feito o novo teste passar, mas pode ter quebrado testes antigos que já existiam na suíte. 
-
 Caso algum teste antigo quebre, o programador deve então voltar um passo atrás, e tentar novamente escrever o código mais simples
 que faça o teste que está quebrado passar.
+
+Esse passo traz segurança ao programador durante todo o ciclo de desenvolvimento, pois rodando a suíte de testes inteira, 
+ele rapidamente descobre se introduziu um erro em alguma outra parte do sistema. Essa é uma técnica conhecida na área de testes e é
+chamada de \textit{testes de regressão} \cite{art-of-sw-testing}. Em TDD, e execução constante desses testes de regressão 
+trazem outra vantagem que é a detecção do erro acontece basicamente no momento em que esse erro é introduzido, facilitando assim
+o processo de correção do mesmo. Alguns estudos inclusive mostram que o programador ao fazer TDD passa menos tempo depurando o código
+do que programadores que utilizam a abordagem tradicional (TODO janzen 5, george williams 9 artigo aniche).
 
 \subsection{Refatore para remover duplicação de dados e de código}
 
 No último passo do ciclo o programador agora deve refatorar o código escrito, procurando remover as duplicações de código ou de dados. 
 Conforme comentado acima, o código escrito anteriormente era o mais simples, mas não necessariamente o mais claro possível. O programador
 nesse momento tem total liberdade para refatorar, já que tem uma suíte de testes para garantir que o comportamento não será alterado.
-
 Esse é um dos principais passos no ciclo, já que é aqui que o programador se preocupa em melhorar o seu código, tornando-o
 mais claro e, por consequência, facilitando sua evolução.
 
+Como TDD faz com que a prática de testes seja utilizada para receber informações sobre o design, 
+a prática de refatoração é parte vital do processo já que o programador muda de ideia muitas vezes sobre a interface que determinada
+classe deve ter, e para isso, faz uso de práticas de refatoração, já muito discutida na literatura \cite{fowler-refactoring} \cite{joshua-refactoring}.
+
 \section{Passos de bebê}
+\label{sec:tdd-baby-steps}
 
 TDD sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em inglês, \textit{baby steps}): deve-se escrever testes 
 sempre para a menor funcionalidade possível, escrever o código mais simples que faça o teste passar e fazer sempre 
@@ -201,18 +264,20 @@ não esteja tão confiante, TDD permite a ele ir mais devagar e dar passos de bebê
 No exemplo acima, o método \textit{vezes} poderia ser considerado simples por um programador experiente, que optaria por chegar à
 mesma solução acima de maneira mais rápida, tomando passos maiores.
 
----
-explicar mais a fundo o ciclo, se baseando no artigo de paris
+\section{Padrões para a Prática de TDD}
+\label{sec:tdd-patterns}
 
-tdd patterns e red/green bar patterns (beck)
+tdd patterns e red/green bar patterns (beck) sec:tdd-patterns
+
+---
+
+feedback (exemplo do MortalityTable do Aim, fire), nada de bduf
 
 lista de proximas coisas a fazer
 
 definir codigo de producao?
 
 exemplo parecido com o do money (simples e dpeois completo)
-
-definições frouxas
 
 história do tdd
 
@@ -225,3 +290,5 @@ tdd é documentação?
 visao do martin sobre tdd
 
 ron jefrries clean code that works
+
+discussao do janzen sobre abordagem test, driven e development 
