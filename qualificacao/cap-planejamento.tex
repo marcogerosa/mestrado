@@ -6,15 +6,10 @@
 \label{sec:planejamento-proposito}
 
 O propósito deste estudo de caso é avaliar a influência de Test-Driven Development na qualidade do 
-design do software durante a sua evolução. Este estudo visa entender como os programadores utilizam o 
+design do software durante toda a sua evolução. Este estudo visa entender como os programadores utilizam o 
 feedback dos testes para guiar o design, e dessa maneira influenciar na qualidade final do mesmo. 
 Além disso, este estudo busca entender os efeitos da prática na qualidade do design quando executados 
 por pessoas com diferentes níveis técnicos dentro de projetos reais.
-
-Para isso, serão utilizadas três empresas do mercado brasileiro de software. Todas elas desenvolvem
-softwares de pequeno e médio porte (TODO definir) utilizando a plataforma Java para desenvolvimento.
-Os desenvolvedores que atuam nelas possuem diferentes perfis e níveis técnicos, desde estagiários até
-profissionais com mais de 10 anos de experiência.
 
 Para estudar essa influência, este estudo faz uso de métodos qualitativos de pesquisa.
 
@@ -53,6 +48,22 @@ destaca que os limites entre o fenomêno e seu contexto podem não ser claros, enq
 de caso recolhe informações de poucas entidades (como pessoas, grupos ou organizações) e que também é caracterizado pela
 falta de controle experimental.
 
+\section{Participantes da pesquisa}
+\label{sec:planejamento-participantes}
+
+O critério usado para convite de empresas para participação na pesquisa foram:
+
+\begin{itemize}
+	\item Empresa de desenvolvimento de software que utiliza TDD há mais de 1 ano;
+	\item Localizada em São Paulo, para facilitar o processo de entrevista e observação do ambiente;
+	\item Desenvolvedores com diferentes níveis de experiência em TDD, desde iniciantes até experientes; 
+\end{itemize}
+
+De acordo com esses critérios, três empresas do mercado brasileiro de software foram selecionadas. 
+Todas elas desenvolvem softwares de pequeno e médio porte (TODO definir) utilizando a plataforma Java para desenvolvimento.
+
+TODO detalhar mais as empresas
+
 \section{Estratégia de pesquisa} 
 \label{sec:planejamento-estrategia}
 
@@ -73,8 +84,8 @@ As sub-seções abaixo mostram como os dados serão colhidos.
 \subsection{Entrevistas}
 \label{sec:planejamento-estrategia-entrevistas}
 
-O primeiro passo da pesquisa é uma série de entrevistas com os desenvolvedores das empresas. 
-As entrevistas serão semi-estruturadas, onde o pesquisador possui um roteiro de perguntas a serem respondidas, mas pode eventualmente
+O primeiro passo da pesquisa é uma série de entrevistas com os desenvolvedores das empresas participantes. 
+As entrevistas serão semi-estruturadas, o que significa que o pesquisador possui um roteiro de perguntas a serem respondidas, mas pode eventualmente
 alterar o rumo da entrevista de acordo com as respostas dados pelos entrevistados \cite{guidelines-case-study}. 
 Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê uma resposta ampla sobre o assunto.
 
@@ -91,11 +102,13 @@ O principal objetivo dessas entrevistas é capturar informações sobre:
 	\item A visão do programador sobre a simplicidade que TDD agrega ao processo
 \end{itemize} 
 
+TODO: Mapear perguntas com os objetivos acima
+
 Todas as entrevistas serão gravadas para que possam ser consultadas pelo pesquisador em um momento futuro. Além disso,
 as pesquisas serão sempre feitas por dois observadores, possibilitando que ambos tomem notas separadas e comparem
 suas anotações. O objetivo é diminuir o viés do processo.
 
-As entrevistas serão feitas em diferentes dias. Ao final de cada dia, os pesquisadores se reunirão para discutir
+As entrevistas serão feitas em dias diferentes. Ao final de cada dia, os pesquisadores se reunirão para discutir
 sobre os pontos levantados no dia corrente e para sugerir melhorias no instrumento de entrevista. 
 
 A versão final do roteiro de entrevista pode ser encontrado nos apêndices desse trabalho.
@@ -106,7 +119,7 @@ A versão final do roteiro de entrevista pode ser encontrado nos apêndices desse 
 O pesquisador observará os desenvolvedores em seu ambiente natural para investigar como a 
 prática é conduzida no dia-a-dia pelos desenvolvedores. Através da observação, o pesquisador poderá avaliar se
 a respostas dadas na entrevista conferem com o que eles realmente realizam durante o dia de trabalho. Além disso, o pesquisador
-poderá fazer perguntas sobre determinada situação que aconteceu no momento.
+poderá fazer perguntas sobre determinada situação que aconteceu naquele momento.
 
 Os objetivos das observações são:
 
@@ -114,7 +127,7 @@ Os objetivos das observações são:
 	\item descobrir como os programadores praticam TDD (Aniche e Gerosa \cite{aniche-mistakes} mostraram que os desenvolvores tendem a cometer desvios durante o processo).
 	\item descobrir como eles realmente utilizam o feedback dos testes para guiar o design
 	\item verificar se outras práticas ágeis, como programação pareada, influenciam a prática de TDD
-	\item outros maneiras que a utilização de TDD influenciou no design
+	\item outros maneiras na qual a utilização de TDD influenciou no design
 \end{itemize}
 
 O pesquisador fará anotações sobre o que achar relevante. Ele anotará também o dia e hora que o fato ocorreu, bem como os desenvolvedores
@@ -150,11 +163,12 @@ por essas métricas.
 Os objetivos de calcular essas métricas é:
 
 \begin{itemize}
-	\item verificar o comportamento das métricas de acoplamento
-	\item verificar o comportamento das métricas de coesão
-	\item verificar o comportamento das métricas de simplicidade
-	\item verificar o comportamento das métricas de testabilidade
-	\item verificar a presença de heurísticas de design \cite{lanza}
+	\item verificar o comportamento das métricas de acoplamento;
+	\item verificar o comportamento das métricas de coesão;
+	\item verificar o comportamento das métricas de simplicidade;
+	\item verificar o comportamento das métricas de instabilidade e abstração \cite{bobmartin-oodmetrics};
+	\item verificar o comportamento das métricas de testabilidade;
+	\item verificar a presença de heurísticas de design \cite{lanza};
 \end{itemize}
 
 Alguns dos sistemas foram desenvolvidos utilizando-se uma estratégia de desenvolvimento mista, aonde TDD foi praticado em apenas algumas partes
@@ -187,15 +201,68 @@ O processo de análise, baseado em \cite{creswell}, que está representado na figu
  
 %TODO figura
 
-
-\section{Estratégias para validar descobertas}
+\section{Validade e Confiabilidade do Estudo}
 \label{sec:planejamento-validacao}
+
+Os termos validade e confiabilidade em estudos qualitativos não possuem o mesmo significado dos estudos quantitativos. 
+Confiabilidade em um estudo qualitativo indica que a abordadem do pesquisador é consistente entre diferentes pesquisadores
+e diferentes projetos. Gibbs \cite{gibbs} sugere alguns procedimentos, dentre eles:
+
+\begin{itemize}
+	\item Checar as transcrições para garantir que não foram cometidos erros óbvios durante a transcrição;
+	\item Certificar que não há um desvio na definição dos códigos ou no significado dos códigos durante o processo de codificação. Isso pode ser alcançado comparando os dados com os códigos e com as anotações constantemente;
+	\item Fazer uma comparação cruzada entre os códigos criados pelos pesquisadores
+\end{itemize}
+
+O processo de codificação será feito por dois pesquisadores diferentes, que irão constantemente checar e comparar os resultados
+obtidos. Além disso, as entrevistas serão gravadas e o pesquisador poderá revisar a transcrição durante todo a pesquisa.
+
+Já o termo validade em um estudo qualitativo significa que o pesquisador se preocupou com a exatidão das informações
+geradas pela pesquisa. Isso pode ser verificado por alguns procedimentos, dentre eles:
+
+\begin{itemize}
+	\item Triangularização diferentes fontes de dados;
+	\item Apresentar os resultados da pesquisa para os participantes e verificar se eles concordam com os resultados gerados;
+	\item Prover descrição rica e detalhada sobre o ambiente;
+	\item Esclarecer todos os possíveis vieses da pesquisa;
+	\item Auditoria externa para revisar o projeto;
+\end{itemize}
+
+Os dados colhidos pela entrevista serão triangularizados com os dados obtidos das métricas de código e design. 
+Como exemplo, os entrevistados serão perguntados sobre os possíveis efeitos de TDD no design, como redução do acoplamento ou
+aumento da coesão, e esses dados serão comparados com as métricas de acoplamento e coesão, abstração e instabilidade 
+calculadas sobre o código.
+Além disso, os dados observados no ambiente dos programadores também servirão para aumentar a validade dos 
+dados colhidos nas entrevistas.
 
 \section{Papel do pesquisador}
 \label{sec:planejamento-papel}
 
+O pesquisador tem como papel fundamental participar do processo de captura de todos os dados comentados
+nas seções acima. No processo de entrevista, o pesquisador fará o papel de entrevistador principal, enquanto outro
+pesquisador convidado fará o papel de observador da entrevista.
+
+O pesquisador também observará o ambiente real dos desenvolvedores nas três empresas selecionadas
+para a pesquisa. A experiência e vivência do pesquisador na área de desenvolvimento de software 
+nesse ponto será importante para ajudar na compreensão dos ambientes. 
+
+Creswell \cite{creswell}, citando Locke \cite{locke}, lembra
+que a contribuição do investigador para o contexto da pesquisa pode ser útil e positiva ao invés de prejudicial.
+Além do mais, o pesquisador é responsável por identificar todos os valores pessoais, pressuposições e vieses desse estudo.
+
 \section{Problemas éticos}
 \label{sec:planejamento-etica}
 
+Essa pesquisa poderá revelar problemas nas empresas selecionadas, como problemas no design do software, na
+qualidade dos seus desenvolvedores, entre outros. Por esse motivo, todos os dados colhidos pelo pesquisador
+serão mantidos em sigilo e todos os nomes de desenvolvedores e projetos omitidos, conforme acordo assinado entre o pesquisador e a empresa.
+
+
 \section{Resultados esperados}
 \label{sec:planejamento-resultados-esperados}
+
+O objetivo desta pesquisa é entender, de maneira satisfatória, o efeito da influência de TDD sobre a qualidade
+do design do software, obtendo o ponto de vista dos desenvolvedores que a praticam diariamente. 
+Conforme discutido nos trabalhos relacionados, muitos pesquisas já foram feitas, 
+mas poucas discutem os motivos e as razões de TDD influenciar no design.
+
