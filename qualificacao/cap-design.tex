@@ -1,22 +1,14 @@
 %% ------------------------------------------------------------------------- %%
 \chapter{TDD e sua influência no design}
-\label{cap:tdd-design}
+\label{cap:design}
 
-Texto texto texto texto texto texto texto texto texto
-foco em feedback do design
-2 vantagens gratuitas; gerenciamento de dependencias e codigo facilmente invocavel
-experiencia do programador para refatoracao de nivel maior
-falar sobre feedback do design
-sinergia entre alta testabilidade e codigo bom
+\section{Introdução}
+\label{sec:design-introducao}
 
-% levar esses paragrafos para parte sobre design
-TDD permite também que o desenvolvedor obtenha feedback sobre o design do sistema. Como sugerido pelas práticas ágeis,
-o design de um software deve emergir junto com sua evolução. E, para responder rapidamente à essas mudanças, é necessário
-um feedback constante sobre a qualidade do design. Por esse motivo, TDD é considerado uma importante prática na Programação 
-Extrema (XP) \cite{XPExplained} e uma estratégia essencial para designs emergentes pois, 
-ao escrever um teste antes do código, os programadores contemplam e decidem não somente sobre a interface (como nomes de classes e 
+Conforme discutido no capítulo \ref{cap:tdd}, TDD é uma pratica focada em design, e não em testes.
+Ao escrever um teste antes do código, os programadores contemplam e decidem não somente sobre a interface (como nomes de classes e 
 métodos, tipos de retorno e exceções lançadas), mas também no comportamento que se espera de uma determinada classe 
-(como o resultado esperado de acordo com determinadas entradas) [TODO 13]. 
+(como o resultado esperado de acordo com determinadas entradas) [TODO 13].
 
 Conforme o sistema é desenvolvido, TDD possibilita um feedback sobre a qualidade tanto da implementação quanto do design. Segundo 
 Freeman \cite{GOOS}, escrever testes (i) clarifica o critério de aceitação para o próximo pedaço de software; (ii) encoraja o programador
@@ -24,3 +16,30 @@ a escrever componentes fracamente acoplados, de maneira que eles possam ser test
 com outros componentes; (iii) cria uma especificação executável sobre o que o código faz; e (iv) cria uma suíte de testes de regressão.
 Já o processo de rodar os testes possibilita (i) a detecção de erros enquanto o contexto está recente na mente do programador, e (ii)
 faz com que o programador saiba quando terminou seu trabalho, diminuindo assim o risco de implementar funcionalidades desnecessárias.
+
+Como sugerido pelas práticas ágeis,
+o design de um software deve emergir junto com sua evolução. E, para responder rapidamente à essas mudanças, é necessário
+um feedback constante sobre a qualidade do design. Por esse motivo, TDD é considerado uma importante prática na Programação 
+Extrema (XP) \cite{XPExplained} e uma estratégia essencial para designs emergentes.
+
+O objetivo deste capítulo é discutir sobre design de software, apresentando
+bons príncipios de design orientado a objetos, métricas e heurísticas de design, relacionando-os com a possível influência 
+que TDD tem sobre estes pontos.
+
+\section{Design}
+
+\section{Princípios de Design}
+\label{sec:design-oo-principios}
+
+\section{Métricas de design}
+
+\section{Heurísticas de designs}
+
+\section{Sintomas de Designs em Degradação}
+
+\section{TDD e Design}
+2 vantagens gratuitas; gerenciamento de dependencias e codigo facilmente invocavel
+experiencia do programador para refatoracao de nivel maior
+exemplo da classe de nota fiscal
+falar sobre feedback do design
+sinergia entre alta testabilidade e codigo bom
