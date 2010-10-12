@@ -51,6 +51,11 @@ estão presentes na estrutura geral do software ao invés de estarem em apenas u
 Esses sintomas podem ser medidos de forma subjetiva e algumas vezes de forma até objetiva. Geralmente, esses sintomas são causados
 por violações de um ou mais príncipios de design, apresentados na seção \ref{sec:design-oo-principios}. 
 
+Muitos desses problemas são relacionados à gerência de dependências e, como comentado por Martin em
+uma de suas palestras \cite{bobmartin-infoq}, gerenciar dependências é um dos maiores problemas do processo de desenvolvimento de software.
+Quando essa atividade não é feita corretamente, isso gera código que é difícil de manter e reusar. Entretanto, quando essa atividade
+é bem feita, o software tende a ser flexível, robusto e suas partes reusáveis.
+
 \subsection{Rigidez}
 
 Rigidez é a tendência do software em se tornar difícil de mudar, mesmo de maneiras simples. Toda mudança causa uma cascata de mudancçs subsequentes em módulos dependentes. Quanto mais módulos precisam ser modificados, maior é a rigidez do design. Quando um design está muito rígido, não se sabe com segurança quando uma mudança terá fim. Mudanças simples passam a demorar muito tempo até serem aplicadas no código e frequentemente acabam superando em várias vezes a estimativa de esforço inicial. Frases como \textit{"isto foi muito mais complicado do que eu imaginei"} tornam-se populares. Neste momento, gerentes de desenvolvimento começam a ficar receosos em permitir que os desenvolvedores consertem problemas não críticos.
