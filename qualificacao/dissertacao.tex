@@ -1,9 +1,9 @@
-% Arquivo LaTeX de exemplo de dissertaÁ„o/tese a ser apresentados ‡ CPG do IME-USP
+% Arquivo LaTeX de exemplo de disserta√ß√£o/tese a ser apresentados √† CPG do IME-USP
 % 
-% Vers„o 3: Sat Feb 13 15:02:20 BRST 2010
+% Vers√£o 3: Sat Feb 13 15:02:20 BRST 2010
 %
-% CriaÁ„o: Jes˙s P. Mena-Chalco
-% Revis„o: Fabio Kon e Paulo Feofiloff
+% Cria√ß√£o: Jes√∫s P. Mena-Chalco
+% Revis√£o: Fabio Kon e Paulo Feofiloff
 %  
 % Obs: Leia previamente o texto do arquivo README.txt
 
@@ -13,17 +13,17 @@
 % Pacotes 
 \usepackage[T1]{fontenc}
 \usepackage[brazil]{babel}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[pdftex]{graphicx}           % usamos arquivos pdf/png como figuras
-\usepackage{setspace}                   % espaÁamento flexÌvel
-\usepackage{indentfirst}                % indentaÁ„o do primeiro par·grafo
-\usepackage{makeidx}                    % Ìndice remissivo
+\usepackage{setspace}                   % espa√ßamento flex√≠vel
+\usepackage{indentfirst}                % indenta√ß√£o do primeiro par√°grafo
+\usepackage{makeidx}                    % √≠ndice remissivo
 \usepackage[nottoc]{tocbibind}          % acrescentamos a bibliografia/indice/conteudo no Table of Contents
 \usepackage{courier}                    % usa o Adobe Courier no lugar de Computer Modern Typewriter
-\usepackage{type1cm}                    % fontes realmente escal·veis
-\usepackage{listings}                   % para formatar cÛdigo-fonte (ex. em Java)
+\usepackage{type1cm}                    % fontes realmente escal√°veis
+\usepackage{listings}                   % para formatar c√≥digo-fonte (ex. em Java)
 \usepackage{titletoc}
-%\usepackage[bf,small,compact]{titlesec} % cabeÁalhos dos tÌtulos: menores e compactos
+%\usepackage[bf,small,compact]{titlesec} % cabe√ßalhos dos t√≠tulos: menores e compactos
 \usepackage[fixlanguage]{babelbib}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[usenames,svgnames,dvipsnames]{xcolor}
@@ -31,11 +31,11 @@
 %\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=black,linkcolor=black,urlcolor=black,filecolor=black,bookmarksopen=true]{hyperref} % links em preto
 \usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=DarkGreen,linkcolor=NavyBlue,urlcolor=DarkRed,filecolor=green,bookmarksopen=true]{hyperref} % links coloridos
 \usepackage[all]{hypcap}                % soluciona o problema com o hyperref e capitulos
-\usepackage[square,sort,nonamebreak,comma]{natbib}  % citaÁ„o bibliogr·fica alpha (alpha-ime.bst)
+\usepackage[square,sort,nonamebreak,comma]{natbib}  % cita√ß√£o bibliogr√°fica alpha (alpha-ime.bst)
 \fontsize{60}{62}\usefont{OT1}{cmr}{m}{n}{\selectfont}
 
 % ---------------------------------------------------------------------------- %
-% CabeÁalhos similares ao TAOCP de Donald E. Knuth
+% Cabe√ßalhos similares ao TAOCP de Donald E. Knuth
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
@@ -44,17 +44,17 @@
 \renewcommand{\headrulewidth}{0pt}
 
 % ---------------------------------------------------------------------------- %
-\graphicspath{{./figuras/}}             % caminho das figuras (recomend·vel)
-\frenchspacing                          % arruma o espaÁo: id est (i.e.) e exempli gratia (e.g.) 
-\urlstyle{same}                         % URL com o mesmo estilo do texto e n„o mono-spaced
-\makeindex                              % para o Ìndice remissivo
-\raggedbottom                           % para n„o permitir espaÁos extra no texto
+\graphicspath{{./figuras/}}             % caminho das figuras (recomend√°vel)
+\frenchspacing                          % arruma o espa√ßo: id est (i.e.) e exempli gratia (e.g.) 
+\urlstyle{same}                         % URL com o mesmo estilo do texto e n√£o mono-spaced
+\makeindex                              % para o √≠ndice remissivo
+\raggedbottom                           % para n√£o permitir espa√ßos extra no texto
 \fontsize{60}{62}\usefont{OT1}{cmr}{m}{n}{\selectfont}
 \cleardoublepage
 \normalsize
 
 % ---------------------------------------------------------------------------- %
-% OpÁıes de listing usados para o cÛdigo fonte
+% Op√ß√µes de listing usados para o c√≥digo fonte
 % Ref: http://en.wikibooks.org/wiki/LaTeX/Packages/Listings
 \lstset{ %
 language=Java,                  % choose the language of the code
@@ -86,19 +86,19 @@ framexrightmargin=10pt
 % Corpo do texto
 \begin{document}
 \frontmatter 
-% cabeÁalho para as p·ginas das seÁıes anteriores ao capÌtulo 1 (frontmatter)
+% cabe√ßalho para as p√°ginas das se√ß√µes anteriores ao cap√≠tulo 1 (frontmatter)
 \fancyhead[RO]{{\footnotesize\rightmark}\hspace{2em}\thepage}
 \setcounter{tocdepth}{2}
 \fancyhead[LE]{\thepage\hspace{2em}\footnotesize{\leftmark}}
 \fancyhead[RE,LO]{}
 \fancyhead[RO]{{\footnotesize\rightmark}\hspace{2em}\thepage}
 
-\onehalfspacing  % espaÁamento
+\onehalfspacing  % espa√ßamento
 
 % ---------------------------------------------------------------------------- %
 % Capa
-% Nota: O tÌtulo para as teses/dissertaÁıes do IME-USP devem caber em um 
-% orifÌcio de 10,7cm de largura x 6,0cm de altura que h· na capa fornecida pela SPG.
+% Nota: O t√≠tulo para as teses/disserta√ß√µes do IME-USP devem caber em um 
+% orif√≠cio de 10,7cm de largura x 6,0cm de altura que h√° na capa fornecida pela SPG.
 \thispagestyle{empty}
 \begin{center}
     \vspace*{2.3cm}
@@ -109,48 +109,48 @@ framexrightmargin=10pt
     
     \vskip 2cm
     \textsc{
-    DissertaÁ„o apresentada\\[-0.25cm] 
+    Disserta√ß√£o apresentada\\[-0.25cm] 
     ao\\[-0.25cm]
-    Instituto de Matem·tica e EstatÌstica\\[-0.25cm]
+    Instituto de Matem√°tica e Estat√≠stica\\[-0.25cm]
     da\\[-0.25cm]
-    Universidade de S„o Paulo\\[-0.25cm]
+    Universidade de S√£o Paulo\\[-0.25cm]
     para\\[-0.25cm]
-    obtenÁ„o do tÌtulo\\[-0.25cm]
+    obten√ß√£o do t√≠tulo\\[-0.25cm]
     de\\[-0.25cm]
-    Mestre em CiÍncia da ComputaÁ„o}
+    Mestre em Ci√™ncia da Computa√ß√£o}
     
     \vskip 1.5cm
-    Programa: Mestrado em CiÍncia da ComputaÁ„o\\
-    Orientador: Prof. Dr. Marco AurÈlio Gerosa
+    Programa: Mestrado em Ci√™ncia da Computa√ß√£o\\
+    Orientador: Prof. Dr. Marco Aur√©lio Gerosa
 
    	\vskip 1.5cm
-    \normalsize{S„o Paulo, dezembro de 2010}
+    \normalsize{S√£o Paulo, dezembro de 2010}
 \end{center}
 
 % ---------------------------------------------------------------------------- %
-% P·gina de rosto (sÛ para a vers„o final)
-% Nota: O tÌtulo para as teses/dissertaÁıes do IME-USP devem caber em um 
-% orifÌcio de 10,7cm de largura x 6,0cm de altura que h· na capa fornecida pela SPG.
+% P√°gina de rosto (s√≥ para a vers√£o final)
+% Nota: O t√≠tulo para as teses/disserta√ß√µes do IME-USP devem caber em um 
+% orif√≠cio de 10,7cm de largura x 6,0cm de altura que h√° na capa fornecida pela SPG.
 %\newpage
 %\thispagestyle{empty}
 %    \begin{center}
 %        \vspace*{2.3 cm}
-%        \textbf{\Large{TÌtulo do trabalho a ser apresentado ‡ \\
-%        CPG para a dissertaÁ„o/tese}}\\
+%        \textbf{\Large{T√≠tulo do trabalho a ser apresentado √† \\
+%        CPG para a disserta√ß√£o/tese}}\\
 %        \vspace*{2 cm}
 %    \end{center}
 
 %    \vskip 2cm
 
 %    \begin{flushright}
-    % Este exemplar corresponde ‡ redaÁ„o\\
-    % final da dissertaÁ„o/tese devidamente corrigida\\
+    % Este exemplar corresponde √† reda√ß√£o\\
+    % final da disserta√ß√£o/tese devidamente corrigida\\
     % e defendida por (Nome Completo do Aluno)\\
-    % e aprovada pela Comiss„o Julgadora.
+    % e aprovada pela Comiss√£o Julgadora.
     %
-%	Esta vers„o definitiva da tese/dissertaÁ„o\\
-%	contÈm as correÁıes e alteraÁıes sugeridas pela\\
-%	Comiss„o Julgadora durante a defesa realizada\\
+%	Esta vers√£o definitiva da tese/disserta√ß√£o\\
+%	cont√©m as corre√ß√µes e altera√ß√µes sugeridas pela\\
+%	Comiss√£o Julgadora durante a defesa realizada\\
 %    por (Nome Completo do Aluno) em 4/5/2010.
 
 %    \vskip 2cm
@@ -159,7 +159,7 @@ framexrightmargin=10pt
 %    \vskip 4.2cm
 
 %    \begin{quote}
-%    \noindent Comiss„o Julgadora:
+%    \noindent Comiss√£o Julgadora:
     
 %    \begin{itemize}
 %		\item Profa. Dra. Nome Completo (orientadora) - IME-USP [sem ponto final]
@@ -170,7 +170,7 @@ framexrightmargin=10pt
 %    \end{quote}
 %\pagebreak
 
-\pagenumbering{roman}     % comeÁamos a numerar 
+\pagenumbering{roman}     % come√ßamos a numerar 
 
 % ---------------------------------------------------------------------------- %
 % Agradecimentos
@@ -180,7 +180,7 @@ Agradecimentos ...
 % ---------------------------------------------------------------------------- %
 % Resumo
 \chapter*{Resumo}
-Resumo em portuguÍs ...
+Resumo em portugu√™s ...
 
 \noindent \textbf{Palavras-chave:} palavra-chave1, palavra-chave2, palavra-chave3.
 
@@ -192,14 +192,14 @@ Abstract ...
 \noindent \textbf{Keywords:} keyword1, keyword2, keyword3.
 
 % ---------------------------------------------------------------------------- %
-% Sum·rio
-\tableofcontents    % imprime o sum·rio
+% Sum√°rio
+\tableofcontents    % imprime o sum√°rio
 
 % ---------------------------------------------------------------------------- %
 \chapter{Lista de Abreviaturas}
 \begin{tabular}{ll}
          TDD         & Desenvolvimento Guiado por Testes (\emph{Test-Driven Development})\\
-         XP          & ProgramaÁ„o Extrema (\emph{Extreme Programming})\\
+         XP          & Programa√ß√£o Extrema (\emph{Extreme Programming})\\
 \end{tabular}
 
 % ---------------------------------------------------------------------------- %
@@ -208,14 +208,14 @@ Abstract ...
 \listoftables            
 
 % ---------------------------------------------------------------------------- %
-% CapÌtulos do trabalho
+% Cap√≠tulos do trabalho
 \mainmatter
 
-% cabeÁalho para as p·ginas de todos os capÌtulos
+% cabe√ßalho para as p√°ginas de todos os cap√≠tulos
 \fancyhead[RE,LO]{\thesection}
 
-\singlespacing              % espaÁamento simples
-%\onehalfspacing            % espaÁamento um e meio
+\singlespacing              % espa√ßamento simples
+%\onehalfspacing            % espa√ßamento um e meio
 
 \input cap-introducao
 \input cap-tdd
@@ -224,7 +224,7 @@ Abstract ...
 \input cap-planejamento
 \input cap-conclusoes
 
-% cabeÁalho para os apÍndices
+% cabe√ßalho para os ap√™ndices
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\appendixname\ \thechapter}} {\MakeUppercase{#1}} }
 \fancyhead[RE,LO]{}
 \appendix
@@ -233,8 +233,8 @@ Abstract ...
 
 % ---------------------------------------------------------------------------- %
 % Bibliografia
-\backmatter \singlespacing   % espaÁamento simples
-\bibliographystyle{alpha-ime}% citaÁ„o bibliogr·fica alpha
+\backmatter \singlespacing   % espa√ßamento simples
+\bibliographystyle{alpha-ime}% cita√ß√£o bibliogr√°fica alpha
 \bibliography{bibliografia}  % associado ao arquivo: 'bibliografia.bib'
 
 

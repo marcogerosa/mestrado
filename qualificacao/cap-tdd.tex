@@ -2,63 +2,63 @@
 \chapter{Test-Driven Development}
 \label{cap:tdd}
 
-Test-Driven Development (TDD) È a arte de produzir testes automatizados para cÛdigo de produÁ„o, usando
-esse processo para guiar o design e a programaÁ„o. Para cada pequeno pedaÁo de funcionalidade, o desenvolvedor
-deve primeiro escrever um teste que especifique e valide o que o cÛdigo ir· fazer. O programador ent„o produz
-somente o cÛdigo necess·rio para fazer esse teste passar. Ent„o ele refatora (simplifica e clareia) tanto o
-cÛdigo de produÁ„o quanto o cÛdigo de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
+Test-Driven Development (TDD) √© a arte de produzir testes automatizados para c√≥digo de produ√ß√£o, usando
+esse processo para guiar o design e a programa√ß√£o. Para cada pequeno peda√ßo de funcionalidade, o desenvolvedor
+deve primeiro escrever um teste que especifique e valide o que o c√≥digo ir√° fazer. O programador ent√£o produz
+somente o c√≥digo necess√°rio para fazer esse teste passar. Ent√£o ele refatora (simplifica e clareia) tanto o
+c√≥digo de produ√ß√£o quanto o c√≥digo de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
-TDD È uma importante pr·tica na ProgramaÁ„o Extrema (XP) \cite{XPExplained} j· que, como sugerido pelas pr·ticas
-·geis, o design de um software deve emergir conforme o software cresce. E, para responder rapidamente a essas
-alteraÁıes, È necess·rio um constante \textit{feedback} sobre a qualidade interna e externa do cÛdigo, e TDD
-provÍ isso j· que TDD faz com que o teste de unidade seja o primeiro cliente real da classe que o programador ainda
-vai implementar, e isso faz com que ele pense melhor a respeito do comportamento que ele espera dessa classe. AlÈm disso,
-a suÌte de testes gerada d· seguranÁa ao programador no momento de uma refatoraÁ„o pois, caso ele cometa um erro,
-algum dos testes provavelmente ir· falhar, avisando-o imediatamente sobre o problema.
+TDD √© uma importante pr√°tica na Programa√ß√£o Extrema (XP) \cite{XPExplained} j√° que, como sugerido pelas pr√°ticas
+√°geis, o design de um software deve emergir conforme o software cresce. E, para responder rapidamente a essas
+altera√ß√µes, √© necess√°rio um constante \textit{feedback} sobre a qualidade interna e externa do c√≥digo, e TDD
+prov√™ isso j√° que TDD faz com que o teste de unidade seja o primeiro cliente real da classe que o programador ainda
+vai implementar, e isso faz com que ele pense melhor a respeito do comportamento que ele espera dessa classe. Al√©m disso,
+a su√≠te de testes gerada d√° seguran√ßa ao programador no momento de uma refatora√ß√£o pois, caso ele cometa um erro,
+algum dos testes provavelmente ir√° falhar, avisando-o imediatamente sobre o problema.
 
-TDD faz com que esse simples processo de escrever um teste antes de escrever o cÛdigo
-sirva para ajudar o time a entender as funcionalidades que os usu·rios do sistema precisam e 
-a entregar essas funcionalidades de maneira confi·vel e previsÌvel \cite{GOOS}. TDD usa os testes para clarificar as expectativas
-sobre o que um pedaÁo de cÛdigo deve fazer [TODO 3]. AlÈm disso, ele cria uma medida concreta de falha, que s„o os testes de 
-unidade que est„o falhando. Com essa medida em m„os, o objetivo do programador naquele momento È simplesmente fazer o teste passar. … um
-objetivo claro e bem definido, e permite ao programador focar naquele pequeno pedaÁo de funcionalidade e no trecho de cÛdigo que ele 
+TDD faz com que esse simples processo de escrever um teste antes de escrever o c√≥digo
+sirva para ajudar o time a entender as funcionalidades que os usu√°rios do sistema precisam e 
+a entregar essas funcionalidades de maneira confi√°vel e previs√≠vel \cite{GOOS}. TDD usa os testes para clarificar as expectativas
+sobre o que um peda√ßo de c√≥digo deve fazer [TODO 3]. Al√©m disso, ele cria uma medida concreta de falha, que s√£o os testes de 
+unidade que est√£o falhando. Com essa medida em m√£os, o objetivo do programador naquele momento √© simplesmente fazer o teste passar. √â um
+objetivo claro e bem definido, e permite ao programador focar naquele pequeno peda√ßo de funcionalidade e no trecho de c√≥digo que ele 
 deve escrever para fazer o teste passar \cite{TDDByExample}. 
 
-Na pr·tica, TDD obriga que o programador escreva
-um cÛdigo novo apenas se houver um teste automatizado falhando, e faz com que ele remova duplicaÁ„o de dados e de cÛdigo constantemente. 
-Essas duas regras implicam no seguinte ciclo: o programador primeiro deve escrever um pequeno teste que falhe (ou que atÈ mesmo n„o compile), 
-em seguida deve fazer o teste passar de maneira mais r·pida possÌvel e, por fim, deve refatorar toda a duplicaÁ„o criada \cite{TDDByExample}. 
-Esse ciclo È tambÈm conhecido como Vermelho-Verde-Refatora (ou Red-Green-Refactor), j· que lembram as cores que o programador geralmente 
-vÍ quando faz TDD: o vermelho geralmente significa que o teste est· falhando e o verde quando o teste foi executado com sucesso. 
+Na pr√°tica, TDD obriga que o programador escreva
+um c√≥digo novo apenas se houver um teste automatizado falhando, e faz com que ele remova duplica√ß√£o de dados e de c√≥digo constantemente. 
+Essas duas regras implicam no seguinte ciclo: o programador primeiro deve escrever um pequeno teste que falhe (ou que at√© mesmo n√£o compile), 
+em seguida deve fazer o teste passar de maneira mais r√°pida poss√≠vel e, por fim, deve refatorar toda a duplica√ß√£o criada \cite{TDDByExample}. 
+Esse ciclo √© tamb√©m conhecido como Vermelho-Verde-Refatora (ou Red-Green-Refactor), j√° que lembram as cores que o programador geralmente 
+v√™ quando faz TDD: o vermelho geralmente significa que o teste est√° falhando e o verde quando o teste foi executado com sucesso. 
 
 % TODO figura red-green-refactor
 
-TDD apareceu para o mundo de desenvolvimento de softwares em 2001, quando Kent Beck publicou seu trabalho sobre ProgramaÁ„o Extrema \cite{XPExplained},
-onde TDD era uma das pr·ticas citadas por ele como essenciais para o processo de desenvolvimento. Conhecida tambÈm
-por \textit{Test-First Programming} (ProgramaÁ„o Testando Primeiro), \textit{Test-Driven Design} (Design Guiado pelos Testes) ou 
-\textit{Test-First Design} (Design Testando Primeiro), sua popularidade cresceu junto com o aumento de popularidade da prÛpria ProgramaÁ„o Extrema. 
-Mas, nos ˙ltimos tempos, TDD tem recebido uma grande atenÁ„o entre os pesquisadores e profissionais da ind˙stria, mesmo em equipes n„o-·geis, j· que
-È dito que a sua pr·tica aumenta tanto a qualidade interna do cÛdigo, aumentando sua coes„o, diminuindo seu acoplamento e tornando
-o cÛdigo mais simples, quanto a qualidade externa, diminuindo o n˙mero de defeitos.
+TDD apareceu para o mundo de desenvolvimento de softwares em 2001, quando Kent Beck publicou seu trabalho sobre Programa√ß√£o Extrema \cite{XPExplained},
+onde TDD era uma das pr√°ticas citadas por ele como essenciais para o processo de desenvolvimento. Conhecida tamb√©m
+por \textit{Test-First Programming} (Programa√ß√£o Testando Primeiro), \textit{Test-Driven Design} (Design Guiado pelos Testes) ou 
+\textit{Test-First Design} (Design Testando Primeiro), sua popularidade cresceu junto com o aumento de popularidade da pr√≥pria Programa√ß√£o Extrema. 
+Mas, nos √∫ltimos tempos, TDD tem recebido uma grande aten√ß√£o entre os pesquisadores e profissionais da ind√∫stria, mesmo em equipes n√£o-√°geis, j√° que
+√© dito que a sua pr√°tica aumenta tanto a qualidade interna do c√≥digo, aumentando sua coes√£o, diminuindo seu acoplamento e tornando
+o c√≥digo mais simples, quanto a qualidade externa, diminuindo o n√∫mero de defeitos.
 
 
-\section{DefiniÁıes incompletas} 
+\section{Defini√ß√µes incompletas} 
 \label{sec:tdd-definicoes-incompletas}
 
-Apesar de sua popularidade, existem muitas definiÁıes incompletas sobre TDD. A maioria delas de maneira geral levam em conta
+Apesar de sua popularidade, existem muitas defini√ß√µes incompletas sobre TDD. A maioria delas de maneira geral levam em conta
 apenas a parte do teste, e dizem apenas
-que "TDD È uma pr·tica de desenvolvimento de software na qual o programador deve escrever um teste antes de escrever o cÛdigo".
-DefiniÁıes como essa n„o definem todos os pontos-chave da pr·tica, como a utilizaÁ„o desse processo para guiar o design e
-a obrigaÁ„o de sempre escrever o cÛdigo mais simples possÌvel.
+que "TDD √© uma pr√°tica de desenvolvimento de software na qual o programador deve escrever um teste antes de escrever o c√≥digo".
+Defini√ß√µes como essa n√£o definem todos os pontos-chave da pr√°tica, como a utiliza√ß√£o desse processo para guiar o design e
+a obriga√ß√£o de sempre escrever o c√≥digo mais simples poss√≠vel.
 
-Janzen \cite{tdd-taxonomy} exemplica esse problema mostrando a definiÁ„o no livro \textit{JUnit in Action} \cite{junit-in-action}:
-\textit{Test-Driven Development È uma pr·tica de programaÁ„o que instrui desenvolvedores a escrever cÛdigo novo apenas se um teste
-automatizado estiver falhando, e a eliminar duplicaÁ„o. O objetivo de TDD È "cÛdigo claro que funcione"}. 
-Entretanto, muitos autores lembram que TDD È na verdade uma pr·tica de design \cite{tdd-taxonomy} \cite{aim-fire}, 
-e citam sempre a famosa frase do Ward Cunningham, um dos pioneiros da ProgramaÁ„o Extrema:
-\textit{ProgramaÁ„o Teste Primeiro (Test-First Programming) n„o È uma pr·tica de testes}. 
+Janzen \cite{tdd-taxonomy} exemplica esse problema mostrando a defini√ß√£o no livro \textit{JUnit in Action} \cite{junit-in-action}:
+\textit{Test-Driven Development √© uma pr√°tica de programa√ß√£o que instrui desenvolvedores a escrever c√≥digo novo apenas se um teste
+automatizado estiver falhando, e a eliminar duplica√ß√£o. O objetivo de TDD √© "c√≥digo claro que funcione"}. 
+Entretanto, muitos autores lembram que TDD √© na verdade uma pr√°tica de design \cite{tdd-taxonomy} \cite{aim-fire}, 
+e citam sempre a famosa frase do Ward Cunningham, um dos pioneiros da Programa√ß√£o Extrema:
+\textit{Programa√ß√£o Teste Primeiro (Test-First Programming) n√£o √© uma pr√°tica de testes}. 
 
-Entender que TDD È na verdade sobre an·lise e design seja talvez a parte mais complicada e desafiadora para novos adotantes da pr·tica. 
+Entender que TDD √© na verdade sobre an√°lise e design seja talvez a parte mais complicada e desafiadora para novos adotantes da pr√°tica. 
 
 \section{Diferentes perspectivas}
 
@@ -72,91 +72,91 @@ De forma mais ampla, podemos definir o ciclo de TDD da seguinte maneira:
 \begin{enumerate}
 	\item adicione um teste; 
 	\item rode todos os testes e veja o novo teste falhar; 
-	\item escreva o cÛdigo mais simples que faÁa o teste passar; 
+	\item escreva o c√≥digo mais simples que fa√ßa o teste passar; 
 	\item rode todos os testes e veja o novo teste passar; 
-	\item refatore para remover duplicaÁ„o de dados e de cÛdigo.
+	\item refatore para remover duplica√ß√£o de dados e de c√≥digo.
 \end{enumerate}
 
-As sub-seÁıes abaixo visam explicar cada passo do ciclo de forma mais detalhada, explicando a motivaÁ„o e o esperado 
+As sub-se√ß√µes abaixo visam explicar cada passo do ciclo de forma mais detalhada, explicando a motiva√ß√£o e o esperado 
 em cada um deles.
 
 \subsection{Adicionar um teste}
 
-O primeiro passo do ciclo È escrever um teste para uma nova funcionalidade. Para isso, o programador deve primeiro entender a funcionalidade 
-que ele deseja implementar, e dessa forma entender melhor o requisito antes de escrever qualquer linha de cÛdigo.
-Esse teste falhar·, afinal a funcionalidade ainda n„o foi implementada. 
+O primeiro passo do ciclo √© escrever um teste para uma nova funcionalidade. Para isso, o programador deve primeiro entender a funcionalidade 
+que ele deseja implementar, e dessa forma entender melhor o requisito antes de escrever qualquer linha de c√≥digo.
+Esse teste falhar√°, afinal a funcionalidade ainda n√£o foi implementada. 
 
-Esse È um passo muito importante do processo, j· que o teste que o programador vai escrever È o primeiro cliente da classe que est·
-prestes a implementar. Nesse momento o programador decide n„o somente sobre a interface que essa classe ter· (como nomes dos mÈtodos,
-par‚metros, tipos de retorno e exceÁıes a serem lanÁadas) como tambÈm sobre o comportamento que ele espera dessa classe (como 
+Esse √© um passo muito importante do processo, j√° que o teste que o programador vai escrever √© o primeiro cliente da classe que est√°
+prestes a implementar. Nesse momento o programador decide n√£o somente sobre a interface que essa classe ter√° (como nomes dos m√©todos,
+par√¢metros, tipos de retorno e exce√ß√µes a serem lan√ßadas) como tamb√©m sobre o comportamento que ele espera dessa classe (como 
 os resultados de acordo com as diferentes entradas) \cite{GOOS}.
 
 \subsection{Rodar todos os testes e ver o novo teste falhar}
 
 Nesse momento o programador roda todos os seus testes de unidade e verifica se o teste escrito no passo anterior realmente falhou. Em um
-primeiro momento esse passo pode parecer desnecess·rio, pois o programador escreveu um teste para uma funcionalidade que ele ainda nem
-implementou, e portanto o teste ir· falhar. 
+primeiro momento esse passo pode parecer desnecess√°rio, pois o programador escreveu um teste para uma funcionalidade que ele ainda nem
+implementou, e portanto o teste ir√° falhar. 
 
-Mas, na pr·tica, esse teste pode n„o falhar, indicando alguns possÌveis problemas, como: talvez o cÛdigo da classe que est· sendo testada
-n„o est· reagindo da maneira que o programador pensou que estava (afinal ele esperava por um determinado comportamento quando na verdade a
-classe apresentou outro); problemas na implementaÁ„o do teste, afinal teste tambÈm È cÛdigo, e assim como o cÛdigo de produÁ„o, ele È
-totalmente suscetÌvel a falhas.
-Portanto, pode-se concluir que ver o novo teste falhar ajuda o programar a validar tanto o cÛdigo de teste quanto o seu conhecimento
-sobre a classe que est· sendo testada. 
+Mas, na pr√°tica, esse teste pode n√£o falhar, indicando alguns poss√≠veis problemas, como: talvez o c√≥digo da classe que est√° sendo testada
+n√£o est√° reagindo da maneira que o programador pensou que estava (afinal ele esperava por um determinado comportamento quando na verdade a
+classe apresentou outro); problemas na implementa√ß√£o do teste, afinal teste tamb√©m √© c√≥digo, e assim como o c√≥digo de produ√ß√£o, ele √©
+totalmente suscet√≠vel a falhas.
+Portanto, pode-se concluir que ver o novo teste falhar ajuda o programar a validar tanto o c√≥digo de teste quanto o seu conhecimento
+sobre a classe que est√° sendo testada. 
 
-\subsection{Escreva o cÛdigo mais simples que faÁa o teste passar}
+\subsection{Escreva o c√≥digo mais simples que fa√ßa o teste passar}
 
-O programador deve ent„o escrever o cÛdigo mais simples possÌvel que faÁa o teste passar. Nesse momento o programador n„o deve estar
-focado em escrever a soluÁ„o mais clara (pois isso ser· feito em um passo posterior), e sim realmente a mais simples.
+O programador deve ent√£o escrever o c√≥digo mais simples poss√≠vel que fa√ßa o teste passar. Nesse momento o programador n√£o deve estar
+focado em escrever a solu√ß√£o mais clara (pois isso ser√° feito em um passo posterior), e sim realmente a mais simples.
 
-O objetivo desse passo È evitar que o programador, ao invÈs de resolver o problema de maneira simples, por algum motivo
-implemente uma soluÁ„o mais complexa, e com isso acrescentando complexidade desnecess·ria no cÛdigo. Algumas tÈcnicas como
-\textit{ImplementaÁ„o ”bvia} e \textit{TriangularizaÁ„o} \cite{TDDByExample}, discutidas com mais detalhes na seÁ„o \ref{sec:tdd-patterns}, 
-podem ajudar o programador na tarefa de escrever a implementaÁ„o mais simples possÌvel.
+O objetivo desse passo √© evitar que o programador, ao inv√©s de resolver o problema de maneira simples, por algum motivo
+implemente uma solu√ß√£o mais complexa, e com isso acrescentando complexidade desnecess√°ria no c√≥digo. Algumas t√©cnicas como
+\textit{Implementa√ß√£o √ìbvia} e \textit{Triangulariza√ß√£o} \cite{TDDByExample}, discutidas com mais detalhes na se√ß√£o \ref{sec:tdd-patterns}, 
+podem ajudar o programador na tarefa de escrever a implementa√ß√£o mais simples poss√≠vel.
 
-Muitas vezes esse passo È mal entendido pelos programadores, que acabam por confundir o "mais simples" pelo o "mais simplÛrio". 
-A ideia de passos de bebÍ \cite{TDDByExample} È melhor detalhada na seÁ„o \ref{sec:tdd-baby-steps}.
+Muitas vezes esse passo √© mal entendido pelos programadores, que acabam por confundir o "mais simples" pelo o "mais simpl√≥rio". 
+A ideia de passos de beb√™ \cite{TDDByExample} √© melhor detalhada na se√ß√£o \ref{sec:tdd-baby-steps}.
 
 \subsection{Rode todos os testes e veja o novo teste passar}
 
-Assim que o programador escrever o cÛdigo mais simples que faÁa o teste passar, ele deve rodar a suÌte de testes novamente
-para verificar que a nova implementaÁ„o realmente faz o teste passar. Nesse ponto È importante que o programador rode a suÌte 
-completa de testes, pois a implementaÁ„o pode ter feito o novo teste passar, mas pode ter quebrado testes antigos que j· existiam na suÌte. 
-Caso algum teste antigo quebre, o programador deve ent„o voltar um passo atr·s, e tentar novamente escrever o cÛdigo mais simples
-que faÁa o teste que est· quebrado passar.
+Assim que o programador escrever o c√≥digo mais simples que fa√ßa o teste passar, ele deve rodar a su√≠te de testes novamente
+para verificar que a nova implementa√ß√£o realmente faz o teste passar. Nesse ponto √© importante que o programador rode a su√≠te 
+completa de testes, pois a implementa√ß√£o pode ter feito o novo teste passar, mas pode ter quebrado testes antigos que j√° existiam na su√≠te. 
+Caso algum teste antigo quebre, o programador deve ent√£o voltar um passo atr√°s, e tentar novamente escrever o c√≥digo mais simples
+que fa√ßa o teste que est√° quebrado passar.
 
-Esse passo traz seguranÁa ao programador durante todo o ciclo de desenvolvimento, pois rodando a suÌte de testes inteira, 
-ele rapidamente descobre se introduziu um erro em alguma outra parte do sistema. Essa È uma tÈcnica conhecida na ·rea de testes e È
-chamada de \textit{testes de regress„o} \cite{art-of-sw-testing}. Em TDD, e execuÁ„o constante desses testes de regress„o 
-trazem outra vantagem que È a detecÁ„o do erro acontece basicamente no momento em que esse erro È introduzido, facilitando assim
-o processo de correÁ„o do mesmo. Alguns estudos inclusive mostram que o programador ao fazer TDD passa menos tempo depurando o cÛdigo
+Esse passo traz seguran√ßa ao programador durante todo o ciclo de desenvolvimento, pois rodando a su√≠te de testes inteira, 
+ele rapidamente descobre se introduziu um erro em alguma outra parte do sistema. Essa √© uma t√©cnica conhecida na √°rea de testes e √©
+chamada de \textit{testes de regress√£o} \cite{art-of-sw-testing}. Em TDD, e execu√ß√£o constante desses testes de regress√£o 
+trazem outra vantagem que √© a detec√ß√£o do erro acontece basicamente no momento em que esse erro √© introduzido, facilitando assim
+o processo de corre√ß√£o do mesmo. Alguns estudos inclusive mostram que o programador ao fazer TDD passa menos tempo depurando o c√≥digo
 do que programadores que utilizam a abordagem tradicional (TODO janzen 5, george williams 9 artigo aniche).
 
-\subsection{Refatore para remover duplicaÁ„o de dados e de cÛdigo}
+\subsection{Refatore para remover duplica√ß√£o de dados e de c√≥digo}
 
-No ˙ltimo passo do ciclo o programador agora deve refatorar o cÛdigo escrito, procurando remover as duplicaÁıes de cÛdigo ou de dados. 
-Conforme comentado acima, o cÛdigo escrito anteriormente era o mais simples, mas n„o necessariamente o mais claro possÌvel. O programador
-nesse momento tem total liberdade para refatorar, j· que tem uma suÌte de testes para garantir que o comportamento n„o ser· alterado.
-Esse È um dos principais passos no ciclo, j· que È aqui que o programador se preocupa em melhorar o seu cÛdigo, tornando-o
-mais claro e, por consequÍncia, facilitando sua evoluÁ„o.
+No √∫ltimo passo do ciclo o programador agora deve refatorar o c√≥digo escrito, procurando remover as duplica√ß√µes de c√≥digo ou de dados. 
+Conforme comentado acima, o c√≥digo escrito anteriormente era o mais simples, mas n√£o necessariamente o mais claro poss√≠vel. O programador
+nesse momento tem total liberdade para refatorar, j√° que tem uma su√≠te de testes para garantir que o comportamento n√£o ser√° alterado.
+Esse √© um dos principais passos no ciclo, j√° que √© aqui que o programador se preocupa em melhorar o seu c√≥digo, tornando-o
+mais claro e, por consequ√™ncia, facilitando sua evolu√ß√£o.
 
-Como TDD faz com que a pr·tica de testes seja utilizada para receber informaÁıes sobre o design, 
-a pr·tica de refatoraÁ„o È parte vital do processo j· que o programador muda de ideia muitas vezes sobre a interface que determinada
-classe deve ter, e para isso, faz uso de pr·ticas de refatoraÁ„o, j· muito discutida na literatura \cite{fowler-refactoring} \cite{joshua-refactoring}.
+Como TDD faz com que a pr√°tica de testes seja utilizada para receber informa√ß√µes sobre o design, 
+a pr√°tica de refatora√ß√£o √© parte vital do processo j√° que o programador muda de ideia muitas vezes sobre a interface que determinada
+classe deve ter, e para isso, faz uso de pr√°ticas de refatora√ß√£o, j√° muito discutida na literatura \cite{fowler-refactoring} \cite{joshua-refactoring}.
 
-\section{Passos de bebÍ}
+\section{Passos de beb√™}
 \label{sec:tdd-baby-steps}
 
-TDD sugere que o programador dÍ sempre pequenos passos (conhecidos pelo termo em inglÍs, \textit{baby steps}): deve-se escrever testes 
-sempre para a menor funcionalidade possÌvel, escrever o cÛdigo mais simples que faÁa o teste passar e fazer sempre 
-apenas uma refatoraÁ„o por vez. 
+TDD sugere que o programador d√™ sempre pequenos passos (conhecidos pelo termo em ingl√™s, \textit{baby steps}): deve-se escrever testes 
+sempre para a menor funcionalidade poss√≠vel, escrever o c√≥digo mais simples que fa√ßa o teste passar e fazer sempre 
+apenas uma refatora√ß√£o por vez. 
 
-A justificativa para tal È que quanto maior o passo que o programador d·, mais tempo ele leva para concluir esse passo e, 
-consequentemente ele fica mais tempo sem feedback sobre o cÛdigo. AlÈm disso, faz com que o programador n„o crie 
-soluÁıes mais complexas do que elas precisam ser, tornando o cÛdigo ‡ longo prazo o mais simples possÌvel.
+A justificativa para tal √© que quanto maior o passo que o programador d√°, mais tempo ele leva para concluir esse passo e, 
+consequentemente ele fica mais tempo sem feedback sobre o c√≥digo. Al√©m disso, faz com que o programador n√£o crie 
+solu√ß√µes mais complexas do que elas precisam ser, tornando o c√≥digo √† longo prazo o mais simples poss√≠vel.
 
-Em seu livro sobre TDD, Kent Beck sugere a seguinte abordagem inicial para uma classe \textit{Dinheiro}, que permite uma operaÁ„o de 
-multiplicaÁ„o \cite{TDDByExample}:
+Em seu livro sobre TDD, Kent Beck sugere a seguinte abordagem inicial para uma classe \textit{Dinheiro}, que permite uma opera√ß√£o de 
+multiplica√ß√£o \cite{TDDByExample}:
 
 \begin{lstlisting}[frame=trbl]
     public void testaMultiplicacao() {
@@ -166,7 +166,7 @@ multiplicaÁ„o \cite{TDDByExample}:
 	}
 \end{lstlisting}
 
-Nesse momento ocorrem alguns erros de compilaÁ„o j· que a classe Dinheiro ainda n„o foi escrita. Em seguida, Beck escreve
+Nesse momento ocorrem alguns erros de compila√ß√£o j√° que a classe Dinheiro ainda n√£o foi escrita. Em seguida, Beck escreve
 a seguinte classe:
 
 \begin{lstlisting}[frame=trbl]
@@ -181,23 +181,23 @@ a seguinte classe:
 	}
 \end{lstlisting}
 
-Nesse momento n„o existem mais erros de compilaÁ„o, e È possÌvel executar e ver o teste falhar. O teste falha pois ele esperava
-que o atributo \textit{valor} retornasse 10, mas retornou 0. Nesse momento, Beck faz o teste passar da forma mais simples possÌvel,
-que È simplesmente inicializar o atributo \textit{valor} da classe \textit{Dinheiro} com o valor 10.
+Nesse momento n√£o existem mais erros de compila√ß√£o, e √© poss√≠vel executar e ver o teste falhar. O teste falha pois ele esperava
+que o atributo \textit{valor} retornasse 10, mas retornou 0. Nesse momento, Beck faz o teste passar da forma mais simples poss√≠vel,
+que √© simplesmente inicializar o atributo \textit{valor} da classe \textit{Dinheiro} com o valor 10.
 
 \begin{lstlisting}[frame=trbl]
 	public int valor = 10;
 \end{lstlisting}
 
-Agora com o teste passando, Beck comeÁa ent„o o passo de refatoraÁ„o, visando remover duplicaÁ„o de dados e de cÛdigo. No exemplo,
-existe a clara duplicaÁ„o de dados entre a classe e o cÛdigo de teste: o valor 10, que surgiu da multiplicaÁ„o do 5 por 2. 
+Agora com o teste passando, Beck come√ßa ent√£o o passo de refatora√ß√£o, visando remover duplica√ß√£o de dados e de c√≥digo. No exemplo,
+existe a clara duplica√ß√£o de dados entre a classe e o c√≥digo de teste: o valor 10, que surgiu da multiplica√ß√£o do 5 por 2. 
 
 \begin{lstlisting}[frame=trbl]
 	public int valor = 5 * 2;
 \end{lstlisting}
 
-Nesse momento, Beck percebe que n„o h· como remover a duplicaÁ„o em apenas um passo. Ele ent„o, move a multiplicaÁ„o para dentro
-do mÈtodo \textit{vezes}:
+Nesse momento, Beck percebe que n√£o h√° como remover a duplica√ß√£o em apenas um passo. Ele ent√£o, move a multiplica√ß√£o para dentro
+do m√©todo \textit{vezes}:
 
 \begin{lstlisting}[frame=trbl]
 	public int valor;
@@ -207,7 +207,7 @@ do mÈtodo \textit{vezes}:
 	}
 \end{lstlisting}
 
-Finalmente ele extrai o valor 5 do par‚metro que È passado para o construtor:
+Finalmente ele extrai o valor 5 do par√¢metro que √© passado para o construtor:
 
 \begin{lstlisting}[frame=trbl]
 class Dinheiro {
@@ -239,22 +239,22 @@ class Dinheiro {
 }
 \end{lstlisting}
 
-O ˙nico teste ainda continua passando, provando que a refatoraÁ„o foi feita com sucesso. Pode-se observar atravÈs
-do exemplo acima que os passos dados foram sempre os menores e mais simples possÌveis, ou \textit{passos de bebÍ}, por assim dizer. 
-Veja que, mesmo apÛs diversos passos de refatoraÁ„o, ainda È possÌvel encontrar problemas de design, como o atributo \textit{valor}
-declarado como p˙blico. Seriam necess·rios outras rodadas de refatoraÁ„o para eliminar esse problema.
+O √∫nico teste ainda continua passando, provando que a refatora√ß√£o foi feita com sucesso. Pode-se observar atrav√©s
+do exemplo acima que os passos dados foram sempre os menores e mais simples poss√≠veis, ou \textit{passos de beb√™}, por assim dizer. 
+Veja que, mesmo ap√≥s diversos passos de refatora√ß√£o, ainda √© poss√≠vel encontrar problemas de design, como o atributo \textit{valor}
+declarado como p√∫blico. Seriam necess√°rios outras rodadas de refatora√ß√£o para eliminar esse problema.
 
-Uma confus„o comum de programadores que experimentam TDD pela primeira vez È a de que fazer passos de bebÍ o tempo todo faz
-com que a produtividade diminua. De fato, fazer passos de bebÍ durante todo o ciclo faz com que o tempo de desenvolvimento aumente,
-j· que muitos desses passos s„o simples demais e poderiam ser pulados por um programador mais experiente. Mas TDD n„o forÁa o programador
-a dar passos de bebÍ o tempo todo. TDD permite que o mesmo dÍ passos de bebÍ quando achar necess·rio \cite{TDDByExample}: caso
-o programador esteja confiante sobre o trecho de cÛdigo que est· escrevendo naquele momento, ele pode dar um passo maior; mas caso ele
-n„o esteja t„o confiante, TDD permite a ele ir mais devagar e dar passos de bebÍ, obtendo feedback mais r·pido sobre o cÛdigo que est· escrevendo. 
+Uma confus√£o comum de programadores que experimentam TDD pela primeira vez √© a de que fazer passos de beb√™ o tempo todo faz
+com que a produtividade diminua. De fato, fazer passos de beb√™ durante todo o ciclo faz com que o tempo de desenvolvimento aumente,
+j√° que muitos desses passos s√£o simples demais e poderiam ser pulados por um programador mais experiente. Mas TDD n√£o for√ßa o programador
+a dar passos de beb√™ o tempo todo. TDD permite que o mesmo d√™ passos de beb√™ quando achar necess√°rio \cite{TDDByExample}: caso
+o programador esteja confiante sobre o trecho de c√≥digo que est√° escrevendo naquele momento, ele pode dar um passo maior; mas caso ele
+n√£o esteja t√£o confiante, TDD permite a ele ir mais devagar e dar passos de beb√™, obtendo feedback mais r√°pido sobre o c√≥digo que est√° escrevendo. 
 
-No exemplo acima, o mÈtodo \textit{vezes} poderia ser considerado simples por um programador experiente, que optaria por chegar ‡
-mesma soluÁ„o acima de maneira mais r·pida, tomando passos maiores.
+No exemplo acima, o m√©todo \textit{vezes} poderia ser considerado simples por um programador experiente, que optaria por chegar √†
+mesma solu√ß√£o acima de maneira mais r√°pida, tomando passos maiores.
 
-\section{Padrıes para a Pr·tica de TDD}
+\section{Padr√µes para a Pr√°tica de TDD}
 \label{sec:tdd-patterns}
 
 tdd patterns e red/green bar patterns (beck) sec:tdd-patterns
@@ -273,13 +273,13 @@ definir codigo de producao?
 
 exemplo parecido com o do money (simples e dpeois completo)
 
-histÛria do tdd
+hist√≥ria do tdd
 
 tdd = tfd + refatoracao
 
 refatoracao tanto de baixo nivel quanto de alto nivel
 
-tdd È documentaÁ„o?
+tdd √© documenta√ß√£o?
 
 visao do martin sobre tdd
 
