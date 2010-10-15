@@ -79,6 +79,60 @@ persistência dos dados não implicam em alterações na classe responsável pel
 \subsection{Princípio do Aberto-Fechado}
 \label{subsec:ocp}
 
+O Príncipio do Aberto-Fechado, cunhado por Bertrand Meyer, diz que as entidades do software (como classes, módulos, funções, etc)
+devem ser abertas para extensão, mas fechadas para alteração \cite{meyer-ocp}. Se uma simples alteração resulta em uma cascata
+de alterações em módulos dependentes, isso cheira à rigidez, conforme descrito na seção \ref{subsec:rigidez}. O príncipio faz então
+com que o programador sempre refatore as classes de modo que mudanças desse tipo não causem mais modificações.
+
+Quando esse princípio é aplicado de maneira correta, novas alterações fazem com que o programador adicione novo código, e não
+modifique o anterior. Isso é alcançado através de \textit{abstrações}. Linguagens orientadas a objetos, por exemplo, possuem
+mecânismos para se criar abstrações (conhecido com interfaces em linguagens como Java ou C#). Através dessas abstrações,
+o programador consegue descrever a maneira em que uma determinada classe deve se portar, mas sem se preocupar em como
+essa classe faz isso.
+
+Robert Martin \cite{bob-martin} ilustra o seguinte exemplo em seu livro: Imagine uma classe responsável por desenhar 
+um conjunto de figuras geométricas. O código do método responsável por isso, é algo como:
+
+\begin{lstlisting}[frame=trbl]
+public class DesenhadorDeFiguras {
+	public void desenhaFiguras(List<Object> figuras) {
+		for(Object figura : figuras) {
+			if(figura instanceof Circulo) ((Circulo)figura).desenhaCirculo();
+			if(figura instanceof Quadrado) ((Quadrado)figura).desenhaQuadrado();
+		}
+	}
+}
+\end{lstlisting}
+
+Repare que caso uma nova figura geométrica apareça, o código dessa classe deve ser alterado. Uma solução que segue
+o príncipio do Aberto-Fechado seria criar uma abstração (uma interface) para figuras geométricas (chamado de \textit{Figura} no código abaixo).
+Todas as figuras geométricas então implementam essa interface. Dessa maneira, ao se criar uma nova figura, basta criar uma nova classe
+que represente essa figura. O código da classe \textit{DesenhadorDeFiguras} não precisará ser modificado.
+
+O código que exemplifica isso está abaixo:
+
+\begin{lstlisting}[frame=trbl]
+public interface Figura {
+	void desenha();
+}
+
+public class Quadrado implements Figura {
+	public void desenha() { /* ... */ }
+}
+
+public class Circulo implements Figura {
+	public void desenha() { /* ... */ }
+}
+
+public class DesenhadorDeFiguras {
+	public void desenhaFiguras(List<Figura> figuras) {
+		for(Figura figura : figuras) {
+			figura.desenha();
+		}
+	}
+}
+\end{lstlisting}
+
 \section{Métricas de design}
 
 \section{Heurísticas de designs}
@@ -100,6 +154,7 @@ Quando essa atividade não é feita corretamente, isso gera código que é difí
 é bem feita, o software tende a ser flexível, robusto e suas partes reusáveis.
 
 \subsection{Rigidez}
+\label{subsec:rigidez}
 
 Rigidez é a tendência do software em se tornar difícil de mudar, mesmo de maneiras simples. Toda mudança causa uma cascata de mudancçs subsequentes em módulos dependentes. Quanto mais módulos precisam ser modificados, maior é a rigidez do design. Quando um design está muito rígido, não se sabe com segurança quando uma mudança terá fim. Mudanças simples passam a demorar muito tempo até serem aplicadas no código e frequentemente acabam superando em várias vezes a estimativa de esforço inicial. Frases como \textit{"isto foi muito mais complicado do que eu imaginei"} tornam-se populares. Neste momento, gerentes de desenvolvimento começam a ficar receosos em permitir que os desenvolvedores consertem problemas não críticos.
 
