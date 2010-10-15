@@ -225,6 +225,42 @@ Essas heurísticas podem não fazer sentido em alguns casos, por exemplo, para u
 não muda muito e nenhuma classe similar será derivada dessa, então a dependência dessa classe com alguma outra concreta
 não é um grande problema.
 
+\subsection{Princípio da Segregação de Interfaces}
+\label{subsec:isp}
+
+O princípio diz que os clientes não devem ser forçados a depender de métodos que eles não usam. Quando uma interface não é coesa,
+ela contém métodos que são usadas por um grupo de clientes, e outros métodos que são usados por outro grupo de clientes. Apesar de uma
+classe poder implementar mais de uma interface, o princípio diz que o cliente da classe deve apenas depender de interfaces
+coesas.
+
+Um exemplo típico é o caso de classes que trabalham com interfaces de usuário e classes de negócio que invocam essas classes
+de interface. Imagine uma aplicação bancária aonde você tenha 2 operações: saque e depósito. Geralmente a classe de interface 
+vai conter dois métodos: um para desenhar a interface de saque e outra para desenhar a interface de depósito. Uma alteração em
+um desses métodos, faz com que a outra classe seja reimplantada. Seguindo o princípio, teríamos o seguinte:
+
+\begin{lstlisting}[frame=trbl]
+	public interface InterfaceDeSaque {
+		void desenhaSaque();
+	}
+	
+	public interface InterfaceDeDeposito {
+		void desenhaDeposito();
+	}
+	
+	public class InterfaceDoUsuario implements InterfaceDeSaque, InterfaceDeDeposito {
+		// ...
+	}
+	
+	public class Saque {
+		public Saque(InterfaceDeSaque ui) { 
+			// ...
+		}
+	}
+\end{lstlisting}
+
+A classe \textit{InterfaceDoUsuario} implementa ambas interfaces, mas repare que a classe \textit{Saque}, responsável por
+uma das funcionalidades do sistema recebe apenas a interface que tem somente o método que será utilizado por ela.
+
 \section{Métricas de design}
 
 \section{Heurísticas de designs}
