@@ -133,6 +133,28 @@ public class DesenhadorDeFiguras {
 }
 \end{lstlisting}
 
+\subsection{Princípio de Substituição de Liskov}
+\label{subsec:lsp}
+
+O princípio diz que sub-tipos devem ser substituíveis por tipos base. Esse princípio, criado por Barbara Liskov em 1988 \cite{liskov},
+é importante já que herança é uma das maneiras para se suportar abstrações e polimorfismo em linguagens orientadas à objeto.
+
+Como visto na seção \ref{subsec:ocp}, o Princípio do Aberto-Fechado se baseia muito no processo de polimorfismo. Imagine o seguinte caso:
+a classe base possui um método que aceita como parâmetros valores entre 1 e 1000. Em determinado momento, o programador cria um sub-tipo
+e sobrescreve o mesmo método, com a diferença de que esse método agora aceita valores apenas entre 1 e 500. Esse tipo de situação pode
+criar problemas difíceis de serem encontrados, já que como a pré-condição da classe base era mais fraca que a da sub-classe, pode haver
+algum cliente que faça uso disso; caso a instância do sub-tipo seja passado para esse cliente, ele vai quebrar. O mesmo problema
+acontece na pós-condição do método: imagine que esse mesmo método da classe base retorne um número no intervalo de 1 a 10, e na sub-classe
+esse método retorne um valor entre 1 e 50. Os clientes da classe base estão esperando uma saída entre 1 e 10, e caso uma instância da
+sub-classe seja passada, ela pode retornar valores que o cliente não está preparado para tratar. Isso faz com que o design fique frágil, 
+conforme citado na seção \ref{subsec:fragilidade}.  
+
+Um clássico exemplo sobre Príncipio de Substituição de Liskov é o exemplo dos Quadrados e Retângulos. Imagine uma classe Retângulo. Um
+retângulo possui dois lados de tamanhos diferentes. Imagine agora uma classe Quadrado (figura geométrica que possui todos os lados
+com o mesmo tamanho) que herde de Retângulo, e a única alteração é fazer com que os dois lados tenham o mesmo tamanho. Apesar
+de parecer lógico, afinal um Quadrado é um Retângulo com apenas uma condição diferente, a classe Quadrado quebra o Príncipio:
+a pré-condição dela é mais forte do que a do quadrado, afinal os dois lados devem ter o mesmo tamanho. 
+
 \section{Métricas de design}
 
 \section{Heurísticas de designs}
