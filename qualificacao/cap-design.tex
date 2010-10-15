@@ -31,10 +31,53 @@ que TDD tem sobre estes pontos.
 \section{Princípios de Design}
 \label{sec:design-oo-principios}
 
-
-Como comentado por Martin \cite{bob-martin}, esses príncipios são produto de décadas de experiência em engenharia de software.
+Os princípios comentados nesta seção são muito discutidos por Robert Martin \cite{bob-martin}, e são produto de 
+décadas de experiência em engenharia de software.
 Eles não são produto de uma única pessoa, mas sim a integração de pensamentos e trabalhos de um grande número de
 desenvolvedores de software e pesquisadores.
+
+Conhecidos pelo acrônimo \textit{SOLID} (sólido, em português), são eles:
+
+\begin{itemize}
+	\item Princípio da Responsabilidade Única (\textit{Single-Responsibility Principle})
+	\item Príncipio do Aberto-Fechado (\textit{Open/Closed Principle})
+	\item Princípio de Substituição de Liskov (\textit{Liskov Substitution Principle})
+	\item Príncipio da Inversão de Dependência (\textit{Dependency-Inversion Principle})
+	\item Princípio da Segregação de Interfaces (\textit{Interface Segregation Principle})
+\end{itemize}
+
+\subsection{Príncipio da Responsabilidade Única}
+\label{subsec:principio-srp}
+
+O termo coesão define a relação entre os elementos de um mesmo módulo \cite{demarco} \cite{pagejones}. Isso significa que
+os todos elementos de uma classe que tem apenas uma responsabilidade tendem a se relacionar. Diz-se que uma classe
+como essa é uma classe que possui alta coesão (ou que é coesa). Já em uma classe
+com muitas responsabilidades diferentes, os elementos tendem a se relacionar apenas em "grupos", ou seja, com os elementos
+que tratam de uma das responsabilidades da classe. A esse tipo de classe, diz-se que ela possui uma baixa coesão (ou que não é
+coesa).
+
+Robert Martin altera esse conceito de coesão e relaciona coesão com as forças que causam um módulo ou uma classe a mudar. No caso,
+o Príncipio de Responsabilidade Única diz que uma classe deve ter apenas uma única razão para mudar \cite{bob-martin}.
+
+Esse príncipio é bem importante no momento em que há uma alteração em alguma funcionalidade do software. Quando isso ocorre,
+o programador precisa procurar pelas classes que possuem a responsabilidade a ser modificada. Supondo uma classe que 
+possua mais de uma razão para mudar, isso significa que ela é acessada por duas partes do software que fazem coisas diferentes.
+Fazer uma alteração em uma das responsabilidades dessa classe pode, de maneira não intencional, quebrar a outra parte
+de maneira inesperada. Isso torna o design frágil, como comentado na seção \ref{subsec:fragilidade}.
+
+Para exemplificar isso, imagine uma classe chamada "Nota Fiscal" que, além de representar uma nota fiscal no sistema, ainda
+é responsável por persistir as informações em alguma base de dados. Essa classe viola o Princípio da Responsabilidade Única,
+pois ela possui mais de uma razão para mudar. A parte de persistência por exemplo, muito provavelmente faz acesso à arcabouços
+que lidam com esse tipo de coisa. Se o arcabouço mudar, isso muito provavelmente forcará uma mudança nessa classe, além de 
+todo o processo novamente de recompilação, testes e re-implantação dessa classe. Caso o programador esqueça disso, a aplicação
+pode quebrar de maneiras imprevisíveis.
+
+Seguindo o princípio, essas duas responsabilidades deveriam estar em classes diferentes: uma classe que representaria a nota
+fiscal no sistema, e outra classe que seria responsável por persistir esses dados. Dessa maneira, alterações na forma de
+persistência dos dados não implicam em alterações na classe responsável pela representação da nota fiscal no sistema.
+
+\subsection{Princípio do Aberto-Fechado}
+\label{subsec:ocp}
 
 \section{Métricas de design}
 
@@ -62,6 +105,7 @@ Rigidez é a tendência do software em se tornar difícil de mudar, mesmo de man
 
 
 \subsection{Fragilidade}
+\label{subsec:fragilidade}
 
 Fragilidade é a tendência do software em quebrar em muitos lugares diferentes toda vez que uma única mudança acontece. Frequentemente, os novos problemas ocorrem em áreas não relacionadas conceitualmente com a área que foi mudada, tornando o processo de manutenção demasiadamente custoso, complexo e tedioso. Consertar os novos problemas usualmente passa a resultar em outros novos problemas e assim por diante. Infelizmente, módulos frágeis são comuns em sistemas de software. São estes os módulos que sempre aparecem na lista de bugs a serem corrigidos. Além disto, desenvolvedores começam a ficar receosos de alterar certos trechos de código, pois sabem que estes estão tão frágeis que qualquer mudança simples fatalmente acarretará na introdução de problemas inesperados e de naturezas diversas. 
 
