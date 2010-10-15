@@ -155,6 +155,76 @@ com o mesmo tamanho) que herde de Retângulo, e a única alteração é fazer co
 de parecer lógico, afinal um Quadrado é um Retângulo com apenas uma condição diferente, a classe Quadrado quebra o Príncipio:
 a pré-condição dela é mais forte do que a do quadrado, afinal os dois lados devem ter o mesmo tamanho. 
 
+\subsection{Princípio da Inversão de Dependências}
+\label{subsec:dip}
+
+O Príncipio de Inversão de Dependências se baseia em duas afirmações:
+
+\begin{itemize}
+	\item Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações
+	\item Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações
+\end{itemize}
+
+Imagine a seguinte classe Copiadora:
+
+\begin{lstlisting}[frame=trbl]
+	public class Copiadora {
+		public void copiar() {
+			LeitorDeXml leitor = new LeitorDeXml();
+			EscritorDeSerial escritor = new EscritorDeSerial();
+			while(leitor.temCaracteres()) {
+				escritor.escreve(leitor.leCaracteres());
+			}
+		}
+	}
+\end{lstlisting}
+
+Repare que a classe Copiadora depende de classes de baixo nível (como LeitorDeXml e EscritorDeSerial). Mudanças nessas classes tendem a forçar
+mudanças também na classe de alto nível. Uma possível solução para o problema é uma implementação como a abaixo:
+
+\begin{lstlisting}[frame=trbl]
+	public interface Leitor {
+		boolean temCaracteres();
+		String leCaracteres();
+	}
+	
+	public interface Escritor {
+		void escreve(String conteudo);
+	}
+	
+	public class Copiadora {
+		private Leitor leitor;
+		private Escritor escritor;
+		
+		public Copiadora(Leitor leitor, Escritor escritor) {
+			this.leitor = leitor;
+			this.escritor = escritor;
+		}
+		
+		public void copiar() {
+			while(leitor.temCaracteres()) {
+				escritor.escreve(leitor.leCaracteres());
+			}
+		}
+	}
+\end{lstlisting}
+
+Agora a classe Copiadora depende apenas de interfaces de alto nível. As classes EscritorDeSerial e LeitorDeXml agora dependem das
+abstrações Leitor e Escritor, e cada um implementa a sua respectiva interface, seguindo o princípio da inversão de dependência.
+
+Robert Martin define uma simples heurística para o princípio: "dependa de abstrações". Além disso, ele levanta alguns pontos
+que na medida do possível devem ser seguidos:
+
+\begin{itemize}
+	\item Nenhuma variável deve guardar uma referência para uma classe concreta
+	\item Nenhuma classe deve derivar de uma classe concreta
+	\item Nenhum método deve sobrescrever um método implementado por nenhuma de suas classes base
+\end{itemize}
+
+Essas heurísticas podem não fazer sentido em alguns casos, por exemplo, para uma classe concreta que não é volátil. Se essa classe
+não muda muito e nenhuma classe similar será derivada dessa, então a dependência dessa classe com alguma outra concreta
+não é um grande problema.
+
 \section{Métricas de design}
 
 \section{Heurísticas de designs}
