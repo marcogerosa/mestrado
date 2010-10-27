@@ -465,6 +465,21 @@ o design de um software deve emergir junto com sua evolução. E, para responder
 um feedback constante sobre a qualidade do design. Por esse motivo, TDD é considerado uma importante prática na Programação 
 Extrema (XP) \cite{XPExplained} e uma estratégia essencial para designs emergentes.
 
+\subsection{Diferentes perspectivas}
+
+É possível olhar a prática de TDD sob duas perspectivas diferentes: análise e design. 
+TDD pode ser visto como uma prática de análise, já que o programador decide o que vai programar e o que ele não vai programar. Escolher o que
+está dentro do escopo de desenvolvimento e o que não está é uma parte crítica no processo de desenvolvimento de software. TDD força
+o programador a deixar bem claro as situações nas quais o código dele está preparado para suportar. Não deve-se esperar que
+o software faça algo que não esteja em algum dos testes escritos.
+TDD deve ser visto também, como dito acima, como uma prática de design, já que auxilia o programador na tarefa de criar um bom
+design. 
+
+Mas, apesar de ter o termo "teste" no nome, TDD não é uma prática de testes. O principal motivo dos testes gerados pela prática é o
+feedback sobre o design. Logo após o feedback, a bateria de testes gerada não é descartada pois dá segurança ao programador no caso de uma refatoração
+ou de uma nova implementação. TDD não discute em nenhum momento sobre práticas de teste, como análise do valor-limite ou
+grafo de causa-efeito \cite{art-of-sw-testing}, e portanto \texit{não é uma prática de testes de software}.
+
 \subsection{Definições incompletas} 
 \label{sec:tdd-definicoes-incompletas}
 
@@ -474,7 +489,7 @@ que "TDD é uma prática de desenvolvimento de software na qual o programador de
 Definições como essa não definem todos os pontos-chave da prática, como a utilização desse processo para guiar o design e
 a obrigação de sempre escrever o código mais simples possível.
 
-Janzen \cite{tdd-taxonomy} exemplica esse problema mostrando a definição no livro \textit{JUnit in Action} \cite{junit-in-action}:
+Janzen \cite{tdd-taxonomy} exemplifica esse problema mostrando a definição no livro \textit{JUnit in Action} \cite{junit-in-action}:
 \textit{Test-Driven Development é uma prática de programação que instrui desenvolvedores a escrever código novo apenas se um teste
 automatizado estiver falhando, e a eliminar duplicação. O objetivo de TDD é "código claro que funcione"}. 
 Entretanto, muitos autores lembram que TDD é na verdade uma prática de design \cite{tdd-taxonomy} \cite{aim-fire}, 
@@ -483,9 +498,6 @@ e citam sempre a famosa frase do Ward Cunningham, um dos pioneiros da Programaç
 
 Por esse motivo, TDD é também conhecido por \textit{Test-Driven Design} (Design Guiado por Testes) ou \textit{Test-First Design}
 (Design Testando Primeiro).
-
-\subsection{Diferentes perspectivas}
-
 
 \subsection{Feedback no design}
 
