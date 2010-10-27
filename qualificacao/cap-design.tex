@@ -5,16 +5,18 @@
 \section{Introdução}
 \label{sec:design-introducao}
 
-Como o objetivo deste estudo é discutir a influência de Test-Driven Development no design de sistemas orientados a objetos, esta
-seção visa portanto discutir alguns príncipios e boas práticas de orientação a objetos.
-Todos esses princípios e práticas se fazem necessários e são citados durante o processo de análise das entrevistas
-e dos códigos.
+Como o objetivo deste estudo é discutir a influência de Test-Driven Development no design de sistemas orientados a objetos, este
+capítulo visa portanto discutir alguns príncipios e boas práticas de orientação a objetos.
+
+Na primeira parte, esse capítulo discute alguns sintomas de designs em degradação (também conhecidos como maus cheiros de design), 
+e em seguida discute príncipios que visam combater esses sintomas. Por fim, o capítulo discute algumas métricas e heurísticas 
+de design que são utilizadas no processo de análise das entrevistas e dos códigos.
 
 \section{Design}
 
 
 \section{Sintomas de Designs em Degradação}
-
+\label{sec:design-degradacao}
 Quando um design começa a ficar difícil de ser evoluído, o reúso de código se torna mais complicado do que repetir o trecho de código ou 
 o custo de se fazer qualquer alteraçõ no design se torna alto, dizemos que que esse design está \textit{degradando}. 
 Martin \cite{bob-martin} enumerou alguns sintomas de designs em degradação, chamados também de \textit{maus cheiros de design}. 
@@ -73,7 +75,7 @@ uma possível solução para manter o código menos opaco.
 Os princípios comentados nesta seção são muito discutidos por Robert Martin \cite{bob-martin}, e são produto de 
 décadas de experiência em engenharia de software.
 Eles não são produto de uma única pessoa, mas sim a integração de pensamentos e trabalhos de um grande número de
-desenvolvedores de software e pesquisadores.
+desenvolvedores de software e pesquisadores, e visam combater todos os sintomas de degradação discutidos na seção \ref{sec:design-degradacao}.
 
 Conhecidos pelo acrônimo \textit{SOLID} (sólido, em português), são eles:
 
