@@ -443,11 +443,29 @@ O problema de sempre usar a implementação óbvia, é que o programador às vez
 mesmo tempo em que se preocupa com "código que funcione" é muita coisa para se fazer de uma vez só \cite{TDDByExample}. A ideia é portanto
 misturar esses padrões para, primeiro resolver a parte que faz o código funcionar, para depois se preocupar em fazer o código ficar claro.
 
-\section{Feedback e Big-Design Up Front}
+\section{TDD é sobre testes?}
+\label{sec:tdd-e-design}
 
-feedback (exemplo do MortalityTable do Aim, fire), nada de bduf
+Apesar do nome não deixar isso explícito, TDD é uma pratica focada em design, e não em testes.
+Entender que TDD é na verdade sobre análise e design seja talvez a parte mais complicada e desafiadora para novos adotantes da prática. 
 
-\section{Definições incompletas} 
+Ao escrever um teste antes do código, os programadores contemplam e decidem não somente sobre a interface (como nomes de classes e 
+métodos, tipos de retorno e exceções lançadas), mas também no comportamento que se espera de uma determinada classe 
+(como o resultado esperado de acordo com determinadas entradas) [TODO 13 aniche].
+
+Conforme o sistema é desenvolvido, TDD possibilita um feedback sobre a qualidade tanto da implementação quanto do design. Segundo 
+Freeman \cite{GOOS}, escrever testes (i) clarifica o critério de aceitação para o próximo pedaço de software; (ii) encoraja o programador
+a escrever componentes fracamente acoplados, de maneira que eles possam ser testados de maneira isolada, e em um nível maior, combinados
+com outros componentes; (iii) cria uma especificação executável sobre o que o código faz; e (iv) cria uma suíte de testes de regressão.
+Já o processo de rodar os testes possibilita (i) a detecção de erros enquanto o contexto está recente na mente do programador, e (ii)
+faz com que o programador saiba quando terminou seu trabalho, diminuindo assim o risco de implementar funcionalidades desnecessárias.
+
+Como sugerido pelas práticas ágeis,
+o design de um software deve emergir junto com sua evolução. E, para responder rapidamente à essas mudanças, é necessário
+um feedback constante sobre a qualidade do design. Por esse motivo, TDD é considerado uma importante prática na Programação 
+Extrema (XP) \cite{XPExplained} e uma estratégia essencial para designs emergentes.
+
+\subsection{Definições incompletas} 
 \label{sec:tdd-definicoes-incompletas}
 
 Apesar de sua popularidade, existem muitas definições incompletas sobre TDD. A maioria delas de maneira geral levam em conta
@@ -463,13 +481,18 @@ Entretanto, muitos autores lembram que TDD é na verdade uma prática de design 
 e citam sempre a famosa frase do Ward Cunningham, um dos pioneiros da Programação Extrema:
 \textit{Programação Teste Primeiro (Test-First Programming) não é uma prática de testes}. 
 
-Entender que TDD é na verdade sobre análise e design seja talvez a parte mais complicada e desafiadora para novos adotantes da prática. 
+\subsection{Diferentes perspectivas}
+
+TODO discussao do janzen sobre abordagem test, driven e development
+
+
+\section{Feedback e Big-Design Up Front}
+
+feedback (exemplo do MortalityTable do Aim, fire), nada de bduf
+
 
 \section{História de TDD}
 
-\section{Diferentes perspectivas}
-
-TODO discussao do janzen sobre abordagem test, driven e development
 ---
 
 
