@@ -41,35 +41,10 @@ Mas, nos últimos tempos, TDD tem recebido uma grande atenção entre os pesquis
 é dito que a sua prática aumenta tanto a qualidade interna do código, aumentando sua coesão, diminuindo seu acoplamento e tornando
 o código mais simples, quanto a qualidade externa, diminuindo o número de defeitos.
 
-
-\section{Definições incompletas} 
-\label{sec:tdd-definicoes-incompletas}
-
-Apesar de sua popularidade, existem muitas definições incompletas sobre TDD. A maioria delas de maneira geral levam em conta
-apenas a parte do teste, e dizem apenas
-que "TDD é uma prática de desenvolvimento de software na qual o programador deve escrever um teste antes de escrever o código".
-Definições como essa não definem todos os pontos-chave da prática, como a utilização desse processo para guiar o design e
-a obrigação de sempre escrever o código mais simples possível.
-
-Janzen \cite{tdd-taxonomy} exemplica esse problema mostrando a definição no livro \textit{JUnit in Action} \cite{junit-in-action}:
-\textit{Test-Driven Development é uma prática de programação que instrui desenvolvedores a escrever código novo apenas se um teste
-automatizado estiver falhando, e a eliminar duplicação. O objetivo de TDD é "código claro que funcione"}. 
-Entretanto, muitos autores lembram que TDD é na verdade uma prática de design \cite{tdd-taxonomy} \cite{aim-fire}, 
-e citam sempre a famosa frase do Ward Cunningham, um dos pioneiros da Programação Extrema:
-\textit{Programação Teste Primeiro (Test-First Programming) não é uma prática de testes}. 
-
-Entender que TDD é na verdade sobre análise e design seja talvez a parte mais complicada e desafiadora para novos adotantes da prática. 
-
-\section{História de TDD}
-
-\section{Diferentes perspectivas}
-
-TODO discussao do janzen sobre abordagem test, driven e development 
-
-\section{O Ciclo} 
+\section{O Ciclo de TDD} 
 \label{sec:tdd-ciclo}
 
-De forma mais ampla, podemos definir o ciclo de TDD da seguinte maneira:
+De forma mais ampla, podemos definir o ciclo de TDD da seguinte maneira \cite{TDDByExample}:
 
 \begin{enumerate}
 	\item adicione um teste; 
@@ -145,6 +120,95 @@ mais claro e, por consequência, facilitando sua evolução.
 Como TDD faz com que a prática de testes seja utilizada para receber informações sobre o design, 
 a prática de refatoração é parte vital do processo já que o programador muda de ideia muitas vezes sobre a interface que determinada
 classe deve ter, e para isso, faz uso de práticas de refatoração, já muito discutida na literatura \cite{fowler-refactoring} \cite{joshua-refactoring}.
+
+\section{Um pequeno exemplo}
+\label{sec:tdd-exemplo}
+
+Suponha o desenvolvimento de uma classe responsável por calcular a sequência de Fibonacci. A primeira e mais simples funcionalidade que
+vem a cabeça é retornar o primeiro elemento da sequência. O primeiro teste então é:
+
+\begin{lstlisting}[frame=trbl]
+@Test
+public void deveRetornar0ParaOElementoZeroDaSequencia() {
+	SequenciaDeFibonacci sequencia = new SequenciaDeFibonacci();
+	assertEquals(0, sequencia.pegaValor(0));
+}
+\end{lstlisting}
+
+Repare que esse trecho de código apresenta erros de compilação: a classe \textit{SequenciaDeFibonacci} ainda não existe. O primeiro
+passo é resolver os erros de compilação, adicionando o seguinte código:
+
+\begin{lstlisting}[frame=trbl]
+public class SequenciaDeFibonacci {
+	public int pegaValor(int sequencia) {
+		return -1;
+	}
+}
+\end{lstlisting}
+
+Ao executar o teste, o JUnit retorna a seguinte mensagem: \textit{java.lang.AssertionError: expected:<0> but was:<-1>}, que significa que
+o teste esperava que o método retornasse o valor 0, mas ao invés disso, retornou o valor -1. Com o teste falhando, o próximo passo é escrever
+o código mais simples que faça o teste passar: nesse caso, basta fazer a função retornar 0.
+
+\begin{lstlisting}[frame=trbl]
+public class SequenciaDeFibonacci {
+	public int pegaValor(int sequencia) {
+		return 0;
+	}
+}
+\end{lstlisting}
+
+O próximo teste é fazer com que o método retorne 1 caso seja o primeiro elemento da lista. O programador então deve escrever o
+seguinte teste:
+
+\begin{lstlisting}[frame=trbl]
+@Test
+public void deveRetornar1ParaOPrimeiroElementoDaSequencia() {
+	SequenciaDeFibonacci sequencia = new SequenciaDeFibonacci();
+	assertEquals(1, sequencia.pegaValor(1));		
+}
+\end{lstlisting}
+
+O teste falha. O programador agora deve fazer o teste passar, escrevendo o código mais simples possível:
+
+\begin{lstlisting}[frame=trbl]
+public int pegaValor(int sequencia) {
+	return sequencia;
+}
+\end{lstlisting}
+
+Para finalizar, a próxima funcionalidade é fazer com que o método, dado uma entrada maior que 1, retorne sempre a soma dos dois anteriores.
+Para isso, o programador deve escrever um teste:
+
+\begin{lstlisting}[frame=trbl]
+@Test
+public void deveRetornarASomaDosAnterioresCasoOElementoSejaMaiorQue1() {
+	SequenciaDeFibonacci sequencia = new SequenciaDeFibonacci();
+
+	assertEquals(1, sequencia.pegaValor(2));
+	assertEquals(2, sequencia.pegaValor(3));	
+	assertEquals(3, sequencia.pegaValor(4));
+	assertEquals(5, sequencia.pegaValor(5));
+	assertEquals(8, sequencia.pegaValor(6));
+}
+\end{lstlisting}
+
+Repare que esse teste possui mais de uma asserção. A discussão de técnicas para escrita de testes de unidade foge do escopo do trabalho,
+mas pode ser encontrado em \cite{xunit}. Esse teste falha. O programador agora escreve o código mais simples que faça o teste passar:
+
+\begin{lstlisting}[frame=trbl]
+public int pegaValor(int sequencia) {
+	if (sequencia <= 1) return sequencia;
+    else return pegaValor(sequencia-1) + pegaValor(sequencia-2);
+}
+\end{lstlisting}
+
+Com os testes passando, o programador é livre para fazer qualquer refatoração, já que ele tem uma bateria de testes de regressão que o
+avisará caso algum erro seja introduzido durante esse processo. No exemplo acima, o programador poderia facilmente refatorar a função
+\textit{pegaValor} para resolver o problema de maneira iterativa, já que a solução recursiva apresenta um péssimo desempenho \cite{clrs}.
+ 
+Esse é um exemplo de utilização de TDD, que serve unicamente para mostrar a mecânica da prática. Por ser um problema simples de resolver,
+existe pouca atividade relacionada à design. Na seção \ref{sec:tdd-e-design} a relação entre TDD e design será melhor abordada.
 
 \section{Passos de bebê}
 \label{sec:tdd-baby-steps}
@@ -254,7 +318,8 @@ o programador esteja confiante sobre o trecho de código que está escrevendo na
 não esteja tão confiante, TDD permite a ele ir mais devagar e dar passos de bebê, obtendo feedback mais rápido sobre o código que está escrevendo. 
 
 No exemplo acima, o método \textit{vezes} poderia ser considerado simples por um programador experiente, que optaria por chegar à
-mesma solução acima de maneira mais rápida, tomando passos maiores.
+mesma solução acima de maneira mais rápida, tomando passos maiores. O mesmo ocorreu no exemplo da seção \ref{sec:tdd-exemplo}, aonde o
+programador tomou passos um pouco maiores e em basicamente três etapas o programador chegou à solução final.
 
 \section{Padrões para a Prática de TDD}
 \label{sec:tdd-patterns}
@@ -265,6 +330,29 @@ tdd patterns e red/green bar patterns (beck) sec:tdd-patterns
 
 feedback (exemplo do MortalityTable do Aim, fire), nada de bduf
 
+\section{Definições incompletas} 
+\label{sec:tdd-definicoes-incompletas}
+
+Apesar de sua popularidade, existem muitas definições incompletas sobre TDD. A maioria delas de maneira geral levam em conta
+apenas a parte do teste, e dizem apenas
+que "TDD é uma prática de desenvolvimento de software na qual o programador deve escrever um teste antes de escrever o código".
+Definições como essa não definem todos os pontos-chave da prática, como a utilização desse processo para guiar o design e
+a obrigação de sempre escrever o código mais simples possível.
+
+Janzen \cite{tdd-taxonomy} exemplica esse problema mostrando a definição no livro \textit{JUnit in Action} \cite{junit-in-action}:
+\textit{Test-Driven Development é uma prática de programação que instrui desenvolvedores a escrever código novo apenas se um teste
+automatizado estiver falhando, e a eliminar duplicação. O objetivo de TDD é "código claro que funcione"}. 
+Entretanto, muitos autores lembram que TDD é na verdade uma prática de design \cite{tdd-taxonomy} \cite{aim-fire}, 
+e citam sempre a famosa frase do Ward Cunningham, um dos pioneiros da Programação Extrema:
+\textit{Programação Teste Primeiro (Test-First Programming) não é uma prática de testes}. 
+
+Entender que TDD é na verdade sobre análise e design seja talvez a parte mais complicada e desafiadora para novos adotantes da prática. 
+
+\section{História de TDD}
+
+\section{Diferentes perspectivas}
+
+TODO discussao do janzen sobre abordagem test, driven e development
 ---
 
 
