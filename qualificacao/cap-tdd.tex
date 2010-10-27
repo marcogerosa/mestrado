@@ -326,6 +326,24 @@ programador tomou passos um pouco maiores e em basicamente três etapas o progra
 
 tdd patterns e red/green bar patterns (beck) sec:tdd-patterns
 
+\subsection{Testes independentes}
+
+Um teste deve ser totalmente isolado do outro. A bateria de testes gerada pelo programador durante a prática de TDD servirá
+durante todo o ciclo de desenvolvimento do projeto já que com eles o programador consegue executar testes de regressão
+o tempo todo e descobrir se algum erro foi introduzido durante uma refatoração ou implementação de uma nova funcionalidade.
+
+Caso um teste afete o resultado do outro, ao rodar a bateria de testes e alguns desses testes falharem, é impossível
+saber exatamente quais testes falharam por erros introduzidos no código e quais testes falharam por causa do resultado
+dos testes anteriores. Isso faz com que o programador tenha mais dificuldades para encontrar um determinado problema.
+
+Além disso, caso um teste dependa de outro, o programador fica impossibilitado de extrair um sub-conjunto de testes dessa
+bateria. Isso é uma prática comum quando a bateria de testes cresce e passa a levar muito tempo para ser executada.
+
+Kent Beck ainda diz que teste isolados encorajam o programador a compor soluções a partir de muitos objetos altamente coesos
+e pouco acoplados \cite{TDDByExample}. Ele comenta de sua experiência pessoal e diz que não conseguia fazer isso regularmente até
+começar a escrever testes realmente isolados. 
+
+
 \section{Feedback e Big-Design Up Front}
 
 feedback (exemplo do MortalityTable do Aim, fire), nada de bduf
