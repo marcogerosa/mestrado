@@ -343,6 +343,69 @@ Kent Beck ainda diz que teste isolados encorajam o programador a compor soluçõ
 e pouco acoplados \cite{TDDByExample}. Ele comenta de sua experiência pessoal e diz que não conseguia fazer isso regularmente até
 começar a escrever testes realmente isolados. 
 
+\subsection{Lista de testes a fazer}
+
+Uma boa prática é manter uma lista de testes a fazer. Um programador experiente geralmente tem uma série de ítens em sua cabeça
+que sabe que deve fazer para finalizar determinada atividade. Manter uma lista desses ítens permite com que o programador 
+consiga focar no trabalho que está fazendo, sem se preocupar em esquecer algum desses ítens. 
+Essa lista pode ter testes a serem implementados, refatorações a serem feitas, etc. 
+
+Além disso, o programador não deve escrever testes em massa para as funcionalidades que ele deseja implementar. Supondo que o programador
+escreva 10 testes diferentes para um determinado comportamento de uma classe. Caso ele deseje alterar, por exemplo, a ordem dos parâmetros
+de entrada do método, ele deverá alterar em muitos pontos diferentes, forçando-o a não executar essa refatoração \cite{TDDByExample}.
+
+\subsection{Escreva a asserção antes}
+
+Uma possível maneira de se começar o teste é escrevendo a asserção antes. No exemplo da seção \ref{tdd-exemplo}, por exemplo, o 
+o programador poderia ter começado o teste da seguinte forma:
+
+\begin{lstlisting}[frame=trbl]
+@Test
+public void deveRetornar0ParaOElementoZeroDaSequencia() {
+	// ...
+	assertEquals(0, sequencia.pegaValor(0));
+}
+\end{lstlisting}
+
+Dessa maneira o programador, além de pensar primeiro no que ele espera de saída desse método, ele se preocupa também 
+em fazer com que esse comportamento seja facilmente invocado, simplificando ainda mais o código que será escrito. 
+
+\subsection{Engane até completar}
+
+Em alguns casos, fazer o método retornar o mais simples possível pode ajudar o programador a entender melhor o problema.
+O método sugere que o programador retorne uma constante e vá gradualmente transformando essa constante em uma expressão
+utilizando variáveis. A primeira implementação de um método \textit{somar} por exemplo, poderia ser o retorno do 
+próprio resultado:
+
+\begin{lstlisting}[frame=trbl]
+@Test
+public void deveSomarDoisNumeros() {
+	assertEquals(5, calculadora.soma(2,3));
+}
+
+public class Calculadora {
+	public int soma(int a, int b) {
+		return 5;
+	}
+}
+\end{lstlisting}
+
+O teste irá passar, e com os testes verdes o programador pode então refatorar. Nesse momento, o programador então
+perceberia a duplicação de dados que existe entre o código de testes e o código de produção (no caso o número 5) e 
+mudaria o código da seguinte maneira:
+
+\begin{lstlisting}[frame=trbl]
+public class Calculadora {
+	public int soma(int a, int b) {
+		return a+b;
+	}
+}
+\end{lstlisting}
+
+Segundo Beck, existem algumas vantages em utilizar essa técnica como, por exemplo, o fator psicológico de estar
+trabalhando com os testes passando: o programador pode refatorar com mais segurança. Além disso, começar a partir
+de um exemplo concreto (como é o caso da função retornando 5 diretamente) e ir para a generalização ajuda o programador
+a não se confundir \cite{TDDByExample}.
 
 \section{Feedback e Big-Design Up Front}
 
