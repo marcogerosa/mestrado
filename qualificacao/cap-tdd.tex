@@ -481,33 +481,173 @@ Entretanto, muitos autores lembram que TDD é na verdade uma prática de design 
 e citam sempre a famosa frase do Ward Cunningham, um dos pioneiros da Programação Extrema:
 \textit{Programação Teste Primeiro (Test-First Programming) não é uma prática de testes}. 
 
+Por esse motivo, TDD é também conhecido por \textit{Test-Driven Design} (Design Guiado por Testes) ou \textit{Test-First Design}
+(Design Testando Primeiro).
+
 \subsection{Diferentes perspectivas}
 
-TODO discussao do janzen sobre abordagem test, driven e development
+
+\subsection{Feedback no design}
+
+TDD permite ao programador obter rápido feedback sobre o design de suas classes. Escrever um teste antes faz com que
+a classe-alvo seja fácil de testar, e por consequência, tenha uma alta testabilidade. Existe uma sinergia muito
+grande entre uma classe com alta testabilidade e um bom design: se o programador busca por testabilidade,
+ele acaba criando um bom design; se o programador busca por um bom design, ele acaba escrevendo um design mais testável \cite{feathers-synergy}.  
+
+O simples ato de escrever um teste antes faz o programador pensar em uma série de fatores 
+sobre a classe que está sendo desenvolvida. Imagine um teste para uma 
+classe responsável por gerar uma nota fiscal à partir de uma fatura:
+
+\begin{lstlisting}[frame=trbl]
+@Test
+public void deveGerarUmaNotaFiscal() {
+	GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal();
+	
+	Fatura fatura = criaFaturaDeExemplo();
+	
+	NotaFiscal nf = gerador.gera(fatura);
+	assertEquals(fatura.getValor() * 0.2, nf.getValorImposto());
+}
+\end{lstlisting}
+
+O teste acima provê informações sobre o design, como:
+
+\begin{enumerate}
+	\item dependências: essa classe depende de alguma outra?
+	\item assinatura do método \textit{gera}: O método gera deve receber uma fatura e retornar uma nota fiscal?
+	\item nomenclatura: o nome da classe e o nome do método estão claros?
+\end{enumerate}
+
+Repare que todo esse feedback acontece sem nem mesmo o programador ter começado a implementar a classe. A vantagem é que
+não existe custo de mudança nesse momento.
+
+Um dos maiores problemas do desenvolvimento de sistemas orientados a objetos é o gerenciamento de dependências. É muito fácil
+escrever um módulo altamente acoplado.
+Ao escrever um teste antes, o programador se vê forçado a deixar as dependências dessa classe explícitas, 
+geralmente recebendo-as através do construtor da classe. Com essas dependências explícitas, o programador passa a lidar 
+melhor com elas e passa a gerenciá-las melhor, pois caso ele continue aumentando o acoplamento dessa classe, o teste ficará
+mais complexo também. Além disso, ao fazer TDD, o programador realmente se preocupa com os contratos das classes nas quais
+a classe-alvo dependerá. Esse contrato na maioria das vezes viram interfaces e acabam sendo implementadas por outras classes,
+aumentando a estabilidade dessa interface. Por esse motivo, podemos dizer que TDD faz com que o programador acople sua classe
+geralmente com módulos mais estáveis. 
+
+Para exemplificar isso, imagine um programa que deve ler de uma determinada interface e escrever em outra. O código finalgerado 
+utilizando-se TDD é algo similar ao código abaixo:
+
+\begin{lstlisting}[frame=trbl]
+public interface Leitor {
+  boolean temCaracteres();
+  string leCaracteres();
+}
+
+public interface Escritor {
+  void escreve(string conteudo);
+}
+
+public class Copiadora {
+  private Leitor leitor;
+  private Escritor escritor;
+
+  public Copiadora(Leitor leitor, Escritor escritor) {
+    this.leitor = leitor;
+    this.escritor = escritor;
+  }
+
+  public void copiar() {
+    while (leitor.temCaracteres()) {
+      escritor.escreve(leitor.leCaracteres());
+    }
+  }
+}
+\end{lstlisting}
+
+Veja que a classe \textit{Copiadora} depende de classes que implementam \textit{Leitor} e \textit{Escritor}. Essas interfaces
+surgiram da necessidade do programador de escrever o teste: caso ele não recebesse tanto um leitor quanto um escritor, ele não
+conseguiria testar e fazer asserções sobre o comportamento da \textit{Copiadora}. Nesse momento, o programador então criou interfaces
+com os comportamentos que ele esperaria de um leitor e de um escritor. Essas interfaces dificilmente serão alteradas, o que faz com que
+a classe Copiadora seja acoplada com módulos estáveis \cite{bob-martin}. Essa preocupação com dependências é um processo natural na prática de TDD.
+
+Além disso, o teste pode dar feedback na coesão da classe. O teste tende a mostrar ao programador quando uma classe está assumindo mais
+de uma responsabilidade. Pensando novamente no exemplo da nota fiscal, imagine que agora exista um agrupamento a se fazer de acordo com os 
+ítens que existem na fatura. O programador criaria os seguintes testes:
+
+\begin{lstlisting}[frame=trbl]
+@Test
+public void deveGerarNotaFiscalEAgruparPorAliquota() {
+	GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal();
+	
+	Fatura fatura = criaFaturaDeExemploComServicosDeAliquotasDiferentes();
+	
+	List<NotaFiscal> nfs = gerador.gera(fatura);
+	assertEquals(1, nfs.size());
+}
+
+@Test
+public void deveGerarNotaFiscalEAgruparPorSerie() {
+	GeradorDeNotaFiscal gerador = new GeradorDeNotaFiscal();
+	
+	Fatura fatura = criaFaturaDeExemploComServicosDeSeriesDiferentes();
+	
+	List<NotaFiscal> nfs = gerador.gera(fatura);
+	assertEquals(1, nfs.size());
+}
+\end{lstlisting}
+
+Veja que ambos os testes são praticamente idênticos, com a exceção de que agora o teste precisa levar em conta o algoritmo de agrupamento. 
+O teste deixa claro que a classe agora tem mais de uma responsabilidade: além de gerar notas, ela ainda sabe agrupar essas notas. O programador
+deve então extrair esse comportamento para uma outra classe, responsável unicamente por isso. O código gerado seria:
+
+\begin{lstlisting}[frame=trbl]
+public interface AlgoritmoDeAgrupamento {
+	List<NotaFiscal> agrupa(List<ItemDeNotaFiscal> itens);
+}
+
+public class GeradorDeNotaFiscal {
+	private AlgoritmoDeAgrupamento algoritmo;
+	
+	public GeradorDeNotaFiscal(AlgoritmoDeAgrupamento algoritmo) {
+		this.algoritmo = algoritmo;
+	}
+	
+	public void gera(Fatura fatura) {
+		List<ItemDeNotaFiscal> itens = geraItens();
+		return algoritmo.agrupa(itens);
+	}
+}
+\end{lstlisting}
+
+O código acima mostra que a classe \textit{GeradorDeNotaFiscal} agora depende de um algoritmo de agrupamento (representado pela interface
+\textit{AlgoritmoDeAgrupamento}). Cada classe agora tem sua responsabilidade bem definida. A extração de classes é algo muito comum
+durante a prática de TDD, já que o programador passa a perceber que determinados comportamentos não pertencem à classe-alvo e ele
+acaba extraindo esse comportamento para uma outra classe. 
+
+Outro ponto interessante é que o código gerado por TDD é convenientemente invocável \cite{bob-martin}, isto é, invocar um comportamento em uma classe
+é fácil, e geralmente basta apenas invocar um único método. Ao escrever um teste antes, o programador geralmente quer apenas invocar
+o comportamento e imediatamente testar sua saída. Isso evita o programador de criar uma classe aonde, para invocar determinado comportamento,
+o mesmo deve invocar 2 ou mais métodos em uma determinada ordem para que isso aconteça. 
+Veja que no código de testes da classe \textit{GeradorDeNotaFiscal}, o programador
+invoca apenas um método (no caso, o método \textit{gera}) e já verifica o resultado. 
+
+Naturalmente esse processo de feedback depende da experiência do programador em desenvolvimento de software e em especial 
+com orientação a objetos. O que o teste faz é basicamente evidenciar os problemas, e cabe ao programador notá-los e
+corrigí-los.
+ 
+\subsection{Big-Design Up Front}
 
 
-\section{Feedback e Big-Design Up Front}
+
+
 
 feedback (exemplo do MortalityTable do Aim, fire), nada de bduf
 
 
-\section{História de TDD}
-
 ---
 
 
-
-lista de proximas coisas a fazer
-
 definir codigo de producao?
 
-exemplo parecido com o do money (simples e dpeois completo) bowling?
-
-história do tdd
 
 tdd = tfd + refatoracao
-
-refatoracao tanto de baixo nivel quanto de alto nivel
 
 tdd é documentação?
 
