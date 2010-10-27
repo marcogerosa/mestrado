@@ -370,7 +370,8 @@ public void deveRetornar0ParaOElementoZeroDaSequencia() {
 Dessa maneira o programador, além de pensar primeiro no que ele espera de saída desse método, ele se preocupa também 
 em fazer com que esse comportamento seja facilmente invocado, simplificando ainda mais o código que será escrito. 
 
-\subsection{Engane até completar}
+\subsection{Fingir até conseguir}
+\label{sec:fake-it}
 
 Em alguns casos, fazer o método retornar o mais simples possível pode ajudar o programador a entender melhor o problema.
 O método sugere que o programador retorne uma constante e vá gradualmente transformando essa constante em uma expressão
@@ -406,6 +407,41 @@ Segundo Beck, existem algumas vantages em utilizar essa técnica como, por exemp
 trabalhando com os testes passando: o programador pode refatorar com mais segurança. Além disso, começar a partir
 de um exemplo concreto (como é o caso da função retornando 5 diretamente) e ir para a generalização ajuda o programador
 a não se confundir \cite{TDDByExample}.
+
+\subsection{Triangularização}
+\label{sec:triangularizacao}
+
+O programador pode tentar triangularizar para chegar na abstração correta para o problema. No exemplo da seção \ref{sec:fake-it} acima, 
+após a primeira implementação retornando uma constante, o programador poderia ter triangularizado e colocado mais um teste para
+forçar a extração da constante em variáveis:
+
+\begin{lstlisting}[frame=trbl]
+@Test
+public void deveSomarDoisNumeros() {
+	assertEquals(5, calculadora.soma(2,3));
+	assertEquals(7, calculadora.soma(3,4));
+}
+
+public class Calculadora {
+	public int soma(int a, int b) {
+		return a+b;
+	}
+}
+\end{lstlisting}
+
+Essa abordagem é interessante já que o ideal é que o programador só crie uma abstração caso haja duas ou mais situações em que
+faça sentido. Apesar disso, Kent Beck comenta que ela nos leva à um loop infinito: após a implementação, uma das asserções torna-se
+inútil; mas ao remover essa abstração, então não há mais triangularização e portanto não há necessidade para abstrair \cite{TDDByExample}.
+
+\subsection{Implementação Óbvia}
+
+Algumas implementações são simples o suficientes para que não haja necessidade de triangularizar ou de fingir até conseguir. Nos exemplos
+dados nas seções \ref{sec:fake-it} e \ref{sec:triangularizacao} acima, a função \textit{soma} por exemplo, é simples o suficiente para
+ser implementada diretamente.
+
+O problema de sempre usar a implementação óbvia, é que o programador às vezes não pensa na solução mais simples. Fazer "código claro" ao
+mesmo tempo em que se preocupa com "código que funcione" é muita coisa para se fazer de uma vez só \cite{TDDByExample}. A ideia é portanto
+misturar esses padrões para, primeiro resolver a parte que faz o código funcionar, para depois se preocupar em fazer o código ficar claro.
 
 \section{Feedback e Big-Design Up Front}
 
