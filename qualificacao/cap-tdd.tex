@@ -528,12 +528,13 @@ public void deveGerarUmaNotaFiscal() {
 }
 \end{lstlisting}
 
-O teste acima provê informações sobre o design, como:
+Ao escrever o teste acima, o programador acaba fazendo perguntas a si mesmo, que diretamente provêem informações sobre o design. Perguntas como:
 
 \begin{enumerate}
-	\item dependências: essa classe depende de alguma outra?
-	\item assinatura do método \textit{gera}: O método gera deve receber uma fatura e retornar uma nota fiscal?
-	\item nomenclatura: o nome da classe e o nome do método estão claros?
+	\item Essa classe depende de alguma outra para funcionar?
+	\item O método \textit{gera} deve receber uma fatura e retornar uma nota fiscal?
+	\item O nome da classe e o nome do método estão claros?
+	\item Está trabalhoso invocar esse comportamento?
 \end{enumerate}
 
 Repare que todo esse feedback acontece sem nem mesmo o programador ter começado a implementar a classe. A vantagem é que
