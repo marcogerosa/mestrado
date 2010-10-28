@@ -1,7 +1,118 @@
 \chapter{Entrevista}
 \label{ape:entrevista}
 
-Texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto texto texto texto texto texto texto texto
-texto texto texto texto texto texto.
+\section{Dados básicos}
 
+\begin{enumerate}
+	\item Nome completo?
+	\item Empresa em que atua?
+	\item E-mail para contato?
+	\item Autoriza o uso da entrevista para a pesquisa?
+	\item Tempo total de entrevista?
+\end{enumerate}
+
+\section{Caracterização do desenvolvedor}
+
+\begin{enumerate}
+	\item Qual a sua formação?
+	\item Há quanto tempo atua na área de desenvolvimento de software?
+	\item Você desenvolve sistemas orientados a objetos há quanto tempo?	
+	\item Fale-me um pouco sobre os projetos que já desenvolveu e os desafios neles encontrados?
+	\item Em sua opinião, qual a maior dificuldade na criação de sistemas OO de qualidade?
+	\item Com que frequência você costuma ler livros ou ir a congressos para se atualizar sobre as novas práticas? Quais?
+\end{enumerate}
+
+\section{A Prática de TDD}
+
+\begin{enumerate}
+	\item Você pratica TDD há quanto tempo?
+	\item Como tem sido sua relação com a prática?
+	\item O que é TDD em sua opinião?
+	\item Poderia me explicar como você pratica TDD no dia-a-dia?
+	\item Você pratica TDD o tempo todo?
+	\item Por que você pratica TDD?
+\end{enumerate}
+
+\section{Relação entre TDD e Design}
+
+\begin{enumerate}
+	\item{Em sua experiência, você acredita que classes muito acopladas são realmente prejudiciais?}
+		\begin{enumerate}
+			\item Como você combate esse problema?
+			\item TDD te ajuda de alguma forma? Como?
+			\item Você acha que mesmo com TDD é possível criar classes com alto acoplamento? 
+		\end{enumerate}
+	\item{Você já programou classes com baixa coesão?}
+		\begin{enumerate}
+			\item Por que isso aconteceu?
+			\item Você acha que TDD te ajudaria a resolver esse problema?
+			\item Você acha que mesmo com TDD é possível criar classes com baixa coesão? 
+		\end{enumerate}
+	\item Você acredita que TDD influencia na qualidade do design de classes?
+	\begin{enumerate}
+		\item Como ele influencia no seu design?
+		\item Escrever o teste antes ajuda nesse processo?
+		\item E por que esse efeito não aconteceria caso você escrevesse o teste depois?
+		\item Como seria criar designs sem a ajuda dos testes?
+		\item Poderia dar um exemplo (usando código se preferir) de como o TDD influencia o seu design? Algum outro exemplo?
+		\item Além de receber as dependências pelo construtor, você vê alguma outra maneira aonde TDD te ajude?
+			\begin{enumerate}
+				\item Um problema famoso ao começar a praticar TDD é o construtor começar a receber muitos parâmetros. Quando você começa a perceber isso?
+				\item E como resolve esse problema?
+			\end{enumerate}
+	\end{enumerate}
+	\item Sabemos que classes com muitos métodos ou métodos com muitas linhas é prejudicial para o código. Como você faz para não escrever classes com esses problemas?
+	\item Você conhece os princípios SOLID do Robert Martin? Se sim,
+	\begin{enumerate}
+		\item Você sempre os utilizou?
+		\item TDD teve alguma influencia nisso?
+	\end{enumerate}
+\end{enumerate}
+
+\section{Relação entre TDD e experiência}
+
+\begin{enumerate}
+	\item Como você compararia as primeiras vezes que você praticou TDD com agora?
+	\item Você acha que a experiência influencia no resultado final?
+	\item Em sua opinião, como você acha que seria o design de uma pessoa sem experiência em desenvolvimento de software e sem experiência em OO, mas praticando TDD?
+\end{enumerate}
+
+\section{TDD e outras práticas ágeis}
+
+\begin{enumerate}
+	\item Você acha que outras práticas ágeis influenciam na qualidade do seu design?
+	\item Vocês praticam programação pareada? Com que frequência? Quando vocês fazem programação pareada, você acha que isso ajuda mais no design do que TDD?
+	\item Se só praticassem programação pareada, por exemplo, você acha que mesmo assim precisaria de TDD?
+	\item Quais outras práticas ágeis você acha que ajuda você a melhorar o design?
+\end{enumerate}
+
+\section{TDD e experiência pessoal}
+
+(Nesse ponto o entrevistado poderá mostrar algum trecho de código do projeto em que atua.)
+
+\begin{enumerate}
+	\item Tem algum exemplo em mente aonde TDD ajudou a resolver o problema de maneira elegante?
+	\item E aonde TDD atrapalhou?
+		\begin{enumerate}
+			\item Você acha que TDD se aplica à todos os casos? Se não, em quais ele não se aplica e porquê?
+		\end{enumerate}
+	\item Poderia me mostrar algum trecho de código que você acha que possui um bom design e me explicar o porquê da sua opinião?
+		\begin{enumerate}
+			\item Você fez esse trecho de código usando TDD?
+			\item Você estava sozinho ou pareando com outro desenvolvedor?
+			\item Esse design surgiu naturalmente ou tiveram problemas?
+		\end{enumerate}
+\end{enumerate}
+
+
+\section{Opiniões finais}
+
+\begin{enumerate}
+	\item Você acha que TDD resolve de vez o problema de designs que degradam ao longo do tempo?
+	\item O que mais você faria para tentar resolver esse problema?
+	\item Existem algumas críticas em relação à TDD, como "TDD é improdutivo, afinal você gasta muito tempo escrevendo os testes". O que você acha disso?
+		\begin{enumerate}
+			\item A longo prazo, você vê vantagens em gastar esse tempo utilizando TDD?
+		\end{enumerate}
+	\item Gostaria de dizer mais algo sobre TDD que não disse nas perguntas anteriores?
+\end{enumerate}
