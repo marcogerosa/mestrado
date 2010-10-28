@@ -644,14 +644,44 @@ Naturalmente esse processo de feedback depende da experiência do programador em
 com orientação a objetos. O que o teste faz é basicamente evidenciar os problemas, e cabe ao programador notá-los e
 corrigí-los.
  
-\subsection{Big-Design Up Front}
+\subsection{Evitando Big Design Up-Front}
 
+Equipes que utilizam programação extrema, por exemplo, 
+deixam de fazer o chamado \textit{big design up-front (BDUF)}, aonde a ideia é desenhar o sistema inteiro de uma vez, para fazer design de maneira evolutiva,
+mantendo o código o mais claro e simples possível, refatorando sempre que há necessidade, tomando decisões de design com a consciência de que elas
+serão alterados no futuro \cite{is-design-dead}.
 
+Como discutido anteriormente, TDD é uma prática essencial para designs emergentes. A prática permite que o programador acompanhe a 
+evolução do design e, ao perceber a necessidade de refatoração, dá a segurança para o programador fazê-la sem medo de introduzir algum erro. 
+TDD permite com que esse design evolua de maneira simples. 
 
+Ao fazer BDUF e tentar prever todos os problemas e abstrações que o software eventualmente terá, o programador na maioria dos casos
+acaba gerando um código demasiado complexo, sem necessidade para tal. Kent Beck cita o exemplo da criação de uma "Tabela de Mortalidade",
+aonde dado uma pessoa, essa tabela deveria conter os valores de acordo com a idade dela \cite{aim-fire}. A implementação natural
+seria criar uma classe TabelaDeMortalidade, que recebe uma \texit{Pessoa} como parâmetro. O código seria algo como:
 
+\begin{lstlisting}[frame=trbl]
+	TabelaDeMortabilidade tabelaAtual = new TabelaDeMortalidade(JoaoDaSilva);
+	assertEquals(tabelaEsperada, tabelaAtual);
+\end{lstlisting}
 
-feedback (exemplo do MortalityTable do Aim, fire), nada de bduf
+Mas, criar uma pessoa é geralmente complicado: uma pessoa tem diversas informações, como nome, endereço, idade. Por exemplo:
 
+\begin{lstlisting}[frame=trbl]
+	Pessoa JoaoDaSilva = new Pessoa("Joao da Silva", 23, new Endereco("Rua X", "Bairro Y", "SP"), Pessoa.NAO_FUMANTE, ...);
+\end{lstlisting}
+
+O programador ao perceber isso no teste pode pensar em uma solução mais simples para o problema: a Tabela de Mortalidade depende
+somente da idade da pessoa, e portanto ela poderia passar a receber somente a idade, simplificando assim o design.
+
+\begin{lstlisting}[frame=trbl]
+	TabelaDeMortabilidade tabelaAtual = new TabelaDeMortalidade(48);
+	assertEquals(tabelaEsperada, tabelaAtual);
+\end{lstlisting}
+
+Observe a primeira implementação possui uma flexibilidade de design desnecessária: ela recebe uma \textit{Pessoa} quando na verdade só
+precisaria receber a idade dela. Sem um feedback rápido e constante (que é dado pela prática de TDD), o programador dificilmente
+perceberia isso.
 
 ---
 
