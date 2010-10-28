@@ -2,21 +2,24 @@
 \chapter{Planejamento do Experimento}
 \label{cap:planejamento}
 
-\section{Propósito do Estudo} 
+\section{Objetivo do Estudo} 
 \label{sec:planejamento-proposito}
 
-O propósito deste estudo de caso é avaliar a influência de Test-Driven Development na qualidade do 
-design do software durante toda a sua evolução. Este estudo visa entender como os programadores utilizam o 
-feedback dos testes para guiar o design, e dessa maneira influenciar na qualidade final do mesmo. 
-Além disso, este estudo busca entender os efeitos da prática na qualidade do design quando executados 
-por pessoas com diferentes níveis técnicos dentro de projetos reais.
+Conforme discutido no capítulo \ref{cap:trabalhos-relacionados}, muitos trabalhos avaliaram TDD e
+perceberam uma melhora (mas muitas vezes sem nenhuma significância estatística) no design de classes,
+como um menor acoplamento, uma maior coesão, e até mesmo mais simplicidade nas classes quando desenvolvidas
+utilizando-se a prática. Mas poucos estudos tentam entender como TDD e a prática de escrever o teste antes do código real
+realmente guiam o programador em direção à essas melhorias.
 
-Para estudar essa influência, este estudo faz uso de métodos qualitativos de pesquisa.
+O objetivo deste estudo é portanto avaliar e entender a influência de Test-Driven Development na qualidade do 
+design do software durante toda a sua evolução. Para alcançar esse objetivo, 
+este trabalho propõe estudos de caso em 3 empresas de desenvolvimento de software brasileiras,
+utilizando técnicas como entrevistas, observação de ambientes reais e análise estática de código-fonte.
 
 \section{Métodos qualitativos de pesquisa} 
 \label{sec:planejamento-qualitativa}
 
-O estudo experimental de engenharia de software sempre foi uma atividade difícil. Uma das razões para isso é o
+Conduzir um estudo experimental em engenharia de software sempre foi uma atividade difícil. Uma das razões para isso é o
 fator humano, muito presente no processo de desenvolvimento de software, como sugerido por métodos ágeis em geral \cite{AgileManifesto}. 
 Dessa maneira, o paradigma de pesquisa analítico não é suficiente para investigar casos reais complexos envolvendo pessoas
 e suas interações com a tecnologia \cite{guidelines-case-study}.
@@ -48,21 +51,31 @@ destaca que os limites entre o fenomêno e seu contexto podem não ser claros, e
 de caso recolhe informações de poucas entidades (como pessoas, grupos ou organizações) e que também é caracterizado pela
 falta de controle experimental.
 
+Baseando-se no fato de que o processo de desenvolvimento de software envolve diversos fatores humanos e é totalmente sensível
+ao contexto em que ele está inserido, este trabalho é composto por um conjunto de estudos de caso, 
+onde são utilizados métodos baseados em teoria fundamentada nos dados para colheta
+e análise dos dados. 
+
 \section{Participantes da pesquisa}
 \label{sec:planejamento-participantes}
 
-O critério usado para convite de empresas para participação na pesquisa foram:
+Cada um dos três estudos de caso será conduzido em uma empresa de desenvolvimento de software do mercado brasileiro. Ao optar
+por pesquisar dentro de uma empresa, estre trabalho se mostra mais preocupado em aumentar o realismo do estudo, porém abrindo mão 
+de um maior controle sobre o ambiente (que seria alcançado em um experimento com alunos dentro de uma universiade, por exemplo) \cite{tripe-experimento}.
+
+O critério levados em consideração no momento de convidar empresas a participar da pesquisa foram:
 
 \begin{itemize}
-	\item Empresa de desenvolvimento de software que utiliza TDD há mais de 1 ano;
-	\item Localizada em São Paulo, para facilitar o processo de entrevista e observação do ambiente;
-	\item Desenvolvedores com diferentes níveis de experiência em TDD, desde iniciantes até experientes; 
+	\item Utilização de TDD há mais de 1 ano;
+	\item Localizada em São Paulo (SP), para facilitar o processo de entrevista e observação do ambiente;
+	\item Desenvolvedores com diferentes níveis de experiência em TDD e em Orientação a Objetos, desde iniciantes até experientes; 
+	\item Possuam projetos que utilizem a tecnologia Java e sejam baseados na web;
 \end{itemize}
 
-De acordo com esses critérios, três empresas do mercado brasileiro de software foram selecionadas. 
-Todas elas desenvolvem softwares de pequeno e médio porte (TODO definir) utilizando a plataforma Java para desenvolvimento.
-
-TODO detalhar mais as empresas
+De acordo com esses critérios, três empresas foram selecionadas. 
+Todas elas desenvolvem softwares de pequeno e médio porte (e por isso entenda-se software entre 20 a 200 mil linhas de código), 
+utilizando a plataforma Java para desenvolvimento. Elas também possuem profissionais com os mais variados níveis de experiência
+na área trabalhando juntos no mesmo time.
 
 \section{Estratégia de pesquisa} 
 \label{sec:planejamento-estrategia}
@@ -74,12 +87,13 @@ vezes fazendo com que os reais fatores de influência fiquem fora do escopo do e
 por definição, conduzidos no mundo real e por isso têm um alto grau de realismo, mas dessa forma sacrificando
 o nível de controle \cite{guidelines-case-study}.
 
-Esta pesquisa, portanto, é um estudo de caso da influência de TDD na qualidade do design do software no 
-contexto de três empresas brasileiras de desenvolvimento de software. 
-Podemos classifica-lá como explanatória \cite{robson}, já que seu principal objetivo é
-procurar por uma explicação para a influência que TDD exerce sobre a qualidade do design.
+Optando por um maior realismo, os dados serão coletados principalmente através de entrevistas com desenvolvedores
+que praticam TDD no dia-a-dia de trabalho e que podem avaliar com propriedade o efeito da prática sobre o
+design orientado a objetos dos seus projetos. Além disso, o ambiente será observado pelo pesquisador afim de 
+capturar informações do cotidiano relevantes para a pesquisa. Por fim, métricas de código serão geradas e
+comparadas com as informações obtidas nas entrevistas.
 
-As sub-seções abaixo mostram como os dados serão colhidos.
+As sub-seções abaixo detalham como os dados serão colhidos em cada etapa da pesquisa.
 
 \subsection{Entrevistas}
 \label{sec:planejamento-estrategia-entrevistas}
@@ -92,17 +106,16 @@ Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor d
 O principal objetivo dessas entrevistas é capturar informações sobre:
 
 \begin{itemize}
-	\item a visão do desenvolvedor sobre a influência de TDD no design
-	\item como o desenvolvedor utiliza o feedback dos testes para guiar o design
-	\item como o desenvolvedor vê a influência que a utilização de TDD junto com outras práticas ágeis, como programação pareada, tem sobre o design
-	\item a relação entre a experiência do programador e os efeitos de TDD na qualidade do design
-	\item os efeitos de TDD sobre a gerênciamento de depêndencias em sistemas orientados a objetos
-	\item a relação entre TDD e boas práticas de orientação a objetos, com os princípios SOLID \cite{bob-martin}
-	\item os efeitos de TDD sobre o acoplamento e a coesão geral das classes do sistema
-	\item A visão do programador sobre a simplicidade que TDD agrega ao processo
+	\item Caracterizar a experiência do programador com desenvolvimento de software, boas práticas de desenvolvimento e TDD;
+	\item A visão do desenvolvedor sobre a influência de TDD no design;
+	\item Como o desenvolvedor utiliza o feedback dos testes para guiar o design;
+	\item Como o desenvolvedor vê a influência que a utilização de TDD junto com outras práticas ágeis, como programação pareada, tem sobre o design;
+	\item A relação entre a experiência do programador e os efeitos de TDD na qualidade do design;
+	\item Os efeitos de TDD sobre a gerênciamento de depêndencias em sistemas orientados a objetos;
+	\item A relação entre TDD e boas práticas de orientação a objetos;
+	\item Os efeitos de TDD sobre o acoplamento e a coesão geral das classes do sistema;
+	\item A visão do programador sobre a simplicidade que TDD agrega ao processo;
 \end{itemize} 
-
-TODO: Mapear perguntas com os objetivos acima
 
 Todas as entrevistas serão gravadas para que possam ser consultadas pelo pesquisador em um momento futuro. Além disso,
 as pesquisas serão sempre feitas por dois observadores, possibilitando que ambos tomem notas separadas e comparem
@@ -110,50 +123,40 @@ suas anotações. O objetivo é diminuir o viés do processo.
 
 As entrevistas serão feitas em dias diferentes. Ao final de cada dia, os pesquisadores se reunirão para discutir
 sobre os pontos levantados no dia corrente e para sugerir melhorias no instrumento de entrevista. 
+A versão final do roteiro de entrevista pode ser encontrado no apêndice \ref{ape:entrevista} desse trabalho.
 
-A versão final do roteiro de entrevista pode ser encontrado nos apêndices desse trabalho.
+Além disso, o processo de codificação \cite{seaman} será feito por ambos os pesquisados separadamente, e só então
+ambos juntarão seus resultados, após uma série de comparações e discussões sobre as diferenças encontradas.
 
 \subsection{Observação do mundo real}
 \label{sec:planejamento-estrategia-observacao}
 
 O pesquisador observará os desenvolvedores em seu ambiente natural para investigar como a 
-prática é conduzida no dia-a-dia pelos desenvolvedores. Através da observação, o pesquisador poderá avaliar se
+prática é conduzida no dia-a-dia pelos desenvolvedores. O período de observação será pré-agendado com o
+líder da equipe para que o pesquisador esteja observando o ambiente em um dia em que atividades de design provavelmente
+acontecerão (o que significa que o pesquisador não estará presente em momentos de correções de erros ou criação de interfaces de usuário, por exemplo).
+O tempo de observação é indeterminado, sendo decidido pelo pesquisador se existe a real necessidade de continuar a observação.
+
+Através da observação, o pesquisador poderá avaliar se
 a respostas dadas na entrevista conferem com o que eles realmente realizam durante o dia de trabalho. Além disso, o pesquisador
 poderá fazer perguntas sobre determinada situação que aconteceu naquele momento.
 
 Os objetivos das observações são:
 
 \begin{itemize}
-	\item descobrir como os programadores praticam TDD (Aniche e Gerosa \cite{aniche-mistakes} mostraram que os desenvolvores tendem a cometer desvios durante o processo).
-	\item descobrir como eles realmente utilizam o feedback dos testes para guiar o design
-	\item verificar se outras práticas ágeis, como programação pareada, influenciam a prática de TDD
-	\item outros maneiras na qual a utilização de TDD influenciou no design
+	\item Descobrir como os programadores praticam TDD (Aniche e Gerosa \cite{aniche-mistakes} mostraram que os desenvolvores tendem a cometer desvios durante o processo);
+	\item Descobrir como eles realmente utilizam o feedback dos testes para guiar o design;
+	\item Verificar se outras práticas ágeis, como programação pareada, influenciam a prática de TDD;
+	\item Outras maneiras na qual a utilização de TDD influenciou no design;
 \end{itemize}
 
 O pesquisador fará anotações sobre o que achar relevante. Ele anotará também o dia e hora que o fato ocorreu, bem como os desenvolvedores
 que estavam participando naquele momento.
 
-\subsection{Engenharia reversa}
-\label{sec:planejamento-estrategia-engenharia-reversa}
-
-O pesquisador utilizará técnicas de engenharia reversa \cite{eng-reversa}, como: "observar o código todo em uma hora",
-aonde a ideia é fazer com que o pesquisador leia o código por uma hora e detalhe os pontos claros e os pontos não-claros do código; 
-"fazer uma visita guiada ao código", aonde um dos desenvolvedores da aplicação apresenta trechos de código e tenta 
-explicar o motivo, vantagens e desvantagens daquela decisão de design.
-
-Os objetivos da utilização dessas técnicas são:
-
-\begin{itemize}
-	\item fazer com que o pesquisador tenha um conhecimento mais profundo sobre o código na qual os desenvolvedores trabalham no dia-a-dia e agregar mais informação ao pesquisador para o processo de análise
-	\item gerar questões sobre possíveis problemas de design e tentar entender o motivo dos mesmos.
-\end{itemize}
-
-Para isso, o código-fonte completo das aplicações será disponibilizado para uso do pesquisador.
-
 \subsection{Métricas de Código}
 \label{sec:planejamento-estrategia-metricas}
 
-Conhecidas métricas de qualidade de design, como acoplamento e coesão, serão calculadas para os códigos em que os desenvolvedores
+Conhecidas métricas de qualidade de design como acoplamento e coesão, discutidas no capítulo \ref{cap:design}, serão calculadas para os códigos em que os desenvolvedores
 atuam. Além disso, \cite{lanza} propõe uma maneira para se descobrir maus cheiros de design através de métricas baseadas nas métricas
 já apresentadas.
 
