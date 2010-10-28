@@ -11,7 +11,7 @@ código de produção quanto o código de testes \cite{agilealliance-tdd} \cite{
 TDD é uma importante prática na Programação Extrema (XP) \cite{XPExplained} já que, como sugerido pelas práticas
 ágeis, o design de um software deve emergir conforme o software cresce. E, para responder rapidamente a essas
 alterações, é necessário um constante \textit{feedback} sobre a qualidade interna e externa do código, e TDD
-provê isso já que TDD faz com que o teste de unidade seja o primeiro cliente real da classe que o programador ainda
+provê isso já que faz com que o teste de unidade seja o primeiro cliente real da classe que o programador ainda
 vai implementar, e isso faz com que ele pense melhor a respeito do comportamento que ele espera dessa classe. Além disso,
 a suíte de testes gerada dá segurança ao programador no momento de uma refatoração pois, caso ele cometa um erro,
 algum dos testes provavelmente irá falhar, avisando-o imediatamente sobre o problema.
@@ -457,7 +457,7 @@ O problema de sempre usar a implementação óbvia, é que o programador às vez
 mesmo tempo em que se preocupa com "código que funcione" é muita coisa para se fazer de uma vez só \cite{TDDByExample}. A ideia é portanto
 misturar esses padrões para, primeiro resolver a parte que faz o código funcionar, para depois se preocupar em fazer o código ficar claro.
 
-\section{TDD é sobre testes?}
+\section{TDD como Prática de Design}
 \label{sec:tdd-e-design}
 
 Apesar do nome não deixar isso explícito, TDD é uma pratica focada em design, e não em testes.
@@ -697,6 +697,11 @@ somente da idade da pessoa, e portanto ela poderia passar a receber somente a id
 Observe a primeira implementação possui uma flexibilidade de design desnecessária: ela recebe uma \textit{Pessoa} quando na verdade só
 precisaria receber a idade dela. Sem um feedback rápido e constante (que é dado pela prática de TDD), o programador dificilmente
 perceberia isso.
+
+É comum descrever TDD como "refatoração mais design testando primeiro" (\textit{TDD = Refactoring + TFD}). A explicação para isso é que o programador
+antes de implementar uma nova funcionalidade, observa o design atual e vê se ele permite que a funcionalidade seja implementada de maneira clara.
+Em caso afirmativo, ele escreve um teste que falha e segue o ciclo. Mas, em caso negativo, o programador então refatora a parte do design afetada
+pela nova funcionalidade de maneira a permitir que seja implementada da maneira mais fácil possível \cite{wambler-tdd}.
 
 ---
 
