@@ -28,10 +28,16 @@ Na prática, TDD obriga que o programador escreva
 um código novo apenas se houver um teste automatizado falhando, e faz com que ele remova duplicação de dados e de código constantemente. 
 Essas duas regras implicam no seguinte ciclo: o programador primeiro deve escrever um pequeno teste que falhe (ou que até mesmo não compile), 
 em seguida deve fazer o teste passar de maneira mais rápida possível e, por fim, deve refatorar toda a duplicação criada \cite{TDDByExample}. 
-Esse ciclo é também conhecido como Vermelho-Verde-Refatora (ou Red-Green-Refactor), já que lembram as cores que o programador geralmente 
-vê quando faz TDD: o vermelho geralmente significa que o teste está falhando e o verde quando o teste foi executado com sucesso. 
+Esse ciclo, exemplificado na figura \ref{fig:red-green-refactor} é também conhecido como 
+Vermelho-Verde-Refatora (ou Red-Green-Refactor), já que lembram as cores que o programador geralmente 
+vê quando faz TDD: o vermelho geralmente significa que o teste está falhando e o verde quando o teste foi executado com sucesso.
 
-% TODO figura red-green-refactor
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{ciclo-tdd}
+  \caption{O ciclo Vermelho-Verde-Refatora}
+  \label{fig:red-green-refactor}
+\end{figure}
 
 TDD apareceu para o mundo de desenvolvimento de softwares em 2001, quando Kent Beck publicou seu trabalho sobre Programação Extrema \cite{XPExplained},
 onde TDD era uma das práticas citadas por ele como essenciais para o processo de desenvolvimento. Conhecida também
@@ -478,7 +484,7 @@ design.
 Mas, apesar de ter o termo "teste" no nome, TDD não é uma prática de testes. O principal motivo dos testes gerados pela prática é o
 feedback sobre o design. Logo após o feedback, a bateria de testes gerada não é descartada pois dá segurança ao programador no caso de uma refatoração
 ou de uma nova implementação. TDD não discute em nenhum momento sobre práticas de teste, como análise do valor-limite ou
-grafo de causa-efeito \cite{art-of-sw-testing}, e portanto \texit{não é uma prática de testes de software}.
+grafo de causa-efeito \cite{art-of-sw-testing}, e portanto \textit{não é uma prática de testes de software}.
 
 \subsection{Definições incompletas} 
 \label{sec:tdd-definicoes-incompletas}
@@ -658,7 +664,7 @@ TDD permite com que esse design evolua de maneira simples.
 Ao fazer BDUF e tentar prever todos os problemas e abstrações que o software eventualmente terá, o programador na maioria dos casos
 acaba gerando um código demasiado complexo, sem necessidade para tal. Kent Beck cita o exemplo da criação de uma "Tabela de Mortalidade",
 aonde dado uma pessoa, essa tabela deveria conter os valores de acordo com a idade dela \cite{aim-fire}. A implementação natural
-seria criar uma classe TabelaDeMortalidade, que recebe uma \texit{Pessoa} como parâmetro. O código seria algo como:
+seria criar uma classe TabelaDeMortalidade, que recebe uma \textit{Pessoa} como parâmetro. O código seria algo como:
 
 \begin{lstlisting}[frame=trbl]
 	TabelaDeMortabilidade tabelaAtual = new TabelaDeMortalidade(JoaoDaSilva);
