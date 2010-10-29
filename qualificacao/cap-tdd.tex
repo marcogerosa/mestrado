@@ -473,6 +473,45 @@ O problema de sempre usar a implementação óbvia, é que o programador às vez
 mesmo tempo em que se preocupa com "código que funcione" é muita coisa para se fazer de uma vez só \cite{TDDByExample}. A ideia é portanto
 misturar esses padrões para, primeiro resolver a parte que faz o código funcionar, para depois se preocupar em fazer o código ficar claro.
 
+\section{Documentação executável}
+\label{sec:tdd-documentacao-executavel}
+
+Manter uma documentação de projeto atualizada é uma tarefa árdua e algumas vezes ela é completamente abandonada pela equipe de desenvolvimento.
+Uma solução para isso é enxergar os testes criados pela prática de TDD como uma documentação; mas uma documentação que é "executável", já que o programador
+pode rodá-la e verificar se está tudo correto.
+
+Dar bons nomes aos testes é uma boa prática, pois eles servirão de documentação para os desenvolvedores, e talvez até para
+pessoas de negócio. O nome de um teste deve ser uma sentença que especifica um determinado comportamento do sistema, e não uma 
+sentença com um texto genérico. O código abaixo mostra um exemplo de teste que especifica um comportamento do sistema e um exemplo aonde
+o nome não é muito claro.
+
+\begin{lstlisting}[frame=trbl]
+public class GeradorDeNotaFiscalTest {
+	// certo
+	public void deveGerarUmaNotaFiscalDeServicosDeTelecomunicacao() { /* ... */ }
+	
+	// certo
+	public void naoDeveGerarUmaNotaFiscalDeServicosDeInternet() { /* ... */ }
+	
+	// errado
+	public void testaTelecomunicacao() { /* ... */ }
+}
+\end{lstlisting}
+
+Repare que o primeiro e o segundos testes especificam um pequeno comportamento do sistema, enquanto o terceiro teste não é muito claro e não
+passa muita informação. Se todos os testes tiverem nomes significativos, ao juntar todos eles, o programador teria realmente uma
+documentação do código. 
+
+O projeto AgileDox \footnote{http://http://agiledox.sourceforge.net/}, por exemplo, pega classes de teste e as 
+transforma em texto corrido, colocando espaços entre as palavras no nome do teste. No exemplo da classe de teste acima, 
+o seguinte documento seria gerado:
+
+\begin{verbatim}
+GeradorDeNotaFiscal
+- deve gerar uma nota fiscal de serviços de telecomunicação
+- não deve gerar uma nota fiscal de serviços de internet
+\end{verbatim}
+
 \section{TDD como Prática de Design}
 \label{sec:tdd-e-design}
 
@@ -724,8 +763,6 @@ pela nova funcionalidade de maneira a permitir que seja implementada da maneira 
 
 definir codigo de producao?
 
-
-tdd = tfd + refatoracao
 
 tdd é documentação?
 
