@@ -12,9 +12,20 @@ TDD é uma importante prática na Programação Extrema (XP) \cite{XPExplained} 
 ágeis, o design de um software deve emergir conforme o software cresce. E, para responder rapidamente a essas
 alterações, é necessário um constante \textit{feedback} sobre a qualidade interna e externa do código, e TDD
 provê isso já que faz com que o teste de unidade seja o primeiro cliente real da classe que o programador ainda
-vai implementar, e isso faz com que ele pense melhor a respeito do comportamento que ele espera dessa classe. Além disso,
+vai implementar, e isso faz com que ele pense melhor a respeito do comportamento que ele espera dessa classe. 
+A figura \ref{fig:agile-feedback} mostra
+que TDD é uma das práticas ágeis que dão feedback mais rápido para o programador \cite{vanderburg}.
+Além disso,
 a suíte de testes gerada dá segurança ao programador no momento de uma refatoração pois, caso ele cometa um erro,
-algum dos testes provavelmente irá falhar, avisando-o imediatamente sobre o problema.
+algum dos testes provavelmente irá falhar, avisando-o imediatamente sobre o problema. 
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=1]{agile-feedback}
+  \caption{Práticas de XP e Tempo de Feedback}
+  \label{fig:agile-feedback}
+\end{figure}
+
 
 TDD faz com que esse simples processo de escrever um teste antes de escrever o código
 sirva para ajudar o time a entender as funcionalidades que os usuários do sistema precisam e 
@@ -53,23 +64,16 @@ o código mais simples, quanto a qualidade externa, diminuindo o número de defe
 De forma mais ampla, podemos definir o ciclo de TDD da seguinte maneira \cite{TDDByExample}:
 
 \begin{enumerate}
-	\item adicione um teste; 
-	\item rode todos os testes e veja o novo teste falhar; 
-	\item escreva o código mais simples que faça o teste passar; 
-	\item rode todos os testes e veja o novo teste passar; 
-	\item refatore para remover duplicação de dados e de código.
+	\item Adicione um teste; 
+	\item Rode todos os testes e veja o novo teste falhar; 
+	\item Escreva o código mais simples que faça o teste passar; 
+	\item Rode todos os testes e veja o novo teste passar; 
+	\item Refatore para remover duplicação de dados e de código.
 \end{enumerate}
 
 A figura \ref{fig:tdd} mostra a ordem que as atividades são feitas. 
 As sub-seções abaixo visam explicar cada passo do ciclo de forma mais detalhada, explicando a motivação e o esperado 
 em cada um deles.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.6]{tdd}
-  \caption{O Ciclo de Test-Driven Development (retirado da Wikipedia \cite{figura-tdd-wiki}) }
-  \label{fig:tdd}
-\end{figure}
 
 \subsection{Adicionar um teste}
 
@@ -134,6 +138,13 @@ mais claro e, por consequência, facilitando sua evolução.
 Como TDD faz com que a prática de testes seja utilizada para receber informações sobre o design, 
 a prática de refatoração é parte vital do processo já que o programador muda de ideia muitas vezes sobre a interface que determinada
 classe deve ter, e para isso, faz uso de práticas de refatoração, já muito discutida na literatura \cite{fowler-refactoring} \cite{joshua-refactoring}.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{tdd}
+  \caption{O Ciclo de Test-Driven Development (retirado da Wikipedia \cite{figura-tdd-wiki}) }
+  \label{fig:tdd}
+\end{figure}
 
 \section{Um pequeno exemplo}
 \label{sec:tdd-exemplo}
@@ -338,9 +349,13 @@ programador tomou passos um pouco maiores e em basicamente três etapas o progra
 \section{Padrões para a Prática de TDD}
 \label{sec:tdd-patterns}
 
-tdd patterns e red/green bar patterns (beck) sec:tdd-patterns
+Esta seção mostra padrões que facilitam e ajudam o programador durante a prática de TDD. Esses padrões são
+comentados pelo Kent Beck \cite{TDDByExample} e muitos deles são comentados também por outros autores \cite{GOOS},
+como é o caso de manter os testes sempre independentes (seção \ref{subsec:testes-independentes}) e manter
+uma lista de tarefas a fazer (seção \ref{subsec:lista-a-fazer}).
 
 \subsection{Testes independentes}
+\label{subsec:testes-independentes}
 
 Um teste deve ser totalmente isolado do outro. A bateria de testes gerada pelo programador durante a prática de TDD servirá
 durante todo o ciclo de desenvolvimento do projeto já que com eles o programador consegue executar testes de regressão
@@ -357,12 +372,13 @@ Kent Beck ainda diz que teste isolados encorajam o programador a compor soluçõ
 e pouco acoplados \cite{TDDByExample}. Ele comenta de sua experiência pessoal e diz que não conseguia fazer isso regularmente até
 começar a escrever testes realmente isolados. 
 
-\subsection{Lista de testes a fazer}
+\subsection{Lista de tarefas a fazer}
+\label{subsec:lista-a-fazer}
 
-Uma boa prática é manter uma lista de testes a fazer. Um programador experiente geralmente tem uma série de ítens em sua cabeça
+Uma boa prática é manter uma lista de tarefas a fazer. Um programador experiente geralmente tem uma série de ítens em sua cabeça
 que sabe que deve fazer para finalizar determinada atividade. Manter uma lista desses ítens permite com que o programador 
 consiga focar no trabalho que está fazendo, sem se preocupar em esquecer algum desses ítens. 
-Essa lista pode ter testes a serem implementados, refatorações a serem feitas, etc. 
+Essa lista pode ser composta por testes a serem implementados, refatorações a serem feitas, etc. 
 
 Além disso, o programador não deve escrever testes em massa para as funcionalidades que ele deseja implementar. Supondo que o programador
 escreva 10 testes diferentes para um determinado comportamento de uma classe. Caso ele deseje alterar, por exemplo, a ordem dos parâmetros
