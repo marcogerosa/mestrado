@@ -139,12 +139,24 @@ Como TDD faz com que a prática de testes seja utilizada para receber informaç�
 a prática de refatoração é parte vital do processo já que o programador muda de ideia muitas vezes sobre a interface que determinada
 classe deve ter, e para isso, faz uso de práticas de refatoração, já muito discutida na literatura \cite{fowler-refactoring} \cite{joshua-refactoring}.
 
-\begin{figure}
+\begin{figure}[h]
   \centering
   \includegraphics[scale=0.6]{tdd}
   \caption{O Ciclo de Test-Driven Development (retirado da Wikipedia \cite{figura-tdd-wiki}) }
   \label{fig:tdd}
 \end{figure}
+
+\subsection{Uma versão diferente para o ciclo}
+
+Robert Martin não descreve TDD como um ciclo, mas sim através de 3 regras \cite{bob-martin}:
+
+\begin{enumerate}
+	\item Não escreva nenhum código de produção até que você tenha um teste de unidade falhando;
+	\item Não escreva mais do que um teste de unidade que seja suficiente para falhar (e não compilar significa falhar);
+	\item Não escreva mais código de produção do que o suficiente para fazer o teste passar;
+\end{enumerate}
+
+Ao respeitar essas regras, o programador acaba caindo no ciclo definido anteriormente.
 
 \section{Um pequeno exemplo}
 \label{sec:tdd-exemplo}
