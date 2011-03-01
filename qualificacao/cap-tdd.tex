@@ -1,13 +1,3 @@
-%Test-Driven Development
-%- O que é?
-%  --> Feedback constante, rápido e barato.
-%- Prática de testes ou design?
-%  --> diferenca do feedback de uma prática de teste para uma prática de design
-%- Feedback no design
-%- Design emergente
-%- Mercado atual
-
-%% ------------------------------------------------------------------------- %%
 \chapter{Test-Driven Development}
 \label{cap:tdd}
 
@@ -274,6 +264,34 @@ objetos, que foram avaliados durante a pesquisa.
 
 \section{Efeitos na corretude do código}
 
+Uma consequência da prática de TDD é a bateria de testes de unidade gerada.
+Apesar desses testes não terem sido gerados com o foco no teste do sistema, 
+ela ajuda o programador a evitar erros de regressão, aonde a implementação de
+uma nova funcionalidade quebra uma outra funcionalidade já existente no sistema.
+
+Apesar disso, seu objetivo maior é dar segurança ao programador durante as
+constantes refatorações de código que o programador faz e permitir com que ele
+altere o design e garanta que o comportamento ainda é o mesmo. Dave Astels chama
+essa bateria de testes de \textit{testes do programador} \cite{astels-tdd}, já
+que ele é ferramenta de suporte ao trabalho do desenvolvedor.
+
+Programadores ao praticar TDD não estão focados em encontrar defeitos e
+acabam por não escrever testes cobrindo todos os possíveis cenários. Por esse
+motivo, a prática de TDD não é substituta para todas as práticas de testes de
+software vastamente discutidas na literatura. Astels os chama de \textit{testes do
+cliente}, já que visam garantir o comportamento esperado do sistema do ponto de
+vista do seu usuário final.
+
+Mesmo assim, a vantagem dessa bateria de testes, apesar de incompleta, é
+novamente a quantidade de feedback recebida. Por ser uma ferramenta do
+desenvolvedor, essa bateria de testes é executada o tempo todo. E, por esse
+motivo, ela permite ao programador encontrar erros mais rapidamente, já que a
+quantidade de código escrito entre duas execuções dessa bateria é pequena, o que
+facilita no processo de depuração.
+
+O foco deste trabalho não é observar TDD sob esse ponto de vista, mas muitos
+outros estudos avaliam TDD sob esse ponto de vista e podem ser encontrados na
+seção \ref{cap:trabalhos-relacionados}.
 
 \section{Simplicidade}
 
@@ -394,3 +412,46 @@ design afetado pela nova funcionalidade, de maneira a permitir que ela seja
 implementada da maneira mais fácil possível \cite{wambler-tdd}. Perceba que na
 visão dele, o programador também deve sempre optar pelo design mais simples, e
 somente agregar complexidade se ela for realmente necessária.
+
+
+\section{Adoção de TDD}
+
+É possível observer a crescente adoção e procura por TDD através do número de
+pesquisas publicadas pela academia (muitas delas citadas no capítulo 
+\ref{cap:trabalhos-relacionados}). Além disso, foi realizado o Primeiro Workshop
+Internacional de Test-Driven Development em 2010, na cidade de Paris, organizado
+pela Dra. Laurie Williams \footnote{http://agile.csc.ncsu.edu/tdd/. Último acesso em 29/outubro/2010}.
+
+Em um questionário de 2010, organizado por Scott Wambler, chamado de \textit{How
+Agile Are You?} \cite{wambler-survey-agile}, mostra que 53\% dos times ágeis
+adotaram TDD como uma maneira para validar o trabalho feito, conforme mostra a 
+figura \ref{wambler-agile-2010}. Além disso, outro questionário de 2008, 
+chamado de \textit{Test Driven Development (TDD) Survey}
+\cite{wambler-survey-tdd}  mostra que 57\% dos desenvolvedores utilizam TDD como
+técnica para capturar informações de design, conforme mostrado na figura 
+\ref{wambler-tdd-2008}. 
+
+% TODO citar essas listas.
+No Brasil, é possível observar o crescente número de pessoas atrás de
+informações sobre a prática nas mais diversas listas de discussão e fóruns sobre
+tecnologia, como o GUJ ou o .NET Architects. Além disso, diversos eventos de
+desenvolvimento de software realizados no Brasil em 2010, como a QCON SP e a
+Agile Brazil contaram com palestras sobre o assunto. 
+
+Apesar de todos os possíveis vieses das informações apresentadas acima, os
+números mostram que uma grande parte dos desenvolvedor ágeis já utilizam a 
+prática no seu dia-a-dia.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.6]{agileCriteria2010Validating}
+  \caption{Como times ágeis validam seu próprio trabalho?}
+  \label{fig:wambler-agile-2010}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=.5]{tddDesignPractices}
+  \caption{Maneiras de captura de design entre desenvolvedores ágeis}   
+  \label{fig:wambler-tdd-2008}
+\end{figure}
