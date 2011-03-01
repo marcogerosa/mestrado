@@ -48,18 +48,25 @@ programador então produz somente o código necessário para fazer esse teste
 passar. Então ele refatora (simplifica e clareia) tanto o código de produção
 quanto o código de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
+Apesar de ter o termo "teste" no nome, TDD não é uma prática de testes.
+Um ponto interessante a ser notado é que nenhum livro sobre TDD \cite{GOOS}
+\cite{TDDByExample} \cite{astels-tdd}, discute em momento algum qualquer
+prática conhecida da área de testes de software, como análise do valor-limite ou
+grafo de causa-efeito \cite{art-of-sw-testing}, o que leva a crer que os
+benefícios de TDD não são os mesmos da área de testes.
+
 % TODO: citar
 Na opinião de muitos autores conhecidos, como Kent Beck, Martin Fowler e Robert
 Martin, essa mudança na ordem do ciclo de desenvolvimento tradicional, apesar de
-simples, agrega diversos benefícios ao código produzido: simplicidade, foco,
-melhor design, entre outras.
+simples, agrega diversos outros benefícios ao código produzido: simplicidade,
+foco, melhor design, entre outras.
 
 % TODO: citar tddesign
-Apesar da criação de testes ser algo intríseco ao processo, TDD não é visto como
-uma prática fundamentalmente de testes, mas sim uma prática que auxilia o
-desenvolvedor a desenhar classes mais flexíveis, mais coesas e menos acopladas.
-Por esse motivo, muitos se referem a TDD como \textit{Test-Driven Design}, ou
-seja, design guiado pelos testes.
+Apesar da criação de testes ser algo intríseco ao processo, TDD é uma prática
+que auxilia o desenvolvedor a desenhar classes mais flexíveis, mais coesas e
+menos acopladas. Os testes são a ferramenta que o programador utiliza para
+validar o design criado. Por esse motivo, muitos se referem a TDD como
+\textit{Test-Driven Design}, ou seja, design guiado pelos testes.
 
 Muitos autores afirmam que TDD é na verdade uma prática de design
 \cite{tdd-taxonomy} \cite{aim-fire}, e citam sempre a famosa frase do Ward
@@ -253,10 +260,20 @@ para perceber o problema.
 
 TDD encoraja o programador a escrever componentes fracamente acoplados, de
 maneira que eles possam ser testados de maneira isolada, e em um nível maior,
-combinados com outros componentes \cite{GOOS}.
+combinados com outros componentes.
+Programar voltado para interfaces é uma prática de orientação a objetos há muito
+tempo conhecida. A ideia de pensar em classes e dar mais foco à maneira com que
+elas se relacionam do que com a maneira que elas implementarão determinado
+algoritmo passa a ser natural. Essa discussão é o ponto forte do livro
+\textit{``Growing Object-Oriented Systems, Guided By Tests''}, escrito por
+Freeman e Pryce em 2009, onde ambos abordam como a prática de TDD faz com que
+o programador pense mais em abstrações e relacionamento entre elas \cite{GOOS}.
 
 O capítulo \ref{cap:design} discute boas práticas e princípios de orientação a
 objetos, que foram avaliados durante a pesquisa.
+
+\section{Efeitos na corretude do código}
+
 
 \section{Simplicidade}
 
@@ -271,4 +288,109 @@ sem feedback sobre o código. Além disso, faz com que o programador não crie
 soluções mais complexas do que elas precisam ser, tornando o código, à longo
 prazo, o mais simples possível.
 
+Em seu livro, Kent Beck dá exemplos de simplicidade, e na implementação de uma
+operação de multiplicação dentro de uma simples classe \textit{Dinheiro},
+responsável por representar uma unidade monetária, Beck escreve o seguinte
+teste e implementação \cite{TDDByExample}:
 
+\begin{lstlisting}[frame=trbl]
+    public void testaMultiplicacao() {
+		Dinheiro cinco = new Dinheiro(5);
+		cinco.vezes(2);
+		assertEquals(10, dinheiro.valor);
+	}
+	
+	class Dinheiro {
+		\textbf{public int valor = 10;}
+		
+		Dinheiro(int valor) {
+		}
+		
+		void vezes(int multiplicador) {
+		}
+	}
+
+\end{lstlisting}
+
+Repare Beck fez o teste passar da maneira mais simples possível: fez o atributo
+\textit{valor} receber diretamente o valor da multiplicação. E, somente com os
+testes passando, Beck refatora e remove a duplicação de dados e de código
+existente (o valor 10 é informação duplicada entre o teste e o código da
+classe):
+
+\begin{lstlisting}[frame=trbl]
+class Dinheiro {
+	public int valor;
+	
+	Dinheiro(int valor) {
+		this.valor = valor;
+	}
+	
+	void vezes(int multiplicador) {
+		valor = valor * multiplicador;
+	}
+}
+\end{lstlisting}
+
+O teste ainda continua passando, provando que a refatoração foi feita com
+sucesso. Pode-se observar através do exemplo acima que os passos dados foram
+sempre os menores e mais simples possíveis, ou \textit{passos de bebê}, por
+assim dizer. Veja que, mesmo após diversos passos de refatoração, ainda é
+possível encontrar problemas de design, como o atributo \textit{valor}
+declarado como público. Seriam necessários outras rodadas de refatoração para
+eliminar esse problema.
+
+Uma confusão comum de programadores que experimentam TDD pela primeira vez é a
+de que fazer passos de bebê o tempo todo faz com que a produtividade diminua.
+De fato, fazer passos de bebê durante todo o ciclo faz com que o tempo de
+desenvolvimento aumente, já que muitos desses passos são simples demais e
+poderiam ser pulados por um programador mais experiente. 
+
+Mas TDD não força o programador a dar passos de bebê o tempo todo, mas sim
+permite que o mesmo dê passos de bebê quando achar necessário
+\cite{TDDByExample}: caso o programador esteja confiante sobre o trecho de
+código  que está escrevendo naquele momento, ele pode dar um passo maior;  mas
+caso ele não esteja tão confiante, a prática permite a ele ir mais devagar e 
+dar passos de bebê, obtendo feedback mais rápido sobre o código que está
+escrevendo.
+
+O próprio Kent Beck em seu livro afirma que não faz passos tão pequenos o tempo
+todo, mas se sente seguro em saber que pode dar passos pequenos quando houver
+necessidade.
+
+No exemplo acima, o método \textit{vezes} poderia ser considerado simples por
+um programador experiente, que optaria por chegar à mesma solução acima de
+maneira mais rápida, tomando passos maiores. Nesse momento, a experiência do
+programador deve ditar o ritmo.
+
+O conceito de simplicidade de TDD vai além da implementação de um método; a
+simplicidade do design é algo também fundamental. Em modelos tradicionais de
+desenvolvimento de software, diagramas de classe são criados para tentar prever
+futuras alterações no software, colocando diversos pontos de flexibilização no
+modelo. Muitas dessas previsões podem não se concretizar, deixando o design
+desnecessariamente complexo.
+
+Equipes ágeis optam por não fazer o chamado \textit{big design up-front (BDUF)},
+e deixar que o design emerja ao longo do tempo, mantendo o código o mais claro e
+simples possível, e refatorando sempre que há necessidade. Decisões de
+design são tomadas com a consciência de que elas serão alteradas no futuro
+\cite{is-design-dead}.
+
+Manter o design simples não é tarefa fácil, e TDD sugere que o programador
+escreva sempre o código mais simples que atenda a necessidade. Somente se a
+necessidade crescer, é que o programador deverá evoluir o design. Kent Beck
+comenta em seu artigo entitulado ``\textit{Aim, Fire}'', que mesmo uma decisão que
+parece simples, pode ser complicada e, sem um teste para mostrar isso rapidamente, o
+programador dificilmente perceberia \cite{aim-fire}. 
+
+É interessante a afirmação de Scott Wambler sobre como o praticante de TDD lida
+com a simplicidade de design. Segundo ele, TDD pode ser definido como
+``\textit{TDD = Refatoração + Test-First Design}''. Segundo ele, um programador,
+antes de implementar uma nova funcionalidade, deve observar se o design atual
+permite que essa funcionalidade seja implementada de maneira clara. Em caso
+afirmativo, o programador segue o ciclo, escrevendo um teste que falha e
+fazendo-o passar. Mas, em caso negativo, o programador deve refatorar a parte do
+design afetado pela nova funcionalidade, de maneira a permitir que ela seja
+implementada da maneira mais fácil possível \cite{wambler-tdd}. Perceba que na
+visão dele, o programador também deve sempre optar pelo design mais simples, e
+somente agregar complexidade se ela for realmente necessária.
