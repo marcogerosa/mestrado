@@ -32,6 +32,7 @@ baixo. Segundo Vanderburg, TDD dá feedback em questão de minutos, e sua
 velocidade só é inferior a da programação pareada. O gráfico pode ser visto na
 figura \ref{fig:agile-feedback}.
 
+% TODO: traduzir figura do meu gdocs
 \begin{figure}
   \centering
   \includegraphics[scale=1]{agile-feedback}
@@ -89,5 +90,41 @@ técnicas de testes. Esses estudos são explicados com mais detalhes no capítul
 \ref{cap:trabalhos-relacionados}.
 
 \section{O ciclo}
+
+% TODO fazer figura do TDD
+Um programador praticante de TDD escreve os testes antes do código de produção.
+Beck define esse ciclo mais especificamente da seguinte maneira
+\cite{TDDByExample} e reproduzido na figura XXX:
+
+\begin{enumerate}
+	\item Adicione o teste mais simples possível; 
+	\item Rode todos os testes e veja o novo teste falhar; 
+	\item Escreva o código mais simples que faça o teste passar; 
+	\item Rode todos os testes e veja o novo teste passar; 
+	\item Refatore para remover duplicação de dados e de código.
+\end{enumerate}
+
+Ao iniciar o ciclo, o programador deve escrever o próximo teste mais simples que
+ela possa imaginar que falhe; em seguida, ele deve garantir que o teste que ele
+escreveu realmente falha; com o teste falhando, o programador deve escrever o
+código mais simples que ele possa escrever para fazer o código passar; em
+seguida, ele deve checar que o teste que antes falhava, agora passa; por fim, o
+programador deve refatorar todo o código duplicado que escreveu.
+
+Perceba que simplicidade é algo intríseco ao processo; o programador deve buscar
+sempre escrever o teste mais simples que falhe e escrever o código mais simples
+que faça o teste passar. Por fim, a última parte do ciclo é a que se preocupa
+com um código claro e flexível; nesse momento o programador deve refatorar o
+código para remover toda a duplicação de dados ou de código gerada enquanto o
+programador se preocupava em fazer o teste passar da maneira mais simples.
+
+É possível ver que a prática divide o trabalho do desenvolvedor em duas partes.
+A primeira se preocupa em escrever um código que funcione. Já a segunda parte
+se preocupa com um código claro, expressivo e de fácil manutenção. Ron Jeffries
+fez uma famosa afirmação sobre TDD que explica essa divisão: \textit{Código
+claro que funciona}. Na opinião dele, o programador primeiro se preocupa com a
+parte ``que funciona'', para depois deixar o ``código claro''.
+
+\section{Efeitos no design}
 
 
