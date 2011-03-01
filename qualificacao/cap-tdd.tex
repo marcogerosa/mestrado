@@ -161,7 +161,7 @@ testar aquela unidade de maneira isolada; ele vai sempre depender da execução 
 dependência.
 
 Uma das possíveis maneiras de explicitar as dependências, é fazer com que a
-classe as recebaa através do seu construtor. Dessa maneira, o teste de unidade
+classe as receba através do seu construtor. Dessa maneira, o teste de unidade
 pode passar uma implementação falsa daquela dependência que simula os
 comportamentos esperados, e por fim validar o comportamento daquela classe
 isolando-a completamente.
@@ -226,6 +226,10 @@ somente para isso e não faz uso diretamente do \textit{Mailer}. Isso acontece
 devido à dificuldade de se passar uma implementação falsa dessa classe; para
 fazer isso, o programador precisaria escrever muito código.
 
+Classes altamente acopladas, além de difíceis de manter, também são difíceis de
+testar, já que o programador deverá fazer uso de muitos objetos dublês para
+simular o comportamento esperado das dependências.
+
 Quanto mais difícil for a escrita do teste, maior a chance da existência de
 algum mau cheiro de design. Segundo Michael Feathers, existe uma sinergia muito
 grande entre uma classe com alta testabilidade e um bom design: se o
@@ -247,5 +251,24 @@ deve conhecer as boas práticas de orientação a objetos. Mas, como afirmado
 anteriormente, a vantagem do programador que utiliza TDD é o tempo que ele leva
 para perceber o problema.
 
+TDD encoraja o programador a escrever componentes fracamente acoplados, de
+maneira que eles possam ser testados de maneira isolada, e em um nível maior,
+combinados com outros componentes \cite{GOOS}.
+
 O capítulo \ref{cap:design} discute boas práticas e princípios de orientação a
 objetos, que foram avaliados durante a pesquisa.
+
+\section{Simplicidade}
+
+TDD sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
+inglês, \textit{baby steps}): deve-se escrever testes sempre para a menor
+funcionalidade possível, escrever o código mais simples que faça o teste passar
+e fazer sempre apenas uma refatoração por vez.
+
+Uma justificativa para tal é que quanto maior o passo que o programador dá, mais
+tempo ele leva para concluir esse passo e, consequentemente ele fica mais tempo
+sem feedback sobre o código. Além disso, faz com que o programador não crie
+soluções mais complexas do que elas precisam ser, tornando o código, à longo
+prazo, o mais simples possível.
+
+
