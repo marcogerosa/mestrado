@@ -18,8 +18,6 @@ desenvolvimento de software.
 Esse capítulo discute apresenta e discute algumas dessas boas práticas, que
 são posteriormente avaliadas durante o processo de pesquisa. 
 
-\section{Design}
-
 \section{Sintomas de Designs em Degradação}
 \label{sec:design-degradacao}
 
@@ -48,7 +46,7 @@ e suas partes reusáveis.
 
 Rigidez é a tendência do software em se tornar difícil de mudar, mesmo de 
 maneiras simples. Toda mudança causa uma cascata de mudanças subsequentes  em
-módulos dependentes. Quanto mais módulos precisam ser modificados,  maior é a
+módulos dependentes. Quanto mais módulos precisam ser modificados, maior é a
 rigidez do design. 
 
 Quando um design está muito rígido, não se sabe com segurança quando uma 
@@ -69,19 +67,19 @@ ocorrem  em áreas não relacionadas conceitualmente com a área que foi mudada,
 tornando o processo de manutenção demasiadamente custoso, complexo e tedioso. 
 
 Consertar os novos problemas usualmente passa a resultar em outros novos
-problemas  e assim por diante. Infelizmente, módulos frágeis são comuns  em
-sistemas de software. São estes os módulos que sempre aparecem na lista de  bugs
+problemas e assim por diante. Infelizmente, módulos frágeis são comuns em
+sistemas de software. São estes os módulos que sempre aparecem na lista de bugs
 a serem corrigidos. 
 
 Além disto, desenvolvedores começam a ficar receosos de alterar certos trechos 
 de código, pois sabem que estes estão tão frágeis que qualquer mudança simples 
-fatalmente acarretará na introdução de problemas inesperados e de  naturezas
+fatalmente acarretará na introdução de problemas inesperados e de naturezas
 diversas.
 
 \subsection{Imobilidade}
 
 Imobilidade é a impossibilidade de se reusar software de outros projetos ou de
-partes  do mesmo projeto. Neste cenário, o módulo que se deseja reutilizar 
+partes do mesmo projeto. Neste cenário, o módulo que se deseja reutilizar 
 frequentemente tem uma bagagem muito grande de dependências e não possui código 
 claro. 
 
@@ -94,7 +92,7 @@ acaba sendo reescrito ao invés de reutilizado.
 Quando uma mudança deve ser realizada, usualmente há várias opções para realizar
 tal mudança. Quando as opções que preservam o design são mais difíceis de serem
 implementadas do que aquelas que não o preservam (hacks), há alta viscosidade 
-de design. Neste cenário, é fácil fazer a "coisa errada" e é difícil  fazer a
+de design. Neste cenário, é fácil fazer a "coisa errada" e é difícil fazer a
 "coisa certa", ou seja, é difícil preservar e aprimorar o design.
 
 \subsection{Complexidade Desnecessária}
@@ -138,7 +136,7 @@ tendência de um código é se tornar mais e mais opaco a medida que o tempo pas
 e, para que isso seja evitado, é necessário um esforço constante em manter esse 
 código claro e expressivo. 
 
-Uma maneira para prevenir isso, é fazer com que os  desenvolvedores se ponham no
+Uma maneira para prevenir isso, é fazer com que os desenvolvedores se ponham no
 papel de leitores do código e refatorem esse código de maneira que qualquer
 outro  leitor poderia entender. Além disso, revisões de código feita por outros
 desenvolvedores é também uma possível solução para manter o código menos opaco.
@@ -146,10 +144,30 @@ desenvolvedores é também uma possível solução para manter o código menos o
 \section{Princípios de Design}
 \label{sec:design-oo-principios}
 
-Os princípios comentados nesta seção são muito discutidos por Robert Martin \cite{bob-martin}, e são produto de 
-décadas de experiência em engenharia de software.
-Eles não são produto de uma única pessoa, mas sim a integração de pensamentos e trabalhos de um grande número de
-desenvolvedores de software e pesquisadores, e visam combater todos os sintomas de degradação discutidos na seção \ref{sec:design-degradacao}.
+Todos os problemas citados na seção \ref{sec:design-degradacao} podem ser
+evitados pelo uso puro e simples de orientação a objetos. A máxima da
+programação orientada a objetos diz que classes devem possuir um baixo
+acoplamento e uma alta coesão.
+
+Alcançando esse objetivo, mudanças no código seriam executadas mais facilmente;
+alterações seriam feitas em pontos únicos e a propagação de mudanças seria bem
+menor. Com as abtrações bem estabelecidades, novas funcionalidades seriam
+implementadas através de novo código, sem a necessidade de alterações no código
+já existente. Necessidades de evolução do design seriam feitas com pouco
+esforço, já que módulos dependeriam apenas de abstrações.
+
+Mas, alcançar tal objetivo não é tarefa fácil. Criar classes pouco acopladas e
+altamente coesas demanda um grande esforço por parte do desenvolvedor e requer
+grande conhecimento e experiência no paradigma da orientação a objetos.
+
+
+Os princípios comentados nesta seção são muito discutidos por Robert Martin
+em vários de seus livros e artigos publicados \cite{bob-martin}, e são produto
+de décadas de experiência em engenharia de software. Segundo ele próprio,
+esses príncipios não são produto de uma única pessoa, mas sim a integração
+de pensamentos e trabalhos de um grande número de desenvolvedores de software  e
+pesquisadores, e visam combater todos os sintomas de degradação discutidos na 
+seção \ref{sec:design-degradacao}.
 
 Conhecidos pelo acrônimo \textit{SOLID} (sólido, em português), são eles:
 
