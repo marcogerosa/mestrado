@@ -5,71 +5,143 @@
 \section{Introdução}
 \label{sec:design-introducao}
 
-Este capítulo visa discutir alguns príncipios e boas práticas de orientação a objetos. Desenvolver sistemas orientados a objetos
-não é uma tarefa fácil, já que criar classes, ou em um nível maior de abstração, módulos que possuam um baixo acoplamento
-e uma alta coesão demanda um esforço muito grande do desenvolvedor. É muito comum que, após algum tempo de desenvolvimento,
-o design perca qualidade e qualquer tipo de manutenção torne-se difícil e, por consequência, cara.
+Desenvolver sistemas orientados a objetos não é uma tarefa fácil. Criar
+classes ou, em um nível maior de abstração, módulos que possuam um baixo
+acoplamento e uma alta coesão demanda um esforço muito grande do desenvolvedor. 
+É muito comum que, após algum tempo de desenvolvimento, o design perca qualidade
+e qualquer tipo de manutenção torne-se difícil e, por consequência, custosa.
 
-Na primeira parte, esse capítulo discute alguns sintomas de designs em degradação (também conhecidos como maus cheiros de design), 
-e em seguida alguns príncipios que visam combater esses sintomas. Por fim, o capítulo discute métricas e heurísticas 
-de design que são utilizadas no processo de análise das entrevistas e dos códigos.
+Conforme discutido na seção anterior, para escrever classes com alta
+testabilidade, o praticante de TDD é obrigado a fazer uso de boas práticas de
+desenvolvimento de software. 
+
+Esse capítulo discute apresenta e discute algumas dessas boas práticas, que
+são posteriormente avaliadas durante o processo de pesquisa. 
 
 \section{Design}
 
-
 \section{Sintomas de Designs em Degradação}
 \label{sec:design-degradacao}
-Quando um design começa a ficar difícil de ser evoluído, o reúso de código se torna mais complicado do que repetir o trecho de código ou 
-o custo de se fazer qualquer alteração no design se torna alto, dizemos que que
-esse design está \textit{degradando}. Martin \cite{bob-martin} enumerou alguns sintomas de designs em degradação, chamados também de \textit{maus cheiros de design}. 
-Esses sintomas são parecidos com os maus cheiros de código \textit{code smells}, mas em um nível mais alto: esses sintomas
-estão presentes na estrutura geral do software ao invés de estarem em apenas um pequeno trecho de código.
 
-Esses sintomas podem ser medidos de forma subjetiva e algumas vezes de forma até objetiva. Geralmente, esses sintomas são causados
-por violações de um ou mais príncipios de design, apresentados na seção \ref{sec:design-oo-principios}. 
+Quando um design começa a ficar difícil de ser evoluído, o reúso de código se 
+torna mais complicado do que repetir o trecho de código, ou o custo de se fazer 
+qualquer alteração no design se torna alto, pode-se dizer que esse design
+está \textit{degradando}. 
 
-Muitos desses problemas são relacionados à gerência de dependências e, como comentado por Martin em
-uma de suas palestras \cite{bobmartin-infoq}, gerenciar dependências é um dos maiores problemas do processo de desenvolvimento de software.
-Quando essa atividade não é feita corretamente, isso gera código que é difícil de manter e reusar. Entretanto, quando essa atividade
-é bem feita, o software tende a ser flexível, robusto e suas partes reusáveis.
+Bob Martin \cite{bob-martin} enumerou alguns sintomas de designs em degradação, 
+chamados também de maus cheiros de design. Esses sintomas são parecidos com os 
+maus cheiros de código \textit{code smells}, mas em um nível mais alto: eles
+estão presentes na estrutura geral do software ao invés de estarem localizados
+em apenas um pequeno trecho de código.
+
+Esses sintomas podem ser medidos de forma subjetiva e algumas vezes de forma 
+até objetiva. Geralmente, esses sintomas são causados por violações de um ou 
+mais príncipios de design, apresentados na seção \ref{sec:design-oo-principios}.
+
+Muitos desses problemas são relacionados à gerência de dependências. Quando essa
+atividade não é feita corretamente, o código gerado torna-se difícil de manter e
+reusar. Entretanto, quando bem feita, o software tende a ser flexível, robusto 
+e suas partes reusáveis.
 
 \subsection{Rigidez}
 \label{subsec:rigidez}
 
-Rigidez é a tendência do software em se tornar difícil de mudar, mesmo de maneiras simples. Toda mudança causa uma cascata de mudanças subsequentes em módulos dependentes. Quanto mais módulos precisam ser modificados, maior é a rigidez do design. Quando um design está muito rígido, não se sabe com segurança quando uma mudança terá fim. Mudanças simples passam a demorar muito tempo até serem aplicadas no código e frequentemente acabam superando em várias vezes a estimativa de esforço inicial. Frases como \textit{"isto foi muito mais complicado do que eu imaginei"} tornam-se populares. Neste momento, gerentes de desenvolvimento começam a ficar receosos em permitir que os desenvolvedores consertem problemas não críticos.
+Rigidez é a tendência do software em se tornar difícil de mudar, mesmo de 
+maneiras simples. Toda mudança causa uma cascata de mudanças subsequentes  em
+módulos dependentes. Quanto mais módulos precisam ser modificados,  maior é a
+rigidez do design. 
 
+Quando um design está muito rígido, não se sabe com segurança quando uma 
+mudança terá fim. Mudanças simples passam a demorar muito tempo até serem 
+aplicadas no código e frequentemente acabam superando em várias vezes a 
+estimativa de esforço inicial. 
+
+Frases como \textit{"isto foi muito mais complicado do que eu imaginei"} 
+tornam-se populares. Neste momento, gerentes de desenvolvimento começam a  ficar
+receosos em permitir que os desenvolvedores consertem problemas não críticos.
 
 \subsection{Fragilidade}
 \label{subsec:fragilidade}
 
-Fragilidade é a tendência do software em quebrar em muitos lugares diferentes toda vez que uma única mudança acontece. Frequentemente, os novos problemas ocorrem em áreas não relacionadas conceitualmente com a área que foi mudada, tornando o processo de manutenção demasiadamente custoso, complexo e tedioso. Consertar os novos problemas usualmente passa a resultar em outros novos problemas e assim por diante. Infelizmente, módulos frágeis são comuns em sistemas de software. São estes os módulos que sempre aparecem na lista de bugs a serem corrigidos. Além disto, desenvolvedores começam a ficar receosos de alterar certos trechos de código, pois sabem que estes estão tão frágeis que qualquer mudança simples fatalmente acarretará na introdução de problemas inesperados e de naturezas diversas. 
+Fragilidade é a tendência do software em quebrar em muitos lugares diferentes 
+toda vez que uma única mudança acontece. Frequentemente, os novos problemas
+ocorrem  em áreas não relacionadas conceitualmente com a área que foi mudada, 
+tornando o processo de manutenção demasiadamente custoso, complexo e tedioso. 
 
+Consertar os novos problemas usualmente passa a resultar em outros novos
+problemas  e assim por diante. Infelizmente, módulos frágeis são comuns  em
+sistemas de software. São estes os módulos que sempre aparecem na lista de  bugs
+a serem corrigidos. 
+
+Além disto, desenvolvedores começam a ficar receosos de alterar certos trechos 
+de código, pois sabem que estes estão tão frágeis que qualquer mudança simples 
+fatalmente acarretará na introdução de problemas inesperados e de  naturezas
+diversas.
 
 \subsection{Imobilidade}
 
-Imobilidade é a impossibilidade de se reusar software de outros projetos ou de partes do mesmo projeto. Neste cenário, o módulo que se deseja reutilizar frequentemente tem uma bagagem muito grande de dependências e não possui código claro. Depois de muita investigação, os arquitetos descobrem que o trabalho e o risco de separar as partes desejáveis das indesejáveis são tão grandes, que o módulo acaba sendo reescrito ao invés de reutilizado.
+Imobilidade é a impossibilidade de se reusar software de outros projetos ou de
+partes  do mesmo projeto. Neste cenário, o módulo que se deseja reutilizar 
+frequentemente tem uma bagagem muito grande de dependências e não possui código 
+claro. 
+
+Depois de muita investigação, os arquitetos descobrem que o trabalho e o risco 
+de separar as partes desejáveis das indesejáveis são tão grandes, que o módulo 
+acaba sendo reescrito ao invés de reutilizado.
 
 \subsection{Viscosidade}
 
-Quando uma mudança deve ser realizada, usualmente há várias opções para realizar tal mudança. Quando as opções que preservam o design são mais difíceis de serem implementadas do que aquelas que não o preservam (hacks), há alta viscosidade de design. Neste cenário, é fácil fazer a "coisa errada" e é difícil fazer a "coisa certa", ou seja, é difícil preservar e aprimorar o design.
+Quando uma mudança deve ser realizada, usualmente há várias opções para realizar
+tal mudança. Quando as opções que preservam o design são mais difíceis de serem
+implementadas do que aquelas que não o preservam (hacks), há alta viscosidade 
+de design. Neste cenário, é fácil fazer a "coisa errada" e é difícil  fazer a
+"coisa certa", ou seja, é difícil preservar e aprimorar o design.
 
 \subsection{Complexidade Desnecessária}
 
-Detecta-se complexidade desnecessária no design quando ele contém muitos elementos inúteis ou não utilizados (\textit{dead code}). Geralmente ocorre quando há muito design inicial (\textit{up-front design}) e não se segue uma abordagem de desenvolvimento iterativa e incremental, de modo que os projetistas tentam prever uma série de futuros requisitos para o sistema e concebem um design demasiadamente flexível ou desnecessariamente sofisticado. Frequentemente apenas algumas previsões acabam se concretizando ao longo do tempo e, neste meio período, o design carrega o peso de elementos e construções não utilizados. O software então se torna complexo e difícil de ser entendido. Design com complexidade muito alta comumente afeta a produtividade, porque quando os desenvolvedores herdam tal projeto, eles gastam muito tempo aprendendo as nuances do design antes que possam efetivamente estendê-lo ou mantê-lo confortavelmente \cite{kerievsky}.
+Detecta-se complexidade desnecessária no design quando ele contém muitos 
+elementos inúteis ou não utilizados (\textit{dead code}). Geralmente ocorre
+quando há muito design inicial (\textit{up-front design}) e não se segue uma 
+abordagem de desenvolvimento iterativa e incremental, de modo que os projetistas
+tentam prever uma série de futuros requisitos para o sistema e concebem um 
+design demasiadamente flexível ou desnecessariamente sofisticado. 
+
+Frequentemente apenas algumas previsões acabam se concretizando ao longo do
+tempo e, neste meio período, o design carrega o peso de elementos e construções 
+não utilizados. O software então se torna complexo e difícil de ser entendido. 
+
+Design com complexidade muito alta comumente afeta a produtividade, porque 
+quando os desenvolvedores herdam tal projeto, eles gastam muito tempo 
+aprendendo as nuances do design antes que possam efetivamente  estendê-lo ou
+mantê-lo confortavelmente \cite{kerievsky}.
 
 \subsection{Repetição Desnecessária}
 
-Quando há repetição de trechos de código, é sinal de que uma abstração apropriada não foi capturada durante o processo de design (ou inclusive na análise).
-Esse problema é frequente e é comum encontrar softwares que contenham dezenas e até centenas de elementos com códigos repetidos. Descobrir a melhor abstração para eliminar a repetição de código geralmente não está na lista de itens de alta prioridade dos desenvolvedores, de maneira que a resolução do problema acaba sendo eternamente postergada. Também, o sistema se torna cada vez mais difícil de entender e principalmente de manter, pois os problemas encontrados em uma unidade de repetição devem ser corrigidos potencialmente em toda repetição, com o agravante de que uma repetição pode ter forma ligeiramente diferente de outra.
+Quando há repetição de trechos de código, é sinal de que uma abstração
+apropriada não foi capturada durante o processo de design (ou inclusive na
+análise). Esse problema é frequente e é comum encontrar softwares que contenham 
+dezenas e até centenas de elementos com códigos repetidos. 
+
+Descobrir a melhor abstração para eliminar a repetição de código geralmente não 
+está na lista de itens de alta prioridade dos desenvolvedores, de maneira que a 
+resolução do problema acaba sendo eternamente postergada. Também, o sistema se
+torna cada vez mais difícil de entender e principalmente de manter, pois os 
+problemas encontrados em uma unidade de repetição devem ser corrigidos
+potencialmente  em toda repetição, com o agravante de que uma repetição pode
+ter forma ligeiramente diferente de outra.
 
 \subsection{Opacidade}
 
-Opacidade é a tendência de um módulo ser difícil de ser entendido. Códigos podem ser escritos de maneira clara e expressiva ou de maneira "opaca" e complicada.
-A tendência de um código é se tornar mais e mais opaco a medida que o tempo passa e, para que isso seja evitado, é necessário um esforço constante em 
-manter esse código claro e expressivo. Uma maneira para prevenir isso, é fazer com que os desenvolvedores se ponham no papel de leitores do código e
-refatorem esse código de maneira que qualquer outro leitor poderia entender. Além disso, revisões de código feita por outros desenvolvedores é também
-uma possível solução para manter o código menos opaco.
+Opacidade é a tendência de um módulo ser difícil de ser entendido. Códigos podem
+ser escritos de maneira clara e expressiva ou de maneira "opaca" e complicada. A
+tendência de um código é se tornar mais e mais opaco a medida que o tempo passa
+e, para que isso seja evitado, é necessário um esforço constante em manter esse 
+código claro e expressivo. 
 
+Uma maneira para prevenir isso, é fazer com que os  desenvolvedores se ponham no
+papel de leitores do código e refatorem esse código de maneira que qualquer
+outro  leitor poderia entender. Além disso, revisões de código feita por outros
+desenvolvedores é também uma possível solução para manter o código menos opaco.
 
 \section{Princípios de Design}
 \label{sec:design-oo-principios}
