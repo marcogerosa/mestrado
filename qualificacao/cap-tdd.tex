@@ -38,6 +38,21 @@ programador então produz somente o código necessário para fazer esse teste
 passar. Então ele refatora (simplifica e clareia) tanto o código de produção
 quanto o código de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
+Na prática, TDD obriga que o programador escreva um código novo apenas se houver
+um teste automatizado falhando, e faz com que ele remova duplicação de dados e
+de código constantemente. Esse ciclo, exemplificado na figura
+\ref{fig:red-green-refactor} é também conhecido como Vermelho-Verde-Refatora
+(ou Red-Green-Refactor), já que lembram as cores que o programador geralmente
+vê quando faz TDD: o vermelho geralmente significa que o teste está falhando, e
+o verde quando o teste foi executado com sucesso.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.6]{ciclo-tdd}
+  \caption{O ciclo Vermelho-Verde-Refatora}
+  \label{fig:red-green-refactor}
+\end{figure}
+
 Apesar de ter o termo "teste" no nome, TDD não é uma prática de testes.
 Um ponto interessante a ser notado é que nenhum livro sobre TDD \cite{GOOS}
 \cite{TDDByExample} \cite{astels-tdd}, discute em momento algum qualquer
