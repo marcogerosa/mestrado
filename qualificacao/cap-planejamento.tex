@@ -2,270 +2,342 @@
 \chapter{Planejamento do Experimento}
 \label{cap:planejamento}
 
-\section{Objetivo do Estudo} 
-\label{sec:planejamento-proposito}
+Conforme discutido no capítulo \ref{cap:trabalhos-relacionados}, muitos 
+trabalhos avaliaram TDD e alguns deles perceberam uma melhora (mas muitas vezes
+sem nenhuma significância estatística) no design de classes, como um menor 
+acoplamento, uma maior coesão, e até mesmo mais simplicidade nas classes quando
+desenvolvidas utilizando-se a prática. 
 
-Conforme discutido no capítulo \ref{cap:trabalhos-relacionados}, muitos trabalhos avaliaram TDD e
-perceberam uma melhora (mas muitas vezes sem nenhuma significância estatística) no design de classes,
-como um menor acoplamento, uma maior coesão, e até mesmo mais simplicidade nas classes quando desenvolvidas
-utilizando-se a prática. Mas poucos estudos tentam entender como TDD e a prática de escrever o teste antes do código real
-realmente guiam o programador em direção à essas melhorias.
+Grande parte deles estão interessados em avaliar quais os efeitos da prática
+no código final produzido, mas poucos estudos tentam entender como TDD e a
+prática de escrever o teste antes do código real realmente guiam o programador 
+em direção à essas melhorias.
 
-O objetivo deste estudo é portanto avaliar e entender a influência de Test-Driven Development sobre o design
-de sistemas orientados a objetos. Para alcançar esse objetivo, 
-este trabalho propõe estudos de caso em 3 empresas de desenvolvimento de software brasileiras,
-utilizando técnicas como entrevistas, observação de ambientes reais e análise estática de código-fonte.
+Para entender como TDD influencia o desenvolvedor durante o desenvolvimento,
+este trabalho propõe estudos de caso em 3 empresas de desenvolvimento de
+software brasileiras, utilizando métodos qualitativos de pesquisa.
+
+Este capítulo detalha o planejamento do experimento, bem como o processo de
+análise dos dados colhidos.
 
 \section{Métodos qualitativos de pesquisa} 
 \label{sec:planejamento-qualitativa}
 
-Conduzir um estudo experimental em engenharia de software sempre foi uma atividade difícil. Uma das razões para isso é o
-fator humano, muito presente no processo de desenvolvimento de software, como sugerido por métodos ágeis em geral \cite{AgileManifesto}. 
-Dessa maneira, o paradigma de pesquisa analítico não é suficiente para investigar casos reais complexos envolvendo pessoas
-e suas interações com a tecnologia \cite{guidelines-case-study}.
+Conduzir um estudo experimental em engenharia de software sempre foi uma
+atividade difícil. Uma das razões para isso é o fator humano, muito presente 
+no processo de desenvolvimento de software, como sugerido por métodos ágeis  em
+geral \cite{AgileManifesto}. Dessa maneira, o paradigma de pesquisa analítico 
+não é suficiente para investigar casos reais complexos envolvendo pessoas e 
+suas interações com a tecnologia \cite{guidelines-case-study}.
 
-Esses problemas já foram levantados por muitos pesquisadores (TODO seaman 1 4 5 6) e finalmente tem-se 
-levado em consideração a influência de problemas não-técnicos e a intersecção entre esses problemas e a parte técnica 
-dentro da engenharia de software \cite{seaman}.
-Apesar disso, o número de estudos empíricos é ainda muito pequeno dentro da área de pesquisa em ciência da computação: 
-Sjoberg et al \cite{sjoberg} encontrou apenas 103 experimentos em 5.453 artigos e Ramesh et al. \cite{ramesh} 
-identificou menos de 2\% de experimentos envolvendo humanos e apenas 0.16\% estudos em campo dentre 628 artigos.
+Conforme levantado por Seaman, esses problemas já foram levantados por muitos
+pesquisadores e finalmente tem-se levado em consideração a influência de
+problemas não-técnicos e a intersecção entre esses problemas e a parte técnica
+dentro da engenharia de software \cite{seaman}. 
 
-Uma pesquisa qualitativa é um meio para se explorar e entender a influência que indivíduos ou grupos atribuem a um
-problema social ou humano. O processo de pesquisa envolve questões emergentes e procedimentos, dados geralmente colhidos
-sob o ponto de vista do participante, com a análise feita de maneira indutiva indo geralmente de um tema específico 
-para um tema geral e com o pesquisador fazendo interpretações do significado desses dados. 
-O relatório final escrito tem uma estrutura flexível e os pesquisadores que se dedicam a esta forma de pesquisa 
-apoiam uma maneira de olhar para a pesquisa que honra o estilo indutivo, o foco em termos individuais, 
-e a importância de mostrar a complexidade de uma situação \cite{creswell}. Dados capturados por estudos qualitativos
-são representados por palavras e figuras, e não por números (TODO seaman 8). Apesar disso, uma combinação de dados
-qualitativos e quantitativos frequentemente provêm um melhor entendimento sobre o fenômeno estudado \cite{seaman}.  
+Apesar disso, o número de estudos empíricos é ainda muito pequeno dentro da área
+de pesquisa em ciência da computação: Sjoberg et al encontrou apenas 103
+experimentos em 5.453 artigos \cite{sjoberg} e Ramesh et al. identificou menos
+de 2\% de experimentos envolvendo humanos e apenas 0.16\% estudos em campo 
+dentre 628 artigos \cite{ramesh} .
 
-Existem muitas maneiras de se conduzir
-um estudo qualitativo, como etnografia, teoria fundamentada nos dados (em inglês, \textit{Grounded Theory}), estudos de caso,
-pesquisa de fenômenos (em inglês, \textit{phenomenological research}) e pesquisa narrada \cite{creswell}. 
-Baseando-se na definição de Robson \cite{robson}, Yin \cite{yin} e Benbasat et al. \cite{benbasat}, \cite{guidelines-case-study} 
-mostra que todas as definições concordam que um estudo de caso investiga um fenônemo contemporâneo no seu contexto. Robson afirma
-que um estudo de caso que estressa o uso de múltiplas fontes de evidência, Yin denomina estudo de caso um "inquérito" e
-destaca que os limites entre o fenomêno e seu contexto podem não ser claros, enquanto que Benbasat et al. menciona que um estudo
-de caso recolhe informações de poucas entidades (como pessoas, grupos ou organizações) e que também é caracterizado pela
-falta de controle experimental.
+Uma pesquisa qualitativa é um meio para se explorar e entender a influência que 
+indivíduos ou grupos atribuem a um problema social ou humano. O processo de
+pesquisa envolve questões emergentes e procedimentos, dados geralmente colhidos
+sob o ponto de vista do participante, com a análise feita de maneira indutiva
+indo  geralmente de um tema específico para um tema geral e com o pesquisador
+fazendo interpretações do significado desses dados. Dados capturados por estudos
+qualitativos são representados por palavras e figuras, e não por números.
 
-Baseando-se no fato de que o processo de desenvolvimento de software envolve diversos fatores humanos e é totalmente sensível
-ao contexto em que ele está inserido, este trabalho é composto por um conjunto de estudos de caso, 
-onde são utilizados métodos baseados em teoria fundamentada nos dados para colheta
-e análise dos dados. 
+O relatório final escrito tem uma estrutura flexível e os pesquisadores que se
+dedicam a esta forma de pesquisa apoiam uma maneira de olhar para a pesquisa que
+honra o estilo indutivo, o foco em termos individuais, e a importância de mostrar a 
+complexidade de uma situação \cite{creswell}. 
+
+Existem muitas maneiras de se conduzir um estudo qualitativo, como etnografia,
+teoria fundamentada nos dados (em inglês, \textit{Grounded Theory}), estudos de 
+caso, pesquisa de fenômenos (em inglês, \textit{phenomenological research}) e 
+pesquisa narrada \cite{creswell}. 
+
+Baseando-se na definição de Robson \cite{robson}, Yin \cite{yin} e Benbasat et
+al. \cite{benbasat}, Runeson e Host mostram que todas as definições concordam
+que um estudo de caso investiga um fenônemo contemporâneo no seu contexto. 
+Robson afirma que um estudo de caso estressa o uso de múltiplas fontes de
+evidência, Yin denomina estudo de caso um "inquérito" e destaca que os limites 
+entre o fenomêno e seu contexto podem não ser claros, enquanto que Benbasat et
+al. menciona que um estudo de caso recolhe informações de poucas entidades 
+(como pessoas, grupos ou organizações) e que também é caracterizado pela  falta
+de controle experimental \cite{guidelines-case-study}.
+
+Baseando-se no fato de que o processo de desenvolvimento de software envolve 
+diversos fatores humanos e é totalmente sensível ao contexto em que ele está 
+inserido, este trabalho é composto por um conjunto de estudos de caso, onde são 
+utilizados métodos baseados em teoria fundamentada nos dados para colheta e
+análise dos dados.
 
 \section{Participantes da pesquisa}
 \label{sec:planejamento-participantes}
 
-Cada um dos três estudos de caso será conduzido em uma empresa de desenvolvimento de software do mercado brasileiro. Ao optar
-por pesquisar dentro de uma empresa, estre trabalho se mostra mais preocupado em aumentar o realismo do estudo, porém abrindo mão 
-de um maior controle sobre o ambiente (que seria alcançado em um experimento com alunos dentro de uma universiade, por exemplo) \cite{tripe-experimento}.
-
-O critério levados em consideração no momento de convidar empresas a participar da pesquisa foram:
+Para a condução do estudo de caso, algumas empresas do mercado de software
+brasileiro foram selecionadas de acordo com alguns critérios.
+Os critérios que foram levados em consideração no momento de convidar empresas a
+participarem da pesquisa foram:
 
 \begin{itemize}
-	\item Utilização de TDD há mais de 1 ano;
-	\item Localizada em São Paulo (SP), para facilitar o processo de entrevista e observação do ambiente;
-	\item Desenvolvedores com diferentes níveis de experiência em TDD e em Orientação a Objetos, desde iniciantes até experientes; 
+	\item Utilizem de TDD há mais de 1 ano;
+
+	\item Sejam localizadas em São Paulo (SP), para facilitar o processo de
+	entrevista e observação do ambiente;
+
+	\item Possuam desenvolvedores com diferentes níveis de experiência em TDD e em 
+	Orientação a Objetos, desde iniciantes até experientes;
+
 	\item Possuam projetos que utilizem a tecnologia Java e sejam baseados na web;
+
+	\item Utilizem alguma metodologia ágil como processo de desenvolvimento de
+	software;
 \end{itemize}
 
-De acordo com esses critérios, três empresas foram selecionadas. 
-Todas elas desenvolvem softwares de pequeno e médio porte (e por isso entenda-se software entre 20 a 200 mil linhas de código), 
-utilizando a plataforma Java para desenvolvimento. Elas também possuem profissionais com os mais variados níveis de experiência
-na área trabalhando juntos no mesmo time.
+Ao final, três empresas foram selecionadas. Todas elas desenvolvem softwares de
+pequeno e médio porte (e por isso entenda-se software entre 100 a 500 mil linhas
+de código), utilizando a plataforma Java para desenvolvimento. Elas também 
+possuem profissionais com os mais variados níveis de experiência na área 
+trabalhando juntos no mesmo time.
+
+A repetição do experimento em diferentes empresas com diferentes projetos,
+equipes e contextos serve como estratégia de validação dos resultados
+encontrados.
 
 \section{Estratégia de pesquisa} 
 \label{sec:planejamento-estrategia}
 
-Conduzir uma pesquisa no mundo real implica em um equilíbrio entre nível de controle e grau de realismo. 
-Uma situação realística é geralmente complexa e não-determinística, impedindo o entendimento sobre o que
-acontece. Por outro lado, aumentar o controle sobre o experimento reduz o grau de realismo, muitos
-vezes fazendo com que os reais fatores de influência fiquem fora do escopo do estudo. Estudos de caso são,
-por definição, conduzidos no mundo real e por isso têm um alto grau de realismo, mas dessa forma sacrificando
-o nível de controle \cite{guidelines-case-study}.
+Conduzir uma pesquisa no mundo real implica em um equilíbrio entre nível de
+controle e grau de realismo. Uma situação realística é geralmente complexa e 
+não-determinística, impedindo o entendimento sobre o que acontece. Por outro
+lado, aumentar o controle sobre o experimento reduz o grau de realismo, muitos
+vezes fazendo com que os reais fatores de influência fiquem fora do escopo do 
+estudo. Estudos de caso são, por definição, conduzidos no mundo real e por isso 
+têm um alto grau de realismo, mas dessa forma sacrificando o nível de  controle
+\cite{guidelines-case-study}.
 
-Optando por um maior realismo, os dados serão coletados principalmente através de entrevistas com desenvolvedores
-que praticam TDD no dia-a-dia de trabalho e que podem avaliar com propriedade o efeito da prática sobre o
-design orientado a objetos dos seus projetos. Além disso, o ambiente será observado pelo pesquisador afim de 
-capturar informações do cotidiano relevantes para a pesquisa. Por fim, métricas de código serão geradas e
-comparadas com as informações obtidas nas entrevistas.
+Optando por um maior realismo, os dados serão coletados principalmente através 
+de entrevistas com desenvolvedores que praticam TDD no dia-a-dia de trabalho e
+que podem avaliar com propriedade o efeito da prática sobre o design orientado 
+a objetos dos seus projetos. Além disso, o ambiente será observado pelo
+pesquisador afim de capturar informações do cotidiano relevantes para a pesquisa. 
 
 As sub-seções abaixo detalham como os dados serão colhidos em cada etapa da pesquisa.
 
 \subsection{Entrevistas}
 \label{sec:planejamento-estrategia-entrevistas}
 
-O primeiro passo da pesquisa é uma série de entrevistas com os desenvolvedores das empresas participantes. 
-As entrevistas serão semi-estruturadas, o que significa que o pesquisador possui um roteiro de perguntas a serem respondidas, mas pode eventualmente
-alterar o rumo da entrevista de acordo com as respostas dados pelos entrevistados \cite{guidelines-case-study}. 
-Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê uma resposta ampla sobre o assunto.
+O primeiro passo da pesquisa é uma série de entrevistas com os desenvolvedores 
+das empresas participantes. As entrevistas serão semi-estruturadas, o que
+significa que o pesquisador possui um roteiro de perguntas a serem respondidas, 
+mas pode eventualmente alterar o rumo da entrevista de acordo com as respostas 
+dadas pelos entrevistados \cite{guidelines-case-study}. 
 
-O principal objetivo dessas entrevistas é capturar informações sobre:
+Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê
+uma resposta ampla sobre o assunto. O principal objetivo dessas entrevistas é
+capturar informações sobre:
 
 \begin{itemize}
-	\item Caracterizar a experiência do programador com desenvolvimento de software, boas práticas de desenvolvimento e TDD;
+	\item Caracterizar a experiência do programador com desenvolvimento de
+	software, boas práticas de desenvolvimento e TDD;
+
 	\item A visão do desenvolvedor sobre a influência de TDD no design;
+
 	\item Como o desenvolvedor utiliza o feedback dos testes para guiar o design;
-	\item Como o desenvolvedor vê a influência que a utilização de TDD junto com outras práticas ágeis, como programação pareada, tem sobre o design;
-	\item A relação entre a experiência do programador e os efeitos de TDD na qualidade do design;
-	\item Os efeitos de TDD sobre a gerênciamento de depêndencias em sistemas orientados a objetos;
+
+	\item Como o desenvolvedor vê a influência que a utilização de TDD junto com 
+	outras práticas ágeis, como programação pareada, tem sobre o design;
+
+	\item A relação entre a experiência do programador e os efeitos de TDD na 
+	qualidade do design;
+
+	\item Os efeitos de TDD sobre a gerênciamento de depêndencias em sistemas 
+	orientados a objetos;
+
 	\item A relação entre TDD e boas práticas de orientação a objetos;
-	\item Os efeitos de TDD sobre o acoplamento e a coesão geral das classes do sistema;
+
+	\item Os efeitos de TDD sobre o acoplamento e a coesão geral das classes  do
+	sistema;
+
 	\item A visão do programador sobre a simplicidade que TDD agrega ao processo;
 \end{itemize} 
 
-Todas as entrevistas serão gravadas para que possam ser consultadas pelo pesquisador em um momento futuro. Além disso,
-as pesquisas serão sempre feitas por dois observadores, possibilitando que ambos tomem notas separadas e comparem
+Todas as entrevistas serão gravadas para que possam ser consultadas pelo
+pesquisador em momentos futuros. Além disso, as pesquisas serão sempre feitas
+por dois observadores, possibilitando que ambos tomem notas separadas e comparem
 suas anotações. O objetivo é diminuir o viés do processo.
 
-As entrevistas serão feitas em dias diferentes. Ao final de cada dia, os pesquisadores se reunirão para discutir
-sobre os pontos levantados no dia corrente e para sugerir melhorias no instrumento de entrevista. 
-A versão final do roteiro de entrevista pode ser encontrado no apêndice \ref{ape:entrevista} desse trabalho.
+As entrevistas serão feitas em dias diferentes. Ao final de cada dia, os
+pesquisadores se reunirão para discutir sobre os pontos levantados no dia
+corrente, com o objetivo de sugerir melhorias no instrumento de entrevista. A
+versão final do roteiro de entrevista pode ser encontrado no apêndice 
+\ref{ape:entrevista} deste trabalho.
 
-Além disso, o processo de codificação \cite{seaman} será feito por ambos os pesquisados separadamente, e só então
-ambos juntarão seus resultados, após uma série de comparações e discussões sobre as diferenças encontradas.
+Além disso, o processo de codificação \cite{seaman} será feito por ambos os
+pesquisados separadamente, e só então ambos juntarão seus resultados, após uma 
+série de comparações e discussões sobre as diferenças encontradas.
 
 \subsection{Observação do mundo real}
 \label{sec:planejamento-estrategia-observacao}
 
-O pesquisador observará os desenvolvedores em seu ambiente natural para investigar como a 
-prática é conduzida no dia-a-dia pelos desenvolvedores. O período de observação será pré-agendado com o
-líder da equipe para que o pesquisador esteja observando o ambiente em um dia em que atividades de design provavelmente
-acontecerão (o que significa que o pesquisador não estará presente em momentos de correções de erros ou criação de interfaces de usuário, por exemplo).
-O tempo de observação é indeterminado, sendo decidido pelo pesquisador se existe a real necessidade de continuar a observação.
+O pesquisador observará os desenvolvedores em seu ambiente natural para
+investigar como a prática é conduzida no dia-a-dia pelos desenvolvedores. O
+período de observação será pré-agendado com os líderes de cada equipe para que
+o pesquisador esteja observando o ambiente em um dia em que atividades de 
+design provavelmente acontecerão (o que significa que o pesquisador não estará 
+presente em momentos de  correções de erros ou criação de interfaces de usuário,
+por exemplo). O tempo de observação é indeterminado, sendo decidido pelo 
+pesquisador se existe a real necessidade de continuar a observação.
 
 Através da observação, o pesquisador poderá avaliar se
-a respostas dadas na entrevista conferem com o que eles realmente realizam durante o dia de trabalho. Além disso, o pesquisador
-poderá fazer perguntas sobre determinada situação que aconteceu naquele momento.
+a respostas dadas na entrevista conferem com o que eles realmente realizam 
+durante o dia de trabalho. Além disso, o pesquisador poderá fazer perguntas 
+sobre determinada situação que aconteceu naquele momento.
 
 Os objetivos das observações são:
 
 \begin{itemize}
-	\item Descobrir como os programadores praticam TDD (Aniche e Gerosa \cite{aniche-mistakes} mostraram que os desenvolvores tendem a cometer desvios durante o processo);
-	\item Descobrir como eles realmente utilizam o feedback dos testes para guiar o design;
-	\item Verificar se outras práticas ágeis, como programação pareada, influenciam a prática de TDD;
+	\item Descobrir como os programadores praticam TDD (Aniche e Gerosa 
+	\cite{aniche-mistakes} mostraram que os desenvolvores tendem a cometer desvios
+	durante o processo);
+
+	\item Descobrir como eles realmente utilizam o feedback dos testes para guiar
+	o design;
+
+	\item Verificar se outras práticas ágeis, como programação pareada, 
+	influenciam a prática de TDD;
+
 	\item Outras maneiras na qual a utilização de TDD influenciou no design;
 \end{itemize}
 
-O pesquisador fará anotações sobre o que achar relevante. Ele anotará também o dia e hora que o fato ocorreu, bem como os desenvolvedores
-que estavam participando naquele momento.
-
-\subsection{Métricas de Código}
-\label{sec:planejamento-estrategia-metricas}
-
-Conhecidas métricas de qualidade de design como acoplamento e coesão, discutidas no capítulo \ref{cap:design}, serão calculadas para os códigos em que os desenvolvedores
-atuam. Além disso, \cite{lanza} propõe uma maneira para se descobrir maus cheiros de design através de métricas baseadas nas métricas
-já apresentadas.
-
-Dessa maneira, os dados colhidos de maneira qualitativa nos passos anteriores poderão ser triangularizados com os valores gerados
-por essas métricas.
-
-Os objetivos de calcular essas métricas é:
-
-\begin{itemize}
-	\item Verificar o comportamento das métricas de acoplamento;
-	\item Verificar o comportamento das métricas de coesão;
-	\item Verificar o comportamento das métricas de simplicidade;
-	\item Verificar o comportamento das métricas de instabilidade e abstração \cite{bobmartin-oodmetrics};
-	\item Verificar o comportamento das métricas de testabilidade;
-	\item Verificar a presença de heurísticas de design \cite{lanza};
-\end{itemize}
-
-Alguns dos sistemas foram desenvolvidos utilizando-se uma estratégia de desenvolvimento mista, aonde TDD foi praticado em apenas algumas partes
-do código. Durante a medição, os valores obtidos das partes do sistema que foram desenvolvidas utilizando-se TDD serão separados dos valores 
-dos trechos de código desenvolvidos sem TDD. Isso possibilitará uma comparação dessas métricas, 
-dentro do mesmo sistema, em pontos em que TDD foi praticado e em pontos aonde TDD não foi praticado.
-
-Para o cálculo das métricas, serão utilizadas ferramentas como JDepend \cite{jdepend}, Eclipse Metrics \cite{eclipse-metrics} e (TODO ferramenta gall),
-todas disponíveis para uso gratuito.
+O pesquisador fará anotações sobre o que achar relevante. Ele anotará também o 
+dia e hora que o fato ocorreu, bem como os desenvolvedores que estavam
+participando naquele momento, para que possa eventualmente checar com as
+respostas dadas na entrevista.
 
 \section{Análise dos dados}
 \label{sec:planejamento-analise}
 
-O objetivo básico de uma análise de dados qualitativa é derivar conclusões a partir dos dados, mantendo uma clara cadeia de evidências.
-Isso significa que o leitor deve ser capaz de seguir a derivação de resultados e conclusões pelos dados coletados \cite{yin}.
+O objetivo básico de uma análise de dados qualitativa é derivar conclusões a
+partir dos dados, mantendo uma clara cadeia de evidências. Isso significa que  o
+leitor deve ser capaz de seguir a derivação de resultados e conclusões pelos 
+dados coletados \cite{yin}.
 
-O processo de análise, baseado em \cite{creswell}, que está representado na figura (TODO fig), ilustra o processo de análise que será utilizado nessa pesquisa. Apesar de parecer uma abordagem em cascata, ele é na prática interativo, já que os passos são interconectados. Cada um dos níveis é detalhado a seguir:
+O processo de análise, baseado em \cite{creswell}, que está representado na
+figura (TODO fig), ilustra o processo de análise que será utilizado nessa
+pesquisa. Apesar de parecer uma abordagem em cascata, ele é na prática 
+interativo, já que os passos são interconectados. Cada um dos níveis é 
+detalhado a seguir:
 
 \begin{itemize}
 
-	\item \textit{Organização e Preparação dos Dados}: Transcrição das entrevistas e das notas geradas durante todo o processo de entrevistas; transcrição das notas das observações; transcrição das informações obtidas no processo de engenharia reversa; cálculo das métricas em diferentes momentos do código-fonte dos projetos
+	\item \textit{Organização e Preparação dos Dados}: Transcrição das entrevistas 
+	e das notas geradas durante todo o processo de entrevistas; transcrição das
+	notas das observações;
 	
-	\item \textit{Leitura dos dados}: Leitura de todos os dados gerados até o momento. Nesse momento há uma reflexão sobre os principais pontos e opiniões colhidos em todas as fontes de dados.
+	\item \textit{Leitura dos dados}: Leitura de todos os dados gerados até o
+	momento. Nesse momento há uma reflexão sobre os principais pontos e opiniões 
+	colhidos em todas as fontes de dados;
 	
-	\item \textit{Codificação e Agrupamento por Temas}:	Codificação é o ato de organizar e classificar os dados em pequenas categorias ou segmentos de textos antes de trazer qualquer significado àquela informação \cite{rossman}. Esse processo será feito por dois pesquisadores e os resultados serão confrontados. Após o processo de codificação, agrupa-se os dados codificados em temas que possuem uma granularidade maior. Esses temas são aqueles que aparecerão como maiores contribuições da pesquisa qualitativa.
+	\item \textit{Codificação e Agrupamento por Temas}:	Codificação é o ato de
+	organizar e classificar os dados em pequenas categorias ou segmentos de textos 
+	antes de trazer qualquer significado àquela informação \cite{rossman}. Esse 
+	processo será feito por dois pesquisadores e os resultados serão confrontados. 
+	Após o processo de codificação, agrupa-se os dados codificados em temas que 
+	possuem uma granularidade maior. Esses temas são aqueles que aparecerão como 
+	maiores contribuições da pesquisa qualitativa.
 	
-	\item \textit{Interpretação do resultado}: O pesquisador interpreta os dados, basendo-se tanto na sua experiência pessoal com o assunto quanto com dados retirados da literatura.
+	\item \textit{Interpretação do resultado}: O pesquisador interpreta os dados, 
+	basendo-se tanto na sua experiência pessoal com o assunto quanto com dados 
+	retirados da literatura.
 
 \end{itemize}
  
-%TODO figura
-
 \section{Validade e Confiabilidade do Estudo}
 \label{sec:planejamento-validacao}
 
-Os termos validade e confiabilidade em estudos qualitativos não possuem o mesmo significado dos estudos quantitativos. 
-Confiabilidade em um estudo qualitativo indica que a abordadem do pesquisador é consistente entre diferentes pesquisadores
-e diferentes projetos. Gibbs \cite{gibbs} sugere alguns procedimentos, dentre eles:
+Os termos validade e confiabilidade em estudos qualitativos não possuem o mesmo 
+significado dos estudos quantitativos. Confiabilidade em um estudo qualitativo 
+indica que a abordadem do pesquisador é consistente entre diferentes
+pesquisadores e diferentes projetos. Gibbs \cite{gibbs} sugere alguns
+procedimentos,  dentre eles:
 
 \begin{itemize}
-	\item Checar as transcrições para garantir que não foram cometidos erros óbvios durante a transcrição;
-	\item Certificar que não há um desvio na definição dos códigos ou no significado dos códigos durante o processo de codificação. Isso pode ser alcançado comparando os dados com os códigos e com as anotações constantemente;
-	\item Fazer uma comparação cruzada entre os códigos criados pelos pesquisadores
+	\item Checar as transcrições para garantir que não foram cometidos erros 
+	óbvios durante a transcrição;
+
+	\item Certificar que não há um desvio na definição dos códigos ou no
+	significado dos  códigos durante o processo de codificação. Isso pode ser
+	alcançado comparando os dados com os códigos e com as anotações constantemente;
+
+	\item Fazer uma comparação cruzada entre os códigos criados pelos
+	pesquisadores;
 \end{itemize}
 
-O processo de codificação será feito por dois pesquisadores diferentes, que irão constantemente checar e comparar os resultados
-obtidos. Além disso, as entrevistas serão gravadas e o pesquisador poderá revisar a transcrição durante todo a pesquisa.
+O processo de codificação será feito por dois pesquisadores diferentes, que 
+irão constantemente checar e comparar os resultados obtidos. Além disso, as 
+entrevistas serão gravadas e o pesquisador poderá revisar a transcrição  durante
+todo a pesquisa.
 
-Já o termo validade em um estudo qualitativo significa que o pesquisador se preocupou com a exatidão das informações
-geradas pela pesquisa. Isso pode ser verificado por alguns procedimentos, dentre eles:
+Já o termo validade em um estudo qualitativo significa que o pesquisador  se
+preocupou com a exatidão das informações geradas pela pesquisa. Isso pode ser 
+verificado por alguns procedimentos, dentre eles:
 
 \begin{itemize}
 	\item Triangularização diferentes fontes de dados;
-	\item Apresentar os resultados da pesquisa para os participantes e verificar se eles concordam com os resultados gerados;
+
+	\item Apresentar os resultados da pesquisa para os participantes  e verificar
+	se eles concordam com os resultados gerados;
+
 	\item Prover descrição rica e detalhada sobre o ambiente;
+
 	\item Esclarecer todos os possíveis vieses da pesquisa;
+
 	\item Auditoria externa para revisar o projeto;
 \end{itemize}
 
-Os dados colhidos pela entrevista serão triangularizados com os dados obtidos das métricas de código e design. 
-Como exemplo, os entrevistados serão perguntados sobre os possíveis efeitos de TDD no design, como redução do acoplamento ou
-aumento da coesão, e esses dados serão comparados com as métricas de acoplamento e coesão, abstração e instabilidade 
-calculadas sobre o código.
-Além disso, os dados observados no ambiente dos programadores também servirão para aumentar a validade dos 
-dados colhidos nas entrevistas.
+Os dados colhidos pela entrevista serão triangularizados com os dados
+verificados durante a observação do ambiente real de trabalho, na
+tentativa de aumentar a validade dos dados colhidos nas entrevistas.
 
 \section{Papel do Pesquisador}
 \label{sec:planejamento-papel}
 
-O pesquisador tem como papel fundamental participar do processo de captura de todos os dados comentados
-nas seções acima. No processo de entrevista, o pesquisador fará o papel de entrevistador principal, enquanto outro
-pesquisador convidado fará o papel de observador da entrevista.
+O pesquisador tem como papel fundamental participar do processo de  captura de
+todos os dados comentados nas seções acima. No processo de entrevista, o 
+pesquisador fará o papel de entrevistador principal, enquanto outro  pesquisador
+convidado fará o papel de observador da entrevista.
 
-O pesquisador também observará o ambiente real dos desenvolvedores nas três empresas selecionadas
-para a pesquisa. A experiência e vivência do pesquisador na área de desenvolvimento de software 
-nesse ponto será importante para ajudar na compreensão dos ambientes. 
+O pesquisador também observará o ambiente real dos desenvolvedores nas três 
+empresas selecionadas para a pesquisa. A experiência e vivência do pesquisador 
+na área de desenvolvimento de software nesse ponto será importante para  ajudar
+na compreensão dos ambientes.
 
 Creswell \cite{creswell}, citando Locke \cite{locke}, lembra
-que a contribuição do investigador para o contexto da pesquisa pode ser útil e positiva ao invés de prejudicial.
-Além do mais, o pesquisador é responsável por identificar todos os valores pessoais, pressuposições e vieses desse estudo.
+que a contribuição do investigador para o contexto da pesquisa pode ser útil e
+positiva ao invés de prejudicial. Além do mais, o pesquisador é responsável por
+identificar todos os valores pessoais, pressuposições e vieses desse estudo.
 
 \section{Problemas Éticos}
 \label{sec:planejamento-etica}
 
-Essa pesquisa poderá revelar problemas nas empresas selecionadas, como problemas no design do software, na
-qualidade dos seus desenvolvedores, entre outros. Por esse motivo, todos os dados colhidos pelo pesquisador
-serão mantidos em sigilo e todos os nomes de desenvolvedores e projetos omitidos, conforme acordo assinado entre o pesquisador e a empresa.
+Essa pesquisa poderá revelar problemas nas empresas selecionadas, como problemas
+no design do software, na qualidade dos seus desenvolvedores, entre outros. 
 
+Por esse motivo, todos os dados colhidos pelo pesquisador serão mantidos em
+sigilo e todos os nomes de desenvolvedores e projetos omitidos, conforme acordo 
+assinado entre o pesquisador e a empresa.
 
 \section{Resultados Esperados}
 \label{sec:planejamento-resultados-esperados}
 
-O objetivo desta pesquisa é entender, de maneira satisfatória, a influência de TDD no design
-de sistemas orientados a objetos, obtendo o ponto de vista dos desenvolvedores que a praticam diariamente. 
-Conforme discutido nos trabalhos relacionados, muitos pesquisas já foram feitas, 
-mas poucas discutem os motivos e as razões de TDD influenciar no design.
+O objetivo desta pesquisa é entender, de maneira satisfatória, a influência de 
+TDD no design de sistemas orientados a objetos, obtendo o ponto de vista dos 
+desenvolvedores que a praticam diariamente. Conforme discutido nos trabalhos 
+relacionados, muitos pesquisas já foram feitas, mas poucas discutem os motivos 
+e as razões de TDD influenciar no design.
 
