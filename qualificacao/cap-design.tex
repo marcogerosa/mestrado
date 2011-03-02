@@ -16,7 +16,7 @@ testabilidade, o praticante de TDD é obrigado a fazer uso de boas práticas de
 desenvolvimento de software. 
 
 Esse capítulo discute apresenta e discute algumas dessas boas práticas, que
-são posteriormente avaliadas durante o processo de pesquisa. 
+são posteriormente avaliadas durante o processo de pesquisa.
 
 \section{Sintomas de Designs em Degradação}
 \label{sec:design-degradacao}
@@ -160,75 +160,96 @@ Mas, alcançar tal objetivo não é tarefa fácil. Criar classes pouco acopladas
 altamente coesas demanda um grande esforço por parte do desenvolvedor e requer
 grande conhecimento e experiência no paradigma da orientação a objetos.
 
-
 Os princípios comentados nesta seção são muito discutidos por Robert Martin
-em vários de seus livros e artigos publicados \cite{bob-martin}, e são produto
-de décadas de experiência em engenharia de software. Segundo ele próprio,
-esses príncipios não são produto de uma única pessoa, mas sim a integração
-de pensamentos e trabalhos de um grande número de desenvolvedores de software  e
-pesquisadores, e visam combater todos os sintomas de degradação discutidos na 
-seção \ref{sec:design-degradacao}.
+em vários de seus livros e artigos publicados \cite{bob-martin}, e os exemplos
+dessa seção são fortemente baseados neles. 
+
+Esses princípios são produto de décadas de experiência em engenharia de
+software. Segundo ele próprio, esses príncipios não são produto de uma única 
+pessoa, mas sim a integração de pensamentos e trabalhos de um grande número de 
+desenvolvedores de software  e pesquisadores, e visam combater todos os sintomas
+de degradação discutidos na seção \ref{sec:design-degradacao}.
 
 Conhecidos pelo acrônimo \textit{SOLID} (sólido, em português), são eles:
 
 \begin{itemize}
 	\item Princípio da Responsabilidade Única (\textit{Single-Responsibility 
-	Principle})
-	\item Príncipio do Aberto-Fechado (\textit{Open-Closed Principle})
+	Principle (SRP)})
+	\item Príncipio do Aberto-Fechado (\textit{Open-Closed Principle (OCP)})
 	\item Princípio de Substituição de Liskov (\textit{Liskov Substitution 
-	Principle})
+	Principle (LSP)})
 	\item Príncipio da Inversão de Dependência (\textit{Dependency Inversion
-	Principle})
+	Principle (DIP)})
 	\item Princípio da Segregação de Interfaces (\textit{Interface Segregation 
-	Principle})
+	Principle (ISP)})
 \end{itemize}
 
 \subsection{Príncipio da Responsabilidade Única}
 \label{subsec:principio-srp}
 
-O termo coesão define a relação entre os elementos de um mesmo módulo \cite{demarco} \cite{pagejones}. Isso significa que
-os todos elementos de uma classe que tem apenas uma responsabilidade tendem a se relacionar. Diz-se que uma classe
-como essa é uma classe que possui alta coesão (ou que é coesa). Já em uma classe
-com muitas responsabilidades diferentes, os elementos tendem a se relacionar apenas em "grupos", ou seja, com os elementos
-que tratam de uma das responsabilidades da classe. A esse tipo de classe, diz-se que ela possui uma baixa coesão (ou que não é
-coesa).
+O termo coesão define a relação entre os elementos de um mesmo módulo
+\cite{demarco} \cite{pagejones}. Isso significa que os todos elementos de uma 
+classe que tem apenas uma responsabilidade tendem a se relacionar. Diz-se que
+uma classe como essa é uma classe que possui alta coesão (ou que é coesa). 
 
-Robert Martin altera esse conceito de coesão e relaciona coesão com as forças que causam um módulo ou uma classe a mudar. No caso,
-o Príncipio de Responsabilidade Única diz que uma classe deve ter apenas uma única razão para mudar \cite{bob-martin}.
+Já em uma classe com muitas responsabilidades diferentes, os elementos tendem  a
+se relacionar apenas em "grupos", ou seja, com os elementos que tratam de uma 
+das responsabilidades da classe. A esse tipo de classe, diz-se que ela possui 
+uma baixa coesão (ou que não é coesa).
 
-Esse príncipio é bem importante no momento em que há uma alteração em alguma funcionalidade do software. Quando isso ocorre,
-o programador precisa procurar pelas classes que possuem a responsabilidade a ser modificada. Supondo uma classe que 
-possua mais de uma razão para mudar, isso significa que ela é acessada por duas partes do software que fazem coisas diferentes.
-Fazer uma alteração em uma das responsabilidades dessa classe pode, de maneira não intencional, quebrar a outra parte
-de maneira inesperada. Isso torna o design frágil, como comentado na seção \ref{subsec:fragilidade}.
+Robert Martin altera esse conceito de coesão e relaciona coesão com as forças
+que  causam um módulo ou uma classe a mudar. No caso, o Príncipio de
+Responsabilidade Única diz que uma classe deve ter apenas uma única razão para 
+mudar \cite{bob-martin}.
 
-Para exemplificar isso, imagine uma classe chamada "Nota Fiscal" que, além de representar uma nota fiscal no sistema, ainda
-é responsável por persistir as informações em alguma base de dados. Essa classe viola o Princípio da Responsabilidade Única,
-pois ela possui mais de uma razão para mudar. A parte de persistência por exemplo, muito provavelmente faz acesso à arcabouços
-que lidam com esse tipo de coisa. Se o arcabouço mudar, isso muito provavelmente forcará uma mudança nessa classe, além de 
-todo o processo novamente de recompilação, testes e re-implantação dessa classe. Caso o programador esqueça disso, a aplicação
-pode quebrar de maneiras imprevisíveis.
+Esse príncipio é bem importante no momento em que há uma alteração em alguma 
+funcionalidade do software. Quando isso ocorre, o programador precisa procurar 
+pelas classes que possuem a responsabilidade a ser modificada. Supondo uma
+classe  que possua mais de uma razão para mudar, isso significa que ela é
+acessada  por duas partes do software que fazem coisas diferentes.  Fazer uma
+alteração em uma das responsabilidades dessa classe pode, de maneira não
+intencional, quebrar a outra parte de maneira inesperada. Isso torna o design
+frágil, como comentado na sub-seção \ref{subsec:fragilidade}.
 
-Seguindo o princípio, essas duas responsabilidades deveriam estar em classes diferentes: uma classe que representaria a nota
-fiscal no sistema, e outra classe que seria responsável por persistir esses dados. Dessa maneira, alterações na forma de
-persistência dos dados não implicam em alterações na classe responsável pela representação da nota fiscal no sistema.
+Para exemplificar isso, imagine uma classe chamada "Nota Fiscal" que, além de
+representar uma nota fiscal no sistema, ainda é responsável por persistir as 
+informações em alguma base de dados. Essa classe viola o Princípio da
+Responsabilidade Única, pois ela possui mais de uma razão para mudar. A parte de
+persistência por exemplo, muito provavelmente faz acesso à arcabouços que lidam 
+com esse tipo de coisa. Se o arcabouço mudar, isso muito provavelmente forcará
+uma  mudança nessa classe, além de todo o processo novamente de recompilação, 
+testes e re-implantação dessa classe. Caso o programador esqueça disso, a
+aplicação pode quebrar de maneiras imprevisíveis.
+
+Seguindo o princípio, essas duas responsabilidades deveriam estar em classes 
+diferentes: uma classe que representaria a nota fiscal no sistema, e outra
+classe que seria responsável por persistir esses dados. Dessa maneira,
+alterações na forma de persistência dos dados não implicam em alterações na 
+classe responsável pela representação da nota fiscal no sistema.
 
 \subsection{Princípio do Aberto-Fechado}
 \label{subsec:ocp}
 
-O Príncipio do Aberto-Fechado, cunhado por Bertrand Meyer, diz que as entidades do software (como classes, módulos, funções, etc)
-devem ser abertas para extensão, mas fechadas para alteração \cite{meyer-ocp}. Se uma simples alteração resulta em uma cascata
-de alterações em módulos dependentes, isso cheira à rigidez, conforme descrito na seção \ref{subsec:rigidez}. O príncipio faz então
-com que o programador sempre refatore as classes de modo que mudanças desse tipo não causem mais modificações.
+O Príncipio do Aberto-Fechado, cunhado por Bertrand Meyer, diz que as entidades
+do software (como classes, módulos, funções, etc) devem ser abertas para
+extensão, mas fechadas para alteração \cite{meyer-ocp}. 
 
-Quando esse princípio é aplicado de maneira correta, novas alterações fazem com que o programador adicione novo código, e não
-modifique o anterior. Isso é alcançado através de \textit{abstrações}. Linguagens orientadas a objetos, por exemplo, possuem
-mecânismos para se criar abstrações (conhecido com interfaces em linguagens como Java ou C\#). Através dessas abstrações,
-o programador consegue descrever a maneira em que uma determinada classe deve se portar, mas sem se preocupar em como
-essa classe faz isso.
+Se uma simples alteração resulta em uma cascata de alterações em módulos
+dependentes, isso cheira à rigidez, conforme descrito na sub-seção 
+\ref{subsec:rigidez}. O príncipio pede então para que o programador sempre 
+refatore as classes de modo que mudanças desse tipo não causem mais modificações.
 
-Robert Martin \cite{bob-martin} ilustra o seguinte exemplo em seu livro: Imagine uma classe responsável por desenhar 
-um conjunto de figuras geométricas. O código do método responsável por isso, é algo como:
+Quando esse princípio é aplicado de maneira correta, novas alterações fazem com
+que o programador adicione novo código, e não modifique o anterior. Isso é
+alcançado através da criação de abstrações para o problema. Linguagens
+orientadas a objetos possuem mecânismos para criá-las (conhecido com interfaces
+em linguagens como Java ou C\#). Através dessas abstrações, o programador consegue 
+descrever a maneira em que uma determinada classe deve se portar, mas sem se
+preocupar em como essa classe faz isso.
+
+Robert Martin \cite{bob-martin} ilustra o seguinte exemplo em seu livro: Imagine
+uma classe responsável por desenhar um conjunto de figuras geométricas. O código
+do método responsável por isso, é algo como:
 
 \begin{lstlisting}[frame=trbl]
 public class DesenhadorDeFiguras {
@@ -241,12 +262,11 @@ public class DesenhadorDeFiguras {
 }
 \end{lstlisting}
 
-Repare que caso uma nova figura geométrica apareça, o código dessa classe deve ser alterado. Uma solução que segue
-o príncipio do Aberto-Fechado seria criar uma abstração (uma interface) para figuras geométricas (chamado de \textit{Figura} no código abaixo).
-Todas as figuras geométricas então implementam essa interface. Dessa maneira, ao se criar uma nova figura, basta criar uma nova classe
-que represente essa figura. O código da classe \textit{DesenhadorDeFiguras} não precisará ser modificado.
-
-O código que exemplifica isso está abaixo:
+Repare que caso uma nova figura geométrica apareça, o código dessa classe deve
+ser  alterado. Uma solução que segue o príncipio do Aberto-Fechado seria criar 
+uma abstração (uma interface) para figuras geométricas (chamado de
+\textit{Figura} no código abaixo). Todas as figuras geométricas então
+implementam essa interface. O código que exemplifica isso está abaixo:
 
 \begin{lstlisting}[frame=trbl]
 public interface Figura {
@@ -270,110 +290,177 @@ public class DesenhadorDeFiguras {
 }
 \end{lstlisting}
 
+Dessa maneira, ao se criar uma nova figura, basta criar uma nova classe que
+represente essa figura. O código da classe \textit{DesenhadorDeFiguras} não
+precisará ser modificado e continuará funcionando não importa quais figuras
+geométricas apareçam no sistema.
+
 \subsection{Princípio de Substituição de Liskov}
 \label{subsec:lsp}
 
-O princípio diz que sub-tipos devem ser substituíveis por tipos base. Esse princípio, criado por Barbara Liskov em 1988 \cite{liskov},
-é importante já que herança é uma das maneiras para se suportar abstrações e polimorfismo em linguagens orientadas à objeto.
+Esse princípio, que discute sobre tipos e sub-tipos, criado por Barbara Liskov
+em 1988 \cite{liskov}, é importante já que herança é uma das maneiras para se 
+suportar abstrações e polimorfismo em linguagens orientadas a objetos e, como 
+visto na seção \ref{subsec:ocp}, o Princípio do Aberto-Fechado se baseia 
+fortemente na utilização desses recursos.
 
-Como visto na seção \ref{subsec:ocp}, o Princípio do Aberto-Fechado se baseia muito no processo de polimorfismo. Imagine o seguinte caso:
-a classe base possui um método que aceita como parâmetros valores entre 1 e 1000. Em determinado momento, o programador cria um sub-tipo
-e sobrescreve o mesmo método, com a diferença de que esse método agora aceita valores apenas entre 1 e 500. Esse tipo de situação pode
-criar problemas difíceis de serem encontrados, já que como a pré-condição da classe base era mais fraca que a da sub-classe, pode haver
-algum cliente que faça uso disso; caso a instância do sub-tipo seja passado para esse cliente, ele vai quebrar. O mesmo problema
-acontece na pós-condição do método: imagine que esse mesmo método da classe base retorne um número no intervalo de 1 a 10, e na sub-classe
-esse método retorne um valor entre 1 e 50. Os clientes da classe base estão esperando uma saída entre 1 e 10, e caso uma instância da
-sub-classe seja passada, ela pode retornar valores que o cliente não está preparado para tratar. Isso faz com que o design fique frágil, 
-conforme citado na seção \ref{subsec:fragilidade}.  
+O problema é que utilizar herança não é tarefa fácil, pois o acoplamento criado
+entre classe filha e classe pai é grande. Fazer as classe filhas respeitarem o
+contrato do pai, e ainda permitir que mudanças na classe pai não influenciem na
+classe filha requer trabalho.
 
-Um clássico exemplo sobre Príncipio de Substituição de Liskov é o exemplo dos Quadrados e Retângulos. Imagine uma classe Retângulo. Um
-retângulo possui dois lados de tamanhos diferentes. Imagine agora uma classe Quadrado (figura geométrica que possui todos os lados
-com o mesmo tamanho) que herde de Retângulo, e a única alteração é fazer com que os dois lados tenham o mesmo tamanho. Apesar
-de parecer lógico, afinal um Quadrado é um Retângulo com apenas uma condição diferente, a classe Quadrado quebra o Príncipio:
-a pré-condição dela é mais forte do que a do quadrado, afinal os dois lados devem ter o mesmo tamanho. 
+O princípio de Liskov diz que, se um tipo S é sub-classe de um tipo T,
+então objetos do tipo T podem ser substituídos por objetos do tipo S, sem
+alterar nenhuma das propriedades desejadas daquele programa.
+
+Imagine o seguinte caso: uma certa classe base possui um método que aceita como
+parâmetros valores entre 1 e 1000. Em determinado momento, o programador cria um
+sub-tipo e sobrescreve o mesmo método, com a diferença de que esse método agora 
+aceita valores apenas entre 1 e 500. 
+
+Esse tipo de situação pode criar problemas difíceis de serem encontrados, já que
+como a pré-condição da classe base era mais fraca que a da sub-classe, pode
+haver algum cliente que faça uso disso; caso a instância do sub-tipo seja
+passado para esse cliente, ele vai quebrar. 
+
+O mesmo problema acontece na pós-condição do método: imagine que esse mesmo
+método da classe base retorne um número no intervalo de 1 a 10, e na sub-classe 
+esse método retorne um valor entre 1 e 50. Os clientes da classe base estão 
+esperando uma saída entre 1 e 10, e caso uma instância da sub-classe seja
+passada, ela pode retornar valores que o cliente não está preparado para 
+tratar. Isso faz com que o design fique frágil, conforme citado na  seção
+\ref{subsec:fragilidade}.
+
+Um clássico exemplo sobre Príncipio de Substituição de Liskov é o exemplo  dos
+Quadrados e Retângulos. Imagine uma classe Retângulo. Um retângulo possui dois 
+lados de tamanhos diferentes. Imagine agora uma classe Quadrado (figura
+geométrica que possui todos os lados com o mesmo tamanho) que herde de
+Retângulo. A única alteração é fazer com que os dois lados tenham o mesmo 
+tamanho. 
+
+Apesar de parecer lógico, afinal um Quadrado é um Retângulo com apenas uma
+condição diferente, a classe Quadrado quebra o Príncipio de Liskov: a
+pré-condição dela é mais forte do que a do quadrado, afinal os dois lados devem 
+ter o mesmo tamanho.
+
+Quebras do príncipio de Liskov geralmente levam o programador a quebrar o
+príncipio do OCP também. Ele percebe que, para um determinados sub-tipos ele 
+precisa fazer um tratamento especial, e acaba escrevendo condições nas classes 
+clientes que fazem uso disso.
 
 \subsection{Princípio da Inversão de Dependências}
 \label{subsec:dip}
 
+Classes de baixo nível, que fazem uso de infra-estrutura ou de outros detalhes
+de implementação podem facilmente sofrer modificações. E, se classes de mais alto
+nível dependerem dessas classes, essas modificações podem se propagar, tornando
+o código frágil.
+
 O Príncipio de Inversão de Dependências se baseia em duas afirmações:
 
 \begin{itemize}
-	\item Módulos de alto nível não devem depender de módulos de baixo nível. Ambos devem depender de abstrações
-	\item Abstrações não devem depender de detalhes. Detalhes devem depender de abstrações
+	\item Módulos de alto nível não devem depender de módulos de baixo nível. 
+	Ambos devem depender de abstrações
+	\item Abstrações não devem depender de detalhes. Detalhes devem depender de
+	abstrações
 \end{itemize}
 
-Imagine a seguinte classe Copiadora:
+Imagine a seguinte classe Geradora de Nota Fiscal, parecida com a discutida no
+capítulo \ref{cap:tdd}:
 
 \begin{lstlisting}[frame=trbl]
-	public class Copiadora {
-		public void copiar() {
-			LeitorDeXml leitor = new LeitorDeXml();
-			EscritorDeSerial escritor = new EscritorDeSerial();
-			while(leitor.temCaracteres()) {
-				escritor.escreve(leitor.leCaracteres());
-			}
+	public class GeradorDeNotaFiscal {
+		public void gera(Fatura fatura) {
+			NotaFiscal nf = geraNotaAPartirDa(fatura);
+			
+			new SistemaSap().envia(nf);
+			new EnviadorDeEmail().envia(nf);
+		}
+		
+		private geraNotaAPartirDa(fatura) {
+			// implementação da geração de nota
 		}
 	}
 \end{lstlisting}
 
-Repare que a classe Copiadora depende de classes de baixo nível (como LeitorDeXml e EscritorDeSerial). Mudanças nessas classes tendem a forçar
-mudanças também na classe de alto nível. Uma possível solução para o problema é uma implementação como a abaixo:
+Repare que a classe \textit{GeradorDeNotaFiscal} depende de classes de baixo
+nível (como \textit{Sap} e \textit{EnviadorDeEmail}). Mudanças nessas classes
+tendem a forçar mudanças também na classe de alto nível. Uma possível solução para o problema é
+uma implementação como a abaixo:
 
 \begin{lstlisting}[frame=trbl]
-	public interface Leitor {
-		boolean temCaracteres();
-		String leCaracteres();
+	public interface Notificador {
+		void envia(NotaFiscal nf);
 	}
 	
-	public interface Escritor {
-		void escreve(String conteudo);
-	}
+	public class SistemaSap implements Notificador { ... }
 	
-	public class Copiadora {
-		private Leitor leitor;
-		private Escritor escritor;
+	public class EnviadorDeEmail implements Notificador { ... }
+	
+	public class GeradorDeNotaFiscal {
+		private List<Notificador> notificadores;
 		
-		public Copiadora(Leitor leitor, Escritor escritor) {
-			this.leitor = leitor;
-			this.escritor = escritor;
+		public GeradorDeNotaFiscal(Notificador... notificadores) {
+			this.notificadores = Arrays.asList(notificadores);
 		}
 		
-		public void copiar() {
-			while(leitor.temCaracteres()) {
-				escritor.escreve(leitor.leCaracteres());
+		public void gera(Fatura fatura) {
+			NotaFiscal nf = geraNotaAPartirDa(fatura);
+			
+			for(Notificador notificador : notificadores) {
+				notificador.envia(nf);
 			}
+		}
+		
+		private geraNotaAPartirDa(fatura) {
+			// implementação da geração de nota
 		}
 	}
 \end{lstlisting}
 
-Agora a classe Copiadora depende apenas de interfaces de alto nível. As classes EscritorDeSerial e LeitorDeXml agora dependem das
-abstrações Leitor e Escritor, e cada um implementa a sua respectiva interface, seguindo o princípio da inversão de dependência.
+Agora a classe \textit{GeradorDeNotaFiscal} depende apenas de interfaces de alto
+nível. As classes \textit{SistemaSap} e \textit{EnviadorDeEmail} agora dependem
+da abstração \textit{Notificador}, e ambas implementam a interface, seguindo o
+princípio da inversão de dependência. 
 
-Robert Martin define uma simples heurística para o princípio: "dependa de abstrações". Além disso, ele levanta alguns pontos
-que na medida do possível devem ser seguidos:
+Acoplar-se com essa interface é uma solução muito melhor, já que ela raramente
+mudará. No código acima, ela já possui duas classes que a implementa, e portanro
+existem forças que impedem o programador de alterar essa interface. Isso a
+faz uma interface estável, não sujeita a mudanças \cite{bobmartin-oodmetrics}. 
 
-\begin{itemize}
-	\item Nenhuma variável deve guardar uma referência para uma classe concreta
-	\item Nenhuma classe deve derivar de uma classe concreta
-	\item Nenhum método deve sobrescrever um método implementado por nenhuma de suas classes base
-\end{itemize}
+As classes devem, na medida do possível, acoplar-se sempre com módulos mais
+estáveis do que ela própria, já que, como as mudanças em módulos estáveis são
+menos prováveis, raramente essa classe precisará ser alterada por mudanças em
+suas dependendências.
 
-Essas heurísticas podem não fazer sentido em alguns casos, por exemplo, para uma classe concreta que não é volátil. Se essa classe
-não muda muito e nenhuma classe similar será derivada dessa, então a dependência dessa classe com alguma outra concreta
-não é um grande problema.
+Repare que no exemplo acima, se as implementações concretas \textit{SistemaSap}
+e \textit{EnviadorDeEmail} por algum motivo mudarem, essas mudanças não serão
+propagadas para a classe \textit{GeradorDeNotaFiscal}, já que ela agora depende
+apenas da abstração. Robert Martin define uma simples heurística para o
+princípio: "dependa de abstrações".
 
 \subsection{Princípio da Segregação de Interfaces}
 \label{subsec:isp}
 
-O princípio diz que os clientes não devem ser forçados a depender de métodos que eles não usam. Quando uma interface não é coesa,
-ela contém métodos que são usadas por um grupo de clientes, e outros métodos que são usados por outro grupo de clientes. Apesar de uma
-classe poder implementar mais de uma interface, o princípio diz que o cliente da classe deve apenas depender de interfaces
-coesas.
+Acoplar-se com uma interface de baixa granularidade (ou gordas, do termo
+em inglês \textit{fat interfaces}) pode ser perigoso, já que qualquer alteração
+que um outro cliente forçar nessa interface poderá ser propagada para essa
+classe.
 
-Um exemplo típico é o caso de classes que trabalham com interfaces de usuário e classes de negócio que invocam essas classes
-de interface. Imagine uma aplicação bancária aonde você tenha 2 operações: saque e depósito. Geralmente a classe de interface 
-vai conter dois métodos: um para desenhar a interface de saque e outra para desenhar a interface de depósito. Uma alteração em
-um desses métodos, faz com que a outra classe seja reimplantada. Seguindo o princípio, teríamos o seguinte:
+O princípio da segregação de interfaces diz que classes cliente não devem ser
+forçados a depender de métodos que eles não usam. Quando uma interface não é
+coesa, ela contém métodos que são usadas por um grupo de clientes, e outros 
+métodos que são usados por outro grupo de clientes. Apesar de uma classe poder 
+implementar mais de uma interface, o princípio diz que o cliente da classe  deve
+apenas depender de interfaces coesas.
+
+Um exemplo típico é o caso de classes que trabalham com interfaces de usuário e
+classes  de negócio que invocam essas classes de interface. Imagine uma
+aplicação bancária aonde você tenha duas operações: saque e depósito. Geralmente
+a classe de interface vai conter dois métodos: um para desenhar a interface de
+saque e outra para desenhar a interface de depósito. Uma alteração em um desses 
+métodos, faz com que a outra classe seja reimplantada. Seguindo o princípio, 
+teríamos o seguinte:
 
 \begin{lstlisting}[frame=trbl]
 	public interface InterfaceDeSaque {
@@ -395,8 +482,34 @@ um desses métodos, faz com que a outra classe seja reimplantada. Seguindo o pri
 	}
 \end{lstlisting}
 
-A classe \textit{InterfaceDoUsuario} implementa ambas interfaces, mas repare que a classe \textit{Saque}, responsável por
-uma das funcionalidades do sistema recebe apenas a interface que tem somente o método que será utilizado por ela.
+A classe \textit{InterfaceDoUsuario} implementa ambas interfaces, mas repare 
+que a classe \textit{Saque}, responsável por uma das funcionalidades do sistema 
+recebe apenas a interface que tem somente o método que será utilizado por ela.
 
-\section{Métricas e Heurísticas de design}
+\section{Príncipios e o TDD}
 
+Classes que obedecem aos princípios SOLID são fáceis de serem testadas, pois
+apresentam todas as vantagens citadas acima. Ao inverter o processo, e fazer o
+programador pensar em classes facilmente testadas desde o princípio, TDD exige
+que o programador faça uso desses princípios, resultando em um código de maior
+qualidade.
+
+Como citado no capítulo \ref{cap:tdd}, grande parte do feedback que os testes
+dão acontecem no momento em que o programador encontra dificuldades para a
+escrita do mesmo.
+
+Classes que violam o SRP, por exemplo, necessitam de grande
+esforço por parte do desenvolvedor para ser testada, já que é uma classe que faz
+muita coisa, e por consequência, demanda muitos testes.
+
+O DIP também emerge da prática, conforme ilustrado no exemplo do GOOS
+\cite{GOOS}. Ao desenhar classes e pensar no relacionamento com outras classes,
+programadores pensam apenas no comportamento esperado e sua abstração, e não na
+maneira como isso será implementado. A implementação das abstrações são
+inclusive feitas em fases posteriores. Isso incentiva as classes a
+sempre dependerem de abstrações e não de implementações concretas.
+
+Apesar de conhecidos, esses princípios não são comumente aplicados.
+Este trabalho visa entender se TDD, ao forçar o programador a escrever o teste
+antes, encoraja o programador a fazer uso das boas práticas citadas neste
+capítulo.
