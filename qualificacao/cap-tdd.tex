@@ -1,3 +1,4 @@
+%% ------------------------------------------------------------------------- %%
 \chapter{Test-Driven Development}
 \label{cap:tdd}
 
@@ -80,6 +81,7 @@ programming is not a testing technique} que, em uma tradução livre, significa
 \textit{Programação Teste Primeiro (Test-First Programming) não é uma prática
 de testes}.
 
+%% ------------------------------------------------------------------------- %%
 \section{Definições incompletas}
 
 Apesar do foco da prática em design, é possível encontrar muitas definições que
@@ -101,6 +103,7 @@ avaliam os efeitos de TDD sobre a qualidade externa, algo geralmente avaliado em
 técnicas de testes. Esses estudos são explicados com mais detalhes no capítulo
 \ref{cap:trabalhos-relacionados}.
 
+%% ------------------------------------------------------------------------- %%
 \section{O ciclo}
 
 % TODO fazer figura do TDD
@@ -137,6 +140,7 @@ fez uma famosa afirmação sobre TDD que explica essa divisão: \textit{Código
 claro que funciona}. Na opinião dele, o programador primeiro se preocupa com a
 parte ``que funciona'', para depois deixar o ``código claro''.
 
+%% ------------------------------------------------------------------------- %%
 \section{Efeitos no design}
 
 Na abordagem tradicional, programadores escrevem boa parte do código antes de
@@ -277,6 +281,7 @@ o programador pense mais em abstrações e relacionamento entre elas \cite{GOOS}
 O capítulo \ref{cap:design} discute boas práticas e princípios de orientação a
 objetos, que foram avaliados durante a pesquisa.
 
+%% ------------------------------------------------------------------------- %%
 \section{Efeitos na corretude do código}
 
 Uma consequência da prática de TDD é a bateria de testes de unidade gerada.
@@ -308,6 +313,7 @@ O foco deste trabalho não é observar TDD sob esse ponto de vista, mas muitos
 outros estudos avaliam TDD sob esse ponto de vista e podem ser encontrados na
 seção \ref{cap:trabalhos-relacionados}.
 
+%% ------------------------------------------------------------------------- %%
 \section{Simplicidade}
 
 TDD sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
@@ -428,45 +434,3 @@ implementada da maneira mais fácil possível \cite{wambler-tdd}. Perceba que na
 visão dele, o programador também deve sempre optar pelo design mais simples, e
 somente agregar complexidade se ela for realmente necessária.
 
-
-\section{Adoção de TDD}
-
-É possível observer a crescente adoção e procura por TDD através do número de
-pesquisas publicadas pela academia (muitas delas citadas no capítulo 
-\ref{cap:trabalhos-relacionados}). Além disso, foi realizado o Primeiro Workshop
-Internacional de Test-Driven Development em 2010, na cidade de Paris, organizado
-pela Dra. Laurie Williams \footnote{http://agile.csc.ncsu.edu/tdd/. Último acesso em 29/outubro/2010}.
-
-Em um questionário de 2010, organizado por Scott Wambler, chamado de \textit{How
-Agile Are You?} \cite{wambler-survey-agile}, mostra que 53\% dos times ágeis
-adotaram TDD como uma maneira para validar o trabalho feito, conforme mostra a 
-figura \ref{wambler-agile-2010}. Além disso, outro questionário de 2008, 
-chamado de \textit{Test Driven Development (TDD) Survey}
-\cite{wambler-survey-tdd}  mostra que 57\% dos desenvolvedores utilizam TDD como
-técnica para capturar informações de design, conforme mostrado na figura 
-\ref{wambler-tdd-2008}. 
-
-% TODO citar essas listas.
-No Brasil, é possível observar o crescente número de pessoas atrás de
-informações sobre a prática nas mais diversas listas de discussão e fóruns sobre
-tecnologia, como o GUJ ou o .NET Architects. Além disso, diversos eventos de
-desenvolvimento de software realizados no Brasil em 2010, como a QCON SP e a
-Agile Brazil contaram com palestras sobre o assunto. 
-
-Apesar de todos os possíveis vieses das informações apresentadas acima, os
-números mostram que uma grande parte dos desenvolvedor ágeis já utilizam a 
-prática no seu dia-a-dia.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=.6]{agileCriteria2010Validating}
-  \caption{Como times ágeis validam seu próprio trabalho?}
-  \label{fig:wambler-agile-2010}
-\end{figure}
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[scale=.5]{tddDesignPractices}
-  \caption{Maneiras de captura de design entre desenvolvedores ágeis}   
-  \label{fig:wambler-tdd-2008}
-\end{figure}
