@@ -2,6 +2,96 @@
 \chapter{Trabalhos Relacionados}
 \label{cap:trabalhos-relacionados}
 
+Many empirical experiments have been done in order to evaluate TDD's effects on
+both internal and external quality. Also, these experiments can be divided
+into two categories: industry and academia. Most of experiments in industry
+show results similar to what is found in this study.
+
+When talking about external quality, Janzen \cite{janzen} demonstrated that
+programmers using TDD in industry produced code that passed in up to 50\% more 
+external tests than code produced by control groups not using TDD and spent less
+time to fix defects. A study from George and Williams \cite{george-williams}
+that produced code passed between 18\% and 50\% more in external test cases than the
+code produced by groups not using TDD. The study from Edwards \cite{edwards},
+with 59 students showed that TDD code has 45\% less defects.
+
+Although many other studies relate TDD and external quality, no participants 
+mentioned effects on external quality, which may indicate that TDD effects are
+only in internal quality and external quality is just a side-effect.
+
+Janzen \cite{janzen} also reported that computational complexity is much lower
+in test-first code while test volume and coverage are higher. 
+The same study from George and Williams also found that the code presented a
+test coverage between 92\% and 98\%. Test coverage was
+only mentioned (not discussed) by the participants.
+
+A qualitative analysis in George and Williams showed that 87.5\% of the
+programmers believed that TDD approach facilitated requirements 
+understanding and 95.8\% believed that it reduced debugging effort. 
+Regarding quality, 92\% of the developers believed that TDD yielded higher
+quality code and 79\% thought it promoted simpler design.
+
+Another study from Janzen \cite{janzen-2} with three different academic groups 
+(each one using a different approach: test-first, test-last, no test) found that
+the code produced by the test-first team better used object-oriented concepts,
+and responsibilities were separated in thirteen different classes while the
+other teams produced a more procedural code.
+The test-first team also produced more code and delivered more features.
+Moreover, tests produced by the test-first team had twice more assertions than
+the others and covered 86\% more branches than the test-last team. Furthermore,
+tested classes had 104\% lower coupling measures than untested classes and
+tested methods were 43\% on average less complex than the untested ones.
+
+Langr also \cite{langr} showed that TDD improved code quality, provided
+better maintainability, and produced 33\% more tests.
+Steinberg \cite{steinberg} showed that TDD code was more cohesive and less
+coupled and students reported that defects were easier to fix.
+
+Participants agree with most of this results; in their opinion, TDD improves
+code quality both in implementation and design, also making it as simple as possible.
+The written code is also easier to maintain as the test suite ensures the
+behavior, giving freedom to programmers to refactor the code. 
+
+Higher productivity was also an effect claimed by the participants of this
+study. In their opinion, although programmers do not feel productive at the
+beginning, in medium terms productivity grows. 
+
+This result is also confirmed by George and
+Williams who also found that although TDD might initially reduce productivity
+among inexperienced programmers, in a qualitative analysis, 78\% of them thought that 
+TDD improved overall programming productivity. However only 50\% of them 
+believed that TDD led to less code development time.
+A study from Erdogmus et al \cite{erdogmus} with 24 undergraduate students
+showed that TDD increased productivity. 
+
+However, a few experiments with students show a different result. Müller and
+Hagner \cite{muller} study showed that TDD has no quality and productivity 
+effects. However, students noticed a better reuse in a TDD code.
+Pancur \cite{pancur} showed an experiment with 38 students in which they did not
+notice any quality effect or productivity improvement. In fact, students 
+thought TDD was not a very effective practice.
+
+Also, in the study from Erdogmus et al with students, no differences between
+quality effects in TDD code were found. It is interesting to notice that most
+experiments with students do not show results in favor of TDD. It may indicate
+that students still do not have enough experience to see its effects on design.
+
+The learning difficulty presented by the participants was also evaluated by
+researchers. Mugridge \cite{mugridge} identified two main challenges in
+teaching TDD over the last two years: to get students to rethink about design, 
+and to really engage with this new approach. Also, it is
+hard to explicitly develop students' skills in testing, design and refactoring.
+
+Participants sometimes mentioned steps that are not suggested by TDD cycle. This
+is not anomalous. Aniche and Gerosa \cite{aniche-gerosa} reported that
+programmers sometimes do not follow TDD steps as described by Kent Beck \cite{tdd-by-example}.
+Some mistakes identified were: to forget the refactoring step, to build complex
+test scenarios, and refactor another piece of code while working on a test.
+Some mistakes are frequently made by around 25\% of programmers.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 citar tabela do madeyski com os experimentos (e colocar o trabalho dele na tabela)
 
 discutir os trabalhos que falam de design
