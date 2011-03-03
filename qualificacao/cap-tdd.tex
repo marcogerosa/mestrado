@@ -61,18 +61,17 @@ prática conhecida da área de testes de software, como análise do valor-limite
 grafo de causa-efeito \cite{art-of-sw-testing}, o que leva a crer que os
 benefícios de TDD não são os mesmos da área de testes.
 
-% TODO: citar
-Na opinião de muitos autores conhecidos, como Kent Beck, Martin Fowler e Robert
-Martin, essa mudança na ordem do ciclo de desenvolvimento tradicional, apesar de
-simples, agrega diversos outros benefícios ao código produzido: simplicidade,
-foco, melhor design, entre outras.
+Na opinião de muitos autores conhecidos, como Kent Beck \cite{aim-fire} e
+Robert Martin \cite{bob-martin}, essa mudança na ordem do ciclo de
+desenvolvimento tradicional, apesar de simples, agrega diversos outros
+benefícios ao código produzido: simplicidade, foco, melhor design, entre outras.
 
-% TODO: citar tddesign
 Apesar da criação de testes ser algo intríseco ao processo, TDD é uma prática
 que auxilia o desenvolvedor a desenhar classes mais flexíveis, mais coesas e
 menos acopladas. Os testes são a ferramenta que o programador utiliza para
 validar o design criado. Por esse motivo, muitos se referem a TDD como
-\textit{Test-Driven Design}, ou seja, design guiado pelos testes.
+\textit{Test-Driven Design}, ou seja, design guiado pelos testes
+\cite{tdd-taxonomy}.
 
 Muitos autores afirmam que TDD é na verdade uma prática de design
 \cite{tdd-taxonomy} \cite{aim-fire}, e citam sempre a famosa frase do Ward
@@ -96,12 +95,15 @@ apenas se um teste automatizado estiver falhando, e a eliminar duplicação. O
 objetivo de TDD é "código claro que funcione"}.
 
 Apesar de ser correta, ela é incompleta, já que ela não captura a parte mais
-interessante da prática, que é feedback no design. Interessantemente muitos
-dos artigos utilizados durante a escrita dessa dissertação apresentam uma
-definição parecida, e talvez por isso muitas das pesquisas em relação à prática
-avaliam os efeitos de TDD sobre a qualidade externa, algo geralmente avaliado em
-técnicas de testes. Esses estudos são explicados com mais detalhes no capítulo
-\ref{cap:trabalhos-relacionados}.
+interessante da prática, que é feedback no design. Janzen também levanta esse
+problema e culpa até o próprio nome da prática, já que ela possui a palavra
+``testes'', mas não contém a palavra ``design'' \cite{tdd-really-improve}.
+
+Interessantemente muitos dos artigos utilizados durante a escrita dessa
+dissertação apresentam uma definição parecida, e talvez por isso muitas das 
+pesquisas em relação à prática avaliam os efeitos de TDD sobre a qualidade 
+externa, algo geralmente avaliado em técnicas de testes. Esses estudos são 
+explicados com mais detalhes no capítulo \ref{cap:trabalhos-relacionados}.
 
 %% ------------------------------------------------------------------------- %%
 \section{O ciclo}
