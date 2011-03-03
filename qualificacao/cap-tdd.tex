@@ -228,14 +228,16 @@ Repare que no código gerado sem TDD, a dependência para a classe \textit{Maile
 é implícita. É impossível testar essa classe isoladamente, já que ela própria se
 encarrega de instanciar e fazer uso da sua dependência. 
 
-% TODO: referencia para os frameworks
 Já no código produzido com TDD, é usual que as dependências sejam recebidas pelo
 construtor. No código acima, veja que a classe \textit{GeradorDeNotaFiscal}
 recebe um \textit{EnviadorDeNotaFiscal} como dependência. Veja ainda que essa
 classe não recebe um \textit{Mailer}, mas sim uma interface. Dessa forma, é
 muito fácil criar uma implementação falsa \textit{EnviadorDeNotaFiscal}: basta
 escrever uma classe que implemente essa interface (ou ainda fazer uso de
-arcabouços que facilitam esse trabalho, como o Mockito ou JMock).
+arcabouços que facilitam esse trabalho, como o
+Mockito\footnote{\url{http://mockito.org/}. Último acesso em 3 de março de 2011}
+ou JMock \footnote{\url{http://www.jmock.org/}. Último acesso em 3 de março de
+2011}).
 
 Repare ainda que a classe geradora de nota fiscal recebe uma interface criada
 somente para isso e não faz uso diretamente do \textit{Mailer}. Isso acontece
