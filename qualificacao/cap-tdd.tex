@@ -186,7 +186,7 @@ O trecho de código abaixo mostra tipicamente a diferença entre código produzi
 com TDD e código produzido sem TDD:
 
 \begin{lstlisting}[frame=trbl]
-// código gerado sem TDD
+// codigo gerado sem TDD
 public class GeradorDeNotaFiscal {
 	public void geraNotaAPartirDa(Fatura fatura) {
 		NotaFiscal nf = geraNota(); 
@@ -196,11 +196,11 @@ public class GeradorDeNotaFiscal {
 		fatura.getCliente().getEmail()); }
 	
 	private NotaFiscal geraNota() {
-		// regra de negócio que gera a nota fiscal
+		// regra de negocio que gera a nota fiscal
 	}
 }
 
-// código gerado com TDD
+// codigo gerado com TDD
 public class GeradorDeNotaFiscal {
 	private EnviadorDeNotaFiscal enviador;
 	
@@ -215,7 +215,7 @@ public class GeradorDeNotaFiscal {
 	}
 	
 	private NotaFiscal geraNota() {
-		// regra de negócio que gera a nota fiscal
+		// regra de negocio que gera a nota fiscal
 	}
 }
 
@@ -232,8 +232,8 @@ encarrega de instanciar e fazer uso da sua dependência.
 Já no código produzido com TDD, é usual que as dependências sejam recebidas pelo
 construtor. No código acima, veja que a classe \textit{GeradorDeNotaFiscal}
 recebe um \textit{EnviadorDeNotaFiscal} como dependência. Veja ainda que essa
-classe não recebe um \texit{Mailer}, mas sim uma interface. Dessa forma, é muito
-fácil criar uma implementação falsa \textit{EnviadorDeNotaFiscal}: basta
+classe não recebe um \textit{Mailer}, mas sim uma interface. Dessa forma, é
+muito fácil criar uma implementação falsa \textit{EnviadorDeNotaFiscal}: basta
 escrever uma classe que implemente essa interface (ou ainda fazer uso de
 arcabouços que facilitam esse trabalho, como o Mockito ou JMock).
 
