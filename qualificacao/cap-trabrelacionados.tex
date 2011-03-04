@@ -3,80 +3,87 @@
 \label{cap:trabalhos-relacionados}
 
 % TODO: traduzir e incrementar trab relacionados
+Muitos estudos empíricos já foram realizados para avaliar os efeitos de TDD.
+Curiosamente, apesar de ser uma prática focada em design, muitos estudos avaliam
+os efeitos de TDD na qualidade externa do sistema. Além disso, ao
+contrário do que essa pesquisa propõe, muitos desses estudos optaram por um
+maior controle no experimento, e os realizaram dentro de ambientes acadêmicos 
+com estudantes dos mais diversos cursos de computação.
 
-Many empirical experiments have been done in order to evaluate TDD's effects on
-both internal and external quality. Also, these experiments can be divided
-into two categories: industry and academia. Most of experiments in industry
-show results similar to what is found in this study.
+É notável o interesse em TDD por parte de pesquisadores famosos na área de
+métodos ágeis, como é o caso da prof. Dra. Laurie Williams, famosa por seus
+estudos com programação pareada.
 
-When talking about external quality, Janzen \cite{janzen} demonstrated that
-programmers using TDD in industry produced code that passed in up to 50\% more 
-external tests than code produced by control groups not using TDD and spent less
-time to fix defects. A study from George and Williams \cite{george-williams}
-that produced code passed between 18\% and 50\% more in external test cases than the
-code produced by groups not using TDD. The study from Edwards \cite{edwards},
-with 59 students showed that TDD code has 45\% less defects.
+As sub-seções abaixo avaliam experimentos que envolvem a prática, focados em
+qualidade interna ou externa, feitos na indústria ou na academia.
 
-Although many other studies relate TDD and external quality, no participants 
-mentioned effects on external quality, which may indicate that TDD effects are
-only in internal quality and external quality is just a side-effect.
+\subsection{Qualidade Externa}
 
-Janzen \cite{janzen} also reported that computational complexity is much lower
-in test-first code while test volume and coverage are higher. 
-The same study from George and Williams also found that the code presented a
-test coverage between 92\% and 98\%. Test coverage was
-only mentioned (not discussed) by the participants.
+Janzen \cite{janzen-arch-improvement} mostrou que programadores que usam TDD na indústria
+produziram código que passaram em aproximadamente 50\% mais testes caixa-preta
+do que o código produzido por grupos de controle que não usavam TDD. Além do
+mais, o grupo que usava TDD gastou menos tempo debugando. Janzen também mostrou 
+que a complexidade dos algoritmos era muito menor e a quantidade e cobertura dos
+testes era maior nos códigos escritos com TDD.
 
-A qualitative analysis in George and Williams showed that 87.5\% of the
-programmers believed that TDD approach facilitated requirements 
-understanding and 95.8\% believed that it reduced debugging effort. 
-Regarding quality, 92\% of the developers believed that TDD yielded higher
-quality code and 79\% thought it promoted simpler design.
+Outros estudos realizados na indústria também apresentam resultados parecidos.
+Um estudo feito pelo Maximillien e Williams \cite{max-e-williams}, mostrou uma
+redução de 40-50\% na quantidade de defeitos e um impacto mínimo na
+produtividade  quando programadores usaram TDD. Outro estudo feito por Lui e
+Chan  \cite{lui-e-chan} comparando dois grupos, um utilizando TDD e o outro 
+escrevendo testes apenas após a implementação, mostrou uma redução significante 
+no número defeitos. Além do mais, os defeitos que foram encontrados eram 
+corrigidos mais rapidamente pelo grupo que utilizou TDD. O estudo feito por 
+Damm, Lundberg e Olson \cite{damn-lundberg-e-olson} também mostra uma redução
+significante nos defeitos.
 
-Another study from Janzen \cite{janzen-2} with three different academic groups 
-(each one using a different approach: test-first, test-last, no test) found that
-the code produced by the test-first team better used object-oriented concepts,
-and responsibilities were separated in thirteen different classes while the
-other teams produced a more procedural code.
-The test-first team also produced more code and delivered more features.
-Moreover, tests produced by the test-first team had twice more assertions than
-the others and covered 86\% more branches than the test-last team. Furthermore,
-tested classes had 104\% lower coupling measures than untested classes and
-tested methods were 43\% on average less complex than the untested ones.
+O estudo feito por George e Williams \cite{george-e-williams} mostrou que,
+apesar de TDD poder reduzir inicialmente a produtividade dos desenvolvedores 
+mais inexperientes, o código produzido passou entre 18\% a 50\% mais em testes 
+caixa-preta do que códigos produzidos por grupos que não utilizavam TDD. Esse
+código também apresentou uma cobertura entre 92\% a 98\%. Uma análise
+qualitativa mostrou que 87.5\% dos programadores acreditam que TDD facilitou o 
+entendimento dos requisitos e 95.8\% acreditam que TDD reduziu o tempo gasto com debug. 78\%
+também acreditam que TDD aumentou a produtividade da equipe. Entretanto, apenas 
+50\% acreditam que TDD ajuda a diminuir o tempo de desenvolvimento. Sobre
+qualidade, 92\% acreditam que TDD ajuda a manter um código de maior qualidade e 
+79\% acreditam que ele promove um design mais simples.
 
-Langr also \cite{langr} showed that TDD improved code quality, provided
-better maintainability, and produced 33\% more tests.
-Steinberg \cite{steinberg} showed that TDD code was more cohesive and less
-coupled and students reported that defects were easier to fix.
+Nagappan \cite{nagappan-ms} mostrou um estudo de caso na Microsoft e na IBM e os
+resultados indicaram que o número de defeitos de quatro produtos diminuir entre 
+40\% a 90\% em relação à projetos similares que não usaram TDD. Entretanto, o 
+estudo mostrou também TDD aumentou o tempo inicial de desenvolvimento entre 15\%
+a 35\%. Langr \cite{langr} mostrou que TDD aumenta a qualidade código, provê uma 
+facilidade maior de manutenção e ajuda a produzir 33\% mais testes comparados  a
+abordagens tradicionais.
 
-Participants agree with most of this results; in their opinion, TDD improves
-code quality both in implementation and design, also making it as simple as possible.
-The written code is also easier to maintain as the test suite ensures the
-behavior, giving freedom to programmers to refactor the code. 
+na academia
 
-Higher productivity was also an effect claimed by the participants of this
-study. In their opinion, although programmers do not feel productive at the
-beginning, in medium terms productivity grows. 
 
-This result is also confirmed by George and
-Williams who also found that although TDD might initially reduce productivity
-among inexperienced programmers, in a qualitative analysis, 78\% of them thought that 
-TDD improved overall programming productivity. However only 50\% of them 
-believed that TDD led to less code development time.
-A study from Erdogmus et al \cite{erdogmus} with 24 undergraduate students
-showed that TDD increased productivity. 
+Um estudo feito por Erdogmus et al \cite{erdogmus-morisio} com 24 estudos de
+graduação mostrou que TDD aumenta a produtividade. Entretanto nenhuma diferença 
+de qualidade no código foi encontrada.
 
-However, a few experiments with students show a different result. Müller and
-Hagner \cite{muller} study showed that TDD has no quality and productivity 
-effects. However, students noticed a better reuse in a TDD code.
-Pancur \cite{pancur} showed an experiment with 38 students in which they did not
-notice any quality effect or productivity improvement. In fact, students 
-thought TDD was not a very effective practice.
+Outro estudo feito por Janzen \cite{janzen-saiedian} com três diferentes grupos
+de alunos (cada um deles usando uma abordagem diferente: TDD, test-last, sem
+testes), mostrou que o código produzido pelo time que fez TDD usou melhor
+conceitos  de orientação a objetos e as responsabilidades foram separadas em 13 
+diferentes classes enquanto que os outros times produziram um código mais
+procedural. O time de TDD também produziu mais código e entregou mais features.
+Os testes produzidos por esse time teve duas vezes mais asserções que os outros 
+e cobriu 86\% mais branches do que o time test-last. Além do mais, as classes 
+testadas tinham valores de acoplamento 104\% menor do que as classes não
+testadas e os métodos eram, na média, 43\% menos complexos do que os
+não-testados.
 
-Also, in the study from Erdogmus et al with students, no differences between
-quality effects in TDD code were found. It is interesting to notice that most
-experiments with students do not show results in favor of TDD. It may indicate
-that students still do not have enough experience to see its effects on design.
+O estudo de Müller e Hagner \cite{muller-e-hagner} mostrou que TDD não resulta
+em melhor qualidade ou produtividade. Entretanto, os estudantes perceberam um 
+melhor reuso dos códigos produzidos com TDD. Steinberg \cite{steinberg} mostrou
+que código produzido com TDD é mais coeso e menos acoplado. Os estudantes também
+reportaram que os defeitos eram mais fáceis de serem corrigidos. O estudo feito
+por Edwards \cite{edwards} com  59 estudantes mostrou que código produzido com
+TDD tem 45\% menos defeitos e faz com que o programador se sinta mais a vontade
+com ele.
 
 The learning difficulty presented by the participants was also evaluated by
 researchers. Mugridge \cite{mugridge} identified two main challenges in
@@ -84,15 +91,13 @@ teaching TDD over the last two years: to get students to rethink about design,
 and to really engage with this new approach. Also, it is
 hard to explicitly develop students' skills in testing, design and refactoring.
 
-Participants sometimes mentioned steps that are not suggested by TDD cycle. This
-is not anomalous. Aniche and Gerosa \cite{aniche-gerosa} reported that
-programmers sometimes do not follow TDD steps as described by Kent Beck \cite{tdd-by-example}.
-Some mistakes identified were: to forget the refactoring step, to build complex
-test scenarios, and refactor another piece of code while working on a test.
-Some mistakes are frequently made by around 25\% of programmers.
-
 citar tabela do madeyski com os experimentos (e colocar o trabalho dele na
 tabela)
+empirical body of evidence sinialtoo \cite{tdd-body-of-evidence}
+
+% TODO: completar com os artigos sobre design baixados
+
+% TODO: comentar da dissertacao de mestrado da australiana, que eh bem parecido
 
 %% ------------------------------------------------------------------------- %%
 \section{Discussão}
