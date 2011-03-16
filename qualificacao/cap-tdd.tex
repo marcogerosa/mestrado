@@ -343,22 +343,19 @@ responsável por representar uma unidade monetária, Beck escreve o seguinte
 teste e implementação \cite{TDDByExample}:
 
 \begin{lstlisting}[frame=trbl]
-    public void testaMultiplicacao() {
-		Dinheiro cinco = new Dinheiro(5);
-		cinco.vezes(2);
-		assertEquals(10, dinheiro.valor);
-	}
+public void testaMultiplicacao() {
+	Dinheiro cinco = new Dinheiro(5);
+	cinco.vezes(2);
+	assertEquals(10, dinheiro.valor);
+}
 	
-	class Dinheiro {
-		\textbf{public int valor = 10;}
+class Dinheiro {
+	public int valor = 10;
 		
-		Dinheiro(int valor) {
-		}
+	Dinheiro(int valor) { }
 		
-		void vezes(int multiplicador) {
-		}
-	}
-
+	void vezes(int multiplicador) {}
+}
 \end{lstlisting}
 
 Repare Beck fez o teste passar da maneira mais simples possível: fez o atributo
