@@ -182,13 +182,11 @@ framexrightmargin=10pt
 \pagenumbering{roman}     % começamos a numerar 
 
 % ---------------------------------------------------------------------------- %
-% Agradecimentos
 % TODO: agradecimentos
 \chapter*{Agradecimentos}
 Agradecimentos ...
 
 % ---------------------------------------------------------------------------- %
-% Resumo
 \chapter*{Resumo}
 
 Test-Driven Development (TDD) é uma das práticas mais populares da Programação
@@ -201,7 +199,6 @@ grande contribuição é o feedback em relação à qualidade do design produzid
 Na opinião de muitos autores conhecidos, TDD além de guiar o programador na
 criação do design, ainda ajuda a manter o código mais simples,
 mais focado, e etc.
-
 
 É realmente difícil entender como TDD influencia no processo de desenvolvimento
 de software. E, ao contrário do que se espera, boa parte dos experimentos da
@@ -221,38 +218,32 @@ já é encontrado na literatura.
 a Objetos, Design de Classes, Métodos Qualitativos de Pesquisa.
 
 % ---------------------------------------------------------------------------- %
-% Abstract
-% TODO: abstract
 \chapter*{Abstract}
 
-Test-Driven Development (TDD) é uma das práticas mais populares da Programação
-Extrema (XP) e sua popularidade tem crescido cada vez mais entre os
-desenvolvedores.
-A mecânica da prática é bem simples: o programador deve escrever o teste antes
-de escrever o código. Apesar de parecer que TDD é uma prática focada em testes
-de software (afinal, o nome é composto da palavra ``teste''), na verdade sua
-grande contribuição é o feedback em relação à qualidade do design produzido.
-Na opinião de muitos autores conhecidos, TDD além de guiar o programador na
-criação do design, ainda ajuda a manter o código mais simples,
-mais focado, e etc.
+Test-Driven Development (TDD) is one of the most popular practices of Extreme
+Programming (XP), and its popularity has grown increasingly among the
+developers. The mechanical is simple: the developer should write a test before
+writing the implementation. Although TDD may look like a testing practice
+(after all, TDD has the word ``test'' in its name), its main contribution is the
+feedback in the class design. Most well-known authors claim that TDD, besides
+driving the design, it still helps programmers to maintain the code cleaner,
+more focused, etc.
 
+It is really hard to understand how TDD influences on the software development
+process. And, contrary to what is expected, most part of the experiments in
+academia evaluate the effects of TDD in the external quality. As already noticed
+by different authors, only a few studies evaluate its effect on internal
+quality.
 
-É realmente difícil entender como TDD influencia no processo de desenvolvimento
-de software. E, ao contrário do que se espera, boa parte dos experimentos da
-academia sobre a prática verificam os efeitos dela sobre a qualidade externa. 
-Poucos estudos avaliam TDD do ponto de vista da qualidade interna de código,
-problema esse já levantado por outros autores.
+This work aims to understand better the effects and how TDD influences on the
+object-oriented systems design, observing the point of view from developers who
+practice it. In order to achieve this goal, this research proposes a set of
+interviews with brazilian industry developers that practice TDD in their daily
+work. In adition, this research makes a comparison of the findings with what is
+currenlty found in literature.
 
-Este trabalho visa compreender melhor os efeitos e como a prática de TDD
-influencia no design de sistemas orientados a objetos do ponto de vista dos
-desenvolvedores que a praticam. Para alcançar este objetivo, essa pesquisa
-propõe um conjunto de entrevistas com desenvolvedores da indústria de software 
-brasileira, que já praticam TDD em seu dia-a-dia de trabalho. Além disso, essa
-pesquisa faz uma comparação dos resultados encontrados nessa pesquisa com o que
-já é encontrado na literatura.
-
-\noindent \textbf{Keywords:} Test-Driven Development, Sistemas Orientados
-a Objetos, Design de Classes, Métodos Qualitativos de Pesquisa.
+\noindent \textbf{Keywords:} Test-Driven Development, Object-Oriented
+Systems, Class Design, Qualitative Research Methods.
 
 % ---------------------------------------------------------------------------- %
 % Sumário
@@ -282,7 +273,10 @@ a Objetos, Design de Classes, Métodos Qualitativos de Pesquisa.
 		 Principle})\\
 		 
 		 ISP		 & Princípio da Segregação de Interfaces (\emph{Interface Segregation
-		 Principle})
+		 Principle})\\
+		 
+		 OO		 	 & Orientação a Objetos
+		 
 \end{tabular}
 
 % ---------------------------------------------------------------------------- %
@@ -297,8 +291,8 @@ a Objetos, Design de Classes, Métodos Qualitativos de Pesquisa.
 % cabeçalho para as páginas de todos os capítulos
 \fancyhead[RE,LO]{\thesection}
 
-\singlespacing              % espaçamento simples
-%\onehalfspacing            % espaçamento um e meio
+%\singlespacing              % espaçamento simples
+\onehalfspacing            % espaçamento um e meio
 
 \input cap-introducao
 \input cap-tdd
