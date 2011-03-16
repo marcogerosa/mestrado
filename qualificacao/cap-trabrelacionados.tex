@@ -43,6 +43,11 @@ Entretanto, apenas 50\% acreditam que TDD ajuda a diminuir o tempo de
 desenvolvimento. Sobre qualidade, 92\% acreditam que TDD ajuda a manter um
 código de maior qualidade e 79\% acreditam que ele promove um design mais simples.
 
+O trabalho de Turnu et al \cite{turnu-tdd-opensouce} discute produtividade em
+projetos de código aberto. Segundo eles, a produtividade caiu quando TDD foi
+adotado completamente, mas em compensação o número de problemas diminuiu 
+consideravelmente.
+
 Nagappan \cite{nagappan-ms} mostrou um estudo de caso na Microsoft e na IBM e os
 resultados indicaram que o número de defeitos de quatro produtos diminuir entre 
 40\% a 90\% em relação à projetos similares que não usaram TDD. Entretanto, o 
@@ -58,7 +63,7 @@ de qualidade no código foi encontrada.
 Outro estudo feito por Janzen \cite{janzen-saiedian} com três diferentes grupos
 de alunos (cada um deles usando uma abordagem diferente: TDD, testes depois, sem
 testes), mostrou que o código produzido pelo time que fez TDD usou melhor
-conceitos  de orientação a objetos e as responsabilidades foram separadas em 13 
+conceitos de orientação a objetos e as responsabilidades foram separadas em 13 
 diferentes classes enquanto que os outros times produziram um código mais
 procedural. O time de TDD também produziu mais código e entregou mais features.
 Os testes produzidos por esse time teve duas vezes mais asserções que os outros 
@@ -66,6 +71,22 @@ e cobriu 86\% mais branches do que o time test-last. Além do mais, as classes
 testadas tinham valores de acoplamento 104\% menor do que as classes não
 testadas e os métodos eram, na média, 43\% menos complexos do que os
 não-testados.
+
+O trabalho de Dogsa e Batic \cite{dogsa-batic} também encontrou uma melhora no
+design de classes feitas com TDD. Mas, segundo os autores, esse design é 
+consequência da simplicidade que a prática de TDD agrega ao processo. Eles
+também  afirmam que a bateria de testes de regressão gerada durante a prática 
+permite ao desenvolvedor a constante refatoração do código.
+
+O praticante de TDD geralmente faz uso de outras práticas ágeis, como
+programação pareada, que podem dificultar o processo de avaliação dos benefícios
+de TDD. Madeyski \cite{madeyski-package-dependencies} observou os resultados
+entre grupos que praticavam TDD, programação pareada, e a combinação entre elas,
+e não conseguiu mostrar grande diferença entre equipes que utilizam programação 
+pareada e equipes que utilizam TDD, no que diz respeito à dependendência entre 
+pacotes. Entretanto, ao combinar os resultados, Madeyski encontrou que TDD pode 
+ajudar no nível de gerenciamento de dependências entre classes. Segundo ele, o 
+programador deve utilizar TDD, mas ficar atento à possíveis problemas de design.
 
 O estudo de Muller e Hagner \cite{muller-e-hagner} mostrou que TDD não resulta
 em melhor qualidade ou produtividade. Entretanto, os estudantes perceberam um 
@@ -80,62 +101,47 @@ Aprender TDD também não é tarefa fácil. Mugridge \cite{mugridge} identificou
 dois desafios principais em ensinar TDD nos últimos dois anos: fazer estudantes
 pensar novamente sobre o design, e fazê-los se envolver com essa nova
 abordagem. Além disso, é difícil fazê-los entender testes, design e refatoração
-de maneira explícita.
+de maneira explícita. Mas, segundo Proulx \cite{proulx}, a partir do momento que
+o estudante aprende TDD, ele tende a ter uma melhor performance em disciplinas
+de orientação a objetos. Segundo ele, essa melhora é percebida inclusive pelos
+empregadores desses alunos.
 
+Grande parte destes estudos não levam em conta a experiência do programador que
+está praticando TDD. Geralmente esse ponto é discutido apenas na seção de
+ameaças a validar do estudo. Janzen, em seu doutorado, percebeu que
+desenvolvedores mais maduros obtêm mais benefícios de TDD, escrevendo classes
+mais simples. Além disso, desenvolvedores maduros que experimentam a prática
+tendem a escolher TDD mais facilmente do que desenvolvedores menos maduros
+\cite{janzen-phd}.
 
-% TODO: doutorado do janzen ele tambem percebeu que desenvolvedores maduros uam
-% melhor a pratica. texto abaixo pronto:
-%A tese de doutorado de Janzen foi inconclusiva no que diz respeito à influência
-%de TDD no acoplamento e na coesão \cite{janzen-phd}.
-% TODO exemplo de artigo com metrica mal usada A Comparative Case Study on the
-% Impact of Test-Driven Development on Program Design and Test Coverage
-
-% TODO melhor design por causa da simplicidade The effectiveness of test-driven
-% development: an industrial case study. alem disso, uma bateria de testes de
-% regressao que permitem o dev refatorar
-
-% TODO: Madeyski nao conseguiu mostrar grande diferenca entre TDD e Pair
-% Programming ou a combinacao deles ao discutir dependencias entre pacotes. Ao
-% combinar resultados, encontrou que TDD pode ter ajuda apenas no nível de
-% classes. segundo ele, O programador deve usar TDD mas ficar espero com
-% problema de design. (The Impact of Pair Programming and Test-Driven
-% Development on Package Dependencies in Object-Oriented Design — An Experiment)
-
-% TODO em software livre, codigo com TDD diminui numero de problemas, mas em
-% compensacao a produtividade caiu quando TDD foi adotado completamente
-% (Introducing TDD on a Free Libre Open Source Software Project: a Simulation Experiment)
-
-% . The studies that are supporting TDD are based on very limited experiment
-% setups and therefore cannot be generalized in a sensible way. Muito a ser
-% feito, The claimed effect that TDD should have on the quality of design cannot
-% be proven right with the present studies. (Making Architectural Design Phase
-% Obsolete – TDD as a Design Method)
-
-% TODO estudantes que aprnedem tdd falharam menos no curso, e empregadores
-% perceberam essa melhora (Test-Driven Design for Introductory OO Programming)
-
-% TODO: citar body of evidence e madeyski
-%citar tabela do madeyski com os experimentos (e colocar o trabalho dele na
-%tabela)
-%empirical body of evidence sinialtoo \cite{tdd-body-of-evidence}
-
-% TODO: completar com os artigos sobre design baixados
+Outras compilações sobre estudos sobre TDD também podem ser encontrados no livro
+\textit{Test-Driven Development: An Empirical Evaluation of Agile Practice},
+escrito por Madeyski \cite{madeyski-livro} ou no trabalho entitulado
+\textit{Test driven development: empirical body of evidence} feito por Siniaalto
+\cite{tdd-body-of-evidence}.
 
 % TODO: comentar da dissertacao de mestrado da australiana, que eh bem parecido
-
-% TODO: tabela comparando todos eles
 
 %% ------------------------------------------------------------------------- %%
 \section{Discussão}
 
 Como visto acima, poucos trabalhos avaliam os efeitos de TDD sobre o design de
 classes. E, quando o fazem, apenas discutem quais os resultados da prática
-dentro do ciclo, e não exatamente \textbf{como} TDD influencia. 
+dentro do ciclo, e não exatamente \textbf{como} TDD influencia. Josefsson
+\cite{josefsson}, em sua discussão sobre a necessidade de uma fase de desenho
+arquitetural e os efeitos de TDD nesse quesito, chega à mesma conclusão. Segundo
+ele, os estudos sobre TDD encontrados na literatura atual são muito limitados e
+não podem ser generalizados. E, por esse motivo, os ditos efeitos que TDD têm 
+sobre o design não podem ser provados. Apesar desse artigo ser datado de 2004, e
+muitos trabalhos foram feitos após isso, esta pesquisa ainda acredita que os
+efeitos de TDD ainda não foram provados pela literatura atual.
 
 Os trabalhos que analisam TDD do ponto de vista de design, no entanto, não
 chegam a resultados conclusivos; muitos deles inclusive dizem que os efeitos
-de TDD não são tão diferentes de times que não praticam TDD. Esta pesquisa
-advoca que talvez os pesquisadores não olharam as métricas da maneira correta.
+de TDD não são tão diferentes de times que não praticam TDD.  A própria tese de
+doutorado de Janzen foi inconclusiva no que diz respeito à influência de TDD no 
+acoplamento e na coesão \cite{janzen-phd}. Esta pesquisa advoca que talvez os 
+pesquisadores não olharam as métricas da maneira correta.
 
 Ao calcular LCOM-HS, métrica que tenta medir a falta de coesão de determinada
 classe, não se deve levar em consideração \textit{getters} e \textit{setters} de
@@ -148,6 +154,7 @@ analisar o tipo do acoplamento: acoplar-se com classes estáveis é menos
 problemático do que acoplar com classes que mudam frequentemente
 \cite{bob-martin}, assunto esse que é discutido com mais detalhes na seção
 \ref{sec:estabilidade-e-abstracao}. 
+
 
 Além disso, outro ponto fortemente relacionado com design é a simplicidade e
 facilidade de evolução. Um design rígido, que não permite mudanças de maneira
