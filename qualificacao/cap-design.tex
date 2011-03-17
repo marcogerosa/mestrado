@@ -37,7 +37,6 @@ em apenas um pequeno trecho de código.
 Esses sintomas podem ser medidos de forma subjetiva e algumas vezes de forma 
 até objetiva. Geralmente, esses sintomas são causados por violações de um ou 
 mais princípios de design, apresentados na seção \ref{sec:design-oo-principios}.
-
 Muitos desses problemas são relacionados à gerência de dependências. Quando essa
 atividade não é feita corretamente, o código gerado torna-se difícil de manter e
 reusar. Entretanto, quando bem feita, o software tende a ser flexível, robusto 
@@ -55,9 +54,8 @@ Quando um design está muito rígido, não se sabe com segurança quando uma
 mudança terá fim. Mudanças simples passam a demorar muito tempo até serem 
 aplicadas no código e frequentemente acabam superando em várias vezes a 
 estimativa de esforço inicial. 
-
 Frases como \textit{"isto foi muito mais complicado do que eu imaginei"} 
-tornam-se populares. Neste momento, gerentes de desenvolvimento começam a  ficar
+tornam-se populares. Neste momento, gerentes de desenvolvimento começam a ficar
 receosos em permitir que os desenvolvedores consertem problemas não críticos.
 
 \subsection{Fragilidade}
@@ -72,7 +70,6 @@ Consertar os novos problemas usualmente passa a resultar em outros novos
 problemas e assim por diante. Infelizmente, módulos frágeis são comuns em
 sistemas de software. São estes os módulos que sempre aparecem na lista de bugs
 a serem corrigidos. 
-
 Além disto, desenvolvedores começam a ficar receosos de alterar certos trechos 
 de código, pois sabem que estes estão tão frágeis que qualquer mudança simples 
 fatalmente acarretará na introdução de problemas inesperados e de naturezas
@@ -84,7 +81,6 @@ Imobilidade é a impossibilidade de se reusar software de outros projetos ou de
 partes do mesmo projeto. Neste cenário, o módulo que se deseja reutilizar 
 frequentemente tem uma bagagem muito grande de dependências e não possui código 
 claro. 
-
 Depois de muita investigação, os arquitetos descobrem que o trabalho e o risco 
 de separar as partes desejáveis das indesejáveis são tão grandes, que o módulo 
 acaba sendo reescrito ao invés de reutilizado.
@@ -109,7 +105,6 @@ design demasiadamente flexível ou desnecessariamente sofisticado.
 Frequentemente apenas algumas previsões acabam se concretizando ao longo do
 tempo e, neste meio período, o design carrega o peso de elementos e construções 
 não utilizados. O software então se torna complexo e difícil de ser entendido. 
-
 Design com complexidade muito alta comumente afeta a produtividade, porque 
 quando os desenvolvedores herdam tal projeto, eles gastam muito tempo 
 aprendendo as nuances do design antes que possam efetivamente  estendê-lo ou
@@ -166,7 +161,6 @@ grande conhecimento e experiência no paradigma da orientação a objetos.
 Os princípios comentados nesta seção são muito discutidos por Robert Martin
 em vários de seus livros e artigos publicados \cite{bob-martin}, e os exemplos
 dessa seção são fortemente baseados neles. 
-
 Esses princípios são produto de décadas de experiência em engenharia de
 software. Segundo ele próprio, esses princípios não são produto de uma única 
 pessoa, mas sim a integração de pensamentos e trabalhos de um grande número de 
@@ -199,7 +193,6 @@ Já em uma classe com muitas responsabilidades diferentes, os elementos tendem  
 se relacionar apenas em "grupos", ou seja, com os elementos que tratam de uma 
 das responsabilidades da classe. A esse tipo de classe, diz-se que ela possui 
 uma baixa coesão (ou que não é coesa).
-
 Robert Martin altera esse conceito de coesão e relaciona coesão com as forças
 que  causam um módulo ou uma classe a mudar. No caso, o Princípio de
 Responsabilidade Única diz que uma classe deve ter apenas uma única razão para 
@@ -430,7 +423,6 @@ Acoplar-se com essa interface é uma solução muito melhor, já que ela raramen
 mudará. No código acima, ela já possui duas classes que a implementa, e portanro
 existem forças que impedem o programador de alterar essa interface. Isso a
 faz uma interface estável, não sujeita a mudanças \cite{bobmartin-oodmetrics}. 
-
 As classes devem, na medida do possível, acoplar-se sempre com módulos mais
 estáveis do que ela própria, já que, como as mudanças em módulos estáveis são
 menos prováveis, raramente essa classe precisará ser alterada por mudanças em
