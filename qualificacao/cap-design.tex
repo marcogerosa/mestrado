@@ -23,7 +23,7 @@ são posteriormente avaliadas durante o processo de pesquisa.
 \section{Sintomas de Designs em Degradação}
 \label{sec:design-degradacao}
 
-Quando um design começa a ficar difícil de ser evoluído, o reúso de código se 
+Quando um design começa a ficar difícil de ser evoluído, o reuso de código se 
 torna mais complicado do que repetir o trecho de código, ou o custo de se fazer 
 qualquer alteração no design se torna alto, pode-se dizer que esse design
 está \textit{degradando}. 
@@ -36,7 +36,7 @@ em apenas um pequeno trecho de código.
 
 Esses sintomas podem ser medidos de forma subjetiva e algumas vezes de forma 
 até objetiva. Geralmente, esses sintomas são causados por violações de um ou 
-mais príncipios de design, apresentados na seção \ref{sec:design-oo-principios}.
+mais princípios de design, apresentados na seção \ref{sec:design-oo-principios}.
 
 Muitos desses problemas são relacionados à gerência de dependências. Quando essa
 atividade não é feita corretamente, o código gerado torna-se difícil de manter e
@@ -154,7 +154,7 @@ acoplamento e uma alta coesão.
 
 Alcançando esse objetivo, mudanças no código seriam executadas mais facilmente;
 alterações seriam feitas em pontos únicos e a propagação de mudanças seria bem
-menor. Com as abtrações bem estabelecidades, novas funcionalidades seriam
+menor. Com as abstrações bem estabelecidas, novas funcionalidades seriam
 implementadas através de novo código, sem a necessidade de alterações no código
 já existente. Necessidades de evolução do design seriam feitas com pouco
 esforço, já que módulos dependeriam apenas de abstrações.
@@ -168,7 +168,7 @@ em vários de seus livros e artigos publicados \cite{bob-martin}, e os exemplos
 dessa seção são fortemente baseados neles. 
 
 Esses princípios são produto de décadas de experiência em engenharia de
-software. Segundo ele próprio, esses príncipios não são produto de uma única 
+software. Segundo ele próprio, esses princípios não são produto de uma única 
 pessoa, mas sim a integração de pensamentos e trabalhos de um grande número de 
 desenvolvedores de software  e pesquisadores, e visam combater todos os sintomas
 de degradação discutidos na seção \ref{sec:design-degradacao}.
@@ -178,16 +178,16 @@ Conhecidos pelo acrônimo \textit{SOLID} (sólido, em português), são eles:
 \begin{itemize}
 	\item Princípio da Responsabilidade Única (\textit{Single-Responsibility 
 	Principle (SRP)})
-	\item Príncipio do Aberto-Fechado (\textit{Open-Closed Principle (OCP)})
+	\item Princípio do Aberto-Fechado (\textit{Open-Closed Principle (OCP)})
 	\item Princípio de Substituição de Liskov (\textit{Liskov Substitution 
 	Principle (LSP)})
-	\item Príncipio da Inversão de Dependência (\textit{Dependency Inversion
+	\item Princípio da Inversão de Dependência (\textit{Dependency Inversion
 	Principle (DIP)})
 	\item Princípio da Segregação de Interfaces (\textit{Interface Segregation 
 	Principle (ISP)})
 \end{itemize}
 
-\subsection{Príncipio da Responsabilidade Única}
+\subsection{Princípio da Responsabilidade Única}
 \label{subsec:principio-srp}
 
 O termo coesão define a relação entre os elementos de um mesmo módulo
@@ -201,11 +201,11 @@ das responsabilidades da classe. A esse tipo de classe, diz-se que ela possui
 uma baixa coesão (ou que não é coesa).
 
 Robert Martin altera esse conceito de coesão e relaciona coesão com as forças
-que  causam um módulo ou uma classe a mudar. No caso, o Príncipio de
+que  causam um módulo ou uma classe a mudar. No caso, o Princípio de
 Responsabilidade Única diz que uma classe deve ter apenas uma única razão para 
 mudar \cite{bob-martin}.
 
-Esse príncipio é bem importante no momento em que há uma alteração em alguma 
+Esse princípio é bem importante no momento em que há uma alteração em alguma 
 funcionalidade do software. Quando isso ocorre, o programador precisa procurar 
 pelas classes que possuem a responsabilidade a ser modificada. Supondo uma
 classe  que possua mais de uma razão para mudar, isso significa que ela é
@@ -233,19 +233,19 @@ classe responsável pela representação da nota fiscal no sistema.
 \subsection{Princípio do Aberto-Fechado}
 \label{subsec:ocp}
 
-O Príncipio do Aberto-Fechado, cunhado por Bertrand Meyer, diz que as entidades
+O Princípio do Aberto-Fechado, cunhado por Bertrand Meyer, diz que as entidades
 do software (como classes, módulos, funções, etc) devem ser abertas para
 extensão, mas fechadas para alteração \cite{meyer-ocp}. 
 
 Se uma simples alteração resulta em uma cascata de alterações em módulos
 dependentes, isso cheira à rigidez, conforme descrito na sub-seção 
-\ref{subsec:rigidez}. O príncipio pede então para que o programador sempre 
+\ref{subsec:rigidez}. O princípio pede então para que o programador sempre 
 refatore as classes de modo que mudanças desse tipo não causem mais modificações.
 
 Quando esse princípio é aplicado de maneira correta, novas alterações fazem com
 que o programador adicione novo código, e não modifique o anterior. Isso é
 alcançado através da criação de abstrações para o problema. Linguagens
-orientadas a objetos possuem mecânismos para criá-las (conhecido com interfaces
+orientadas a objetos possuem mecanismos para criá-las (conhecido com interfaces
 em linguagens como Java ou C\#). Através dessas abstrações, o programador consegue 
 descrever a maneira em que uma determinada classe deve se portar, mas sem se
 preocupar em como essa classe faz isso.
@@ -266,7 +266,7 @@ public class DesenhadorDeFiguras {
 \end{lstlisting}
 
 Repare que caso uma nova figura geométrica apareça, o código dessa classe deve
-ser  alterado. Uma solução que segue o príncipio do Aberto-Fechado seria criar 
+ser  alterado. Uma solução que segue o princípio do Aberto-Fechado seria criar 
 uma abstração (uma interface) para figuras geométricas (chamado de
 \textit{Figura} no código abaixo). Todas as figuras geométricas então
 implementam essa interface. O código que exemplifica isso está abaixo:
@@ -334,7 +334,7 @@ passada, ela pode retornar valores que o cliente não está preparado para
 tratar. Isso faz com que o design fique frágil, conforme citado na  seção
 \ref{subsec:fragilidade}.
 
-Um clássico exemplo sobre Príncipio de Substituição de Liskov é o exemplo  dos
+Um clássico exemplo sobre Princípio de Substituição de Liskov é o exemplo  dos
 Quadrados e Retângulos. Imagine uma classe Retângulo. Um retângulo possui dois 
 lados de tamanhos diferentes. Imagine agora uma classe Quadrado (figura
 geométrica que possui todos os lados com o mesmo tamanho) que herde de
@@ -342,24 +342,24 @@ Retângulo. A única alteração é fazer com que os dois lados tenham o mesmo
 tamanho. 
 
 Apesar de parecer lógico, afinal um Quadrado é um Retângulo com apenas uma
-condição diferente, a classe Quadrado quebra o Príncipio de Liskov: a
+condição diferente, a classe Quadrado quebra o Princípio de Liskov: a
 pré-condição dela é mais forte do que a do quadrado, afinal os dois lados devem 
 ter o mesmo tamanho.
 
-Quebras do príncipio de Liskov geralmente levam o programador a quebrar o
-príncipio do OCP também. Ele percebe que, para um determinados sub-tipos ele 
+Quebras do princípio de Liskov geralmente levam o programador a quebrar o
+princípio do OCP também. Ele percebe que, para um determinados sub-tipos ele 
 precisa fazer um tratamento especial, e acaba escrevendo condições nas classes 
 clientes que fazem uso disso.
 
 \subsection{Princípio da Inversão de Dependências}
 \label{subsec:dip}
 
-Classes de baixo nível, que fazem uso de infra-estrutura ou de outros detalhes
+Classes de baixo nível, que fazem uso de infraestrutura ou de outros detalhes
 de implementação podem facilmente sofrer modificações. E, se classes de mais alto
 nível dependerem dessas classes, essas modificações podem se propagar, tornando
 o código frágil.
 
-O Príncipio de Inversão de Dependências se baseia em duas afirmações:
+O Princípio de Inversão de Dependências se baseia em duas afirmações:
 
 \begin{itemize}
 	\item Módulos de alto nível não devem depender de módulos de baixo nível. 
@@ -434,7 +434,7 @@ faz uma interface estável, não sujeita a mudanças \cite{bobmartin-oodmetrics}
 As classes devem, na medida do possível, acoplar-se sempre com módulos mais
 estáveis do que ela própria, já que, como as mudanças em módulos estáveis são
 menos prováveis, raramente essa classe precisará ser alterada por mudanças em
-suas dependendências.
+suas dependências.
 
 Repare que no exemplo acima, se as implementações concretas \textit{SistemaSap}
 e \textit{EnviadorDeEmail} por algum motivo mudarem, essas mudanças não serão
@@ -548,7 +548,7 @@ pesquisador apenas medisse a quantidade de classes acopladas), isso pode indicar
 um possível problema de design.
 
 %% ------------------------------------------------------------------------- %%
-\section{Príncipios e o TDD}
+\section{Princípios e o TDD}
 
 Classes que obedecem aos princípios SOLID são fáceis de serem testadas, pois
 apresentam todas as vantagens citadas acima. Ao inverter o processo, e fazer o
