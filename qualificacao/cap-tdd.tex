@@ -201,7 +201,8 @@ public class GeradorDeNotaFiscal {
 		
 		Mailer sender = new Mailer("smtp");
 		sender.send(new MontadorDeCorpoDoEmail().monta(nf),
-		fatura.getCliente().getEmail()); }
+		fatura.getCliente().getEmail()); 
+	}
 	
 	private NotaFiscal geraNota() {
 		// regra de negocio que gera a nota fiscal
