@@ -248,54 +248,6 @@ sem feedback sobre o código. Além disso, faz com que o programador não crie
 soluções mais complexas do que elas precisam ser, tornando o código, à longo
 prazo, o mais simples possível.
 
-Em seu livro, Kent Beck \cite{TDDByExample} dá exemplos de simplicidade, e na
-implementação de uma operação de multiplicação dentro de uma simples classe 
-\textit{Dinheiro}, responsável por representar uma unidade monetária, Beck 
-escreve o seguinte teste e implementação:
-
-\begin{lstlisting}[frame=trbl]
-public void testaMultiplicacao() {
-	Dinheiro cinco = new Dinheiro(5);
-	cinco.vezes(2);
-	assertEquals(10, dinheiro.valor);
-}
-	
-class Dinheiro {
-	public int valor = 10;
-		
-	Dinheiro(int valor) { }
-		
-	void vezes(int multiplicador) {}
-}
-\end{lstlisting}
-
-A implementação faz o teste passar da maneira mais simples possível: o
-atributo \textit{valor} recebe diretamente o valor da multiplicação. E, somente com os
-testes passando, o autor refatora e remove a duplicação de dados e de código
-existente:
-
-\begin{lstlisting}[frame=trbl]
-class Dinheiro {
-	public int valor;
-	
-	Dinheiro(int valor) {
-		this.valor = valor;
-	}
-	
-	void vezes(int multiplicador) {
-		valor = valor * multiplicador;
-	}
-}
-\end{lstlisting}
-
-O teste ainda continua passando, provando que a refatoração foi feita com
-sucesso. Pode-se observar através do exemplo acima que os passos dados foram
-sempre os menores e mais simples possíveis, ou \textit{passos de bebê}, por
-assim dizer. Veja que, mesmo após diversos passos de refatoração, ainda é
-possível encontrar problemas de design, como o atributo \textit{valor}
-declarado como público. Seriam necessários outras rodadas de refatoração para
-eliminar esse problema.
-
 Uma confusão comum de programadores que experimentam TDD pela primeira vez é a
 de que fazer passos de bebê o tempo todo faz com que a produtividade diminua.
 De fato, fazer passos de bebê durante todo o ciclo faz com que o tempo de
