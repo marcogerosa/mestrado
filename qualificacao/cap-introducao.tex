@@ -2,68 +2,74 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
-Test-Driven Development (TDD) é uma das práticas mais populares da Programação
-Extrema (XP) \cite{XPExplained}. 
-Na opinião de muitos autores conhecidos, TDD agrega diversos benefícios ao
-código produzido, dentre eles, simplicidade, foco, melhor design, entre outras.
-Por esses motivos, é possível observar a crescente adoção e procura por TDD
-através do número de pesquisas publicadas pela academia (muitas delas citadas no
-capítulo \ref{cap:trabalhos-relacionados}). Em 2010, foi realizado o Primeiro
-Workshop Internacional de Test-Driven Development, na cidade de Paris, 
-organizado pela Dra. Laurie Williams \footnote{http://agile.csc.ncsu.edu/tdd/. 
-Último acesso em 29/outubro/2010}.
+Test-Driven Development (TDD) é uma das práticas discutidas pela Programação
+Extrema (XP) \cite{XPExplained}. A prática é baseada em um pequeno ciclo de
+desenvolvimento, na qual o desenvolvedor deve sempre escrever um teste antes
+mesmo de implementar a funcionalidade esperada, e depois, com o novo teste
+passando, o desenvolvedor deve refatorar para remover duplicação
+\cite{TDDByExample}.
+Apesar da constante escrita de testes automatizados, os benefícios da prática 
+vão além disso. Na opinião de muitos autores conhecidos, TDD promove
+simplicidade, foco, melhor design, entre outras \cite{TDDByExample}
+\cite{GOOS} \cite{astels-tdd}.
 
-Em um questionário de 2010, organizado por Scott Wambler, chamado de \textit{How
-Agile Are You?} \cite{wambler-survey-agile}, mostra que 53\% dos times ágeis
-adotaram TDD como uma maneira para validar o trabalho feito, conforme mostra a 
-figura \ref{fig:wambler-agile-2010}. Outro questionário de 2008, 
-chamado de \textit{Test Driven Development (TDD) Survey}
-\cite{wambler-survey-tdd}  mostra que 57\% dos desenvolvedores utilizam TDD como
-técnica para capturar informações de design, conforme mostrado na figura 
-\ref{fig:wambler-tdd-2008}. 
+Por esses motivos, é possível observar a crescente adoção e procura por TDD
+através do número de pesquisas publicadas pela academia.
+Em um questionário de 2010, organizado por Scott Ambler
+\cite{wambler-survey-agile}, para descobrir que práticas eram feitas por times
+ágeis, mostrou que 53\% dos times ágeis adotaram TDD como uma maneira para
+validar o trabalho feito, conforme mostra a Figura \ref{fig:wambler-agile-2010}. 
+Outro questionário de 2008 também realizado por Ambler
+\cite{wambler-survey-tdd}, focado em TDD, mostra que 57\% dos desenvolvedores 
+utilizam TDD como técnica para capturar informações de design, conforme mostrado
+na Figura \ref{fig:wambler-tdd-2008}.
 
 No Brasil, é possível observar o crescente número de pessoas atrás de
 informações sobre a prática nas mais diversas listas de discussão e fóruns sobre
 tecnologia, como o GUJ \footnote{\url{http://www.guj.com.br}.
 Último acesso em 27 de fevereiro 2011} ou o .NET Architects 
-\footnote{\url{http://www.dotnetarchitects.net/}. Last access on February
+\footnote{\url{http://www.dotnetarchitects.net/}. Último acesso em
 27 de fevereiro de 2011}. Diversos eventos de desenvolvimento de
 software realizados no Brasil em 2010, como a QCON SP
 \footnote{\url{http://www.qconsp.com/}. Último acesso em 02 de março de 2011} e
 a Agile Brazil \footnote{\url{http://http://www.agilebrazil.com/}. Último acesso
 em 02 de março de 2011} também contaram com palestras sobre o assunto.
 
-Além disso, programadores que experimentam a prática e percebem seus
-efeitos, raramente voltam atrás. Os aficionados por TDD dizem que estão
-\textit{``infectados pelo teste''} \cite{tdd-fearless}. Já Robert Martin
-relaciona TDD à profissionalismo. Segundo ele, um desenvolvedor profissional
-entrega código claro e flexível que funcione dentro do prazo, e TDD possibilita
-que o desenvolvedor alcance esses pontos \cite{martin-profissionalismo}.
+Os aficionados por TDD dizem que estão \textit{``infectados pelo teste''}  e,
+segundo eles próprios, desenvolvedores que experimentam a prática e percebem
+seus efeitos tendem a não voltar atrás \cite{tdd-fearless}.
+Já Robert Martin relaciona TDD à profissionalismo. Segundo ele, um desenvolvedor
+profissional entrega código claro e flexível que funcione dentro do prazo, e TDD
+possibilita que o desenvolvedor alcance esses pontos \cite{martin-profissionalismo}.
 
-Apesar de todos os possíveis vieses das informações apresentadas acima, os
-números mostram que uma grande parte dos desenvolvedores ágeis já utilizam a 
-prática no seu dia-a-dia.
-Entretanto, apesar da quantidade de programadores que adotam a prática, não é
-fácil alterar a maneira tradicional de pensar; programadores estão acostumados a
-sempre escrever os testes depois de escrever o código. Ao inverter o processo,
-programadores são forçados a criar classes que apresentam um bom design.
+Discutir os efeitos de TDD no design de classes é de grande importância para os
+desenvolvedores.
+Criar classes ou, em um nível maior de abstração, módulos que possuam um baixo
+acoplamento e uma alta coesão demandam um esforço muito grande do desenvolvedor. 
+É muito comum que, após algum tempo de desenvolvimento, o design perca qualidade
+e qualquer tipo de manutenção torne-se difícil e, por consequência, custosa.
+Para diminuir o problema, desenvolvedores utilizam diversas práticas para
+garantir a qualidade do código gerado, como programação pareada, revisão de
+código, etc. Praticantes de TDD acreditam que os testes sejam uma outra maneira
+de validar o design criado, e utilizar esse feedback para melhorá-lo.
 
 É realmente difícil entender como TDD influencia no processo de desenvolvimento
-de software. Apesar de ter o termo ``teste'' no nome, TDD é uma prática
-de design. E, ao contrário do que se espera, boa parte dos experimentos da
-academia sobre a prática verificam os efeitos dela sobre a qualidade externa. 
-Poucos estudos avaliam TDD do ponto de vista da qualidade interna de código.
-Siniaalto e Abrahamsson também compartilham dessa opinião e, além disso, notaram
-que os efeitos de TDD podem não ser tão automáticos ou evidentes como o 
+de software, e mais especificamente no design de classes. Grande parte dos
+experimentos feitos pela academia verificam os efeitos da prática sobre a qualidade externa. 
+Poucos são os estudos que avaliam TDD do ponto de vista da qualidade interna de
+código. Siniaalto e Abrahamsson também compartilham dessa opinião e, além disso,
+notaram que os efeitos de TDD podem não ser tão automáticos ou evidentes como o 
 esperado \cite{alarming-results}.
 
-Este trabalho visa compreender melhor os efeitos e como a prática de TDD
+Relacionar o fato do desenvolvedor escrever testes antes e, por esse motivo,
+levar o design para melhores soluções não é trivial.
+Este trabalho visa compreender os efeitos e como a prática de TDD
 influencia no design de sistemas orientados a objetos do ponto de vista dos
 desenvolvedores que a praticam. Para alcancar esse objetivo,
 esta pesquisa discute três estudos de caso em empresas do mercado brasileiro de
 software, que já utilizam TDD normalmente dentro do seu ciclo de
 desenvolvimento. Para isso, este trabalho faz uso de métodos qualitativos de
-pesquisa, melhor explicados no capítulo \ref{cap:planejamento}.
+pesquisa, melhor explicados no Capítulo \ref{cap:planejamento}.
 
 \begin{figure}[ht]
   \begin{minipage}[b]{0.45\linewidth}
@@ -84,37 +90,32 @@ pesquisa, melhor explicados no capítulo \ref{cap:planejamento}.
 %% ------------------------------------------------------------------------- %%
 \section{Contribuições}
 
-O objetivo desta pesquisa é entender de maneira mais profunda como TDD
-influencia no design de sistemas orientados a objetos. Essas informações serão
-capturadas baseadas na percepção de programadores que realizam a prática no seu
-dia-a-dia de trabalho. Além disso, essa pesquisa se propõe a comparar os
-resultados encontrados com os dados existentes na literatura.
+O objetivo desta pesquisa é entender como TDD influencia no design de sistemas
+orientados a objetos. A análise será feita através de dados que serão
+capturados baseados na percepção de programadores que realizam a prática no seu
+dia-a-dia de trabalho.
+Os objetivo principal da pesquisa é \textbf{entender a influência de TDD no
+design de sistemas orientados a objetos}.
 
-A tabela abaixo resume os objetivos da pesquisa:
-
-\begin{itemize}
-  \item Entender a influência de TDD no design de sistemas orientados a objetos;
-
-  \item Comparar os resultados encontrados com a literatura existente;
-\end{itemize}
-
-Para alcançar esse objetivo, essa pesquisa formulou e tentou responder as
-questões listadas abaixo, baseadas nos objetivos:
+Como mencionado acima, praticantes de TDD afirmam que a prática os ajuda a criar
+classes que apresentam simplicidade, baixo acoplamento e alta coesão. Para
+compreender esses efeitos, essa pesquisa tenta responder as questões listadas
+abaixo:
 
 \begin{itemize}
-  \item Como TDD afeta sobre o acoplamento e coesão das classes
-  criadas?
-  
-  \item Como TDD afeta o gerenciamento de dependências em sistemas orientados a
-  objetos?
+
+  \item Como a prática de TDD afeta o acoplamento das classes criadas?
+
+  \item Como a prática de TDD afeta o gerenciamento de dependências em sistemas
+  orientados a objetos?
+
+  \item Como a prática de TDD afeta a coesão das classes criadas?
 
   \item Como TDD afeta a simplicidade das classes criadas?
 
   \item Como o teste guia o desenvolvedor durante a atividade de
   design?
 
-  \item Qual a relação entre a experiência do desenvolvedor com TDD e
-  com sistemas orientados a objetos?
 \end{itemize}
 
 %% ------------------------------------------------------------------------- %%
@@ -123,20 +124,18 @@ questões listadas abaixo, baseadas nos objetivos:
 Este trabalho está dividido da seguinte maneira: 
 
 \begin{itemize}
-	\item O Capítulo \ref{cap:tdd} discute o TDD sob o ponto de vista do design.
+	\item O Capítulo \ref{cap:tdd} discute sobre a prática de TDD, com ênfase no
+	ponto de vista do design.
   
-	\item O Capítulo \ref{cap:design} apresenta boa práticas e princípios de design
-	que serão investigados durante o processo de entrevistas.
-
-	\item O capítulo \ref{cap:trabalhos-relacionados} mostra trabalhos já
+	\item O Capítulo \ref{cap:trabalhos-relacionados} mostra trabalhos já
 	realizados pela academia sobre os efeitos de TDD.
 	
-	\item O capítulo \ref{cap:discussao} apresenta os resultados encontrados e
+	\item O Capítulo \ref{cap:discussao} apresenta os resultados encontrados e
 	discute em cima dos mesmos.
 	
-	\item O capítulo \ref{cap:ameacas} discute as possíveis ameaças dos resultados
+	\item O Capítulo \ref{cap:ameacas} discute as possíveis ameaças dos resultados
 	encontrados na pesquisa.
 	
-	\item O capítulo \ref{cap:conclusoes} resume o trabalho realizado a apresenta
+	\item O Capítulo \ref{cap:conclusoes} resume o trabalho realizado a apresenta
 	possibilidades de trabalhos futuros.
 \end{itemize}
