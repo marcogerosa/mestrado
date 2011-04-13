@@ -17,7 +17,7 @@ software deve emergir a medida que o software cresce. E, para responder
 rapidamente a essas alterações, é necessário um constante feedback sobre a
 qualidade interna e externa do código.
 
-TDD é uma prática de desenvolvimento de software que é baseada na repetição de
+TDD é uma prática de desenvolvimento de software que se baseia na repetição de
 um pequeno ciclo de atividades. Primeiramente, o desenvolvedor deve escrever um
 teste que falha. Em seguida, deve fazer esse teste passar, implementando a
 funcionalidade desejada. Por fim, deve refatorar o código. Esse ciclo,
@@ -165,10 +165,6 @@ em uma simples frase: \textit{Test-First programming is not a testing technique}
 que, em uma tradução livre, significa \textit{Testar Primeiro não é uma prática 
 de testes}.
 
-O foco deste trabalho não é observar TDD sob esse ponto de vista, mas muitos
-outros estudos avaliam TDD sob esse ponto de vista e podem ser encontrados na
-Seção \ref{cap:trabalhos-relacionados}.
-
 %% ------------------------------------------------------------------------- %%
 \section{Definições incompletas}
 
@@ -229,12 +225,9 @@ todo o processo de desenvolvimento de software. Quando as dependências são mal
 gerenciadas, o código torna-se difícil de manter, de evoluir e de se reutilizar.
 Alterações simples demandam grandes alterações no código, já que elas se
 propagam por diversas outras classes do sistema.
-TDD reduz esses problemas já que, para escrever um teste de unidade para uma
-determinada classe que colabora com outra, essa classe deve ter suas
-dependências explícitas e deve permitir que a implementação do colaborador seja
-trocada a qualquer momento. Se isso não for feito, o programador não conseguirá
-testar aquela unidade de maneira isolada; ele vai sempre depender da execução da
-dependência.
+Classes altamente acopladas, além de difíceis de manter, também são difíceis de
+testar, já que o programador deverá fazer uso de muitos objetos dublês para
+simular o comportamento esperado das dependências.
 
 Quanto mais difícil for a escrita do teste, maior a chance da existência de
 algum mau cheiro de design. Segundo Michael Feathers, existe uma sinergia muito
@@ -243,24 +236,13 @@ programador busca por testabilidade, ele acaba criando um bom design; se o
 programador busca por um bom design, ele acaba escrevendo um design mais
 testável \cite{feathers-synergy}.
 
-Classes altamente acopladas, além de difíceis de manter, também são difíceis de
-testar, já que o programador deverá fazer uso de muitos objetos dublês para
-simular o comportamento esperado das dependências.
-O teste pode dar ainda muitos outros feedbacks sobre a qualidade do design,
-além do acoplamento. Uma classe que possui muita responsabilidade (ou seja, é
-pouco coesa) é também difícil de testar, já que o programador gastaria muito
-tempo testando todas as possíveis possibilidades. Esse tipo de classe geralmente
-apresenta código complexo. Nesse caso, o programador praticante de TDD, ao
-enxergar a dificuldade da escrita do teste, refatoraria a mesma, quebrando-a em
-pequenas classes.
-
 TDD encoraja o programador a escrever componentes fracamente acoplados, de
 maneira que eles possam ser testados de maneira isolada, e em um nível maior,
 combinados com outros componentes.
 Programar voltado para interfaces é uma prática de orientação a objetos há muito
-tempo conhecida. A ideia de pensar em classes e dar mais foco à maneira com que
+tempo conhecida. Pensar em classes e dar mais foco à maneira com que
 elas se relacionam do que com a maneira que elas implementarão determinado
-algoritmo passa a ser natural \cite{GOOS}. 
+comportamento torna-se mais natural ao praticar TDD \cite{GOOS}. 
 
 %% ------------------------------------------------------------------------- %%
 \section{Efeitos na Simplicidade}
@@ -342,7 +324,6 @@ escrevendo.
 O próprio Kent Beck em seu livro afirma que não faz passos tão pequenos o tempo
 todo, mas se sente seguro em saber que pode dar passos pequenos quando houver
 necessidade.
-
 No exemplo acima, o método \textit{vezes} poderia ser considerado simples por
 um programador experiente, que optaria por chegar à mesma solução acima de
 maneira mais rápida, tomando passos maiores. Nesse momento, a experiência do
@@ -367,7 +348,7 @@ necessidade crescer, é que o programador deverá evoluir o design. Uma decisão
 design pode ser mais complicada do que parece e, sem um teste para mostrar isso
 rapidamente, o programador dificilmente perceberia o problema \cite{aim-fire}.
 
-É interessante a afirmação de Scott Ambler sobre como o praticante de TDD lida
+Scott Ambler possui uma definição particular sobre como o praticante de TDD lida
 com a simplicidade de design. Segundo ele, TDD pode ser definido como
 ``\textit{TDD = Refatoração + Test-First Design}''. Segundo ele, um programador,
 antes de implementar uma nova funcionalidade, deve observar se o design atual
@@ -394,7 +375,10 @@ testes de unidades é útil também para validar a qualidade do design.
 Em abordagens tradicionais de desenvolvimento de software, onde o teste é feito
 apenas após a funcionalidade ter sido completamenta implementada, o
 desenvolvedor acaba por perder o feedback dos testes durante a criação inicial
-do design. A Figura \ref{fig:tdd-feedback} ilustra dois programadores, usando
+do design. Ao contrário, o praticante de TDD, por escrever testes
+frequentemente, recbee feedback durante todo o processo de escrita do código.
+
+A Figura \ref{fig:tdd-feedback} ilustra dois programadores, usando
 abordagens diferentes, escrevendo pequenos pedaços de código para uma
 funcionalidade. Praticantes de TDD validam constantemente o design através dos
 testes, o que não ocorre com praticantes de abordagens tradicionais, aonde
