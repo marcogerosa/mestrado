@@ -219,18 +219,8 @@ características interessantes, como a facilidade para invocar o comportamento
 esperado, a não necessidade de pré-condições complicadas e a explicitação de
 todas as dependências que a classe possui.
 
-Gerenciamento de dependências que, conforme comentado por Robert Martin em uma
-de suas palestras \cite{bobmartin-infoq}, é uma das partes mais delicadas de
-todo o processo de desenvolvimento de software. Quando as dependências são mal
-gerenciadas, o código torna-se difícil de manter, de evoluir e de se reutilizar.
-Alterações simples demandam grandes alterações no código, já que elas se
-propagam por diversas outras classes do sistema.
-Classes altamente acopladas, além de difíceis de manter, também são difíceis de
-testar, já que o programador deverá fazer uso de muitos objetos dublês para
-simular o comportamento esperado das dependências.
-
 Quanto mais difícil for a escrita do teste, maior a chance da existência de
-algum mau cheiro de design. Segundo Michael Feathers, existe uma sinergia muito
+algum problema de design. Segundo Michael Feathers, existe uma sinergia muito
 grande entre uma classe com alta testabilidade e um bom design: se o
 programador busca por testabilidade, ele acaba criando um bom design; se o
 programador busca por um bom design, ele acaba escrevendo um design mais
@@ -250,7 +240,7 @@ comportamento torna-se mais natural ao praticar TDD \cite{GOOS}.
 TDD sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
 inglês, \textit{baby steps}): deve-se escrever testes sempre para a menor
 funcionalidade possível, escrever o código mais simples que faça o teste passar
-e fazer sempre apenas uma refatoração por vez.
+e fazer sempre apenas uma refatoração por vez \cite{TDDByExample}.
 
 Uma justificativa para tal é que quanto maior o passo que o programador dá, mais
 tempo ele leva para concluir esse passo e, consequentemente ele fica mais tempo
@@ -258,10 +248,10 @@ sem feedback sobre o código. Além disso, faz com que o programador não crie
 soluções mais complexas do que elas precisam ser, tornando o código, à longo
 prazo, o mais simples possível.
 
-Em seu livro, Kent Beck dá exemplos de simplicidade, e na implementação de uma
-operação de multiplicação dentro de uma simples classe \textit{Dinheiro},
-responsável por representar uma unidade monetária, Beck escreve o seguinte
-teste e implementação \cite{TDDByExample}:
+Em seu livro, Kent Beck \cite{TDDByExample} dá exemplos de simplicidade, e na
+implementação de uma operação de multiplicação dentro de uma simples classe 
+\textit{Dinheiro}, responsável por representar uma unidade monetária, Beck 
+escreve o seguinte teste e implementação:
 
 \begin{lstlisting}[frame=trbl]
 public void testaMultiplicacao() {
@@ -279,11 +269,10 @@ class Dinheiro {
 }
 \end{lstlisting}
 
-Repare Beck fez o teste passar da maneira mais simples possível: fez o atributo
-\textit{valor} receber diretamente o valor da multiplicação. E, somente com os
-testes passando, Beck refatora e remove a duplicação de dados e de código
-existente (o valor 10 é informação duplicada entre o teste e o código da
-classe):
+A implementação faz o teste passar da maneira mais simples possível: o
+atributo \textit{valor} recebe diretamente o valor da multiplicação. E, somente com os
+testes passando, o autor refatora e remove a duplicação de dados e de código
+existente:
 
 \begin{lstlisting}[frame=trbl]
 class Dinheiro {
@@ -312,11 +301,10 @@ de que fazer passos de bebê o tempo todo faz com que a produtividade diminua.
 De fato, fazer passos de bebê durante todo o ciclo faz com que o tempo de
 desenvolvimento aumente, já que muitos desses passos são simples demais e
 poderiam ser pulados por um programador mais experiente. 
-
 Mas TDD não força o programador a dar passos de bebê o tempo todo, mas sim
 permite que o mesmo dê passos de bebê quando achar necessário
-\cite{TDDByExample}: caso o programador esteja confiante sobre o trecho de
-código  que está escrevendo naquele momento, ele pode dar um passo maior;  mas
+\cite{TDDByExample}. Caso o programador esteja confiante sobre o trecho de
+código que está escrevendo naquele momento, ele pode dar um passo maior;  mas
 caso ele não esteja tão confiante, a prática permite a ele ir mais devagar e 
 dar passos de bebê, obtendo feedback mais rápido sobre o código que está
 escrevendo.
