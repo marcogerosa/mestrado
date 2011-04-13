@@ -70,6 +70,13 @@ produção. Beck define esse ciclo mais especificamente da seguinte maneira
 	\item Refatore para remover duplicação de dados e de código.
 \end{enumerate}
 
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.7]{passos-tdd}
+  \caption{O ciclo detalhado de TDD.}
+  \label{fig:passos-tdd}
+\end{figure}
+
 Ao iniciar o ciclo, o programador deve escrever o próximo teste mais simples que
 ela possa imaginar que falhe; em seguida, ele deve garantir que o teste que ele
 escreveu realmente falha; com o teste falhando, o programador deve escrever o
@@ -83,13 +90,6 @@ que faça o teste passar. Por fim, a última parte do ciclo é responsável por
 tornar o código claro e flexível; nesse momento o programador deve
 refatorar o código para remover toda a duplicação de dados ou de código gerada enquanto 
 se preocupava em fazer o teste passar da maneira mais simples.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.7]{passos-tdd}
-  \caption{O ciclo detalhado de TDD.}
-  \label{fig:passos-tdd}
-\end{figure}
 
 %% ------------------------------------------------------------------------- %%
 \section{Benefícios dos testes}
@@ -157,19 +157,20 @@ não é uma prática de testes}.
 
 Apesar do foco da prática em design, é possível encontrar muitas definições que
 não levam isso em conta. Algumas delas levam em consideração apenas a ideia da
-inversão da ordem de desenvolvimento, aonde o programador deve primeiro escrever
-o teste e depois escrever o código que faça o teste passar.
+inversão da ordem de desenvolvimento, na qual o programador deve primeiro
+escrever o teste e depois escrever o código que faça o teste passar.
 
-Um exemplo disso é a definição que pode ser encontrada no livro \textit{JUnit
+Um exemplo é a definição que pode ser encontrada no livro \textit{JUnit
 in Action} \cite{junit-in-action}: \textit{Test-Driven Development é uma
 prática de programação que instrui desenvolvedores a escrever código novo
 apenas se um teste automatizado estiver falhando, e a eliminar duplicação. O
 objetivo de TDD é "código claro que funcione"}.
 
-Apesar de ser correta, ela é incompleta, já que ela não captura um dos pontos
-principais da prática, que é feedback no design. Janzen também levanta esse
-problema e culpa até o próprio nome da prática, já que ela possui a palavra
-``testes'', mas não contém a palavra ``design'' \cite{tdd-really-improve}.
+Apesar definir bem o ciclo de desenvolvimento da prática, ela é incompleta, já
+que ela não captura um dos pontos principais da prática, que é feedback no design. 
+Janzen também levanta esse problema e culpa até o próprio nome da prática, já
+que ela possui a palavra ``testes'', mas não contém a palavra ``design'' 
+\cite{tdd-really-improve}.
 
 Uma definição mais clara é a de que TDD é a arte de produzir testes
 automatizados para código de produção, usando esse processo para guiar o design e a programação.
@@ -189,7 +190,7 @@ explicados com mais detalhes no capítulo \ref{cap:trabalhos-relacionados}.
 \section{Efeitos no Design de Classes}
 
 Na abordagem tradicional, programadores escrevem boa parte do código antes de
-testarem. Ao perceberem posteriormente um problema no design, o preço para
+testarem. Ao perceberem posteriormente um problema no design, o custo para
 corrigir pode ser alto demais. Uma vantagem de escrever os testes antes é
 possibilitar que o desenvolvedor tome grande parte das decisões de design
 enquanto o custo de mudança ainda é baixo.
