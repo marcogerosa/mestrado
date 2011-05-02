@@ -14,6 +14,16 @@ uma melhoria significativa no design de classes, auxiliando o programador a
 criar classes mais coesas e menos acopladas \cite{TDDByExample} \cite{GOOS} 
 \cite{astels-tdd}.
 
+Discutir os efeitos de TDD no design de classes é de grande importância para os
+desenvolvedores.
+Criar classes ou, em um nível maior de abstração, módulos que possuam um baixo
+acoplamento e uma alta coesão demandam um esforço muito grande do desenvolvedor. 
+É muito comum que, após algum tempo de desenvolvimento, o design perca qualidade
+e qualquer tipo de manutenção torne-se difícil e, por consequência, custosa.
+Muitas práticas tentam reduzir esses problemas, como programação pareada ou
+revisão de código. Os praticantes de TDD acreditam que os testes sejam uma outra
+maneira de validar o design criado, e utilizar esse feedback para melhorá-lo.
+
 É possível observar a crescente adoção e procura por TDD
 através do número de pesquisas publicadas pela academia.
 Em um questionário de 2010 para descobrir que práticas eram feitas por times
@@ -42,23 +52,12 @@ Já Robert Martin relaciona TDD à profissionalismo. Segundo ele, um desenvolved
 profissional entrega código claro e flexível que funcione dentro do prazo, e TDD
 possibilita que o desenvolvedor alcance esses pontos \cite{martin-profissionalismo}.
 
-Discutir os efeitos de TDD no design de classes é de grande importância para os
-desenvolvedores.
-Criar classes ou, em um nível maior de abstração, módulos que possuam um baixo
-acoplamento e uma alta coesão demandam um esforço muito grande do desenvolvedor. 
-É muito comum que, após algum tempo de desenvolvimento, o design perca qualidade
-e qualquer tipo de manutenção torne-se difícil e, por consequência, custosa.
-Praticantes de TDD acreditam que os testes sejam uma outra maneira
-de validar o design criado, e utilizar esse feedback para melhorá-lo.
-
 Grande parte dos experimentos feitos pela academia verificam os efeitos da
 prática sobre a qualidade externa. Poucos são os estudos que avaliam TDD do
 ponto de vista da qualidade interna de código. Siniaalto e Abrahamsson também 
 compartilham dessa opinião e, além disso, notaram que os efeitos de TDD podem 
 não ser tão automáticos ou evidentes como o esperado \cite{alarming-results}.
 
-Relacionar o fato do desenvolvedor escrever testes antes e, por esse motivo,
-levar o design para melhores soluções não é trivial.
 Este trabalho visa compreender os efeitos e como a prática de TDD
 influencia no design de sistemas orientados a objetos do ponto de vista dos
 desenvolvedores que a praticam. Para alcancar esse objetivo,

@@ -4,9 +4,8 @@
 
 Conforme discutido no Capítulo \ref{cap:trabalhos-relacionados}, muitos 
 trabalhos avaliaram TDD, e alguns deles relatam uma melhora
-no design de classes, como um menor 
-acoplamento, uma maior coesão, e até mesmo mais simplicidade nas classes quando
-desenvolvidas utilizando-se a prática. 
+no design de classes, como um menor acoplamento, uma maior coesão, e até mesmo
+mais simplicidade nas classes quando desenvolvidas utilizando-se a prática. 
 
 Grande parte deles estão interessados em avaliar quais os efeitos da prática
 no código final produzido, mas poucos estudos tentam entender como TDD e a
@@ -14,7 +13,7 @@ prática de escrever o teste antes do código real realmente guiam o programador
 em direção à essas melhorias.
 
 Para entender como TDD influencia o desenvolvedor durante o desenvolvimento,
-este trabalho propõe estudos de caso em 3 empresas de desenvolvimento de
+este trabalho propõe estudos de caso em empresas de desenvolvimento de
 software brasileiras, utilizando métodos qualitativos de pesquisa.
 Este capítulo detalha o planejamento do experimento, bem como o processo de
 análise dos dados colhidos.
@@ -75,6 +74,35 @@ inserido, este trabalho é composto por um conjunto de estudos de caso, onde sã
 utilizados métodos baseados em teoria fundamentada nos dados para colheta e
 análise dos dados \cite{grounded-theory}.
 
+Conduzir uma pesquisa no mundo real implica em um equilíbrio entre nível de
+controle e grau de realismo. Uma situação realística é geralmente complexa e 
+não-determinística, impedindo o entendimento sobre o que acontece. Por outro
+lado, aumentar o controle sobre o experimento reduz o grau de realismo, muitos
+vezes fazendo com que os reais fatores de influência fiquem fora do escopo do 
+estudo. Estudos de caso são, por definição, conduzidos no mundo real e por isso 
+têm um alto grau de realismo, mas dessa forma sacrificando o nível de  controle
+\cite{guidelines-case-study}.
+
+, o que
+significa que o pesquisador possui um roteiro de perguntas a serem respondidas, 
+mas pode eventualmente alterar o rumo da entrevista de acordo com as respostas 
+dadas pelos entrevistados \cite{guidelines-case-study}. 
+
+O objetivo básico de uma análise de dados qualitativa é derivar conclusões a
+partir dos dados, mantendo uma clara cadeia de evidências. Isso significa que  o
+leitor deve ser capaz de seguir a derivação de resultados e conclusões pelos 
+dados coletados \cite{yin}.
+
+Os termos validade e confiabilidade em estudos qualitativos não possuem o mesmo 
+significado dos estudos quantitativos. Confiabilidade em um estudo qualitativo 
+indica que a abordagem do pesquisador é consistente entre diferentes
+pesquisadores e diferentes projetos. 
+sugestao do gibbs
+
+Já o termo validade em um estudo qualitativo significa que o pesquisador  se
+preocupou com a exatidão das informações geradas pela pesquisa. 
+
+
 %% ------------------------------------------------------------------------- %%
 \section{Participantes da pesquisa}
 \label{sec:planejamento-participantes}
@@ -85,17 +113,17 @@ Os critérios que foram levados em consideração no momento de convidar empresa
 participarem da pesquisa foram:
 
 \begin{itemize}
-	\item Utilizem de TDD há mais de 1 ano;
+	\item Utilização de TDD há mais de 1 ano;
 
-	\item Sejam localizadas em São Paulo (SP), para facilitar o processo de
+	\item Localizadas em São Paulo (SP), para facilitar o processo de
 	entrevista e observação do ambiente;
 
-	\item Possuam desenvolvedores com diferentes níveis de experiência em TDD e em 
+	\item Desenvolvedores com diferentes níveis de experiência em TDD e em 
 	Orientação a Objetos, desde iniciantes até experientes;
 
-	\item Possuam projetos que utilizem a tecnologia Java e sejam baseados na web;
+	\item Projetos que utilizem a tecnologia Java e sejam baseados na web;
 
-	\item Utilizem alguma metodologia ágil como processo de desenvolvimento de
+	\item Metodologias ágeis como processo de desenvolvimento de
 	software;
 \end{itemize}
 
@@ -113,20 +141,12 @@ encontrados.
 \section{Estratégia de pesquisa} 
 \label{sec:planejamento-estrategia}
 
-Conduzir uma pesquisa no mundo real implica em um equilíbrio entre nível de
-controle e grau de realismo. Uma situação realística é geralmente complexa e 
-não-determinística, impedindo o entendimento sobre o que acontece. Por outro
-lado, aumentar o controle sobre o experimento reduz o grau de realismo, muitos
-vezes fazendo com que os reais fatores de influência fiquem fora do escopo do 
-estudo. Estudos de caso são, por definição, conduzidos no mundo real e por isso 
-têm um alto grau de realismo, mas dessa forma sacrificando o nível de  controle
-\cite{guidelines-case-study}.
 
-Optando por um maior realismo, os dados serão coletados principalmente através 
-de entrevistas com desenvolvedores que praticam TDD no dia-a-dia de trabalho e
-que podem avaliar com propriedade o efeito da prática sobre o design orientado 
-a objetos dos seus projetos. Além disso, o ambiente será observado pelo
-pesquisador afim de capturar informações do cotidiano relevantes para a pesquisa. 
+Os dados serão coletados principalmente através de entrevistas com
+desenvolvedores que praticam TDD no dia-a-dia de trabalho e que podem avaliar
+com propriedade o efeito da prática sobre o design orientado a objetos dos seus 
+projetos. Além disso, o ambiente será observado pelo pesquisador afim de
+capturar informações do cotidiano relevantes para a pesquisa.
 
 As sub-seções abaixo detalham como os dados serão colhidos em cada etapa da pesquisa.
 
@@ -134,63 +154,76 @@ As sub-seções abaixo detalham como os dados serão colhidos em cada etapa da p
 \label{sec:planejamento-estrategia-entrevistas}
 
 O primeiro passo da pesquisa é uma série de entrevistas com os desenvolvedores 
-das empresas participantes. As entrevistas serão semi-estruturadas, o que
-significa que o pesquisador possui um roteiro de perguntas a serem respondidas, 
-mas pode eventualmente alterar o rumo da entrevista de acordo com as respostas 
-dadas pelos entrevistados \cite{guidelines-case-study}. 
+das empresas participantes. As entrevistas serão semi-estruturadas, dando
+liberdade ao pesquisador para mudar o rumo das perguntas, caso se faça
+necessário.
 
 Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê
 uma resposta ampla sobre o assunto. O principal objetivo dessas entrevistas é
 capturar informações sobre:
 
 \begin{itemize}
-	\item Caracterizar a experiência do programador com desenvolvimento de
-	software, boas práticas de desenvolvimento e TDD;
+	\item \textbf{Caracterizar a experiência do programador com desenvolvimento de
+	software, boas práticas de desenvolvimento e TDD}. Vital para caracterizar o
+	público-alvo da pesquisa.
 
-	\item A visão do desenvolvedor sobre a influência de TDD no design;
+	\item \textbf{A relação entre a experiência do programador e os efeitos de TDD
+	na qualidade do design}. Por ser um outro possível fator de influência, o
+	pesquisador colherá informações sobre a experiência do programador com
+	desenvolvimento de softwares, conceitos de orientação a objetos e TDD. 
 
-	\item Como o desenvolvedor utiliza o feedback dos testes para guiar o design;
+	\item \textbf{Como o desenvolvedor vê a influência que a utilização de TDD
+	junto com outras práticas ágeis, como programação pareada, tem sobre o design}.
+	Por ser um possível fator de influência, o pesquisador colherá informações para
+	diferenciar efeitos da programação pareada dos efeitos de TDD.
 
-	\item Como o desenvolvedor vê a influência que a utilização de TDD junto com 
-	outras práticas ágeis, como programação pareada, tem sobre o design;
+	\item \textbf{A visão do desenvolvedor sobre a influência de TDD no design}.
+	O pesquisador alinhará as definições da prática com todos os participantes da
+	pesquisa.
 
-	\item A relação entre a experiência do programador e os efeitos de TDD na 
-	qualidade do design;
+	\item \textbf{Os efeitos de TDD sobre o acoplamento e a coesão geral das
+	classes do sistema}. Entender a opinião do participante sobre os efeitos de TDD
+	nesses dois pontos importantes em sistemas orientados a objetos. 
 
-	\item Os efeitos de TDD sobre a gerenciamento de dependências em sistemas 
-	orientados a objetos;
+ 	\item \textbf{Os efeitos de TDD sobre a gerenciamento de dependências em
+ 	sistemas orientados a objetos}. Em um nível maior, entender qual a possível
+ 	influência da prática no gerenciamento de dependências.
+	
+	\item \textbf{Como o desenvolvedor utiliza o feedback dos testes para guiar o
+	design}. Entender como o desenvolvedor utiliza os testes para melhorar o design
+	é a questão-chave dessa pesquisa, e para isso o pesquisador perguntará desde
+	questões conceituais até questões bem práticas com discussões de trechos de
+	código.
 
-	\item A relação entre TDD e boas práticas de orientação a objetos;
+	\item \textbf{A relação entre TDD e boas práticas de orientação a objetos}.
+	O pesquisador colherá informações sobre a relação entre a prática e
+	bons princípios de orientação a objetos, como SOLID \cite{bob-martin}.
 
-	\item Os efeitos de TDD sobre o acoplamento e a coesão geral das classes  do
-	sistema;
+	\item \textbf{A visão do programador sobre a simplicidade que TDD agrega ao
+	processo}. Entender como TDD leva o programador à criação de códigos mais
+	simples.
 
-	\item A visão do programador sobre a simplicidade que TDD agrega ao processo;
 \end{itemize} 
 
-Todas as entrevistas serão gravadas para que possam ser consultadas pelo
-pesquisador em momentos futuros. Além disso, as pesquisas serão sempre feitas
-por dois observadores, possibilitando que ambos tomem notas separadas e comparem
-suas anotações. O objetivo é diminuir o viés do processo.
-
-As entrevistas serão feitas em dias diferentes. Ao final de cada dia, os
-pesquisadores se reunirão para discutir sobre os pontos levantados no dia
-corrente, com o objetivo de sugerir melhorias no instrumento de entrevista. A
+As entrevistas serão feitas em dias diferentes para que, ao final de cada dia,
+o pesquisador possa discutir sobre os pontos levantados no dia
+corrente e sugerir melhorias no instrumento de pesquisa. A
 versão final do roteiro de entrevista pode ser encontrado no apêndice 
 \ref{ape:entrevista} deste trabalho.
 
-Além disso, o processo de codificação \cite{seaman} será feito por ambos os
+O processo de codificação \cite{seaman} será feito por dois
 pesquisados separadamente, e só então ambos juntarão seus resultados, após uma 
 série de comparações e discussões sobre as diferenças encontradas.
 
 %% ------------------------------------------------------------------------- %%
+\subsection{Métricas de código}
+\label{sec:planejamento-metricas}
+
+
+
+%% ------------------------------------------------------------------------- %%
 \section{Análise dos dados}
 \label{sec:planejamento-analise}
-
-O objetivo básico de uma análise de dados qualitativa é derivar conclusões a
-partir dos dados, mantendo uma clara cadeia de evidências. Isso significa que  o
-leitor deve ser capaz de seguir a derivação de resultados e conclusões pelos 
-dados coletados \cite{yin}.
 
 O processo de análise, baseado em \cite{creswell}, que está representado na
 figura (TODO fig), ilustra o processo de análise que será utilizado nessa
@@ -226,44 +259,43 @@ detalhado a seguir:
 \section{Validade e Confiabilidade do Estudo}
 \label{sec:planejamento-validacao}
 
-Os termos validade e confiabilidade em estudos qualitativos não possuem o mesmo 
-significado dos estudos quantitativos. Confiabilidade em um estudo qualitativo 
-indica que a abordagem do pesquisador é consistente entre diferentes
-pesquisadores e diferentes projetos. Segundo a orientação de Gibbs \cite{gibbs},
-este estudo realizará os seguintes procedimentos:
+Para garantir a confiabilidade deste estudo, os pesquisadores seguem as
+orientações de Gibbs \cite{gibbs} e realizam os seguintes procedimentos:
 
 \begin{itemize}
-	\item Checar as transcrições para garantir que não foram cometidos erros 
-	óbvios durante a transcrição;
+	\item \textbf{Checar as transcrições}. O pesquisador garante que não foram
+	cometidos erros óbvios durante a transcrição;
 
-	\item Certificar que não há um desvio na definição dos códigos ou no
-	significado dos códigos durante o processo de codificação. Isso pode ser
-	alcançado comparando os dados com os códigos e com as anotações constantemente;
+	\item \textbf{Má interpretação dos códigos}. A pesquisa certifica que não há um
+	desvio na definição dos códigos ou no significado dos códigos durante o processo 
+	de codificação, já que os mesmos foram alcançados através de comparação e
+	cruzamento entre dados de diferentes pesquisadores;
+	
+	\item \textbf{Rastreabilidade dos dados}. Todos os dados colhidos estão
+	preservados e podem ser consultados pelos pesquisadores a qualquer momento
+	durante todo o processo de pesquisa.
 
-	\item Fazer uma comparação cruzada entre os códigos criados pelos
-	pesquisadores;
 \end{itemize}
 
-O processo de codificação será feito por dois pesquisadores diferentes, que 
-irão constantemente checar e comparar os resultados obtidos. Além disso, as 
-entrevistas serão gravadas e o pesquisador poderá revisar a transcrição  durante
-todo a pesquisa.
-
-Já o termo validade em um estudo qualitativo significa que o pesquisador  se
-preocupou com a exatidão das informações geradas pela pesquisa. Isso será 
-verificado por alguns procedimentos, dentre eles:
+A validade do estudo será garantida por alguns procedimentos executados pelos
+pesquisadores, dentre eles:
 
 \begin{itemize}
-	\item Triangularização diferentes fontes de dados;
+	\item \textbf{Triangularização diferentes fontes de dados}. A pesquisa é
+	realizada em diferentes ambientes, com diferentes participantes e projetos,
+	trazendo diferentes pontos de vista para dentro da análise;
 
-	\item Apresentar os resultados da pesquisa para os participantes  e verificar
-	se eles concordam com os resultados gerados;
+	\item \textbf{Apresentar os resultados da pesquisa para os participantes e
+	verificar se eles concordam com os resultados gerados}. Garantir que os
+	participantes validem os dados encontrados diminui o viés do pesquisador;
 
-	\item Prover descrição rica e detalhada sobre o ambiente;
+	\item \textbf{Prover descrição rica e detalhada sobre o ambiente}. A riqueza
+	dos detalhes mostra a qualidade do estudo, além de possibilitar a repetição do
+	experimetno por outros pesquisadores;
 
-	\item Esclarecer todos os possíveis vieses da pesquisa;
+	\item \textbf{Esclarecer todos os possíveis vieses da pesquisa}. A pesquisa
+	deixa claro quais são suas limitações.
 
-	\item Auditoria externa para revisar o projeto;
 \end{itemize}
 
 %% ------------------------------------------------------------------------- %%
