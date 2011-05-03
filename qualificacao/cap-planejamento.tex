@@ -18,285 +18,15 @@ Este capítulo detalha o planejamento do experimento, bem como o processo de
 análise dos dados colhidos.
 
 %% ------------------------------------------------------------------------- %%
-\section{Métodos qualitativos de pesquisa} 
-\label{sec:planejamento-qualitativa}
-
-Conduzir um estudo experimental em engenharia de software sempre foi uma
-atividade difícil. Uma das razões para isso é o fator humano, muito presente 
-no processo de desenvolvimento de software, como sugerido por métodos ágeis  em
-geral \cite{AgileManifesto}. Dessa maneira, o paradigma de pesquisa analítico 
-não é suficiente para investigar casos reais complexos envolvendo pessoas e 
-suas interações com a tecnologia \cite{guidelines-case-study}.
-
-Conforme levantado por Seaman, esses problemas já foram levantados por muitos
-pesquisadores e finalmente tem-se levado em consideração a influência de
-problemas não-técnicos e a intersecção entre esses problemas e a parte técnica
-dentro da engenharia de software \cite{seaman}. 
-Apesar disso, o número de estudos empíricos é ainda muito pequeno dentro da área
-de pesquisa em ciência da computação: Sjoberg et al encontrou apenas 103
-experimentos em 5.453 artigos \cite{sjoberg} e Ramesh et al. identificou menos
-de 2\% de experimentos envolvendo humanos e apenas 0.16\% estudos em campo 
-dentre 628 artigos \cite{ramesh} .
-
-Uma pesquisa qualitativa é um meio para se explorar e entender a influência que 
-indivíduos ou grupos atribuem a um problema social ou humano. O processo de
-pesquisa envolve questões emergentes e procedimentos, dados geralmente colhidos
-sob o ponto de vista do participante, com a análise feita de maneira indutiva
-indo geralmente de um tema específico para um tema geral e com o pesquisador
-fazendo interpretações do significado desses dados. Dados capturados por estudos
-qualitativos são representados por palavras e figuras, e não por números.
-O relatório final tem uma estrutura flexível e os pesquisadores que se
-dedicam a esta forma de pesquisa apoiam uma maneira de olhar para a pesquisa que
-honra o estilo indutivo, o foco em termos individuais, e a importância de mostrar a 
-complexidade de uma situação \cite{creswell}. 
-
-Métodos qualitativos de busca possuem diversas características, que juntas fazem
-com que a pesquisa se torne rica em detalhes. Creswell \cite{creswell} lista
-alguma delas:
-
-\begin{enumerate}
-  
-  \item \textbf{Ambiente real}. Diferentemente da maneira tradicional,
-  pesquisas qualitativas não levam indíviduos para laboratórios e fazem experimentos
-  controlados; elas são geralmente realizadas em ambientes reais, aonde o objeto
-  sob estudo acontece. Essa é a principal vantagem da pesquisa qualitativa, já
-  que ela acontece no ambiente na qual o objeto sob estudo atua na prática. O
-  contato pessoal do pesquisador com os indíviduos permite com que ele colha
-  informações que raramente são repetidas em laboratório;
-  
-  \item \textbf{Pesquisador como instrumento chave de pesquisa}. O pesquisador
-  tem papel fundamental no processo, já que ele é o responsável pela captura dos
-  dados, através da examinação de documentos, entrevistas ou observações feitas
-  no mundo real. Pesquisadores tendem a não utilizar questionários ou
-  instrumentos desenvolvidos por outros pesquisadores;
-  
-  \item \textbf{Múltiplas fontes de dados}. Pesquisas qualitativas geralmente
-  colhem informações de múltiplas fontes de dados, como entrevistas,
-  observações e documentos, ao invés de confiar em apenas uma fonte de dados;
-  
-  \item \textbf{Análise dos dados indutiva}. Os dados são analisados de dentro
-  para fora, através da categorização dos mesmos em unidades de informação cada
-  vez mais abstratas. Esse processo indutivo gera diversas idas e vindas entre
-  os temas encontrados e a base de dados, até o momento em que os pesquisadores
-  estabeleçam um conjunto compreensivo de temas;
-  
-  \item \textbf{Visão do participante}. Trabalhos qualitativos focam na visão do
-  participante sobre o objeto em estudo, e não na visão que o pesquisador ou a
-  litetura tem à respeito do mesmo;
-  
-  \item \textbf{Design emergente}. O processo de pesquisa qualitativa é
-  emergente. Isso significa que o processo não deve ser completamente descrito
-  desde o começo, mas sim modificado de acordo com o início da coleta dos dados
-  no campo de pesquisa. A ideia chave por trás da pesquisa qualitativa é
-  aprender sobre o problema com os participantes e direcionar a pesquisa para
-  obter aquela informação;
-  
-  \item \textbf{Interpretativa}. Pesquisadores fazem uma interpretação daquilo
-  que veem, ouve e entendem. As interpretações do pesquisador não podem ser
-  separadas do seu conhecimento, história, contexto e entendimentos anteriores
-  do problema. Ao final do relatório da pesquisa, leitores também fazem suas
-  interpretações, oferecendo ainda novas interpretações para o estudo. Com os
-  leitores, participantes e pesquisadores fazendo interpretações, múltiplas
-  visões do problema podem emergem;
-  
-\end{enumerate} 
-
-Devido à sua característica interpretativa, o pesquisador tem papel fundamental
-em uma pesquisa qualitativa. A princípio, o pesquisador deve refletir e
-deixar explícito qualquer possível viés da pesquisa e como isso foi tratado
-durante a mesma. O pesquisador deve também deixar claro qual a sua relação
-pessoal com os participantes, já que isso pode influenciar o resultado final.
-
-O roteiro da entrevista, anotações, documentos e materiais visuais, bem como o
-protocolo para coletar informações devem ser preparados pelo pesquisador.
-Diferentemente do sugerido em pesquisas quantativas, aonde a amostra é
-geralmente randomica, o ambiente utilizado na pesquisa deve ser cuidadosamente
-escolhido pelo pesquisador, afim de melhor obter informações sobre o objeto em
-estudo. Durante a escolha do ambiente, quatro aspectos devem ser levados em
-conta \cite{miles-and-huberman}: o ambiente (aonde a pesquisa acontecerá), os
-atores (participantes que serão observados), os eventos (o que os atores serão
-observados ou entrevistados fazendo) e o processo (o caráter evolutivo dos
-eventos realizados pelos atores dentro do ambiente).
-
-O pesquisador também deve indicar os tipos de dados a serem colhidos. A Tabela
-\ref{tab:coleta-de-dados}, baseada em Creswell \cite{creswell} discute as
-principais maneiras de se colher informações, bem como suas vantagens e
-desvantagens. Mas isso não quer dizer que o pesquisador deve ficar limitado a
-esses instrumentos de coleta -- ele pode usar de sua criatividade para encontrar
-novos instrumentos, enriquecendo ainda mais o trabalho.
-
-\begin{table}
-	\begin{tabular}{ | p{3cm} | p{6cm} | p{6cm} | }
-		\hline
-		Observações &
-		  Pesquisador tem experiência em primeira mão com o participante;
-		  Pesquisador pode gravar dados na medida em que eles ocorrem;
-		  Aspectos não usuais podem ser notados durante a observação;
-		  Útil para explorar informações que os participantes não se sentem a
-		  vontade para discutir.
-		&
-		  Pesquisador pode ser visto como um intruso;
-		  Informações confidenciais, que não podem ser relatadas, podem ser
-		  vistas pelo pesquisador;
-		  Pesquisador pode não ser um bom observador;
-		\\
-		\hline
-		Entrevistas &
-		  Útil quando os participantes não podem ser observados diretamente;
-		  Participantes podem prover dados históricos sobre o objeto em estudo;
-		  Permite ao pesquisador o controle sobre as questões a serem feitas;
-		&
-		  Provê informações indiretas, filtradas através da visão dos
-		  participantes;
-		  Informações não são colhidas em seu ambiente natural;
-		  A presença do pesquisador pode enviesar as respostas;
-		  Nem todos os participantes são articulados e perceptivos;
-		\\
-		\hline
-		Documentos &
-		  Fonte de dados não obstrusiva, ou seja, pode ser acessado a qualquer
-		  momento pelo pesquisador;
-		  São dados nos quais os participantes deram atenção para compilá-los;
-		  Como já estão escritas, poupam o tempo da transcrição que
-		  seria gasto pelo pesquisador;
-		&
-		  Podem possuir informações privadas, que não podem ser relatadas pelo
-		  pesquisador;
-		  Podem exigir que o pesquisador busque por informações em lugares
-		  difíceis de procurar;
-		  Podem ser incompletos;
-		\\			
-		\hline
-	\end{tabular}
-	\caption{Métodos de coleta de dados, suas vantagens e desvantagens}
-	\label{tab:coleta-de-dados}
-\end{table}
-
-Todas as práticas citadas acima podem ter variações. Observações, por exemplo,
-podem ser feitas através da participação ativa do pesquisador ou tendo o
-pesquisador como mero observador. Entrevistas podem ser face-a-face, através de
-telefones ou grupos focais. 
-
-Entrevistas podem ser ainda estruturadas, onde o
-pesquisador tem perguntas definidas e o participante apenas as responde, ou
-não-estruturadas, onde o pesquisador apenas cita temas e o participante discute
-a respeito dos mesmos. As perguntas feitas pelo pesquisador podem ser abertas,
-onde o participante pode responder o que quiser, ou fechadas, na qual o mesmo
-deve apenas escolher entre opções dadas pelo pesquisador \cite{seaman}.
-
-Todos os instrumentos de coleta também devem ser acompanhados
-de um protocolo. Observações, por exemplo, podem ser divididas em notas descritivas
-(como trechos mencionados importantes) e notas reflexivas (pensamentos
-pessoais do pesquisador, especulações ou sentimentos). Já um protocolo de
-entrevista pode contar um cabeçalho para preenchimento de dados básicos (como data, tempo
-de duração, nome do participante), instruções para o entrevistador seguir em
-todas as entrevistas, 3 ou 4 questões para diminuir o medo do participante em
-falar com o entrevistador, e assim por diante. 
-
-Por fim, o processo de análise dos dados é responsável por dar sentido e
-interpretação à todos os dados colhidos. Esse processo envolve a preparação dos
-dados e o aprofundamento no entendimento dos mesmos. É um processo contínuo que
-envolve reflexão contínua sobre os dados colhidos, gerando questões analíticas e
-escrevendo notas em todo o estudo. Segundo Creswell \cite{creswell}, essa
-análise pode ser feita enquanto as entrevistas ainda estão acontecendo; o
-pesquisador pode ir analisando os dados colhetados até aquele momento,
-escrever notas e ir organizando a estrutura do relatório final.
-É possível ainda adicionar procedimentos à esse processo. Teoria fundamentada em
-dados, por exemplo, possue passos sistemáticos para a realização da análise;
-estudos de caso e etnografia envolvem uma descrição detalhada do ambiente e dos
-participantes, seguido da análise dos dados para os temas \cite{stake}.
-
-De maneira geral, pesquisadores seguem os passos abaixo durante o processo de
-análise dos dados:
-
-\begin{itemize}
-
-	\item \textbf{Organização e Preparação dos Dados}: Este prcesso
-	envolve a transcrição de entrevistas e das notas geradas durante todo o 
-	processo de entrevistas;
-	
-	\item \textbf{Leitura dos dados}: Leitura de todos os dados gerados até o
-	momento. Nesse momento há uma reflexão sobre os principais pontos e opiniões 
-	colhidos em todas as fontes de dados;
-	
-	\item \textbf{Codificação e Agrupamento por Temas}:	Codificação é o ato de
-	organizar e classificar os dados em pequenas categorias ou segmentos de textos 
-	antes de trazer qualquer significado àquela informação \cite{rossman}. O
-	pesquisador usualmente seleciona frases ou parágrafos e atribui a ele uma
-	categoria. Após o processo de codificação, agrupa-se esses dados em
-	temas que possuem uma granularidade maior. Esses temas são aqueles que 
-	aparecerão como maiores contribuições da pesquisa qualitativa.
-	
-	\item \textbf{Interpretação do resultado}: O pesquisador interpreta os dados, 
-	basendo-se tanto na sua experiência pessoal com o assunto quanto com dados 
-	retirados da literatura.
-
-\end{itemize}
-
-O pesquisador deve ter também grande preocupação com a validade e a
-confiabilidade do estudo qualitativo. O termo \textit{validade} significa que o
-pesquisador se preocupou com a exatidão das informações geradas pela pesquisa.
-Já o termo \textit{confiabilidade} indica que a abordagem do pesquisador é
-consistente entre diferentes pesquisadores e diferentes projetos
-\cite{gibbs-2007}.
-
-Para garantir a confiabilidade de seu trabalho, Gibbs \cite{gibbs-2007} sugere
-que o pesquisador tome as seguintes precauções:
-
-\begin{itemize}
-	\item \textbf{Checar as transcrições}. O pesquisador garante que não foram
-	cometidos erros óbvios durante a transcrição;
-
-	\item \textbf{Má interpretação dos códigos}. A pesquisa certifica que não há um
-	desvio na definição dos códigos ou no significado dos códigos durante o processo 
-	de codificação, já que os mesmos foram alcançados através de comparação e
-	cruzamento entre dados de diferentes pesquisadores;
-	
-	\item \textbf{Rastreabilidade dos dados}. Todos os dados colhidos devem ser
-	preservados e podem ser consultados pelos pesquisadores a qualquer momento
-	durante todo o processo de pesquisa.
-
-\end{itemize}
-
-Para garantir a validade, o pesquisador deve aumentar a precisão do seu estudo.
-A listagem abaixo discute algumas das possíveis estratégias para tal:
-
-\begin{itemize}
-	\item \textbf{Triangularização}. A pesquisa deve contar com diferentes fontes
-	de dados e usá-las como uma justificativa coerente para os temas que emergiram
-	dessas fontes de dados;
-
-	\item \textbf{Apresentar os resultados da pesquisa para os participantes e
-	verificar se eles concordam com os resultados gerados}. Garantir que os
-	participantes validem os dados encontrados diminui o viés do pesquisador;
-
-	\item \textbf{Prover descrição rica e detalhada sobre o ambiente}. A riqueza
-	dos detalhes mostra a qualidade do estudo, além de possibilitar a repetição do
-	experimetno por outros pesquisadores;
-
-	\item \textbf{Esclarecer todos os possíveis vieses da pesquisa}. A pesquisa
-	deve deixar claro e ser honesta sobre quais são suas limitações;
-	
-	\item \textbf{Discutir pontos discrepantes}. Pesquisas que discutem pontos
-	discrepantes tornam-se mais realistas, e por consequência, aumentam em
-	credibilidade;
-	
-	\item \textbf{Auditor externo}. Um auditor externo, que não é familiar com a
-	pesquisa ou com o pesquisador, pode prover informações objetivas sobre a
-	pesquisa e o processo como um todo.
-
-\end{itemize} 
-
-%% ------------------------------------------------------------------------- %%
 \section{Design da pesquisa}
 
 Baseando-se no fato de que o processo de desenvolvimento de software envolve 
 diversos fatores humanos e é totalmente sensível ao contexto em que ele está 
-inserido, este trabalho é composto por um conjunto de estudos de caso, onde são 
-utilizados métodos qualitativos de pesquisa para o processo de colheta e análise
-dos dados.
+inserido, este trabalho é composto por um \textbf{conjunto de estudos de caso},
+onde são utilizados métodos qualitativos de pesquisa para o processo de colheta e 
+análise dos dados.
 
-Baseando-se na definição de Robson \cite{robson}, Yin \cite{yin} e Benbasat et
+Segundo a definição de Robson \cite{robson}, Yin \cite{yin} e Benbasat et
 al. \cite{benbasat}, Runeson e Host mostram que todas as definições concordam
 que um estudo de caso investiga um fenômeno contemporâneo no seu contexto. 
 Robson afirma que um estudo de caso estressa o uso de múltiplas fontes de
@@ -369,53 +99,105 @@ Julho de 2011. As entrevistas serão semi-estruturadas, dando liberdade ao
 pesquisador para mudar o rumo das perguntas, caso se faça necessário.
 
 Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê
-uma resposta ampla sobre o assunto. O principal objetivo dessas entrevistas é
-capturar informações sobre:
+uma resposta ampla sobre o assunto. A tabela \ref{tab:questoes} mostra a
+relação entre os objetivos da entrevista e as perguntas formuladas no roteiro de
+entrevista, encontrado no apêndice \ref{ape:entrevista} deste trabalho.
 
-\begin{itemize}
-	\item \textbf{Caracterizar a experiência do programador com desenvolvimento de
-	software, boas práticas de desenvolvimento e TDD}. Vital para caracterizar o
-	público-alvo da pesquisa.
+\begin{table}
+	\begin{tabular}{ | p{6cm} | p{7cm} | p{2cm} | }
+		\hline
+		\textbf{Caracterizar a experiência do programador com desenvolvimento de
+		software, boas práticas de desenvolvimento e TDD} 
+		&
+		Vital para caracterizar o público-alvo da pesquisa.
+		&
+		Seções \ref{entrevista:dados-basicos}, \ref{entrevista:caracterizacao}
+		\\
 
-	\item \textbf{A relação entre a experiência do programador e os efeitos de TDD
-	na qualidade do design}. Por ser um outro possível fator de influência, o
-	pesquisador colherá informações sobre a experiência do programador com
-	desenvolvimento de softwares, conceitos de orientação a objetos e TDD. 
+		\hline
+		\textbf{A relação entre a experiência do programador e os efeitos de TDD
+		na qualidade do design} 
+		&
+		Por ser um outro possível fator de influência, o pesquisador colherá
+		informações sobre a experiência do programador com desenvolvimento de softwares, 
+		conceitos de orientação a objetos e TDD.
+		&
+		Seções \ref{entrevista:experiencia}
+		\\
 
-	\item \textbf{Como o desenvolvedor vê a influência que a utilização de TDD
-	junto com outras práticas ágeis, como programação pareada, tem sobre o design}.
-	Por ser um possível fator de influência, o pesquisador colherá informações para
-	diferenciar efeitos da programação pareada dos efeitos de TDD.
+		\hline
+		\textbf{Como o desenvolvedor vê a influência que a utilização de TDD
+	junto com outras práticas ágeis, como programação pareada, tem sobre o design} 
+		&
+		Por ser um possível fator de influência, o pesquisador colherá informações
+		para diferenciar efeitos da programação pareada dos efeitos de TDD.
+		&
+		Seções \ref{entrevista:tdd-e-praticas-ageis}
+		\\
 
-	\item \textbf{A visão do desenvolvedor sobre a influência de TDD no design}.
-	O pesquisador alinhará as definições da prática com todos os participantes da
-	pesquisa.
+		\hline
+		\textbf{A visão do desenvolvedor sobre a influência de TDD no design} 
+		&
+		O pesquisador alinhará as definições da prática com todos os participantes da
+		pesquisa.
+		&
+		Seções \ref{entrevista:pratica}
+		\\
 
-	\item \textbf{Os efeitos de TDD sobre o acoplamento e a coesão geral das
-	classes do sistema}. Entender a opinião do participante sobre os efeitos de TDD
-	nesses dois pontos importantes em sistemas orientados a objetos. 
+		\hline
+		\textbf{Os efeitos de TDD sobre o acoplamento e a coesão geral das classes do
+		sistema} 
+		&
+		Entender a opinião do participante sobre os efeitos de TDD
+		nesses dois pontos importantes em sistemas orientados a objetos.
+		&
+		Seções \ref{entrevista:acoplamento}, \ref{entrevista:coesao}
+		\\
 
- 	\item \textbf{Os efeitos de TDD sobre a gerenciamento de dependências em
- 	sistemas orientados a objetos}. Em um nível maior, entender qual a possível
- 	influência da prática no gerenciamento de dependências.
-	
-	\item \textbf{Como o desenvolvedor utiliza o feedback dos testes para guiar o
-	design}. Entender como o desenvolvedor utiliza os testes para melhorar o design
-	é a questão-chave dessa pesquisa, e para isso o pesquisador perguntará desde
-	questões conceituais até questões bem práticas com discussões de trechos de
-	código.
+		\hline
+		\textbf{Os efeitos de TDD sobre a gerenciamento de dependências em
+		sistemas orientados a objetos} 
+		&
+		Em um nível maior, entender qual a possível influência da prática no
+		gerenciamento de dependências. 
+		&
+		Seções \ref{entrevista:dependencias}
+		\\
 
-	\item \textbf{A relação entre TDD e boas práticas de orientação a objetos}.
-	O pesquisador colherá informações sobre a relação entre a prática e
-	bons princípios de orientação a objetos, como SOLID \cite{bob-martin}.
+		\hline
+		\textbf{Como o desenvolvedor utiliza o feedback dos testes para guiar o
+		design} 
+		&
+		Entender como o desenvolvedor utiliza os testes para melhorar o design
+		e, para isso o pesquisador perguntará desde questões conceituais até questões
+		bem práticas com discussões de trechos de código.
+		&
+		Seções \ref{entrevista:tdd-guiar-design}
+		\\
 
-	\item \textbf{A visão do programador sobre a simplicidade que TDD agrega ao
-	processo}. Entender como TDD leva o programador à criação de códigos mais
-	simples.
+		\hline
+		\textbf{A relação entre TDD e boas práticas de orientação a objetos} 
+		&
+		O pesquisador colherá informações sobre a relação entre a prática e
+		bons princípios de orientação a objetos, como SOLID \cite{bob-martin}.
+		&
+		Seções \ref{entrevista:tdd-guiar-design}
+		\\
 
-\end{itemize} 
-
-% TODO relacionar pontos acima com as perguntas
+		\hline
+		\textbf{A visão do programador sobre a simplicidade que TDD agrega ao
+		processo} 
+		&
+		Entender como TDD leva o programador à criação de códigos mais simples.
+		&
+		Seções \ref{entrevista:simplicidade}
+		\\
+		
+		\hline												
+	\end{tabular}
+	\label{tab:questoes}
+	\caption{Relação entre os objetivos e as perguntas da entrevista.}
+\end{table}
 
 O processo de entrevista será composto por uma breve introdução da pesquisa, de
 modo a não enviesar o participante, seguida de algumas perguntas que visam
@@ -443,9 +225,7 @@ participantes a determinadas perguntas, ou qualquer outra informação relevante
 
 As entrevistas serão feitas em dias diferentes para que, ao final
 de cada dia, o pesquisador possa discutir sobre os pontos levantados no dia
-corrente e sugerir melhorias no instrumento de pesquisa. A
-versão final do roteiro de entrevista pode ser encontrado no apêndice 
-\ref{ape:entrevista} deste trabalho.
+corrente e sugerir melhorias no instrumento de pesquisa. 
 O processo de codificação será feito por dois
 pesquisados separadamente, e só então ambos juntarão seus resultados, após uma 
 série de comparações e discussões sobre as diferenças encontradas.
@@ -462,14 +242,36 @@ não que não fazem uso da prática, como reuniões de trabalho.
 O período mínimo de observação será de 2 horas. Após esse período, o observador
 decidirá se o tempo de observação deverá ser prolongado. O número mínimo de
 observações será de 10 por equipe, garantindo que cada equipe será observada por
-no mínimo 20 horas de trabalho.
+no mínimo 20 horas de trabalho. Durante as observações, o pesquisador focará na
+questão de pesquisa relacionada à \textit{como o teste guia o desenvolvedor
+durante a atividade de design?}. Discussões sobre qualquer um dos pontos abaixo, 
+mas não limitados a eles, serão capturadas pelo pesquisador:
+
+\begin{itemize}
+  
+  \item A influência do teste ser o primeiro cliente da classe;
+
+  \item A explícitação das dependências necessárias para a escrita do teste de
+  unidade;
+
+  \item Testes que mostram a falta de coesão de uma classe;
+
+  \item A não criação de classes altamente acopladas;
+
+  \item Criação de classes com menor tamanho;
+
+  \item A utilização mais frequente de composição de classes;
+  
+  \item A relação entre a dificuldade da escrita do teste e designs mais
+  flexíveis;
+
+\end{itemize}
 
 Para auxiliar o processo de observação, o pesquisador tomará notas durante o
 processo, e fará as perguntas que achar necessário para os participantes. Além
 disso, o pesquisador observará também o código final produzido pelas equipes,
 possibilitando assim o relacionamento entre a prática e a qualidade do design
 final produzido.
-
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Métricas de código}

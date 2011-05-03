@@ -1,7 +1,11 @@
 \chapter{Entrevista}
 \label{ape:entrevista}
 
+O pesquisador deve primeiramente se apresentar e dizer que ele será entrevista
+sobre Test-Driven Development.
+
 \section{Dados básicos}
+\label{entrevista:dados-basicos}
 
 \begin{enumerate}
 	\item Nome completo?
@@ -13,6 +17,7 @@
 \end{enumerate}
 
 \section{Caracterização do desenvolvedor}
+\label{entrevista:caracterizacao}
 
 \begin{enumerate}
 	\item Qual a sua formação?
@@ -36,6 +41,7 @@
 \end{enumerate}
 
 \section{A Prática de TDD}
+\label{entrevista:pratica}
 
 \begin{enumerate}
 	\item Você pratica TDD há quanto tempo?
@@ -55,6 +61,9 @@
 
 \section{Relação entre TDD e Design}
 
+\subsection{TDD e acoplamento}
+\label{entrevista:acoplamento}
+
 \begin{enumerate}
 	\item{Em sua experiência, você acredita que classes muito acopladas são realmente prejudiciais?}
 		\begin{enumerate}
@@ -65,8 +74,8 @@
 			\item \textit{(se ele comentar sobre TDD)} E o que um programador que não faz
 			TDD perde?
 			
-			\item Além de receber as dependências pelo construtor, você vê alguma outra
-			maneira aonde TDD te ajude?
+			\item \textit{(se ele comentar sobre injeção de dependências)} Além de
+			receber as dependências pelo construtor, você vê alguma outra maneira aonde TDD te ajude?
 				\begin{enumerate}
 					\item Um problema famoso ao começar a praticar TDD é o construtor começar a
 					receber muitos parâmetros. Quando você começa a perceber isso?
@@ -78,7 +87,12 @@
 
 			\item Você acha que mesmo com TDD é possível criar classes com alto acoplamento? 
 		\end{enumerate}
+\end{enumerate}
 
+\subsection{TDD e coesão}
+\label{entrevista:coesao}
+
+\begin{enumerate}
 	\item{E classes com baixa coesão (que têm muitas responsabilidade)? Você
 	costuma ver muitas delas?}
 		\begin{enumerate}
@@ -94,6 +108,25 @@
 			\item Se você tem classes pequenas e coesas, como fazer com que todas elas
 			trabalhem juntas?
 		\end{enumerate}
+\end{enumerate}
+
+\subsection{TDD e simplicidade}
+\label{entrevista:simplicidade}
+
+\begin{enumerate}
+
+	\item O que você acha de classes ou métodos com muitas linhas de código?
+
+	\item O que é um método ou uma classe longa para você?
+
+	\item Como você resolve esse problema?
+
+\end{enumerate}
+
+\subsection{TDD e gerenciamento de dependências}
+\label{entrevista:dependencias}
+
+\begin{enumerate}
 
 	\item Assim que o sistema cresce, um dos problemas que podem aparecer é o
 	gerenciamento das dependências.
@@ -103,6 +136,17 @@
 
 		  \item Como você o resolveu?
 		\end{enumerate}
+		
+\end{enumerate}
+
+\subsection{Sobre TDD guiar o design}
+\label{entrevista:tdd-guiar-design}
+
+\textit{Nesse ponto, o pesquisador deve solicitar ao participante para
+rascunhas suas ideias. Peça para ele escrever pequenos testes e como o teste
+o influencia no processo de design.}
+
+\begin{enumerate}
 
 	\item E no que o teste ajuda?
 	\begin{enumerate}
@@ -115,20 +159,12 @@
 		\item \textit{(se ele disser que ajuda no design)} Como seria criar designs
 		sem a ajuda dos testes? Qual a diferença?
 
-		\item Poderia dar um exemplo (usando código se preferir) de como o TDD
-		influencia o seu design? Algum outro exemplo?
-
 	\end{enumerate}
-
-	\item O que você acha de classes ou métodos com muitas linhas de código?
-
-	\item O que é um método ou uma classe longa para você?
-
-	\item Como você resolve esse problema?
-
+	
 \end{enumerate}
 
 \section{Relação entre TDD e experiência}
+\label{entrevista:experiencia}
 
 \begin{enumerate}
 	\item Como você compararia as primeiras vezes que você praticou TDD com agora?
@@ -156,6 +192,7 @@
 \end{enumerate}
 
 \section{TDD e outras práticas ágeis}
+\label{entrevista:tdd-e-praticas-ageis}
 
 \begin{enumerate}
 	\item Você acha que outras práticas ágeis influenciam na qualidade do seu design?
@@ -167,24 +204,6 @@
 	assim precisaria de TDD?
 
 	\item Quais outras práticas ágeis você acha que ajuda você a melhorar o design?
-\end{enumerate}
-
-\section{TDD e experiência pessoal}
-
-(Nesse ponto o entrevistado poderá mostrar algum trecho de código do projeto em que atua.)
-
-\begin{enumerate}
-	\item Tem algum exemplo em mente aonde TDD ajudou a resolver o problema de
-	maneira elegante?
-
-	\item E aonde TDD atrapalhou?
-		\begin{enumerate}
-			\item Você acha que TDD se aplica à todos os casos? Se não, em quais ele não 
-			se aplica e porquê?
-
-			\item Quando TDD deve ser aplicado?
-		\end{enumerate}
-
 \end{enumerate}
 
 \section{Opiniões finais}
