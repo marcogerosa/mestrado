@@ -52,19 +52,31 @@ Já Robert Martin relaciona TDD à profissionalismo. Segundo ele, um desenvolved
 profissional entrega código claro e flexível que funcione dentro do prazo, e TDD
 possibilita que o desenvolvedor alcance esses pontos \cite{martin-profissionalismo}.
 
-Grande parte dos experimentos feitos pela academia verificam os efeitos da
-prática sobre a qualidade externa. Poucos são os estudos que avaliam TDD do
-ponto de vista da qualidade interna de código. Siniaalto e Abrahamsson também 
+Entretanto, grande parte dos experimentos feitos pela academia verificam os
+efeitos da prática sobre a qualidade externa. Poucos são os estudos que avaliam TDD do
+ponto de vista da qualidade interna de código. Muitos desses estudos
+inclusive são feitos em laboratórios, diminuindo o realismo do experimento. 
+Siniaalto e Abrahamsson também
 compartilham dessa opinião e, além disso, notaram que os efeitos de TDD podem 
 não ser tão automáticos ou evidentes como o esperado \cite{alarming-results}.
-
 Este trabalho visa compreender os efeitos e como a prática de TDD
 influencia no design de sistemas orientados a objetos do ponto de vista dos
-desenvolvedores que a praticam. Para alcancar esse objetivo,
-esta pesquisa discute estudos de caso em empresas do mercado brasileiro de
-software, que já utilizam TDD normalmente dentro do seu ciclo de
-desenvolvimento. Para isso, este trabalho faz uso de métodos qualitativos de
-pesquisa, melhor explicados no Capítulo \ref{cap:planejamento}.
+desenvolvedores que a praticam.
+
+Mas, conduzir uma pesquisa no mundo real implica em um equilíbrio entre nível de
+controle e grau de realismo. Uma situação realística é geralmente complexa e 
+não-determinística, impedindo o entendimento sobre o que acontece. Por outro
+lado, aumentar o controle sobre o experimento reduz o grau de realismo, muitos
+vezes fazendo com que os reais fatores de influência fiquem fora do escopo do 
+estudo. Estudos de caso são, por definição, conduzidos no mundo real e por isso 
+têm um alto grau de realismo, mas dessa forma sacrificando o nível de  controle
+\cite{guidelines-case-study}.
+Baseando-se no fato de que o processo de desenvolvimento de software envolve 
+diversos fatores humanos e é totalmente sensível ao contexto em que ele está 
+inserido, este trabalho é composto por um conjunto de estudos de caso em
+empresas do mercado brasileiro de software, que já utilizam TDD normalmente
+dentro do seu ciclo de desenvolvimento. Os métodos de pesquisa utilizados por
+esse trabalho são melhor explicados no Capítulo \ref{cap:planejamento}.
 
 \begin{figure}[ht]
   \begin{minipage}[b]{0.45\linewidth}
@@ -99,6 +111,9 @@ abaixo:
 
 \begin{itemize}
 
+  \item Como o teste guia o desenvolvedor durante a atividade de
+  design?
+
   \item Como a prática de TDD afeta o acoplamento das classes criadas?
 
   \item Como a prática de TDD afeta o gerenciamento de dependências em sistemas
@@ -107,9 +122,6 @@ abaixo:
   \item Como a prática de TDD afeta a coesão das classes criadas?
 
   \item Como TDD afeta a simplicidade das classes criadas?
-
-  \item Como o teste guia o desenvolvedor durante a atividade de
-  design?
 
 \end{itemize}
 
@@ -137,3 +149,4 @@ Este trabalho está dividido da seguinte maneira:
 	\item O Capítulo \ref{cap:conclusoes} resume o trabalho realizado a apresenta
 	possibilidades de trabalhos futuros.
 \end{itemize}
+
