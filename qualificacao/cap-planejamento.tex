@@ -429,7 +429,9 @@ do praticante sobre TDD.
 Em seguida, o pesquisador perguntará os pontos discutidos na listagem anterior.
 Para isso, o pesquisador fará uso não só de perguntas abertas, mas também
 solicitará exemplos de código, para que as respostas se tornem técnicas e
-específicas.
+específicas. O pesquisador solicitará ao participante que rascunhe pequenos
+trechos de código durante a discussão, e essas anotações serão anexadas junto ao
+conjunto de dados colhetados da pesquisa.
 Por fim, o pesquisador pedirá referências ao pesquisador sobre
 possíveis próximos entrevistados, afim de descobrir os programadores referencias 
 na prática para aquele determinado participante.
@@ -474,15 +476,76 @@ final produzido.
 \label{sec:planejamento-metricas}
 
 Após o processo de entrevistas e observação, o pesquisador fará uso de métricas
-de código para validar as informações obtidas através das entrevistas e
-observações. 
+de código para validar algumas das informações obtidas através das entrevistas e
+observações. O objetivo nesse ponto é triangularizar com as informações obtidas
+de maneira qualitativa. 
 
-Para facilitar ainda mais o entendimento, essas métricas serão
-calculadas em diferentes pontos do código-fonte dentro do controlador de versão,
+Para facilitar o entendimento e a interpretação, as métricas
+serão calculadas em diferentes pontos do código-fonte dentro do controlador de versão,
 possibilitando ao pesquisador uma análise sobre os efeitos de TDD no design ao
-longo do tempo. Para auxiliar esse trabalho, o pesquisador fará uso de
-ferramentas, como a X e a Y.
-% TODO ferramentas acima.
+longo do tempo. Além disso, as métricas não serão avaliadas sozinhas, mas sim
+através de uma soma de fatores. 
+A Tabela \ref{tab:metricas} abaixo relaciona as métricas de código sugeridas com
+as questões de pesquisa, bem como a maneira na qual serão avaliadas.
+
+\begin{table}
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+		Questão de Pesquisa & Métrica & Avaliação \\
+		
+		\hline
+		
+		\multirow{4}{5cm}{Como a prática de TDD afeta o acoplamento das classes criadas?} 
+		& Acoplamento Aferente & \multirow{4}{5cm}{O acoplamento não será avaliado
+		apenas numericamente; classes serão declaradas como altamente acopladas ao
+		não fazerem uso de princípios como DIP, OCP e LSP, que permitem com que
+		classes sejam evoluídas de forma mais natural.} \\ & Acoplamento Eferente
+		& \\ & Indícios de presença de DIP & \\ & Indícios de presença de OCP & \\
+		& Indícios de presença de LSP & \\
+		& & \\ & & \\ & & \\ & & \\
+		\hline
+		
+		\multirow{3}{5cm}{Como a prática de TDD afeta o gerenciamento de dependências em sistemas
+		orientados a objetos?} 
+		& Instabilidade & 
+		\multirow{3}{5cm}{Seguindo o princípio de estabilidade \cite{bob-martin},
+		acoplamentos também serão consideradas maléficos se forem feitos com classes menos abstratas 
+		do que a classe em observação} \\ 
+		& Abstração & \\ 
+		& Distância da Linha Principal & \\
+		& & \\ & & \\ & & \\ & & \\
+
+		\hline
+		
+		\multirow{3}{5cm}{Como a prática de TDD afeta a coesão das classes criadas?} 
+		& LCOM* & 
+		\multirow{3}{5cm}{Classes serão consideradas não coesas caso a métrica de
+		coesão seja maior do que 10 ou tiverem mais de 25 métodos
+		públicos em sua interface} \\ 
+		& Indícios de presença de SRP & \\ 
+		& Indícios de presença de ISP & \\
+		& Número de métodos na classe & \\
+		& & \\ & & \\ & & \\
+		\hline
+		
+		\multirow{2}{5cm}{Como TDD afeta a simplicidade das classes criadas?}
+		& Número de linhas por método & 
+		\multirow{4}{5cm}{Classes serão consideradas simples se a complexidade
+		ciclomática por linha de código for menor do que 0.20 } \\
+		& Complexidade ciclomática & \\
+		& & \\ & & \\
+		
+		\hline
+	\end{tabular}
+	\label{tab:metricas}
+	\caption{Métricas de código avaliadas na pesquisa}
+\end{table}
+
+Os valores para as métricas de coesão e quantidade de métodos públicos foram
+derivadas do trabalho de Kecia et al \cite{kecia}, e os valores acima são médias
+dos intervalos de valores considerados como ``regular''. Já os valores de
+complexidade ciclomáticas foram baseados no valor considerado como ``médio'' no
+trabalho de Lanza et al \cite{lanza}.
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise dos dados}
