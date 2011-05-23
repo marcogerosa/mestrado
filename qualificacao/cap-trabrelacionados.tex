@@ -3,26 +3,26 @@
 \label{cap:trabalhos-relacionados}
 
 Muitos estudos empíricos já foram realizados para avaliar os efeitos de TDD.
-Curiosamente, apesar de ser uma prática focada em design, muitos estudos avaliam
-os efeitos de TDD na qualidade externa do sistema. Além disso, ao
-contrário do que essa pesquisa propõe, muitos desses estudos optaram por um
+Apesar de ser uma prática focada em design, muitos estudos avaliam
+os efeitos de TDD na qualidade externa do sistema. Além disso, diferentemente
+do que essa pesquisa propõe, muitos desses estudos optaram por um
 maior controle no experimento, e os realizaram dentro de ambientes acadêmicos 
 com estudantes dos mais diversos cursos de computação.
 
 Janzen \cite{janzen-arch-improvement} mostrou que programadores que usam TDD na 
 indústria produziram código que passaram em aproximadamente 50\% mais testes 
 caixa-preta do que o código produzido por grupos de controle que não usavam TDD.
-Além do mais, o grupo que usava TDD gastou menos tempo debugando. Janzen também 
+O grupo que usava TDD gastou menos tempo debugando. Janzen também 
 mostrou que a complexidade dos algoritmos era muito menor e a quantidade e
 cobertura dos testes era maior nos códigos escritos com TDD.
 
 Outros estudos realizados na indústria também apresentam resultados parecidos.
-Um estudo feito pelo Maximillien e Williams \cite{max-e-williams} mostrou uma
+Um estudo feito por Maximillien e Williams \cite{max-e-williams} mostrou uma
 redução de 40-50\% na quantidade de defeitos e um impacto mínimo na
 produtividade quando programadores usaram TDD. Outro estudo feito por Lui e
 Chan \cite{lui-e-chan} comparando dois grupos, um utilizando TDD e o outro 
 escrevendo testes apenas após a implementação, mostrou uma redução significante 
-no número defeitos. Além do mais, os defeitos que foram encontrados eram 
+no número defeitos. Além disso, os defeitos que foram encontrados eram 
 corrigidos mais rapidamente pelo grupo que utilizou TDD. O estudo feito por 
 Damm, Lundberg e Olson \cite{damn-lundberg-e-olson} também mostra uma redução
 significante nos defeitos.
@@ -118,19 +118,19 @@ Siniaalto \cite{tdd-body-of-evidence}.
 \section{Discussão}
 
 Como visto anteriormente, poucos trabalhos avaliam os efeitos de TDD sobre o
-design de classes. E, quando o fazem, apenas discutem quais os resultados da prática
+design de classes. Quando o fazem, apenas discutem quais os resultados da prática
 dentro do ciclo, e não exatamente \textbf{como} TDD influencia. Josefsson
 \cite{josefsson}, em sua discussão sobre a necessidade de uma fase de desenho
 arquitetural e os efeitos de TDD nesse quesito, chega à mesma conclusão. Segundo
 ele, os estudos sobre TDD encontrados na literatura atual são muito limitados e
-não podem ser generalizados. E, por esse motivo, os ditos efeitos que TDD têm 
+não podem ser generalizados. Por esse motivo, os ditos efeitos que TDD têm 
 sobre o design não podem ser provados. Apesar desse artigo ser datado de 2004, e
-muitos trabalhos foram feitos após isso, esta pesquisa ainda acredita que os
-efeitos de TDD ainda não foram provados pela literatura atual.
+muitos trabalhos foram realizados após essa data, o pesquisador ainda acredita 
+que os efeitos de TDD ainda não foram provados pela literatura atual.
 
 Grande parte destes estudos também não levam em conta a experiência do
 programador que está praticando TDD. Geralmente esse ponto é discutido apenas 
-na seção de ameaças a validar do estudo. Janzen, em seu doutorado, percebeu que
+na seção de ameaças a validade do estudo. Janzen, em seu doutorado, percebeu que
 desenvolvedores mais maduros obtêm mais benefícios de TDD, escrevendo classes
 mais simples. Além disso, desenvolvedores maduros que experimentam a prática
 tendem a escolher TDD mais facilmente do que desenvolvedores menos maduros
@@ -140,8 +140,7 @@ Os trabalhos que analisam TDD do ponto de vista de design, no entanto, não
 chegam a resultados conclusivos; muitos deles inclusive dizem que os efeitos
 de TDD não são tão diferentes de times que não praticam TDD.  A própria tese de
 doutorado de Janzen foi inconclusiva no que diz respeito à influência de TDD no 
-acoplamento e na coesão \cite{janzen-phd}. Esta pesquisa advoca que talvez os 
-pesquisadores não olharam as métricas da maneira correta.
+acoplamento e na coesão \cite{janzen-phd}. 
 
 Ao calcular LCOM-HS, métrica que tenta medir a falta de coesão de determinada
 classe, não se deve levar em consideração \textit{getters} e \textit{setters} de
