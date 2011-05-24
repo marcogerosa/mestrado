@@ -56,7 +56,6 @@ sobre Test-Driven Development.
 
 	\item Poderia me explicar como você pratica TDD no dia-a-dia?
 
-	\item Você pratica TDD o tempo todo?
 \end{enumerate}
 
 \section{Relação entre TDD e Design}
@@ -69,21 +68,13 @@ sobre Test-Driven Development.
 		\begin{enumerate}
 			\item Como você combate esse problema?
 
-			\item \textit{(se ele comentar sobre TDD)} Como TDD te ajuda nisso?
-
-			\item \textit{(se ele comentar sobre TDD)} E o que um programador que não faz
-			TDD perde?
+			\item Como TDD te ajuda nisso?
 			
-			\item \textit{(se ele comentar sobre injeção de dependências)} Além de
-			receber as dependências pelo construtor, você vê alguma outra maneira aonde TDD te ajude?
-				\begin{enumerate}
-					\item Um problema famoso ao começar a praticar TDD é o construtor começar a
-					receber muitos parâmetros. Quando você começa a perceber isso?
-					\item E como resolve esse problema?
-				\end{enumerate}
-
 			\item Você percebe alguma diferença no acoplamento que você cria quando
 			pratica TDD, do acoplamento que você cria quando não pratica TDD?
+			
+			\item E por que você atribui essa diferença ao TDD, ou seja, o bom design
+			criado não pode ter sido influenciado apenas pela sua experiência?
 
 			\item Você acha que mesmo com TDD é possível criar classes com alto acoplamento? 
 		\end{enumerate}
@@ -93,78 +84,49 @@ sobre Test-Driven Development.
 \label{entrevista:coesao}
 
 \begin{enumerate}
-	\item{E classes com baixa coesão (que têm muitas responsabilidade)? Você
+	\item{Classes com baixa coesão (que têm muitas responsabilidade)? Você
 	costuma ver muitas delas?}
 		\begin{enumerate}
 			\item Em sua opinião, por que elas aparecem?
 
 			\item Como você combate esse problema?
 
-			\item \textit{(se ele comentar sobre TDD)} Como TDD te ajuda nisso?
+			\item Como TDD te ajuda nisso?
 			
-			\item \textit{(se ele comentar sobre TDD)} E o que um programador que não faz TDD
-			perde?
+			\item Você percebe alguma diferença na coesão das classes que você cria quando
+			pratica TDD, da coesão das classes que você cria quando não pratica TDD?
+			
+			\item E por que você atribui essa diferença ao TDD, ou seja, o bom design
+			criado não pode ter sido influenciado apenas pela sua experiência?
 
-			\item Se você tem classes pequenas e coesas, como fazer com que todas elas
-			trabalhem juntas?
+			\item Você acha que mesmo com TDD é possível criar classes com baixa coesão? 
+
 		\end{enumerate}
 \end{enumerate}
 
 \subsection{TDD e simplicidade}
 \label{entrevista:simplicidade}
 
-\begin{enumerate}
-
-	\item O que você acha de classes ou métodos com muitas linhas de código?
-
-	\item O que é um método ou uma classe longa para você?
-
-	\item Como você resolve esse problema?
-
-	\item \textit{(se ele comentar sobre TDD)} Como TDD te ajuda nisso?
-
-\end{enumerate}
-
-\subsection{TDD e gerenciamento de dependências}
-\label{entrevista:dependencias}
 
 \begin{enumerate}
-
-	\item Assim que o sistema cresce, um dos problemas que podem aparecer é o
-	gerenciamento das dependências.
-		
+	\item{Classes complexas, com métodos e classes longas. Você
+	costuma ver muitas delas?}
 		\begin{enumerate}
-		  \item Você já possou por isso?
+			\item Em sua opinião, por que elas aparecem?
 
-		  \item Como você o resolveu?
-		  
-		  \item \textit{(se ele comentar sobre TDD)} Como TDD te ajuda nisso?
+			\item Como você combate esse problema?
+
+			\item Como TDD te ajuda nisso?
+			
+			\item Você percebe alguma diferença da simplicidade das classes que você cria quando
+			pratica TDD, da simplicidade das classes que você cria quando não pratica TDD?
+			
+			\item E por que você atribui essa diferença ao TDD, ou seja, o bom design
+			criado não pode ter sido influenciado apenas pela sua experiência?
+
+			\item Você acha que mesmo com TDD é possível criar classes com códigos difíceis de serem entendidos? 
+
 		\end{enumerate}
-		
-\end{enumerate}
-
-\subsection{Sobre TDD guiar o design}
-\label{entrevista:tdd-guiar-design}
-
-\textit{Nesse ponto, o pesquisador deve solicitar ao participante para
-rascunhas suas ideias. Peça para ele escrever pequenos testes e como o teste
-o influencia no processo de design.}
-
-\begin{enumerate}
-
-	\item E no que o teste ajuda?
-	\begin{enumerate}
-		\item Ele faz alguma influencia na qualidade do seu trabalho?
-
-		\item Qual a diferença de escrever esse teste antes?
-
-		\item E isso não aconteceria caso você escrevesse o teste depois?
-
-		\item \textit{(se ele disser que ajuda no design)} Como seria criar designs
-		sem a ajuda dos testes? Qual a diferença?
-
-	\end{enumerate}
-	
 \end{enumerate}
 
 \section{Relação entre TDD e experiência}

@@ -15,46 +15,34 @@ Como mencionado anteriormente,
 este trabalho não tenta inferir uma possível relação de causa entre TDD e
 bom design, mas sim entender como a prática influencia as decisões de 
 design tomadas por um programador praticante de TDD.
-Para entendê-las,
-este trabalho propõe estudos de caso com desenvolvedores praticantes de TDD 
-atuantes em empresas de desenvolvimento de
-software brasileiras, utilizando métodos qualitativos de pesquisa.
-Este capítulo detalha o planejamento do experimento, bem como o processo de
-análise dos dados colhidos.
+Para entendê-las, este trabalho propõe uma pesquisa qualitativa com 
+desenvolvedores praticantes de TDD atuantes em empresas de desenvolvimento de
+software brasileiras. Este capítulo detalha o planejamento do experimento, 
+bem como o processo de análise dos dados colhidos.
 
 %% ------------------------------------------------------------------------- %%
 \section{Design da pesquisa}
 
 Baseando-se no fato de que o processo de desenvolvimento de software envolve 
 diversos fatores humanos e é totalmente sensível ao contexto em que ele está 
-inserido, este trabalho é composto por um \textbf{conjunto de estudos de caso},
-onde são utilizados métodos qualitativos de pesquisa para o processo de colheta e 
-análise dos dados.
-
-Segundo a definição de Robson \cite{robson}, Yin \cite{yin} e Benbasat et
-al. \cite{benbasat}, Runeson e Host mostram que todas as definições concordam
-que um estudo de caso investiga um fenômeno contemporâneo no seu contexto. 
-Robson afirma que um estudo de caso estressa o uso de múltiplas fontes de
-evidência, Yin denomina estudo de caso um "inquérito" e destaca que os limites 
-entre o fenômeno e seu contexto podem não ser claros, enquanto que Benbasat et
-al. menciona que um estudo de caso recolhe informações de poucas entidades 
-(como pessoas, grupos ou organizações) e que também é caracterizado pela falta
-de controle experimental \cite{guidelines-case-study}.
+inserido, este trabalho pode ser classificado como um estudo etnográfico. 
+O objetivo de uma pesquisa
+etnográfica é obter uma imagem completa dos sujeitos sob estudo, dando ênfase
+às experiências que passam em seu dia-a-dia de trabalho \cite{creswell}. 
 
 A intenção dos estudos de caso é obter informações relevantes sobre como os
 praticantes de TDD utilizam a prática para influenciar o design de suas
 classes. Na tentativa de capturar o máximo de informações possíveis, esse estudo
-inclui uma análise profunda através de entrevistas, observações no mundo real e 
-avaliação de métricas de código.
+inclui uma análise profunda através de entrevistas e observações no mundo real.
 
 %% ------------------------------------------------------------------------- %%
 \section{Participantes da pesquisa}
 \label{sec:planejamento-participantes}
 
-Para a condução do estudo de caso, algumas empresas do mercado de software
-brasileiro foram selecionadas de acordo com alguns critérios.
-Os critérios que foram levados em consideração no momento de convidar empresas a
-participarem da pesquisa foram:
+Para a condução do estudo etnográfico, desenvolvedores de algumas empresas do mercado de 
+software brasileiro foram selecionadas de acordo com alguns critérios.
+Os critérios que foram levados em consideração no momento de convidar desenvolvedores
+e empresas a participarem da pesquisa foram:
 
 \begin{itemize}
 	\item Programadores que utilizem de TDD há mais de 1 ano;
@@ -79,14 +67,13 @@ de código), utilizando a plataforma Java para desenvolvimento. Elas também
 possuem profissionais com os mais variados níveis de experiência na área 
 trabalhando juntos no mesmo time.
 
-A repetição do experimento em diferentes empresas com diferentes projetos,
-equipes e contextos serve como estratégia de validação dos resultados
+A repetição do experimento com diferentes participantes, empresas
+e contextos serve como estratégia de validação dos resultados
 encontrados.
 
 %% ------------------------------------------------------------------------- %%
 \section{Estratégia de pesquisa} 
 \label{sec:planejamento-estrategia}
-
 
 Os dados serão coletados principalmente através de entrevistas com
 desenvolvedores que praticam TDD no dia-a-dia de trabalho e que podem avaliar
@@ -102,8 +89,8 @@ As sub-seções abaixo detalham como os dados serão colhidos em cada etapa da p
 \label{sec:planejamento-estrategia-entrevistas}
 
 O primeiro passo da pesquisa é uma série de entrevistas com os desenvolvedores 
-das empresas participantes, que serão realizadas entre os meses de Junho e
-Julho de 2011. As entrevistas serão semi-estruturadas, dando liberdade ao
+das empresas participantes, que serão realizadas entre os meses de Julho e
+Agosto de 2011. As entrevistas serão semi-estruturadas, dando liberdade ao
 pesquisador para mudar o rumo das perguntas, caso se faça necessário.
 
 Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê
@@ -144,7 +131,7 @@ entrevista, encontrado no apêndice \ref{ape:entrevista} deste trabalho.
 		\\
 
 		\hline
-		\textbf{A visão do desenvolvedor sobre a influência de TDD no design} 
+		\textbf{A visão do desenvolvedor sobre a prática de TDD} 
 		&
 		O pesquisador alinhará as definições da prática com todos os participantes da
 		pesquisa.
@@ -163,16 +150,6 @@ entrevista, encontrado no apêndice \ref{ape:entrevista} deste trabalho.
 		\\
 
 		\hline
-		\textbf{Os efeitos de TDD sobre a gerenciamento de dependências em
-		sistemas orientados a objetos} 
-		&
-		Em um nível maior, entender qual a possível influência da prática no
-		gerenciamento de dependências. 
-		&
-		Seções \ref{entrevista:dependencias}
-		\\
-
-		\hline
 		\textbf{Como o desenvolvedor utiliza o feedback dos testes para guiar o
 		design} 
 		&
@@ -180,16 +157,7 @@ entrevista, encontrado no apêndice \ref{ape:entrevista} deste trabalho.
 		e, para isso o pesquisador perguntará desde questões conceituais até questões
 		bem práticas com discussões de trechos de código.
 		&
-		Seções \ref{entrevista:tdd-guiar-design}
-		\\
-
-		\hline
-		\textbf{A relação entre TDD e boas práticas de orientação a objetos} 
-		&
-		O pesquisador colherá informações sobre a relação entre a prática e
-		bons princípios de orientação a objetos, como SOLID \cite{bob-martin}.
-		&
-		Seções \ref{entrevista:tdd-guiar-design}
+		Seções \ref{entrevista:acoplamento}, \ref{entrevista:coesao}
 		\\
 
 		\hline
@@ -225,6 +193,13 @@ conjunto de dados colhetados da pesquisa.
 Por fim, o pesquisador pedirá referências ao pesquisador sobre
 possíveis próximos entrevistados, afim de descobrir os programadores referencias 
 na prática para aquele determinado participante.
+
+Já que as decisões tomadas por um programador durante a atividade de design
+pode ser influenciado por vários diferentes fatores, 
+as perguntas são feitas de modo que o participante deverá triangular suas respostas,
+e tentar isolar o máximo possível a atividade de TDD dos outros possíveis fatores
+de influência. Participantes que não articularem bem suas respostas serão eliminados
+durante o processo de análise.
 
 Todas as entrevistas serão gravadas, para que o pesquisador possa fazer a
 transcrição e rever os dados a qualquer momento durante o processo. Além disso,
@@ -275,87 +250,18 @@ mas não limitados a eles, serão capturadas pelo pesquisador:
 
 \end{itemize}
 
+Caso o projeto em que o desenvolvedor atua possua trechos de código produzidos
+sem a utilização da prática de TDD, o pesquisador fará uso desses trechos
+para interrogar os desenvolvedores sobre possíveis diferenças entre códigos
+gerados com e sem a prática. Isso possibilita ao pesquisador uma comparação
+menos enviesada entre códigos produzidos com e sem TDD, já que ambos pertencem
+ao mesmo projeto e foram desenvolvidos pela mesma equipe.
+
 Para auxiliar o processo de observação, o pesquisador tomará notas durante o
 processo, e fará as perguntas que achar necessário para os participantes. Além
 disso, o pesquisador observará também o código final produzido pelas equipes,
 possibilitando assim o relacionamento entre a prática e a qualidade do design
 final produzido.
-
-%% ------------------------------------------------------------------------- %%
-\subsection{Métricas de código}
-\label{sec:planejamento-metricas}
-
-Após o processo de entrevistas e observação, o pesquisador fará uso de métricas
-de código para validar algumas das informações obtidas através das entrevistas e
-observações. O objetivo nesse ponto é triangular com as informações obtidas
-de maneira qualitativa. 
-
-Para facilitar o entendimento e a interpretação, as métricas
-serão calculadas em diferentes pontos do código-fonte dentro do controlador de versão,
-possibilitando ao pesquisador uma análise sobre os efeitos de TDD no design ao
-longo do tempo. Além disso, as métricas não serão avaliadas sozinhas, mas sim
-através de uma soma de fatores. 
-A Tabela \ref{tab:metricas} abaixo relaciona as métricas de código sugeridas com
-as questões de pesquisa, bem como a maneira na qual serão avaliadas.
-
-\begin{table}[h!]
-	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
-		\hline
-		Questão de Pesquisa & Métrica & Avaliação \\
-		
-		\hline
-		
-		\multirow{4}{5cm}{Como a prática de TDD afeta o acoplamento das classes criadas?} 
-		& Acoplamento Aferente & \multirow{4}{5cm}{O acoplamento não será avaliado
-		apenas numericamente; classes serão declaradas como altamente acopladas ao
-		não fazerem uso de princípios como DIP, OCP e LSP \cite{bob-martin}, que
-		permitem com que classes sejam evoluídas de forma mais natural.} \\ & Acoplamento Eferente
-		& \\ & Indícios de presença de DIP & \\ & Indícios de presença de OCP & \\
-		& Indícios de presença de LSP & \\
-		& & \\ & & \\ & & \\ & & \\
-		\hline
-		
-		\multirow{3}{5cm}{Como a prática de TDD afeta o gerenciamento de dependências em sistemas
-		orientados a objetos?} 
-		& Instabilidade & 
-		\multirow{3}{5cm}{Seguindo o princípio de estabilidade \cite{bob-martin},
-		acoplamentos também serão consideradas maléficos se forem feitos com classes menos abstratas 
-		do que a classe em observação} \\ 
-		& Abstração & \\ 
-		& Distância da Linha Principal & \\
-		& & \\ & & \\ & & \\ & & \\
-
-		\hline
-		
-		\multirow{3}{5cm}{Como a prática de TDD afeta a coesão das classes criadas?} 
-		& LCOM* & 
-		\multirow{3}{5cm}{Classes serão consideradas não coesas caso a métrica de
-		coesão seja maior do que 10 ou tiverem mais de 25 métodos
-		públicos em sua interface} \\ 
-		& Indícios de presença de SRP & \\ 
-		& Indícios de presença de ISP & \\
-		& Número de métodos na classe & \\
-		& & \\ & & \\ & & \\
-		\hline
-		
-		\multirow{2}{5cm}{Como TDD afeta a simplicidade das classes criadas?}
-		& Número de linhas por método & 
-		\multirow{4}{5cm}{Classes serão consideradas simples se a complexidade
-		ciclomática por linha de código for menor do que 0.20 } \\
-		& Complexidade ciclomática & \\
-		& & \\ & & \\
-		
-		\hline
-	\end{tabular}
-	\caption{Métricas de código avaliadas na pesquisa}
-	\label{tab:metricas}
-\end{table}
-
-Os valores para as métricas de coesão e quantidade de métodos públicos foram
-derivadas do trabalho de Kecia et al \cite{kecia}, e os valores acima são médias
-dos intervalos de valores considerados como ``regular''. Já os valores de
-complexidade ciclomáticas foram baseados no valor considerado como ``médio'' no
-trabalho de Lanza et al \cite{lanza}.
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise dos dados}
@@ -386,6 +292,8 @@ informação colhida e, caso seja necessário, a colheta de qualquer entrevista,
 observação ou métrica poderá ser refeita. Os participantes das entrevistas
 são comunicados de que o pesquisador poderá entrar em contato
 novamente para alguma eventual dúvida.
+Como mencionado anteriormente, caso algum participante não forneça informações
+relevantes ou forneça dados enviesados, ele será eliminado do estudo.
 
 \begin{figure}
   \centering
@@ -431,7 +339,8 @@ pesquisadores, dentre eles:
 	experimetno por outros pesquisadores;
 
 	\item \textbf{Esclarecer todos os possíveis vieses da pesquisa}. A pesquisa
-	deixa claro quais são suas limitações.
+	deixa claro quais são suas limitações. Todas elas são discutidos no Capítulo
+	\ref{cap:ameacas}.
 
 \end{itemize}
 
