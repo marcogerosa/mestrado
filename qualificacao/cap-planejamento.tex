@@ -5,9 +5,9 @@
 Conforme discutido no Capítulo \ref{cap:trabalhos-relacionados}, muitos 
 trabalhos avaliaram TDD, e alguns deles relatam uma melhora
 no design de classes, como um menor acoplamento, uma maior coesão, e até mesmo
-mais simplicidade nas classes quando desenvolvidas utilizando-se a prática. 
-Grande parte deles estão interessados em avaliar quais os efeitos da prática
-no código final produzido, mas poucos estudos tentam entender como TDD e a
+mais simplicidade. 
+Grande parte deles focam nos efeitos da prática
+no código final, mas poucos estudos tentam entender como TDD e a
 prática de escrever o teste antes do código real realmente guiam o programador 
 em direção à essas melhorias.
 
@@ -17,7 +17,7 @@ bom design, mas sim entender como a prática influencia as decisões de
 design tomadas por um programador praticante de TDD.
 Para entendê-las, este trabalho propõe um estudo de caso com 
 desenvolvedores praticantes de TDD atuantes em empresas de desenvolvimento de
-software brasileiras. Este capítulo detalha o planejamento do experimento, 
+software. Este capítulo detalha o planejamento do experimento, 
 bem como o processo de análise dos dados colhidos.
 
 %% ------------------------------------------------------------------------- %%
@@ -25,24 +25,24 @@ bem como o processo de análise dos dados colhidos.
 
 Baseando-se no fato de que o processo de desenvolvimento de software envolve 
 diversos fatores humanos e é totalmente sensível ao contexto em que ele está 
-inserido, este trabalho é composto por um \textbf{conjunto de estudos de caso},
-onde são utilizados métodos qualitativos de pesquisa para o processo de colheta e 
+inserido, este trabalho é composto por um \textbf{estudo de caso},
+onde são utilizados métodos qualitativos de pesquisa para a colheta e 
 análise dos dados.
 
-Segundo a definição de Robson \cite{robson}, Yin \cite{yin} e Benbasat et
-al. \cite{benbasat}, Runeson e Host mostram que todas as definições concordam
-que um estudo de caso investiga um fenômeno contemporâneo no seu contexto. 
-Robson afirma que um estudo de caso estressa o uso de múltiplas fontes de
-evidência, Yin denomina estudo de caso um "inquérito" e destaca que os limites 
-entre o fenômeno e seu contexto podem não ser claros, enquanto que Benbasat et
-al. menciona que um estudo de caso recolhe informações de poucas entidades 
-(como pessoas, grupos ou organizações) e que também é caracterizado pela falta
-de controle experimental \cite{guidelines-case-study}.
+Um estudo de caso pode ser definido como uma investigação de um fenômeno 
+contemporâneo dentro de um contexto. Robson \cite{robson}
+afirma que um estudo de caso estressa o uso de múltiplas fontes de
+evidência, enquanto Yin \cite{yin}
+denomina estudo de caso um inquérito e destaca que os limites 
+entre o fenômeno e seu contexto podem não ser claros. Já 
+Benbasat et al. \cite{benbasat} menciona que um estudo de caso recolhe informações 
+de poucas entidades (como pessoas, grupos ou organizações) e que também é 
+caracterizado pela falta de controle experimental
 
-A intenção dos estudos de caso é obter informações relevantes sobre como os
+A intenção do estudo de caso é obter informações relevantes sobre como os
 praticantes de TDD utilizam a prática para influenciar o design de suas
 classes. Na tentativa de capturar o máximo de informações possíveis, esse estudo
-inclui uma análise profunda através de entrevistas e observações no mundo real.
+inclui uma análise de entrevistas e observações no mundo real.
 
 %% ------------------------------------------------------------------------- %%
 \section{Participantes da pesquisa}
@@ -54,26 +54,33 @@ Os critérios que foram levados em consideração no momento de convidar desenvo
 e empresas a participarem da pesquisa foram:
 
 \begin{itemize}
-	\item Desenvolvedores que utilizem de TDD há mais de 1 ano;
+	\item \textbf{Desenvolvedores que utilizem de TDD há mais de 1 ano.} É importante
+	que o praticante tenha alguma experiência com a prática, e já tenha aprendido com
+	seus próprios erros. O pesquisador acredita que 1 ano é um bom tempo para que o
+	desenvolvedor tenha se acostumado com a prática e visto seus benefícios.  
 	
-	\item Desenvolvedores que desenvolvam software há mais de 3 anos;
+	\item \textbf{Desenvolvedores que desenvolvam software há mais de 3 anos.} Experiência
+	com desenvolvimento de softwares também é importante já que, como mencionado anteriormente,
+	TDD aumenta a quantidade de feedbacks sobre a qualidade do design, mas é a experiência 
+	que ajuda o desenvolvedor a interpretá-lo.
 
-	\item Localizados em São Paulo (SP), para facilitar o processo de
+	\item \textbf{Localizados em São Paulo (SP).} Para facilitar o processo de
 	entrevista e observação do ambiente;
 
-	\item Atuem em Projetos que utilizem a tecnologia Java e sejam baseados na web;
+	\item \textbf{Atuem em Projetos que utilizem a tecnologia Java e sejam baseados na web.} 
+	Projetos parecidos facilita na análise, já que a arquitetura e design dessas aplicações
+	tendem a ser similares.
 
-	\item Utilizem metodologias ágeis como processo de desenvolvimento de
-	software;
+	\item \textbf{Utilizem métodos ágeis como processo de desenvolvimento de software.} 
+	Práticas ágeis podem influenciar no processo de design. Por esse motivo, o pesquisador
+	optou por analisar desenvolvedores que já trabalham em ambientes ágeis, e assim poder
+	avaliar a possível influência de outras práticas no processo de design.
+	
 \end{itemize}
 
-Ao final, 20 desenvolvedores foram selecionados. Todas eles desenvolvem softwares de
-pequeno e médio porte (e por isso entenda-se software entre 100 a 500 mil linhas
+Ao final, 20 desenvolvedores foram selecionados. Todas eles desenvolvem software de
+pequeno e médio porte (entre 100 a 500 mil linhas
 de código), utilizando a plataforma Java para desenvolvimento. 
-
-A repetição do experimento com diferentes participantes, empresas
-e contextos serve como estratégia de validação dos resultados
-encontrados.
 
 %% ------------------------------------------------------------------------- %%
 \section{Estratégia de pesquisa} 
@@ -83,7 +90,7 @@ Os dados serão coletados principalmente através de entrevistas com
 desenvolvedores que praticam TDD no dia-a-dia de trabalho e que podem avaliar
 com propriedade o efeito da prática sobre o design orientado a objetos dos seus 
 projetos, durante os meses de Junho e Agosto de 2011. 
-Além disso, o ambiente será observado pelo pesquisador afim de capturar
+Além disso, o ambiente será observado pelo pesquisador com o objetivo de capturar
 informações do cotidiano relevantes para a pesquisa.
 
 As sub-seções abaixo detalham como os dados serão colhidos em cada etapa da pesquisa.
@@ -98,7 +105,7 @@ Agosto de 2011. As entrevistas serão semi-estruturadas, dando liberdade ao
 pesquisador para mudar o rumo das perguntas, caso se faça necessário.
 
 Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê
-uma resposta ampla sobre o assunto. A tabela \ref{tab:questoes} mostra a
+uma resposta ampla sobre o assunto. A Tabela \ref{tab:questoes} mostra a
 relação entre os objetivos da entrevista e as perguntas formuladas no roteiro de
 entrevista, encontrado no apêndice \ref{ape:entrevista} deste trabalho.
 
@@ -108,7 +115,7 @@ entrevista, encontrado no apêndice \ref{ape:entrevista} deste trabalho.
 		\textbf{Caracterizar a experiência do programador com desenvolvimento de
 		software, boas práticas de desenvolvimento e TDD} 
 		&
-		Vital para caracterizar o público-alvo da pesquisa.
+		Importante para caracterizar o público-alvo da pesquisa.
 		&
 		Seções \ref{entrevista:dados-basicos}, \ref{entrevista:caracterizacao}
 		\\
@@ -118,7 +125,7 @@ entrevista, encontrado no apêndice \ref{ape:entrevista} deste trabalho.
 		na qualidade do design} 
 		&
 		Por ser um outro possível fator de influência, o pesquisador colherá
-		informações sobre a experiência do programador com desenvolvimento de softwares, 
+		informações sobre a experiência do programador com desenvolvimento de software, 
 		conceitos de orientação a objetos e TDD.
 		&
 		Seções \ref{entrevista:experiencia}
@@ -175,32 +182,32 @@ entrevista, encontrado no apêndice \ref{ape:entrevista} deste trabalho.
 		
 		\hline												
 	\end{tabular}
-	\caption{Relação entre os objetivos e as perguntas da entrevista.}
+	\caption{Relação entre os objetivos e as perguntas da entrevista}
 	\label{tab:questoes}
 \end{table}
 
-O processo de entrevista será composto por uma breve introdução da pesquisa, de
-modo a não enviesar o participante, seguida de algumas perguntas que visam
+O processo de entrevista será composto por uma breve introdução da pesquisa, tomando
+o cuidado para não enviesar o participante, seguida de algumas perguntas que visam
 caracterizar o perfil do participante; perguntas como qual a experiência do
 desenvolvedor em desenvolvimento de software e TDD são necessárias para ajudar o
 pesquisador no entendimento das respostas dadas. Além disso, perguntas sobre
-referencias, livros e outros pontos de informação nas quais o participante lê a
+referências, livros e outros pontos de informação nas quais o participante lê a
 respeito da prática servem para que o programador entenda o embasamento teórico
 do praticante sobre TDD.
 
 Em seguida, o pesquisador perguntará os pontos discutidos na listagem anterior.
 Para isso, o pesquisador fará uso não só de perguntas abertas, mas também
 solicitará exemplos de código, para que as respostas se tornem técnicas e
-específicas. O pesquisador solicitará ao participante que rascunhe pequenos
+específicas, caso necessário. O pesquisador solicitará ao participante que rascunhe pequenos
 trechos de código durante a discussão, e essas anotações serão anexadas junto ao
 conjunto de dados colhetados da pesquisa.
 Por fim, o pesquisador pedirá referências ao pesquisador sobre
-possíveis próximos entrevistados, afim de descobrir os programadores referencias 
+possíveis próximos entrevistados, a fim de descobrir os programadores referencias 
 na prática para aquele determinado participante.
 
 Já que as decisões tomadas por um programador durante a atividade de design
 pode ser influenciado por vários diferentes fatores, 
-as perguntas são feitas de modo que o participante deverá triangular suas respostas,
+as perguntas serão feitas de modo que o participante deverá triangular suas respostas,
 e tentar isolar o máximo possível a atividade de TDD dos outros possíveis fatores
 de influência. Participantes que não articularem bem suas respostas serão eliminados
 durante o processo de análise.
