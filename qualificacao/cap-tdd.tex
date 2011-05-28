@@ -5,7 +5,7 @@
 Métodos ágeis de desenvolvimento de software focam em constante
 feedback, seja ele da equipe em relação ao cliente, ou da equipe em relação a
 qualidade (interna e externa) do código produzido \cite{AgileManifesto}. Por
-esse motivo, muitas das práticas sugeridas por métodos ágeis tentam aumentar o 
+esse motivo, muitas das práticas sugeridas por métodos ágeis visam aumentar o 
 quantidade e a qualidade desse feedback; a ideia da programação pareada, por
 exemplo, é dar retorno sobre o código durante sua escrita.
 
@@ -22,7 +22,7 @@ um pequeno ciclo de atividades. Primeiramente, o desenvolvedor deve escrever um
 teste que falha. Em seguida, deve fazer esse teste passar, implementando a
 funcionalidade desejada. Por fim, deve refatorar o código. Esse ciclo
 é também conhecido como 
-Vermelho-Verde-Refatora (ou \textit{Red-Green-Refactor}), já que lembram as cores que o 
+Vermelho-Verde-Refatora (ou \textit{Red-Green-Refactor}), já que lembram as cores que um 
 desenvolvedor geralmente vê quando faz TDD: o vermelho geralmente significa que
 o teste está falhando, e o verde quando o teste foi executado com sucesso.
 
@@ -145,7 +145,7 @@ que, em uma tradução livre, significa \textit{Escrever Primeiro os Testes
 não é uma prática de testes}.
 
 %% ------------------------------------------------------------------------- %%
-\section{Definições incompletas}
+\subsection{Definições incompletas}
 
 Apesar do foco da prática em design, é possível encontrar muitas definições que
 não levam isso em conta. Algumas delas levam em consideração apenas a ideia da
@@ -158,7 +158,7 @@ prática de programação que instrui desenvolvedores a escrever código novo
 apenas se um teste automatizado estiver falhando, e a eliminar duplicação. O
 objetivo de TDD é "código claro que funcione"}.
 
-Apesar de definir bem o ciclo de desenvolvimento da prática, ela é incompleta, já
+Apesar de definir bem o ciclo prática impõe ao programador, ela é incompleta, já
 que ela não captura um dos pontos principais da prática, que é feedback no design. 
 Janzen também levanta esse problema e culpa até o próprio nome da prática, já
 que ela possui a palavra ``testes'', mas não contém a palavra ``design'' 
@@ -172,14 +172,8 @@ programador então produz somente o código necessário para fazer esse teste
 passar. Então ele refatora (simplifica e clareia) tanto o código de produção
 quanto o código de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
-Muitos dos artigos utilizados na escrita dessa dissertação apresentam definições
-de TDD que não levam em conta seus efeitos no design, e talvez por isso muitas das 
-pesquisas em relação à prática avaliam os efeitos de TDD sobre a qualidade 
-externa, algo geralmente avaliado em técnicas de testes. Esses estudos são 
-explicados com mais detalhes no capítulo \ref{cap:trabalhos-relacionados}.
-
 %% ------------------------------------------------------------------------- %%
-\section{Efeitos no Design de Classes}
+\subsection{Efeitos no Design de Classes}
 
 Na abordagem tradicional, programadores escrevem boa parte do código antes de
 testarem. Ao perceberem posteriormente um problema no design, o custo para
