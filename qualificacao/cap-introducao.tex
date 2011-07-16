@@ -44,33 +44,33 @@ de escrever testes antes \cite{tdd-fearless}.
 Grande parte dos experimentos feitos pela academia verificam os
 efeitos da prática sobre a qualidade externa. Poucos são os estudos que avaliam TDD do
 ponto de vista da qualidade interna de código. Muitos desses estudos
-inclusive são feitos em laboratórios, diminuindo o realismo do experimento. 
+inclusive são feitos somente com estudantes, diminuindo o realismo do experimento. 
 Siniaalto e Abrahamsson também
 compartilham dessa opinião e, além disso, notaram que os efeitos de TDD podem 
 não ser tão automáticos ou evidentes como o esperado \cite{alarming-results}.
 
 Apesar da pouca quantidade, alguns experimentos mostram que TDD tem uma influência
 positiva no design de classes, diminuindo o grau de acoplamento, aumentando
-a coesão e a simplicidade de suas classes e módulos. Entretanto, poucos trabalhos visam
-entender a razão pela qual a prática leva os praticantes a obterem bons resultados.
-Este trabalho visa compreender como a prática de TDD influencia o praticante
-nas decisões de design tomadas em sistemas orientados a objetos, 
-avaliando o ponto de vista dos desenvolvedores que a praticam.
+a coesão e a simplicidade de suas classes e módulos. Entretanto, poucos trabalhos
+levam em consideração a a experiência do desenvolvedor com diversos
+outros fatores que poderiam influenciar na qualidade final do código, como conhecimento
+de príncipios de orientação a objetos ou uma larga experiência com o processo de 
+desenvolvimento de software. Além disso, poucos trabalhos também discutem como
+a prática de TDD realmente influencia 
+nas decisões de design tomadas pelos desenvolvedores durante a criação de sistemas 
+orientados a objetos.
 
 Conduzir uma pesquisa no mundo real implica em um equilíbrio entre
 nível de controle e grau de realismo. Uma situação realística é geralmente complexa e 
 não-determinística, impedindo o entendimento sobre o que acontece. Por outro
 lado, aumentar o controle sobre o experimento reduz o grau de realismo, muitos
 vezes fazendo com que os reais fatores de influência fiquem fora do escopo do 
-estudo. Estudos de caso são, por definição, conduzidos no mundo real e por isso 
-têm um alto grau de realismo e menor nível de controle
-\cite{guidelines-case-study}.
+estudo \cite{guidelines-case-study}.
 Baseando-se no fato de que o processo de desenvolvimento de software envolve 
 diversos fatores humanos e é totalmente sensível ao contexto em que ele está 
 inserido, este trabalho faz uso de métodos qualitativos de pesquisa 
-sobre como diferentes desenvolvedores, 
-atuantes em empresas do mercado brasileiro de software que já utilizam TDD normalmente
-dentro do seu ciclo de desenvolvimento, utilizam a prática para guiar o design de classes. 
+para entender como a prática de TDD guia o desenvolvedor durante 
+o processo de design de classes.
 Os métodos de pesquisa utilizados por
 esse trabalho são apresentados no Capítulo \ref{cap:planejamento}.
 
@@ -93,36 +93,37 @@ esse trabalho são apresentados no Capítulo \ref{cap:planejamento}.
 %% ------------------------------------------------------------------------- %%
 \section{Contribuições}
 
-Tendo como premissa que TDD afeta positivamente a qualidade
-do código final, 
-este trabalho não tenta inferir uma possível relação de causa entre TDD e
-bom design, mas sim discutir como a prática influencia as decisões de 
-design tomadas por um programador praticante de TDD.
-
+Como mencionado anteriormente, este trabalho
+visa compreender qual a real influencia de TDD no design de classes quando praticado
+por desenvolvedores com diferentes níveis de experiência em desenvolvimento de 
+software.
+Além disso, este trabalho avalia a relação entre a prática de TDD (e os testes de unidade
+escritos antes das classes a serem testadas) e as decisões de design tomadas 
+pelos desenvolvedores no processo de criação de classes.
 Mais profundamente, esta pesquisa visa entender a influência da prática
-sobre os vários pontos de vista, como acoplamento, coesão e simplicidade.
-A análise será feita por meio de dados que serão
-capturados baseados na percepção de programadores que realizam a prática no seu
-dia-a-dia de trabalho.
+sobre vários possíveis pontos de vista diferentes, como 
+acoplamento, coesão e simplicidade.
 
-Os objetivo principal da pesquisa é \textbf{entender como TDD influencia as decisões
-do programador durante o processo de design de sistemas orientados a objetos}.
+A análise será feita por meio de dados que serão
+capturados baseados na percepção de programadores atuantes na indústria, após
+a implementação de alguns pequenos problemas especialmente criados para
+esta pesquisa.
+
+Os objetivo principal da pesquisa é \textbf{entender qual a influência de TDD entre
+desenvolvedores de diferentes níveis de experiência e qual a relação da prática de TDD 
+e as decisões de design tomadas pelo programador durante o processo de design de sistemas orientados a objetos}.
 Para compreender a influência, essa pesquisa tenta responder às questões listadas
 abaixo:
 
 \begin{enumerate}
 
-  \item Como o teste guia o desenvolvedor durante a atividade de
-  design?
+	\item Qual a influência de TDD no design no design de classes?
 
-  \item Como a prática de TDD influencia o programador no processo de 
-  design de classes, do ponto de vista do acoplamento?
+	\item Qual a relação entre TDD e as tomadas de decisões de design
+	feitas por um programador?
 
-  \item Como a prática de TDD influencia o programador no processo de 
-  design de classes, do ponto de vista do coesão?
-
-  \item Como a prática de TDD influencia o programador no processo de 
-  design de classes, do ponto de vista da simplicidade?
+	\item Como a prática de TDD influencia o programador no processo de  
+	design de classes, do ponto de vista do acoplamento, coesão e simplicidade?
 
 \end{enumerate}
 
@@ -150,7 +151,7 @@ Este trabalho está dividido da seguinte maneira:
 	\item O Capítulo \ref{cap:ameacas} discute as possíveis ameaças aos resultados
 	encontrados na pesquisa.
 	
-	\item O Capítulo \ref{cap:conclusoes} resume o trabalho realizado a apresenta
+	\item O Capítulo \ref{cap:conclusoes} resume o trabalho realizado e apresenta
 	possibilidades de trabalhos futuros.
 \end{itemize}
 

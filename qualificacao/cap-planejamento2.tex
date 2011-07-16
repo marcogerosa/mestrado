@@ -3,18 +3,15 @@
 \label{cap:planejamento}
 
 Conforme discutido no Capítulo \ref{cap:trabalhos-relacionados}, muitos 
-trabalhos avaliaram TDD, e alguns deles relatam uma melhora
+trabalhos avaliaram TDD, e alguns deles relatam inclusive uma melhora
 no design de classes, como um menor acoplamento, uma maior coesão, e até mesmo
 mais simplicidade. 
 Grande parte deles focam nos efeitos da prática
-no código final, mas poucos estudos tentam entender como TDD e a
+no código final, mas poucos estudos tentam entender a possível influência da experiência
+nos resultados encontrados e como TDD e a
 prática de escrever o teste antes do código real realmente guiam o programador 
 em direção à essas melhorias.
 
-Como mencionado anteriormente, 
-este trabalho não tenta inferir uma possível relação de causa entre TDD e
-bom design, mas sim entender como a prática influencia as decisões de 
-design tomadas por um programador praticante de TDD.
 Para entendê-las, este trabalho propõe um estudo qualitativo com 
 desenvolvedores praticantes de TDD atuantes em empresas de desenvolvimento de
 software. Este capítulo detalha o planejamento do experimento, 
@@ -28,61 +25,217 @@ diversos fatores humanos e é totalmente sensível ao contexto em que ele está
 inserido, este trabalho faz uso de métodos qualitativos de pesquisa para a coleta e 
 análise dos dados.
 
+Os participantes serão separados em diferentes grupos, de acordo com sua
+experiência em desenvolvimento de software e com a prática de TDD. Os níveis
+irão variar de pessoas sem experiência até pessoas com experiência em ambas
+as categorias citadas anteriormente.
+Todos os participantes serão
+solicitados a resolver alguns problemas utilizando Java, dentro de um
+período de tempo limitado. Alguns desses grupos deverão
+utilizar TDD durante o processo de desenvolvimento. 
+Ao final do exercício,
+todos responderão um questionário.
+
+Uma análise inicial servirá para filtrar os candidatos
+mais interessantes, que serão posteriormente entrevistados. 
+Todos os dados gerados no processo,
+como código produzido e as entrevistas, serão analisados e darão origem
+à seção de resultados encontrados.
+
 A intenção deste estudo é obter informações relevantes sobre como os
 praticantes de TDD utilizam a prática para influenciar o design de suas
 classes. Na tentativa de capturar o máximo de informações possíveis, esse estudo
-inclui uma análise de entrevistas e observações no mundo real.
+inclui análises dos códigos produzidos e das entrevistas com os participantes.
 
 %% ------------------------------------------------------------------------- %%
-\section{Participantes da pesquisa}
+\subsection{Participantes da pesquisa}
 \label{sec:planejamento-participantes}
 
-Para a condução da pesquisa, desenvolvedores de algumas empresas do mercado de 
-software brasileiro foram selecionadas de acordo com alguns critérios.
-Os critérios que foram levados em consideração no momento de convidar desenvolvedores
-e empresas a participarem da pesquisa foram:
+Desenvolvedores atuantes no mercado de 
+software brasileiro serão selecionados para participarem da pesquisa.
+Certos critérios foram levados em consideração no momento de convidar desenvolvedores:
 
 \begin{itemize}
-	\item \textbf{Desenvolvedores que utilizem de TDD há mais de 1 ano.} É importante
-	que o praticante tenha alguma experiência com a prática, e já tenha aprendido com
-	seus próprios erros. O pesquisador acredita que 1 ano é um bom tempo para que o
-	desenvolvedor tenha se acostumado com a prática e visto seus benefícios.  
+	\item \textbf{Experiência em TDD.} O estudo convidará praticantes com diferentes
+	níveis de experiência. Programadores inexperientes em TDD (sem conhecimentos teóricos e práticos)
+	e programadores com experiência em TDD (praticantes a no mínimo 3 anos)
 	
-	\item \textbf{Desenvolvedores que desenvolvam software há mais de 3 anos.} Experiência
-	com desenvolvimento de softwares também é importante já que, como mencionado anteriormente,
-	TDD aumenta a quantidade de feedbacks sobre a qualidade do design, mas é a experiência 
-	que ajuda o desenvolvedor a interpretá-lo.
+	\item \textbf{Experiência em desenvolvimento de software.} Participantes
+	experientes (com no mínimo 3 anos de desenvolvimento e bons conhecimentos em orientação a objetos) e 
+	inexperientes (com no máximo 1 ano de desenvolvimento e algum conhecimento de orientação a objetos).
 
-	\item \textbf{Localizados em São Paulo (SP).} Para facilitar o processo de
-	entrevista e observação do ambiente, já que o pesquisador encontra-se em São Paulo;
+	\item \textbf{Localizados em São Paulo (SP).} Para facilitar a execução do exercício
+	e o processo de entrevista, já que o pesquisador encontra-se em São Paulo;
 
-	\item \textbf{Atuem em Projetos que utilizem a tecnologia Java e sejam baseados na web.} 
-	Projetos parecidos facilita na análise, já que a arquitetura e design dessas aplicações
-	tendem a ser similares.
-
-	\item \textbf{Utilizem métodos ágeis como processo de desenvolvimento de software.} 
-	Práticas ágeis podem influenciar no processo de design. Por esse motivo, o pesquisador
-	optou por analisar desenvolvedores que já trabalham em ambientes ágeis, e assim poder
-	avaliar a possível influência de outras práticas no processo de design.
-	
+	\item \textbf{Experiência em Java.} 
+	Participantes devem ter experiência em Java, já que os problemas deverão ser resolvidos
+	nessa linguagem.	
 \end{itemize}
 
-Ao final, 20 desenvolvedores foram selecionados. Todas eles desenvolvem software de
-pequeno e médio porte (entre 100 a 500 mil linhas
-de código), utilizando a plataforma Java para desenvolvimento. 
+%% ------------------------------------------------------------------------- %%
+\subsection{Agrupamento dos Participantes}
+
+Os participantes serão agrupados em grupos, separados por experiência em desenvolvimento
+de software, experiência em TDD, e se o grupo utilizará TDD ou não. A tabela abaixo
+descreve os grupos:
+
+\begin{table}
+	\caption{Participantes e os diferentes grupos}
+	\begin{tabular}{c | c | c | c |}
+		\hline
+		Grupo & Experiência em Desenvolvimento de Software & Experiência em TDD & Fará TDD? \\ 	\hline
+		1 & Sim & Sim & Sim \\ 	\hline
+		2 & Sim & Sem & Sim \\ 	\hline
+		3 & Sim & Sem & Não \\ 	\hline
+		4 & Sim & Sim & Não \\ 	\hline
+		5 & Não & Não & Sim \\ 	\hline
+	\end{tabular}
+\end{table}
+
+O objetivo desses grupos é conseguir isolar alguns dos principais fatores de influência,
+e entender a atuação da prática de TDD em cada um desses grupos. Mais especificamente,
+cada um dos grupos podem revelar informações interessantes como:
+
+\begin{itemize}
+	\item \textbf{Grupo 1:} Por ser composto de participantes com experiência tanto
+	em desenvolvimento de software quanto em TDD, deve-se entender o porquê de
+	pessoas com tanta experiência optam por utilizar a prática;
+	
+	\item \textbf{Grupo 2 e 3:} Por serem participantes com experiência em desenvolvimento
+	de software, mas não praticantes de TDD, deve-se entender a diferença entre
+	praticar TDD e não praticar TDD;
+	
+	\item \textbf{Grupo 4:} Por terem ambas experiências e não praticarem TDD durante o estudo,
+	existem duas possibilidades a serem discutidas: caso o código produzido seja de qualidade, 
+	deve-se entender o porquê isso aconteceu e o motivo de TDD não ter sido necessário; 
+	caso o código produzido seja de menor qualidade, o resultado coincide com o encontrado na
+	literatura;
+	
+	\item \textbf{Grupo 5:} Por serem participantes sem nenhuma experiência, é esperado que
+	a prática ajude na qualidade do código. Caso isso não aconteça, deve-se entender o motivo de TDD
+	não ter auxiliado os desenvolvedores durante a criação do design.
+\end{itemize}
 
 %% ------------------------------------------------------------------------- %%
-\section{Estratégia de pesquisa} 
-\label{sec:planejamento-estrategia}
+\subsection{Execução do estudo}
+\label{sec:execucao}	
 
-Os dados serão coletados principalmente através de entrevistas com
-desenvolvedores que praticam TDD no dia-a-dia de trabalho e que podem avaliar
-com propriedade o efeito da prática sobre o design orientado a objetos dos seus 
-projetos, durante os meses de Junho e Agosto de 2011. 
-Além disso, o ambiente será observado pelo pesquisador com o objetivo de capturar
-informações do cotidiano relevantes para a pesquisa.
+Todos os participantes serão convidados a comparecer em um laboratório pré-definido,
+com todos os softwares já instalados e prontos para o início do estudo. Todos eles
+terão acesso aos enunciados dos problemas, discutidos na
+Seção \ref{sec:exercicios}.
 
-As sub-seções abaixo detalham como os dados serão colhidos em cada etapa da pesquisa.
+Os participantes terão 2h para resolver os exercícios. 
+Todos os códigos deverão ser salvos ao final do estudo para que possam ser analisado juntos
+com os dados da entrevista.
+O tempo é considerado suficiente
+para que o participante resolva todos eles. Em caso do tempo acabar antes do participante
+terminar todos os exercícios, isso será levado em conta no momento da entrevista e nos
+dados colhidos desse participante.
+
+Os participantes não poderão se comunicar durante o exercício, e cada um deles receberá
+os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
+pode ocorrer durante a resolução dos problemas.
+
+Ao final, todos deverão responder a um questionário online, que fará perguntas sobre a qualidade
+do código que ele acabou de produzir. Esses questionários serão diferentes de acordo com o 
+grupo do participante e são melhor detalhados na Seção \ref{sec:questionario}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Problemas Propostos}
+\label{sec:exercicios}
+
+Serão propostos 4 problemas que devem ser resolvidos pelos participantes utilizando
+linguagem Java. Participantes que praticarão TDD utilizarão JUnit para a escrita de testes
+automatizados de unidade. O objetivo desses exercícios é simular problemas de design 
+recorrentes em diversos projetos de software.  Os enunciados encontram no Apêndice 
+\ref{ape:exercicios}.
+
+% TODO explicar o pq isso eh recorrente
+O primeiro exercício pede ao participante que implemente uma calculadora de salário, onde
+o algoritmo de cálculo varia de acordo com o cargo do funcionário. Em uma implementação
+procedural e mais difícil de ser mantida, esse problema seria resolvido através de uma
+sequência de "ifs"; todo novo cargo obrigaria o desenvolvedor a acrescentar mais um "if" 
+nessa classe. Uma implementação mais flexível teria cada algoritmo de cálculo em uma 
+classe separada.
+
+% TODO explicar o pq isso eh recorrente
+O segundo exercício pede que o participante implemente o processo de geração de uma nota fiscal e, após
+esse processo, a nota gerada deve passar por diversos outros processos, como envio por e-mail, envio
+para um sistema terceiro, persistir na base de dados, e etc. Possíveis más implementações incluem a 
+implementação de uma única classe que faria todo o processo, ou uma classe altamente acoplada.
+Uma solução mais elegante seria extrair cada responsabilidade em uma classe diferente e compô-las
+através de, por exemplo, a implementação do padrão Observer \cite{gof}.
+
+esperado: implementacao parecida com observer, cada acao em uma classe
+nao esperado: god class
+
+3o exercicio: processador de boletos
+-> processador de boletos que deve marcar a fatura como paga, caso a soma de boletos pagos seja maior ou igual ao valor da fatura.
+
+esperado: método que marca a fatura como paga dentro da classe Fatura
+nao esperado: intimidade inapropriada
+
+4o exercicio: quebra-cabeca numerico
+-> simples quebra-cabeca numerico com uma saida impressa complicada
+
+esperado: codigo simples no quebra-cabeca e formatador em outra classe
+nao esperado: classe unica com codigo complicado
+
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Questionário}
+\label{sec:questionario}
+
+Como mencionado anteriormente, ao final dos exercícios o participante responderá um questionário. 
+O mesmo será diferenciado, de acordo com o grupo em que o participante se encaixa. Algumas
+perguntas serão abertas, onde o participante poderá dar uma opinião mais profunda sobre o assunto,
+e outras serão fechadas, onde ele deverá escolher um valor dentro de uma escala. A escala utilizada
+será baseada na escala Likert e conterá os seguintes valores: concordo fortemente, concordo, não tenho certeza,
+não concordo, não concordo fortemente.
+
+As perguntas abaixo visam obter a opinião dos participantes sobre o estudo, como clareza dos
+exercícios. O objetivo é aumentar a validade do estudo.
+Além disso, entender se os exercícios propostos eram parecidos com os problemas encontrados no mundo
+real ajudarão a aumentar a possibilidade de generalização do estudo. As perguntas abaixo deverão
+ser feitas para todos os grupos:
+
+\begin{enumerate}
+	\item O entendimento dos exercícios estavam perfeitamente claros.
+	\item Você teve tempo suficiente para resolver os exercícios.
+	\item Você achou que os problemas de código e design enfrentados nos exercícios se parecem com os do mundo real.
+\end{enumerate}
+
+O objetivo das perguntas abaixo é obter a visão do desenvolvedor sobre o próprio código gerado e como ele
+faz para obter feedback sobre a qualidade do código que escreve. Também serão feitas para todos os grupos:
+
+\begin{enumerate}
+	\item Você acha que o código que você gerou é de fácil manutenção? Explique sua resposta.
+	\item Durante a implementação, que práticas você adota para obter sempre um design flexível e elegante? E por que a adota?
+	\item Acredita que alguma outra prática possa ajudar o desenvolvedor a criar um bom design? Quais? Por que?
+\end{enumerate}
+
+Para os grupos que utilizarão TDD, informações sobre a maneira com que a prática foi utilizada e a possível
+diferença que ela fez serão requisitadas:
+
+\begin{enumerate}
+	\item Usei TDD o tempo todo, ou seja, sempre escrevi um teste antes de implementar, e tentei ser o mais simples possível.
+	\item Por que seguiu o ciclo o tempo? Isso faz alguma diferença no design final?
+	\item TDD fez alguma diferença na qualidade do código gerado? Explique sua resposta.
+\end{enumerate}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Escolha de candidatos para a entrevista}
+
+Após a implementação, os dados colhidos serão parcialmente analisados. O intuito
+é encontrar, dentre todos os participantes, aqueles com dados mais relevantes
+e que mereçam ser aprofundados.
+Para isso, informações como qualidade dos códigos gerados, grupo que participa
+dentro do estudo, e respostas no questionário influenciarão na escolha.
+
+Qualidade do código gerado é algo difícil de ser medido. Para isso, será utilizada
+a opinião de um especialista e o código será categorizado em "Bom", "Médio" ou "Ruim"
+de acordo com critérios como adesão a princípios SOLID e simplicidade.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Entrevistas}
@@ -396,4 +549,4 @@ e as razões de TDD influenciar no design.
 %% ------------------------------------------------------------------------- %%
 \section{Estudo piloto}
 
-% TODO: estudo piloto
+% TODO: estudo piloto 
