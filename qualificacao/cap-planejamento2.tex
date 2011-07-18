@@ -32,7 +32,9 @@ as categorias citadas anteriormente.
 Todos os participantes serão
 solicitados a resolver alguns problemas utilizando Java, dentro de um
 período de tempo limitado. Alguns desses grupos deverão
-utilizar TDD durante o processo de desenvolvimento. 
+utilizar TDD durante o processo de desenvolvimento. Todas as implementações,
+além de salvas, serão filmadas para que o desenvolvedor tenha acesso futuro
+a cada passo tomado durante a implementação.
 Ao final do exercício,
 todos responderão um questionário.
 
@@ -145,13 +147,13 @@ grupo do participante e são melhor detalhados na Seção \ref{sec:questionario}
 \subsection{Problemas Propostos}
 \label{sec:exercicios}
 
-Serão propostos 4 problemas que devem ser resolvidos pelos participantes utilizando
-linguagem Java. Participantes que praticarão TDD utilizarão JUnit para a escrita de testes
+Serão propostos 4 problemas que devem ser resolvidos pelos participantes, utilizando
+linguagem Java. Participantes que praticarão TDD utilizarão JUnit \footnote{\url{http://www.junit.org}. Último acesso em 18 de Julho de 2011} 
+para a escrita de testes
 automatizados de unidade. O objetivo desses exercícios é simular problemas de design 
 recorrentes em diversos projetos de software.  Os enunciados encontram no Apêndice 
 \ref{ape:exercicios}.
 
-% TODO explicar o pq isso eh recorrente
 O primeiro exercício pede ao participante que implemente uma calculadora de salário, onde
 o algoritmo de cálculo varia de acordo com o cargo do funcionário. Em uma implementação
 procedural e mais difícil de ser mantida, esse problema seria resolvido através de uma
@@ -159,7 +161,6 @@ sequência de "ifs"; todo novo cargo obrigaria o desenvolvedor a acrescentar mai
 nessa classe. Uma implementação mais flexível teria cada algoritmo de cálculo em uma 
 classe separada.
 
-% TODO explicar o pq isso eh recorrente
 O segundo exercício pede que o participante implemente o processo de geração de uma nota fiscal e, após
 esse processo, a nota gerada deve passar por diversos outros processos, como envio por e-mail, envio
 para um sistema terceiro, persistir na base de dados, e etc. Possíveis más implementações incluem a 
@@ -167,21 +168,29 @@ implementação de uma única classe que faria todo o processo, ou uma classe al
 Uma solução mais elegante seria extrair cada responsabilidade em uma classe diferente e compô-las
 através de, por exemplo, a implementação do padrão Observer \cite{gof}.
 
-esperado: implementacao parecida com observer, cada acao em uma classe
-nao esperado: god class
+O terceiro exercício pede ao participante a implementação que um simples processador de boletos que
+deve marcar a fatura como paga, caso a soma de pagamentos seja maior ou igual ao valor da fatura. 
+Em uma implementação elegante, o comportamento de marcar a fatura como paga deveria ficar dentro
+da classe "Fatura", ou entidade similar criada pelo participante.
 
-3o exercicio: processador de boletos
--> processador de boletos que deve marcar a fatura como paga, caso a soma de boletos pagos seja maior ou igual ao valor da fatura.
+O quarto exercício dá ao participante um algoritmo matemático qualquer e pede que ele altere a saída
+do programa. Por ser uma outra responsabilidade, esse código deveria estar em uma outra classe, específica,
+e não dentro da classe que contém o algoritmo.
 
-esperado: método que marca a fatura como paga dentro da classe Fatura
-nao esperado: intimidade inapropriada
+%% ------------------------------------------------------------------------- %%
+\subsection{Gravação da implementação}
+\label{sec:planejamento-gravacao}
 
-4o exercicio: quebra-cabeca numerico
--> simples quebra-cabeca numerico com uma saida impressa complicada
+A tela do computador do participante durante a implementação será gravada. 
+O objetivo da gravação é possibilitar o pesquisador a encontrar informações
+sobre a frequência que o desenvolvedor volta ao teste para avaliar mudanças de ideia sobre
+nomes, parâmetros, tipos de retorno e exceções lançadas por métodos, ou nomes
+e responsabilidades de classes.
 
-esperado: codigo simples no quebra-cabeca e formatador em outra classe
-nao esperado: classe unica com codigo complicado
-
+Muito do que a literatura diz sobre os efeitos de TDD no teste é baseado
+na relação entre um código difícil de ser testado isoladamente e a má aplicação
+de princípios de orientação a objetos. A gravação ajudará a mostrar se o teste
+realmente alarma o desenvolvedor em relação a esses princípios.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Questionário}
@@ -206,12 +215,12 @@ ser feitas para todos os grupos:
 	\item Você achou que os problemas de código e design enfrentados nos exercícios se parecem com os do mundo real.
 \end{enumerate}
 
-O objetivo das perguntas abaixo é obter a visão do desenvolvedor sobre o próprio código gerado e como ele
+Na próxima bateria de perguntas, o objetivo é obter a visão do desenvolvedor sobre o próprio código gerado e como ele
 faz para obter feedback sobre a qualidade do código que escreve. Também serão feitas para todos os grupos:
 
 \begin{enumerate}
-	\item Você acha que o código que você gerou é de fácil manutenção? Explique sua resposta.
-	\item Durante a implementação, que práticas você adota para obter sempre um design flexível e elegante? E por que a adota?
+	\item Você acha que o código que você gerou é de fácil manutenção, ou seja, é um código fácil de mudar? Explique sua resposta.
+	\item Durante a implementação, o que você fez para que o código saísse com um bom design?
 	\item Acredita que alguma outra prática possa ajudar o desenvolvedor a criar um bom design? Quais? Por que?
 \end{enumerate}
 
@@ -220,8 +229,10 @@ diferença que ela fez serão requisitadas:
 
 \begin{enumerate}
 	\item Usei TDD o tempo todo, ou seja, sempre escrevi um teste antes de implementar, e tentei ser o mais simples possível.
-	\item Por que seguiu o ciclo o tempo? Isso faz alguma diferença no design final?
 	\item TDD fez alguma diferença na qualidade do código gerado? Explique sua resposta.
+	\item A escrita de testes de unidade antes faz alguma diferença? Qual diferença? Explique sua resposta.
+	\item Muitas pessoas dizem que TDD tem efeitos positivos no design. Você acredita nisso? Explique sua resposta.
+	\item Os mesmos efeitos que a literatura diz sobre TDD no design não poderiam ser conseguidos também sem a utilização da prática? Explique sua resposta.
 \end{enumerate}
 
 %% ------------------------------------------------------------------------- %%
@@ -233,19 +244,16 @@ e que mereçam ser aprofundados.
 Para isso, informações como qualidade dos códigos gerados, grupo que participa
 dentro do estudo, e respostas no questionário influenciarão na escolha.
 
-Qualidade do código gerado é algo difícil de ser medido. Para isso, será utilizada
-a opinião de um especialista e o código será categorizado em "Bom", "Médio" ou "Ruim"
-de acordo com critérios como adesão a princípios SOLID e simplicidade.
+Após a escolha dos candidatos, os mesmos serão convidados a participar de
+uma entrevista, objetivando entender melhor como a prática ou não de TDD
+influenciou no design gerado.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Entrevistas}
 \label{sec:planejamento-estrategia-entrevistas}
 
-O primeiro passo da pesquisa é uma série de entrevistas com os desenvolvedores 
-das empresas participantes, que serão realizadas entre os meses de Julho e
-Agosto de 2011. As entrevistas serão semi-estruturadas, dando liberdade ao
+A entrevista será semi-estruturada, dando liberdade ao
 pesquisador para mudar o rumo das perguntas, caso se faça necessário.
-
 Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê
 uma resposta ampla sobre o assunto. A Tabela \ref{tab:questoes} mostra a
 relação entre os objetivos da entrevista e as perguntas formuladas no roteiro de
@@ -362,59 +370,20 @@ participantes a determinadas perguntas, ou qualquer outra informação relevante
 As entrevistas serão feitas em dias diferentes para que, ao final
 de cada dia, o pesquisador possa discutir sobre os pontos levantados no dia
 corrente e sugerir melhorias no instrumento de pesquisa. 
-O processo de codificação será feito por dois
-pesquisados separadamente, e só então ambos juntarão seus resultados, após uma 
-série de comparações e discussões sobre as diferenças encontradas.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Observação do ambiente real}
-\label{sec:planejamento-observacao}
+\subsection{Avaliação do Especialista}
+\label{sec:planejamento-especialista}
 
-O pesquisador observará os participantes durante suas atividades diárias. As
-visitas serão pré-agendadas com os líderes técnicos de cada equipe, de modo a
-otimizar o tempo, e evitar a presença do pesquisador durante atividades
-não que não fazem uso da prática, como reuniões de trabalho.
+Um especialista será convidado a analisar os códigos-fonte e categorizá-los
+em 3 categorias: Bom, Regular e Ruim. Dentro da categoria "Bom", se encaixarão códigos 
+que apresentam uso de boas práticas de OO. Na categoria "Ruim" se encaixarão códigos
+que apresentam características tipicamente procedurais, como separação entre
+dados e comportamento, entre outros. A categoria "Regular" será um meio termo entre
+os outros dois citados anteriormente.
 
-O período mínimo de observação será de 2 horas. Após esse período, o observador
-decidirá se o tempo de observação deverá ser prolongado. O número mínimo de
-observações será de 10 por equipe, garantindo que cada equipe será observada por
-no mínimo 20 horas de trabalho. Durante as observações, o pesquisador focará na
-questão de pesquisa relacionada à \textit{como o teste guia o desenvolvedor
-durante a atividade de design?}. Discussões sobre qualquer um dos pontos abaixo, 
-mas não limitados a eles, serão capturadas pelo pesquisador:
-
-\begin{itemize}
-  
-  \item A influência do teste ser o primeiro cliente da classe;
-
-  \item A explícitação das dependências necessárias para a escrita do teste de
-  unidade;
-
-  \item Testes que mostram a falta de coesão de uma classe;
-
-  \item Testes que mostram acoplamentos indevidos;
-
-  \item A influência do teste na simplicidade;
-
-  \item A utilização da técnica de composição de classes;
-  
-  \item A relação entre a dificuldade da escrita do teste e design mais
-  flexíveis;
-
-\end{itemize}
-
-Caso o projeto em que o desenvolvedor atue possua trechos de código produzidos
-sem a utilização da prática de TDD, o pesquisador fará uso desses trechos
-para interrogar os desenvolvedores sobre possíveis diferenças entre códigos
-gerados com e sem a prática. Isso possibilita ao pesquisador uma comparação
-menos enviesada entre códigos produzidos com e sem TDD, já que ambos pertencem
-ao mesmo projeto e foram desenvolvidos pela mesma equipe.
-
-Para auxiliar o processo de observação, o pesquisador tomará notas durante o
-processo, e fará as perguntas que achar necessário para os participantes. Além
-disso, o pesquisador observará também o código final produzido pelas equipes,
-possibilitando assim o relacionamento entre a prática e a qualidade do design
-final produzido.
+Para que a opinião do especialista seja imparcial, ele \textbf{não} saberá qual código
+foi gerado através da prática de TDD.
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise dos dados}
@@ -426,7 +395,7 @@ nessa pesquisa. Apesar de parecer uma abordagem em cascata, ele é na prática
 interativo, já que os passos são interconectados. 
 
 A princípio, os dados serão preparados, através das transcrição das
-entrevistas e das notas geradas durante as observações. 
+entrevistas e de observações feitas sobre os vídeos gravados. 
 A seguir, a leitura completa dos
 dados colhidos para que o pesquisador possa buscar por erros no processo de
 transcrição e para que reflita também sobre os principais pontos e opiniões em
@@ -439,6 +408,38 @@ dados pelo pesquisador. O software utilizado para o processo de codificação se
 o \textit{Atlas.ti} \footnote{\url{http://www.atlasti.com/}. Último acesso em 3
 de maio de 2011.}, produzido na Alemanha, que permite ao pesquisador organizar textos,
 gráficos, aúdios, e arquivos visuais, e juntá-los com códigos e anotações. 
+
+Além disso, é possível ainda utilizar os códigos gerados para buscar alguma significância
+estatística. Cada um dos problemas dados aos participantes contém problemas de design, e
+podem ser avaliados através de diferentes métricas:
+
+\begin{table}[h!]
+	\begin{tabular}{ | p{2cm} | p{7cm} | p{6cm} | }
+		Número(s) & Possível Problema de Design & Métrica sugerida \\ \hline
+		1, 4 & Código complexo & Complexidade Ciclomática \\
+		1, 4 & Má Separação de Responsabilidades & Quantidade de Classes, Linhas de Código por Classe \\
+		
+		\hline
+		
+		2 & Alto acoplamento & Acoplamento Aferente, Acoplamento Eferente, Estabilidade \\
+		2 & Código complexo & Complexidade ciclomática \\
+		
+		\hline
+		
+		3 & Falta de coesão & LCOM \\
+		
+		\hline
+		
+	\end{tabular}
+	\caption{Problemas e métricas de código sugeridas}
+\end{table}
+
+Todas as métricas citadas acima já são de uso conhecido na academia, e não há 
+motivos para validação. Testes estatísticos para análise de variância serão utilizados
+para verificar se TDD influencia nas métricas acima.
+Além do mais, a variância na opinião do especialista sobre cada código-fonte gerado
+será utilizado também como entrada para algoritmos estatísticos, objetivando também
+avaliar a possível influência de TDD na opinião do mesmo.
 
 Durante todo o processo, o pesquisador constantemente validará toda e qualquer
 informação colhida e, caso seja necessário, a coleta de qualquer entrevista,
@@ -549,4 +550,4 @@ e as razões de TDD influenciar no design.
 %% ------------------------------------------------------------------------- %%
 \section{Estudo piloto}
 
-% TODO: estudo piloto 
+% TODO: estudo piloto
