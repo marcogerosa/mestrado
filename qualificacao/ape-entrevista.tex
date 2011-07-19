@@ -1,10 +1,12 @@
 \chapter{Entrevista}
 \label{ape:entrevista}
 
+\section{Perfis 1 e 2}
+
 O pesquisador deve primeiramente se apresentar e dizer que ele será entrevista
 sobre Test-Driven Development.
 
-\section{Dados básicos}
+\subsection{Dados básicos}
 \label{entrevista:dados-basicos}
 
 \begin{enumerate}
@@ -20,7 +22,7 @@ sobre Test-Driven Development.
 
 \end{enumerate}
 
-\section{Caracterização do desenvolvedor}
+\subsection{Caracterização do desenvolvedor}
 \label{entrevista:caracterizacao}
 
 \begin{enumerate}
@@ -43,7 +45,7 @@ sobre Test-Driven Development.
 
 \end{enumerate}
 
-\section{A Prática de TDD}
+\subsection{A Prática de TDD}
 \label{entrevista:pratica}
 
 \begin{enumerate}
@@ -68,102 +70,59 @@ sobre Test-Driven Development.
 	de software, como requisitos, design, implementação, testes, ou operação?
 \end{enumerate}
 
-\section{Relação entre TDD e Design}
+\subsection{Relação entre TDD e Design (Apenas para Perfil 1)}
 
-\subsection{TDD e acoplamento}
-\label{entrevista:acoplamento}
-
-\begin{enumerate}
-	\item{Em sua experiência, você acredita que classes muito acopladas são realmente prejudiciais?}
-		\begin{enumerate}
-			\item Como você combate esse problema?
-
-			\item TDD tem alguma influencia nisso?
-			
-			\item Você percebe alguma diferença no acoplamento que você cria quando
-			pratica TDD, do acoplamento que você cria quando não pratica TDD?
-			
-			\item E por que você atribui essa diferença ao TDD, ou seja, o bom design
-			criado não pode ter sido influenciado apenas pela sua experiência?
-			
-			\item Mas se o teste influencia no acoplamento, 
-			qual a diferença entre escrever o teste antes ou depois?
-
-			\item Pensando em código, que mudanças você faz na implementação, influenciado
-			pelo teste?
-			
-			\item Você tem casos reais para me contar sobre sua experiência com TDD e 
-			acoplamento?
-			
-			\item Você acha que mesmo com TDD é possível criar classes com alto acoplamento? 
-		\end{enumerate}
-\end{enumerate}
-
-\subsection{TDD e coesão}
-\label{entrevista:coesao}
+Nesse ponto o pesquisador deve repetir esse conjunto de perguntas
+para os 4 exercícios propostos.
+O pesquisador deve discutir um pouco sobre o design do código do participante e, em seguida,
+fazer as perguntas abaixo.
 
 \begin{enumerate}
-	\item{Você costuma ver muitas classes com baixa coesão (que têm muitas responsabilidade)?}
-		\begin{enumerate}
-			\item Em sua opinião, por que elas aparecem?
-
-			\item Como você combate esse problema?
-
-			\item TDD tem alguma influencia nisso?
-			
-			\item Você percebe alguma diferença na coesão das classes que você cria quando
-			pratica TDD, da coesão das classes que você cria quando não pratica TDD?
-			
-			\item E por que você atribui essa diferença ao TDD, ou seja, o bom design
-			criado não pode ter sido influenciado apenas pela sua experiência?
-			
-			\item Mas se o teste influencia na coesão, 
-			qual a diferença entre escrever o teste antes ou depois?
-			
-			\item Pensando em código, que mudanças você faz na implementacão, influenciado
-			pelo teste?
-			
-			\item Você tem casos reais para me contar sobre sua experiência com TDD e 
-			coesão?
-
-			\item Você acha que mesmo com TDD é possível criar classes com baixa coesão? 
-
-		\end{enumerate}
+	
+	\item No exercício X, como você chegou nesse design?
+	
+	\item Da onde surgiu a ideia dessa modelagem de classes?
+	
+	\item E o TDD, aonde entra nessa história?
+	
+	\item Como especificamente o teste te ajudou nisso?
+	
+	\item Isso é recorrente? Acontece sempre?
+	
+	\item Como você sabe que o motivo desse bom design é o TDD, e não apenas sua experiência
+	com design OO?
+	
+	\item Qual seria a diferença de não usar TDD nesse exercício?
 \end{enumerate}
 
-\subsection{TDD e simplicidade}
-\label{entrevista:simplicidade}
+\subsection{Relação entre TDD e Design - (Apenas para Perfil 2)}
+
+Nesse ponto o pesquisador deve repetir esse conjunto de perguntas
+para os 4 exercícios propostos.
+O pesquisador deve discutir um pouco sobre o design do código do participante e, em seguida,
+fazer as perguntas abaixo.
 
 \begin{enumerate}
-	\item{Você costuma ver muitas classes complexas e extensas?}
-		\begin{enumerate}
-			\item Em sua opinião, por que elas aparecem?
+	
+	\item No exercício X, como você chegou nesse design?
+	
+	\item Da onde surgiu a ideia dessa modelagem de classes?
+	
+	\item E o TDD, aonde entra nessa história?
+	
+	\item Como especificamente o teste te ajudou nisso?
+	
+	\item Uma outra solução seria <discutir solução alternativa>, que apresentaria um bom design também. Por que você
+	acha que não chegou a essa solução?
+	
+	\item O TDD poderia te guiar a essa solução? O que faltou para isso?
+	
+	\item Qual seria a diferença de não usar TDD nesse exercício?
 
-			\item Como você combate esse problema?
-
-			\item TDD tem alguma influencia nisso?
-			
-			\item Você percebe alguma diferença da simplicidade das classes que você cria quando
-			pratica TDD, da simplicidade das classes que você cria quando não pratica TDD?
-			
-			\item E por que você atribui essa diferença ao TDD, ou seja, o bom design
-			criado não pode ter sido influenciado apenas pela sua experiência?
-			
-			\item Mas se o teste influencia na simplicidade, 
-			qual a diferença entre escrever o teste antes ou depois?
-			
-			\item Pensando em código, que mudanças você faz na implementação, influenciado
-			pelo teste?
-
-			\item Você tem casos reais para me contar sobre sua experiência com TDD e 
-			simplicidade?
-			
-			\item Você acha que mesmo com TDD é possível criar classes com códigos difíceis de serem entendidos? 
-
-		\end{enumerate}
 \end{enumerate}
 
-\section{Relação entre TDD e experiência}
+
+\subsection{Relação entre TDD e experiência}
 \label{entrevista:experiencia}
 
 \begin{enumerate}
@@ -184,7 +143,7 @@ sobre Test-Driven Development.
 
 \end{enumerate}
 
-\section{TDD e outras práticas ágeis}
+\subsection{TDD e outras práticas ágeis}
 \label{entrevista:tdd-e-praticas-ageis}
 
 \begin{enumerate}
@@ -199,7 +158,7 @@ sobre Test-Driven Development.
 	\item Quais outras práticas ágeis você acha que ajuda você a melhorar o design?
 \end{enumerate}
 
-\section{Opiniões finais}
+\subsection{Opiniões finais}
 
 \begin{enumerate}
 	\item Você acha que TDD resolve de vez o problema de designs que degradam ao longo do tempo?
@@ -211,3 +170,79 @@ sobre Test-Driven Development.
 	\item Com quem posso falar para saber mais sobre o assunto?
 \end{enumerate}
 
+% --------------------------------------------------------------------------------------------------
+
+\section{Perfil 3}
+
+O pesquisador deve primeiramente se apresentar e dizer que ele será entrevista
+sobre Test-Driven Development.
+
+\subsection{Dados básicos}
+\label{entrevista:dados-basicos}
+
+\begin{enumerate}
+	\item Nome completo?
+
+	\item Qual seu cargo na empresa atual?
+	
+	\item Em que projetos trabalha atualmente?
+	
+	\item Há quanto tempo está na empresa?
+
+	\item E-mail para contato?
+
+\end{enumerate}
+
+\subsection{Caracterização do desenvolvedor}
+\label{entrevista:caracterizacao}
+
+\begin{enumerate}
+	\item Qual a sua formação?
+
+	\item Há quanto tempo atua na área de desenvolvimento de software?
+
+	\item Como você classificaria seu conhecimento em orientação a objetos?
+
+	\item Você desenvolve sistemas orientados a objetos há quanto tempo?	
+
+	\item Fale-me um pouco sobre os projetos que já desenvolveu e os desafios 
+	neles encontrados?
+
+	\item Em sua opinião, qual a maior dificuldade na criação de sistemas OO de
+	qualidade?
+
+	\item Com que frequência você costuma ler livros ou ir a congressos para se 
+	atualizar sobre as novas práticas? Quais?
+
+\end{enumerate}
+
+\subsection{Design}
+
+Nesse ponto o pesquisador deve repetir esse conjunto de perguntas
+para os 4 exercícios propostos.
+O pesquisador deve discutir um pouco sobre o design do código do participante e, em seguida,
+fazer as perguntas abaixo.
+
+\begin{enumerate}
+	
+	\item No exercício X, como você chegou nesse design?
+	
+	\item Da onde surgiu a ideia dessa modelagem de classes?
+	
+	\item Você não precisou de nenhuma prática para auxiliar na criação do design, como TDD. Por que?
+	
+	\item Se você tivesse utilizado TDD, qual seria a diferença?
+	
+\end{enumerate}
+
+\subsection{Opiniões finais}
+
+\begin{enumerate}
+	\item Você acha que TDD resolve de vez o problema de designs que degradam ao longo do tempo?
+
+	\item Gostaria de dizer mais algo sobre TDD que não disse nas perguntas anteriores?
+	
+	\item Como você compararia a qualidade de códigos escritos com TDD e sem TDD? 
+
+	\item Com quem posso falar para saber mais sobre o assunto?
+\end{enumerate}
