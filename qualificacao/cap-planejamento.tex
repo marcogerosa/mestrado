@@ -18,6 +18,27 @@ Este capítulo detalha o planejamento do experimento,
 bem como o processo de análise dos dados colhidos.
 
 %% ------------------------------------------------------------------------- %%
+\section{Questões de pesquisa}
+
+Os objetivo principal deste estudo é \textbf{entender a relação da prática de TDD 
+e as decisões de design tomadas pelo programador durante o processo de 
+design de sistemas orientados a objetos}.
+Para compreendê-la, tenta-se responder às questões listadas
+abaixo:
+
+\begin{enumerate}
+
+	\item Qual a influência de TDD no design de classes?
+
+	\item Qual a relação entre TDD e as tomadas de decisões de design
+	feitas por um desenvolvedor?
+
+	\item Como a prática de TDD influencia o programador no processo de  
+	design de classes, do ponto de vista do acoplamento, coesão e simplicidade?
+
+\end{enumerate}
+
+%% ------------------------------------------------------------------------- %%
 \section{Design da pesquisa}
 
 Baseando-se na premissa de que o processo de desenvolvimento de software envolve 
@@ -73,6 +94,9 @@ Certos critérios foram levados em consideração no momento de convidar os part
 	Participantes devem ter experiência em Java, já que os problemas deverão ser resolvidos
 	nessa linguagem.	
 \end{itemize}
+
+Esses pontos serão avaliados através de um questionário, que deverá ser
+respondido por todos os participantes antes do início do estudo.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Agrupamento dos Participantes}
@@ -321,15 +345,6 @@ discute a importância de cada uma das seções das entrevistas:
 		\\
 
 		\hline
-		\textbf{A influência da utilização de TDD
-	junto com outras práticas ágeis, como programação pareada, sobre o design} 
-		&
-		Por ser um outro possível fator de influência, o pesquisador colherá informações
-		para diferenciar efeitos da programação pareada dos efeitos de TDD.
-
-		\\
-
-		\hline
 		\textbf{A visão do desenvolvedor sobre a prática de TDD} 
 		&
 		O pesquisador alinhará as definições da prática com todos os participantes da
@@ -360,7 +375,9 @@ desenvolvedor em desenvolvimento de software e TDD são necessárias para ajudar
 pesquisador no entendimento das respostas dadas. Além disso, perguntas sobre
 referências, livros e outros pontos de informação nas quais o participante lê a
 respeito da prática servem para que o programador entenda o embasamento teórico
-do praticante sobre TDD.
+do praticante sobre TDD. Durante a análise, o pesquisador deverá analisar cada
+grupo de forma separada, uma vez que os resultados encontrados podem ser
+diferentes.
 
 Em seguida, o pesquisador perguntará os principais pontos da pesquisa.
 Para isso, o pesquisador fará uso não só de perguntas abertas, mas também
@@ -457,6 +474,12 @@ será utilizado também como entrada para algoritmos estatísticos, objetivando 
 avaliar a possível influência de TDD na opinião do mesmo. Além do mais, durante a análise, novas
 métricas possam surgir de acordo com o que for encontrado na entrevista.
 
+Além disso, com todos os dados em mãos, o pesquisador deverá constantemente triangular
+as informações das diferentes fontes de dados. Por exemplo, caso um participante diga
+que TDD ajuda a diminuir o acoplamento, mas o código dele mostrar o contrário, ou caso
+a gravação mostre que o participante na verdade não usou TDD, o pesquisador
+deverá levar isso em conta durante o processo de análise.
+
 Durante o processo, o pesquisador constantemente validará toda e qualquer
 informação colhida e, caso seja necessário, a coleta de qualquer entrevista,
 observação ou métrica poderá ser refeita. Os participantes das entrevistas
@@ -496,13 +519,15 @@ A validade do estudo será garantida por alguns procedimentos executados pelos
 pesquisadores, dentre eles:
 
 \begin{itemize}
-	\item \textbf{Triangulação de diferentes fontes de dados}. A pesquisa é
-	realizada em diferentes ambientes, com diferentes participantes e projetos,
-	trazendo diferentes pontos de vista para dentro da análise;
+	\item \textbf{Triangulação de diferentes fontes de dados}. A pesquisa será
+	realizada com participantes que possuem diferentes experiências, e diferentes
+	fontes de dados serão colhidas, como questionários, entrevistas, código gerado e 
+	a gravação do desenvolvedor escrevendo o código;
 
 	\item \textbf{Apresentar os resultados da pesquisa para os participantes e
 	verificar se eles concordam com os resultados gerados}. Garantir que os
-	participantes validem os dados encontrados diminui o viés do pesquisador;
+	participantes validem os dados encontrados, através de um grupo focal \cite{creswell},
+	diminui o viés do pesquisador;
 
 	\item \textbf{Prover descrição rica e detalhada sobre o ambiente}. A riqueza
 	dos detalhes mostra a qualidade do estudo, além de possibilitar a repetição do
@@ -562,8 +587,3 @@ TDD no design de sistemas orientados a objetos, obtendo o ponto de vista dos
 desenvolvedores que a praticam diariamente. Conforme discutido nos trabalhos 
 relacionados, muitos pesquisas já foram feitas, mas poucas discutem os motivos 
 e as razões de TDD influenciar no design.
-
-%% ------------------------------------------------------------------------- %%
-\section{Estudo piloto}
-
-% TODO: estudo piloto
