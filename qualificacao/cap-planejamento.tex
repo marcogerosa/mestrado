@@ -53,7 +53,9 @@ os pontos citados anteriormente.
 Todos os participantes serão
 solicitados a resolver alguns problemas utilizando Java, dentro de um
 período de tempo limitado. Alguns desses grupos deverão
-utilizar TDD durante o processo de desenvolvimento. Todas as implementações,
+utilizar TDD durante o processo de desenvolvimento. 
+
+Todas as implementações,
 além de salvas, serão filmadas para que o desenvolvedor tenha acesso futuro
 a cada passo tomado durante a implementação.
 Ao final do exercício,
@@ -83,7 +85,7 @@ Certos critérios foram levados em consideração no momento de convidar os part
 	níveis de experiência. Programadores inexperientes em TDD (sem conhecimentos teóricos e práticos)
 	e programadores com experiência em TDD (praticantes a no mínimo 3 anos)
 	
-	\item \textbf{Experiência.} Participantes
+	\item \textbf{Experiência em desenvolvimento de software.} Participantes
 	experientes (com no mínimo 3 anos de desenvolvimento e bons conhecimentos em orientação a objetos) e 
 	inexperientes (com no máximo 1 ano de desenvolvimento e algum conhecimento de orientação a objetos).
 
@@ -102,20 +104,21 @@ respondido por todos os participantes antes do início do estudo.
 \subsection{Agrupamento dos Participantes}
 
 Os participantes serão agrupados em grupos, separados por experiência em desenvolvimento
-de software, experiência em TDD, e se o grupo utilizará TDD ou não. A tabela abaixo
-descreve os grupos:
+de software, experiência em TDD, e se o grupo utilizará TDD ou não. A Tabela 
+\ref{tab:participantes-e-grupos} descreve os grupos.
 
-\begin{table}
+\begin{table}[h!]
 	\caption{Participantes e os diferentes grupos}
-	\begin{tabular}{c | c | c | c |}
+	\begin{tabular}{| c | c | c | c |}
 		\hline
 		Grupo & Experiência em Desenvolvimento de Software & Experiência em TDD & Usará TDD? \\ 	\hline
 		1 & Sim & Sim & Sim \\ 	\hline
-		2 & Sim & Sem & Sim \\ 	\hline
-		3 & Sim & Sem & Não \\ 	\hline
+		2 & Sim & Não & Sim \\ 	\hline
+		3 & Sim & Não & Não \\ 	\hline
 		4 & Sim & Sim & Não \\ 	\hline
 		5 & Não & Não & Sim \\ 	\hline
 	\end{tabular}
+	\label{tab:participantes-e-grupos}
 \end{table}
 
 O objetivo desses grupos é conseguir isolar alguns dos principais fatores de influência,
@@ -220,8 +223,8 @@ realmente alarma o desenvolvedor em relação a esses princípios.
 \subsection{Questionário}
 \label{sec:questionario}
 
-Como mencionado anteriormente, ao final dos exercícios o participante responderá um questionário. 
-O mesmo será diferenciado, de acordo com o grupo em que o participante se encaixa. Algumas
+Como mencionado anteriormente, ao final dos exercícios o participante responderá um questionário, 
+que será diferenciado de acordo com o grupo em que o participante se encaixa. Algumas
 perguntas serão abertas, onde o participante poderá dar uma opinião mais profunda sobre o assunto,
 e outras serão fechadas, onde ele deverá escolher um valor dentro de uma escala. A escala utilizada
 será baseada na escala Likert e conterá os seguintes valores: concordo fortemente, concordo, não tenho certeza,
@@ -286,7 +289,7 @@ A tabela \ref{tab:possiveis-entrevistas} abaixo mostra as diferentes possíveis 
 no Apêndice \ref{ape:entrevista} desta pesquisa:
 
 \begin{table}[h!]
-	\begin{tabular}{ | p{2cm} | p{5cm} | p{7cm}}
+	\begin{tabular}{ | p{2cm} | p{5cm} | p{7cm} |}
 		\hline
 		Número & Perfil & Objetivo da Entrevista \\ \hline
 		
@@ -324,6 +327,8 @@ discute a importância de cada uma das seções das entrevistas:
 
 \begin{table}[h!]
 	\begin{tabular}{ | p{6cm} | p{7cm} | }
+		\hline
+		
 		Objetivo & Importância \\
 		
 		\hline
@@ -448,12 +453,12 @@ podem ser avaliados através de diferentes métricas:
 \begin{table}[h!]
 	\begin{tabular}{ | p{2cm} | p{7cm} | p{6cm} | }
 		Número(s) & Possível Problema de Design & Métrica sugerida \\ \hline
-		1, 4 & Código complexo & Complexidade Ciclomática \\
+		1, 4 & Código complexo & Complexidade Ciclomática \\ \hline
 		1, 4 & Má Separação de Responsabilidades & Quantidade de Classes, Linhas de Código por Classe \\
 		
 		\hline
 		
-		2 & Alto acoplamento & Acoplamento Aferente, Acoplamento Eferente, Estabilidade \\
+		2 & Alto acoplamento & Acoplamento Aferente, Acoplamento Eferente, Estabilidade \\ \hline
 		2 & Código complexo & Complexidade ciclomática \\
 		
 		\hline
