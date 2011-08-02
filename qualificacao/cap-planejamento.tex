@@ -12,9 +12,10 @@ nos resultados encontrados, e como TDD e a
 prática de escrever o teste antes do código real realmente guiam o programador 
 em direção a essas melhorias.
 
-Para entendê-las, propõe-se aqui um estudo qualitativo com 
-desenvolvedores praticantes ou não de TDD, com níveis de experiência diferentes.
-Este capítulo detalha o planejamento do experimento, 
+Para entendê-las, este estudo faz uso de uma combinação entre um estudo quantitativo inicial, na qual participantes serão
+convidados a resolver exercícios pré-preparados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
+estudo qualitativo entrará em detalhes objetivando entender como a prática influenciou as decisões de design dos participantes.
+Este capítulo detalha o planejamento do estudo, 
 bem como o processo de análise dos dados colhidos.
 
 %% ------------------------------------------------------------------------- %%
@@ -52,8 +53,9 @@ irão variar de pessoas sem experiência até pessoas com experiência em ambas
 os pontos citados anteriormente.
 Todos os participantes serão
 solicitados a resolver alguns problemas utilizando Java, dentro de um
-período de tempo limitado. Todos esses grupos deverão
-utilizar TDD durante o processo de desenvolvimento. 
+período de tempo limitado. Todos esses grupos
+serão solicitados a utilizar TDD em alguns problemas, e a não utilizar
+TDD em outros.
 
 Todas as implementações,
 além de salvas, serão filmadas para que o desenvolvedor tenha acesso futuro
@@ -156,9 +158,18 @@ dados colhidos desse participante.
 
 Os participantes não poderão se comunicar durante o exercício, e cada um deles receberá
 os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
-pode ocorrer durante a resolução dos problemas.
+pode ocorrer durante a resolução dos problemas. 
 
-Ao final, todos deverão responder a um questionário online, que conterá perguntas sobre a qualidade
+Além disso, dos 4 problemas, os participantes
+deverão resolver 2 deles utilizando TDD, e 2 deles não utilizando TDD. A razão disso
+é fazer com que o participante exercite ambos estilos de desenvolvimento (com e sem TDD)
+e tenha mais embasamento para ser entrevistado nas próximas etapas do estudo. 
+Cada participante receberá instruções claras sobre quais exercícios deverão ser feitos
+com TDD. A escolha desses exercícios também será randomizada na tentativa de diminuir
+o efeito do aprendizado.
+
+Ao final, todos deverão responder a um questionário online, 
+que conterá perguntas sobre a qualidade
 do código que ele acabou de produzir. Esse questionário
 é melhor detalhado na Seção \ref{sec:questionario}
 
@@ -275,8 +286,9 @@ pesquisador para mudar o rumo das perguntas, caso se faça necessário.
 Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê
 uma resposta ampla sobre o assunto.
 
-As entrevistas serão diferentes de acordo com o perfil do usuário selecionado.
-A tabela \ref{tab:possiveis-entrevistas} abaixo mostra as diferentes possíveis entrevistas, que são encontradas
+A entrevista repetirá um conjunto de perguntas para cada exercício resolvido.
+Essas perguntas sofrerão mudanças de acordo com o resultado de cada exercício resolvido.
+A tabela \ref{tab:possiveis-entrevistas} abaixo mostra as diferentes possíveis perguntas, que são encontradas
 no Apêndice \ref{ape:entrevista} desta pesquisa:
 
 \begin{table}[h!]
@@ -284,20 +296,34 @@ no Apêndice \ref{ape:entrevista} desta pesquisa:
 		\hline
 		Grupo & Perfil & Objetivo da Entrevista \\ \hline
 		
-		A & Participantes que praticaram TDD e tiveram bons resultados
+		A & Exercício resolvido com TDD e que teve bom resultado final
 		& 
-		Descobrir os motivos da prática ter auxiliado o desenvolvedor; caso o desenvolvedor
-		seja experiente, a entrevista tentará separar a experiência da prática
+		Descobrir os motivos da prática ter influenciado na qualidade do código final e
+		entender como TDD guiou o desenvolvedor naquelas decisões de design.
 		
 		\\ \hline
 		
-		B & Participantes que praticaram TDD e não tiveram bons resultados 
+		B & Exercício resolvido com TDD e que teve mau resultado final
 		&
 		Descobrir os motivos da qualidade do código não ter sido satisfatória,
-		mesmo utilizando-se TDD
+		mesmo utilizando-se TDD.
 		
 		\\ \hline
 			
+		C & Exercício resolvido sem TDD e que teve bom resultado final
+		&
+		Descobrir o motivo da não necessidade da prática de TDD, e qual seria a diferença
+		da utilização da prática, na visão do participante.
+		
+		\\ \hline
+		
+		D & Exercício resolvido sem TDD e que teve mau resultado final
+		&
+		Descobrir, na visão do participante, qual seria a diferença da implementação
+		caso ela utilizasse TDD.
+		
+		\\ \hline
+		
 	\end{tabular}
 	\caption{Possíveis entrevistas}
 	\label{tab:possiveis-entrevistas}
@@ -404,7 +430,7 @@ dados e comportamento, entre outros. A categoria "Regular" será um meio termo e
 os outros dois citados anteriormente.
 
 Para que a opinião do especialista seja imparcial, ele \textbf{não} saberá a qual grupo
-pertence a cada código-fonte analisado.
+pertence e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de TDD).
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise dos dados}
