@@ -62,36 +62,6 @@ seus efeitos no teste e no design do software, conforme relatado pela
 literatura.
 
 %% ------------------------------------------------------------------------- %%
-\section{O ciclo}
-
-Um desenvolvedor praticante de TDD escreve os testes antes do código de
-produção. Beck define esse ciclo mais detalhadamente da seguinte maneira
-\cite{TDDByExample}:
-
-\begin{enumerate}
-	\item Adicionar o teste mais simples possível; 
-	\item Rodar todos os testes e ver o novo teste falhar; 
-	\item Escrever o código mais simples que passe no teste; 
-	\item Rodar todos os testes e verificar que o código passe em todos eles; 
-	\item Refatorar para remover duplicação de dados e de código.
-\end{enumerate}
-
-Ao iniciar o ciclo, o praticante de TDD escreve o teste mais simples que
-possa falhar; em seguida, ele deve rodar a suíte de testes para 
-garantir que o teste escrito realmente falhe; 
-com o teste falhando, o programador escreve a
-implementação mais simples que passe no teste; em
-seguida, ele garante que o código corrente passe por todos os testes; por fim, o praticante
-refatora o código, removendo duplicações de dados e de código.
-
-Simplicidade é algo intrínseco ao processo; o praticante
-busca sempre escrever o teste mais simples que falhe e escrever a implementação mais simples
-que faça o teste passar. Por fim, a última parte do ciclo é responsável por
-tornar o código claro e flexível; nesse momento o programador deve
-refatorar o código para remover toda a duplicação de dados ou de código gerada enquanto 
-se preocupava em fazer o teste passar.
-
-%% ------------------------------------------------------------------------- %%
 \section{Benefícios dos testes}
 
 Uma consequência da prática de TDD é a bateria de testes de unidade gerada.
