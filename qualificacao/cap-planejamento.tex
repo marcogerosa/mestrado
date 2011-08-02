@@ -8,7 +8,7 @@ no design de classes, como um menor acoplamento, uma maior coesão, e até mesmo
 mais simplicidade. 
 Grande parte deles focam nos efeitos da prática
 no código final, mas poucos estudos tentam entender a possível influência da experiência
-nos resultados encontrados e como TDD e a
+nos resultados encontrados, e como TDD e a
 prática de escrever o teste antes do código real realmente guiam o programador 
 em direção a essas melhorias.
 
@@ -114,7 +114,7 @@ de software e experiência em TDD. A Tabela
 		Grupo & Experiência em Desenvolvimento de Software & Experiência em TDD \\ 	\hline
 		1 & Sim & Sim \\ 	\hline
 		2 & Sim & Não \\ 	\hline
-		5 & Não & Não \\ 	\hline
+		3 & Não & Não \\ 	\hline
 	\end{tabular}
 	\label{tab:participantes-e-grupos}
 \end{table}
@@ -132,7 +132,7 @@ cada um dos grupos podem revelar informações interessantes como:
 	de software, mas não praticantes de TDD, deve-se entender a diferença entre
 	praticar TDD e não praticar TDD;
 		
-	\item \textbf{Grupo 5:} Por serem participantes sem nenhuma experiência, é esperado que
+	\item \textbf{Grupo 3:} Por serem participantes sem nenhuma experiência, é esperado que
 	a prática ajude na qualidade do código. Caso isso não aconteça, deve-se entender o motivo de TDD
 	não ter auxiliado os desenvolvedores durante a criação do design.
 \end{itemize}
@@ -158,16 +158,16 @@ Os participantes não poderão se comunicar durante o exercício, e cada um dele
 os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
 pode ocorrer durante a resolução dos problemas.
 
-Ao final, todos deverão responder a um questionário online, que fará perguntas sobre a qualidade
-do código que ele acabou de produzir. Esses questionários 
-são melhor detalhados na Seção \ref{sec:questionario}
+Ao final, todos deverão responder a um questionário online, que conterá perguntas sobre a qualidade
+do código que ele acabou de produzir. Esse questionário
+é melhor detalhado na Seção \ref{sec:questionario}
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Problemas Propostos}
 \label{sec:exercicios}
 
 Serão propostos 4 problemas que devem ser resolvidos pelos participantes, utilizando
-linguagem Java. Participantes que praticarão TDD utilizarão JUnit \footnote{\url{http://www.junit.org}. 
+linguagem Java. Participantes deverão utilizar JUnit \footnote{\url{http://www.junit.org}. 
 Último acesso em 18 de Julho de 2011} para a escrita de testes
 automatizados de unidade. O objetivo desses exercícios é simular problemas de design 
 recorrentes em diversos projetos de software. Os enunciados encontram-se no Apêndice 
@@ -204,7 +204,9 @@ A tela do computador do participante durante a implementação será gravada.
 O objetivo da gravação é possibilitar ao pesquisador encontrar informações
 sobre a frequência que o desenvolvedor volta ao teste para avaliar mudanças de ideia sobre
 nomes, parâmetros, tipos de retorno e exceções lançadas por métodos, ou nomes
-e responsabilidades de classes.
+e responsabilidades de classes. Além disso, o pesquisador poderá realmente
+conferir se o participante realmente praticou TDD conforme descrito pela
+literatura, ou fez adaptações à prática.
 
 Muito do que a literatura diz sobre os efeitos de TDD no teste é baseado
 na relação entre um código difícil de ser testado isoladamente e a má aplicação
@@ -218,7 +220,7 @@ realmente alarma o desenvolvedor em relação a esses princípios.
 Como mencionado anteriormente, ao final dos exercícios o participante responderá a um questionário.
 Algumas
 perguntas serão abertas, onde o participante poderá dar uma opinião mais profunda sobre o assunto,
-e outras serão fechadas, e ele deverá escolher um valor dentro de uma escala
+e outras serão fechadas. Ele deverá escolher um valor dentro de uma escala
 Likert: concordo fortemente, concordo, não tenho certeza,
 discordo, discordo fortemente.
 
@@ -231,7 +233,7 @@ ser feitas para todos os grupos:
 \begin{enumerate}
 	\item O entendimento dos exercícios estavam perfeitamente claros.
 	\item Você teve tempo suficiente para resolver os exercícios.
-	\item Você achou que os problemas de design enfrentados nos exercícios se parecem com os do mundo real.
+	\item Os problemas de design enfrentados nos exercícios se parecem com os do mundo real.
 \end{enumerate}
 
 Na próxima bateria de perguntas, o objetivo é obter a visão do desenvolvedor sobre o próprio código gerado e como ele
@@ -250,8 +252,9 @@ diferença que ela fez serão requisitadas:
 	\item Usei TDD o tempo todo, ou seja, sempre escrevi um teste antes de implementar, e tentei ser o mais simples possível.
 	\item TDD fez alguma diferença na qualidade do código gerado? Explique sua resposta.
 	\item A escrita de testes de unidade antes faz alguma diferença? Qual diferença? Explique sua resposta.
-	\item Muitas pessoas dizem que TDD tem efeitos positivos no design. Você acredita nisso? Explique sua resposta.
+	\item Muitas pessoas afirmam que TDD tem efeitos positivos no design. Você acredita nisso? Explique sua resposta.
 	\item Os mesmos efeitos que a literatura diz sobre TDD no design não poderiam ser conseguidos também sem a utilização da prática? Explique sua resposta.
+	\item A experiência em outras áreas de desenvolvimento de software, como orientação a objetos, fazem a diferença na criação de um bom design? Explique sua resposta.
 \end{enumerate}
 
 %% ------------------------------------------------------------------------- %%
@@ -279,29 +282,22 @@ no Apêndice \ref{ape:entrevista} desta pesquisa:
 \begin{table}[h!]
 	\begin{tabular}{ | p{2cm} | p{5cm} | p{7cm} |}
 		\hline
-		Número & Perfil & Objetivo da Entrevista \\ \hline
+		Grupo & Perfil & Objetivo da Entrevista \\ \hline
 		
-		1 & Participantes que praticaram TDD e tiveram bons resultados
+		A & Participantes que praticaram TDD e tiveram bons resultados
 		& 
 		Descobrir os motivos da prática ter auxiliado o desenvolvedor; caso o desenvolvedor
 		seja experiente, a entrevista tentará separar a experiência da prática
 		
 		\\ \hline
 		
-		2 & Participantes que praticaram TDD e não tiveram bons resultados 
+		B & Participantes que praticaram TDD e não tiveram bons resultados 
 		&
 		Descobrir os motivos da qualidade do código não ter sido satisfatória,
 		mesmo utilizando-se TDD
 		
 		\\ \hline
-		
-		3 & Participantes que não praticaram TDD e tiveram bons resultados 
-		&
-		Entender as razões do desenvolvedor não ter utilizado TDD e mesmo assim
-		ter saído com um resultado satisfatório
-		
-		\\ \hline
-	
+			
 	\end{tabular}
 	\caption{Possíveis entrevistas}
 	\label{tab:possiveis-entrevistas}
@@ -323,7 +319,7 @@ discute a importância de cada uma das seções das entrevistas:
 		\textbf{Caracterizar a experiência do programador com desenvolvimento de
 		software, boas práticas de desenvolvimento e TDD} 
 		&
-		Importante para caracterizar o público-alvo da pesquisa.
+		Importante para caracterizar novamente o público-alvo da pesquisa.
 
 		\\
 
@@ -407,8 +403,8 @@ que apresentam características tipicamente procedurais, como separação entre
 dados e comportamento, entre outros. A categoria "Regular" será um meio termo entre
 os outros dois citados anteriormente.
 
-Para que a opinião do especialista seja imparcial, ele \textbf{não} saberá qual código
-foi gerado através da prática de TDD.
+Para que a opinião do especialista seja imparcial, ele \textbf{não} saberá a qual grupo
+pertence a cada código-fonte analisado.
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise dos dados}
@@ -434,7 +430,7 @@ o \textit{Atlas.ti} \footnote{\url{http://www.atlasti.com/}. Último acesso em 3
 de maio de 2011.}, produzido na Alemanha, que permite ao pesquisador organizar textos,
 gráficos, áudios, e arquivos visuais, e juntá-los com códigos e anotações. 
 
-Além disso, é possível ainda utilizar os códigos gerados para buscar alguma significância
+Além disso, é possível ainda utilizar os códigos-fonte gerados para buscar alguma significância
 estatística. Cada um dos problemas dados aos participantes contém problemas de design, e
 podem ser avaliados através de diferentes métricas:
 
@@ -463,8 +459,8 @@ Todas as métricas citadas acima já são de uso conhecido na academia, e não h
 motivos para validação. Testes estatísticos para análise de variância serão utilizados
 para verificar se TDD influencia nas métricas acima.
 A variância dos dados obtidos na opinião do especialista sobre cada código-fonte gerado
-será utilizado também como entrada para algoritmos estatísticos, objetivando também
-avaliar a possível influência de TDD na opinião do mesmo. Além do mais, durante a análise, novas
+será utilizado também como entrada para algoritmos estatísticos. 
+Durante a análise, novas
 métricas possam surgir de acordo com o que for encontrado na entrevista.
 
 Além disso, com todos os dados em mãos, o pesquisador deverá constantemente triangular
@@ -552,13 +548,13 @@ que a contribuição do investigador para o contexto da pesquisa pode ser útil 
 positiva ao invés de prejudicial. Além do mais, o pesquisador é responsável por
 identificar todos os valores pessoais, pressuposições e vieses deste estudo.
 
-Eu tenho formação em Ciência da Computação, e desenvolvo software há 8
-anos. Pratico TDD diariamente nos últimos 3 anos, e possuo profundos
+O autor desta pesquisa tem formação em Ciência da Computação, e desenvolve software há 8
+anos. Pratica TDD diariamente nos últimos 3 anos, e possui profundos
 conhecimentos teóricos e práticos sobre orientação a objetos e métodos ágeis.
-Além disso, palestrei sobre TDD em eventos da indústria brasileira
+Além disso, o autor palestrou sobre TDD em eventos da indústria brasileira
 de desenvolvimento de software, como a Agile Brazil 2010, o .NET Architects
-2010, e o QCON São Paulo 2010. Eu acredito que minha experiência nessas
-áreas aumentam minha capacidade de análise dos efeitos de TDD no design de sistemas 
+2010, e o QCON São Paulo 2010. O autor desta pesquisa acredita que sua experiência nessas
+áreas aumentam sua capacidade de análise dos efeitos de TDD no design de sistemas 
 orientados a objetos.
 
 %% ------------------------------------------------------------------------- %%
