@@ -12,7 +12,7 @@ exemplo, é dar \textit{feedback} sobre o código durante sua escrita.
 Test-Driven Development (TDD), popularizada por Kent Beck por meio de seu livro
 \textit{TDD: By Example} em 2001 \cite{TDDByExample}, é mais uma das práticas
 ágeis na qual o foco é dar \textit{feedback}. TDD tem grande importância durante o ciclo
-de desenvolvimento uma vez que, conforme sugerido pelas práticas ágeis, o design de um
+de desenvolvimento uma vez que, conforme sugerido pelas práticas ágeis, o \textit{design} de um
 software deve emergir à medida que o software cresce. E, para responder
 rapidamente a essas alterações, é necessário um constante \textit{feedback} sobre a
 qualidade interna e externa do código.
@@ -25,12 +25,20 @@ duplicação de dados ou de código gerada pelo processo.
 Simplicidade deve ser também algo intrínseco ao processo; o praticante
 deve buscar sempre escrever o teste mais simples que falhe e escrever a implementação mais simples
 que faça o teste passar.
-
 Esse ciclo
 é também conhecido como 
 "Vermelho-Verde-Refatora" (ou \textit{"Red-Green-Refactor"}), uma vez que lembra as cores que um 
 desenvolvedor normalmente vê quando faz TDD: o vermelho geralmente significa que
 o teste está falhando, e o verde quando o teste foi executado com sucesso.
+
+A prática divide o trabalho do desenvolvedor em duas partes.
+A primeira se preocupa em escrever um código que funcione (composta pelas
+atividades de escrever o teste e fazê-lo passar). Já a segunda parte se preocupa
+com um código claro, expressivo e de fácil manutenção (composta pela atividade
+de refatoração). Ron Jeffries fez uma famosa afirmação sobre TDD em que explica
+essa divisão: \textit{``Código claro que funciona''} \cite{TDDByExample}. Na
+sua opinião, o programador primeiro se preocupa com a parte ``que funciona'', 
+para depois deixar o ``código claro''.
 
 As diversas práticas da Programação Extrema provêm \textit{feedbacks} sobre pontos diferentes 
 do projeto e em diferentes escalas. 
@@ -48,17 +56,8 @@ baseado no trabalho dele, pode ser visto na Figura
   \label{fig:agile-feedback}
 \end{figure}
 
-A prática divide o trabalho do desenvolvedor em duas partes.
-A primeira se preocupa em escrever um código que funcione (composta pelas
-atividades de escrever o teste e fazê-lo passar). Já a segunda parte se preocupa
-com um código claro, expressivo e de fácil manutenção (composta pela atividade
-de refatoração). Ron Jeffries fez uma famosa afirmação sobre TDD em que explica
-essa divisão: \textit{``Código claro que funciona''} \cite{TDDByExample}. Na
-sua opinião, o programador primeiro se preocupa com a parte ``que funciona'', 
-para depois deixar o ``código claro''.
-
 Este capítulo aborda a prática de TDD, bem como cita
-seus efeitos no teste e no design do software, conforme relatado pela
+seus efeitos no teste e no \textit{design} do software, conforme relatado pela
 literatura.
 
 %% ------------------------------------------------------------------------- %%
@@ -69,7 +68,7 @@ A prática ajuda o programador a evitar erros de regressão, em que a implementa
 uma nova funcionalidade quebra uma outra funcionalidade já existente no sistema.
 Essa bateria também provê segurança durante as
 constantes refatorações de código que são feitas durante o processo de
-desenvolvimento, e possibilita com que ele altere o design e garanta que o
+desenvolvimento, e possibilita com que ele altere o \textit{design} e garanta que o
 comportamento ainda seja o mesmo. 
 A quantidade de código coberto pelos testes também tende a ser alta, uma vez que o
 desenvolvedor deve sempre escrever um teste antes de implementar uma nova
@@ -90,7 +89,7 @@ erros de regressão, e com isso tem sua produtividade aumentada
 \cite{george-e-williams}.
 
 %% ------------------------------------------------------------------------- %%
-\section{TDD e Design}
+\section{TDD e \textit{Design}}
 \label{cap:tdd-e-design}
 
 É comum relacionar TDD à práticas de testes de software. No entanto, apesar de constar o
@@ -98,17 +97,17 @@ termo ``teste'' no nome, TDD não é visto apenas como uma prática de testes.
 Embora a criação de testes seja algo intrínseco ao processo, TDD é uma prática
 que auxilia o desenvolvedor a criar classes mais flexíveis, mais coesas e
 menos acopladas. Os testes são a ferramenta que o programador utiliza para
-validar o design criado. Por esse motivo, muitos se referem a TDD como
-\textit{Test-Driven Design}, ou seja, design guiado pelos testes
+validar o \textit{design} criado. Por esse motivo, muitos se referem a TDD como
+\textit{Test-Driven Design}, ou seja, \textit{design} guiado pelos testes
 \cite{tdd-taxonomy}.
 
 Muitos autores como Kent Beck \cite{aim-fire}, Dave Astels \cite{astels-tdd} e
 Robert Martin \cite{bob-martin} também afirmam que TDD é na verdade uma prática de
-design \cite{tdd-taxonomy} \cite{aim-fire}.
+\textit{design} \cite{tdd-taxonomy} \cite{aim-fire}.
 Na opinião desses autores, a mudança na ordem do ciclo de
 desenvolvimento tradicional, apesar de simples, agrega diversos outros
 benefícios ao código produzido: maior simplicidade, menor acoplamento e maior
-coesão das classes criadas, levando a um melhor design, entre
+coesão das classes criadas, levando a um melhor \textit{design}, entre
 outros. Ward Cunningham, um dos pioneiros da Programação Extrema, resume essa 
 discussão em uma frase: \textit{"Test-First programming is not a testing technique"} 
 que, em uma tradução livre, significa \textit{"Escrever primeiro os testes
@@ -117,7 +116,7 @@ não é uma prática de testes"}.
 %% ------------------------------------------------------------------------- %%
 \subsection{Definições incompletas}
 
-Não obstante o foco da prática em design, é possível encontrar muitas definições que
+Não obstante o foco da prática em \textit{design}, é possível encontrar muitas definições que
 não levam isso em conta. Algumas delas consideram apenas a ideia da
 inversão da ordem de desenvolvimento, na qual o programador primeiro
 escreve o teste e depois escreve o código que o faça passar.
@@ -129,13 +128,13 @@ apenas se um teste automatizado estiver falhando, e a eliminar duplicação. O
 objetivo de TDD é 'código claro que funcione'"}.
 
 Embora defina bem o ciclo que a prática impõe ao programador, a definição é incompleta, visto
-que ela não captura um dos pontos principais da prática, que é \textit{feedback} no design. 
+que ela não captura um dos pontos principais da prática, que é \textit{feedback} no \textit{design}. 
 Janzen também levanta esse problema e culpa até o próprio nome da prática, uma vez
-que ela possui a palavra ``testes'', mas não contém a palavra ``design'' 
+que ela possui a palavra ``testes'', mas não contém a palavra \textit{``design''} 
 \cite{tdd-really-improve}.
 
 Uma definição mais clara é a de que TDD é a arte de produzir testes
-automatizados para código de produção, usando esse processo para guiar o design e a programação.
+automatizados para código de produção, usando esse processo para guiar o \textit{design} e a programação.
 Para cada pequeno pedaço de funcionalidade, o desenvolvedor deve primeiro
 escrever um teste que especifique e valide o que o código irá fazer. O
 programador então produz somente o código necessário para fazer esse teste
@@ -143,12 +142,12 @@ passar. Em seguida, ele refatora (simplifica e clareia) tanto o código de produ
 quanto o código de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Efeitos no Design de Classes}
+\subsection{Efeitos no \textit{Design} de Classes}
 
 Na abordagem tradicional, programadores escrevem boa parte do código antes de
-o testarem. Ao perceberem posteriormente um problema no design, o custo para
+o testarem. Ao perceberem posteriormente um problema no \textit{design}, o custo para
 corrigir pode ser alto demais. Uma vantagem de escrever os testes antes é
-possibilitar que o desenvolvedor tome grande parte das decisões de design
+possibilitar que o desenvolvedor tome grande parte das decisões de \textit{design}
 enquanto o custo de mudança ainda é baixo.
 
 O teste é o primeiro cliente da
@@ -164,10 +163,10 @@ esperado, a não necessidade de pré-condições complicadas e a explicitação 
 todas as dependências que a classe possui.
 
 Quanto mais difícil for a escrita do teste, maior a chance da existência de
-algum problema de design. Segundo Michael Feathers, existe uma sinergia muito
-grande entre uma classe com alta testabilidade e um bom design: se o
-programador busca por testabilidade, acaba criando um bom design; se 
-busca por um bom design, acaba escrevendo um design mais
+algum problema de \textit{design}. Segundo Michael Feathers, existe uma sinergia muito
+grande entre uma classe com alta testabilidade e um bom \textit{design}: se o
+programador busca por testabilidade, acaba criando um bom \textit{design}; se 
+busca por um bom \texit{design}, acaba escrevendo um \textit{design} mais
 testável \cite{feathers-synergy}.
 
 TDD encoraja o programador a escrever componentes fracamente acoplados, de
@@ -201,23 +200,23 @@ dar "passos de bebê", obtendo \textit{feedback} mais rápido sobre o código qu
 escrevendo.
 
 Equipes ágeis optam por não fazer o chamado \textit{big design up-front (BDUF)},
-e deixam que o design evolua ao longo do tempo, mantendo o código o mais claro e
+e deixam que o \textit{design} evolua ao longo do tempo, mantendo o código o mais claro e
 simples possível, e refatorando sempre que há necessidade. Decisões de
-design são tomadas com a consciência de que elas serão alteradas no futuro
+\textit{design} são tomadas com a consciência de que elas serão alteradas no futuro
 \cite{is-design-dead}.
 
-Manter o design simples não é tarefa fácil, e TDD sugere que o programador
+Manter o \textit{design} simples não é tarefa fácil, e TDD sugere que o programador
 escreva sempre o código mais simples que atenda a necessidade. Somente se a
-necessidade crescer, é que o programador deverá evoluir o design. Uma decisão de
-design pode ser mais complicada do que parece e, sem um teste para mostrar isso
+necessidade crescer, é que o programador deverá evoluir o \textit{design}. Uma decisão de
+\textit{design} pode ser mais complicada do que parece e, sem um teste para mostrar isso
 rapidamente, o programador dificilmente perceberia o problema \cite{aim-fire}.
 
 Scott Ambler possui uma definição particular sobre como o praticante de TDD lida
-com a simplicidade de design. De acordo com suas ideias, TDD pode ser definido como
+com a simplicidade de \textit{design}. De acordo com suas ideias, TDD pode ser definido como
 ``\textit{TDD = Refatoração + Test-First Design}''. Ainda segundo o referido autor, um programador,
-antes de implementar uma nova funcionalidade, deve observar se o design atual
+antes de implementar uma nova funcionalidade, deve observar se o \textit{design} atual
 possibilita que essa funcionalidade seja implementada de maneira clara. Em caso
 afirmativo, o programador segue o ciclo, escrevendo um teste que falha e
 fazendo-o passar. Mas, em caso negativo, o programador deve refatorar a parte do
-design afetado pela nova funcionalidade, de maneira a possibilitar que ela seja
+\textit{design} afetado pela nova funcionalidade, de maneira a possibilitar que ela seja
 implementada da maneira mais fácil possível \cite{wambler-tdd}. 
