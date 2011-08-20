@@ -72,15 +72,25 @@ Ao final da geração da nota fiscal, o sistema ainda deve enviar essa nota por 
 para o SAP, e persistir na base de dados. Por simplicidade, o desenvolvedor pode usar
 os códigos abaixo, que simulam o comportamento do SMTP, SAP e banco de dados:
 
+\begin{lstlisting}
 class NotaFiscalDao {
-	public void salva(NotaFiscal nf) { System.out.println("salvando no banco"); }
+	public void salva(NotaFiscal nf) { 
+		System.out.println("salvando no banco"); 
+	}
 }
+
 class SAP {
-	public void envia(NotaFiscal nf) { System.out.println("enviando pro sap"); }
+	public void envia(NotaFiscal nf) { 
+		System.out.println("enviando pro sap"); 
+	}
 }
+
 class Smtp {
-	public void envia(NotaFiscal nf) { System.out.println("enviando por email"); }
+	public void envia(NotaFiscal nf) { 
+		System.out.println("enviando por email"); 
+	}
 }
+\end{lstlisting}
 
 O participante é livre para alterar os métodos, parâmetros recebidos ou qualquer outra coisa das classes acima.
 
