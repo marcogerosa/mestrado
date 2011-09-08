@@ -117,136 +117,21 @@ Exemplos de processamento:
 	\item Fatura de 1.500,00 com 2 boletos no valor de 500,00 e 400,00: fatura não marcada como PAGA, e dois pagamentos do tipo BOLETO criados 
 \end{itemize}
 
-\section{Exercício 4 - Saída do Quebra-Cabeça Numérico}
+\section{Exercício 4 - Filtro de Faturas}
 
-O participante deve de alguma forma imprimir a saída do quebra-cabeça numérico. Esse quebra-cabeça gera
-uma sequência de números, que devem ser impressos no seguinte formato: "[1 -> 2 -> 3 -> 4 ->5 ->6]" (incluindo os colchetes).
+O participante deverá implementar um filtro de faturas. Uma fatura contém um código, um valor, uma data,
+e pertence a um cliente. Um cliente tem um nome, data de inclusão e um estado.
 
-O código do quebra-cabeça maluco encontra-se abaixo:
-
-\begin{lstlisting}
-public class QuebraCabecaNumerico {
-
-	private int entrada;
-	private int saida;
-	private List<Numero> fila;
-	private Set<Integer> visitados;
-	private Numero solucao;
-	
-	public QuebraCabecaNumerico() {
-		this.fila = new ArrayList<Numero>();
-		this.visitados = new HashSet<Integer>();
-	}
-
-	public void geraCaminho(int entrada, int saida) {
-		this.entrada = entrada;
-		this.saida = saida;
-		
-		this.solucao = buscaSolucao();
-	}
-	
-	private Numero buscaSolucao() {
-		 
-		adicionaRaizNaFila();
-		
-		while(existemNumerosNaFila()) {
-			Numero numeroAtual = removeDaFila();
-			
-			if(encontrouSaida(numeroAtual)) return numeroAtual;
-			adicionaNaFila(
-				multiplicaPorDois(numeroAtual),
-				(ehPar(numeroAtual)?dividePorDois(numeroAtual):null),
-				somaDois(numeroAtual)
-			);
-		}
-		
-		return null;
-	}
-
-	private boolean ehPar(Numero numeroAtual) {
-		return numeroAtual.getValor()%2==0;
-	}
-
-	private boolean encontrouSaida(Numero numeroAtual) {
-		return numeroAtual.getValor() == saida;
-	}
-
-	private boolean existemNumerosNaFila() {
-		return fila.size()!=0;
-	}
-
-	private void adicionaRaizNaFila() {
-		fila.add(new Numero(entrada, null));
-	}
-	
-	private void adicionaNaFila(Numero... numeros) {
-		for(Numero numero : numeros) {
-			if(numero!=null) {
-				if(!visitados.contains(numero.getValor())) {
-					fila.add(numero);
-					visitados.add(numero.getValor());
-				}
-			}
-		}
-	}
-	
-	private Numero multiplicaPorDois(Numero numero) {
-		return new Numero(numero.getValor()*2, numero);
-	}
-
-	private Numero dividePorDois(Numero numero) {
-		return new Numero(numero.getValor()/2, numero);
-	}
-	
-	private Numero somaDois(Numero numero) {
-		return new Numero(numero.getValor()+2, numero);
-	}
-
-	private Numero removeDaFila() {
-		Numero topoDaFila = fila.get(0);
-		fila.remove(0);
-		return topoDaFila;
-	}
-
-}
-
-class Numero {
-	private final int valor;
-	private final Numero pai;
-	
-	public Numero(int valor, Numero pai) {
-		this.valor = valor;
-		this.pai = pai;
-	}
-	public int getValor() {
-		return valor;
-	}
-
-	public Numero getPai() {
-		return pai;
-	}
-}
-\end{lstlisting}
-
-Repare que o único método público existente "buscaSolucao()", invoca o algoritmo e guarda a solução
-dentro do atributo "solucao". Um exemplo de código que visita a árvore de números gerada pelo algoritmo é:
-
-\begin{lstlisting}
-	while(solucao!=null) {
-		int valor = solucao.getValor(); // esse eh o valor a ser impresso
-		solucao = solucao.getPai();
-	}
-\end{lstlisting}
-
-Exemplos de saídas do algoritmo:
+O filtro deverá então, dado uma lista de faturas, remover as que se encaixam em algum dos critérios
+abaixo:
 
 \begin{itemize}
-	\item Entrada: 2, 2 Saída: [2]
-	\item Entrada: 2, 4 Saída: [2 -> 4]
-	\item Entrada: 2,10 Saída: [2 -> 4 -> 8 -> 10]
-	\item Entrada: 3, 10 Saída: [3 -> 5 -> 10]
+	\item Se o valor da fatura for menor que 2000;
+	\item Se o valor da fatura estiver entre 1000 e 1500 e a data for menor ou igual a de um mês atrás;
+	\item Se o valor da fatura estiver entre 2500 e 3000 e a data de inclusão do cliente for menor ou igual a 2 meses atrás;
+	\item Se o valor da fatura for maior que 4000 e pertencer a algum estado da região Sul do Brasil.
 \end{itemize}
 
-O participante deve criar todo o código responsável pela saída do quebra-cabeça numérico. Uma classe com
-o método "main()" deverá ser entregue ao final, com exemplo de uso das classes criadas.
-
+O participante deve criar todo o código responsável pelo filtro de faturas.
+Uma classe com o método "main()" deverá ser entregue ao final, com exemplo 
+de uso das classes criadas.
