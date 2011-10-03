@@ -16,6 +16,11 @@ recorrentes, imagine que amanhã esse mesmo problema se repetirá.
 Escreva um código flexível o suficiente para que novas mudanças sejam fáceis de serem 
 implementadas.
 
+Você tem 50 minutos por exercício. Mas lembre-se de focar na qualidade. Um exercício de 
+qualidade pela metade é mais importante do que um exercício completo, sem qualidade.
+
+Lembre-se: dê o melhor de si em ambos os exercícios!
+
 \section{Exercício 1 - Calculadora de Salário}
 
 O participante deve implementar uma calculadora de salário de funcionários. Um
@@ -100,12 +105,18 @@ exemplo de uso das classes criadas.
 
 \section{Exercício 3 - Processador de Boletos}
 
-O participante deve implementar um processador de boletos. Esse processador receberá uma lista de boletos 
-(que contém basicamente código do boleto, data e valor pago) e a fatura respectiva (que contém data, valor total e nome do cliente). 
-O processador deve então, para cada boleto, criar um pagamento associado nessa fatura,
-guardando o valor pago, a data e o tipo do pagamento (nesse caso, "BOLETO").
-Além disso, caso a soma de todos os boletos ultrapasse o valor da fatura, a mesma deve ser marcada
-como "PAGA".
+Nesse exercício, o participante deverá implementar um processador de boletos. O objetivo desse processador
+é verificar todos os boletos e, caso o valor da soma de todos os boletos seja maior que o valor
+da fatura, então essa fatura deverá ser considerada como paga.
+
+Uma fatura contém data, valor total e nome do cliente. Um boleto cóntem código do boleto, data, e valor pago.
+
+O processador de boletos, ao receber uma lista de boletos, deve então, para cada boleto, criar um
+"pagamento" associado a essa fatura. Esse pagamento contém o valor pago, a data, e o tipo do pagamento efetuado
+(que nesse caso é "BOLETO").
+
+Como dito anteriormente, caso a soma de todos os boletos ultrapasse o valor da fatura, a mesma deve
+ser marcada como "PAGA".
 
 O participante deve criar todo o código responsável pelo processador de boletos. Uma classe com
 o método "main()" deverá ser entregue ao final, com exemplo de uso das classes criadas.
@@ -114,7 +125,8 @@ Exemplos de processamento:
 
 \begin{itemize}
 	\item Fatura de 1.500,00 com 3 boletos no valor de 500,00, 400,00 e 600,00: fatura marcada como PAGA, e três pagamentos do tipo BOLETO criados 
-	\item Fatura de 1.500,00 com 2 boletos no valor de 500,00 e 400,00: fatura não marcada como PAGA, e dois pagamentos do tipo BOLETO criados 
+	\item Fatura de 1.500,00 com 3 boletos no valor de 1000,00, 500,00 e 250,00: fatura marcada como PAGA, e três pagamento do tipo BOLETO criados
+	\item Fatura de 2.000,00 com 2 boletos no valor de 500,00 e 400,00: fatura não marcada como PAGA, e dois pagamentos do tipo BOLETO criados 
 \end{itemize}
 
 \section{Exercício 4 - Filtro de Faturas}
