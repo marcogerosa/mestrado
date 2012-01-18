@@ -1,0 +1,703 @@
+%% ------------------------------------------------------------------------- %%
+\chapter{Planejamento do estudo} 
+\label{cap:qualitativo-planejamento}
+
+\section{Métodos qualitativos de pesquisa}
+
+Conduzir um estudo experimental em engenharia de software sempre foi uma
+atividade difícil. Uma das razões para isso é o fator humano, muito presente 
+no processo de desenvolvimento de software, como sugerido por métodos ágeis  em
+geral \cite{AgileManifesto}. Dessa maneira, o paradigma de pesquisa analítico 
+não é suficiente para investigar casos reais complexos envolvendo pessoas e 
+suas interações com a tecnologia \cite{guidelines-case-study}.
+
+Conforme apontado por Seaman \cite{seaman}, esses problemas já foram levantados
+por muitos pesquisadores e, finalmente, tem-se considerado a influência de
+problemas não-técnicos e a intersecção entre eles e a parte técnica
+dentro da engenharia de software. 
+Apesar disso, o número de estudos empíricos é ainda muito pequeno dentro da área
+de pesquisa em ciência da computação: Sjoberg \textit{et al.} \cite{sjoberg} encontraram
+apenas 103 experimentos em 5.453 artigos, e Ramesh \textit{et al.} \cite{ramesh}
+identificaram menos de 2\% de experimentos envolvendo humanos e apenas 0.16\% 
+estudos em campo dentre 628 artigos.
+
+Uma pesquisa qualitativa é um meio para se explorar e entender a influência que 
+indivíduos ou grupos atribuem a um problema social ou humano. O processo de
+pesquisa envolve questões emergentes e procedimentos, dados geralmente colhidos
+sob o ponto de vista do participante, com a análise feita de maneira indutiva
+indo geralmente de um tema específico para um tema geral e com o pesquisador
+fazendo interpretações do significado desses dados. Dados capturados por estudos
+qualitativos são representados por palavras e figuras, e não por números.
+O relatório final tem uma estrutura flexível e os pesquisadores que se
+dedicam a esta forma de pesquisa apoiam uma maneira de olhar para a pesquisa que
+honra o estilo indutivo, o foco em termos individuais, e a importância de mostrar a 
+complexidade de uma situação \cite{creswell}. 
+
+Conforme discutido no Capítulo \ref{cap:trabalhos-relacionados}, muitos 
+trabalhos avaliaram TDD, e alguns deles relatam inclusive uma melhora
+no design de classes, como um menor acoplamento, uma maior coesão, e até mesmo
+mais simplicidade. 
+Grande parte deles focam nos efeitos da prática no código final, mas poucos 
+estudos tentam entender a possível influência da experiência
+nos resultados encontrados, e como TDD e a prática de escrever o teste 
+antes do código real realmente guiam o programador 
+em direção a essas melhorias.
+
+Para entendê-las, este estudo faz uso de uma combinação entre um experimento controlado inicial, no qual participantes serão
+convidados a resolver exercícios pré-preparados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
+estudo qualitativo entrará em detalhes objetivando entender como a prática influenciou as decisões de design dos participantes.
+Este capítulo detalha o planejamento do estudo, bem como o processo de análise dos dados colhidos.
+
+
+%% ------------------------------------------------------------------------- %%
+\section{Características de pesquisas qualitativas}
+
+Métodos qualitativos de busca possuem diversas características, que juntas fazem
+com que a pesquisa se torne rica em detalhes. Creswell \cite{creswell} lista
+alguma delas:
+
+\begin{enumerate}
+  
+  \item \textbf{Pesquisador como instrumento chave de pesquisa}. O pesquisador
+  tem papel fundamental no processo, visto que ele é o responsável pela captura dos
+  dados, por meio da examinação de documentos, entrevistas ou observações feitas
+  no mundo real. Pesquisadores tendem a não utilizar questionários ou
+  instrumentos desenvolvidos por outros pesquisadores;
+  
+  \item \textbf{Múltiplas fontes de dados}. Pesquisas qualitativas geralmente
+  colhem informações de múltiplas fontes de dados, como entrevistas,
+  observações e documentos.
+  
+  \item \textbf{Análise dos dados indutiva}. Os dados são analisados de dentro
+  para fora, por meio da categorização dos mesmos em unidades de informação cada
+  vez mais abstratas. Esse processo indutivo gera diversas idas e vindas entre
+  os temas encontrados e a base de dados, até o momento em que os pesquisadores
+  estabeleçam um conjunto compreensivo de temas;
+  
+  \item \textbf{Visão do participante}. Trabalhos qualitativos focam na visão do
+  participante sobre o objeto em estudo, e não na visão que o pesquisador ou a
+  literatura tem a respeito do mesmo;
+  
+  \item \textbf{Design emergente}. O processo de pesquisa qualitativa é
+  emergente. Isso significa que o processo não deve ser completamente descrito
+  desde o começo, mas sim modificado de acordo com o início da coleta dos dados
+  no campo de pesquisa. A ideia chave por trás da pesquisa qualitativa é
+  aprender sobre o problema com os participantes e direcionar a pesquisa para
+  obter aquela informação;
+  
+  \item \textbf{Interpretativa}. Pesquisadores fazem uma interpretação daquilo
+  que veem, ouvem e entendem. As interpretações do pesquisador não podem ser
+  separadas do seu conhecimento, história, contexto e entendimentos anteriores
+  do problema. Ao final do relatório da pesquisa, leitores também fazem suas
+  críticas, oferecendo ainda novas interpretações para o estudo. Com os
+  leitores, participantes e pesquisadores fazendo interpretações, múltiplas
+  visões do problema podem emergir;
+  
+\end{enumerate} 
+
+\subsection{Estudos mistos}
+
+Abordagens que combinam tanto métodos qualitativos quanto quantitativos são conhecidos por métodos mistos. 
+É mais do que apenas coletar e analisar ambos tipos de dados; é também fazer interpretações que unam ambos
+resultados encontrados, de forma que a força do estudo seja maior do que se ambos os métodos fossem
+usados separadamente \cite{creswell}.
+
+Possíveis diferentes abordagens podem ser levadas em conta em estudos mistos. Eles podem começar com estudos
+qualitativos de exploração, seguidos de um estudo quantitativo com uma população maior de forma a
+generalizar os resultados para a população. Alternativamente, o estudo pode começar com um estudo quantitativo
+no qual uma teoria ou conceito é estado, seguido de um estudo qualitativo, envolvendo exploração detalhada
+de alguns casos ou indivíduos \cite{creswell}.
+
+Reconhecendo que todos possuem limitações, pesquisadores perceberam que um viés de um método pode ser eliminado
+por um outro método, e para isso devem sempre tentar triangular conjuntos de dados diferentes.
+Por exemplo, os resultados de um método pode ajudar a identificar participantes a serem estudados por um outro método.
+Dados qualitativos e quantitativos podem ser unidos em um único conjunto de dados ou seus resultados usados
+lado a lado para que um reforçe as ideias do outro \cite{creswell}.
+
+%% ------------------------------------------------------------------------- %%
+\section{Questões de pesquisa}
+
+Os objetivo principal deste estudo é \textbf{entender a relação da prática de TDD 
+e as decisões de design tomadas pelo programador durante o processo de 
+design de sistemas orientados a objetos}.
+Para compreendê-la, tenta-se responder às questões listadas
+abaixo:
+
+\begin{enumerate}
+
+	\item Qual a influência de TDD no design de classes?
+
+	\item Qual a relação entre TDD e as tomadas de decisões de design
+	feitas por um desenvolvedor?
+
+	\item Como a prática de TDD influencia o programador no processo de  
+	design de classes, do ponto de vista do acoplamento, coesão e simplicidade?
+
+\end{enumerate}
+
+%% ------------------------------------------------------------------------- %%
+\section{Design da pesquisa}
+
+Participantes de diferentes empresas de desenvolvimento de software do mercado
+brasileiro serão selecionados. Todos eles serão solicitados a resolver 
+alguns problemas utilizando Java, dentro de um período de tempo limitado. 
+
+Os participantes serão solicitados a utilizar TDD em um problema, e a não utilizar
+TDD no outro. Os problemas resolvidos bem como em qual deles o participante
+deverá utilizar TDD será randomizada, afim de diminuir o problema do aprendizado.
+
+Todas as implementações feitas serão salvas, para que o pesquisador tenha a possibilidade
+de calcular métricas de código sob elas. Ao final do exercício, todos participantes
+também responderão um questionário, sobre seu desempenho na resolução dos problemas.
+
+Em seguida, uma análise inicial servirá para filtrar os candidatos
+mais interessantes, que serão posteriormente entrevistados. 
+Todos os dados gerados no processo, 
+como código produzido e as entrevistas, serão analisados.
+
+Entrevistas tendem a ser úteis já que os participantes podem prover dados históricos 
+sobre o objeto em estudo.
+Além disso, entrevistas permitem ao pesquisador o controle sobre as questões a serem feitas.
+Mas, um possível problema é que as entrevistas geralmente provêm informações indiretas, 
+filtradas por meio da visão dos participantes. Além disso, a presença do pesquisador pode 
+enviesar as respostas.
+Outro possível problema é que nem todos os participantes são articulados e perceptivos, e conseguem
+formalizar, em palavras, o que conhecem ou estão pensando.
+
+A intenção deste estudo é obter informações relevantes sobre como os
+praticantes de TDD utilizam a prática para influenciar o design de suas
+classes. Na tentativa de capturar o máximo de informações possíveis, esse estudo
+inclui análises dos códigos produzidos e das entrevistas com os participantes.
+
+As sub-seções abaixo detalham cada um dos pontos levantados acima.
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Participantes da pesquisa}
+\label{sec:planejamento-participantes}
+
+Desenvolvedores atuantes no mercado de 
+software brasileiro serão selecionados para participarem da pesquisa.
+Certos critérios serão levados em consideração no momento de convidar os participantes:
+
+\begin{itemize}
+	\item \textbf{Experiência em TDD.} O estudo convidará praticantes com diferentes
+	níveis de experiência. Programadores inexperientes em TDD (pouco conhecimento teórico e prático)
+	e programadores com experiência em TDD (praticantes frequentes há no mínimo 3 anos)
+	
+	\item \textbf{Experiência em desenvolvimento de software.} Participantes
+	experientes (com no mínimo 3 anos de desenvolvimento e bons conhecimentos em orientação a objetos) e 
+	inexperientes (com no máximo 1 ano de desenvolvimento e pouco conhecimento de orientação a objetos).
+
+	\item \textbf{Conhecimentos em Java.} 
+	Participantes devem ter experiência em Java, já que os problemas deverão ser resolvidos
+	nessa linguagem.	
+	
+	\item \textbf{Conhecimentos em Testes de Unidade.} Todos os participantes devem ser
+	familiarizados com a escrita de testes de unidade, independente do seu conhecimento
+	em TDD.
+
+\end{itemize}
+
+Esses pontos serão avaliados por meio de um questionário, que deverá ser
+respondido por todos os participantes antes do início do estudo.
+
+O objetivo de trazer participantes com as mais diferentes experiências em desenvolvimento
+de software e TDD é discutir os pontos abaixo:
+
+\begin{itemize}
+	\item \textbf{Experientes em desenvolvimento de software e em TDD:} 
+	Por ser composto de participantes com experiência tanto
+	em desenvolvimento de software quanto em TDD, deve-se entender por que
+	pessoas com alta experiência optam por utilizar a prática;
+	
+	\item \textbf{Experientes em desenvolvimento de software, mas não em TDD:} 
+	Por serem participantes com experiência em desenvolvimento
+	de software, mas não praticantes de TDD, deve-se entender a diferença entre
+	praticar TDD e não praticar TDD;
+		
+	\item \textbf{Inexperientes tanto em desenvolvimento de software, quanto em TDD:} 
+	Por serem participantes sem nenhuma experiência, é esperado que
+	a prática ajude na qualidade do código. Caso isso não aconteça, deve-se 
+	entender o motivo de TDD não ter auxiliado os desenvolvedores durante a 
+	criação do design.
+\end{itemize}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Execução do estudo}
+\label{sec:execucao}	
+
+Todos os participantes serão convidados a resolver os exercícios pré-preparados. 
+Para que isso aconteça sem maiores problema, o pesquisador criará um caderno
+de exercício na qual o participante deverá segui-lo, que pode ser encontrado
+no Apêndice \ref{ape:caderno}.
+
+Os participantes terão 2h para resolver os exercícios. 
+Todos os códigos serão salvos ao final do estudo para que possam ser analisados junto
+com os dados das entrevistas.
+O tempo é considerado suficiente para que o participante resolva todos eles. 
+
+Os participantes não poderão se comunicar durante o exercício, e cada um deles receberá
+os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
+pode ocorrer durante a resolução dos problemas. 
+
+O participante receberá 2 exercícios. Em 1, o participante deverá praticar TDD; no outro,
+ele deverá programar sem a prática. A razão disso
+é fazer com que o participante exercite ambos estilos de desenvolvimento (com e sem TDD)
+e tenha mais embasamento para ser entrevistado nas próximas etapas do estudo. 
+Cada participante receberá instruções claras no caderno de exercícios 
+sobre quais exercícios deverão ser feitos
+com TDD. A escolha desses exercícios também será randomizada na tentativa de diminuir
+o efeito do aprendizado.
+
+Ao final, todos deverão responder a um questionário online, 
+que conterá perguntas sobre a qualidade
+do código que ele acabou de produzir. Esse questionário
+é melhor detalhado na Seção \ref{sec:questionario}.
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Problemas Propostos}
+\label{sec:exercicios}
+
+Serão propostos 4 problemas que devem ser resolvidos pelos participantes, utilizando
+linguagem Java. Participantes deverão utilizar JUnit \footnote{\url{http://www.junit.org}. 
+Último acesso em 18 de Julho de 2011} para a escrita de testes
+automatizados de unidade. O objetivo desses exercícios é simular problemas de design 
+recorrentes em diversos projetos de software. Os enunciados encontram-se no Apêndice 
+\ref{ape:exercicios}.
+
+Será dito ao participante que os exercícios simulam problemas do mundo real, e ele deve
+ter em mente que as soluções geradas por ele serão mantidas por uma outra equipe.
+Por esse motivo, será solicitado ao participante que implemente a solução mais elegante e flexível 
+possível.
+
+O primeiro exercício pede ao participante que implemente uma calculadora de salário, em que
+o algoritmo de cálculo varia de acordo com o cargo do funcionário. Em uma implementação
+procedural e mais difícil de ser mantida, esse problema seria resolvido através de uma
+sequência de "ifs"; todo novo cargo obrigaria o desenvolvedor a acrescentar mais um "if" 
+nessa classe. Uma implementação mais flexível teria cada algoritmo de cálculo em uma 
+classe separada.
+
+O segundo exercício pede que o participante implemente o processo de geração de uma nota fiscal e, após
+esse processo, a nota gerada deve passar por diversos outros processos, como envio por e-mail, envio
+para um sistema terceiro, persistir na base de dados, etc. Possíveis más implementações incluem a 
+implementação de uma única classe que faria todo o processo, ou uma classe altamente acoplada.
+Uma solução mais elegante seria extrair cada responsabilidade em uma classe diferente e compô-las
+através, por exemplo, da implementação do padrão Observer \cite{gof}.
+
+O terceiro exercício pede ao participante a implementação de um simples processador de boletos que
+deve marcar a fatura como paga, caso a soma de pagamentos seja maior ou igual ao valor da fatura. 
+Em uma implementação elegante, o comportamento de marcar a fatura como paga deveria estar encapsulado, e 
+ficar dentro da classe "Fatura", ou entidade similar criada pelo participante.
+
+No quarto exercício, o participante deverá escrever um algoritmo responsável por filtrar faturas de
+acordo com diferentes critérios. Em uma implementação procedural, esse único algoritmo seria
+responsável por validar todos os critérios. Mas, por serem complexos, esses filtros deveriam ser divididos em 
+várias classes, ao invés de uma única classe responsável por todos esses critérios.
+
+% TODO relacionar exercicios com SOLID
+% TODO relacionar workshop com a pesquisa mais pra frente
+Os exercícios propostos são baseados em um workshop criado pelo autor desta pesquisa, e o mesmo
+foi aplicado para 2 turmas diferentes, uma delas dentro do Agile Brazil 2011, o
+maior evento brasileiro de métodos ágeis, que tinha um público heterogêneo, e uma delas para
+uma das turmas do curso de Ciência da Computação do Instituto de Matemática e Estatística da Universidade
+de São Paulo, onde o público era constituído quase que em sua maioria de alunos de graduação. 
+
+Neste workshop, os participantes, além de receberem os mesmos
+exercícios, também possuíam um código-fonte inicial do exercício, e a tarefa era
+apenas finalizar a solução. No entanto, o código-fonte inicial enviesava o participante a gerar
+uma má implementação. O resultado de ambas as turmas foram semelhantes; alguns participantes
+não perceberam a má qualidade do código inicial e apenas deram prosseguimento ao código
+de má qualidade, Outros perceberam os problemas e refatoraram os códigos em busca
+de um melhor \textit{design}. Ambas as turmas gostaram dos exercícios
+propostos.
+
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Questionário}
+\label{sec:questionario}
+
+% TODO atualizar
+Como mencionado anteriormente, ao final dos exercícios o participante responderá a um questionário.
+Algumas
+perguntas serão abertas, nas quais o participante poderá dar uma opinião mais embasada sobre o assunto,
+e outras serão fechadas, escolhendo um valor dentro de uma escala
+Likert com 5 valores.
+
+As perguntas abaixo visam obter a opinião dos participantes sobre o estudo, como clareza dos
+exercícios. O objetivo é aumentar a validade do estudo.
+Além disso, entender se os exercícios propostos são parecidos com os problemas encontrados no mundo
+real ajudarão a aumentar a possibilidade de generalização do estudo. 
+
+\begin{enumerate}
+	\item Como você avalia a clareza do exercício?
+	\item Como você avalia o tempo que teve para resolver os exercícios?
+	\item Em sua opinião, os problemas de design enfrentados nos exercícios se parecem com os do mundo real?
+\end{enumerate}
+
+Na próxima bateria de perguntas, o objetivo é obter a visão do desenvolvedor sobre o próprio código gerado e como ele
+faz para obter feedback sobre a qualidade do código que escreve.
+
+\begin{enumerate}
+	\item Qual sua opinião em relação a qualidade do código gerado?
+	\item O que você faz para manter seu código com alta qualidade?
+	\item Em relação ao design das classes que você criou, como eles surgiram? O que você fez para avaliar a 
+	qualidade do design gerado? Explique sua resposta.
+\end{enumerate}
+
+Informações sobre a maneira com que a prática foi utilizada e a possível
+diferença que ela fez serão requisitadas:
+
+\begin{enumerate}
+	\item Durante os exercícios nos quais deveria-se utilizar TDD, como você avalia a maneira com que praticou? Usou a prática o 
+	tempo todo, sempre escreveu um teste antes de implementar, e tentou ser o mais simples possível?
+	\item A prática de TDD fez alguma diferença no código final gerado? Quais? Como? Explique sua resposta.
+	\item Você resolveu exercícios com e sem a prática de TDD. Em relação ao processo de criação do design, você percebeu alguma
+	diferença ao praticar TDD? Qual? Explique sua resposta.
+	\item Será que TDD é realmente necessário ou basta apenas o desenvolvedor usar a sua experiência? Explique sua resposta.
+	\item Em sua opinião, os desenvolvedores devem usar TDD? Por que?
+\end{enumerate}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Escolha de candidatos para a entrevista}
+
+Após a implementação, os dados colhidos serão parcialmente analisados. O intuito
+é encontrar, dentre todos os participantes, aqueles com dados mais relevantes
+e que mereçam ser aprofundados.
+Para isso, informações como qualidade dos códigos gerados, grupo que participa
+do estudo, e respostas no questionário influenciarão na escolha.
+
+
+%% ------------------------------------------------------------------------- %%
+% TODO atualizar
+\subsection{Entrevistas}
+\label{sec:planejamento-estrategia-entrevistas}
+
+A entrevista será semi-estruturada, dando liberdade ao
+pesquisador para mudar o rumo das perguntas, caso se faça necessário.
+Além disso, todas as perguntas serão abertas, permitindo que o desenvolvedor dê
+uma resposta ampla sobre o assunto.
+
+A entrevista repetirá um conjunto de perguntas para cada exercício resolvido.
+Essas perguntas sofrerão mudanças de acordo com o resultado de cada exercício resolvido.
+A tabela \ref{tab:possiveis-entrevistas} abaixo mostra as diferentes possíveis perguntas, que são encontradas
+no Apêndice \ref{ape:entrevista} desta pesquisa.
+
+\begin{table}[h!]
+	\centering	
+	\begin{tabular}{ | p{2cm} | p{5cm} | p{7cm} |}
+		\hline
+		Grupo & Perfil & Objetivo da Entrevista \\ \hline
+		
+		A & Exercício resolvido com TDD e que teve bom resultado final
+		& 
+		Descobrir os motivos da prática ter influenciado na qualidade do código final e
+		entender como TDD guiou o desenvolvedor naquelas decisões de design.
+		
+		\\ \hline
+		
+		B & Exercício resolvido com TDD e que teve mau resultado final
+		&
+		Descobrir os motivos da qualidade do código não ter sido satisfatória,
+		mesmo utilizando-se TDD.
+		
+		\\ \hline
+			
+		C & Exercício resolvido sem TDD e que teve bom resultado final
+		&
+		Descobrir o motivo da não necessidade da prática de TDD, e qual seria a diferença
+		da utilização da prática, na visão do participante.
+		
+		\\ \hline
+		
+		D & Exercício resolvido sem TDD e que teve mau resultado final
+		&
+		Descobrir, na visão do participante, qual seria a diferença da implementação
+		caso ela utilizasse TDD.
+		
+		\\ \hline
+		
+	\end{tabular}
+	\caption{Possíveis entrevistas}
+	\label{tab:possiveis-entrevistas}
+\end{table}
+
+Todos os conjuntos de entrevistas possuem algumas características semelhantes,
+como seções específicas para identificar novamente a experiência do desenvolvedor,
+e entender a opinião dele em relação a outras práticas ágeis que também podem
+dar retorno sobre a qualidade do código, como programação pareada. A Tabela \ref{tab:questoes}
+discute a importância de cada uma das seções das entrevistas.
+
+\begin{table}[h!]
+	\centering	
+	\begin{tabular}{ | p{6cm} | p{7cm} | }
+		\hline
+		
+		Objetivo & Importância \\
+		
+		\hline
+		\textbf{Caracterizar a experiência do programador com desenvolvimento de
+		software, boas práticas de desenvolvimento e TDD} 
+		&
+		Importante para caracterizar novamente o público-alvo da pesquisa.
+
+		\\
+
+		\hline
+		\textbf{A relação entre a experiência do programador e os efeitos de TDD
+		na qualidade do design} 
+		&
+		Por ser um possível fator de influência, o pesquisador colherá
+		informações sobre a experiência do programador com desenvolvimento de software, 
+		conceitos de orientação a objetos e TDD.
+
+		\\
+
+		\hline
+		\textbf{A visão do desenvolvedor sobre a prática de TDD} 
+		&
+		O pesquisador alinhará as definições da prática com todos os participantes da
+		pesquisa.
+
+		\\
+
+		\hline
+		\textbf{A influência de de TDD nas decisões de design tomadas pelo programador} 
+		&
+		Entender a opinião do participante sobre os efeitos de TDD
+		nos vários pontos de vista importantes em sistemas orientados a objetos, como
+		acoplamento, coesão e simplicidade. Além do mais, entender como o teste
+		dá feedback ao desenvolvedor sobre esses pontos.
+		
+		\\
+
+		\hline												
+	\end{tabular}
+	\caption{Relação entre os objetivos e as perguntas da entrevista}
+	\label{tab:questoes}
+\end{table}
+
+O processo de entrevista será composto por uma breve introdução da pesquisa, tomando
+o cuidado para não enviesar o participante, seguida de algumas perguntas que visam
+caracterizar o perfil do participante; perguntas como qual a experiência do
+desenvolvedor em desenvolvimento de software e TDD são necessárias para ajudar o
+pesquisador no entendimento das respostas dadas. Além disso, perguntas sobre
+referências, livros e outros pontos de informação nas quais o participante lê a
+respeito da prática servem para que o pesquisador entenda o embasamento teórico
+do praticante sobre TDD. Durante a análise, o pesquisador deverá analisar cada
+grupo de forma separada, uma vez que os resultados encontrados podem ser
+diferentes.
+
+Em seguida, o pesquisador perguntará os principais pontos da pesquisa.
+Para isso, o pesquisador fará uso não só de perguntas abertas, mas também
+voltará aos códigos gerados durante o exercício, para que as respostas se tornem técnicas e
+específicas, caso necessário. 
+Por fim, o pesquisador pedirá referências ao participante sobre
+possíveis próximos entrevistados, a fim de descobrir outros programadores que possam
+revelar informações interessantes.
+
+Uma vez que as decisões tomadas por um programador durante a atividade de design
+podem ser influenciadas por vários diferentes fatores, 
+as perguntas serão feitas de modo que o participante triangule suas respostas,
+e tente isolar o máximo possível a atividade de TDD dos outros possíveis fatores
+de influência. Participantes que não articularem bem suas respostas serão eliminados
+durante o processo de análise.
+
+Todas as entrevistas serão gravadas, para que o pesquisador possa fazer a
+transcrição e reveja os dados a qualquer momento durante o processo. Além disso,
+o pesquisador também tomará notas, capturando informações como reações dos 
+participantes a determinadas perguntas, ou qualquer outra informação relevante. 
+
+As entrevistas serão feitas em dias diferentes para que, ao final
+de cada dia, o pesquisador possa discutir sobre os pontos levantados no dia
+corrente e sugira melhorias no instrumento de pesquisa. 
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Avaliação do Especialista}
+% TODO atualizar
+\label{sec:planejamento-especialista}
+
+Um especialista será convidado a analisar os códigos-fonte e categorizá-los
+em: Bom, Regular e Ruim. Dentro da categoria "Bom", se encaixarão códigos 
+que apresentam uso de boas práticas de OO. Na categoria "Ruim'' se encaixarão códigos
+que apresentam características tipicamente procedurais, como separação entre
+dados e comportamento, entre outros. A categoria "Regular'' será um meio termo entre
+os outros dois citados anteriormente.
+
+Para que a opinião do especialista seja imparcial, ele \textbf{não} saberá a qual grupo
+pertence e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de TDD).
+
+%% ------------------------------------------------------------------------- %%
+\section{Análise dos dados}
+\label{sec:planejamento-analise}
+
+O procedimento de análise, baseado em \cite{creswell}, que está representado na
+Figura \ref{fig:analise-dados}, ilustra o processo de análise que será utilizado
+nessa pesquisa. Apesar de parecer uma abordagem em cascata, ele é na prática 
+iterativo, visto que os passos são interconectados. 
+
+A princípio, todos os dados recolhidos são reunidos e preparados. As entrevistas
+serão transcritas, assim como as observações feitas sobre as gravações das implementações.
+A seguir, para que o pesquisador possa buscar por erros no processo de transcrição, todos
+os dados serão re-lidos. Essa primeira leitura também servirá para o pesquisador ter
+uma ideia inicial das informações ali presentes.
+
+O processo de codificação e o agrupamento
+por temas será então realizado, e, por fim aparecerão como maiores
+contribuições da pesquisa qualitativa, durante o processo de interpretação dos
+dados pelo pesquisador. O software utilizado para o processo de codificação será
+o \textit{Atlas.ti} \footnote{\url{http://www.atlasti.com/}. Último acesso em 3
+de maio de 2011.}, produzido na Alemanha, que possibilita ao pesquisador organizar textos,
+gráficos, áudios, e arquivos visuais, e juntá-los com códigos e anotações. 
+
+Além disso, é possível ainda utilizar os códigos-fonte gerados para buscar alguma significância
+estatística. Cada um dos problemas dados aos participantes contém problemas de design, e
+podem ser avaliados através de diferentes métricas:
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | p{2cm} | p{7cm} | p{6cm} | }
+		\hline
+		
+		Número(s) & Possível Problema de Design & Métrica sugerida \\ \hline
+		1, 4 & Código complexo & Complexidade Ciclomática \\ \hline
+		1, 4 & Má Separação de Responsabilidades & Quantidade de Classes, Linhas de Código por Classe \\
+		
+		\hline
+		
+		2 & Alto acoplamento & Acoplamento Aferente, Acoplamento Eferente, Estabilidade \\ \hline
+		2 & Código complexo & Complexidade ciclomática \\
+		
+		\hline
+		
+		3 & Falta de coesão & LCOM \\
+		
+		\hline
+		
+	\end{tabular}
+	\caption{Problemas e métricas de código sugeridas}
+\end{table}
+
+Todas as métricas citadas já são de uso conhecido na academia. 
+Testes estatísticos para análise de variância serão utilizados
+para verificar se TDD influencia nas mesmas.
+A variância dos dados obtidos na opinião do especialista sobre cada código-fonte gerado
+será utilizado também como entrada para algoritmos estatísticos. 
+Durante a análise, novas
+métricas podem surgir de acordo com o que for encontrado na entrevista.
+
+Além disso, com todos os dados em mãos, o pesquisador deverá constantemente triangular
+as informações das diferentes fontes de dados. Por exemplo, caso um participante diga
+que TDD ajuda a diminuir o acoplamento, mas o código dele mostrar o contrário, ou caso
+a gravação mostre que o participante na verdade não usou TDD, o pesquisador
+deverá levar isso em conta durante o processo de análise.
+
+Durante o processo, o pesquisador constantemente validará toda e qualquer
+informação colhida e, caso seja necessário, a coleta de qualquer entrevista,
+observação ou métrica poderá ser refeita. Os participantes das entrevistas
+são comunicados de que o pesquisador poderá entrar em contato
+novamente para alguma eventual dúvida.
+Como mencionado anteriormente, caso algum participante não forneça informações
+relevantes ou forneça dados enviesados, ele será eliminado do estudo.
+
+\begin{figure}
+  \centering
+  \includegraphics[scale=0.5]{analisedados}
+  \caption{Processo de análise dos dados}
+  \label{fig:analise-dados}
+\end{figure}
+
+ %% ------------------------------------------------------------------------- %%
+\section{Validade e Confiabilidade do Estudo}
+\label{sec:planejamento-validacao}
+
+Para garantir a confiabilidade deste estudo, o pesquisador realizará os
+seguintes procedimentos:
+
+\begin{itemize}
+	\item \textbf{Checar as transcrições}. O objetivo é garantir que nenhum erro
+	óbvio seja cometido;
+
+	\item \textbf{Verificação de pesquisador auxiliar}. Um pesquisador auxiliar
+	checará se há algum desvio na definição dos códigos ou no significado dos códigos 
+	durante o processo de codificação;
+	
+	\item \textbf{Rastreabilidade dos dados}. Todos os dados colhidos serão
+	preservados em forma eletrônica.
+
+\end{itemize}
+
+A validade do estudo será buscada por alguns procedimentos executados pelos
+pesquisadores, dentre eles:
+
+\begin{itemize}
+	\item \textbf{Triangulação de diferentes fontes de dados}. A pesquisa será
+	realizada com participantes que possuem diferentes experiências, e diferentes
+	fontes de dados serão colhidas, como questionários, entrevistas, código gerado e 
+	a gravação do desenvolvedor escrevendo o código;
+
+	\item \textbf{Apresentar os resultados da pesquisa para os participantes e
+	verificar se eles concordam com os resultados gerados}. Garantir que os
+	participantes validem os dados encontrados, através de um grupo focal \cite{creswell},
+	diminui o viés do pesquisador;
+
+	\item \textbf{Prover descrição rica e detalhada sobre o ambiente}. A riqueza
+	dos detalhes mostra a qualidade do estudo, além de possibilitar a repetição do
+	experimento por outros pesquisadores;
+
+	\item \textbf{Esclarecer todos os possíveis vieses da pesquisa}. A pesquisa
+	deixa claro quais são suas limitações. Todas elas são discutidas no Capítulo
+	\ref{cap:ameacas}.
+
+\end{itemize}
+
+Em resumo, o principal meio de validação do estudo será o rico detalhamento dos
+participantes, dos dados colhidos e instrumentos de coleta, de forma
+que qualquer pesquisador interessado em replicar o experimento terá um
+arcabouço sólido para comparação \cite{merriam-1998}. A análise de
+dados também será relatada em detalhes para que os leitores tenham uma visão
+acurada sobre o método utilizado na pesquisa. 
+Além disso, essa pesquisa também é acompanhada pelo orientador do pesquisador,
+que constantemente valida e discute os pontos levantados nesse planejamento.
+
+%% ------------------------------------------------------------------------- %%
+\section{Papel do Pesquisador}
+\label{sec:planejamento-papel}
+
+Em um estudo qualitativo, o pesquisador tem como papel fundamental participar do 
+processo de captura dos dados, bem como seu preparo e interpretação final.
+Creswell \cite{creswell}, citando Locke \cite{locke}, lembra
+que a contribuição do investigador para o contexto da pesquisa pode ser útil e
+positiva. Além do mais, o pesquisador é responsável por
+identificar todos os valores pessoais, pressuposições e vieses deste estudo.
+
+O autor desta pesquisa tem formação em Ciência da Computação, e desenvolve software há 8
+anos. Pratica TDD diariamente nos últimos 3 anos, e possui profundos
+conhecimentos teóricos e práticos sobre orientação a objetos e métodos ágeis.
+Além disso, o autor palestrou sobre TDD em eventos da indústria brasileira
+de desenvolvimento de software, como a Agile Brazil 2010, o .NET Architects
+2010 e o QCON São Paulo 2010. O autor desta pesquisa acredita que sua experiência nessas
+áreas aumentam sua capacidade de análise dos efeitos de TDD no design de sistemas 
+orientados a objetos.
+
+%% ------------------------------------------------------------------------- %%
+\section{Problemas Éticos}
+\label{sec:planejamento-etica}
+
+Esta pesquisa poderá revelar desenvolvedores que produzem design de classes não
+satisfátorios ou não utilizam a prática corretamente.
+Por esse motivo, todos os dados colhidos pelo pesquisador serão mantidos em
+sigilo e todos os nomes de desenvolvedores e projetos omitidos, conforme acordo 
+assinado entre o pesquisador e a participante.
+
+%% ------------------------------------------------------------------------- %%
+\section{Estudo piloto}
+\label{sec:estudo-piloto}
+
+Antes da execução do estudo com participantes reais, um estudo piloto será
+executado para que o pesquisador possa validar todos os instrumentos de pesquisa,
+como exercícios, gravação de vídeo, protocolo e roteiro de entrevista.
+
+Com os resultados do estudo piloto, o pesquisador poderá fazer melhorias
+nos instrumentos, caso necessário.
+Vale ressaltar que as pessoas que participarem do estudo piloto não serão reutilizados no
+estudo final.
