@@ -1,0 +1,372 @@
+%% ------------------------------------------------------------------------- %%
+\chapter{Design de Sistemas Orientados a Objetos}
+\label{cap:design}
+
+%% ------------------------------------------------------------------------- %%
+\section{Introdução}
+\label{sec:design-introducao}
+
+Desenvolver sistemas orientados a objetos não é uma tarefa fácil. Criar
+classes ou, em um nível maior de abstração, módulos que possuam um baixo
+acoplamento e uma alta coesão demanda um esforço muito grande do desenvolvedor. 
+É muito comum que, após algum tempo de desenvolvimento, o design perca qualidade
+e qualquer tipo de manutenção torne-se difícil e, por consequência, custosa.
+
+Conforme sugerido no capítulo anterior, para escrever classes com alta
+testabilidade, o praticante de TDD acaba por fazer uso de boas práticas de
+desenvolvimento de software. 
+
+Esse capítulo discute apresenta e discute algumas dessas boas práticas, que
+são posteriormente avaliadas durante o processo de pesquisa.
+
+%% ------------------------------------------------------------------------- %%
+\section{Sintomas de Designs em Degradação}
+\label{sec:design-degradacao}
+
+Quando um design começa a ficar difícil de ser evoluído, o reuso de código se 
+torna mais complicado do que repetir o trecho de código, ou o custo de se fazer 
+qualquer alteração no design se torna alto, pode-se dizer que esse design
+está \textit{degradando}. 
+
+Robert Martin \cite{bob-martin} enumerou alguns sintomas de designs em degradação, 
+chamados também de maus cheiros de design. Esses sintomas são parecidos com os 
+maus cheiros de código \textit{code smells}, mas em um nível mais alto: eles
+estão presentes na estrutura geral do software ao invés de estarem localizados
+em apenas um pequeno trecho de código.
+
+Esses sintomas podem ser medidos de forma subjetiva e algumas vezes de forma 
+até objetiva. Geralmente, esses sintomas são causados por violações de um ou 
+mais princípios de design, apresentados na seção \ref{sec:design-oo-principios}.
+Muitos desses problemas são relacionados à gerência de dependências. Quando essa
+atividade não é feita corretamente, o código gerado torna-se difícil de manter e
+reusar. Entretanto, quando bem feita, o software tende a ser flexível, robusto 
+e suas partes reusáveis.
+
+\subsection{Rigidez}
+\label{subsec:rigidez}
+
+Rigidez é a tendência do software em se tornar difícil de mudar, mesmo de 
+maneiras simples. Toda mudança causa uma cascata de mudanças subsequentes  em
+módulos dependentes. Quanto mais módulos precisam ser modificados, maior é a
+rigidez do design. 
+
+Quando um design está muito rígido, não se sabe com segurança quando uma 
+mudança terá fim. Mudanças simples passam a demorar muito tempo até serem 
+aplicadas no código e frequentemente acabam superando em várias vezes a 
+estimativa de esforço inicial. 
+Frases como \textit{"isto foi muito mais complicado do que eu imaginei"} 
+tornam-se populares. Neste momento, gerentes de desenvolvimento começam a ficar
+receosos em permitir que os desenvolvedores consertem problemas não críticos.
+
+\subsection{Fragilidade}
+\label{subsec:fragilidade}
+
+Fragilidade é a tendência do software em quebrar em muitos lugares diferentes 
+toda vez que uma única mudança acontece. Frequentemente, os novos problemas
+ocorrem  em áreas não relacionadas conceitualmente com a área que foi mudada, 
+tornando o processo de manutenção demasiadamente custoso, complexo e tedioso. 
+
+Consertar os novos problemas usualmente passa a resultar em outros novos
+problemas e assim por diante. Infelizmente, módulos frágeis são comuns em
+sistemas de software. São estes os módulos que sempre aparecem na lista de bugs
+a serem corrigidos. 
+Além disto, desenvolvedores começam a ficar receosos de alterar certos trechos 
+de código, pois sabem que estes estão tão frágeis que qualquer mudança simples 
+fatalmente acarretará na introdução de problemas inesperados e de naturezas
+diversas.
+
+\subsection{Imobilidade}
+
+Imobilidade é a impossibilidade de se reusar software de outros projetos ou de
+partes do mesmo projeto. Neste cenário, o módulo que se deseja reutilizar 
+frequentemente tem uma bagagem muito grande de dependências e não possui código 
+claro. 
+Depois de muita investigação, os arquitetos descobrem que o trabalho e o risco 
+de separar as partes desejáveis das indesejáveis são tão grandes, que o módulo 
+acaba sendo reescrito ao invés de reutilizado.
+
+\subsection{Viscosidade}
+
+Quando uma mudança deve ser realizada, usualmente há várias opções para realizar
+tal mudança. Quando as opções que preservam o design são mais difíceis de serem
+implementadas do que aquelas que não o preservam (hacks), há alta viscosidade 
+de design. Neste cenário, é fácil fazer a "coisa errada" e é difícil fazer a
+"coisa certa", ou seja, é difícil preservar e aprimorar o design.
+
+\subsection{Complexidade Desnecessária}
+
+Detecta-se complexidade desnecessária no design quando ele contém muitos 
+elementos inúteis ou não utilizados (\textit{dead code}). Geralmente ocorre
+quando há muito design inicial (\textit{up-front design}) e não se segue uma 
+abordagem de desenvolvimento iterativa e incremental, de modo que os projetistas
+tentam prever uma série de futuros requisitos para o sistema e concebem um 
+design demasiadamente flexível ou desnecessariamente sofisticado. 
+
+Frequentemente apenas algumas previsões acabam se concretizando ao longo do
+tempo e, neste meio período, o design carrega o peso de elementos e construções 
+não utilizados. O software então se torna complexo e difícil de ser entendido. 
+Design com complexidade muito alta comumente afeta a produtividade, porque 
+quando os desenvolvedores herdam tal projeto, eles gastam muito tempo 
+aprendendo as nuances do design antes que possam efetivamente  estendê-lo ou
+mantê-lo confortavelmente \cite{kerievsky}.
+
+\subsection{Repetição Desnecessária}
+
+Quando há repetição de trechos de código, é sinal de que uma abstração
+apropriada não foi capturada durante o processo de design (ou inclusive na
+análise). Esse problema é frequente e é comum encontrar softwares que contenham 
+dezenas e até centenas de elementos com códigos repetidos. 
+
+Descobrir a melhor abstração para eliminar a repetição de código geralmente não 
+está na lista de itens de alta prioridade dos desenvolvedores, de maneira que a 
+resolução do problema acaba sendo eternamente postergada. Também, o sistema se
+torna cada vez mais difícil de entender e principalmente de manter, pois os 
+problemas encontrados em uma unidade de repetição devem ser corrigidos
+potencialmente  em toda repetição, com o agravante de que uma repetição pode
+ter forma ligeiramente diferente de outra.
+
+\subsection{Opacidade}
+
+Opacidade é a tendência de um módulo ser difícil de ser entendido. Códigos podem
+ser escritos de maneira clara e expressiva ou de maneira "opaca" e complicada. A
+tendência de um código é se tornar mais e mais opaco a medida que o tempo passa
+e, para que isso seja evitado, é necessário um esforço constante em manter esse 
+código claro e expressivo. 
+
+Uma maneira para prevenir isso, é fazer com que os desenvolvedores se ponham no
+papel de leitores do código e refatorem esse código de maneira que qualquer
+outro  leitor poderia entender. Além disso, revisões de código feita por outros
+desenvolvedores é também uma possível solução para manter o código menos opaco.
+
+%% ------------------------------------------------------------------------- %%
+\section{Princípios de Design}
+\label{sec:design-oo-principios}
+
+Todos os problemas citados na seção \ref{sec:design-degradacao} podem ser
+evitados pelo uso puro e simples de orientação a objetos. A máxima da
+programação orientada a objetos diz que classes devem possuir um baixo
+acoplamento e uma alta coesão.
+
+Alcançando esse objetivo, mudanças no código seriam executadas mais facilmente;
+alterações seriam feitas em pontos únicos e a propagação de mudanças seria bem
+menor. Com as abstrações bem estabelecidas, novas funcionalidades seriam
+implementadas através de novo código, sem a necessidade de alterações no código
+já existente. Necessidades de evolução do design seriam feitas com pouco
+esforço, já que módulos dependeriam apenas de abstrações.
+
+Mas, alcançar tal objetivo não é tarefa fácil. Criar classes pouco acopladas e
+altamente coesas demanda um grande esforço por parte do desenvolvedor e requer
+grande conhecimento e experiência no paradigma da orientação a objetos.
+
+Os princípios comentados nesta seção são muito discutidos por Robert Martin
+em vários de seus livros e artigos publicados \cite{bob-martin}.
+Esses princípios são produto de décadas de experiência em engenharia de
+software. Segundo ele próprio, esses princípios não são produto de uma única 
+pessoa, mas sim a integração de pensamentos e trabalhos de um grande número de 
+desenvolvedores de software  e pesquisadores, e visam combater todos os sintomas
+de degradação discutidos na Seção \ref{sec:design-degradacao}.
+
+Conhecidos pelo acrônimo \textit{SOLID} (sólido, em português), são eles:
+
+\begin{itemize}
+	\item Princípio da Responsabilidade Única (\textit{Single-Responsibility 
+	Principle (SRP)})
+	\item Princípio do Aberto-Fechado (\textit{Open-Closed Principle (OCP)})
+	\item Princípio de Substituição de Liskov (\textit{Liskov Substitution 
+	Principle (LSP)})
+	\item Princípio da Inversão de Dependência (\textit{Dependency Inversion
+	Principle (DIP)})
+	\item Princípio da Segregação de Interfaces (\textit{Interface Segregation 
+	Principle (ISP)})
+\end{itemize}
+
+\subsection{Princípio da Responsabilidade Única}
+\label{subsec:principio-srp}
+
+O termo coesão define a relação entre os elementos de um mesmo módulo
+\cite{demarco} \cite{pagejones}. Isso significa que os todos elementos de uma 
+classe que tem apenas uma responsabilidade tendem a se relacionar. Diz-se que
+uma classe como essa é uma classe que possui alta coesão (ou que é coesa). 
+
+Já em uma classe com muitas responsabilidades diferentes, os elementos tendem  a
+se relacionar apenas em "grupos", ou seja, com os elementos que tratam de uma 
+das responsabilidades da classe. A esse tipo de classe, diz-se que ela possui 
+uma baixa coesão (ou que não é coesa).
+Robert Martin altera esse conceito de coesão e relaciona coesão com as forças
+que  causam um módulo ou uma classe a mudar. No caso, o Princípio de
+Responsabilidade Única diz que uma classe deve ter apenas uma única razão para 
+mudar \cite{bob-martin}.
+
+Esse princípio é bem importante no momento em que há uma alteração em alguma 
+funcionalidade do software. Quando isso ocorre, o programador precisa procurar 
+pelas classes que possuem a responsabilidade a ser modificada. Supondo uma
+classe  que possua mais de uma razão para mudar, isso significa que ela é
+acessada  por duas partes do software que fazem coisas diferentes.  Fazer uma
+alteração em uma das responsabilidades dessa classe pode, de maneira não
+intencional, quebrar a outra parte de maneira inesperada. Isso torna o design
+frágil, como comentado na sub-seção \ref{subsec:fragilidade}.
+
+Para exemplificar isso, imagine uma classe chamada "Nota Fiscal" que, além de
+representar uma nota fiscal no sistema, ainda é responsável por persistir as 
+informações em alguma base de dados. Essa classe viola o Princípio da
+Responsabilidade Única, pois ela possui mais de uma razão para mudar. A parte de
+persistência por exemplo, muito provavelmente faz acesso à arcabouços que lidam 
+com esse tipo de coisa. Se o arcabouço mudar, isso muito provavelmente forcará
+uma  mudança nessa classe, além de todo o processo novamente de recompilação, 
+testes e re-implantação dessa classe. Caso o programador esqueça disso, a
+aplicação pode quebrar de maneiras imprevisíveis.
+
+Seguindo o princípio, essas duas responsabilidades deveriam estar em classes 
+diferentes: uma classe que representaria a nota fiscal no sistema, e outra
+classe que seria responsável por persistir esses dados. Dessa maneira,
+alterações na forma de persistência dos dados não implicam em alterações na 
+classe responsável pela representação da nota fiscal no sistema.
+
+\subsection{Princípio do Aberto-Fechado}
+\label{subsec:ocp}
+
+O Princípio do Aberto-Fechado, cunhado por Bertrand Meyer, diz que as entidades
+do software (como classes, módulos, funções, etc) devem ser abertas para
+extensão, mas fechadas para alteração \cite{meyer-ocp}. 
+
+Se uma simples alteração resulta em uma cascata de alterações em módulos
+dependentes, isso cheira à rigidez, conforme descrito na sub-seção 
+\ref{subsec:rigidez}. O princípio pede então para que o programador sempre 
+refatore as classes de modo que mudanças desse tipo não causem mais modificações.
+
+Quando esse princípio é aplicado de maneira correta, novas alterações fazem com
+que o programador adicione novo código, e não modifique o anterior. Isso é
+alcançado através da criação de abstrações para o problema. Linguagens
+orientadas a objetos possuem mecanismos para criá-las (conhecido com interfaces
+em linguagens como Java ou C\#). Através dessas abstrações, o programador consegue 
+descrever a maneira em que uma determinada classe deve se portar, mas sem se
+preocupar em como essa classe faz isso.
+
+\subsection{Princípio de Substituição de Liskov}
+\label{subsec:lsp}
+
+Esse princípio, que discute sobre tipos e sub-tipos, criado por Barbara Liskov
+em 1988 \cite{liskov}, é importante já que herança é uma das maneiras para se 
+suportar abstrações e polimorfismo em linguagens orientadas a objetos e, como 
+visto na seção \ref{subsec:ocp}, o Princípio do Aberto-Fechado se baseia 
+fortemente na utilização desses recursos.
+
+O problema é que utilizar herança não é tarefa fácil, pois o acoplamento criado
+entre classe filha e classe pai é grande. Fazer as classe filhas respeitarem o
+contrato do pai, e ainda permitir que mudanças na classe pai não influenciem na
+classe filha requer trabalho.
+
+O princípio de Liskov diz que, se um tipo S é sub-classe de um tipo T,
+então objetos do tipo T podem ser substituídos por objetos do tipo S, sem
+alterar nenhuma das propriedades desejadas daquele programa.
+
+Um clássico exemplo sobre Princípio de Substituição de Liskov é o exemplo dos
+Quadrados e Retângulos. Imagine uma classe Retângulo. Um retângulo possui dois 
+lados de tamanhos diferentes. Imagine agora uma classe Quadrado (figura
+geométrica que possui todos os lados com o mesmo tamanho) que herde de
+Retângulo. A única alteração é fazer com que os dois lados tenham o mesmo 
+tamanho. 
+
+Apesar de parecer lógico, afinal um Quadrado é um Retângulo com apenas uma
+condição diferente, a classe Quadrado quebra o Princípio de Liskov: a
+pré-condição dela é mais forte do que a do quadrado, afinal os dois lados devem 
+ter o mesmo tamanho.
+
+Quebras do princípio de Liskov geralmente levam o programador a quebrar o
+princípio do OCP também. Ele percebe que, para um determinados sub-tipos ele 
+precisa fazer um tratamento especial, e acaba escrevendo condições nas classes 
+clientes que fazem uso disso.
+
+\subsection{Princípio da Inversão de Dependências}
+\label{subsec:dip}
+
+Classes de baixo nível, que fazem uso de infraestrutura ou de outros detalhes
+de implementação podem facilmente sofrer modificações. E, se classes de mais alto
+nível dependerem dessas classes, essas modificações podem se propagar, tornando
+o código frágil.
+
+O Princípio de Inversão de Dependências se baseia em duas afirmações:
+
+\begin{itemize}
+	\item Módulos de alto nível não devem depender de módulos de baixo nível. 
+	Ambos devem depender de abstrações
+	\item Abstrações não devem depender de detalhes. Detalhes devem depender de
+	abstrações
+\end{itemize}
+
+Em resumo, as classes devem, na medida do possível, acoplar-se sempre com módulos mais
+estáveis do que ela própria, já que, como as mudanças em módulos estáveis são
+menos prováveis, raramente essa classe precisará ser alterada por mudanças em
+suas dependências \cite{bobmartin-oodmetrics}.
+
+\subsection{Princípio da Segregação de Interfaces}
+\label{subsec:isp}
+
+Acoplar-se com uma interface de baixa granularidade (ou gordas, do termo
+em inglês \textit{fat interfaces}) pode ser perigoso, já que qualquer alteração
+que um outro cliente forçar nessa interface poderá ser propagada para essa
+classe.
+
+O princípio da segregação de interfaces diz que classes cliente não devem ser
+forçados a depender de métodos que eles não usam. Quando uma interface não é
+coesa, ela contém métodos que são usadas por um grupo de clientes, e outros 
+métodos que são usados por outro grupo de clientes. Apesar de uma classe poder 
+implementar mais de uma interface, o princípio diz que o cliente da classe deve
+apenas depender de interfaces coesas.
+
+%% ------------------------------------------------------------------------- %%
+\section{Estabilidade e abstração}
+\label{sec:estabilidade-e-abstracao}
+
+Todos os princípios discutidos na seção \ref{sec:design-oo-principios} tentam
+diminuir os possíveis problemas de design que possam eventualmente aparecer.
+Discutir o que é um bom design é algo difícil; mas é possível enumerar algumas
+das características desejáveis: isolar elementos reusáveis de elementos não
+reusáveis, diminuir a propagação de alterações em caso de uma nova
+funcionalidade.
+
+Classes que geralmente cuidam de detalhes de implementação, como o acesso a
+banco de dados ou leitura de arquivos, tendem a mudar frequentemente. E essas
+mudanças podem ser propagadas para classes que são acopladas com essa. Pode-se
+classificar essas classes como \textbf{classes instáveis}.
+Quando uma classe é acoplada com outras classes que cuidam de detalhes de
+implementação, ao invés de abstrações, o custo de alteração na mesma é alto já que, uma vez feito,
+separá-los é difícil e pode demandar muito esforço. Analogamente,
+\textbf{classes estáveis} são aquelas classes onde a chance de mudança é
+pequena. Um exemplo de um módulo estável é a interface \textit{List}, do pacote
+\textit{java.util}. A probabilidade de mudança nela é muito pequena, já que
+muitas outras classes são acopladas com essa interface, indicando que ela é
+madura. Depender de classes estáveis faz com que o módulo tenha menos
+chance de mudar, já que a probabilidade de mudança nas classes que ele depende
+é menor. Robert Martin afirma que as dependências de um classe devem sempre
+caminhar na direção da estabilidade, ou seja, classes devem depender apenas de
+classes mais estáveis do que ela própria \cite{agile-ppp}.
+
+Segundo Martin, decisões arquiteturais e de design não devem sofrer
+alterações constantemente e, por consequência, devem estar em módulos estáveis.
+O problema disso é que, um módulo com estabilidade máxima, não aceita mudanças.
+Para fazer com que um módulo estável seja flexível, este módulo deve ser
+\textbf{abstrato}. É possível alcançar isso em linguagens orientadas a objetos
+através da utilização de classes abstratas ou interfaces. 
+A partir dessas definições, Martin
+deriva mais um princípio, o Princípio das Abstrações Estáveis (do inglês
+\textit{The Stable Abstractions Principle (SAP)}): Pacotes que são maximamente
+estáveis devem ser maximamente abstratos. Pacotes instáveis devem ser concretos.
+A abstração de um pacote deve ser proporcional a sua estabilidade. 
+
+A partir dessa relação, Martin traça um gráfico onde o eixo X representa
+a instabilidade de uma classe ou módulo e o eixo Y, sua abstração. Com os
+valores normalizados, a reta que liga o ponto (0,1) ao (1,0) é chamada
+de \textit{Linha Principal} \cite{agile-ppp}. Classes devem sempre
+estar perto desta linha, já que ela representa o equilíbrio entre 
+instabilidade e abstração.
+
+Toda essa discussão é importante, já que, ao analisar acoplamento entre classes,
+o pesquisador deve levar em conta, não somente a quantidade de classes
+que um módulo depende, mas também o tipo do acoplamento. Se uma classe depende
+apenas de módulos mais estáveis do que ela própria, esse acoplamento pode ser
+classificado como bom. Se uma classe depende de módulos menos estáveis, mesmo
+que seja apenas um (ou seja, isso não apareceria como um problema caso o
+pesquisador apenas medisse a quantidade de classes acopladas), isso pode indicar
+um possível problema de design.
+
