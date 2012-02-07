@@ -2,5 +2,120 @@
 \chapter{Resultados Encontrados e Discussão}
 \label{cap:discussao}
 
-Espaço vazio para os futuros resultados encontrados do trabalho.
+\section{Particularidades da execução}
 
+na hora do estudo:
+- pesquisador tirava dúvidas dos exercícios
+- ajudava na configuração das máquinas
+- copiava pro hd externo com a nomenclatura "NOME-COMBINACAO"
+- dúvidas como "quando escrevo testes depois, posso refatorar também?" --> sim (na próxima, pensar melhor sobre casos extremos)
+- sem pressão para o participante.. apenas de tempos em tempos, passava pelas máquinas para garantir que nada de errado havia acontecido;
+- avisava o pessoal quando os primeiros 50 minutos acabavam com a mensagem "terminem a linha de raciocinio e partam para o proximo exercicio"
+- aproveitava para trabalhar neste documento de licoes aprendidas e etc
+- apesar de nao haver nenhuma restricao explicita sobre isso, nao houve conversa entre os participantes, todos eles trabalharam sozinho 100% do tempo.
+
+em casa:
+- dava id pro participante
+- renomeava pasta para "ID-NOME-COMBINACAO"
+- rodava script que gerava paginas para o especialista
+- armazenava informações em um mysql para facilitar as consultas
+
+na universidade:
+- alunos só conseguiram fazer o 1o exercício. pesquisador deixou já que, na hora de mudar, observando por cima,
+percebeu que pouco código havia sido escrito até então (muito diferente da realidade das indústrias, onde
+muito código havia sido gerado em 50 minutos de exercício).
+- alguns nao se mostraram muito dispostos a participar (diferente da industria)
+
+
+Even though there are some preliminary indications that students can be used for certain tasks instead of professionals under certain conditions (H√∂st et al. 2000), it is still unclear how well results from student- based experiments generalize to professional software engineers (Harrison 2000).
+
+discutir q profissionais sao mto variados -- checar paper condutctinr realistic experiements ..
+
+
+na industria:
+- receberam por email antecipadamente o que precisava ser instalado
+- alguns participantes não acabaram todo o processo, outros com um pouco de pressa. isso pode influenciar, e foi
+levado na análise.
+- necessidade de vender a ideia e a promessa da divulgação dos resultados assim que terminar
+
+
+entrevista:
+pesquisador anotava no papel de observacoes, os pontos mais interessantes que o participante levantou no pos-experimento,
+como por exemplo, "tdd faz eu gerar metodos pequenos", para perguntar depois.
+
+tb anotava os exercicios que ele resolveu, e a letra do GRUPO da entrevista que deveria ser feito.
+
+notebook aberto com ambos os códigos gerados pelo participante, para que o participante pudesse lembrar,
+e o pesquisador usar exemplos na hora de perguntar como o design foi feito... "da onde veio a ideia dessa classe
+Fatura, com esse método X(), e a classe ProcessadorDeBoletos com a regra de negócios dentro?"
+
+entrevistas levando em torno de 30 minutos, gravadas e audio importado para o PC.
+
+quando o participante comentava algo interessante, o pesquisador fugia do roteiro para fazer ele falar mais sobre o assunto.
+
+roteiro de entrevista sofreu pequena mudança ao final da primeira entrevista, já que o pesquisador percebeu que
+é difícil (e talvez não etico) falar que o código gerado pelo participante "não apresenta bom design". a mudança de foco
+é para entender como ele chegou naquele design (mesmo que não ideal)
+
+notei que alguns participantes conversaram com outros para entender como eles resolveram o exercício. e, quando perguntei,
+sobre como foi o design, e discutiram outras maneiras de fazer, muitos deles sugeriram a mesma refatoracao.
+
+discuti sempre primeiro o exercicio q fez com tdd, independente da ordem que
+ele executou no dia.
+
+dados:
+- numero de pessoas que usaram polimorfismo foi baixissimo
+- uma pessoa da industria NAO CONSEGUIU FAZER NADA
+
+
+\section{Descrição dos participantes}
+
+descrever participantes, experiencia deles, experiencia dos que foram filtrados, etc
+
+\section{Análise Qualitativa}
+
+Different from what some TDD experiments claim, partic- ipants affirmed that TDD would not make any difference in class design if they have done both exercises with TDD. The main point raised by the participants was that the experience and knowledge in object-orientation guided them to the final implemented design. None of them said that a non- experienced developer would create a good class design by just doing TDD.
+A good example of that was given by 2 participants: one of them said that he used a design pattern [11] he has just learned a few days ago; other said the his studies about SOLID principles [12] helped him create a good class design. Also, the only participant that has never done TDD before (but with a good software development experience), said that he did not feel any differences in class design when doing TDD.
+This can be also validated by looking into the quantitative data. The Wilcoxon statistical test showed no different in cyclomatic complexity, LCOM, coupling, lines per method and methods quantity between TDD’d code and non TDD’d code. However, the same test for each exercise separately showed a significant difference in LCOM and methods quantity for one exercise, and in the number of lines per method in another exercise. In addition, there were no significant statistical difference in both specialists’ opinions about the code generated.
+On the other hand, they said that they keep doing TDD for many different reasons. Besides the generated test cases, which help them validate their work, they said that, when doing TDD, they think more often about the class design they are building: T ̈he unit test code is used as a draft, in which I can experiment many different things until I find thebetterone ̈,saidaparticipant.Babysteps,andconstantly refactoring were also mentioned by the participants as rea- sons to keep practicing TDD.
+When not doing TDD, participants often said that they are too focused on writing code that they forget to think on the class design. The test makes them think on how the class being created will interact with other objects, and how easy is to use that class.
+In addition, when asked about how the TDD feedback on class design works, many participants talked about small
+patterns they observe inside the unit tests, that help them drive their design, discussed in the following sub-section.
+
+\section{Padrões de TDD}
+A. Unit test feedback patterns
+Tests can show coupling issues. When a single test needs a big scenario, or it makes use of many mock objects [13], it may indicate that your production code is highly coupled. A participant said that, in order to easily unit test a code, one need to decouple the code as much as s/he can.
+On the other hand, if one production method needs many different unit tests to assure its entire behavior, the tested code may be suffering from cohesion problems.
+Lack of abstraction can also be perceived through unit tests. If there are many similar unit tests for different interfaces, it may indicate a lack of a right abstraction for both entities. Also, when a test finds a bug and, in order to fix it, the developer needs to update many classes, it may indicate that the abstraction is not good enough, and information is duplicated.
+
+do condicional pra frente, nós derivamos
+
+sempre relacionar com SOLID do cap de design
+
+\subsection{Indecisão ao dar o nome do teste}
+
+\subsection{Muitos testes para um método}
+
+\subsection{Muitos testes para uma classe}
+
+\subsection{Mocks em excesso}
+
+\subsection{Testes com cenários muito grandes}
+
+\subsection{Condicional no nome do teste}
+
+\subsection{Asserts em objetos que não são alvo da classe de teste}
+
+\subsection{Testes em métodos que não são públicos}
+
+\subsection{Dependência que não é utilizada por um dos testes}
+
+\section{Análise Quantitativa}
+
+\subsection{Métricas de código}
+
+mostrar p-values aqui
+
+\subsection{Especialistas}
+
+mostrar p-values aqui

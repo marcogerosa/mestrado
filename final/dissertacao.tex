@@ -28,6 +28,7 @@
 \usepackage{multirow}
 \usepackage{titletoc}
 \usepackage{lscape}
+\usepackage[final]{pdfpages}
 \usepackage[fixlanguage]{babelbib}
 \usepackage[font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
 \usepackage[usenames,svgnames,dvipsnames,table]{xcolor}
@@ -309,24 +310,31 @@ Systems, Class Design, Qualitative Research Methods.
 \onehalfspacing            % espaçamento um e meio
 
 \input cap-introducao
+\input cap-motivacao
 \input cap-tdd
 \input cap-design
 \input cap-trabrelacionados
 \input cap-quali-planejamento
 \input cap-findings
 \input cap-ameacas
+\input cap-estudo-mack
+\input cap-estudo-asserts
 \input cap-conclusoes
-\input cap-cronograma
 
 % cabeçalho para os apêndices
 \renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{\appendixname\ \thechapter}} {\MakeUppercase{#1}} }
 \fancyhead[RE,LO]{}
 \appendix
 
+\include{ape-questionario-inicio}
 \include{ape-exercicios}
+\include{ape-questionario-pos}
 \include{ape-entrevista}
 \include{ape-informacoes}
 \include{ape-autorizacao}
+\include{ape-entrevista}
+\include{ape-slides-mack}
+\include{ape-slides-workshop}
 
 % ---------------------------------------------------------------------------- %
 % Bibliografia
