@@ -5,47 +5,10 @@ corrigir pode ser alto demais. Uma vantagem de escrever os testes antes é
 possibilitar que o desenvolvedor tome grande parte das decisões de \textit{design}
 enquanto o custo de mudança ainda é baixo.
 
-O teste é o primeiro cliente da
-classe que o programador ainda está por escrever e isso o faz pensar
-melhor a respeito do comportamento que ele espera da classe. Além disso,
-programadores contemplam e decidem também sobre a interface (como nomes de
-classes e métodos, tipos de retorno e exceções lançadas) que a classe terá
-\cite{janzen-saiedian}.
-Além disso, ao escrever o teste antes, o programador é encorajado a escrever um
-código que seja facilmente testável. Códigos como esse possuem algumas
-características interessantes, como a facilidade para invocar o comportamento
-esperado, a não necessidade de pré-condições complicadas e a explicitação de
-todas as dependências que a classe possui.
-
-Quanto mais difícil for a escrita do teste, maior a chance da existência de
-algum problema de \textit{design}. Segundo Michael Feathers \cite{feathers-synergy}, 
-existe uma sinergia muito
-grande entre uma classe com alta testabilidade e um bom \textit{design}: se o
-programador busca por testabilidade, acaba criando um bom \textit{design}; se 
-busca por um bom \textit{design}, acaba escrevendo um \textit{design} mais
-testável.
-
-TDD encoraja o programador a escrever componentes fracamente acoplados, de
-maneira que eles possam ser testados de maneira isolada e, em um nível maior,
-combinados com outros componentes.
-Programar voltado para interfaces é uma prática de orientação a objetos há muito
-tempo conhecida. Pensar em classes e dar maior foco à maneira com que
-elas se relacionam do que com o modo que determinado comportamento será implementado
-torna-se mais natural ao praticar TDD \cite{GOOS}. 
 
 %% ------------------------------------------------------------------------- %%
 \section{Efeitos na Simplicidade}
 
-TDD sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
-inglês, \textit{baby steps}): deve-se escrever testes sempre para a menor
-funcionalidade possível, escrever o código mais simples que faça o teste passar
-e fazer sempre apenas uma refatoração por vez \cite{TDDByExample}.
-
-Uma justificativa para tal é a de que, quanto maior o passo que o programador dá, mais
-tempo ele leva para concluí-lo e, consequentemente, ele fica mais tempo
-sem \textit{feedback} sobre o código. Além disso, faz com que o programador não crie
-soluções mais complexas do que elas precisam ser, tornando o código, a longo
-prazo, o mais simples possível.
 
 TDD não força o programador a dar "passos de bebê" o tempo todo, mas o
 permite dá-los quando achar necessário
@@ -61,11 +24,6 @@ simples possível, e refatorando sempre que há necessidade. Decisões de
 \textit{design} são tomadas com a consciência de que elas serão alteradas no futuro
 \cite{is-design-dead}.
 
-Manter o \textit{design} simples não é tarefa fácil, e TDD sugere que o programador
-escreva sempre o código mais simples que atenda a necessidade. Somente se a
-necessidade crescer, é que o programador deverá evoluir o \textit{design}. Uma decisão de
-\textit{design} pode ser mais complicada do que parece e, sem um teste para mostrar isso
-rapidamente, o programador dificilmente perceberia o problema \cite{aim-fire}.
 
 Scott Ambler possui uma definição particular sobre como o praticante de TDD lida
 com a simplicidade de \textit{design}. De acordo com suas ideias, TDD pode ser definido como
@@ -82,31 +40,6 @@ implementada da maneira mais fácil possível \cite{wambler-tdd}.
 %% ------------------------------------------------------------------------- %%
 \section{Princípios de Design de Classes e Testes de Unidade}
 
-Classes que obedecem aos princípios SOLID são fáceis de serem testadas, pois
-apresentam todas as vantagens citadas acima. Ao inverter o processo, e fazer o
-programador pensar em classes facilmente testadas desde o princípio, TDD exige
-que o programador faça uso desses princípios, resultando em um código de maior
-qualidade.
-
-Como citado no capítulo \ref{cap:tdd}, grande parte do feedback que os testes
-dão acontecem no momento em que o programador encontra dificuldades para a
-escrita do mesmo.
-
-Classes que violam o SRP, por exemplo, necessitam de grande
-esforço por parte do desenvolvedor para ser testada, já que é uma classe que faz
-muita coisa, e por consequência, demanda muitos testes.
-
-O DIP também emerge da prática, conforme ilustrado no exemplo do GOOS
-\cite{GOOS}. Ao desenhar classes e pensar no relacionamento com outras classes,
-programadores pensam apenas no comportamento esperado e sua abstração, e não na
-maneira como isso será implementado. A implementação das abstrações são
-inclusive feitas em fases posteriores. Isso incentiva as classes a
-sempre dependerem de abstrações e não de implementações concretas.
-
-Apesar de conhecidos, esses princípios não são comumente aplicados.
-Este trabalho visa entender se TDD, ao forçar o programador a escrever o teste
-antes, encoraja o programador a fazer uso das boas práticas citadas neste
-capítulo.
 
 
 

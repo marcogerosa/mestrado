@@ -70,17 +70,335 @@ dados:
 
 \section{Descrição dos participantes}
 
-descrever participantes, experiencia deles, experiencia dos que foram filtrados, etc
+Conforme mencionado, o estudo foi executado em dois ambientes diferentes: em empresas de software
+do mercado brasileiro e na academia. Como ambos estudos foram executados de maneira independente,
+descrevemos os grupos separados nas sub-seções \ref{findings-desc-industria} e \ref{findings-desc-academia}.
 
-\section{Análise Qualitativa}
+\subsection{Participantes da Indústria}
+\label{findings-desc-industria}
 
-Different from what some TDD experiments claim, partic- ipants affirmed that TDD would not make any difference in class design if they have done both exercises with TDD. The main point raised by the participants was that the experience and knowledge in object-orientation guided them to the final implemented design. None of them said that a non- experienced developer would create a good class design by just doing TDD.
-A good example of that was given by 2 participants: one of them said that he used a design pattern [11] he has just learned a few days ago; other said the his studies about SOLID principles [12] helped him create a good class design. Also, the only participant that has never done TDD before (but with a good software development experience), said that he did not feel any differences in class design when doing TDD.
-This can be also validated by looking into the quantitative data. The Wilcoxon statistical test showed no different in cyclomatic complexity, LCOM, coupling, lines per method and methods quantity between TDD’d code and non TDD’d code. However, the same test for each exercise separately showed a significant difference in LCOM and methods quantity for one exercise, and in the number of lines per method in another exercise. In addition, there were no significant statistical difference in both specialists’ opinions about the code generated.
-On the other hand, they said that they keep doing TDD for many different reasons. Besides the generated test cases, which help them validate their work, they said that, when doing TDD, they think more often about the class design they are building: T ̈he unit test code is used as a draft, in which I can experiment many different things until I find thebetterone ̈,saidaparticipant.Babysteps,andconstantly refactoring were also mentioned by the participants as rea- sons to keep practicing TDD.
+Ao todo tivemos 25 participantes, de 6 diferentes empresas.
+Os participantes da indústria, em sua maioria, são pessoas com pouca experiência em TDD.
+40\% deles disseram utilizar a prática há no máximo um ano. 52\% deles praticam TDD
+entre 1 e 3 anos. Apenas 4\% pratica entre três e quatro anos, e nenhum participante
+possui mais experiência do que isso. Na Figura \ref{fig:exp-tdd-industria}, mostramos
+a distribuição da experiência da prática de TDD entre os participantes.
+
+Os números são um pouco diferentes quando se trata da experiência em desenvolvimento
+de software. Por volta de 24\% dos participantes desenvolve software entre 4 e 5 anos.
+28\% deles faz isso entre 6 e 10 anos. Entretanto, 20\% possui até 2 anos de experiência.
+Na Figura \ref{fig:exp-sw-industria}, mostramos a distribuição.
+
+Entrando em aspectos mais técnicos, 64\% dos participantes afirmam conhecer Java. Entretanto,
+36\% dizem não trabalharem com Java no seu dia-a-dia. Todos eles afirmam conhecer JUnit,
+e só 12\% diz nunca ter ouvido falar sobre o conceito de objetos dublês. De fato, 64\% deles
+aplicam objetos dublês durante suas atividades de desenvolvimento. Com relação a conhecimentos
+em orientação a objetos, na pergunta aberta do questionário, grande parte deles 
+afirmaram que possuem uma boa experiência e alguns
+chegam até a afirmam que dominam o assunto. Poucos disseram que possuem conhecimentos
+básicos. Na Tabela \ref{tab:exp-industria},
+apresentamos o conhecimento dos participantes em relação a Java, JUnit e objetos dublês.
+
+Esses dados nos mostram que a amostra selecionada se assemelha ao mundo real, onde
+encontramos desde desenvolvedores mais experientes até novatos. Em relação a experiência com TDD,
+podemos afirmar que metade dos participantes ainda está experimentando a prática, enquanto
+outros já a tem mais consolidada. Isso é positivo, já que foi possível capturar informações
+da prática de TDD por pessoas com diferentes níveis de maturidade.
+
+Em relação ao alto número de pessoas que não utilizam Java, isso se deve ao fato de uma das
+empresas fazer uso de PHP para seu trabalho do dia-a-dia. No entanto, nós conhecemos a equipe
+e verificamos que, apesar de não utilizarem a linguagem constantemente, eles não tiveram
+problema algum durante a execução dos exercícios.
+
+\subsection{Participantes da Academia}
+\label{findings-desc-industria}
+
+Os participantes da academia que participaram do estudo, 21 no total, possuem baixíssima experiência,
+tanto em TDD quanto em desenvolvimento de software em geral. Surpreendentemente, 90\%
+dos participantes afirmaram não conhecer Java, e 61\% disseram não conhecer TDD.
+Em contraste com essa informação, todos eles afirmaram conhecer JUnit, e 76\% afirmaram
+conhecer objetos dublês na teoria. 
+Na Figura \ref{fig:exp-tdd-academia}, mostramos a experiência dos participantes em TDD, e
+na Tabela \ref{tab:exp-academia} apresentamos a experiência deles em Java, JUnit, e objetos
+dublês.
+
+Em relação a experiência de desenvolvimento de software, apenas 23\% afirmaram não
+ter nenhuma experiência, enquanto que por volta de 43\% afirmaram possuir
+entre 2 a 4 anos de experiência. Nenhum participante com experiência superior a isso.
+Na Figura \ref{fig:exp-sw-academia}, mostramos a distribuição por completo.
+
+De acordo com os dados, percebemos que grande parte dos participantes não conhecem a linguagem ou
+mesmo a prática de TDD. A linguagem foi realmente um problema: durante a execução, percebemos
+que muitos deles faziam buscas por elementos simples da linguagem Java, como manipulação de arrays
+e listas, ou mesmo por manipulação de texto.
+
+Isso explica o baixo desempenho dos alunos da academia durante
+o experimento. Nenhum deles conseguiu terminar os dois exercícios propostos. Por esse
+motivo, nenhum aluno foi selecionado para o processo de entrevista. Entretanto,
+os códigos-fonte produzidos serão utilizados no processo de análise quantitativa.
+
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[scale=.4]{findings/experiencia-tdd-industria.png}
+    \caption{Experiência da equipe da indústria com TDD}
+    \label{fig:exp-tdd-industria}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[scale=.4]{findings/experiencia-tdd-academia.png}
+    \caption{Experiência dos estudantes da academia com TDD}  
+    \label{fig:exp-tdd-academia}
+  \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[scale=.4]{findings/experiencia-sw-industria.png}
+    \caption{Experiência da equipe da indústria com desenvolvimento de software em geral}
+    \label{fig:exp-sw-industria}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}[b]{0.45\linewidth}
+    \centering
+    \includegraphics[scale=.4]{findings/experiencia-sw-academia.png}
+    \caption{Experiência dos estudantes da academia com desenvolvimento de software em geral}  
+    \label{fig:exp-sw-academia}
+  \end{minipage}
+\end{figure}
+
+% TODO tabela com experiencia java, junit, bla bla de cada grupo
+
+\section{Análise das Entrevistas}
+
+Diferente do que muitos estudos de TDD afirmam, os participantes, em sua grande maioria, afirmaram que 
+a prática de TDD não faria com que o design de classes fosse de alguma forma diferente, caso tivessem
+feito ambos os exercícios com a prática.
+A principal justificativa dada pelos participantes foi que a experiência e o conhecimento prévio
+em orientação a objetos os guiaram durante o processo de criação do design de classes. Nenhum dos
+participantes, por exemplo, afirmou que um desenvolvedor sem conhecimento em alguma das áreas
+citadas criaria um bom design de classes somente por praticar TDD.
+
+Dois bons exemplos foram dados pelos participantes, que ajudam a reforçar esse ponto. Um deles
+comentou que fez uso de um padrão de projetos \cite{gof} que aprendeu apenas alguns dias atrás.
+Outro participante mencionou que seus estudos sobre os princípios SOLID (discutidos no Capítulo \ref{cap:design})
+o ajudaram durante os exercícios. Além do mais, o único participante da indústria que nunca havia
+praticado TDD afirmou que não sentiu diferença nenhuma no processo de criação de classes durante
+a prática. 
+
+\textit{"Até foi engraçado, eu estou lendo o Design Patterns (livro), e ele fala de polimorfismo, e foi
+lá que eu mirei pra fazer, porque eu nunca tinha feito nada assim (...), aqui dificilmente eu crio
+coisa nova, só dou manutenção no código."}
+
+Curioso é que esse mesmo participante que nunca praticou TDD afirmou que "sabia que TDD era uma prática de design",
+diferentemente dos participantes mais experientes que sempre afirmavam que TDD não é só uma prática de design,
+mas também de testes. Isso indica, de certa forma, que a popularidade dos efeitos de TDD no design, por mais
+que nada tenha sido provado, é grande.
+
+uma descricao da galera: \textit{"[TDD] acho que tem muita relação com qualidade do código e testes 
+de regrassão. Acho que as duas principais vantagens que eu tenho quando uso TDD é isso: o código
+fica melhor e depois eu tenho a segurança dos testes de regressão para refatorar."}
+
+Apesar do TDD não guiar o desenvolvedor diretamente para um bom design,
+todos eles afirmaram que veem benefícios na prática de TDD, mesmo do
+ponto de vista de design. Nas sub-seções abaixo, apresentamos cada um dos pontos 
+levantados pelos participantes, bem como discutimos sobre o tópico.
+
+\textit{"O ideal é somar as duas coisas [experiência e TDD] (...) 
+Não acredito que TDD sozinho consiga fazer as coisas ficarem boas. Tem outros conceitos
+para as coisas ficarem boas."}
+
+
+
+\subsection{Segurança na refatoração}
+
+Os participantes afirmaram que, durante o processo de criação de design, a mudança de ideia é
+constante, afinal pouco se conhece do problema, e de como a classe deve ser construída. Segundo eles,
+uma vantagem íntriseca do TDD é a suíte de testes gerada. Essa suíte possibilita ao desenvolvedor
+muda de ideia e refatorar todo o design de classes com segurança.
+A segurança, segundo eles, é fator importante para mudanças de design de classes ou mesmo de implementação.
+
+
+\textit{"Sim, me dá a chance de aprender pelo caminho e fazer algumas coisas diferentes. (...) O teste te dá segurança."}
+
+\textit{"Porque em um projeto você muda de ideia muitas vezes. (...) Porque grande grande do que você
+pensou está especificado (no teste) e, por mais que você esqueça uma coisa ou outra, o teste vai
+te lembrar. Isso aconteceu comigo várias vezes. Eu estava mudando alguma coisa no código e não passava
+o teste, não passava... Isso aconteceu até eu ver que o errado era eu, e não o teste."}
+
+\textit{"No TCC da pós, eu estava desenvolvendo uma ferramenta que trabalhava com manipulação de código, e fiz
+tudo com TDD. Várias vezes eu chegava a apagar todo código do sistema, mantinha os testes, e começava uma nova
+linha de raciocínio. Achei que me ajudou muito fazer TDD (...), tanto que no fim que eu fui executar a ferramenta,
+antes eu só validava pelos testes."}
+
+refatoracao + experiencia
+
+\textit{"(...) se você não tiver embasamento sobre esses aspectos de única responsabilidade,
+coesão, acoplamento, acho que não adianta muito [fazer TDD]. Você precisa ter isso em mente
+para conseguir mudar, precisa desse conhecimento para conseguir refatorar."}
+
+\subsection{Espaço para se pensar}
+
 When not doing TDD, participants often said that they are too focused on writing code that they forget to think on the class design. The test makes them think on how the class being created will interact with other objects, and how easy is to use that class.
-In addition, when asked about how the TDD feedback on class design works, many participants talked about small
-patterns they observe inside the unit tests, that help them drive their design, discussed in the following sub-section.
+
+
+Participantes afirmaram também que enxergam o teste de unidade, em uma analogia
+retirada de um participante, como uma \textit{folha de rascunho},
+onde eles podem tentar diferentes abordagens e mudar de ideia constantemente. Segundo eles,
+ao começar a escrever um teste, os programadores estão, pela primeira vez, utilizando a sua 
+própria classe. Isso faz com que eles busquem por uma maneira melhor e mais clara de invocar
+seus comportamentos, e facilitar a utilização da classe.
+
+\textit{"Os testes ajudam nisso. São uma folha de rascunho para você tentar modelar
+isso da melhor maneira possível. Se fosse modelar isso direto, é como se você tivesse
+uma forma, e se errar, quebrou. Ou se você errar, você vai ter muito trabalho pra consertar.
+O lance de você testar e começar a pensar em testes, você está ali com uma folha em branco,
+e você pode arrancar qualquer coisa que está ali, pois essa coisa ainda não existe."}
+
+Segundo um participante: \textit{"Acho que o normal das pessoas não é pensar antes. Parece que o natural
+é já sair fazendo (até pela pressão interna, que aqui não é tão grande). (...) Poucas pessoas pensam
+antes de começar. Com TDD, você é obrigado a pensar, o TDD faz você parar e pensar, estruturar. Não
+é meu natural pensar antes, mas com TDD sim."}
+
+\textit{"Como eu primeiro penso no que eu vou precisar a partir dos testes, ou seja, eu preciso que tenho
+isso e aquilo, o teste me faz pensar antes de sair desenvolvendo. Com os testes eu paro pra pensar antes.
+Aí acredito que nós consigamos pensar melhor, numa solução mais bacana."}
+
+\textit{"Porque sem o TDD, no calor do momento, você vai acoplando, vai herdando, vai agregando, e não pensa
+que no futuro isso possa dar algum problema. Com TDD, você é forçado a ir mais devagar, dá tempo de pensar melhor nas
+coisas."}
+
+manutencao para o proximo
+\textit{"Quando estou escrevendo meu rascunho, eu tenho a liberdade de pensar o máximo possível para quando alguém
+pegar isso para entender, ou para debugar, ou mesmo para corrigir bug, ele vai conseguir saber o que uma Fatura é ou faz. Sem
+precisar abrir uma Fatura real."}
+
+pensar ate no requisito
+
+\textit{"Algumas vezes ele [o teste] acaba mostrando problemas da regra de negócio. Mostrava problemas
+que as vezes o especificador não pegava. (...)."}
+
+O teste é o primeiro cliente da
+classe que o programador ainda está por escrever e isso o faz pensar
+melhor a respeito do comportamento que ele espera da classe. Além disso,
+programadores contemplam e decidem também sobre a interface (como nomes de
+classes e métodos, tipos de retorno e exceções lançadas) que a classe terá
+\cite{janzen-saiedian}.
+Além disso, ao escrever o teste antes, o programador é encorajado a escrever um
+código que seja facilmente testável. Códigos como esse possuem algumas
+características interessantes, como a facilidade para invocar o comportamento
+esperado, a não necessidade de pré-condições complicadas e a explicitação de
+todas as dependências que a classe possui.
+
+\subsection{Passos menores e simplicidade}
+
+
+TDD sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
+inglês, \textit{baby steps}): deve-se escrever testes sempre para a menor
+funcionalidade possível, escrever o código mais simples que faça o teste passar
+e fazer sempre apenas uma refatoração por vez \cite{TDDByExample}.
+
+Uma justificativa para tal é a de que, quanto maior o passo que o programador dá, mais
+tempo ele leva para concluí-lo e, consequentemente, ele fica mais tempo
+sem \textit{feedback} sobre o código. Além disso, faz com que o programador não crie
+soluções mais complexas do que elas precisam ser, tornando o código, a longo
+prazo, o mais simples possível.
+
+Manter o \textit{design} simples não é tarefa fácil, e TDD sugere que o programador
+escreva sempre o código mais simples que atenda a necessidade. Somente se a
+necessidade crescer, é que o programador deverá evoluir o \textit{design}. Uma decisão de
+\textit{design} pode ser mais complicada do que parece e, sem um teste para mostrar isso
+rapidamente, o programador dificilmente perceberia o problema \cite{aim-fire}.
+
+\textit{"Porque sem os testes, nós não pensamos em passos menores, mas sim na solução inteira
+e acaba por não observar problemas que podem acontecer pelo caminho."}
+
+\textit{"Porque nós começamos a pensar no pequeno e não no todo. Quando faço TDD eu escrevo
+uma regra simples (...), aí vou lá e escrevo o método. Se passou, passou! Como você vai aos poucos,
+a arquitetura vai ficando legal. (...) Eu tinha mania de pensar no todo (...), as vezes
+em vez de você pensar em um negócio pequeno, você pensa em um enorme. Acho que o cérebro funciona
+melhor quando você pensa pequeno. Se você pensa grande, pra mim é óbvio que você vai deixar
+alguma coisa faltando."}
+
+foco
+
+\textit{"Talvez sejamos pessoas desfocadas naturalmente. Você vê uma coisa e já te dá vontade
+de corrigir aquilo. Como eu já tenho o teste escrito, posso fazer qualquer coisa."}
+
+
+\subsection{Busca pela testabilidade}
+
+\textit{"Eu utilizo isso como uma regra: sempre que está muito complexo [o teste],
+acho que nós temos que parar e refatorar, porque, na minha opinião, dá
+pra ficar mais simples."}
+
+Quanto mais difícil for a escrita do teste, maior a chance da existência de
+algum problema de \textit{design}. Segundo Michael Feathers \cite{feathers-synergy}, 
+existe uma sinergia muito
+grande entre uma classe com alta testabilidade e um bom \textit{design}: se o
+programador busca por testabilidade, acaba criando um bom \textit{design}; se 
+busca por um bom \textit{design}, acaba escrevendo um \textit{design} mais
+testável.
+
+TDD encoraja o programador a escrever componentes fracamente acoplados, de
+maneira que eles possam ser testados de maneira isolada e, em um nível maior,
+combinados com outros componentes.
+Programar voltado para interfaces é uma prática de orientação a objetos há muito
+tempo conhecida. Pensar em classes e dar maior foco à maneira com que
+elas se relacionam do que com o modo que determinado comportamento será implementado
+torna-se mais natural ao praticar TDD \cite{GOOS}. 
+
+\subsection{Feedback mais rápido}
+
+desenho aqui do feedback
+
+\textit{"Você ia olhar pro teste, e falar: "Está legal? Não está?", e ia fazer de novo."}
+
+\textit{"Quando você faz o teste, você vê logo o que não gostou do método daquele jeito (...), você
+não percebe isso até que você use o teste."}
+
+\textit{"[O teste] não é só uma especificação; ele tem que de fato funcionar. Então,
+como você diminui muito o tempo entre escrever um programa que funcione e testar aquilo,
+você consegue mais rápido ver se aquela parte pequena funciona ou não (...)"}
+
+
+
+Em projetos novos, praticantes de TDD afirmam que sentem menos necessidade da
+utilização de recursos de depuração de código \cite{george-williams-experiment} 
+\cite{janzen-arch-improvement}. 
+A quantidade de código
+escrita entre um teste e outro tende a ser pequena, e caso um teste falhe
+inesperadamente, o programador pode simplesmente reverter as alterações para a 
+versão anterior estável e começar novamente. Essa abordagem pode muitas vezes
+ser mais produtiva do que a atividade de depuração 
+\cite{janzen-arch-improvement}. Por essas e outras razões, desenvolvedores afirmam 
+que são mais produtivos quando praticam TDD. Apesar de o custo da escrita do teste
+existir, a longo prazo o desenvolvedor gasta menos tempo com depurações ou 
+erros de regressão, e com isso tem sua produtividade aumentada
+\cite{george-e-williams}.
+
+
+
+\subsection{Depois que aprende, dificil ficar sem}
+
+\textit{"Você vai fazer alguma coisa, você acaba pensando já nos testes que você vai fazer. É difícil 
+falar assim: "programa sem pensar nos testes!" Depois que você acostuma, você não sabe outra
+maneira de programar..."}
+
+curva de aprendizado, nao sabe muito bem o que e como testar no comeco
+
+\textit{"É complicado se disciplinar [a praticar TDD], mas conforme vai passando o tempo, 
+você percebe que a curva para se manter o projeto fica bem menos íngreme, 
+começa a perceber os benefícios e aí vicia. Você acaba não se sentindo
+mais confortável de escrever código sem teste."}
+
+dificil convencer os outros no comeco
+
+seguranca que nao volta atras
+\textit{"Eu tenho achado o máximo. Não consigo fazer nada sem utilizar os testes mais. Não tem como.
+Só me sinto seguro de entregar a funcionalidade quando ele está testado."}
 
 \section{Padrões de TDD}
 A. Unit test feedback patterns
@@ -88,19 +406,59 @@ Tests can show coupling issues. When a single test needs a big scenario, or it m
 On the other hand, if one production method needs many different unit tests to assure its entire behavior, the tested code may be suffering from cohesion problems.
 Lack of abstraction can also be perceived through unit tests. If there are many similar unit tests for different interfaces, it may indicate a lack of a right abstraction for both entities. Also, when a test finds a bug and, in order to fix it, the developer needs to update many classes, it may indicate that the abstraction is not good enough, and information is duplicated.
 
+Classes que obedecem aos princípios SOLID são fáceis de serem testadas, pois
+apresentam todas as vantagens citadas acima. Ao inverter o processo, e fazer o
+programador pensar em classes facilmente testadas desde o princípio, TDD exige
+que o programador faça uso desses princípios, resultando em um código de maior
+qualidade.
+
+Como citado no capítulo \ref{cap:tdd}, grande parte do feedback que os testes
+dão acontecem no momento em que o programador encontra dificuldades para a
+escrita do mesmo.
+
+Classes que violam o SRP, por exemplo, necessitam de grande
+esforço por parte do desenvolvedor para ser testada, já que é uma classe que faz
+muita coisa, e por consequência, demanda muitos testes.
+
+O DIP também emerge da prática, conforme ilustrado no exemplo do GOOS
+\cite{GOOS}. Ao desenhar classes e pensar no relacionamento com outras classes,
+programadores pensam apenas no comportamento esperado e sua abstração, e não na
+maneira como isso será implementado. A implementação das abstrações são
+inclusive feitas em fases posteriores. Isso incentiva as classes a
+sempre dependerem de abstrações e não de implementações concretas.
+
+Apesar de conhecidos, esses princípios não são comumente aplicados.
+Este trabalho visa entender se TDD, ao forçar o programador a escrever o teste
+antes, encoraja o programador a fazer uso das boas práticas citadas neste
+capítulo.
+
+
 do condicional pra frente, nós derivamos
 
 sempre relacionar com SOLID do cap de design
 
 \subsection{Indecisão ao dar o nome do teste}
 
-\subsection{Muitos testes para um método}
+\subsection{Muitos testes para um método = falta de coesão}
+
+\subsection{Não consegue testar um método inteiro = falta de coesão}
 
 \subsection{Muitos testes para uma classe}
 
 \subsection{Mocks em excesso}
 
 \subsection{Testes com cenários muito grandes}
+
+\subsection{Mesma alteração em diferentes testes}
+
+\subsection{Testes repetidos para entidades diferentes}
+
+\subsection{Desacoplar para conseguir testar}
+
+\subsection{Difícil usar = interface não amigável}
+
+
+do aniche
 
 \subsection{Condicional no nome do teste}
 

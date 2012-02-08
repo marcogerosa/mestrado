@@ -17,7 +17,7 @@ software deve emergir à medida que o software cresce. E, para responder
 rapidamente a essas alterações, é necessário um constante \textit{feedback} sobre a
 qualidade interna e externa do código.
 
-As diversas práticas da Programação Extrema provêm \textit{feedbacks} sobre pontos diferentes 
+As diversas práticas da Programação Extrema provêm \textit{feedback} sobre pontos diferentes 
 do projeto e em diferentes escalas. 
 A velocidade em que a prática de TDD dá \textit{feedback} ao desenvolvedor possibilita que o mesmo
 tome decisões sobre o código enquanto o custo de mudança ainda é
@@ -59,26 +59,12 @@ A prática ajuda o programador a evitar erros de regressão, em que a implementa
 uma nova funcionalidade quebra uma outra funcionalidade já existente no sistema.
 Essa bateria também provê segurança durante as
 constantes refatorações de código que são feitas durante o processo de
-desenvolvimento, e possibilita que ele altere o \textit{design} e garanta que o
-comportamento ainda seja o mesmo. 
+desenvolvimento.
+
 A quantidade de código coberto pelos testes também tende a ser alta, uma vez que o
 desenvolvedor deve sempre escrever um teste antes de implementar uma nova
-funcionalidade. Além disso, por sua execução ser bastante rápida, a bateria é executada
-muitas vezes ao dia, dando \textit{feedback} constante ao programador.
+funcionalidade. 
 
-Em projetos novos, praticantes de TDD afirmam que sentem menos necessidade da
-utilização de recursos de depuração de código \cite{george-williams-experiment} 
-\cite{janzen-arch-improvement}. 
-A quantidade de código
-escrita entre um teste e outro tende a ser pequena, e caso um teste falhe
-inesperadamente, o programador pode simplesmente reverter as alterações para a 
-versão anterior estável e começar novamente. Essa abordagem pode muitas vezes
-ser mais produtiva do que a atividade de depuração 
-\cite{janzen-arch-improvement}. Por essas e outras razões, desenvolvedores afirmam 
-que são mais produtivos quando praticam TDD. Apesar de o custo da escrita do teste
-existir, a longo prazo o desenvolvedor gasta menos tempo com depurações ou 
-erros de regressão, e com isso tem sua produtividade aumentada
-\cite{george-e-williams}.
 
 %% ------------------------------------------------------------------------- %%
 \section{TDD como Prática de Design de Classes}
@@ -161,6 +147,6 @@ design das classes.
 
 Mas, antes de estudar sobre a possível influência positiva da prática de TDD no design de classes,
 é preciso primeiro definir o que é design de classes de qualidade. Por esse motivo, o 
-próximo capítulo
+Capítulo \ref{cap:design}
 discute bons príncipios de design de classes orientados a objetos, que serão utilizados
 na avaliação dos códigos produzidos pelos participantes deste estudo.
