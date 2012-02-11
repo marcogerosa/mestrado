@@ -4,69 +4,92 @@
 
 \section{Particularidades da execução}
 
-na hora do estudo:
-- pesquisador tirava dúvidas dos exercícios
-- ajudava na configuração das máquinas
-- copiava pro hd externo com a nomenclatura "NOME-COMBINACAO"
-- dúvidas como "quando escrevo testes depois, posso refatorar também?" --> sim (na próxima, pensar melhor sobre casos extremos)
-- sem pressão para o participante.. apenas de tempos em tempos, passava pelas máquinas para garantir que nada de errado havia acontecido;
-- avisava o pessoal quando os primeiros 50 minutos acabavam com a mensagem "terminem a linha de raciocinio e partam para o proximo exercicio"
-- aproveitava para trabalhar neste documento de licoes aprendidas e etc
-- apesar de nao haver nenhuma restricao explicita sobre isso, nao houve conversa entre os participantes, todos eles trabalharam sozinho 100% do tempo.
+Como os estudos foram executados fisicamente em muitas das empresas selecionadas,
+nós acabamos por ajudar na organização do ambiente, mesmo a equipe tendo 
+recebido o caderno de questões, com as instruções da instalação
+alguns dias antes. A ideia era também gravar a implementação dos alunos,
+mas dificuldades em se encontrar um software de vídeo para as diferentes
+plataformas, e arquivos muito grandes, impossibilitaram a gravação.
 
-em casa:
-- dava id pro participante
-- renomeava pasta para "ID-NOME-COMBINACAO"
-- rodava script que gerava paginas para o especialista
-- armazenava informações em um mysql para facilitar as consultas
+Todos os participantes eram avisados de que tinham por volta de 50 minutos
+por exercício. Eles também sabiam que, mesmo que não terminassem o exercício,
+deveriam focam sempre na qualidade do código gerado. Eles também eram solicitados
+a implementar um design flexível para os problemas. A frase que dissemos para
+eles era geralmente: \textit{"Levem os exercícios para o mundo real, onde um outro
+desenvolvedor deverá manter o código gerado. Lembrem-se de implementar o código mais fácil possível
+para evoluir. As regras de negócio que existem hoje no enunciado tendem a aumentar
+de número e, portanto, deixem a manutenção do código de vocês mais simples."}
 
-na universidade:
-- alunos só conseguiram fazer o 1o exercício. pesquisador deixou já que, na hora de mudar, observando por cima,
-percebeu que pouco código havia sido escrito até então (muito diferente da realidade das indústrias, onde
-muito código havia sido gerado em 50 minutos de exercício).
-- alguns nao se mostraram muito dispostos a participar (diferente da industria)
+Durante a execução, nós tirávamos diversas dúvidas sobre enunciados dos
+exercícios, e até mesmo sobre procedimentos que os participantes podiam
+adotar durante a execução. Um deles, por exemplo, perguntou se poderia
+refatorar o código durante a implementação sem TDD. 
+Nós também não os pressionávamos em nenhum momento. Eles ficavam,
+cada um suas máquinas, trabalhando na implementação. Não ficávamos 
+passando atrás das máquinas para ver como estavam indo, na tentativa
+de evitar qualquer possível alteração de comportamento pela nossa presença.
+Ao final de cada intervalo de 50 minutos, nós avisámos para eles finalizarem
+a linha de raciocínio e partir para o próximo exercício.
+Apesar de não haver nenhuma restrição explícita sobre isso, não houveram
+conversas entre os participantes. Todos eles trabalharam sozinho
+durante toda a implementação.
 
+Todo o experimento ocorreu bem, com exceção do que foi executado
+dentro da universidade. Além de diversos problemas de infra-estrutura,
+como a falta de espaço disponível para alguns alunos, que impedia até mesmo
+o JUnit de executar, todos os participantes conseguiram fazer apenas
+1 exercício. Diante desta situação, optamos por deixá-los implementar
+o mesmo exercício até o final da aula já que, após os 50 minutos iniciais,
+nós observamos que pouco código havia sido escrito. Outro problema levantado
+foi que alguns alunos não se mostraram muito dispostos a participar
+do estudo.
 
-Even though there are some preliminary indications that students can be used for certain tasks instead of professionals under certain conditions (H√∂st et al. 2000), it is still unclear how well results from student- based experiments generalize to professional software engineers (Harrison 2000).
+Ao contrário, a grande maioria dos participantes da indústria conseguiram
+implementar o exercício no tempo delimitado, e todos se mostraram
+muito receptivos para o estudo. Um ponto que se mostrou bem útil
+para convencer participantes da indústria a participar foi a proposta
+posterior de nós apresentarmos os resultados encontrados em uma palestra.
 
-discutir q profissionais sao mto variados -- checar paper condutctinr realistic experiements ..
+Ao final da execução do estudo em cada empresa, nós colhetávamos
+os dados gerados (código-fonte e caderno de questões assinado),
+e dávamos o nome da pasta do participante, de acordo com
+o seguinte formato: \textit{id-nome-combinação}. O id aponta
+para um número único do participante no estudo, e a combinação
+aponta quais exercícios ele resolveu, bem como em qual deles
+ele utilizou TDD.
 
+As entrevistas foram, em grande parte, realizadas pessoalmente com 
+o desenvolvedor. Quando o participante não estava disponível (por estar
+localizado em outra cidade), a entrevista era realizada por Skype.
+Durante toda a entrevista, o participante podia observar o código que
+produziu. Para isso, nós criamos uma simples aplicação web para facilitar
+a exibição dos códigos-fonte. O objetivo do participante ver o código
+era lembrar sobre suas decisões, e nos possibilitar perguntas específicas
+sobre o design de classes gerado.
 
-na industria:
-- receberam por email antecipadamente o que precisava ser instalado
-- alguns participantes não acabaram todo o processo, outros com um pouco de pressa. isso pode influenciar, e foi
-levado na análise.
-- necessidade de vender a ideia e a promessa da divulgação dos resultados assim que terminar
+Em média, as entrevistas levavam 30 minutos. Quando o participante comentava
+algo interessante, nós fugíamos do roteiro para permitir que ele falasse mais do assunto,
+e anotávamos o ponto para que, ao final, fosse possível discutir novamente sobre o assunto.
+O roteiro de entrevistas sofreu uma pequena mudança ao final da primeira entrevista,
+já que percebemos que comunicar ao participante que o código que ele produziu
+\texit{não apresenta um bom design de classes} não era uma tarefa fácil, e talvez, não ética. 
+Optamos por perguntar sobre como aquele design de classes foi construído, mesmo que ele
+não estivesse bem construído.
 
+Para manter um padrão, nós sempre perguntávamos primeiro sobre o exercício que ele
+fez com TDD, independente da ordem que ele implementou no dia da execução. Notamos
+que muitos participantes discutiram sobre os exercícios e possíveis implementações com seus colegas.
 
-entrevista:
-pesquisador anotava no papel de observacoes, os pontos mais interessantes que o participante levantou no pos-experimento,
-como por exemplo, "tdd faz eu gerar metodos pequenos", para perguntar depois.
-
-tb anotava os exercicios que ele resolveu, e a letra do GRUPO da entrevista que deveria ser feito.
-
-notebook aberto com ambos os códigos gerados pelo participante, para que o participante pudesse lembrar,
-e o pesquisador usar exemplos na hora de perguntar como o design foi feito... "da onde veio a ideia dessa classe
-Fatura, com esse método X(), e a classe ProcessadorDeBoletos com a regra de negócios dentro?"
-
-entrevistas levando em torno de 30 minutos, gravadas e audio importado para o PC.
-
-quando o participante comentava algo interessante, o pesquisador fugia do roteiro para fazer ele falar mais sobre o assunto.
-
-roteiro de entrevista sofreu pequena mudança ao final da primeira entrevista, já que o pesquisador percebeu que
-é difícil (e talvez não etico) falar que o código gerado pelo participante "não apresenta bom design". a mudança de foco
-é para entender como ele chegou naquele design (mesmo que não ideal)
-
-notei que alguns participantes conversaram com outros para entender como eles resolveram o exercício. e, quando perguntei,
-sobre como foi o design, e discutiram outras maneiras de fazer, muitos deles sugeriram a mesma refatoracao.
-
-discuti sempre primeiro o exercicio q fez com tdd, independente da ordem que
-ele executou no dia.
+Dos três especialistas convidados a avaliar os códigos produzidos, apenas um não
+completou a tarefa. Sugerimos a todos eles, antes do início da avaliação, que avaliassem
+não só a quantidade de código escrito, mas as decisões de design tomadas por aquele
+participante. Para que os especialistas avaliassem cada código gerado, nós implementamos
+uma simples aplicação web, onde eles tinham acesso a qualquer momento, e podiam parar ou continuar
+a avaliar a hora que preferissem.
 
 dados:
 - numero de pessoas que usaram polimorfismo foi baixissimo
 - uma pessoa da industria NAO CONSEGUIU FAZER NADA
-
 
 \section{Descrição dos participantes}
 
@@ -184,33 +207,43 @@ citadas criaria um bom design de classes somente por praticar TDD.
 Dois bons exemplos foram dados pelos participantes, que ajudam a reforçar esse ponto. Um deles
 comentou que fez uso de um padrão de projetos \cite{gof} que aprendeu apenas alguns dias atrás.
 Outro participante mencionou que seus estudos sobre os princípios SOLID (discutidos no Capítulo \ref{cap:design})
-o ajudaram durante os exercícios. Além do mais, o único participante da indústria que nunca havia
-praticado TDD afirmou que não sentiu diferença nenhuma no processo de criação de classes durante
-a prática. 
-
+o ajudaram durante os exercícios. Segue o trecho mencionado pelo participante:
 \textit{"Até foi engraçado, eu estou lendo o Design Patterns (livro), e ele fala de polimorfismo, e foi
 lá que eu mirei pra fazer, porque eu nunca tinha feito nada assim (...), aqui dificilmente eu crio
 coisa nova, só dou manutenção no código."}
 
+Além do mais, o único participante da indústria que nunca havia
+praticado TDD afirmou que não sentiu diferença nenhuma no processo de criação de classes durante
+a prática.
 Curioso é que esse mesmo participante que nunca praticou TDD afirmou que "sabia que TDD era uma prática de design",
 diferentemente dos participantes mais experientes que sempre afirmavam que TDD não é só uma prática de design,
 mas também de testes. Isso indica, de certa forma, que a popularidade dos efeitos de TDD no design, por mais
 que nada tenha sido provado, é grande.
 
-uma descricao da galera: \textit{"[TDD] acho que tem muita relação com qualidade do código e testes 
+Quando perguntados sobre o que é TDD, muitos dos participantes lembraram sobre
+os efeitos da prática na qualidade externa e a segurança que isso traz
+ao desenvolvedor.
+Uma frase que exemplifica isso foi dita por um dos participantes:
+\textit{"[TDD] acho que tem muita relação com qualidade do código e testes 
 de regrassão. Acho que as duas principais vantagens que eu tenho quando uso TDD é isso: o código
 fica melhor e depois eu tenho a segurança dos testes de regressão para refatorar."}
 
-Apesar do TDD não guiar o desenvolvedor diretamente para um bom design,
+Entretanto, apesar do TDD não guiar o desenvolvedor diretamente para um bom design,
 todos eles afirmaram que veem benefícios na prática de TDD, mesmo do
-ponto de vista de design. Nas sub-seções abaixo, apresentamos cada um dos pontos 
-levantados pelos participantes, bem como discutimos sobre o tópico.
+ponto de vista de design: 
+% achar frase aqui sobre pq o cara nao para de fazer tdd
 
+Segundo eles, TDD pode ajudar no processo de design de classes, mas, para isso,
+o desenvolvedor deve possuir certa experiência em desenvolvimento de software
+para que isso aconteça. Grnade parte dos participantes afirmaram que o 
+design de classes criado surgiu de experiências e aprendizados passados.
+Segundo eles, a melhor opção é unir a prática de TDD com a experiência:
 \textit{"O ideal é somar as duas coisas [experiência e TDD] (...) 
 Não acredito que TDD sozinho consiga fazer as coisas ficarem boas. Tem outros conceitos
 para as coisas ficarem boas."}
 
-
+Nas sub-seções abaixo, apresentamos cada um dos pontos 
+levantados pelos participantes, bem como discutimos sobre o tópico.
 
 \subsection{Segurança na refatoração}
 
@@ -218,23 +251,19 @@ Os participantes afirmaram que, durante o processo de criação de design, a mud
 constante, afinal pouco se conhece do problema, e de como a classe deve ser construída. Segundo eles,
 uma vantagem íntriseca do TDD é a suíte de testes gerada. Essa suíte possibilita ao desenvolvedor
 muda de ideia e refatorar todo o design de classes com segurança.
-A segurança, segundo eles, é fator importante para mudanças de design de classes ou mesmo de implementação.
-
-
+A segurança, segundo eles, é fator importante para mudanças de design de classes ou mesmo de implementação:
 \textit{"Sim, me dá a chance de aprender pelo caminho e fazer algumas coisas diferentes. (...) O teste te dá segurança."}
 
-\textit{"Porque em um projeto você muda de ideia muitas vezes. (...) Porque grande grande do que você
-pensou está especificado (no teste) e, por mais que você esqueça uma coisa ou outra, o teste vai
-te lembrar. Isso aconteceu comigo várias vezes. Eu estava mudando alguma coisa no código e não passava
-o teste, não passava... Isso aconteceu até eu ver que o errado era eu, e não o teste."}
-
+Um participante inclusive mencionou uma experiência real, onde o TDD fez a diferença. Segundo ele,
+em muitos momentos ele mudava completamente de ideia sobre a implementação, e confiava na bateria
+de testes para garantir que o comportamento esperado:
 \textit{"No TCC da pós, eu estava desenvolvendo uma ferramenta que trabalhava com manipulação de código, e fiz
 tudo com TDD. Várias vezes eu chegava a apagar todo código do sistema, mantinha os testes, e começava uma nova
 linha de raciocínio. Achei que me ajudou muito fazer TDD (...), tanto que no fim que eu fui executar a ferramenta,
 antes eu só validava pelos testes."}
 
-refatoracao + experiencia
-
+Novamente, experiência é fator fundamental. Para buscar um código melhor durante a refatoração,
+desenvolvedores devem fazer uso de suas experiências:
 \textit{"(...) se você não tiver embasamento sobre esses aspectos de única responsabilidade,
 coesão, acoplamento, acho que não adianta muito [fazer TDD]. Você precisa ter isso em mente
 para conseguir mudar, precisa desse conhecimento para conseguir refatorar."}
