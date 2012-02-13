@@ -72,7 +72,7 @@ algo interessante, nós fugíamos do roteiro para permitir que ele falasse mais 
 e anotávamos o ponto para que, ao final, fosse possível discutir novamente sobre o assunto.
 O roteiro de entrevistas sofreu uma pequena mudança ao final da primeira entrevista,
 já que percebemos que comunicar ao participante que o código que ele produziu
-\texit{não apresenta um bom design de classes} não era uma tarefa fácil, e talvez, não ética. 
+\textit{não apresenta um bom design de classes} não era uma tarefa fácil, e talvez, não ética. 
 Optamos por perguntar sobre como aquele design de classes foi construído, mesmo que ele
 não estivesse bem construído.
 
@@ -86,10 +86,6 @@ não só a quantidade de código escrito, mas as decisões de design tomadas por
 participante. Para que os especialistas avaliassem cada código gerado, nós implementamos
 uma simples aplicação web, onde eles tinham acesso a qualquer momento, e podiam parar ou continuar
 a avaliar a hora que preferissem.
-
-dados:
-- numero de pessoas que usaram polimorfismo foi baixissimo
-- uma pessoa da industria NAO CONSEGUIU FAZER NADA
 
 \section{Descrição dos participantes}
 
@@ -193,12 +189,12 @@ os códigos-fonte produzidos serão utilizados no processo de análise quantitat
 \end{figure}
 
 \begin{table}
-	\begin{tabular}
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
 		\hline
 		Ferramenta & Participantes que conhecem & Participantes que não conhecem\\
 		\hline
 		Java & 16 & 9\\
-		JUnit & 25 & 0
+		JUnit & 25 & 0\\
 		Objetos Dublê & 16 (utilizam no dia-a-dia), 6 (na teoria) & 3\\
 		\hline
 	\end{tabular}
@@ -207,18 +203,26 @@ os códigos-fonte produzidos serão utilizados no processo de análise quantitat
 \end{table}
 
 \begin{table}
-	\begin{tabular}
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
 		\hline
 		Ferramenta & Participantes que conhecem & Participantes que não conhecem\\
 		\hline
 		Java & 2 & 19\\
-		JUnit & 21 & 0
+		JUnit & 21 & 0\\
 		Objetos Dublê & 2 (utilizam no dia-a-dia), 16 (na teoria) & 3\\
 		\hline
 	\end{tabular}
 	\label{tab:exp-academia}
 	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da academia}
 \end{table}
+
+\section{Análise do Código-Fonte}
+
+dados:
+- numero de pessoas que usaram polimorfismo foi baixissimo
+- uma pessoa da industria NAO CONSEGUIU FAZER NADA
+
+
 
 \section{Análise das Entrevistas}
 
@@ -335,6 +339,13 @@ a arquitetura vai ficando legal. (...) Eu tinha mania de pensar no todo (...), a
 em vez de você pensar em um negócio pequeno, você pensa em um enorme. Acho que o cérebro funciona
 melhor quando você pensa pequeno. Se você pensa grande, pra mim é óbvio que você vai deixar
 alguma coisa faltando."}
+
+Essa afirmação vai de encontro ao discurso comum das metodologias ágeis.
+Equipes que seguem as ideias ágeis optam por não fazer o chamado \textit{big design up-front (BDUF)},
+e deixam que o \textit{design} evolua ao longo do tempo, mantendo o código o mais claro e
+simples possível, e refatorando sempre que há necessidade. Decisões de
+\textit{design} são tomadas com a consciência de que elas serão alteradas no futuro
+\cite{is-design-dead}.
 
 Um deles comentou inclusive da falta de foco que o programador tem quando não pratica TDD.
 Ao ter um objetivo curto (que, no caso do praticante de TDD, é fazer o teste passar), o
@@ -627,7 +638,7 @@ Isso nos mostra que, ao menos quantitativamente, a prática de TDD não fez
 diferença nas métricas de código.
 
 \begin{table}
-	\begin{tabular}
+	\begin{tabular}{ | p{5cm} | c | c | c | c | c |}
 		\hline
 		Exercício & Complexidade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
 		& Quantidade de métodos por classe \\
@@ -641,7 +652,7 @@ diferença nas métricas de código.
 		\hline
 	\end{tabular}
 	\label{tab:metricas-industria}
-	\caption{{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na indústria}
+	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na indústria}
 \end{table}
 
 Na tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
@@ -654,7 +665,7 @@ Podemos então concluir que a prática de TDD também não afetou
 o código produzido pelos participantes da academia.
 
 \begin{table}
-	\begin{tabular}
+	\begin{tabular}{ | p{5cm} | c | c | c | c | c |}
 		\hline
 		Exercício & Complexidade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
 		& Quantidade de métodos por classe \\
@@ -664,11 +675,11 @@ o código produzido pelos participantes da academia.
 			Exercício 3	0.7008	&	0.1014 &	0.5007	& 0.4292	& 0.8687\\
 			Exercício 4	0.343	&	0.7131 &	0.7735	& 0.7833	& 0.5522\\
 		\hline
-			total	0.254	&	0.007676* & 0.351 & 0.2668 & 0.1706
+			total	0.254	&	0.007676* & 0.351 & 0.2668 & 0.1706\\
 		\hline
 	\end{tabular}
 	\label{tab:metricas-academia}
-	\caption{{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na academia}
+	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na academia}
 \end{table}
 
 \subsection{Especialistas}
@@ -679,30 +690,29 @@ com e sem TDD, tanto na indústria, quanto na academia. Nas Tabelas
 mostramos os \textit{p-values} encontrados para a diferença de avaliação dos especialistas
 entre códigos produzidos com e sem TDD na indústria e academia, respectivamente.
 
+
 \begin{table}
-	\begin{tabular}
+	\begin{tabular}{| p{5cm} | c | c | c | }
 		\hline
 		Especialista & Design & Testabilidade & Simplicidade\\
 		\hline
 		Especialista 1 &	0.4263 &	0.5235 &	0.332\\
-		Especialista 2 &	0.7447 &	0.4591 &	0.9044
+		Especialista 2 &	0.7447 &	0.4591 &	0.9044\\
 		\hline
 	\end{tabular}
 	\label{tab:especialistas-industria}
-	\caption{{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na indústria}
-
+	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na indústria}
 \end{table}
 
 \begin{table}
-	\begin{tabular}
+	\begin{tabular}{| p{5cm} | c | c | c | }
 		\hline
 		Especialista & Design & Testabilidade & Simplicidade\\
 		\hline
-		Especialista 1	& 0.8795 &	NA	& 0.4222
-		Especislista 2	& 0.88	& 0.5519 &	0.88
+		Especialista 1	& 0.8795 &	NA	& 0.4222\\
+		Especislista 2	& 0.88	& 0.5519 &	0.88\\
 		\hline
-		\end{tabular}
-		\label{tab:especialistas-academia}
-		\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na academia}
-
+	\end{tabular}
+	\label{tab:especialistas-academia}
+	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na academia}
 \end{table}
