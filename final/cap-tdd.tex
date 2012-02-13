@@ -17,22 +17,6 @@ software deve emergir à medida que o software cresce. E, para responder
 rapidamente a essas alterações, é necessário um constante \textit{feedback} sobre a
 qualidade interna e externa do código.
 
-As diversas práticas da Programação Extrema provêm \textit{feedback} sobre pontos diferentes 
-do projeto e em diferentes escalas. 
-A velocidade em que a prática de TDD dá \textit{feedback} ao desenvolvedor possibilita que o mesmo
-tome decisões sobre o código enquanto o custo de mudança ainda é
-baixo. Segundo Vanderburg \cite{vanderburg}, TDD dá \textit{feedback} em questão de
-minutos e, em questão de tempo, só é inferior à programação pareada. O gráfico,
-baseado no trabalho dele, pode ser visto na Figura
-\ref{fig:agile-feedback}.
-
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.4]{agile-feedback-port}
-  \caption{Práticas de XP e Tempo de \textit{Feedback} (baseado em \cite{vanderburg})}
-  \label{fig:agile-feedback}
-\end{figure}
-
 TDD é uma prática de desenvolvimento de software que se baseia na repetição de
 um pequeno ciclo de atividades. Primeiramente, o desenvolvedor escreve um
 teste que falha. Em seguida, deve fazê-lo passar, implementando a
@@ -105,7 +89,6 @@ objetivo de TDD é 'código claro que funcione'"}.
 Janzen levantou esse problema nas definições e culpa até o próprio nome da prática, uma vez
 que ela possui a palavra ``testes'', mas não contém a palavra \textit{``design''} 
 \cite{tdd-really-improve}.
-
 Segundo ele, uma definição mais clara é a de que TDD é a arte de produzir testes
 automatizados para código de produção, usando esse processo para guiar o \textit{design} e a programação.
 Para cada pequeno pedaço de funcionalidade, o desenvolvedor deve primeiro
@@ -115,25 +98,18 @@ passar. Em seguida, ele refatora (simplifica e clareia) tanto o código de produ
 quanto o código de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Possíveis Efeitos no \textit{Design} de Classes}
+\subsection{Possíveis Efeitos no Design de Classes}
 
 Como mencionado acima, os praticantes de TDD acreditam que os testes de unidade
 podem ajudá-los a criar um design de classes de qualidade. Uma das explicações mais
 populares para esse fenômeno é a relação
 entre um código que possui uma alta testabilidade, ou seja, é fácil de ser testado
 por meio de um teste de unidade, e um design de classes de alta qualidade.
-Segundo Feathers \cite{feathers-synergy}, 
-por causa dessa sinergia muito
-grande entre uma classe com alta testabilidade e um bom \textit{design de classes}: se o
-programador busca por testabilidade, acaba criando um bom \textit{design de classes}; se 
-busca por um bom \textit{design de classes}, acaba escrevendo classes mais
-testáveis.
 
 TDD também sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
 inglês, \textit{baby steps}): deve-se escrever testes sempre para a menor
 funcionalidade possível, escrever o código mais simples que faça o teste passar
 e fazer sempre apenas uma refatoração por vez \cite{TDDByExample}.
-
 Uma justificativa para tal é a de que, quanto maior o passo que o programador dá, mais
 tempo ele leva para concluí-lo e, consequentemente, ele fica mais tempo
 sem \textit{feedback} sobre o código. Além disso, faz com que o programador não crie

@@ -1,159 +1,130 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Motivação: Uma análise qualitativa sobre TDD em um evento de métodos ágeis}
+\chapter{Uma análise qualitativa sobre TDD em um evento de métodos ágeis}
 \label{cap:motivacao}
 
-\section{Introduction}
+Este estudo exploratório e qualitativo, realizado em 2010 e publicado no 
+WBMA 2010 \cite{aniche-wbma}, dentro de uma conferência de 
+métodos ágeis mostra o quanto a prática de TDD tem crescido em popularidade. No entanto,
+os desenvolvedores ainda não compreendem muito bem quais são os efeitos
+da prática no projeto de classes.
 
-Test-Driven Development (TDD) is one of the agile practices
-that focus on feedback. 
-In a more formal definition, TDD is the craft of
-producing automated tests for production code, and using that process to drive 
-design and programming. For every tiny bit of functionality in
-the production code, programmers first develop a test that specifies and
-validate what the code will do. Programmers, then, produce exactly as much code 
-as will enable that test to pass. Then they refactor (simplify and clarify) both
-the production and test code \cite{tdd-aa}.
+Este capítulo discute o estudo feito, bem como o que encontramos na análise
+da discussão de um grupo de participantes do Encontro Ágil 2010, um
+dos primeiros eventos sobre metodologias ágeis do Brasil.
 
-People usually discuss if TDD is a testing technique, as programmers
-need to write unit tests all the time,
-or a design technique, as the generated tests give feedback about design and 
-programmers use it to improve the design.
-Some well-known authors claim that TDD is in fact a design technique and testing
-is just a consequence \cite{bob-martin}.
+\section{Escopo}
 
-Programmers also discuss about how to do baby steps in real world. Some of them
-believe that programmers should do baby steps all the time for every situation
-and, on the other side, some programmers claim that there is no need to go that
-slow.
-Productivity is another controversial subject. Although there are some
-studies showing that TDD does not reduce productivity \cite{george-williams} 
-\cite{erdogmus}, some people still think that TDD makes the development team go
-slowly.
+A conferência "Encontro Ágil", que acontece em São Paulo, é uma das
+primeiras conferências brasileiras sobre métodos ágeis de desenvolvimento
+de software. 
 
-This paper reports a qualitative analysis, based on Grounded 
-Theory techniques \cite{grounded-theory}, of opinions from TDD practitioners
-inside an agile conference and compares it with the literature.
-The opinions were gathered in a session conducted by the researchers. 
-The objective of the session was to generate a free discussion about TDD topics
-with whoever wanted to participate. Most of the participants have less than 3 years of
-experience in TDD which may classify them as beginners in the practice. 
+Na edição de 2010, a conferência propôs um formato diferente:
+nenhuma palestra. A ideia era justamente aumentar a interação e a troca
+de experiência entre os 200 participantes. Por esse motivo, o programa
+do evento era composto de sessões com espaços abertos, sessões
+de \textit{dojo}, \textit{workshops} e jogos.
 
-\section{Scope}
+\subsection{A Sessão sobre TDD}
 
-The ``Encontro Ágil'' conference (a free translation would be Agile Meeting
-Conference), located in São Paulo, is one of the first brazilian conferences about
-agile software development. São Paulo is the largest city and the major
-economic center in Brazil.
-In the 2010 edition, the conference evolved its format to a different proposal:
-no lectures at all. The idea was to enhance interactions between all the
-200 participants and the exchange of experiences.
-Because of that, the event program was compound by sessions with open spaces,
-dojos, workshops, and games.
+Nós conduzimos uma sessão aberta sobre Desenvolvimento Guiado por Testes.
+A ideia principal da sessão era entender a visão que as pessoas que
+atualmente utilizam TDD tem sobre a prática. O objetivo da sessão
+era entender o que uma audiência com praticantes ainda inexperientes
+pensam sobre TDD, e suas opiniões em relação aos efeitos da prática 
+no projeto de classes.
 
-\subsection{The Test-Driven Development Session}
+Na sessão, realizamos um bate-papo informal, usando uma técnica
+conhecida por \textit{Fishbowling} 
+\footnote{\url{http://en.wikipedia.org/wiki/Fishbowl_(conversation)}. Último acesso em 27 de novembro de 2010.}
+Nela, quatro pessoas ficam sentadas, em uma roda, e discutem sobre
+o assunto proposto. Uma cadeira extra vazia junto a roda possibilita
+que um participante da audiência se junte a conversa. Mas, no momento
+em que um novo participante entra na conversa, um dos quatro anteriores
+deve sair e voltar para a audiência.
 
-The authors conducted an open session about Test-Driven Development. 
-The main idea of the session was to understand the vision that people who
-actually use TDD have about the practice in their daily work. The objective
-was to assess what an audience made up of inexperienced practitioners
-think about TDD, whether they apply it in their routines and what opinions they
-have about the effects of TDD in software design.
-
-The session adopted an informal chat using a technique called   
-fishbowling \footnote{\url{http://en.wikipedia.org/wiki/Fishbowl_(conversation)}.
-Last access on November 27\textsuperscript{th} 2010} to make the discussion more
-active.
-In this technique, four people are kept in the center of the discussion
-with an extra chair available for whoever wishes to participate. In this case,
-when someone sits on the chair, another participant leaves in order to
-maintain four people discussing, and one chair available for a new
-member of the public to join the discussion.
-
-The session took about 1 hour and a half and the researchers proposed 7
-different questions for discussion. Some questions were provocative in order
-to promote discussion among the participants. 
-The following list presents the questions in the order they were discussed:
+A sessão levou em torno de 1 hora e meia, e nós propusémos sete diferente
+questões para discussão. Algumas delas eram intencionalmente provocativas,
+justamente para promover uma discussão entre os participantes. A lista
+contém as perguntas, na ordem em que foram discutidas:
 
 \begin{enumerate}
-\item Is TDD a test practice or a design practice?
-\item Discuss the following statement: it is impossible to generate a good
-design without doing TDD.
-\item How do tests help you create a better design, i.e. classes with low 
-coupling, high cohesion, simple code, etc.?
-\item Many people apply TDD doing ``as simple as possible", even if the code to
-be written is very simple (e.g. a simple calculator that does sums, in which the
-programmer creates and returns constant values, adds many conditional clauses
-until a big refactoring). Do you think it is really necessary?
-\item Now that I've used my tests to improve the design of the system, 
-can I throw them away?
-\item Some people say that writing tests before programming decreases
-productivity (for example, if a programmer writes a hundred lines of code a
-day, he is going to write 50 lines of tests and 50 lines of production code).
-What do you think about it?
-\item Talk about your first time doing TDD.
+\item TDD é uma prática de testes ou de projeto de classe?
+\item Discuta a seguinte afirmação: é impossível criar um bom projeto de classes sem fazer TDD.
+\item Como os testes te ajudam a criar um bom projeto de classes? Por exemplo, classes com baixo
+acoplamento, alta coesão, código simples, e etc?
+\item Muitas pessoas aplicam TDD fazendo "o mais simples possível", mesmo se
+o código a ser escrito já é muito simples (por exemplo, uma simples calculadora
+que executa somas, onde o desenvolvedor cria e retorna constantes e adiciona
+muitos condicionais antes de uma grande refatoração). Você pensa que isso
+é realmente necessário?
+\item Agora que usei meus testes para melhorar o projeto das minhas classes, posso
+agora jogá-los fora?
+\item Algumas pessoas afirmam que escrever os testes antes diminui a produtividade.
+Por exemplo, se o programador escreve 100 linhas de código por dia, apenas 50 delas são
+código de produção; o restante é código de teste. O que você pensa sobre isso?
+\item Fale sobre a primeira vez que praticou TDD.
 \label{questions}
 \end{enumerate}
 
-The participants had about 7 minutes of discussion for each question.
-As soon as each slot finished, the researchers asked the public to vote whether
-the question being discussed should continue.
-For the poll, the researchers distributed among the participants a card with a
-green face, which meant that they wanted to keep the
-current discussion, and a red one, which meant that the topic was not
-interesting anymore and they could go to the next question.
+Os participantes tinham por volta de sete minutos para discutir cada questão.
+Assim que o tempo acabava, nós solicitávamos a eles que votassem se a discussão
+deveria continuar ou não. Para a votação, nós distribuímos cartões com faces
+verde e vermelha entre os participantes. A face verde indicava que a discussão
+deveria continuar; já a face vermelha indicava que o tópico não era mais 
+interessante e que um novo tópico deveria já poderia entrar em discussão.
 
-The session had 10 participants and all of them entered in the fishbowling at
-least once.
-None of the researchers participated in the discussions as it would have biased
-the participants.
-After the session, the researchers asked them to fill out a survey about their
-experience in software development and TDD. Section \ref{sec:participants}
-explains the participants' profile.
+Dez congressistas participaram da discussão, e todos eles entraram na
+roda de discussão pelo menos uma vez. Nós não participamos da discussão, já
+que isso poderia enviesar os participantes. Após a sessão, nós pedimos a eles
+para preencher um questionário sobre experiência em desenvolvimento de software
+e TDD. Na Seção \ref{motiv:sec:participants}, discutimos sobre o 
+perfil dos participantes.
 
-For further analysis and discussion of the ideas that emerged at the session, a
-voice recorder was placed in the center of the room and all participants were
-aware that their opinions were being recorded and their statements would be
-used anonymously and only for the purpose of the research.
+Para a análise posterior, um gravador de voz foi colocado no centro
+da sala, e todos os participantes estavam cientes de que suas opiniões
+estavam sendo gravadas e suas afirmações usadas de maneira anônima e apenas
+para o propósito deste estudo.
 
-\subsection{Audience Profile}
-\label{sec:participants}
+\subsection{Perfil da Audiência}
+\label{motiv:sec:participants}
 
-The researchers asked the participants to answer a short anonymous questionnaire
-about their experience in software development and TDD. 
-The questionnaire and its possible
-answers are represented on Table \ref{questionnaire}.
+Nós solicitamos aos participantes que respondessem um curto questionário anônimo
+sobre suas experiências em desenvolvimento de software e TDD.
+O questionário e suas possíveis respostas estão representadas
+na Tabela \ref{motiv:questionnaire}.
 
 \begin{center}
 \begin{table}[h]
 \centering
 \begin{tabular}{ | p{5.5cm} || p{5.5cm} | }
 \hline
-Question & Options
+Questão & Opções
 \\ \hline \hline
-Time experience in software development (in years) &
+Experiência em desenvolvimento de software (em anos) &
 0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6+\hspace{0.1cm}
 \\ \hline
-Time experience in TDD (in years) &
+Experiência em TDD (em anos) &
 0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6+
 \\ \hline
 \end{tabular}
-\caption{Questionnaire used during the session}
-\label{questionnaire}
+\caption{Questionário usado para avaliar os participantes da sessão}
+\label{motiv:questionnaire}
 \end{table}
 \end{center}
 
-Most respondents had between 0 and 3 years of experience with TDD, and only two
-were more experienced than that. Also, only 1 participant had never practiced
-TDD before. 
-Regarding experience in software development, the respondents were fairly
-homogeneous. Beginner programmers (less than 2 years) represented 30\% of the
-audience and those who were more experienced (more than 3 years) represented
-70\%.
+A maioria dos participantes possuíam entre 0 e 3 anos de experiência em TDD,
+a apenas 2 possuíam mais do que isso. Apenas 1 participante nunca havia
+praticado TDD antes.
+Sobre experiência em desenvolvimento de software, a distribuição era
+razoavelmente homogênea. Programadores iniciantes (menos de 2 anos de experiência)
+representavam 30\% da audiência, enquanto que os mais experientes (mais de 3 anos de experiência)
+representavam 70\%.
 
-Based on these numbers, the audience may be classified as an experienced group
-of software developers that are starting to practice TDD. Such profiles 
-are still very common in industry, as programmers are still getting to know
-agile practices and TDD specifically.
+Baseado nestes números, a audiência pode ser classificada como um grupo
+experiente em desenvolvimento de software, mas que ainda está iniciando
+a prática de TDD. Este tipo de perfil é ainda muito comum na indústria,
+já que os desenvolvedores ainda estão apenas começando a aplicar práticas
+agiles e TDD especificamente.
 
 \section{Research Methodology}
 
@@ -461,75 +432,6 @@ effects. However, the first question was clearly unbiased, and participants only
 discussed about the design part. It may indicate that TDD effects are only in
 internal quality and external quality is just a side-effect.
 
-\section{Related Work}
- 
-Many empirical experiments have been done in order to evaluate TDD's effects on
-both internal and external quality. Also, these experiments can be divided
-into two categories: industry and academia. Most of experiments in industry
-show results similar to what is found in this study.
-
-When talking about external quality, Janzen \cite{janzen} demonstrated that
-programmers using TDD in industry produced code that passed in up to 50\% more 
-external tests than code produced by control groups not using TDD and spent less
-time to fix defects. A study from George and Williams \cite{george-williams}
-that produced code passed between 18\% and 50\% more in external test cases than the
-code produced by groups not using TDD. The study from Edwards \cite{edwards},
-with 59 students showed that TDD code has 45\% less defects.
-
-Although many other studies relate TDD and external quality, no participants 
-mentioned effects on external quality, which may indicate that TDD effects are
-only in internal quality and external quality is just a side-effect.
-
-A qualitative analysis in George and Williams showed that 87.5\% of the
-programmers believed that TDD approach facilitated requirements 
-understanding and 95.8\% believed that it reduced debugging effort. 
-Regarding quality, 92\% of the developers believed that TDD yielded higher
-quality code and 79\% thought it promoted simpler design.
-
-Another study from Janzen \cite{janzen-2} with three different academic groups 
-(each one using a different approach: test-first, test-last, no test) found that
-the code produced by the test-first team better used object-oriented concepts,
-and responsibilities were separated in thirteen different classes while the
-other teams produced a more procedural code.
-The test-first team also produced more code and delivered more features.
-Moreover, tests produced by the test-first team had twice more assertions than
-the others and covered 86\% more branches than the test-last team. Furthermore,
-tested classes had 104\% lower coupling measures than untested classes and
-tested methods were 43\% on average less complex than the untested ones.
-Langr also \cite{langr} showed that TDD improved code quality, provided
-better maintainability, and produced 33\% more tests.
-Steinberg \cite{steinberg} showed that TDD code was more cohesive and less
-coupled and students reported that defects were easier to fix.
-
-Participants agree with most of this results; in their opinion, TDD improves
-code quality both in implementation and design, also making it as simple as possible.
-The written code is also easier to maintain as the test suite ensures the
-behavior, giving freedom to programmers to refactor the code.
- 
-Higher productivity was also an effect claimed by the participants of this
-study. In their opinion, although programmers do not feel productive at the
-beginning, in medium terms productivity grows. 
-This result is also confirmed by George and
-Williams who also found that although TDD might initially reduce productivity
-among inexperienced programmers, in a qualitative analysis, 78\% of them thought that 
-TDD improved overall programming productivity. However only 50\% of them 
-believed that TDD led to less code development time.
-A study from Erdogmus et al \cite{erdogmus} with 24 undergraduate students
-showed that TDD increased productivity. 
-
-The learning difficulty presented by the participants was also evaluated by
-researchers. Mugridge \cite{mugridge} identified two main challenges in
-teaching TDD over the last two years: to get students to rethink about design, 
-and to really engage with this new approach. Also, it is
-hard to explicitly develop students' skills in testing, design and refactoring.
-
-Participants sometimes mentioned steps that are not suggested by TDD cycle. This
-is not anomalous. Aniche and Gerosa \cite{aniche-gerosa} reported that
-programmers sometimes do not follow TDD steps as described by Kent Beck \cite{tdd-by-example}.
-Some mistakes identified were: to forget the refactoring step, to build complex
-test scenarios, and refactor another piece of code while working on a test.
-Some mistakes are frequently made by around 25\% of programmers.
-
 \section{Participants' review}
 \label{sec:review}
 
@@ -594,15 +496,3 @@ good place for researchers to interview people from industry and also enable
 participants to learn with each other. Also, researchers noticed that proposing
 a fishbowling was a good way to make people with diverse experience to discuss
 about the same subject and get different answers.
-
-\section{Acknowledgements}
-
-We would like to thank Encontro Agil 2010 organization for the acceptance on our
-TDD open space session. In addition, participants were an essential part of the
-research, and researchers acknowledge their participation and the allowance for
-the data analysis.
-Also, Caelum Learning and Innovation sponsored Mauricio Aniche and Thiago
-Ferreira during this research. Marco Gerosa received an individual grant
-awarded by CNPq.
-
-
