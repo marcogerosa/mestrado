@@ -14,7 +14,7 @@ plataformas, e arquivos muito grandes, impossibilitaram a gravação.
 Todos os participantes eram avisados de que tinham por volta de 50 minutos
 por exercício. Eles também sabiam que, mesmo que não terminassem o exercício,
 deveriam focam sempre na qualidade do código gerado. Eles também eram solicitados
-a implementar um design flexível para os problemas. A frase que dissemos para
+a implementar um design flexível para os problemas. A frase que dizíamos para
 eles era geralmente: \textit{"Levem os exercícios para o mundo real, onde um outro
 desenvolvedor deverá manter o código gerado. Lembrem-se de implementar o código mais fácil possível
 para evoluir. As regras de negócio que existem hoje no enunciado tendem a aumentar
@@ -216,13 +216,22 @@ os códigos-fonte produzidos serão utilizados no processo de análise quantitat
 	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da academia}
 \end{table}
 
-\section{Análise do Código-Fonte}
+\section{Inspeção do Código-Fonte}
 
-dados:
-- numero de pessoas que usaram polimorfismo foi baixissimo
-- uma pessoa da industria NAO CONSEGUIU FAZER NADA
+Nós avaliamos cada código-fonte manualmente.
+Em sua maioria, os códigos eram claros e fáceis de entender,
+com classes, métodos e variáveis bem nomeados.
+Mas, para nossa surpresa,
+poucos foram os participantes que fizeram uso de polimorfismo. A grande
+maioria das implementações fazia uso de cadeias de condições para 
+alcançar o objetivo.
 
-
+Nós também não conseguimos identificar, de olho, quais códigos
+eram produzidos com DGT e quais não eram pois, independente
+da prática utilizada, ambos eram muito semelhantes.
+De todos os códigos da indústria, apenas um foi completamente eliminado:
+um dos participantes não conseguiu nem começar a implementação. Suas classes
+eram completamente vazias. 
 
 \section{Análise das Entrevistas}
 
@@ -512,7 +521,7 @@ coesão, falta de abstração, e etc, na classe que estão criando.
 Esses padrões são melhor discutidos na Seção \ref{padroes-tdd}.
 
 
-\section{Padrões de TDD}
+\section{Padrões de Feedback de DGT}
 \label{padroes-tdd}
 
 Na busca pela testabilidade, o desenvolvedor é encorajado a escrever um
@@ -624,8 +633,6 @@ Nas sub-seções abaixo, discutimos os números encontrados.
 
 \subsection{Métricas de código}
 
-industria
-
 Na Tabela \ref{tab:metricas-industria}, mostramos os \textit{p-values} encontrados para
 a diferença entre códigos produzidos com e sem TDD na indústria. Pelos números, 
 observamos que nem em nenhum exercício houveram diferenças nas métricas
@@ -655,7 +662,7 @@ diferença nas métricas de código.
 	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na indústria}
 \end{table}
 
-Na tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
+Na Tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
 entre códigos produzidos com e sem TDD na academia. As métricas de 
 falta de coesão dos métodos e quantidade de métodos apresentaram
 uma diferença significativa nos exercícios 1 e 4, respectivamente.
@@ -710,7 +717,7 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 		Especialista & Design & Testabilidade & Simplicidade\\
 		\hline
 		Especialista 1	& 0.8795 &	NA	& 0.4222\\
-		Especislista 2	& 0.88	& 0.5519 &	0.88\\
+		Especialista 2	& 0.88	& 0.5519 &	0.88\\
 		\hline
 	\end{tabular}
 	\label{tab:especialistas-academia}

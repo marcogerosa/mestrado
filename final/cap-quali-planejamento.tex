@@ -2,10 +2,6 @@
 \chapter{Planejamento do estudo} 
 \label{cap:qualitativo-planejamento}
 
-Este capítulo bla bla bla
-
-\section{Métodos qualitativos de pesquisa}
-
 Conduzir um estudo experimental em engenharia de software sempre foi uma
 atividade difícil. Uma das razões para isso é o fator humano, muito presente 
 no processo de desenvolvimento de software, como sugerido por métodos ágeis  em
@@ -264,6 +260,9 @@ linguagem Java. Participantes deverão utilizar JUnit \footnote{\url{http://www.
 automatizados de unidade. O objetivo desses exercícios é simular problemas de design 
 recorrentes em diversos projetos de software. Os enunciados encontram-se no Apêndice 
 \ref{ape:exercicios}.
+Na Tabela \ref{tab:problemas-exercicios}, apresentamos a relação entre uma má
+implementação dos exercícios e os princípios de projeto de classes feridos por
+ela.
 
 Foi dito ao participante que os exercícios simulam problemas do mundo real, e ele deve
 ter em mente que as soluções geradas por ele serão mantidas por uma outra equipe.
@@ -294,8 +293,20 @@ acordo com diferentes critérios. Em uma implementação procedural, esse único
 responsável por validar todos os critérios. Mas, por serem complexos, esses filtros deveriam ser divididos em 
 várias classes, ao invés de uma única classe responsável por todos esses critérios.
 
-% TODO relacionar exercicios com SOLID
-% TODO relacionar workshop com a pesquisa mais pra frente
+
+\begin{table}
+	\begin{tabular}{| l | l | l | }
+		\hline
+		Exercício & Mau Cheiro & Princípios\\
+		Exercício 1 & Rigidez, Complexidade Desnecessária & PRU, PAF \\
+		Exercício 2 & Fragilidade, Viscosidade, Imobilidade & PRU, PID, PAF \\
+		Exercício 3 & Rigidez, Fragilidade & PRU\\
+		Exercício 4 & Fragilidade, Viscosidade, Imobilidade & PAF, PRU, PID \\
+	\end{tabular}
+	\label{tab:problemas-exercicios}
+	\caption{Exercícios propostos e mau cheiros de design}
+\end{table}
+
 Os exercícios propostos são baseados em um workshop criado pelo autor desta pesquisa, e o mesmo
 foi aplicado para 2 turmas diferentes, uma delas dentro do Agile Brazil 2011, o
 maior evento brasileiro de métodos ágeis, que tinha um público heterogêneo, e uma delas para
@@ -347,7 +358,7 @@ do mesmo pode ser encontrada no Apêndice \ref{ape:questionario-pos}.
 		faz para obter feedback sobre a qualidade do código que escreve.
 		\\ \hline
 		
-		TDD &
+		Prática de DGT &
 		O objetivo deste bloco é entender como a prática pode ter influenciado
 		nas decisões de design feitas pelo programador durante o exercício.\\
 		
@@ -357,8 +368,6 @@ do mesmo pode ser encontrada no Apêndice \ref{ape:questionario-pos}.
 	\label{tab:questionario-pos}
 	\caption{Informações que são extraídas do questionário pós-experimento.}
 \end{table}
-
-% TODO relacionar cada uma com esses objetivos
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Escolha de candidatos para a entrevista}
@@ -453,19 +462,31 @@ para avaliar sua qualidade.
 As métricas sugeridas são:
 
 \begin{enumerate}
-	\item Complexidade Ciclomática:
+	\item Complexidade Ciclomática: Optamos por utilizar o algoritmo de complexidade ciclomática criado
+	por McCabe \cite{mccabe}. Uma simples explicação desse algoritmo seria que, para cada método, um contador
+	é incrementado sempre que um if, for, while, case, catch, E lógico, OU lógico, ou if ternário aparece.
+	Todos os métodos tem ainda seus contadores iniciados com 1. 
 	
-	\item Acoplamento Eferente:
+	\item \textit{Fan-Out}: Este algoritmo conta o número de classes que uma classe conhece e faz uso \cite{lorenz}.
 	
-	\item LCOM:
+	\item Falta de Coesão dos Métodos: A versão implementada do algoritmo de falta de coesão dos métodos 
+	(ou, do inglês, \textit{Lack of Cohesion of Methods (LCOM)}) foi a sugerida por Henderson-Sellers \cite{lcom-hs}.
+	Neste algoritmo, uma classe é considerada altamente coesa se e somente se todos os seus métodos usam
+	todos seus atributos de instância. Neste caso, a métrica resulta em zero. 
 	
-	\item Quantidade de Linhas por Método:
+	\item Quantidade de Linhas por Método: Este algoritmo conta o número de linhas em cada método de
+	cada classe. Linhas em branco dentro dos métodos também entram na conta.
 	
-	\item Quantidade de Métodos:
+	\item Quantidade de Métodos: O algoritmo conta o número de métodos por classe.
 	
 \end{enumerate}
 
-Todas as métricas citadas já são de uso conhecido na academia.
+Todas as métricas citadas já são de uso conhecido na academia. Para calcular estas
+métricas, nós implementamos nossa própria ferramenta. O motivo para tal é que
+grande parte das ferramentas existentes fazem uso de código compilado, e não
+apenas do código-fonte. Nossa ferramenta possui bateria de testes automatizados
+e código-fonte aberto \footnote{\url{http://www.github.com/mauricioaniche/msr-asserts}. 
+Último acesso em 10 de Fevereiro de 2012.}
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Avaliação do Especialista}
@@ -517,8 +538,10 @@ Testes estatísticos para análise de variância serão utilizados
 para verificar se TDD influencia nas mesmas.
 A variância dos dados obtidos na opinião do especialista sobre cada código-fonte gerado
 será utilizado também como entrada para algoritmos estatísticos. 
-
-% FALAR MAIS DO WILCOXON
+Como estes dados não devem seguir uma distribuição normal, o teste
+de Wilcoxon foi escolhido. Este é um teste de hipotése não-paramétrico,
+usado para comparar duas amostras e verificar se a diferença da média das populações
+são diferentes.
 
 Durante o processo, o pesquisador constantemente validou toda e qualquer
 informação colhida e, quando se fez necessário, a coleta de qualquer entrevista,
@@ -543,8 +566,7 @@ seguintes procedimentos:
 	óbvio seja cometido;
 
 	\item \textbf{Verificação de pesquisador auxiliar}. Um pesquisador auxiliar
-	checou se há algum desvio na definição dos códigos ou no significado dos códigos 
-	durante o processo de codificação;
+	checará a interpretação dos dados gerada por esta pesquisa;
 	
 	\item \textbf{Rastreabilidade dos dados}. Todos os dados colhidos são
 	preservados em forma eletrônica.
@@ -590,7 +612,7 @@ que a contribuição do investigador para o contexto da pesquisa pode ser útil 
 positiva. Além do mais, o pesquisador é responsável por
 identificar todos os valores pessoais, pressuposições e vieses deste estudo.
 
-O autor desta pesquisa tem formação em Ciência da Computação, e desenvolve software há 8
+O autor desta pesquisa tem formação em Ciência da Computação, e desenvolve software há 9
 anos. Pratica TDD diariamente nos últimos 3 anos, e possui profundos
 conhecimentos teóricos e práticos sobre orientação a objetos e métodos ágeis.
 Além disso, o autor palestrou sobre TDD em eventos da indústria brasileira
