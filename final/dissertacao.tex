@@ -109,7 +109,7 @@ framexrightmargin=10pt
 \thispagestyle{empty}
 \begin{center}
     \vspace*{2.3cm}
-    \textbf{\Large{Influência de Test-Driven Development nas Decisões de Design \\
+    \textbf{\Large{Influência de Desenvolvimento Guiado pelos Testes nas Decisões de Projeto de Classes \\
 	em Sistemas Orientados a Objetos: Estudos com Desenvolvedores}}\\
     
     \vspace*{1.2cm}
@@ -187,37 +187,44 @@ framexrightmargin=10pt
 % ---------------------------------------------------------------------------- %
 \chapter*{Resumo}
 
-Test-Driven Development (TDD) é uma das práticas sugeridas na Programação
-Extrema (XP).
+Desenvolvimento Guiado pelos Testes (DGT) é uma das práticas sugeridas na Programação
+Extrema.
 A mecânica da prática é simples: o programador escreve o teste antes
-de escrever o código. Apesar de parecer que TDD é uma prática focada em testes
+de escrever o código. Apesar de parecer que DGT é uma prática focada em testes
 de software (afinal, seu nome é composto da palavra ``teste''), sua
-grande contribuição é o \textit{feedback} em relação à qualidade do design produzido.
-Na opinião de muitos autores conhecidos, TDD além de guiar o programador na
-criação do design, ainda ajuda a manter o código mais simples,
+grande contribuição é o \textit{feedback} em relação à qualidade do projeto de classes produzido.
+Na opinião de muitos autores conhecidos, DGT além de guiar o programador na
+criação do projeto de classes, ainda ajuda a manter o código mais simples,
 mais claro etc.
 
-É realmente difícil entender como TDD influencia no processo de desenvolvimento
+É realmente difícil entender como DGT influencia no processo de desenvolvimento
 de software. Boa parte dos experimentos da
 academia sobre a prática verificam os efeitos dela sobre a qualidade externa. 
-Apesar da pouca quantidade, alguns experimentos mostram que TDD tem uma influência
-positiva no design de classes, diminuindo o grau de acoplamento, aumentando
+Apesar da pouca quantidade, alguns experimentos mostram que DGT tem uma influência
+positiva no projeto de classes, diminuindo o grau de acoplamento, aumentando
 a coesão e a simplicidade de classes e módulos. Entretanto, poucos trabalhos visam
 entender a razão pela qual a prática leva os desenvolvedores a obterem bons resultados
-no design.
+no projeto de classes.
 
-Este trabalho tem por objetivo compreender melhor os efeitos de TDD e como sua prática 
+Este trabalho tem por objetivo compreender melhor os efeitos de DGT e como sua prática 
 influencia o 
-desenvolvedor durante o processo de design de sistemas orientados a objetos. Mais ainda,
-como TDD influencia nas decisões de design tomadas por um desenvolvedor durante o
+desenvolvedor durante o processo de projeto de sistemas orientados a objetos. Mais ainda,
+como DGT influencia nas decisões de projeto tomadas por um desenvolvedor durante o
 seu dia a dia de desenvolvimento.
 
 Para alcançar o objetivo, este estudo faz uso de uma combinação entre um experimento controlado inicial, na qual participantes serão
-convidados a resolver exercícios pré-elaborados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
-estudo qualitativo entrará em detalhes objetivando entender como a prática influenciou as decisões de design dos participantes.
+convidados a resolver exercícios pré-elaborados utilizando DGT e, a partir dos dados colhidos nesse estudo, um outro
+estudo qualitativo entrará em detalhes objetivando entender como a prática influenciou as decisões de projeto de classes dos participantes.
 
-\noindent \textbf{Palavras-chave:} Test-Driven Development, Sistemas Orientados
-a Objetos, Design de Classes, Métodos Qualitativos de Pesquisa.
+Ao final, encontramos que a prática de DGT não melhora o projeto de classes naturalmente, mas sim
+dá \textit{feedback} constante ao desenvolvedor que, por sua vez, utiliza de sua experiência
+e conhecimento para melhorá-lo. Esse estudo também levantou esses possíveis \textit{feedbacks} da
+prática e os catalogou. Esses padrões encontrados podem ser muito úteis para desenvolvedores
+que queriam encontrar maneiras de validar o projeto de classes em desenvolvimento.
+
+
+\noindent \textbf{Palavras-chave:} Desenvolvimento Guiado pelos Testes, Sistemas Orientados
+a Objetos, Projeto de Classes, Métodos Qualitativos de Pesquisa.
 
 % ---------------------------------------------------------------------------- %
 \chapter*{Abstract}
@@ -254,6 +261,12 @@ to achieve this goal, this work proposes the use of qualitative methods and
 suggests a experiment followed by suite of interviews  
 with developers in the brazilian software industry.
 
+At the end, we observed that the practice of TDD does not improve the class design naturally, but
+gives constant feedback to developers that make use of their own experience and knowledge to
+improve it. This study also categorized the possible feedback the practice can give. These
+patterns can be very handful to developers that want to find another ways to validate
+their class design under development.
+
 \noindent \textbf{Keywords:} Test-Driven Development, Object-Oriented
 Systems, Class Design, Qualitative Research Methods.
 
@@ -264,26 +277,24 @@ Systems, Class Design, Qualitative Research Methods.
 % ---------------------------------------------------------------------------- %
 \chapter{Lista de Abreviaturas}
 \begin{tabular}{ll}
-         TDD         & \emph{Test-Driven Development}\\ 
+         DGT         & Desenvolvimento Guiado pelos Testes\\ 
          
-         XP          & Programação Extrema (\emph{Extreme Programming})\\
+         XP          & Programação Extrema (do inglês, \emph{Extreme Programming})\\
 		 
-		 BDUF		 & Big Design Up-Front\\
+		 BDUF		 & \textit{Big Design Up-Front}\\
 		 
-		 TFD         & Design Testando Primeiro (\emph{Test-First Design})\\
-		 
-		 SRP		 & Princípio da Responsabilidade Única (\emph{Single Responsibility
+		 PRU		 & Princípio da Responsabilidade Única (\emph{Single Responsibility
 		 Principle})\\
 		 
-		 DIP		 & Princípio da Inversão de Dependências (\emph{Single Responsibility
+		 PID		 & Princípio da Inversão de Dependências (\emph{Single Responsibility
 		 Principle})\\ 
 		 
-		 OCP		 & Princípio do Aberto-Fechado (\emph{Open-CLosed Principle})\\
+		 PAF		 & Princípio do Aberto-Fechado (\emph{Open-CLosed Principle})\\
 		 
-		 LSP	 	 & Princípio da Substituição de Liskov (\emph{Liskov Substitution
+		 PSL	 	 & Princípio da Substituição de Liskov (\emph{Liskov Substitution
 		 Principle})\\
 		 
-		 ISP		 & Princípio da Segregação de Interfaces (\emph{Interface Segregation
+		 PSI		 & Princípio da Segregação de Interfaces (\emph{Interface Segregation
 		 Principle})\\
 		 
 		 OO		 	 & Orientação a Objetos

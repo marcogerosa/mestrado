@@ -11,13 +11,13 @@ exemplo, é dar \textit{feedback} sobre o código durante sua escrita.
 
 Desenvolvimento Guiado pelos Testes (DGT), popularizada por Kent Beck por meio de seu livro
 \textit{TDD: By Example} em 2001 \cite{TDDByExample}, é mais uma das práticas
-ágeis na qual o foco é dar \textit{feedback}. TDD tem grande importância durante o ciclo
-de desenvolvimento uma vez que, conforme sugerido pelas práticas ágeis, o \textit{design} de um
+ágeis na qual o foco é dar \textit{feedback}. DGT tem grande importância durante o ciclo
+de desenvolvimento uma vez que, conforme sugerido pelas práticas ágeis, o projeto de classes de um
 software deve emergir à medida que o software cresce. E, para responder
 rapidamente a essas alterações, é necessário um constante \textit{feedback} sobre a
 qualidade interna e externa do código.
 
-TDD é uma prática de desenvolvimento de software que se baseia na repetição de
+DGT é uma prática de desenvolvimento de software que se baseia na repetição de
 um pequeno ciclo de atividades. Primeiramente, o desenvolvedor escreve um
 teste que falha. Em seguida, deve fazê-lo passar, implementando a
 funcionalidade desejada. Por fim, refatora o código para remover toda e qualquer
@@ -28,17 +28,17 @@ que faça o teste passar.
 Esse ciclo
 é também conhecido como 
 "Vermelho-Verde-Refatora" (ou \textit{"Red-Green-Refactor"}), uma vez que lembra as cores que um 
-desenvolvedor normalmente vê quando faz TDD: o vermelho geralmente significa que
+desenvolvedor normalmente vê quando faz DGT: o vermelho geralmente significa que
 o teste está falhando, e o verde quando o teste foi executado com sucesso.
 
-Este capítulo aborda a prática de TDD, bem como cita
+Este capítulo aborda a prática de DGT, bem como cita
 seus possíveis efeitos no processo de desenvolvimento de software, conforme relatado pela
 literatura.
 
 %% ------------------------------------------------------------------------- %%
 \section{Benefícios de DGT}
 
-Uma consequência da prática de TDD é a bateria de testes de unidade gerada.
+Uma consequência da prática de DGT é a bateria de testes de unidade gerada.
 A prática ajuda o programador a evitar erros de regressão, em que a implementação de
 uma nova funcionalidade quebra uma outra funcionalidade já existente no sistema.
 Essa bateria também provê segurança durante as
@@ -48,22 +48,22 @@ A quantidade de código coberto pelos testes também tende a ser alta, uma vez q
 desenvolvedor deve sempre escrever um teste antes de implementar uma nova
 funcionalidade. 
 
-É comum relacionar TDD à práticas de testes de software. No entanto, apesar de constar o
-termo ``teste'' no nome, TDD não é visto apenas como uma prática de testes.
-Embora a criação de testes seja algo intrínseco ao processo, é dito que TDD também 
+É comum relacionar DGT à práticas de testes de software. No entanto, apesar de constar o
+termo ``teste'' no nome, DGT não é visto apenas como uma prática de testes.
+Embora a criação de testes seja algo intrínseco ao processo, é dito que DGT também 
 auxilia o desenvolvedor a criar classes mais flexíveis, mais coesas e
 menos acopladas. Os testes são a ferramenta que o programador utiliza para
-validar o \textit{design} criado. Por esse motivo, muitos se referem a TDD como
-\textit{Test-Driven Design}, ou seja, \textit{design} guiado pelos testes
+validar o projeto de classes criado. Por esse motivo, muitos se referem a DGT como
+\textit{Projeto de Classes Guiado pelos Testes}, ou seja, projeto de classes guiado pelos testes
 \cite{tdd-taxonomy}.
 
 Muitos autores como Kent Beck \cite{aim-fire}, Dave Astels \cite{astels-tdd} e
-Robert Martin \cite{bob-martin} afirmam inclusive que TDD é na verdade uma prática de
-\textit{design} \cite{tdd-taxonomy} \cite{aim-fire}.
+Robert Martin \cite{bob-martin} afirmam inclusive que DGT é na verdade uma prática de
+projeto de classes \cite{tdd-taxonomy} \cite{aim-fire}.
 Na opinião desses autores, a mudança na ordem do ciclo de
 desenvolvimento tradicional, apesar de simples, agrega diversos outros
 benefícios ao código produzido: maior simplicidade, menor acoplamento e maior
-coesão das classes criadas, levando a um melhor \textit{design}, entre
+coesão das classes criadas, levando a um melhor projeto de classes, entre
 outros. Ward Cunningham, um dos pioneiros da Programação Extrema, resume essa 
 discussão em uma frase: \textit{"Test-First programming is not a testing technique"} 
 que, em uma tradução livre, significa \textit{"Escrever primeiro os testes
@@ -78,13 +78,13 @@ Um exemplo é a definição que pode ser encontrada no livro \textit{JUnit
 in Action} \cite{junit-in-action}: \textit{"Test-Driven Development é uma
 prática de programação que instrui desenvolvedores a escrever código novo
 apenas se um teste automatizado estiver falhando, e a eliminar duplicação. O
-objetivo de TDD é 'código claro que funcione'"}.
+objetivo de DGT é 'código claro que funcione'"}.
 
 Janzen levantou esse problema nas definições e culpa até o próprio nome da prática, uma vez
-que ela possui a palavra ``testes'', mas não contém a palavra \textit{``design''} 
+que ela possui a palavra ``testes'', mas não contém a palavra \textit{``projeto''} 
 \cite{tdd-really-improve}.
-Segundo ele, uma definição mais clara é a de que TDD é a arte de produzir testes
-automatizados para código de produção, usando esse processo para guiar o \textit{design} e a programação.
+Segundo ele, uma definição mais clara é a de que DGT é a arte de produzir testes
+automatizados para código de produção, usando esse processo para guiar o projeto e a programação.
 Para cada pequeno pedaço de funcionalidade, o desenvolvedor deve primeiro
 escrever um teste que especifique e valide o que o código irá fazer. O
 programador então produz somente o código necessário para fazer esse teste
@@ -92,15 +92,15 @@ passar. Em seguida, ele refatora (simplifica e clareia) tanto o código de produ
 quanto o código de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Possíveis Efeitos no Design de Classes}
+\subsection{Possíveis Efeitos no Projeto de Classes}
 
-Como mencionado acima, os praticantes de TDD acreditam que os testes de unidade
-podem ajudá-los a criar um design de classes de qualidade. Uma das explicações mais
+Como mencionado acima, os praticantes de DGT acreditam que os testes de unidade
+podem ajudá-los a criar um projeto de classes de qualidade. Uma das explicações mais
 populares para esse fenômeno é a relação
 entre um código que possui uma alta testabilidade, ou seja, é fácil de ser testado
-por meio de um teste de unidade, e um design de classes de alta qualidade.
+por meio de um teste de unidade, e um projeto de classes de alta qualidade.
 
-TDD também sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
+DGT também sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
 inglês, \textit{baby steps}): deve-se escrever testes sempre para a menor
 funcionalidade possível, escrever o código mais simples que faça o teste passar
 e fazer sempre apenas uma refatoração por vez \cite{TDDByExample}.
@@ -110,13 +110,13 @@ sem \textit{feedback} sobre o código. Além disso, faz com que o programador n�
 soluções mais complexas do que elas precisam ser, tornando o código, a longo
 prazo, o mais simples possível.
 
-No entanto, apesar de muito ser dito sobre os efeitos de design, e alguns deles
+No entanto, apesar de muito ser dito sobre os efeitos de projeto de classes, e alguns deles
 até serem demonstrados em estudos (conforme citado no Capítulo \ref{cap:trabalhos-relacionados}), 
 pouco se sabe como a prática realmente influencia os desenvolvedores no momento da criação do
-design das classes.
+projeto das classes.
 
-Mas, antes de estudar sobre a possível influência positiva da prática de TDD no design de classes,
-é preciso primeiro definir o que é design de classes de qualidade. Por esse motivo, o 
+Mas, antes de estudar sobre a possível influência positiva da prática de DGT no projeto de classes,
+é preciso primeiro definir o que é projeto de classes de qualidade. Por esse motivo, o 
 Capítulo \ref{cap:design}
-discute bons príncipios de design de classes orientados a objetos, que serão utilizados
+discute bons príncipios de projeto de classes orientados a objetos, que serão utilizados
 na avaliação dos códigos produzidos pelos participantes deste estudo.

@@ -1,31 +1,31 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Design de Sistemas Orientados a Objetos}
+\chapter{Projeto de Classes em Sistemas Orientados a Objetos}
 \label{cap:design}
 
 Conforme sugerido no capítulo anterior, para escrever classes com alta
-testabilidade, o praticante de TDD acaba por fazer uso de boas práticas de
+testabilidade, o praticante de DGT acaba por fazer uso de boas práticas de
 desenvolvimento de software. 
 Esse capítulo discute apresenta e discute algumas dessas boas práticas, que
 são posteriormente avaliadas durante o processo de pesquisa.
 
 %% ------------------------------------------------------------------------- %%
-\section{Sintomas de Designs em Degradação}
+\section{Sintomas de Projetos de Classes em Degradação}
 \label{sec:design-degradacao}
 
-Quando um design começa a ficar difícil de ser evoluído, o reuso de código se 
+Quando um projeto de classes começa a ficar difícil de ser evoluído, o reuso de código se 
 torna mais complicado do que repetir o trecho de código, ou o custo de se fazer 
-qualquer alteração no design se torna alto, pode-se dizer que esse design
+qualquer alteração no projeto de classes se torna alto, pode-se dizer que esse projeto de classes
 está \textit{degradando}. 
 
-Robert Martin \cite{bob-martin} enumerou alguns sintomas de designs em degradação, 
-chamados também de maus cheiros de design. Esses sintomas são parecidos com os 
+Robert Martin \cite{bob-martin} enumerou alguns sintomas de projeto de classes em degradação, 
+chamados também de maus cheiros de projeto de classes. Esses sintomas são parecidos com os 
 maus cheiros de código \textit{code smells}, mas em um nível mais alto: eles
 estão presentes na estrutura geral do software ao invés de estarem localizados
 em apenas um pequeno trecho de código.
 
 Esses sintomas podem ser medidos de forma subjetiva e algumas vezes de forma 
 até objetiva. Geralmente, esses sintomas são causados por violações de um ou 
-mais princípios de design, apresentados na seção \ref{sec:design-oo-principios}.
+mais princípios de projeto de classes, apresentados na seção \ref{sec:design-oo-principios}.
 Muitos desses problemas são relacionados à gerência de dependências. Quando essa
 atividade não é feita corretamente, o código gerado torna-se difícil de manter e
 reusar. Entretanto, quando bem feita, o software tende a ser flexível, robusto 
@@ -37,9 +37,9 @@ e suas partes reusáveis.
 Rigidez é a tendência do software em se tornar difícil de mudar, mesmo de 
 maneiras simples. Toda mudança causa uma cascata de mudanças subsequentes  em
 módulos dependentes. Quanto mais módulos precisam ser modificados, maior é a
-rigidez do design. 
+rigidez do projeto de classes. 
 
-Quando um design está muito rígido, não se sabe com segurança quando uma 
+Quando um projeto de classes está muito rígido, não se sabe com segurança quando uma 
 mudança terá fim. Mudanças simples passam a demorar muito tempo até serem 
 aplicadas no código e frequentemente acabam superando em várias vezes a 
 estimativa de esforço inicial. 
@@ -77,32 +77,32 @@ acaba sendo reescrito ao invés de reutilizado.
 \subsection{Viscosidade}
 
 Quando uma mudança deve ser realizada, usualmente há várias opções para realizar
-tal mudança. Quando as opções que preservam o design são mais difíceis de serem
+tal mudança. Quando as opções que preservam o projeto de classes são mais difíceis de serem
 implementadas do que aquelas que não o preservam, há alta viscosidade 
-de design. Neste cenário, é fácil fazer a "coisa errada" e é difícil fazer a
-"coisa certa", ou seja, é difícil preservar e aprimorar o design.
+de projeto de classes. Neste cenário, é fácil fazer a "coisa errada" e é difícil fazer a
+"coisa certa", ou seja, é difícil preservar e aprimorar o projeto de classes.
 
 \subsection{Complexidade Desnecessária}
 
-Detecta-se complexidade desnecessária no design quando ele contém muitos 
+Detecta-se complexidade desnecessária no projeto de classes quando ele contém muitos 
 elementos inúteis ou não utilizados (\textit{dead code}). Geralmente ocorre
-quando há muito design inicial (\textit{up-front design}) e não se segue uma 
+quando há muito projeto inicial (\textit{up-front design}) e não se segue uma 
 abordagem de desenvolvimento iterativa e incremental, de modo que os projetistas
 tentam prever uma série de futuros requisitos para o sistema e concebem um 
-design demasiadamente flexível ou desnecessariamente sofisticado. 
+projeto de classes demasiadamente flexível ou desnecessariamente sofisticado. 
 
 Frequentemente apenas algumas previsões acabam se concretizando ao longo do
-tempo e, neste meio período, o design carrega o peso de elementos e construções 
+tempo e, neste meio período, o projeto de classes carrega o peso de elementos e construções 
 não utilizados. O software então se torna complexo e difícil de ser entendido. 
-Design com complexidade muito alta comumente afeta a produtividade, porque 
+Projetos com complexidade muito alta comumente afeta a produtividade, porque 
 quando os desenvolvedores herdam tal projeto, eles gastam muito tempo 
-aprendendo as nuances do design antes que possam efetivamente  estendê-lo ou
+aprendendo as nuances do projeto de classes antes que possam efetivamente  estendê-lo ou
 mantê-lo confortavelmente \cite{kerievsky}.
 
 \subsection{Repetição Desnecessária}
 
 Quando há repetição de trechos de código, é sinal de que uma abstração
-apropriada não foi capturada durante o processo de design (ou inclusive na
+apropriada não foi capturada durante o processo de projeto de classes (ou inclusive na
 análise). Esse problema é frequente e é comum encontrar softwares que contenham 
 dezenas e até centenas de elementos com códigos repetidos. 
 
@@ -128,7 +128,7 @@ outro  leitor poderia entender. Além disso, revisões de código feita por outr
 desenvolvedores é também uma possível solução para manter o código menos opaco.
 
 %% ------------------------------------------------------------------------- %%
-\section{Princípios de Design}
+\section{Princípios de Projeto de Classes}
 \label{sec:design-oo-principios}
 
 Todos os problemas citados na seção \ref{sec:design-degradacao} podem ser
@@ -140,7 +140,7 @@ Alcançando esse objetivo, mudanças no código seriam executadas mais facilment
 alterações seriam feitas em pontos únicos e a propagação de mudanças seria bem
 menor. Com as abstrações bem estabelecidas, novas funcionalidades seriam
 implementadas através de novo código, sem a necessidade de alterações no código
-já existente. Necessidades de evolução do design seriam feitas com pouco
+já existente. Necessidades de evolução do projeto de classes seriam feitas com pouco
 esforço, já que módulos dependeriam apenas de abstrações.
 
 Mas, alcançar tal objetivo não é tarefa fácil. Criar classes pouco acopladas e
@@ -191,7 +191,7 @@ pelas classes que possuem a responsabilidade a ser modificada. Supondo uma
 classe  que possua mais de uma razão para mudar, isso significa que ela é
 acessada  por duas partes do software que fazem coisas diferentes.  Fazer uma
 alteração em uma das responsabilidades dessa classe pode, de maneira não
-intencional, quebrar a outra parte de maneira inesperada. Isso torna o design
+intencional, quebrar a outra parte de maneira inesperada. Isso torna o projeto de classes
 frágil, como comentado na sub-seção \ref{subsec:fragilidade}.
 
 \subsection{Princípio do Aberto-Fechado}
@@ -288,11 +288,11 @@ apenas depender de interfaces coesas.
 \section{Conclusão}
 
 Todos os princípios discutidos na seção \ref{sec:design-oo-principios} tentam
-diminuir os possíveis problemas de design que possam eventualmente aparecer.
-Discutir o que é um bom design é algo difícil; mas é possível enumerar algumas
+diminuir os possíveis problemas de projeto de classes que possam eventualmente aparecer.
+Discutir o que é um bom projeto de classes é algo difícil; mas é possível enumerar algumas
 das características desejáveis: isolar elementos reusáveis de elementos não
 reusáveis, diminuir a propagação de alterações em caso de uma nova
 funcionalidade.
 
-Esses serão os princípios de design levados em conta no momento da análise
+Esses serão os princípios de projeto de classes levados em conta no momento da análise
 dos dados colhidos.

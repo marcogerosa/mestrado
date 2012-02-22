@@ -14,16 +14,16 @@ plataformas, e arquivos muito grandes, impossibilitaram a gravação.
 Todos os participantes eram avisados de que tinham por volta de 50 minutos
 por exercício. Eles também sabiam que, mesmo que não terminassem o exercício,
 deveriam focam sempre na qualidade do código gerado. Eles também eram solicitados
-a implementar um design flexível para os problemas. A frase que dizíamos para
+a implementar um projeto de classes flexível para os problemas. A frase que dizíamos para
 eles era geralmente: \textit{"Levem os exercícios para o mundo real, onde um outro
 desenvolvedor deverá manter o código gerado. Lembrem-se de implementar o código mais fácil possível
 para evoluir. As regras de negócio que existem hoje no enunciado tendem a aumentar
-de número e, portanto, deixem a manutenção do código de vocês mais simples."}
+de número e, portanto, deixem a manutenção do cóDGTdigo de vocês mais simples."}
 
 Durante a execução, nós tirávamos diversas dúvidas sobre enunciados dos
 exercícios, e até mesmo sobre procedimentos que os participantes podiam
 adotar durante a execução. Um deles, por exemplo, perguntou se poderia
-refatorar o código durante a implementação sem TDD. 
+refatorar o código durante a implementação sem DGT. 
 Nós também não os pressionávamos em nenhum momento. Eles ficavam,
 cada um suas máquinas, trabalhando na implementação. Não ficávamos 
 passando atrás das máquinas para ver como estavam indo, na tentativa
@@ -56,7 +56,7 @@ e dávamos o nome da pasta do participante, de acordo com
 o seguinte formato: \textit{id-nome-combinação}. O id aponta
 para um número único do participante no estudo, e a combinação
 aponta quais exercícios ele resolveu, bem como em qual deles
-ele utilizou TDD.
+ele utilizou DGT.
 
 As entrevistas foram, em grande parte, realizadas pessoalmente com 
 o desenvolvedor. Quando o participante não estava disponível (por estar
@@ -65,24 +65,24 @@ Durante toda a entrevista, o participante podia observar o código que
 produziu. Para isso, nós criamos uma simples aplicação web para facilitar
 a exibição dos códigos-fonte. O objetivo do participante ver o código
 era lembrar sobre suas decisões, e nos possibilitar perguntas específicas
-sobre o design de classes gerado.
+sobre o projeto de classes gerado.
 
 Em média, as entrevistas levavam 30 minutos. Quando o participante comentava
 algo interessante, nós fugíamos do roteiro para permitir que ele falasse mais do assunto,
 e anotávamos o ponto para que, ao final, fosse possível discutir novamente sobre o assunto.
 O roteiro de entrevistas sofreu uma pequena mudança ao final da primeira entrevista,
 já que percebemos que comunicar ao participante que o código que ele produziu
-\textit{não apresenta um bom design de classes} não era uma tarefa fácil, e talvez, não ética. 
-Optamos por perguntar sobre como aquele design de classes foi construído, mesmo que ele
+\textit{não apresenta um bom projeto de classes} não era uma tarefa fácil, e talvez, não ética. 
+Optamos por perguntar sobre como aquele projeto de classes foi construído, mesmo que ele
 não estivesse bem construído.
 
 Para manter um padrão, nós sempre perguntávamos primeiro sobre o exercício que ele
-fez com TDD, independente da ordem que ele implementou no dia da execução. Notamos
+fez com DGT, independente da ordem que ele implementou no dia da execução. Notamos
 que muitos participantes discutiram sobre os exercícios e possíveis implementações com seus colegas.
 
 Dos três especialistas convidados a avaliar os códigos produzidos, apenas um não
 completou a tarefa. Sugerimos a todos eles, antes do início da avaliação, que avaliassem
-não só a quantidade de código escrito, mas as decisões de design tomadas por aquele
+não só a quantidade de código escrito, mas as decisões de projeto de classes tomadas por aquele
 participante. Para que os especialistas avaliassem cada código gerado, nós implementamos
 uma simples aplicação web, onde eles tinham acesso a qualquer momento, e podiam parar ou continuar
 a avaliar a hora que preferissem.
@@ -97,11 +97,11 @@ descrevemos os grupos separados nas sub-seções \ref{findings-desc-industria} e
 \label{findings-desc-industria}
 
 Ao todo tivemos 25 participantes, de 6 diferentes empresas.
-Os participantes da indústria, em sua maioria, são pessoas com pouca experiência em TDD.
-40\% deles disseram utilizar a prática há no máximo um ano. 52\% deles praticam TDD
+Os participantes da indústria, em sua maioria, são pessoas com pouca experiência em DGT.
+40\% deles disseram utilizar a prática há no máximo um ano. 52\% deles praticam DGT
 entre 1 e 3 anos. Apenas 4\% pratica entre três e quatro anos, e nenhum participante
 possui mais experiência do que isso. Na Figura \ref{fig:exp-tdd-industria}, mostramos
-a distribuição da experiência da prática de TDD entre os participantes.
+a distribuição da experiência da prática de DGT entre os participantes.
 
 Os números são um pouco diferentes quando se trata da experiência em desenvolvimento
 de software. Por volta de 24\% dos participantes desenvolve software entre 4 e 5 anos.
@@ -119,10 +119,10 @@ básicos. Na Tabela \ref{tab:exp-industria},
 apresentamos o conhecimento dos participantes em relação a Java, JUnit e objetos dublês.
 
 Esses dados nos mostram que a amostra selecionada se assemelha ao mundo real, onde
-encontramos desde desenvolvedores mais experientes até novatos. Em relação a experiência com TDD,
+encontramos desde desenvolvedores mais experientes até novatos. Em relação a experiência com DGT,
 podemos afirmar que metade dos participantes ainda está experimentando a prática, enquanto
 outros já a tem mais consolidada. Isso é positivo, já que foi possível capturar informações
-da prática de TDD por pessoas com diferentes níveis de maturidade.
+da prática de DGT por pessoas com diferentes níveis de maturidade.
 
 Em relação ao alto número de pessoas que não utilizam Java, isso se deve ao fato de uma das
 empresas fazer uso de PHP para seu trabalho do dia-a-dia. No entanto, nós conhecemos a equipe
@@ -132,7 +132,7 @@ problema algum durante a execução dos exercícios.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.5]{findings/experiencia-tdd-industria.png}
-  \caption{Experiência da equipe da indústria com TDD}
+  \caption{Experiência da equipe da indústria com DGT}
   \label{fig:exp-tdd-industria}
 \end{figure}
 
@@ -147,11 +147,11 @@ problema algum durante a execução dos exercícios.
 \label{findings-desc-academia}
 
 Os participantes da academia que participaram do estudo, 21 no total, possuem baixíssima experiência,
-tanto em TDD quanto em desenvolvimento de software em geral. Surpreendentemente, 90\%
-dos participantes afirmaram não conhecer Java, e 61\% disseram não conhecer TDD.
+tanto em DGT quanto em desenvolvimento de software em geral. Surpreendentemente, 90\%
+dos participantes afirmaram não conhecer Java, e 61\% disseram não conhecer DGT.
 Em contraste com essa informação, todos eles afirmaram conhecer JUnit, e 76\% afirmaram
 conhecer objetos dublês na teoria. 
-Na Figura \ref{fig:exp-tdd-academia}, mostramos a experiência dos participantes em TDD, e
+Na Figura \ref{fig:exp-tdd-academia}, mostramos a experiência dos participantes em DGT, e
 na Tabela \ref{tab:exp-academia} apresentamos a experiência deles em Java, JUnit, e objetos
 dublês.
 
@@ -161,7 +161,7 @@ entre 2 a 4 anos de experiência. Nenhum participante com experiência superior 
 Na Figura \ref{fig:exp-sw-academia}, mostramos a distribuição por completo.
 
 De acordo com os dados, percebemos que grande parte dos participantes não conhecem a linguagem ou
-mesmo a prática de TDD. A linguagem foi realmente um problema: durante a execução, percebemos
+mesmo a prática de DGT. A linguagem foi realmente um problema: durante a execução, percebemos
 que muitos deles faziam buscas por elementos simples da linguagem Java, como manipulação de arrays
 e listas, ou mesmo por manipulação de texto.
 
@@ -173,7 +173,7 @@ os códigos-fonte produzidos serão utilizados no processo de análise quantitat
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.5]{findings/experiencia-tdd-academia.png}
-  \caption{Experiência dos estudantes da academia com TDD}
+  \caption{Experiência dos estudantes da academia com DGT}
   \label{fig:exp-tdd-academia}
 \end{figure}
 
@@ -232,13 +232,13 @@ eram completamente vazias.
 
 \section{Análise das Entrevistas}
 
-Diferente do que muitos estudos de TDD afirmam, os participantes, em sua grande maioria, afirmaram que 
-a prática de TDD não faria com que o design de classes fosse de alguma forma diferente, caso tivessem
+Diferente do que muitos estudos de DGT afirmam, os participantes, em sua grande maioria, afirmaram que 
+a prática de DGT não faria com que o projeto de classes fosse de alguma forma diferente, caso tivessem
 feito ambos os exercícios com a prática.
 A principal justificativa dada pelos participantes foi que a experiência e o conhecimento prévio
-em orientação a objetos os guiaram durante o processo de criação do design de classes. Nenhum dos
+em orientação a objetos os guiaram durante o processo de criação do projeto de classes. Nenhum dos
 participantes, por exemplo, afirmou que um desenvolvedor sem conhecimento em alguma das áreas
-citadas criaria um bom design de classes somente por praticar TDD.
+citadas criaria um bom projeto de classes somente por praticar DGT.
 
 Dois bons exemplos foram dados pelos participantes, que ajudam a reforçar esse ponto. Um deles
 comentou que fez uso de um padrão de projetos \cite{gof} que aprendeu apenas alguns dias atrás.
@@ -249,39 +249,39 @@ lá que eu mirei pra fazer, porque eu nunca tinha feito nada assim (...), aqui d
 coisa nova, só dou manutenção no código."}
 
 Além do mais, o único participante da indústria que nunca havia
-praticado TDD afirmou que não sentiu diferença nenhuma no processo de criação de classes durante
+praticado DGT afirmou que não sentiu diferença nenhuma no processo de criação de classes durante
 a prática.
-Curioso é que esse mesmo participante que nunca praticou TDD afirmou que "sabia que TDD era uma prática de design",
-diferentemente dos participantes mais experientes que sempre afirmavam que TDD não é só uma prática de design,
-mas também de testes. Isso indica, de certa forma, que a popularidade dos efeitos de TDD no design, por mais
+Curioso é que esse mesmo participante que nunca praticou DGT afirmou que "sabia que DGT era uma prática de projeto de classes",
+diferentemente dos participantes mais experientes que sempre afirmavam que DGT não é só uma prática de projeto de classes,
+mas também de testes. Isso indica, de certa forma, que a popularidade dos efeitos de DGT no projeto de classes, por mais
 que nada tenha sido provado, é grande.
 
-Quando perguntados sobre o que é TDD, muitos dos participantes lembraram sobre
+Quando perguntados sobre o que é DGT, muitos dos participantes lembraram sobre
 os efeitos da prática na qualidade externa e a segurança que isso traz
 ao desenvolvedor.
 Uma frase que exemplifica isso foi dita por um dos participantes:
-\textit{"[TDD] acho que tem muita relação com qualidade do código e testes 
-de regrassão. Acho que as duas principais vantagens que eu tenho quando uso TDD é isso: o código
+\textit{"[DGT] acho que tem muita relação com qualidade do código e testes 
+de regrassão. Acho que as duas principais vantagens que eu tenho quando uso DGT é isso: o código
 fica melhor e depois eu tenho a segurança dos testes de regressão para refatorar."}
 
-Entretanto, apesar do TDD não guiar o desenvolvedor diretamente para um bom design,
-todos eles afirmaram que enxergam benefícios na prática de TDD, mesmo do
-ponto de vista de design. Muitos deles, inclusive mencionaram a dificuldade
-de parar de usar TDD:
+Entretanto, apesar do DGT não guiar o desenvolvedor diretamente para um bom projeto de classes,
+todos eles afirmaram que enxergam benefícios na prática de DGT, mesmo do
+ponto de vista de projeto de classes. Muitos deles, inclusive mencionaram a dificuldade
+de parar de usar DGT:
 \textit{"Você vai fazer alguma coisa, você acaba pensando já nos testes que você vai fazer. É difícil 
 falar assim: "programa sem pensar nos testes!" Depois que você acostuma, você não sabe outra
-maneira de programar..."} e \textit{"É complicado se disciplinar [a praticar TDD], mas conforme vai passando o tempo, 
+maneira de programar..."} e \textit{"É complicado se disciplinar [a praticar DGT], mas conforme vai passando o tempo, 
 você percebe que a curva para se manter o projeto fica bem menos íngreme, 
 começa a perceber os benefícios e aí vicia. Você acaba não se sentindo
 mais confortável de escrever código sem teste."}
 
-Segundo eles, TDD pode ajudar no processo de design de classes, mas, para isso,
+Segundo eles, DGT pode ajudar no processo de projeto de classes, mas, para isso,
 o desenvolvedor deve possuir certa experiência em desenvolvimento de software
 para que isso aconteça. Grnade parte dos participantes afirmaram que o 
-design de classes criado surgiu de experiências e aprendizados passados.
-Segundo eles, a melhor opção é unir a prática de TDD com a experiência:
-\textit{"O ideal é somar as duas coisas [experiência e TDD] (...) 
-Não acredito que TDD sozinho consiga fazer as coisas ficarem boas. Tem outros conceitos
+projeto de classes criado surgiu de experiências e aprendizados passados.
+Segundo eles, a melhor opção é unir a prática de DGT com a experiência:
+\textit{"O ideal é somar as duas coisas [experiência e DGT] (...) 
+Não acredito que DGT sozinho consiga fazer as coisas ficarem boas. Tem outros conceitos
 para as coisas ficarem boas."}
 
 Nas sub-seções abaixo, apresentamos cada um dos pontos 
@@ -289,30 +289,30 @@ levantados pelos participantes, bem como discutimos sobre o tópico.
 
 \subsection{Segurança na refatoração}
 
-Os participantes afirmaram que, durante o processo de criação de design, a mudança de ideia é
+Os participantes afirmaram que, durante o processo de criação de projeto de classes, a mudança de ideia é
 constante, afinal pouco se conhece do problema, e de como a classe deve ser construída. Segundo eles,
-uma vantagem íntriseca do TDD é a suíte de testes gerada. Essa suíte possibilita ao desenvolvedor
-muda de ideia e refatorar todo o design de classes com segurança.
-A segurança, segundo eles, é fator importante para mudanças de design de classes ou mesmo de implementação:
+uma vantagem íntriseca do DGT é a suíte de testes gerada. Essa suíte possibilita ao desenvolvedor
+muda de ideia e refatorar todo o projeto de classes com segurança.
+A segurança, segundo eles, é fator importante para mudanças de projeto de classes ou mesmo de implementação:
 \textit{"Sim, me dá a chance de aprender pelo caminho e fazer algumas coisas diferentes. (...) O teste te dá segurança."}
 
-Um participante inclusive mencionou uma experiência real, onde o TDD fez a diferença. Segundo ele,
+Um participante inclusive mencionou uma experiência real, onde o DGT fez a diferença. Segundo ele,
 em muitos momentos ele mudava completamente de ideia sobre a implementação, e confiava na bateria
 de testes para garantir que o comportamento esperado:
 \textit{"No TCC da pós, eu estava desenvolvendo uma ferramenta que trabalhava com manipulação de código, e fiz
-tudo com TDD. Várias vezes eu chegava a apagar todo código do sistema, mantinha os testes, e começava uma nova
-linha de raciocínio. Achei que me ajudou muito fazer TDD (...), tanto que no fim que eu fui executar a ferramenta,
+tudo com DGT. Várias vezes eu chegava a apagar todo código do sistema, mantinha os testes, e começava uma nova
+linha de raciocínio. Achei que me ajudou muito fazer DGT (...), tanto que no fim que eu fui executar a ferramenta,
 antes eu só validava pelos testes."}
 
 Novamente, experiência é fator fundamental. Para buscar um código melhor durante a refatoração,
 desenvolvedores devem fazer uso de suas experiências:
 \textit{"(...) se você não tiver embasamento sobre esses aspectos de única responsabilidade,
-coesão, acoplamento, acho que não adianta muito [fazer TDD]. Você precisa ter isso em mente
+coesão, acoplamento, acho que não adianta muito [fazer DGT]. Você precisa ter isso em mente
 para conseguir mudar, precisa desse conhecimento para conseguir refatorar."}
 
 \subsection{Passos menores e simplicidade}
 
-TDD sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
+DGT sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
 inglês, \textit{baby steps}): deve-se escrever testes sempre para a menor
 funcionalidade possível, escrever o código mais simples que faça o teste passar
 e fazer sempre apenas uma refatoração por vez \cite{TDDByExample}.
@@ -323,23 +323,23 @@ sem \textit{feedback} sobre o código. Além disso, faz com que o programador n�
 soluções mais complexas do que elas precisam ser, tornando o código, a longo
 prazo, o mais simples possível.
 
-Manter o design de classes simples não é tarefa fácil, e TDD sugere que o programador
+Manter o projeto de classes simples não é tarefa fácil, e DGT sugere que o programador
 escreva sempre o código mais simples que atenda a necessidade. Somente se a
-necessidade crescer, é que o programador deverá evoluir o \textit{design}. Uma decisão de
-\textit{design} pode ser mais complicada do que parece e, sem um teste para mostrar isso
+necessidade crescer, é que o programador deverá evoluir o projeto. Uma decisão de
+projeto de classes pode ser mais complicada do que parece e, sem um teste para mostrar isso
 rapidamente, o programador dificilmente perceberia o problema \cite{aim-fire}.
 
 Todas essas afirmações podem ser validada pela observação de vários participantes sobre o assunto.
 Um deles comentou que,
-ao não fazer teste, o programador pensa no design de classes de uma só vez, criando, por vezes,
+ao não fazer teste, o programador pensa no projeto de classes de uma só vez, criando, por vezes,
 estruturas mais complexas do que o necessário. Isso faz com que ele perceba mais tardiamente
 possíveis problemas no desenho inicial:
 \textit{"Porque sem os testes, nós não pensamos em passos menores, mas sim na solução inteira
 e acaba por não observar problemas que podem acontecer pelo caminho."}
 
 Um dos participantes deixou bem claro como ele faz uso dos \textit{baby steps}, e como
-isso o ajuda a pensar melhor no design de suas classes:
-\textit{"Porque nós começamos a pensar no pequeno e não no todo. Quando faço TDD eu escrevo
+isso o ajuda a pensar melhor no projeto de suas classes:
+\textit{"Porque nós começamos a pensar no pequeno e não no todo. Quando faço DGT eu escrevo
 uma regra simples (...), aí vou lá e escrevo o método. Se passou, passou! Como você vai aos poucos,
 a arquitetura vai ficando legal. (...) Eu tinha mania de pensar no todo (...), as vezes
 em vez de você pensar em um negócio pequeno, você pensa em um enorme. Acho que o cérebro funciona
@@ -348,20 +348,20 @@ alguma coisa faltando."}
 
 Essa afirmação vai de encontro ao discurso comum das metodologias ágeis.
 Equipes que seguem as ideias ágeis optam por não fazer o chamado \textit{big design up-front (BDUF)},
-e deixam que o \textit{design} evolua ao longo do tempo, mantendo o código o mais claro e
+e deixam que o projeto de classes evolua ao longo do tempo, mantendo o código o mais claro e
 simples possível, e refatorando sempre que há necessidade. Decisões de
-\textit{design} são tomadas com a consciência de que elas serão alteradas no futuro
+projeto de classes são tomadas com a consciência de que elas serão alteradas no futuro
 \cite{is-design-dead}.
 
-Um deles comentou inclusive da falta de foco que o programador tem quando não pratica TDD.
-Ao ter um objetivo curto (que, no caso do praticante de TDD, é fazer o teste passar), o
+Um deles comentou inclusive da falta de foco que o programador tem quando não pratica DGT.
+Ao ter um objetivo curto (que, no caso do praticante de DGT, é fazer o teste passar), o
 desenvolve se concentra mais para alcançá-lo:
 \textit{"Talvez sejamos pessoas desfocadas naturalmente. Você vê uma coisa e já te dá vontade
 de corrigir aquilo. (...)"}
 
 Outros estudos também, de certa forma, mostraram que os efeitos de \textit{baby steps}
 podem ir além.
-Em projetos novos, praticantes de TDD afirmam que sentem menos necessidade da
+Em projetos novos, praticantes de DGT afirmam que sentem menos necessidade da
 utilização de recursos de depuração de código \cite{george-williams-experiment} 
 \cite{janzen-arch-improvement}. 
 A quantidade de código
@@ -370,7 +370,7 @@ inesperadamente, o programador pode simplesmente reverter as alterações para a
 versão anterior estável e começar novamente. Essa abordagem pode muitas vezes
 ser mais produtiva do que a atividade de depuração 
 \cite{janzen-arch-improvement}. Por essas e outras razões, desenvolvedores afirmam 
-que são mais produtivos quando praticam TDD. Apesar de o custo da escrita do teste
+que são mais produtivos quando praticam DGT. Apesar de o custo da escrita do teste
 existir, a longo prazo o desenvolvedor gasta menos tempo com depurações ou 
 erros de regressão, e com isso tem sua produtividade aumentada
 \cite{george-e-williams}.
@@ -390,29 +390,29 @@ O lance de você testar e começar a pensar em testes, você está ali com uma f
 e você pode arrancar qualquer coisa que está ali, pois essa coisa ainda não existe."}
 
 Por diversas vezes, ao ouvir este tipo de afirmação, sempre indagávamos ao participante
-os motivos dele não pensar sobre o design de classes mesmo quando não fazem TDD. 
-Segundo eles próprios, quando não se pratica TDD, os desenvolvedores ficam
+os motivos dele não pensar sobre o projeto de classes mesmo quando não fazem DGT. 
+Segundo eles próprios, quando não se pratica DGT, os desenvolvedores ficam
 tão focados no código que estavam escrevendo, que acabam por não pensar no
-design das classes que estavam criando. Segundo os participantes, os testes fazem eles pensarem
+projeto das classes que estavam criando. Segundo os participantes, os testes fazem eles pensarem
 em como a classe que está sendo criada interagirá com outros objetos, e no quão
 fácil é fazer uso da mesma.
 Os trechos abaixo mostram as diferentes opiniões sobre o mesmo ponto:
 
 \textit{"Acho que o normal das pessoas não é pensar antes. Parece que o natural
 é já sair fazendo (até pela pressão interna, que aqui não é tão grande). (...) Poucas pessoas pensam
-antes de começar. Com TDD, você é obrigado a pensar, o TDD faz você parar e pensar, estruturar. Não
-é meu natural pensar antes, mas com TDD sim."}
+antes de começar. Com DGT, você é obrigado a pensar, o DGT faz você parar e pensar, estruturar. Não
+é meu natural pensar antes, mas com DGT sim."}
 
 \textit{"Como eu primeiro penso no que eu vou precisar a partir dos testes, ou seja, eu preciso que tenho
 isso e aquilo, o teste me faz pensar antes de sair desenvolvendo. Com os testes eu paro pra pensar antes.
 Aí acredito que nós consigamos pensar melhor, numa solução mais bacana."}
 
 Um dos participantes foi ainda mais preciso na sua declaração. Segundo ele, o desenvolvedor que não pratica
-TDD, por não pensar no design de classes criado, acaba por não fazer bom uso da orientação a objetos.
-E, novamente, isso se deve à velocidade com que desenvolvedores sem TDD escrevem código. Ao contrário,
-TDD força o programador a desacelerar, possibilitando-o a pensar melhor sobre o que está fazendo:
-\textit{"Porque sem o TDD, no calor do momento, você vai acoplando, vai herdando, vai agregando, e não pensa
-que no futuro isso possa dar algum problema. Com TDD, você é forçado a ir mais devagar, dá tempo de pensar melhor nas
+DGT, por não pensar no projeto de classes criado, acaba por não fazer bom uso da orientação a objetos.
+E, novamente, isso se deve à velocidade com que desenvolvedores sem DGT escrevem código. Ao contrário,
+DGT força o programador a desacelerar, possibilitando-o a pensar melhor sobre o que está fazendo:
+\textit{"Porque sem o DGT, no calor do momento, você vai acoplando, vai herdando, vai agregando, e não pensa
+que no futuro isso possa dar algum problema. Com DGT, você é forçado a ir mais devagar, dá tempo de pensar melhor nas
 coisas."}
 
 O teste, no fim, é o primeiro cliente da classe que o programador ainda está por escrever e 
@@ -421,8 +421,8 @@ programadores contemplam e decidem também sobre a interface (como nomes de
 classes e métodos, tipos de retorno e exceções lançadas) que a classe terá
 \cite{janzen-saiedian}.
 
-Não diretamente relacionado a design de classes, um participante comentou inclusive
-que a prática de TDD faz com que ele encontre problemas inclusive no requisito. Segundo ele,
+Não diretamente relacionado a projeto de classes, um participante comentou inclusive
+que a prática de DGT faz com que ele encontre problemas inclusive no requisito. Segundo ele,
 isso se deve ao fato do teste fazê-lo pensar melhor sobre o que o código que está 
 sendo escrito deve fazer:
 \textit{"Algumas vezes ele [o teste] acaba mostrando problemas da regra de negócio. Mostrava problemas
@@ -435,30 +435,30 @@ que ler o teste, ele entenderá o que aquela classe faz ou qual sua importância
 pegar isso para entender, ou para debugar, ou mesmo para corrigir bug, ele vai conseguir saber o que uma Fatura é ou faz. Sem
 precisar abrir uma Fatura real."}
 
-\subsection{Feedback mais rápido}
+\subsection{\textit{Feedback} mais rápido}
 
 Diversos participantes também comentaram que uma diferença que percebem
-no momento que praticam TDD é o feedback mais constante. Na maneira
+no momento que praticam DGT é o \textit{feedback} mais constante. Na maneira
 tradicional, o tempo entre a escrita do código de produção e o código
-de testes é muito grande. O TDD, ao solicitar que o desenvolvedor
-escreva o teste antes, também faz com que o desenvolvedor receba o feedback que
+de testes é muito grande. O DGT, ao solicitar que o desenvolvedor
+escreva o teste antes, também faz com que o desenvolvedor receba o \textit{feedback} que
 os testes podem dar mais cedo:
 \textit{"Você ia olhar pro teste, e falar: "Está legal? Não está?", e ia fazer de novo."}
 Na Figura \ref{fig:tdd-feedback}, ilustramos
-a diferença entre a quantidade de feedback durante a prática de TDD em relação
+a diferença entre a quantidade de \textit{feedback} durante a prática de DGT em relação
 ao desenvolvimento tradicional.
 
 \begin{figure}[h!H]
   \centering
   \includegraphics[scale=0.47]{findings/tdd-and-traditional.png}
-  \caption{Feedback provido pela prática de TDD}
+  \caption{\textit{Feedback} provido pela prática de DGT}
   \label{fig:tdd-feedback}
 \end{figure}
 
-A velocidade em que a prática de TDD dá \textit{feedback} ao desenvolvedor possibilita que o mesmo
+A velocidade em que a prática de DGT dá \textit{feedback} ao desenvolvedor possibilita que o mesmo
 tome decisões sobre o código enquanto o custo de mudança ainda é
 baixo. O trabalho de Vanderburg \cite{vanderburg} também confirma este ponto.
-Ele diz que TDD dá \textit{feedback} em questão de
+Ele diz que DGT dá \textit{feedback} em questão de
 minutos e, em questão de tempo, só é inferior à programação pareada. O gráfico,
 baseado no trabalho dele, pode ser visto na Figura
 \ref{fig:agile-feedback}.
@@ -487,13 +487,13 @@ você consegue mais rápido ver se aquela parte pequena funciona ou não (...)"}
 
 \subsection{Busca pela testabilidade}
 
-Talvez o principal ponto pela qual a prática ajude os desenvolvedores no design de classes 
+Talvez o principal ponto pela qual a prática ajude os desenvolvedores no projeto de classes 
 seja pela constante busca pela testabilidade. É possível inferir que, quando se 
 começa a escrita do código pelo seu teste, o código de produção deve ser, necessariamente,
 possível de testar.
 
 Por outro lado, quando o código não é fácil de ser testado, os desenvolvedores
-entendem isso como um mau cheiro de design de classes. Quando isso acontece,
+entendem isso como um mau cheiro de projeto de classes. Quando isso acontece,
 os desenvolvedores geralmente tentam refatorar o código para possibilitar que
 os mesmos sejam testados mais facilmente.
 
@@ -505,10 +505,10 @@ pra ficar mais simples."}
 
 Esse ponto, na verdade, já foi levantado antes por Feathers \cite{feathers-synergy}.
 Quanto mais difícil for a escrita do teste, maior a chance da existência de
-algum problema de design. Segundo ele, 
-existe uma sinergia muito grande entre uma classe com alta testabilidade e um bom design: 
-se o programador busca por testabilidade, acaba criando um bom design; se 
-busca por um bom design, acaba escrevendo um design mais
+algum problema de projeto de classes. Segundo ele, 
+existe uma sinergia muito grande entre uma classe com alta testabilidade e um bom projeto de classes: 
+se o programador busca por testabilidade, acaba criando um bom projeto de classes; se 
+busca por um bom projeto de classes, acaba escrevendo código mais
 testável.
 
 Mas, os participantes foram ainda mais longe. Durante as entrevistas,
@@ -518,7 +518,7 @@ coesão, falta de abstração, e etc, na classe que estão criando.
 Esses padrões são melhor discutidos na Seção \ref{padroes-tdd}.
 
 
-\section{Padrões de Feedback de DGT}
+\section{Padrões de \textit{Feedback} de DGT}
 \label{padroes-tdd}
 
 Na busca pela testabilidade, o desenvolvedor é encorajado a escrever um
@@ -528,18 +528,18 @@ esperado, a não necessidade de pré-condições complicadas e a explicitação 
 todas as dependências que a classe possui.
 
 Outros autores já comentaram que 
-TDD encoraja o programador a escrever componentes fracamente acoplados, de
+DGT encoraja o programador a escrever componentes fracamente acoplados, de
 maneira que eles possam ser testados de maneira isolada e, em um nível maior,
 combinados com outros componentes.
 Programar voltado para interfaces é uma prática de orientação a objetos há muito
 tempo conhecida. Pensar em classes e dar maior foco à maneira com que
 elas se relacionam do que com o modo que determinado comportamento será implementado
-torna-se mais natural ao praticar TDD \cite{GOOS}. 
+torna-se mais natural ao praticar DGT \cite{GOOS}. 
 
-Como mencionado acima, grande parte do feedback que os testes
+Como mencionado acima, grande parte do \textit{feedback} que os testes
 dão, acontecem no momento em que o programador encontra dificuldades para a
 escrita do mesmo. Esta seção discute padrões levantados pelos praticantes
-que os levam a crer que há um problema de design de classes no código
+que os levam a crer que há um problema de projeto de classes no código
 que está sendo testado.
 
 \subsection{Coesão}
@@ -611,7 +611,9 @@ do código de produção. Essas diversas condições podem, geralmente, ser refa
 através do uso de poliformismo, serem eliminadas. A falta de abstração nesse caso
 é evidenciada pelo padrão \textbf{condicional no nome do teste}.
 
-\section{Relação dos padrões com os princípios de design de classes}
+\section{Relação dos padrões com os princípios de projeto de classes}
+
+A FAZER
 
 % relacao com SOLID aqui
 
@@ -621,8 +623,8 @@ Conforme discutido no Capítulo \ref{cap:qualitativo-planejamento}, o teste
 estatístico escolhido foi o Wilcoxon. Comparamos os valores encontrados
 para as métricas de complexidade ciclomática, acoplamento eferente, falta
 de coesão dos métodos, número de linhas por métodos, e quantidade de métodos
-por classe nos códigos produzidos com TDD com as métricas colhidas dos
-códigos produzidos sem TDD.
+por classe nos códigos produzidos com DGT com as métricas colhidas dos
+códigos produzidos sem DGT.
 Devido ao problema que tivemos com os dados da academia, separamos a análise
 dos dados, tanto das métricas de código, quanto dos especialistas, entre academia e indústria.
 
@@ -631,14 +633,14 @@ Nas sub-seções abaixo, discutimos os números encontrados.
 \subsection{Métricas de código}
 
 Na Tabela \ref{metricas-industria}, mostramos os \textit{p-values} encontrados para
-a diferença entre códigos produzidos com e sem TDD na indústria. Pelos números, 
+a diferença entre códigos produzidos com e sem DGT na indústria. Pelos números, 
 observamos que nem em nenhum exercício houveram diferenças nas métricas
 de complexidade ciclomática e acoplamento eferente. Já a métrica de falta
 de coesão dos métodos apresentou diferenças em dois exercícios (1 e 4). 
 A diferença também apareceu na quantidade de linhas por método (exercício 4),
 e quantidade de métodos (exercício 1). Ao olhar os dados de todos os exercícios
 juntos, nenhuma métrica apontou uma diferença significativa.
-Isso nos mostra que, ao menos quantitativamente, a prática de TDD não fez
+Isso nos mostra que, ao menos quantitativamente, a prática de DGT não fez
 diferença nas métricas de código.
 
 \begin{table}
@@ -655,17 +657,17 @@ diferença nas métricas de código.
 		Todos &	0.8123	&	0.5604 &	0.3278 &	0.06814 &	0.5849\\
 		\hline
 	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na indústria}
+	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem DGT na indústria}
 	\label{metricas-industria}
 \end{table}
 
 Na Tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
-entre códigos produzidos com e sem TDD na academia. As métricas de 
+entre códigos produzidos com e sem DGT na academia. As métricas de 
 falta de coesão dos métodos e quantidade de métodos apresentaram
 uma diferença significativa nos exercícios 1 e 4, respectivamente.
 Ao olhar para todos os dados juntos, uma diferença significativa
 apareceu também na métrica de acoplamento eferente.
-Podemos então concluir que a prática de TDD também não afetou
+Podemos então concluir que a prática de DGT também não afetou
 o código produzido pelos participantes da academia.
 
 \begin{table}
@@ -682,41 +684,41 @@ o código produzido pelos participantes da academia.
 			Todos &	0.254	&	0.007676* & 0.351 & 0.2668 & 0.1706\\
 		\hline
 	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na academia}
+	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem DGT na academia}
 	\label{metricas-academia}
 \end{table}
 
 \subsection{Especialistas}
 
 Ambos os especialistas não encontraram diferenças entre códigos produzidos
-com e sem TDD, tanto na indústria, quanto na academia. Nas Tabelas 
+com e sem DGT, tanto na indústria, quanto na academia. Nas Tabelas 
 \ref{tab:especialistas-industria} e \ref{tab:especialistas-academia},
 mostramos os \textit{p-values} encontrados para a diferença de avaliação dos especialistas
-entre códigos produzidos com e sem TDD na indústria e academia, respectivamente.
+entre códigos produzidos com e sem DGT na indústria e academia, respectivamente.
 
 
 \begin{table}[h!]
 	\begin{tabular}{| p{5cm} | c | c | c | }
 		\hline
-		Especialista & Design & Testabilidade & Simplicidade\\
+		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
 		\hline
 		Especialista 1 &	0.4263 &	0.5235 &	0.332\\
 		Especialista 2 &	0.7447 &	0.4591 &	0.9044\\
 		\hline
 	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na indústria}
+	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem DGT na indústria}
 	\label{tab:especialistas-industria}
 \end{table}
 
 \begin{table}[h!]
 	\begin{tabular}{| p{5cm} | c | c | c | }
 		\hline
-		Especialista & Design & Testabilidade & Simplicidade\\
+		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
 		\hline
 		Especialista 1	& 0.8795 &	NA	& 0.4222\\
 		Especialista 2	& 0.88	& 0.5519 &	0.88\\
 		\hline
 	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na academia}
+	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem DGT na academia}
 	\label{tab:especialistas-academia}
 \end{table}
