@@ -1,30 +1,90 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Conclusões}
+\chapter{Conclusões e Trabalhos Futuros}
 \label{cap:conclusoes}
 
-Class design is still a hard task. However, the practice of TDD and its unit tests can anticipate design problems through the possible feedbacks cited by the participants. Any tool that can help developers improve their design should be used. On the other hand, TDD does not lead to a good class design by its own, as suggest for some literature. The developer’s experience and knowledge makes the real difference when creating object-oriented software.
+Neste trabalho, fomos além da validação da afirmação de que a prática de DGT
+melhora o projeto de classes. Discutimos e entendemos como a prática pode
+fazer a diferença no dia a dia de um desenvolvedor de softwares.
+Projetar classes é uma tarefa difícil. A prática de DGT e os
+testes de unidade intrísecos ao processo podem ajudar desenvolvedores a antecipar
+os problemas do projeto através de um \textit{feedback} rápido. \textit{Feedback}
+esses que foram coletados, discutidos e catalogados também por esta pesquisa.
 
+Em outras palavras, o desenvolvedor que pratica DGT escreve os testes antes do código.
+Isso faz com que o teste de unidade que está sendo escrito sirva de
+rascunho para o desenvolvedor. Ao observar o código do teste de unidade com atenção,
+o desenvolvedor pode perceber problemas no projeto de classes que está criando.
+Problemas esses como classes que possuem diversas responsabilidades
+ou que possuem muitas outras dependências. Outras práticas dão o mesmo \textit{feedback}
+para o desenvolvedor, mas a vantagem do teste é que o retorno é praticamente imediato.
+Além disso, como o teste é escrito antes, o desenvolvedor pode mudar de ideia sobre
+o projeto enquanto o custo de mudança ainda é baixo (afinal, o projeto ainda não
+foi implementado).
 
-%------------------------------------------------------
-\section{Sugestões para Pesquisas Futuras} 
+Mas, ao contrário
+do que é comentado pela indústria, a prática de DGT não guia o programador
+para um bom projeto de classes de forma automática; a experiência e conhecimento 
+do desenvolvedor são fundamentais ao criar software orientado a objetos. 
+Divulgar o que foi encontrado por este trabalho é de extrema importância
+para times de desenvolvimento de software, especialmente aos que seguem
+algum tipo de metodologia ágil pois, ao conhecer os padrões aqui catalogados,
+os desenvolvedores poderão perceber problemas de projeto mais cedo e
+melhorar seu projeto de classes. 
 
-A future work would be to a controlled experiment with combinations of other possible practices that help on class design, such as pair programming, would help researchers to find ways to increase class design feedback.
-
-achar metricas para medir os problemas de design que apareceram de feedback
+Todos os padrões comentados neste trabalho foram levantados junto aos 
+desenvolvedores da indústria de software brasileira. Apesar do pequeno
+número de desenvolvedores entrevistados, muitos padrões emergiram. Isso
+pode significar que existam ainda outros padrões de DGT. Um possível trabalho
+futuro seria continuar na busca de padrões de \textit{feedback}.
 
 \section{Lições Aprendidas}
 
-licoes aprendidas:
-- ambiente complicado de configurar nao ajuda as empresas (gravar video, plugins, etc); atrasos para iniciar devido ao alto número de coisas pra arrumar;
-  --> isso fez com que alguns dados não fossem gerados, como plugin do eclipse e video de gravação de tela
-- muitos participantes de uma vez faz com que o experimento seja difícil, dado o número de pessoas que o pesquisador tem que cuidar (mesmo com as instruções,
-eles as vezes pulam, esquecem.. o pesquisador precisa estar de olho o tempo todo). na próxima, levar ajudante
-- estudantes precisam de mais atenção, pois tiveram mais dificuldades inclusive para configurar o ambiente
-- ambientes de universidades são difíceis de serem configurados e podem apresentar problemas malucos
-- pensar em casos mais extremos como participantes que acabam o segundo exercício mais rápido que o primeiro: podem voltar e continuar? podem refatorar
-o código gerado? para todas elas, o pesquisador respondeu "sim"
-- industria ocupada, muitos desistentes em cima da hora (1 empresa e alguns participantes das empresas que aceitaram).
-- possibilidade de fazer o estudo remoto (mas menos controle ainda)
-- apenas 1 piloto fez o processo inteiro. por isso o pesquisador, no proximo piloto, sempre focava no feedback das mudanças feitas. na próxima,
-procurar por pilotos com mais disponibilidade, e se possivel, variar a experiencia do piloto para pegar feedback com pessoas experientes e inexperientes.
+Ao longo desta pesquisa, nós aprendemos, na prática, muita coisa sobre planejamento
+e execução de estudos em engenharia de software. Alguns destes pontos valem
+a pena serem mencionados para que o pesquisador que decidir evoluir o estudo
+não cometa os mesmos erros que acabamos por cometer:
 
+\begin{itemize}
+	
+	\item A execução do nosso estudo inicial exigia um ambiente razoavelmente
+	complicado de ser configurado, como software de gravação de tela instalado, plugins do eclipse,
+	controlador de versão Git, entre outros. Isso não facilitou as empresas que participaram
+	do estudo. A consequência disso foi um certo atraso para iniciar a execução do estudo nas empresas, 
+	devido ao alto número de softwares a serem iniciados antes da implementação. Além do mais, em muitas empresas,
+	o software de gravação de tela e plugin do Eclipse não funcionaram e, ao fim, abandonamos a ideia de
+	obter esses dados.
+	
+	\item Muitas participantes de uma só vez faz com que o pesquisador não consiga dar atenção
+	a todos os participantes. Já que o ambiente era complicado de ser montado, muitos participantes
+	esqueciam de determinadas etapas, ou tinham dúvidas sobre o enunciado. Na próxima execução,
+	uma alternativa é levar um pesquisador auxiliar, ou até mesmo um ajudante.
+	
+	\item Caso o estudo seja feito com estudantes, os mesmos precisam de mais tempo para resolver
+	a mesma quantidade de exercícios, e mais atenção, pois eles tiveram um maior número
+	de dúvidas. Além disso, ambientes de faculdade são mais complicados de serem configurados.
+	O pesquisador precisará de mais tempo para preparar o ambiente.
+	
+	\item Como o tempo dado a todos os participantes de uma empresa era fixo, alguns deles
+	acabavam o exercício antes que outros. Em muitos casos, os participantes nos perguntavam
+	o que deveriam fazer com o tempo restante. Constantemente eles nos perguntam sobre a possibilidade
+	de refatorar o código que haviam escrito, e nós aceitávamos. Na próxima vez, sugerimos
+	ao pesquisador que pense melhor nesses casos extremos.
+	
+	\item Por trabalhar com indústria, os mais diferentes problemas podem acontecer 
+	até a execução do estudo. Uma empresa, por exemplo, cancelou sua participação
+	dias antes. Em outras, alguns participantes que eram dados como certos, também
+	não estavam presentes no dia. Sugerimos ao próximo pesquisador que faça contatos
+	com muitas empresas e já trabalhe pensando em possíveis desistentes.
+	
+	\item Algumas empresas fora da região aceitaram participar do estudo. Em uma delas,
+	conseguimos viajar até a cidade e executar o estudo. Nas outras optamos por não
+	prosseguir com o estudo, afinal nosso planejamento não contemplava a execução
+	do estudo de forma remota. Sugerimos a possibilidade de execução remota nos 
+	próximos planejamentos.
+	
+	\item Apenas um piloto fez o processo por inteiro; todos os outros, por falta de tempo, 
+	executaram apenas determinadas partes do estudo. Nos próximos, sugerimos
+	que o pesquisador encontre participantes com mais tempo disponível e com experiências
+	variadas.  
+	
+\end{itemize}

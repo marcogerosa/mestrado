@@ -129,8 +129,22 @@ empresas fazer uso de PHP para seu trabalho do dia-a-dia. No entanto, nós conhe
 e verificamos que, apesar de não utilizarem a linguagem constantemente, eles não tiveram
 problema algum durante a execução dos exercícios.
 
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{findings/experiencia-tdd-industria.png}
+  \caption{Experiência da equipe da indústria com TDD}
+  \label{fig:exp-tdd-industria}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{findings/experiencia-sw-industria.png}
+  \caption{Experiência da equipe da indústria com desenvolvimento de software em geral}
+  \label{fig:exp-sw-industria}
+\end{figure}
+
 \subsection{Participantes da Academia}
-\label{findings-desc-industria}
+\label{findings-desc-academia}
 
 Os participantes da academia que participaram do estudo, 21 no total, possuem baixíssima experiência,
 tanto em TDD quanto em desenvolvimento de software em geral. Surpreendentemente, 90\%
@@ -156,37 +170,20 @@ o experimento. Nenhum deles conseguiu terminar os dois exercícios propostos. Po
 motivo, nenhum aluno foi selecionado para o processo de entrevista. Entretanto,
 os códigos-fonte produzidos serão utilizados no processo de análise quantitativa.
 
-\begin{figure}[ht]
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[scale=.4]{findings/experiencia-tdd-industria.png}
-    \caption{Experiência da equipe da indústria com TDD}
-    \label{fig:exp-tdd-industria}
-  \end{minipage}
-  \hspace{0.5cm}
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[scale=.4]{findings/experiencia-tdd-academia.png}
-    \caption{Experiência dos estudantes da academia com TDD}  
-    \label{fig:exp-tdd-academia}
-  \end{minipage}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{findings/experiencia-tdd-academia.png}
+  \caption{Experiência dos estudantes da academia com TDD}
+  \label{fig:exp-tdd-academia}
 \end{figure}
 
-\begin{figure}[ht]
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[scale=.4]{findings/experiencia-sw-industria.png}
-    \caption{Experiência da equipe da indústria com desenvolvimento de software em geral}
-    \label{fig:exp-sw-industria}
-  \end{minipage}
-  \hspace{0.5cm}
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[scale=.4]{findings/experiencia-sw-academia.png}
-    \caption{Experiência dos estudantes da academia com desenvolvimento de software em geral}  
-    \label{fig:exp-sw-academia}
-  \end{minipage}
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{findings/experiencia-sw-academia.png}
+  \caption{Experiência dos estudantes da academia com desenvolvimento de software em geral}
+  \label{fig:exp-sw-academia}
 \end{figure}
+
 
 \begin{table}
 	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
@@ -198,8 +195,8 @@ os códigos-fonte produzidos serão utilizados no processo de análise quantitat
 		Objetos Dublê & 16 (utilizam no dia-a-dia), 6 (na teoria) & 3\\
 		\hline
 	\end{tabular}
-	\label{tab:exp-industria}
 	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da indústria}
+	\label{tab:exp-industria}
 \end{table}
 
 \begin{table}
@@ -212,8 +209,8 @@ os códigos-fonte produzidos serão utilizados no processo de análise quantitat
 		Objetos Dublê & 2 (utilizam no dia-a-dia), 16 (na teoria) & 3\\
 		\hline
 	\end{tabular}
-	\label{tab:exp-academia}
 	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da academia}
+	\label{tab:exp-academia}
 \end{table}
 
 \section{Inspeção do Código-Fonte}
@@ -633,7 +630,7 @@ Nas sub-seções abaixo, discutimos os números encontrados.
 
 \subsection{Métricas de código}
 
-Na Tabela \ref{tab:metricas-industria}, mostramos os \textit{p-values} encontrados para
+Na Tabela \ref{metricas-industria}, mostramos os \textit{p-values} encontrados para
 a diferença entre códigos produzidos com e sem TDD na indústria. Pelos números, 
 observamos que nem em nenhum exercício houveram diferenças nas métricas
 de complexidade ciclomática e acoplamento eferente. Já a métrica de falta
@@ -645,21 +642,21 @@ Isso nos mostra que, ao menos quantitativamente, a prática de TDD não fez
 diferença nas métricas de código.
 
 \begin{table}
-	\begin{tabular}{ | p{5cm} | c | c | c | c | c |}
+	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
 		\hline
-		Exercício & Complexidade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
+		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
 		& Quantidade de métodos por classe \\
 		\hline
 		Exercício 1 &	0.8967	&	0.6741 &	2.04E-07* &	0.4962 &	2.99E-06* \\
-		Exercício 2	0.7868	&	0.764 &	0.06132 &	0.9925 &	0.7501 \\
-		Exercício 3	0.5463	&	0.9872 &	0.5471 &	0.7216 &	0.3972\\
-		Exercício 4	0.2198	&	0.1361 &	0.04891* &	0.003286* &	0.9358\\
+		Exercício 2	& 0.7868	&	0.764 &	0.06132 &	0.9925 &	0.7501 \\
+		Exercício 3	& 0.5463	&	0.9872 &	0.5471 &	0.7216 &	0.3972\\
+		Exercício 4	& 0.2198	&	0.1361 &	0.04891* &	0.003286* &	0.9358\\
 		\hline
 		Todos &	0.8123	&	0.5604 &	0.3278 &	0.06814 &	0.5849\\
 		\hline
 	\end{tabular}
-	\label{tab:metricas-industria}
 	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na indústria}
+	\label{metricas-industria}
 \end{table}
 
 Na Tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
@@ -672,21 +669,21 @@ Podemos então concluir que a prática de TDD também não afetou
 o código produzido pelos participantes da academia.
 
 \begin{table}
-	\begin{tabular}{ | p{5cm} | c | c | c | c | c |}
+	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
 		\hline
-		Exercício & Complexidade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
+		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
 		& Quantidade de métodos por classe \\
 		\hline
-			Exercício 1	0.2155	&	0.07085	& 0.00714* &	0.1721	& 0.008334*\\
-			Exercício 2	0.7244	&	0.6744	& 1 &	0.3175 &	0.5591\\
-			Exercício 3	0.7008	&	0.1014 &	0.5007	& 0.4292	& 0.8687\\
-			Exercício 4	0.343	&	0.7131 &	0.7735	& 0.7833	& 0.5522\\
+			Exercício 1	& 0.2155	&	0.07085	& 0.00714* &	0.1721	& 0.008334*\\
+			Exercício 2	& 0.7244	&	0.6744	& 1 &	0.3175 &	0.5591\\
+			Exercício 3	& 0.7008	&	0.1014 &	0.5007	& 0.4292	& 0.8687\\
+			Exercício 4	& 0.343	&	0.7131 &	0.7735	& 0.7833	& 0.5522\\
 		\hline
-			total	0.254	&	0.007676* & 0.351 & 0.2668 & 0.1706\\
+			Todos &	0.254	&	0.007676* & 0.351 & 0.2668 & 0.1706\\
 		\hline
 	\end{tabular}
-	\label{tab:metricas-academia}
 	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na academia}
+	\label{metricas-academia}
 \end{table}
 
 \subsection{Especialistas}
@@ -698,7 +695,7 @@ mostramos os \textit{p-values} encontrados para a diferença de avaliação dos 
 entre códigos produzidos com e sem TDD na indústria e academia, respectivamente.
 
 
-\begin{table}
+\begin{table}[h!]
 	\begin{tabular}{| p{5cm} | c | c | c | }
 		\hline
 		Especialista & Design & Testabilidade & Simplicidade\\
@@ -707,11 +704,11 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 		Especialista 2 &	0.7447 &	0.4591 &	0.9044\\
 		\hline
 	\end{tabular}
-	\label{tab:especialistas-industria}
 	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na indústria}
+	\label{tab:especialistas-industria}
 \end{table}
 
-\begin{table}
+\begin{table}[h!]
 	\begin{tabular}{| p{5cm} | c | c | c | }
 		\hline
 		Especialista & Design & Testabilidade & Simplicidade\\
@@ -720,6 +717,6 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 		Especialista 2	& 0.88	& 0.5519 &	0.88\\
 		\hline
 	\end{tabular}
-	\label{tab:especialistas-academia}
 	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na academia}
+	\label{tab:especialistas-academia}
 \end{table}

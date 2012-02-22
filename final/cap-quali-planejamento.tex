@@ -129,7 +129,7 @@ abaixo:
 	feitas por um desenvolvedor?
 
 	\item Como a prática de TDD influencia o programador no processo de  
-	design de classes, do ponto de vista do acoplamento, coesão e simplicidade?
+	design de classes, do ponto de vista do acoplamento, coesão e complexidade?
 
 \end{enumerate}
 
@@ -139,7 +139,6 @@ abaixo:
 Participantes de diferentes empresas de desenvolvimento de software do mercado
 brasileiro foram selecionados. Todos eles foram solicitados a resolver 
 alguns problemas utilizando Java, dentro de um período de tempo limitado. 
-
 Os participantes utilizaram TDD em um problema, e a não utilizaram
 TDD no outro. Os problemas resolvidos bem como em qual deles o participante
 deveria utilizar TDD será randomizada, afim de diminuir o problema do aprendizado.
@@ -147,7 +146,6 @@ deveria utilizar TDD será randomizada, afim de diminuir o problema do aprendiza
 Todas as implementações feitas foram salvas, para que nós tenhamos a possibilidade
 de calcular métricas de código sob elas. Ao final do exercício, todos participantes
 também responderam um questionário, sobre seu desempenho na resolução dos problemas.
-
 Em seguida, uma análise inicial serviu para filtrar os candidatos
 mais interessantes, que foram posteriormente entrevistados. 
 Todos os dados gerados no processo, 
@@ -227,7 +225,7 @@ Para que isso aconteça sem maiores problema, nós criamos um caderno
 de exercícios na qual o participante seguiu, que pode ser encontrado
 no Apêndice \ref{ape:caderno}.
 
-Os participantes terão 2h para resolver todos os exercícios. 
+Os participantes terão duas horas para resolver todos os exercícios. 
 Todos os códigos serão salvos ao final do estudo para que possam ser analisados junto
 com os dados das entrevistas.
 O tempo foi considerado suficiente para que o participante resolvesse todos eles. 
@@ -236,7 +234,7 @@ Os participantes não podiam se comunicar durante o exercício, e cada um deles 
 os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
 pode ocorrer durante a resolução dos problemas. 
 
-O participante recebeu 2 exercícios. Em 1 deles, o participante praticou TDD; no outro,
+O participante recebeu dois exercícios. Em um deles, o participante praticou TDD; no outro,
 ele programou sem a prática. A razão disso
 é fazer com que o participante exercite ambos estilos de desenvolvimento (com e sem TDD)
 e tenha mais embasamento para ser entrevistado nas próximas etapas do estudo. 
@@ -254,7 +252,7 @@ do código que ele acabou de produzir. Esse questionário
 \subsection{Problemas Propostos}
 \label{sec:exercicios}
 
-Foram propostos 4 problemas que devem ser resolvidos pelos participantes, utilizando
+Foram propostos quatro problemas que devem ser resolvidos pelos participantes, utilizando
 linguagem Java. Participantes deverão utilizar JUnit \footnote{\url{http://www.junit.org}. 
 Último acesso em 18 de Julho de 2011} para a escrita de testes
 automatizados de unidade. O objetivo desses exercícios é simular problemas de design 
@@ -298,10 +296,15 @@ várias classes, ao invés de uma única classe responsável por todos esses cri
 	\begin{tabular}{| l | l | l | }
 		\hline
 		Exercício & Mau Cheiro & Princípios\\
+		
+		\hline
+		
 		Exercício 1 & Rigidez, Complexidade Desnecessária & PRU, PAF \\
 		Exercício 2 & Fragilidade, Viscosidade, Imobilidade & PRU, PID, PAF \\
 		Exercício 3 & Rigidez, Fragilidade & PRU\\
 		Exercício 4 & Fragilidade, Viscosidade, Imobilidade & PAF, PRU, PID \\
+		
+		\hline
 	\end{tabular}
 	\label{tab:problemas-exercicios}
 	\caption{Exercícios propostos e mau cheiros de design}
