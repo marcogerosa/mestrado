@@ -659,18 +659,18 @@ indica que o método em questão é complexo e/ou possui diversas responsabilida
 Esse padrão faz sentido já que códigos como esse possui geralmente diversos caminhos
 diferentes e tendem a alterar muitos atributos internos do objeto, obrigando o desenvolvedor
 a criar muitos testes, caso queira ter uma alta cobertura de testes nesta classe.
-A esse padrão, demos o nome de \textbf{Muitos testes para um método}.
+A esse padrão, demos o nome de \textbf{Muitos Testes Para Um Método}.
 
 O mesmo pode ser entendido quando o desenvolvedor escreve muitos testes para a 
 classe como um todo. Classes que expõem muitos métodos para o mundo de fora
 também tendem a possuir muitas responsabilidades. Chamamos este padrão
-de \textbf{Muitos testes para uma classe}.
+de \textbf{Muitos Testes Para Uma Classe}.
 
 Outro problema de coesão pode ser encontrado quando o programador
 sente a necessidade de escrever cenários de teste muito grandes para uma
 única classe ou método. É possível inferir que essa necessidade surge 
 em códigos que lidam com muitos objetos e fazem muita coisa. Nomeamos
-esse padrão de \textbf{Cenários muito grandes}.
+esse padrão de \textbf{Cenário Muito Grande}.
 
 Um padrão não explicitamente levantado pelos participantes, que notado
 por nós, é quando o desenvolvedor sente a necessidade de se testar
@@ -679,7 +679,7 @@ transformar o método público em algo mais fácil de ler. Ao desejar
 testá-lo de maneira isolada, o programador pode estar de frente com
 um método que possua uma responsabilidade suficiente para ser
 alocada em uma outra classe. A esse padrão, chamamos de 
-\textbf{Testes em métodos que não são públicos}.
+\textbf{Testes em Método Que Não É Público}.
 
 \subsection{Acoplamento}
 
@@ -687,7 +687,7 @@ Quando o programador faz uso abusivo de objetos dublês para testar uma
 única classe, indica que a classe sob teste possui problemas
 de acoplamento. É possível deduzir que uma classe que faz uso de muitos
 objetos dublês depende de muitas classes, e portanto, tende a ser
-uma classe instável. A esse padrão, demos o nome de \textbf{muitos mocks}.
+uma classe instável. A esse padrão, demos o nome de \textbf{Objetos Dublê em Excesso}.
 
 Outro padrão percebido por nós é a criação de objetos dublês que não
 são utilizados em alguns métodos de testes. Isso geralmente acontece quando
@@ -696,7 +696,7 @@ interfere na outra. Quando isso acontece, o programador acaba por escrever
 conjuntos de testes, onde alguns deles lidam com parte dos objetos dublês,
 enquanto a outra parte lida com a outra parte. Isso indica um alto acoplamento 
 da classe, que precisa ser refatorado. A esse padrão demos o nome de
-\textbf{mocks não utilizados}.
+\textbf{Objetos Dublê Não Utilizados}.
 
 
 \subsection{Falta de abstração}
@@ -704,22 +704,22 @@ da classe, que precisa ser refatorado. A esse padrão demos o nome de
 Quando, dado uma nova funcionalidade, o programador precisa propagar
 a mesma alteração em diferentes testes, indica a falta de uma abstração 
 correta para evitar a repetição do código que provavelmente existe. A 
-esse padrão demos o nome de \textbf{mesma alteração em diferentes testes}.
+esse padrão demos o nome de \textbf{Mesma Alteração Em Diferentes Testes}.
 Analogamente, o programador pode perceber a mesma coisa
 quando ele começa a criar testes repetidos para entidades diferentes.
-Chamamos esse padrão de \textbf{testes repetidos para entidades diferentes}.
+Chamamos esse padrão de \textbf{Testes Repetidos Para Entidades Diferentes}.
 
 Quando o desenvolvedor começa o teste e percebe que a interface pública da classe
 que está sendo criada não está amigável, pode indicar que abstração
 corrente não é clara o suficiente e poderia ser melhorada. A esse padrão,
-chamamos de \textbf{interface nao amigavel}.
+chamamos de \textbf{Interface Não Amigável}.
 
 Outro padrão não mencionado explícitamente pelos participantes, 
 é a existência da palavra \textit{"se"} no nome do teste. Testes que
 possuem nomes como esse geralmente indicam a existência de um \textit{"if"} na implementação
 do código de produção. Essas diversas condições podem, geralmente, ser refatoradas e,
 através do uso de poliformismo, serem eliminadas. A falta de abstração nesse caso
-é evidenciada pelo padrão \textbf{condicional no nome do teste}.
+é evidenciada pelo padrão \textbf{Condicional No Nome Do Teste}.
 
 \section{Relação dos padrões com os princípios de projeto de classes}
 
@@ -731,23 +731,23 @@ a programador por problemas no seu projeto de classes.
 
 \begin{table}[h!]
 	\centering
-	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} | }
+	\begin{tabular}{| p{7.5cm} | p{5cm} | p{2.5cm} | }
 		\hline
 
-		Padrão & Mau cheiro & Princípio ferido\\
+		Padrão & Possíveis Mau Cheiros de Projeto & Possíveis Princípios Feridos\\
 		
 		\hline
 
-		Muitos testes para um método                   & & \\
-		Muitos testes para uma classe                  & & \\
-		Cenários muito grandes                         & & \\
-		Testes em métodos que não são públicos         & & \\
-		muitos mocks                                   & & \\
-		mocks não utilizados                           & & \\
-		mesma alteração em diferentes testes           & & \\
-		testes repetidos para entidades diferentes     & & \\
-		interface nao amigavel                         & & \\
-		condicional no nome do teste                   & & \\
+		Muitos Testes Para Um Método                   & Complexidade Desnecessária, Opacidade   & PRU \\ \hline
+		Muitos Testes Para Uma Classe                  & Complexidade Desnecessária, Opacidade   & PRU \\ \hline
+		Cenário Muito Grande                           & Opacidade, Fragilidade                  & PRU \\ \hline
+		Testes Em Método Que Não É Público             & Complexidade Desnecessária              & PRU, PAF \\ \hline
+		Objetos Dublê em Excesso                       & Fragilidade                             & PID, PAF \\ \hline
+		Objetos Dublês Não Utilizados                  & Fragilidade                             & PID, PAF \\ \hline
+		Mesma Alteração Em Diferentes Testes           & Fragilidade, Rigidez                    & PRU \\ \hline
+		Testes Idênticos Para Entidades Diferentes     & Repetição Desnecessária, Rigidez        & PRU  \\ \hline
+		Interface Não Amigável                         & Opacidade                               & ISP \\ \hline
+		Condicional No Nome Do Teste                   & Rigidez, Fragilidade                    & PRU, PAF \\
 
 		\hline
 		
