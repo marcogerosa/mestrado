@@ -723,6 +723,35 @@ através do uso de poliformismo, serem eliminadas. A falta de abstração nesse 
 
 \section{Relação dos padrões com os princípios de projeto de classes}
 
-A FAZER
+É possível relacionar os padrões de \textit{feedback} levantados pelos participantes
+com os mau cheiros de projeto de classes comentados nesta pesquisa. Na Tabela \ref{tab:relacao-padroes},
+mostramos essa relação, e como esses padrões podem efetivamente ajudar o desenvolvedor
+a programador por problemas no seu projeto de classes.
 
-% relacao com SOLID aqui
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{| p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+
+		Padrão & Mau cheiro & Princípio ferido\\
+		
+		\hline
+
+		Muitos testes para um método                   & & \\
+		Muitos testes para uma classe                  & & \\
+		Cenários muito grandes                         & & \\
+		Testes em métodos que não são públicos         & & \\
+		muitos mocks                                   & & \\
+		mocks não utilizados                           & & \\
+		mesma alteração em diferentes testes           & & \\
+		testes repetidos para entidades diferentes     & & \\
+		interface nao amigavel                         & & \\
+		condicional no nome do teste                   & & \\
+
+		\hline
+		
+	\end{tabular}
+	\caption{Relação entre os padrões de \textit{feedback} de DGT e mau cheiros de projeto de classes}
+	\label{tab:relacao-padroes}
+\end{table}
