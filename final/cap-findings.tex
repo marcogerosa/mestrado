@@ -517,6 +517,116 @@ e que os fazem pensar sobre os possíveis problemas de acoplamento,
 coesão, falta de abstração, e etc, na classe que estão criando.
 Esses padrões são melhor discutidos na Seção \ref{padroes-tdd}.
 
+\section{Análise Quantitativa}
+
+Conforme discutido no Capítulo \ref{cap:qualitativo-planejamento}, o teste
+estatístico escolhido foi o Wilcoxon. Comparamos os valores encontrados
+para as métricas de complexidade ciclomática, acoplamento eferente, falta
+de coesão dos métodos, número de linhas por métodos, e quantidade de métodos
+por classe nos códigos produzidos com DGT com as métricas colhidas dos
+códigos produzidos sem DGT.
+Devido ao problema que tivemos com os dados da academia, separamos a análise
+dos dados, tanto das métricas de código, quanto dos especialistas, entre academia e indústria.
+
+Nas sub-seções abaixo, discutimos os números encontrados.
+
+\subsection{Métricas de código}
+
+Na Tabela \ref{metricas-industria}, mostramos os \textit{p-values} encontrados para
+a diferença entre códigos produzidos com e sem DGT na indústria. Pelos números, 
+observamos que nem em nenhum exercício houveram diferenças nas métricas
+de complexidade ciclomática e acoplamento eferente. Já a métrica de falta
+de coesão dos métodos apresentou diferenças em dois exercícios (1 e 4). 
+A diferença também apareceu na quantidade de linhas por método (exercício 4),
+e quantidade de métodos (exercício 1). Ao olhar os dados de todos os exercícios
+juntos, nenhuma métrica apontou uma diferença significativa.
+Isso nos mostra que, ao menos quantitativamente, a prática de DGT não fez
+diferença nas métricas de código.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+		\hline
+		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
+		& Quantidade de métodos por classe \\
+		\hline
+		Exercício 1 &	0.8967	&	0.6741 &	2.04E-07* &	0.4962 &	2.99E-06* \\
+		Exercício 2	& 0.7868	&	0.764 &	0.06132 &	0.9925 &	0.7501 \\
+		Exercício 3	& 0.5463	&	0.9872 &	0.5471 &	0.7216 &	0.3972\\
+		Exercício 4	& 0.2198	&	0.1361 &	0.04891* &	0.003286* &	0.9358\\
+		\hline
+		Todos &	0.8123	&	0.5604 &	0.3278 &	0.06814 &	0.5849\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem DGT na indústria}
+	\label{metricas-industria}
+\end{table}
+
+Na Tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
+entre códigos produzidos com e sem DGT na academia. As métricas de 
+falta de coesão dos métodos e quantidade de métodos apresentaram
+uma diferença significativa nos exercícios 1 e 4, respectivamente.
+Ao olhar para todos os dados juntos, uma diferença significativa
+apareceu também na métrica de acoplamento eferente.
+Podemos então concluir que a prática de DGT também não afetou
+o código produzido pelos participantes da academia.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+		\hline
+		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
+		& Quantidade de métodos por classe \\
+		\hline
+			Exercício 1	& 0.2155	&	0.07085	& 0.00714* &	0.1721	& 0.008334*\\
+			Exercício 2	& 0.7244	&	0.6744	& 1 &	0.3175 &	0.5591\\
+			Exercício 3	& 0.7008	&	0.1014 &	0.5007	& 0.4292	& 0.8687\\
+			Exercício 4	& 0.343	&	0.7131 &	0.7735	& 0.7833	& 0.5522\\
+		\hline
+			Todos &	0.254	&	0.007676* & 0.351 & 0.2668 & 0.1706\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem DGT na academia}
+	\label{metricas-academia}
+\end{table}
+
+\subsection{Especialistas}
+
+Ambos os especialistas não encontraram diferenças entre códigos produzidos
+com e sem DGT, tanto na indústria, quanto na academia. Nas Tabelas 
+\ref{tab:especialistas-industria} e \ref{tab:especialistas-academia},
+mostramos os \textit{p-values} encontrados para a diferença de avaliação dos especialistas
+entre códigos produzidos com e sem DGT na indústria e academia, respectivamente.
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{| p{5cm} | c | c | c | }
+		\hline
+		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
+		\hline
+		Especialista 1 &	0.4263 &	0.5235 &	0.332\\
+		Especialista 2 &	0.7447 &	0.4591 &	0.9044\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem DGT na indústria}
+	\label{tab:especialistas-industria}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{| p{5cm} | c | c | c | }
+		\hline
+		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
+		\hline
+		Especialista 1	& 0.8795 &	NA	& 0.4222\\
+		Especialista 2	& 0.88	& 0.5519 &	0.88\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem DGT na academia}
+	\label{tab:especialistas-academia}
+\end{table}
+
 
 \section{Padrões de \textit{Feedback} de DGT}
 \label{padroes-tdd}
@@ -616,109 +726,3 @@ através do uso de poliformismo, serem eliminadas. A falta de abstração nesse 
 A FAZER
 
 % relacao com SOLID aqui
-
-\section{Análise Quantitativa}
-
-Conforme discutido no Capítulo \ref{cap:qualitativo-planejamento}, o teste
-estatístico escolhido foi o Wilcoxon. Comparamos os valores encontrados
-para as métricas de complexidade ciclomática, acoplamento eferente, falta
-de coesão dos métodos, número de linhas por métodos, e quantidade de métodos
-por classe nos códigos produzidos com DGT com as métricas colhidas dos
-códigos produzidos sem DGT.
-Devido ao problema que tivemos com os dados da academia, separamos a análise
-dos dados, tanto das métricas de código, quanto dos especialistas, entre academia e indústria.
-
-Nas sub-seções abaixo, discutimos os números encontrados.
-
-\subsection{Métricas de código}
-
-Na Tabela \ref{metricas-industria}, mostramos os \textit{p-values} encontrados para
-a diferença entre códigos produzidos com e sem DGT na indústria. Pelos números, 
-observamos que nem em nenhum exercício houveram diferenças nas métricas
-de complexidade ciclomática e acoplamento eferente. Já a métrica de falta
-de coesão dos métodos apresentou diferenças em dois exercícios (1 e 4). 
-A diferença também apareceu na quantidade de linhas por método (exercício 4),
-e quantidade de métodos (exercício 1). Ao olhar os dados de todos os exercícios
-juntos, nenhuma métrica apontou uma diferença significativa.
-Isso nos mostra que, ao menos quantitativamente, a prática de DGT não fez
-diferença nas métricas de código.
-
-\begin{table}
-	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
-		\hline
-		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
-		& Quantidade de métodos por classe \\
-		\hline
-		Exercício 1 &	0.8967	&	0.6741 &	2.04E-07* &	0.4962 &	2.99E-06* \\
-		Exercício 2	& 0.7868	&	0.764 &	0.06132 &	0.9925 &	0.7501 \\
-		Exercício 3	& 0.5463	&	0.9872 &	0.5471 &	0.7216 &	0.3972\\
-		Exercício 4	& 0.2198	&	0.1361 &	0.04891* &	0.003286* &	0.9358\\
-		\hline
-		Todos &	0.8123	&	0.5604 &	0.3278 &	0.06814 &	0.5849\\
-		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem DGT na indústria}
-	\label{metricas-industria}
-\end{table}
-
-Na Tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
-entre códigos produzidos com e sem DGT na academia. As métricas de 
-falta de coesão dos métodos e quantidade de métodos apresentaram
-uma diferença significativa nos exercícios 1 e 4, respectivamente.
-Ao olhar para todos os dados juntos, uma diferença significativa
-apareceu também na métrica de acoplamento eferente.
-Podemos então concluir que a prática de DGT também não afetou
-o código produzido pelos participantes da academia.
-
-\begin{table}
-	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
-		\hline
-		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
-		& Quantidade de métodos por classe \\
-		\hline
-			Exercício 1	& 0.2155	&	0.07085	& 0.00714* &	0.1721	& 0.008334*\\
-			Exercício 2	& 0.7244	&	0.6744	& 1 &	0.3175 &	0.5591\\
-			Exercício 3	& 0.7008	&	0.1014 &	0.5007	& 0.4292	& 0.8687\\
-			Exercício 4	& 0.343	&	0.7131 &	0.7735	& 0.7833	& 0.5522\\
-		\hline
-			Todos &	0.254	&	0.007676* & 0.351 & 0.2668 & 0.1706\\
-		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem DGT na academia}
-	\label{metricas-academia}
-\end{table}
-
-\subsection{Especialistas}
-
-Ambos os especialistas não encontraram diferenças entre códigos produzidos
-com e sem DGT, tanto na indústria, quanto na academia. Nas Tabelas 
-\ref{tab:especialistas-industria} e \ref{tab:especialistas-academia},
-mostramos os \textit{p-values} encontrados para a diferença de avaliação dos especialistas
-entre códigos produzidos com e sem DGT na indústria e academia, respectivamente.
-
-
-\begin{table}[h!]
-	\begin{tabular}{| p{5cm} | c | c | c | }
-		\hline
-		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
-		\hline
-		Especialista 1 &	0.4263 &	0.5235 &	0.332\\
-		Especialista 2 &	0.7447 &	0.4591 &	0.9044\\
-		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem DGT na indústria}
-	\label{tab:especialistas-industria}
-\end{table}
-
-\begin{table}[h!]
-	\begin{tabular}{| p{5cm} | c | c | c | }
-		\hline
-		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
-		\hline
-		Especialista 1	& 0.8795 &	NA	& 0.4222\\
-		Especialista 2	& 0.88	& 0.5519 &	0.88\\
-		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem DGT na academia}
-	\label{tab:especialistas-academia}
-\end{table}
