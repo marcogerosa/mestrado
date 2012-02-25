@@ -5,21 +5,21 @@
 Conforme sugerido no capítulo anterior, para escrever classes com alta
 testabilidade, o praticante de DGT acaba por fazer uso de boas práticas de
 desenvolvimento de software. 
-Esse capítulo discute apresenta e discute algumas dessas boas práticas, que
+Esse capítulo discute algumas dessas boas práticas, que
 são posteriormente avaliadas durante o processo de pesquisa.
 
 %% ------------------------------------------------------------------------- %%
 \section{Sintomas de Projetos de Classes em Degradação}
 \label{sec:design-degradacao}
 
-Quando um projeto de classes começa a ficar difícil de ser evoluído, o reuso de código se 
+Diz-se que um projeto de classes está \textit{degradando}
+quando o mesmo começa a ficar difícil de evoluir, o reuso de código se 
 torna mais complicado do que repetir o trecho de código, ou o custo de se fazer 
-qualquer alteração no projeto de classes se torna alto, pode-se dizer que esse projeto de classes
-está \textit{degradando}. 
+qualquer alteração no projeto de classes se torna alto.
 
 Robert Martin \cite{bob-martin} enumerou alguns sintomas de projeto de classes em degradação, 
-chamados também de maus cheiros de projeto de classes. Esses sintomas são parecidos com os 
-maus cheiros de código \textit{code smells}, mas em um nível mais alto: eles
+chamados também de \textit{"maus cheiros"} de projeto de classes. Esses sintomas são parecidos com os 
+maus cheiros de código (\textit{"code smells"}), mas em um nível mais alto: eles
 estão presentes na estrutura geral do software ao invés de estarem localizados
 em apenas um pequeno trecho de código.
 
@@ -150,7 +150,7 @@ grande conhecimento e experiência no paradigma da orientação a objetos.
 Os princípios comentados nesta seção são muito discutidos por Robert Martin
 em vários de seus livros e artigos publicados \cite{bob-martin}.
 Esses princípios são produto de décadas de experiência em engenharia de
-software. Segundo ele próprio, esses princípios não são produto de uma única 
+software. Segundo ele, esses princípios não são produto de uma única 
 pessoa, mas sim a integração de pensamentos e trabalhos de um grande número de 
 desenvolvedores de software  e pesquisadores, e visam combater todos os sintomas
 de degradação discutidos na Seção \ref{sec:design-degradacao}.
@@ -180,12 +180,12 @@ Já em uma classe com muitas responsabilidades diferentes, os elementos tendem a
 se relacionar apenas em "grupos", ou seja, com os elementos que tratam de uma 
 das responsabilidades da classe. A esse tipo de classe, diz-se que ela possui 
 uma baixa coesão (ou que não é coesa).
-Robert Martin altera esse conceito de coesão e relaciona coesão com as forças
+Robert Martin altera esse conceito de coesão e a relaciona com as forças
 que  causam um módulo ou uma classe a mudar. No caso, o Princípio de
 Responsabilidade Única diz que uma classe deve ter apenas uma única razão para 
 mudar \cite{bob-martin}.
 
-Esse princípio é bem importante no momento em que há uma alteração em alguma 
+Esse princípio é importante no momento em que há uma alteração em alguma 
 funcionalidade do software. Quando isso ocorre, o programador precisa procurar 
 pelas classes que possuem a responsabilidade a ser modificada. Supondo uma
 classe  que possua mais de uma razão para mudar, isso significa que ela é
@@ -223,9 +223,9 @@ visto na seção \ref{subsec:ocp}, o Princípio do Aberto-Fechado se baseia
 fortemente na utilização desses recursos.
 
 O problema é que utilizar herança não é tarefa fácil, pois o acoplamento criado
-entre classe filha e classe pai é grande. Fazer as classe filhas respeitarem o
-contrato do pai, e ainda permitir que mudanças na classe pai não influenciem na
-classe filha requer trabalho.
+entre classe filha e classe pai é grande. Fazer as classes filhas respeitarem o
+contrato do pai, e ainda permitir que mudanças na classe pai não influenciem nas
+classes filhas requer trabalho.
 
 O princípio de Liskov diz que, se um tipo S é sub-classe de um tipo T,
 então objetos do tipo T podem ser substituídos por objetos do tipo S, sem
@@ -243,7 +243,7 @@ pré-condição dela é mais forte do que a do quadrado, afinal os dois lados de
 ter o mesmo tamanho.
 
 Quebras do princípio de Liskov geralmente levam o programador a quebrar o
-princípio do OCP também. Ele percebe que, para um determinados sub-tipos ele 
+princípio do OCP também. Ele percebe que, para determinados sub-tipos, ele 
 precisa fazer um tratamento especial, e acaba escrevendo condições nas classes 
 clientes que fazem uso disso.
 

@@ -2,37 +2,107 @@
 \chapter{Conclusões e Trabalhos Futuros}
 \label{cap:conclusoes}
 
-Neste trabalho, fomos além da validação da afirmação de que a prática de DGT
-melhora o projeto de classes. Discutimos e entendemos como a prática pode
-fazer a diferença no dia a dia de um desenvolvedor de softwares.
-Projetar classes é uma tarefa difícil. A prática de DGT e os
-testes de unidade intrísecos ao processo podem ajudar desenvolvedores a antecipar
-os problemas do projeto através de um \textit{feedback} rápido. \textit{Feedback}
-esses que foram coletados, discutidos e catalogados também por esta pesquisa.
+\section{Introdução}
 
+Neste trabalho, provemos evidência empírica sobre os benefícios da prática de DGT
+no projeto de classes.
+Além da validação da afirmação de que a prática de DGT
+melhora o projeto de classes, discutimos e entendemos como a prática pode
+fazer a diferença no dia a dia de um desenvolvedor de softwares.
+
+Ao revisitarmos as questões levantadas no começo desta pesquisa,
+percebemos que as respostas que chegamos são muito parecidas
+com as que são encontradas na literatura, com a diferença de 
+que conseguimos observar padrões de \textit{feedback} que aparecem
+no momento em que o desenvolvedor pratica DGT, e que o guia durante
+o desenvolvimento.
+
+Divulgar o que foi encontrado por este trabalho é de extrema importância
+para times de desenvolvimento de software, especialmente aos que seguem
+algum tipo de metodologia ágil pois, ao conhecer os padrões aqui catalogados,
+os desenvolvedores poderão perceber problemas de projeto mais cedo e
+melhorar seu projeto de classes.
+
+Nas sub-seções abaixo, respondemos cada uma das questões levantadas
+por este trabalho.
+
+\section{Qual a influência de DGT no projeto de classes?}
+
+A prática de DGT \textbf{pode} influenciar no processo de criação do projeto de classes.
+No entanto, ao contrário do que é comentado pela indústria,
+\textbf{a prática de DGT não guia o desenvolvedor para um bom projeto de classes
+de forma automática}; a experiência e conhecimento 
+do desenvolvedor são fundamentais ao criar software orientado a objetos. 
+
+A prática, por meio dos seus possíveis \textit{feedbacks} em relação ao
+projeto de classes, discutidos
+em profundidade na Seção \ref{padroes-tdd}, podem servir de guia
+para o desenvolvedor. Esses \textit{feedbacks}, quando observados, fazem
+com que o desenvolvedor perceba problemas de projeto de classes de
+forma antecipada, facilitando a refatoração do mesmo.
+
+\textbf{Portanto, essa é a forma na qual a prática guia o desenvolvedor para
+um melhor projeto de classes: dando retorno constante sobre os possíveis problemas
+existentes no atual projeto de classes. É tarefa do desenvolvedor perceber
+estes problemas e melhorar o projeto de acordo.}
+
+\section{Qual a relação entre DGT e as tomadas de decisões de projeto
+feitas por um desenvolvedor?}
+
+Como discutido acima, a prática de DGT e seus
+testes de unidade, intrísecos ao processo, podem ajudar os desenvolvedores a antecipar
+os problemas do projeto através de um \textit{feedback} rápido.
 Em outras palavras, o desenvolvedor que pratica DGT escreve os testes antes do código.
 Isso faz com que o teste de unidade que está sendo escrito sirva de
 rascunho para o desenvolvedor. Ao observar o código do teste de unidade com atenção,
 o desenvolvedor pode perceber problemas no projeto de classes que está criando.
 Problemas esses como classes que possuem diversas responsabilidades
-ou que possuem muitas outras dependências. Outras práticas dão o mesmo \textit{feedback}
+ou que possuem muitas outras dependências. 
+
+Outras práticas dão o mesmo \textit{feedback}
 para o desenvolvedor, mas a vantagem do teste é que o retorno é praticamente imediato.
 Além disso, como o teste é escrito antes, o desenvolvedor pode mudar de ideia sobre
 o projeto enquanto o custo de mudança ainda é baixo (afinal, o projeto ainda não
 foi implementado).
 
-Mas, ao contrário
-do que é comentado pela indústria, a prática de DGT não guia o programador
-para um bom projeto de classes de forma automática; a experiência e conhecimento 
-do desenvolvedor são fundamentais ao criar software orientado a objetos. 
-Divulgar o que foi encontrado por este trabalho é de extrema importância
-para times de desenvolvimento de software, especialmente aos que seguem
-algum tipo de metodologia ágil pois, ao conhecer os padrões aqui catalogados,
-os desenvolvedores poderão perceber problemas de projeto mais cedo e
-melhorar seu projeto de classes. 
+\section{Como a prática de DGT influencia o programador no processo de  
+projeto de classes, do ponto de vista do acoplamento, coesão e complexidade?}
+
+Ao escrever um teste de unidade para uma determinada classe, o desenvolvedor
+é obrigado a passar sempre pelos mesmos passos. Todo teste de unidade é composto
+de um conjunto de linhas responsáveis por montar o cenário do teste, um conjunto
+de linhas que executam a ação sob teste e, por fim, um conjunto de linhas que
+garantem que o comportamento foi executado de acordo com o esperado.
+
+Uma dificuldade na escrita de qualquer um desses conjuntos pode implicar
+em problemas no projeto de classes. Por exemplo, uma classe que para
+ser testada necessita de grandes cenários, pode nos indicar que a classe
+sob teste possui pré-condições muito complicadas. Já dificuldades na hora
+de executar a ação sob teste pode nos indicar que a interface pública desta
+classe não é amigável. 
+
+Classes pouco coesas, por exemplo, possuem diversas responsabilidades diferentes.
+Isso implica em mais pontos a serem testados que, por consequência, implica
+em um maior número de testes para aquela unidade. Classes altamente acopladas,
+por exemplo, exigem uma grande quantidade de objetos dublês, tornando a escrita
+do teste mais difícil.
+
+Seguindo esta linha de pensamento, concordamos com a opinião do Feathers,
+citada no começo do trabalho, onde uma classe difícil de ser testada muito provavelmente
+não apresenta um bom projeto de classes.
+
+\section{Trabalhos Futuros}
 
 Todos os padrões comentados neste trabalho foram levantados junto aos 
 desenvolvedores da indústria de software brasileira. Apesar do pequeno
 número de desenvolvedores entrevistados, muitos padrões emergiram. Isso
 pode significar que existam ainda outros padrões de DGT. Um possível trabalho
 futuro seria continuar na busca de padrões de \textit{feedback}.
+
+Além disso, um estudo que visa entender se desenvolvedores que conhecem
+esses padrões de antemão percebem problemas de projeto antes de desenvolvedores
+que não conhecem esses padrões, poderia ser de grande valia para a indústria.
+Afinal, em caso positivo, é de vital importância que os desenvolvedores além
+de conhecer a mecânica da prática, entendam também como extrair retorno constante
+sobre a qualidade do seu projeto de classes.
+

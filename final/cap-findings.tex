@@ -2,8 +2,19 @@
 \chapter{Resultados Encontrados e Discussão}
 \label{cap:discussao}
 
-\section{Particularidades da execução}
+\section{Introdução}
 
+Neste capítulo apresentamos e discutimos sobre a análise e interpretação dos dados colhidos
+na execução deste estudo. Na sub-seção \ref{subsec:particularidades-execucao}, apresentamos
+algumas das particularidades que aconteceram ao longo do estudo, servindo de lição 
+para os próximos pesquisadores que pretendem reproduzi-lo. Na seção \ref{sec:desc-participantes}
+descrevemos o perfil dos participantes, tanto da indústria, quanto na academia. E, por fim, nas seções
+e sub-seções seguintes, apresentamos os resultados encontrados. Detalhe para a seção 
+\ref{padroes-tdd}, onde levantamos os padrões de \textit{feedback} que a prática de DGT
+pode dar ao desenvolvedor.
+
+\section{Particularidades da execução}
+\label{subsec:particularidades-execucao}
 Como os estudos foram executados fisicamente em muitas das empresas selecionadas,
 nós acabamos por ajudar na organização do ambiente, mesmo a equipe tendo 
 recebido o caderno de questões, com as instruções da instalação
@@ -18,7 +29,7 @@ a implementar um projeto de classes flexível para os problemas. A frase que diz
 eles era geralmente: \textit{"Levem os exercícios para o mundo real, onde um outro
 desenvolvedor deverá manter o código gerado. Lembrem-se de implementar o código mais fácil possível
 para evoluir. As regras de negócio que existem hoje no enunciado tendem a aumentar
-de número e, portanto, deixem a manutenção do cóDGTdigo de vocês mais simples."}
+de número e, portanto, deixem a manutenção do código de vocês mais simples."}
 
 Durante a execução, nós tirávamos diversas dúvidas sobre enunciados dos
 exercícios, e até mesmo sobre procedimentos que os participantes podiam
@@ -88,6 +99,7 @@ uma simples aplicação web, onde eles tinham acesso a qualquer momento, e podia
 a avaliar a hora que preferissem.
 
 \section{Descrição dos participantes}
+\subsection{sec:desc-participantes}
 
 Conforme mencionado, o estudo foi executado em dois ambientes diferentes: em empresas de software
 do mercado brasileiro e na academia. Como ambos estudos foram executados de maneira independente,
@@ -110,7 +122,10 @@ Na Figura \ref{fig:exp-sw-industria}, mostramos a distribuição.
 
 Entrando em aspectos mais técnicos, 64\% dos participantes afirmam conhecer Java. Entretanto,
 36\% dizem não trabalharem com Java no seu dia-a-dia. Todos eles afirmam conhecer JUnit,
-e só 12\% diz nunca ter ouvido falar sobre o conceito de objetos dublês. De fato, 64\% deles
+e só 12\% diz nunca ter ouvido falar sobre o conceito de objetos dublês\footnote{Objetos dublê ou, do inglês, 
+\textit{mock objects}, são objetos criados durante um teste de unidade, e que imitam o comportamento de um
+outro objeto concreto. Geralmente são muito utilizados quando queremos isolar nosso teste de outras classes
+do sistema. Mais informações sobre objetos dublês podem ser encontrados em \cite{mocks}.}. De fato, 64\% deles
 aplicam objetos dublês durante suas atividades de desenvolvimento. Com relação a conhecimentos
 em orientação a objetos, na pergunta aberta do questionário, grande parte deles 
 afirmaram que possuem uma boa experiência e alguns
