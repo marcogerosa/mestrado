@@ -25,6 +25,7 @@
 \usepackage{listings}                   % para formatar código-fonte (ex. em Java)
 \usepackage{setspace}
 \usepackage{longtable}
+\usepackage{framed}
 \usepackage{multirow}
 \usepackage{titletoc}
 \usepackage{lscape}
@@ -109,8 +110,7 @@ framexrightmargin=10pt
 \thispagestyle{empty}
 \begin{center}
     \vspace*{2.3cm}
-    \textbf{\Large{Influência do Desenvolvimento Guiado pelos Testes \\nas Decisões de Projeto de Classes
-	em Sistemas \\Orientados a Objetos: Estudos com Desenvolvedores}}\\
+    \textbf{\Large{Como a prática de TDD Influencia no \\Projeto de Classes em Sistemas Orientados a Objetos}}\\
     
     \vspace*{1.2cm}
     \Large{Mauricio Finavaro Aniche}
@@ -184,7 +184,7 @@ framexrightmargin=10pt
 
 Em primeiro lugar, gostaria de agradecer a meu orientador, Prof. Dr. Marco Aurélio
 Gerosa, que, ao longo destes três anos me ensinou mais do que eu poderia imaginar.
-Entrei no mestrado com o intuito de aprender sobre DGT, e saí de lá entendendo
+Entrei no mestrado com o intuito de aprender sobre TDD, e saí de lá entendendo
 melhor sobre ciência. 
 Lições essas que levarei para toda minha vida na academia e indústria.
 
@@ -199,7 +199,7 @@ que me presentou com um livro de programação para crianças quando eu tinha po
 de 9 anos. Talvez, sem esse presente, essa pesquisa nunca teria acontecido.
 
 Agradeço aos meus amigos de trabalho da Locaweb e Caelum Ensino e Inovação, 
-por aguentar meus discursos e palestras sobre DGT, e mostrar os diferentes
+por aguentar meus discursos e palestras sobre TDD, e mostrar os diferentes
 pontos de vista. Isso me ajudou a entender mais sobre a prática, o que resultou
 em uma discussão mais rica ao longo do trabalho.
 
@@ -210,82 +210,70 @@ participado da pesquisa de maneira independente. Fico muito feliz por ter sido
 bem recebido pela indústria, e espero que possamos continuar essa parceria entre
 academia e indústria.
 
+Um forte abraço a todos!
+
 % ---------------------------------------------------------------------------- %
 \chapter*{Resumo}
 
-Desenvolvimento Guiado pelos Testes (DGT) é uma das práticas sugeridas na Programação
-Extrema.
-A mecânica da prática é simples: o programador escreve o teste antes
-de escrever o código. Apesar de parecer que DGT é uma prática focada em testes
-de software (afinal, seu nome é composto da palavra ``teste''), sua
-grande contribuição é o \textit{feedback} em relação à qualidade do projeto de classes produzido.
-Na opinião de muitos autores conhecidos, DGT além de guiar o programador na
-criação do projeto de classes, ainda ajuda a manter o código mais simples,
-mais claro, etc.
+Desenvolvimento Guiado por Testes (TDD) é uma das práticas sugeridas na Programação
+Extrema. A mecânica da prática é simples: o programador escreve o teste antes
+de escrever o código. É, portanto, fácil inferir que a prática de TDD é uma
+prática de testes de software. Entretanto, muitos autores de livros 
+conhecidos pela indústria e academia, como Robert Martin, Steve Freeman e 
+Dave Astels afirmam que os efeitos da prática vão além. Segundo eles,
+TDD pode ajudar o desenvolvedor durante o processo de criação do projeto classes,
+fazendo-os criar classes menos acopladas e mais coesas.
 
-É realmente difícil entender como DGT influencia no processo de desenvolvimento
-de software. Boa parte dos experimentos da
-academia sobre a prática verificam os efeitos dela sobre a qualidade externa. 
-Apesar da pouca quantidade, alguns experimentos mostram que DGT tem uma influência
-positiva no projeto de classes, diminuindo o grau de acoplamento, aumentando
-a coesão e a simplicidade de classes e módulos. Entretanto, poucos trabalhos visam
-entender a razão pela qual a prática leva os desenvolvedores a obterem bons resultados
-no projeto de classes.
+Entretanto, entender como a prática guia o desenvolvedor durante esse processo
+não é fácil. Grande parte dos trabalhos estão interessados em descobrir se
+a prática de TDD faz diferença na qualidade do código gerado, mas poucos são os 
+autores que tentam discutir como a prática realmente auxilia.
+Além disso, é notável a crescente adoção da prática de TDD por parte da indústria. E,
+dado nosso estudo realizado dentro de um evento de métodos ágeis, percebemos que
+mesmo os praticantes não entender ou conseguem expressar bem como a prática
+os guia.
 
-Este trabalho tem por objetivo compreender melhor os efeitos de DGT e como sua prática 
-influencia o 
-desenvolvedor durante o processo de projeto de sistemas orientados a objetos. Mais ainda,
-como DGT influencia nas decisões de projeto tomadas por um desenvolvedor durante 
-a prática diária.
+Este trabalho tem por objetivo compreender melhor os efeitos de TDD e como sua prática 
+influencia o desenvolvedor durante o processo de projeto de sistemas orientados a objetos.
+Para alcançar o objetivo, este estudo faz uso de uma combinação entre um experimento controlado 
+inicial, na qual participantes foram
+convidados a resolver exercícios pré-elaborados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
+estudo qualitativo detalhou como a prática influenciou as decisões de projeto de classes dos participantes.
 
-Para alcançar o objetivo, este estudo faz uso de uma combinação entre um experimento controlado inicial, na qual participantes serão
-convidados a resolver exercícios pré-elaborados utilizando DGT e, a partir dos dados colhidos nesse estudo, um outro
-estudo qualitativo detalhará como a prática influenciou as decisões de projeto de classes dos participantes.
-
-Ao final, encontramos que a prática de DGT não melhora o projeto de classes naturalmente, mas sim
+Ao final, encontramos que a prática de TDD não melhora o projeto de classes naturalmente, mas sim
 dá \textit{feedback} constante ao desenvolvedor que, por sua vez, utiliza de sua experiência
 e conhecimento para melhorá-lo. Esse estudo também levantou esses possíveis \textit{feedbacks} da
 prática e os catalogou. Esses padrões encontrados podem ser úteis para desenvolvedores
 que queiram encontrar maneiras de validar o projeto de classes em desenvolvimento.
 
-
-\noindent \textbf{Palavras-chave:} Desenvolvimento Guiado pelos Testes, Sistemas Orientados
-a Objetos, Projeto de Classes, Métodos Qualitativos de Pesquisa.
+\noindent \textbf{Palavras-chave:} Desenvolvimento Guiado por Testes, Sistemas Orientados
+a Objetos, Projeto de Classes, Qualidade Interna de Código.
 
 % ---------------------------------------------------------------------------- %
 \chapter*{Abstract}
 
 Test-Driven Development (TDD) is one of the most known practices of Extreme
 Programming (XP). The mechanical is simple: the developer writes a test before
-writing the implementation. Although TDD may look like a testing practice
-(after all, TDD has the word ``test'' in its name), its main contribution is the
-feedback in the class design. Most well-known authors claim that TDD, besides
-driving the design, it still helps programmers to maintain the code simpler, 
-cleaner, etc.
+writing the implementation. It is possible to infer that the practice is then 
+a software testing technique. However, many famous book authors, such as 
+Robert Martin, Steve Freeman, and Dave Astels suggest that the effects of the practice
+can go beyond. According to them, TDD can help developers during the class design creation
+process, enabling developers to create less coupled highly cohesive classes.
 
 It is really hard to understand how TDD influences on the software development
-process. Most part of the experiments in academia evaluate the effects of TDD
-in the external quality. Despite the small quantity, some experiments
-show that TDD has a positive influence on class design, reducing the coupling, and
-increasing the cohesion and simplicity of classes and modules. However, only a
-few works aim to understand the reason in which the practice guides practitioners
-to obtain good results on class design.
+process. Most part of the studies are interested on finding the difference between
+a TDD'd and a non-TDD'd code. Only a few of them try to discuss how the practice
+really supports class design. In addition, it is easy to notice the increasing
+adoption of the practice by the industry. And, given our study
+inside an agile software development conference, we noticed that even practitioners
+do not understand how the practice guides them.
 
 This work aims to understand better the effects and how TDD influences the
 practitioner during the class design process in object-oriented systems. 
-Even more, how TDD influences the design decisions taken by developers
-during their development tasks.
-
 This work uses a combination of a initial controlled experiment, in which the participants
-are invited to solve a few prepared exercises using TDD and, based on data gathered on this,
-another qualitative study will explore, in details, the way TDD influenced the design decisions
+were invited to solve a few prepared exercises using TDD and, based on data gathered on this,
+another qualitative study explored, in detail, the way TDD influenced the design decisions
 taken by the participants.
-
-To achieve the goal, this work analyses the effects of the practice through the
-point of view of developers that practice it. In order
-to achieve this goal, this work proposes the use of qualitative methods and
-suggests a experiment followed by suite of interviews  
-with developers in the brazilian software industry.
 
 At the end, we observed that the practice of TDD does not improve the class design naturally, but
 gives constant feedback to developers that make use of their own experience and knowledge to
@@ -294,7 +282,7 @@ patterns can be very handful to developers that want to find another ways to val
 their class design under development.
 
 \noindent \textbf{Keywords:} Test-Driven Development, Object-Oriented
-Systems, Class Design, Qualitative Research Methods.
+Systems, Class Design, Internal Code Quality.
 
 % ---------------------------------------------------------------------------- %
 % Sumário
@@ -303,11 +291,11 @@ Systems, Class Design, Qualitative Research Methods.
 % ---------------------------------------------------------------------------- %
 \chapter{Lista de Abreviaturas}
 \begin{tabular}{ll}
-         DGT         & Desenvolvimento Guiado pelos Testes\\ 
+         TDD         & Desenvolvimento Guiado por Testes\\ 
          
          XP          & Programação Extrema (do inglês, \emph{Extreme Programming})\\
 		 
-		 BDUF		 & \textit{Big Design Up-Front}\\
+		 BDUF		 & Projeto de Classe Criado de Uma Só Vez \textit{Big Design Up-Front}\\
 		 
 		 PRU		 & Princípio da Responsabilidade Única (\emph{Single Responsibility
 		 Principle})\\
@@ -348,8 +336,6 @@ Systems, Class Design, Qualitative Research Methods.
 
 \input cap-introducao
 \input cap-tdd
-\input cap-design
-\input cap-trabrelacionados
 \input cap-quali-planejamento
 \input cap-findings
 \input cap-ameacas
@@ -360,6 +346,7 @@ Systems, Class Design, Qualitative Research Methods.
 \fancyhead[RE,LO]{}
 \appendix
 
+\include{ape-design}
 \include{ape-questionario-inicio}
 \include{ape-exercicios}
 \include{ape-questionario-pos}

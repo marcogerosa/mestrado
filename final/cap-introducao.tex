@@ -2,73 +2,65 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
-Desenvolvimento Guiado pelos Testes (DGT), em uma tradução do termo
-em inglês \textit{Test-Driven Development},
+Desenvolvimento Guiado por Testes, em uma tradução do termo
+em inglês \textit{Test-Driven Development (TDD)},
 é uma das práticas sugeridas pela Programação
 Extrema (XP) \cite{XPExplained}. A prática é baseada em um pequeno ciclo de
 desenvolvimento, na qual o desenvolvedor deve sempre escrever um teste antes
 de implementar a funcionalidade esperada e, depois, com o código
 passando no recém-criado teste, o desenvolvedor refatora para 
 remover possíveis duplicação de dados e de código \cite{TDDByExample}.
-Apesar da constante escrita de testes automatizados, os benefícios da
-prática vão além disso. Por exemplo, na opinião de autores conhecidos como Robert Martin,
-Steve Freeman e Dave Astels, o DGT promove
-uma melhoria significativa no projeto de classes, auxiliando o programador a
-criar classes mais coesas e menos acopladas \cite{TDDByExample} \cite{GOOS} 
-\cite{astels-tdd}.
 
-Criar classes ou módulos que possuam um baixo
-acoplamento e uma alta coesão demandam um esforço muito grande do desenvolvedor. 
-É comum, após algum tempo de desenvolvimento, que o projeto de classes perca qualidade
-e qualquer tipo de manutenção se torne difícil e, por consequência, custosa.
-Muitas práticas objetivam reduzir esses problemas, como programação pareada ou
-revisão de código. Os praticantes de DGT acreditam que os testes sejam uma outra
-maneira de validar o projeto de classes criado, e utilizam esse \textit{feedback} para melhorá-lo.
+A prática de TDD, portanto, faz com que o desenvolvedor só escreva código
+que seja coberto por um teste. Por esse motivo, é natural relacionar a prática
+de TDD com a área de teste de software. Mas, além desse apelo sobre
+a qualidade externa do código, um discurso comum entre os praticantes de TDD
+é os efeitos da prática também sobre a qualidade interna do código.
+Muitos autores de livros conhecidos pela indústria e academia, como
+Robert Martin, Steve Freeman e Dave Stels, afirmam que a prática de TDD
+promove uma melhoria significativa no projeto de classes, auxiliando
+o programador a criar classes mais coesas e menos acopladas 
+\cite{TDDByExample} \cite{GOOS} \cite{astels-tdd}.
 
+A possibilidade de auxiliar o desenvolvedor durante o processo de criação
+do projeto de classes é bem visto pelos desenvolvedores, em especial
+os praticantes de Programação Extrema. Afinal, é senso comum que
+criar classes que possuam baixo acoplamento e alta coesão demanda
+um esforço grande por parte dos desenvolvedores e que, ao longo do tempo,
+a qualidade do projeto de classes tende a cair. A prática de TDD então
+auxiliaria o desenvolvedor a tomar as melhores decisões de projeto
+de classes.
+
+Dado todas as possíveis vantagens existentes por meio da prática de TDD,
+a adoção da mesma pela indústria tem crescido cada vez mais. 
 Em um questionário de 2010 para descobrir quais práticas eram feitas por times
 ágeis \cite{wambler-survey-agile}, Scott Ambler mostrou que 53\% dos times ágeis
-adotaram DGT como uma maneira para validar o trabalho feito, conforme mostra a 
-Figura \ref{fig:wambler-agile-2010}. Outro questionário, de 2008, também realizado por Ambler
-\cite{wambler-survey-tdd}, focado em DGT, mostra que 57\% dos desenvolvedores 
-utilizam DGT como técnica para capturar informações de projeto de classes, conforme mostrado
-na Figura \ref{fig:wambler-tdd-2008}.
+adotaram TDD como uma maneira para validar o trabalho feito.
+Outro questionário, de 2008, também realizado por Ambler
+\cite{wambler-survey-tdd}, focado em TDD, mostra que 57\% dos desenvolvedores 
+utilizam TDD como técnica para capturar informações de projeto de classes.
+Números similares podem ser observados nos questionários anuais da Version One onde,
+em sua versão de 2012 \cite{versionone-2012}, mostrou que 40\% dos times ágeis tem feito uso da prática.
 
-Robert Martin chega a relacionar DGT à responsabilidade de um 
-profissional de desenvolvimento de software. 
-Segundo ele, DGT favorece que o desenvolvedor entregue um 
-código claro, flexível, que funciona, e dentro do prazo \cite{martin-profissionalismo}.
-Muitos desenvolvedores que experimentam essa prática raramente voltam atrás e deixam
-de escrever os testes antes \cite{tdd-fearless}. 
-
-Uma vez que testes de unidade são intrísecos à prática de DGT, 
-grande parte dos experimentos feitos pela academia verificam os
-efeitos da prática na qualidade externa. Conforme é discutido no capítulo de
-trabalhos relacionados, poucos são os estudos que avaliam DGT do
-ponto de vista da qualidade interna do código, e muitos desses estudos
-são feitos somente com estudantes, diminuindo o realismo do experimento. 
+Entretanto, a maneira na qual a prática de TDD guia o desenvolvedor
+durante o processo de criação do projeto de classes não é clara. Observamos
+isso de maneira empírica, em nosso estudo qualitativo com praticantes de TDD, feito dentro de um
+evento de desenvolvimento ágil brasileiro, na qual entrevistamos dez
+participantes da conferência sobre os efeitos de TDD e, para nossa surpresa,
+nenhum deles soube afirmar, com clareza, como a prática os guia em direção
+a um bom projeto de classes \cite{aniche-wbma}.
 Siniaalto e Abrahamsson \cite{alarming-results} também
-compartilham dessa opinião e, além disso, notaram que os efeitos de DGT podem 
+compartilham dessa opinião e, além disso, notaram que os efeitos de TDD podem 
 não ser tão automáticos ou evidentes como o esperado.
+Os próprios trabalhos relacionados, melhor discutidos na Seção \ref{cap:trabalhos-relacionados},
+apenas avaliam se a prática de TDD faz alguma diferença na qualidade dos códigos produzidos
+com a prática. Poucos deles possuem um estudo qualitativo, detalhando como a prática
+faz tal diferença.
 
-Apesar da pouca quantidade, alguns experimentos mostram que DGT tem uma influência
-positiva no projeto de classes, diminuindo o grau de acoplamento, aumentando
-a coesão e a simplicidade de suas classes e módulos. Entretanto, poucos trabalhos
-levam em consideração a experiência do desenvolvedor e diversos
-outros fatores que podem influenciar na qualidade final do código, como conhecimento
-de príncipios de orientação a objetos ou experiência com o processo de 
-desenvolvimento de software. Além disso, poucos trabalhos também discutem como
-a prática de DGT realmente influencia 
-nas decisões de projeto de classes tomadas pelos desenvolvedores durante a criação de sistemas 
-orientados a objetos.
-
-Avaliar os efeitos de DGT no projeto de classes é difícil, mas extremamente importante.
-Ao entender melhor como efetivamente a prática guia o desenvolvedor durante
-a criação do projeto de classes, desenvolvedores podem maximizar esse \textit{feedback},
-e tirar maior proveito do que a prática tende a oferecer. Ao perceber 
-problemas de projeto de classes mais cedo e, por consequência, resolvê-los
-mais cedo, programadores diminuem o custo de manutenção evolutiva dos projetos
-de software que, geralmente tendem a ser elevados.
-
+Por esses motivos, entender os efeitos da prática de TDD é extremamente importante.
+Com essa informação em mãos, os desenvolvedores saberiam, de forma mais clara,
+como utilizar a prática de TDD para obter uma maior qualidade no processo de criação
+do projeto de classes. Entretanto, entender estas razões não é tarefa fácil. 
 Conduzir uma pesquisa no mundo real, e não em laboratório, 
 implica um equilíbrio entre o nível de controle
 e o grau de realismo. Uma situação realista é, geralmente, complexa e 
@@ -76,66 +68,47 @@ não determinística, dificultando o entendimento sobre o que acontece. Por outr
 lado, aumentar o controle sobre o experimento reduz o grau de realismo, muitas
 vezes fazendo com que os reais fatores de influência fiquem fora do escopo do 
 estudo \cite{guidelines-case-study}.
+
 Baseando-se no fato de que o processo de desenvolvimento de software envolve 
 diversos fatores humanos e é totalmente sensível ao contexto em que ele está 
 inserido, 
-este estudo faz uso de uma combinação entre um experimento controlado inicial, 
-no qual participantes serão convidados a resolver exercícios utilizando DGT e, 
-a partir dos dados colhidos nesse estudo, um outro estudo qualitativo entrará em 
+este estudo fez uso de uma combinação entre um experimento controlado inicial, 
+no qual participantes foram convidados a resolver exercícios utilizando TDD e, 
+a partir dos dados colhidos, um outro estudo qualitativo entrou em 
 detalhes objetivando entender como a prática influenciou as decisões de projeto 
-dos participantes. Os métodos de pesquisa utilizados por
-esse trabalho são apresentados no Capítulo \ref{cap:qualitativo-planejamento}.
-
-\begin{figure}[ht]
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[scale=.4]{agileCriteria2010Validating-pt}
-    \caption{Como times ágeis validam seu próprio trabalho?}
-    \label{fig:wambler-agile-2010}
-  \end{minipage}
-  \hspace{0.5cm}
-  \begin{minipage}[b]{0.45\linewidth}
-    \centering
-    \includegraphics[scale=.4]{tddDesignPractices-pt}
-    \caption{Práticas que desenvolvedores ágeis usam para auxiliar no projeto de classes}  
-    \label{fig:wambler-tdd-2008}
-  \end{minipage}
-\end{figure}			
+dos participantes.
 
 %% ------------------------------------------------------------------------- %%
 \section{Motivação}
 
 Esta pesquisa possui diversas motivações. A primeira delas é a crescente
-popularidade da prática de DGT, tanto por parte da indústria, quanto 
+popularidade da prática de TDD, tanto por parte da indústria, quanto 
 por parte da academia. O número de desenvolvedores -- experientes e inexperientes --
-que aplicam DGT cresce cada vez mais, e isso pode ser empiricamente
-observado através do número de participantes em palestras de DGT nos
+que aplicam TDD cresce cada vez mais, e isso pode ser empiricamente
+observado através do número de participantes em palestras de TDD nos
 eventos de desenvolvimento de software brasileiros, vagas de emprego
-que pedem que o desenvolvedor conheça a prática, e etc.
+que pedem que o desenvolvedor conheça a prática, etc.
 
-No entanto, conforme discutido no estudo que fizemos 
-realizado em 2010 dentro de uma conferência de 
-métodos ágeis, e publicado no WBMA 2010 \cite{aniche-wbma}, apesar da prática de 
-DGT ter crescido em popularidade, os desenvolvedores não souberam
-colocar em palavras quais eram os efeitos da prática no projeto de classes.
-Isso nos leva a crer que os desenvolvedores ainda 
-não compreendem muito bem estes efeitos.
+Conforme discutido anteriormente, os efeitos da prática de TDD são
+comumente mencionados por autores de livros, mas pouco explorados. 
+Entender como a prática de TDD pode influenciar no processo
+de criação do projeto de classes pode trazer grandes benefícios
+aos desenvolvedores de software de maneira geral.
+Ao saber de maneira mais precisa
+como a prática influencia, poderiam maximizar o uso da prática e obter
+informações sobre seu projeto de classes mais frequentemente.
 
-É de extrema importância conhecer os reais efeitos de DGT no projeto de classes. Com essa
-informação em mãos, desenvolvedores podem aproveitar ao máximo
-a prática e melhorar ainda mais a qualidade dos seus projetos
-de classe. 
-Este trabalho, além de poder explicar ao desenvolvedor os efeitos
-da prática, ainda pode servir de apoio à decisão da adoção da prática
-de DGT nos times de desenvolvimento.
+Além disso, essas informações podem ainda pode servir de apoio à decisão da 
+adoção da prática de TDD nos times de desenvolvimento.
+
 
 %% ------------------------------------------------------------------------- %%
-\section{Contribuições}
+\section{Caracterização da Pesquisa}
 
 Este trabalho
-visa compreender a real influencia de DGT no projeto de classes.
+visa compreender a influencia de TDD no projeto de classes.
 Para isso, avaliamos a relação entre a prática de 
-DGT
+TDD
 e as decisões de projeto de classes tomadas pelos desenvolvedores no processo de 
 criação de classes.
 
@@ -144,7 +117,7 @@ capturados baseados na percepção de programadores atuantes na indústria, apó
 a implementação de alguns pequenos problemas especialmente criados para
 esta pesquisa.
 
-O objetivo principal deste estudo é \textbf{entender a relação da prática de DGT 
+O objetivo principal deste estudo é \textbf{entender a relação da prática de TDD 
 e as decisões de projeto de classes tomadas pelo programador durante o processo de 
 projeto de sistemas orientados a objetos}.
 Para compreendê-la, tentou-se responder às questões listadas
@@ -152,14 +125,30 @@ abaixo:
 
 \begin{enumerate}
 
-	\item Qual a influência de DGT no projeto de classes?
+	\item Qual a influência de TDD no projeto de classes?
 
-	\item Qual a relação entre DGT e as tomadas de decisões de projeto
+	\item Qual a relação entre TDD e as tomadas de decisões de projeto
 	feitas por um desenvolvedor?
 
-	\item Como a prática de DGT influencia o programador no processo de  
+	\item Como a prática de TDD influencia o programador no processo de  
 	projeto de classes, do ponto de vista do acoplamento, coesão e complexidade?
 
+\end{enumerate}
+
+%% ------------------------------------------------------------------------- %%
+\section{Contribuições}
+
+As contribuições deste trabalho para com a área de engenharia de software
+são:
+
+\begin{enumerate}
+	
+	\item Planejamento de um estudo qualitativo sobre os efeitos da prática
+	de TDD no projeto de classes, bem como lições aprendidas sobre a execução do mesmo;
+	
+	\item Padrões de \textit{feedback} da prática de TDD que guiam os desenvolvedores
+	ao longo do processo de criação do projeto de classes;
+	
 \end{enumerate}
 
 %% ------------------------------------------------------------------------- %%
@@ -168,16 +157,13 @@ abaixo:
 Este trabalho está dividido da seguinte maneira: 
 
 \begin{itemize}
-	\item O Capítulo \ref{cap:tdd} discute sobre a prática de DGT, com ênfase no
+	\item O Capítulo \ref{cap:tdd} discute sobre a prática de TDD, com ênfase no
 	ponto de vista do projeto de classes;
   
-	\item O Capítulo \ref{cap:design} apresenta nosso ponto de vista sobre
-	projeto de classes, e o quais características serão avaliadas ao longo deste estudo;
-	
 	\item O Capítulo \ref{cap:trabalhos-relacionados} mostra trabalhos já
-	realizados pela academia sobre os efeitos de DGT;
+	realizados pela academia sobre os efeitos de TDD;
 
-	\item O Capítulo \ref{cap:qualitativo-planejamento} discute o planejamento do experimento,
+	\item O Capítulo \ref{cap:qualitativo-planejamento} discute o planejamento e execução do estudo,
 	bem como o processo de captura de dados e análise;
 
 	\item O Capítulo \ref{cap:discussao} apresenta os resultados encontrados e
@@ -187,6 +173,6 @@ Este trabalho está dividido da seguinte maneira:
 	encontrados na pesquisa;
 	
 	\item O Capítulo \ref{cap:conclusoes} resume o trabalho realizado e apresenta
-	possibilidades de trabalhos futuros.
+	as lições aprendidas e possibilidades de trabalhos futuros.
 \end{itemize}
 

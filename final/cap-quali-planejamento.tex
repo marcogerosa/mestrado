@@ -1,5 +1,5 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Planejamento do estudo} 
+\chapter{Planejamento e Execução do Estudo} 
 \label{cap:qualitativo-planejamento}
 
 Conduzir um estudo experimental em engenharia de software sempre foi uma
@@ -32,17 +32,17 @@ honra o estilo indutivo, o foco em termos individuais, e a importância de mostr
 complexidade de uma situação \cite{creswell}. 
 
 Conforme discutido no Capítulo \ref{cap:trabalhos-relacionados}, muitos 
-trabalhos avaliaram DGT, e alguns deles relatam inclusive uma melhora
+trabalhos avaliaram TDD, e alguns deles relatam inclusive uma melhora
 no projeto de classes, como um menor acoplamento, uma maior coesão, e até mesmo
 mais simplicidade. 
 Grande parte deles focam nos efeitos da prática no código final, mas poucos 
 estudos tentam entender a possível influência da experiência
-nos resultados encontrados, e como DGT e a prática de escrever o teste 
+nos resultados encontrados, e como TDD e a prática de escrever o teste 
 antes do código real realmente guiam o programador 
 em direção a essas melhorias.
 
 Para entendê-las, este estudo faz uso de uma combinação entre um experimento controlado inicial, no qual participantes serão
-convidados a resolver exercícios pré-preparados utilizando DGT e, a partir dos dados colhidos nesse estudo, um outro
+convidados a resolver exercícios pré-preparados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
 estudo qualitativo entrará em detalhes objetivando entender como a prática influenciou as decisões de projeto de classes dos participantes.
 Este capítulo detalha o planejamento do estudo, bem como o processo de análise dos dados colhidos.
 
@@ -115,7 +115,7 @@ lado a lado para que um reforçe as ideias do outro \cite{creswell}.
 %% ------------------------------------------------------------------------- %%
 \section{Questões de pesquisa}
 
-Os objetivo principal deste estudo é \textbf{entender a relação da prática de DGT 
+Os objetivo principal deste estudo é \textbf{entender a relação da prática de TDD 
 e as decisões de projeto de classes tomadas pelo programador durante o processo de 
 projeto de sistemas orientados a objetos}.
 Para compreendê-la, tenta-se responder às questões listadas
@@ -123,12 +123,12 @@ abaixo:
 
 \begin{enumerate}
 
-	\item Qual a influência de DGT no projeto de classes?
+	\item Qual a influência de TDD no projeto de classes?
 
-	\item Qual a relação entre DGT e as tomadas de decisões de projeto de classes
+	\item Qual a relação entre TDD e as tomadas de decisões de projeto de classes
 	feitas por um desenvolvedor?
 
-	\item Como a prática de DGT influencia o programador no processo de  
+	\item Como a prática de TDD influencia o programador no processo de  
 	projeto de classes, do ponto de vista do acoplamento, coesão e complexidade?
 
 \end{enumerate}
@@ -139,9 +139,9 @@ abaixo:
 Participantes de diferentes empresas de desenvolvimento de software do mercado
 brasileiro foram selecionados. Todos eles foram solicitados a resolver 
 alguns problemas utilizando Java, dentro de um período de tempo limitado. 
-Os participantes utilizaram DGT em um problema, e a não utilizaram
-DGT no outro. Os problemas resolvidos bem como em qual deles o participante
-deveria utilizar DGT será randomizada, afim de diminuir o problema do aprendizado.
+Os participantes utilizaram TDD em um problema, e a não utilizaram
+TDD no outro. Os problemas resolvidos bem como em qual deles o participante
+deveria utilizar TDD será randomizada, afim de diminuir o problema do aprendizado.
 
 Todas as implementações feitas foram salvas, para que nós tenhamos a possibilidade
 de calcular métricas de código sob elas. Ao final do exercício, todos participantes
@@ -152,7 +152,7 @@ Todos os dados gerados no processo,
 como código produzido e as entrevistas, foram analisados.
 
 A intenção deste estudo é obter informações relevantes sobre como os
-praticantes de DGT utilizam a prática para influenciar o projeto de suas
+praticantes de TDD utilizam a prática para influenciar o projeto de suas
 classes. Na tentativa de capturar o máximo de informações possíveis, esse estudo
 inclui análises dos códigos produzidos e das entrevistas com os participantes.
 
@@ -167,9 +167,9 @@ software brasileiro forma selecionados para participarem da pesquisa.
 Certos critérios foram levados em consideração no momento de convidar os participantes:
 
 \begin{itemize}
-	\item \textbf{Experiência em DGT.} Convidamos praticantes com diferentes
-	níveis de experiência. Programadores inexperientes em DGT (pouco conhecimento teórico e prático)
-	e programadores com experiência em DGT (praticantes frequentes há no mínimo 3 anos).
+	\item \textbf{Experiência em TDD.} Convidamos praticantes com diferentes
+	níveis de experiência. Programadores inexperientes em TDD (pouco conhecimento teórico e prático)
+	e programadores com experiência em TDD (praticantes frequentes há no mínimo 3 anos).
 	
 	\item \textbf{Experiência em desenvolvimento de software.} Participantes podem ser
 	experientes (com no mínimo 3 anos de desenvolvimento e bons conhecimentos em orientação a objetos) ou 
@@ -181,7 +181,7 @@ Certos critérios foram levados em consideração no momento de convidar os part
 	
 	\item \textbf{Conhecimentos em Testes de Unidade.} Todos os participantes devem ser
 	familiarizados com a escrita de testes de unidade, independente do seu conhecimento
-	em DGT.
+	em TDD.
 
 \end{itemize}
 
@@ -191,28 +191,28 @@ Este questionário, além de perguntar qual a experiência
 do participante (de maneira quantitativa -- em anos), 
 continha questões onde o participante
 podia falar sobre sua expêriencia em projeto orientado a objetos,
-Java e DGT de forma mais aberta.
+Java e TDD de forma mais aberta.
 Uma cópia deste questionário
 pode ser encontrada no Apêndice \ref{ape:questionario-inicio}.
 
 O objetivo de trazer participantes com as mais diferentes experiências em desenvolvimento
-de software e DGT é discutir os pontos abaixo:
+de software e TDD é discutir os pontos abaixo:
 
 \begin{itemize}
-	\item \textbf{Experientes em desenvolvimento de software e em DGT:} 
+	\item \textbf{Experientes em desenvolvimento de software e em TDD:} 
 	Por ser composto de participantes com experiência tanto
-	em desenvolvimento de software quanto em DGT, devemos entender por que
+	em desenvolvimento de software quanto em TDD, devemos entender por que
 	pessoas com alta experiência optam por utilizar a prática;
 	
-	\item \textbf{Experientes em desenvolvimento de software, mas não em DGT:} 
+	\item \textbf{Experientes em desenvolvimento de software, mas não em TDD:} 
 	Por serem participantes com experiência em desenvolvimento
-	de software, mas não praticantes de DGT, devemos entender a diferença entre
-	praticar DGT e não praticar DGT;
+	de software, mas não praticantes de TDD, devemos entender a diferença entre
+	praticar TDD e não praticar TDD;
 		
-	\item \textbf{Inexperientes tanto em desenvolvimento de software, quanto em DGT:} 
+	\item \textbf{Inexperientes tanto em desenvolvimento de software, quanto em TDD:} 
 	Por serem participantes sem nenhuma experiência, é esperado que
 	a prática ajude na qualidade do código. Caso isso não aconteça, devemos
-	entender o motivo de DGT não ter auxiliado os desenvolvedores durante a 
+	entender o motivo de TDD não ter auxiliado os desenvolvedores durante a 
 	criação do projeto de classes.
 \end{itemize}
 
@@ -233,13 +233,13 @@ Os participantes não podiam se comunicar durante o exercício, e cada um deles 
 os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
 pode ocorrer durante a resolução dos problemas. 
 
-O participante recebeu dois exercícios. Em um deles, o participante praticou DGT; no outro,
+O participante recebeu dois exercícios. Em um deles, o participante praticou TDD; no outro,
 ele programou sem a prática. A razão disso
-é fazer com que o participante exercite ambos estilos de desenvolvimento (com e sem DGT)
+é fazer com que o participante exercite ambos estilos de desenvolvimento (com e sem TDD)
 e tenha mais embasamento para ser entrevistado nas próximas etapas do estudo. 
 Cada participante recebeu instruções claras no caderno de exercícios 
 sobre quais exercícios deverão ser feitos
-com DGT. A escolha desses exercícios também foi randomizada na tentativa de diminuir
+com TDD. A escolha desses exercícios também foi randomizada na tentativa de diminuir
 o efeito do aprendizado.
 
 Ao final, todos responderam a um questionário online, 
@@ -362,7 +362,7 @@ do mesmo pode ser encontrada no Apêndice \ref{ape:questionario-pos}.
 		faz para obter \textit{feedback} sobre a qualidade do código que escreve.
 		\\ \hline
 		
-		Prática de DGT &
+		Prática de TDD &
 		O objetivo deste bloco é entender como a prática pode ter influenciado
 		nas decisões de projeto de classes feitas pelo programador durante o exercício.\\
 		
@@ -387,14 +387,14 @@ O procedimento adotado para escolha dos candidatos foi:
 \begin{enumerate}
 	\item Leitura dos questionário inicial e pós-experimento respondidos pelo participante.
 	
-	\item Avaliação do código gerado, levando-se em conta qual foi resolvido com DGT e qual
-	foi resolvido sem DGT.
+	\item Avaliação do código gerado, levando-se em conta qual foi resolvido com TDD e qual
+	foi resolvido sem TDD.
 	
 	\item Geração de relatório para cada participante, descrevendo as opiniões do participante
 	e o ponto de vista do autor da pesquisa sobre os dados colhidos até então.
 	
 	\item Candidatos que apresentaram códigos de qualidade ou alguma divergência entre códigos
-	feitos com DGT e sem DGT (por exemplo, um com mais qualidade do que o outro), que merecesse
+	feitos com TDD e sem TDD (por exemplo, um com mais qualidade do que o outro), que merecesse
 	atenção especial, foram selecionados para a entrevista.
 \end{enumerate}
 
@@ -411,11 +411,11 @@ no Apêndice \ref{ape:entrevista}.
 O processo de entrevista é composto por uma breve introdução da pesquisa, tomando
 o cuidado para não enviesar o participante, seguida de algumas perguntas que visam
 caracterizar o perfil do participante; perguntas como qual a experiência do
-desenvolvedor em desenvolvimento de software e DGT são necessárias para ajudar o
+desenvolvedor em desenvolvimento de software e TDD são necessárias para ajudar o
 pesquisador no entendimento das respostas dadas. Além disso, perguntas sobre
 referências, livros e outros pontos de informação nas quais o participante lê a
 respeito da prática servem para que nós entendamos o embasamento teórico
-do praticante sobre DGT. Apesar das perguntas já terem sido feitas durante
+do praticante sobre TDD. Apesar das perguntas já terem sido feitas durante
 o questionário inicial, essa parte inicial é importante para tranquilizar
 o participante, e possibilitar com que ele esteja mais confiante e fale
 mais durante as perguntas mais cruciais.
@@ -429,13 +429,13 @@ como que o projeto de classes daquele exercício foi concebido.
 Uma vez que as decisões tomadas por um programador durante a atividade de projeto de classes
 podem ser influenciadas por vários diferentes fatores, 
 as perguntas serão feitas de modo que o participante triangule suas respostas,
-e tente isolar o máximo possível a atividade de DGT dos outros possíveis fatores
+e tente isolar o máximo possível a atividade de TDD dos outros possíveis fatores
 de influência. Participantes que não articularem bem suas respostas deverão ser eliminados
 durante o processo de análise.
 
 Durante toda a entrevista, nós tomamos nota sobre as principais observações
 de cada participante. Quando, por algum motivo, o participante mencionar qualquer
-informação relacionado a DGT e projeto de classes, é nosso dever anotar e destacar esse ponto
+informação relacionado a TDD e projeto de classes, é nosso dever anotar e destacar esse ponto
 nas observações, para que, ao final da entrevista, o assunto seja retomado com 
 o participante, pedindo para que ele fale mais a respeito daquele ponto específico.
 
@@ -510,7 +510,7 @@ foi avisado de que ele deve avaliar inclusive a "intenção" de projeto de class
 pelo participante, e não só o código atual. 
 
 Para que a opinião do especialista seja imparcial, ele \textbf{não} sabia a qual grupo
-pertence e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de DGT).
+pertence e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de TDD).
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise dos dados}
@@ -536,10 +536,10 @@ de maio de 2011.}, produzido na Alemanha, que nos possibilitou
 organizar textos e juntá-los com códigos e anotações. 
 
 Além disso, as métricas calculadas foram utilizadas na busca por alguma diferença
-estatisticamente significante entre códigos produzidos com e sem DGT.
+estatisticamente significante entre códigos produzidos com e sem TDD.
  
 Testes estatísticos para análise de variância serão utilizados
-para verificar se DGT influencia nas mesmas.
+para verificar se TDD influencia nas mesmas.
 A variância dos dados obtidos na opinião do especialista sobre cada código-fonte gerado
 será utilizado também como entrada para algoritmos estatísticos. 
 Como estes dados não devem seguir uma distribuição normal, o teste
@@ -617,12 +617,12 @@ positiva. Além do mais, o pesquisador é responsável por
 identificar todos os valores pessoais, pressuposições e vieses deste estudo.
 
 O autor desta pesquisa tem formação em Ciência da Computação, e desenvolve software há 9
-anos, pratica DGT diariamente nos últimos 3 anos, e possui profundos
+anos, pratica TDD diariamente nos últimos 3 anos, e possui profundos
 conhecimentos teóricos e práticos sobre orientação a objetos e métodos ágeis.
-Além disso, o autor palestrou sobre DGT em eventos da indústria brasileira
+Além disso, o autor palestrou sobre TDD em eventos da indústria brasileira
 de desenvolvimento de software, como a Agile Brazil 2010, o .NET Architects
 2010 e o QCON São Paulo 2010. O autor desta pesquisa acredita que sua experiência nessas
-áreas aumentam sua capacidade de análise dos efeitos de DGT no projeto de classes de sistemas 
+áreas aumentam sua capacidade de análise dos efeitos de TDD no projeto de classes de sistemas 
 orientados a objetos.
 
 %% ------------------------------------------------------------------------- %%
@@ -664,3 +664,88 @@ mas sim trabalhar com qualidade.
 
 Já o terceiro piloto nos ajudou a melhorar o roteiro de entrevista. Percebemos a existência de diversas perguntas
 repetidas. Após o término, removemos essas questões e deixamos o roteiro de entrevistas mais simples.
+
+\section{Execução do estudo}
+\label{subsec:particularidades-execucao}
+
+Como os estudos foram executados fisicamente em muitas das empresas selecionadas,
+nós acabamos por ajudar na organização do ambiente, mesmo a equipe tendo 
+recebido o caderno de questões, com as instruções da instalação
+alguns dias antes. A ideia era também gravar a implementação dos alunos,
+mas dificuldades em se encontrar um software de vídeo para as diferentes
+plataformas, e arquivos muito grandes, impossibilitaram a gravação.
+
+Todos os participantes eram avisados de que tinham por volta de 50 minutos
+por exercício. Eles também sabiam que, mesmo que não terminassem o exercício,
+deveriam focam sempre na qualidade do código gerado. Eles também eram solicitados
+a implementar um projeto de classes flexível para os problemas. A frase que dizíamos para
+eles era geralmente: \textit{"Levem os exercícios para o mundo real, onde um outro
+desenvolvedor deverá manter o código gerado. Lembrem-se de implementar o código mais fácil possível
+para evoluir. As regras de negócio que existem hoje no enunciado tendem a aumentar
+de número e, portanto, deixem a manutenção do código de vocês mais simples."}
+
+Durante a execução, nós tirávamos diversas dúvidas sobre enunciados dos
+exercícios, e até mesmo sobre procedimentos que os participantes podiam
+adotar durante a execução. Um deles, por exemplo, perguntou se poderia
+refatorar o código durante a implementação sem TDD. 
+Nós também não os pressionávamos em nenhum momento. Eles ficavam,
+cada um suas máquinas, trabalhando na implementação. Não ficávamos 
+passando atrás das máquinas para ver como estavam indo, na tentativa
+de evitar qualquer possível alteração de comportamento pela nossa presença.
+Ao final de cada intervalo de 50 minutos, nós avisámos para eles finalizarem
+a linha de raciocínio e partir para o próximo exercício.
+Apesar de não haver nenhuma restrição explícita sobre isso, não houveram
+conversas entre os participantes. Todos eles trabalharam sozinho
+durante toda a implementação.
+
+Todo o experimento ocorreu bem, com exceção do que foi executado
+dentro da universidade. Além de diversos problemas de infra-estrutura,
+como a falta de espaço disponível para alguns alunos, que impedia até mesmo
+o JUnit de executar, todos os participantes conseguiram fazer apenas
+1 exercício. Diante desta situação, optamos por deixá-los implementar
+o mesmo exercício até o final da aula já que, após os 50 minutos iniciais,
+nós observamos que pouco código havia sido escrito. Outro problema levantado
+foi que alguns alunos não se mostraram muito dispostos a participar
+do estudo.
+Ao contrário, a grande maioria dos participantes da indústria conseguiram
+implementar o exercício no tempo delimitado, e todos se mostraram
+muito receptivos para o estudo. Um ponto que se mostrou bem útil
+para convencer participantes da indústria a participar foi a proposta
+posterior de nós apresentarmos os resultados encontrados em uma palestra.
+
+Ao final da execução do estudo em cada empresa, nós colhetávamos
+os dados gerados (código-fonte e caderno de questões assinado),
+e dávamos o nome da pasta do participante, de acordo com
+o seguinte formato: \textit{id-nome-combinação}. O id aponta
+para um número único do participante no estudo, e a combinação
+aponta quais exercícios ele resolveu, bem como em qual deles
+ele utilizou TDD.
+
+As entrevistas foram, em grande parte, realizadas pessoalmente com 
+o desenvolvedor. Quando o participante não estava disponível (por estar
+localizado em outra cidade), a entrevista era realizada por Skype.
+Durante toda a entrevista, o participante podia observar o código que
+produziu. Para isso, nós criamos uma simples aplicação web para facilitar
+a exibição dos códigos-fonte. O objetivo do participante ver o código
+era lembrar sobre suas decisões, e nos possibilitar perguntas específicas
+sobre o projeto de classes gerado.
+
+Em média, as entrevistas levavam 30 minutos. Quando o participante comentava
+algo interessante, nós fugíamos do roteiro para permitir que ele falasse mais do assunto,
+e anotávamos o ponto para que, ao final, fosse possível discutir novamente sobre o assunto.
+O roteiro de entrevistas sofreu uma pequena mudança ao final da primeira entrevista,
+já que percebemos que comunicar ao participante que o código que ele produziu
+\textit{não apresenta um bom projeto de classes} não era uma tarefa fácil, e talvez, não ética. 
+Optamos por perguntar sobre como aquele projeto de classes foi construído, mesmo que ele
+não estivesse bem construído.
+
+Para manter um padrão, nós sempre perguntávamos primeiro sobre o exercício que ele
+fez com TDD, independente da ordem que ele implementou no dia da execução. Notamos
+que muitos participantes discutiram sobre os exercícios e possíveis implementações com seus colegas.
+
+Dos três especialistas convidados a avaliar os códigos produzidos, apenas um não
+completou a tarefa. Sugerimos a todos eles, antes do início da avaliação, que avaliassem
+não só a quantidade de código escrito, mas as decisões de projeto de classes tomadas por aquele
+participante. Para que os especialistas avaliassem cada código gerado, nós implementamos
+uma simples aplicação web, onde eles tinham acesso a qualquer momento, e podiam parar ou continuar
+a avaliar na hora que preferissem.
