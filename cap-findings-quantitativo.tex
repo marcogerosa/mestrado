@@ -2,11 +2,7 @@
 \chapter{Análise Quantitativa}
 
 Conforme discutido no Capítulo \ref{cap:qualitativo-planejamento}, o teste
-estatístico escolhido foi o Wilcoxon. Comparamos os valores encontrados
-para as métricas de complexidade ciclomática, acoplamento eferente, falta
-de coesão dos métodos, número de linhas por métodos, e quantidade de métodos
-por classe nos códigos produzidos com TDD com as métricas colhidas dos
-códigos produzidos sem TDD.
+estatístico escolhido foi o Wilcoxon. 
 Devido ao problema que tivemos com os dados da academia, separamos a análise
 dos dados, tanto das métricas de código, quanto dos especialistas, entre academia e indústria.
 
@@ -110,6 +106,25 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na academia}
 	\label{tab:especialistas-academia}
 \end{table}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Inspeção do Código-Fonte}
+
+Nós avaliamos cada código-fonte manualmente.
+Em sua maioria, os códigos eram claros e fáceis de entender,
+com classes, métodos e variáveis bem nomeados.
+Mas, para nossa surpresa,
+poucos foram os participantes que fizeram uso de polimorfismo. A grande
+maioria das implementações fazia uso de cadeias de condições para 
+alcançar o objetivo.
+
+Nós também não conseguimos identificar, por inspeção manual, quais códigos
+eram produzidos com TDD e quais não eram pois, independente
+da prática utilizada, ambos eram muito semelhantes.
+De todos os códigos da indústria, apenas um foi completamente eliminado:
+um dos participantes não conseguiu nem começar a implementação. Suas classes
+eram completamente vazias. 
+
 
 %% ------------------------------------------------------------------------- %%
 \section{Discussão}

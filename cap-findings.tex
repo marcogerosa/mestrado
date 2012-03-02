@@ -5,9 +5,9 @@
 \section{Introdução}
 
 Neste capítulo apresentamos e discutimos sobre a análise e interpretação dos dados colhidos
-na execução deste estudo. Na seção \ref{sec:desc-participantes}
-descrevemos o perfil dos participantes, tanto da indústria, quanto na academia. E, por fim, nas seções
-e sub-seções seguintes, apresentamos os resultados encontrados. Detalhe para a seção 
+na execução deste estudo. Na Seção \ref{sec:desc-participantes}
+descrevemos o perfil dos participantes, tanto da indústria, quanto na academia. Já nas seções
+e sub-seções seguintes, apresentamos os resultados encontrados. Detalhe para a Seção 
 \ref{padroes-tdd}, onde levantamos os padrões de \textit{feedback} que a prática de TDD
 pode dar ao desenvolvedor.
 
@@ -16,7 +16,7 @@ pode dar ao desenvolvedor.
 
 Conforme mencionado, o estudo foi executado em dois ambientes diferentes: em empresas de software
 do mercado brasileiro e na academia. Como ambos estudos foram executados de maneira independente,
-descrevemos os grupos separados nas sub-seções \ref{findings-desc-industria} e \ref{findings-desc-academia}.
+descrevemos cada grupo de maneira separada nas sub-seções \ref{findings-desc-industria} e \ref{findings-desc-academia}.
 
 \subsection{Participantes da Indústria}
 \label{findings-desc-industria}
@@ -60,14 +60,14 @@ problema algum durante a execução dos exercícios.
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.6]{findings/experiencia-tdd-industria.png}
-  \caption{Experiência da equipe da indústria com TDD}
+  \caption{Experiência dos participantes da indústria com TDD}
   \label{fig:exp-tdd-industria}
 \end{figure}
 
 \begin{figure}[h!]
   \centering
   \includegraphics[scale=0.5]{findings/experiencia-sw-industria.png}
-  \caption{Experiência da equipe da indústria com desenvolvimento de software em geral}
+  \caption{Experiência dos participantes da indústria com desenvolvimento de software em geral}
   \label{fig:exp-sw-industria}
 \end{figure}
 
@@ -141,27 +141,11 @@ os códigos-fonte produzidos serão utilizados no processo de análise quantitat
 	\label{tab:exp-academia}
 \end{table}
 
-\section{Inspeção do Código-Fonte}
-
-Nós avaliamos cada código-fonte manualmente.
-Em sua maioria, os códigos eram claros e fáceis de entender,
-com classes, métodos e variáveis bem nomeados.
-Mas, para nossa surpresa,
-poucos foram os participantes que fizeram uso de polimorfismo. A grande
-maioria das implementações fazia uso de cadeias de condições para 
-alcançar o objetivo.
-
-Nós também não conseguimos identificar, por inspeção manual, quais códigos
-eram produzidos com TDD e quais não eram pois, independente
-da prática utilizada, ambos eram muito semelhantes.
-De todos os códigos da indústria, apenas um foi completamente eliminado:
-um dos participantes não conseguiu nem começar a implementação. Suas classes
-eram completamente vazias. 
-
+%% ------------------------------------------------------------------------- %%
 \section{Análise das Entrevistas}
 
-Diferente do que muitos estudos de TDD afirmam, os participantes, em sua grande maioria, afirmaram que 
-a prática de TDD não faria com que o projeto de classes fosse de alguma forma diferente, caso tivessem
+Diferente do esperado, a maioria absoluta dos participantes afirmaram que 
+a prática de TDD não faria com que seus projetos de classes fosse de alguma forma diferente, caso tivessem
 feito ambos os exercícios com a prática.
 A principal justificativa dada pelos participantes foi que a experiência e o conhecimento prévio
 em orientação a objetos os guiaram durante o processo de criação do projeto de classes. Nenhum dos
@@ -170,7 +154,7 @@ citadas criaria um bom projeto de classes somente por praticar TDD.
 
 Dois bons exemplos foram dados pelos participantes, que ajudam a reforçar esse ponto. Um deles
 comentou que fez uso de um padrão de projetos \cite{gof} que aprendeu apenas alguns dias atrás.
-Outro participante mencionou que seus estudos sobre os princípios SOLID (discutidos no Apêndice \ref{cap:design})
+Outro participante mencionou que seus estudos sobre os princípios SOLID (discutidos no Apêndice \ref{ape:design})
 o ajudaram durante os exercícios. Segue o trecho mencionado pelo participante:
 
 \begin{framed}
@@ -233,8 +217,9 @@ levantados pelos participantes, bem como discutimos sobre o tópico.
 
 \subsection{Segurança na refatoração}
 
-Os participantes afirmaram que, durante o processo de criação de projeto de classes, a mudança de ideia é
-constante, afinal pouco se conhece do problema, e de como a classe deve ser construída. Segundo eles,
+Onze participantes afirmaram que, durante o processo de criação de projeto de classes, a mudança de ideia é
+constante, afinal pouco se conhece do problema, e de como a classe deve ser construída. Este foi o ponto
+mais comentado pelos participantes. Segundo eles,
 uma vantagem íntriseca do TDD é a suíte de testes gerada. Essa suíte possibilita ao desenvolvedor
 muda de ideia e refatorar todo o projeto de classes com segurança.
 A segurança, segundo eles, é fator importante para mudanças de projeto de classes ou mesmo de implementação:
@@ -282,7 +267,7 @@ necessidade crescer, é que o programador deverá evoluir o projeto. Uma decisã
 projeto de classes pode ser mais complicada do que parece e, sem um teste para mostrar isso
 rapidamente, o programador dificilmente perceberia o problema \cite{aim-fire}.
 
-Todas essas afirmações podem ser validada pela observação de vários participantes sobre o assunto.
+Todas essas afirmações podem ser validada pela observação de oito participantes sobre o assunto.
 Um deles comentou que,
 ao não fazer teste, o programador pensa no projeto de classes de uma só vez, criando, por vezes,
 estruturas mais complexas do que o necessário. Isso faz com que ele perceba mais tardiamente
@@ -412,7 +397,7 @@ precisar abrir uma Fatura real."}
 
 \subsection{\textit{Feedback} mais rápido}
 
-Diversos participantes também comentaram que uma diferença que percebem
+A grande maioria dos participantes também comentaram que uma diferença que percebem
 no momento que praticam TDD é o \textit{feedback} mais constante. Na maneira
 tradicional, o tempo entre a escrita do código de produção e o código
 de testes é muito grande. O TDD, ao solicitar que o desenvolvedor
