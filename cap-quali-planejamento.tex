@@ -9,10 +9,9 @@ geral \cite{AgileManifesto}. Dessa maneira, o paradigma de pesquisa analítico
 não é suficiente para investigar casos reais complexos envolvendo pessoas e 
 suas interações com a tecnologia \cite{guidelines-case-study}.
 
-Conforme apontado por Seaman \cite{seaman}, esses problemas já foram levantados
-por muitos pesquisadores e, finalmente, tem-se considerado a influência de
-problemas não-técnicos e a intersecção entre eles e a parte técnica
-dentro da engenharia de software. 
+Esses problemas já foram levantados por muitos pesquisadores, e hoje tem-se 
+considerado melhor a influência de problemas não-técnicos e a intersecção entre 
+eles e a parte técnica dentro da engenharia de software \cite{seaman}.
 Apesar disso, o número de estudos empíricos é ainda muito pequeno dentro da área
 de pesquisa em ciência da computação: Sjoberg \textit{et al.} \cite{sjoberg} encontraram
 apenas 103 experimentos em 5.453 artigos, e Ramesh \textit{et al.} \cite{ramesh}
@@ -28,10 +27,10 @@ fazendo interpretações do significado desses dados. Dados capturados por estud
 qualitativos são representados por palavras e figuras, e não por números.
 O relatório final tem uma estrutura flexível e os pesquisadores que se
 dedicam a esta forma de pesquisa apoiam uma maneira de olhar para a pesquisa que
-honra o estilo indutivo, o foco em termos individuais, e a importância de mostrar a 
+honra o estilo indutivo, o foco em termos individuais e a importância de mostrar a 
 complexidade de uma situação \cite{creswell}. 
 
-Conforme discutido no Capítulo \ref{cap:trabalhos-relacionados}, muitos 
+Conforme discutido na Seção \ref{cap:trabalhos-relacionados}, muitos 
 trabalhos avaliaram TDD, e alguns deles relatam inclusive uma melhora
 no projeto de classes, como um menor acoplamento, uma maior coesão, e até mesmo
 mais simplicidade. 
@@ -41,18 +40,18 @@ nos resultados encontrados, e como TDD e a prática de escrever o teste
 antes do código real realmente guiam o programador 
 em direção a essas melhorias.
 
-Para entendê-las, este estudo faz uso de uma combinação entre um experimento controlado inicial, no qual participantes serão
+Para entendê-las, este estudo faz uso de uma combinação entre um experimento controlado inicial, no qual participantes foram
 convidados a resolver exercícios pré-preparados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
-estudo qualitativo entrará em detalhes objetivando entender como a prática influenciou as decisões de projeto de classes dos participantes.
+estudo qualitativo entrou em detalhes sobre como a prática influenciou as decisões de projeto de classes dos participantes.
 Este capítulo detalha o planejamento do estudo, bem como o processo de análise dos dados colhidos.
 
 
 %% ------------------------------------------------------------------------- %%
 \section{Características de pesquisas qualitativas}
 
-Métodos qualitativos de busca possuem diversas características, que juntas fazem
+Métodos qualitativos de pesquisa possuem diversas características, que juntas fazem
 com que a pesquisa se torne rica em detalhes. Creswell \cite{creswell} lista
-alguma delas:
+algumas delas:
 
 \begin{enumerate}
   
@@ -70,7 +69,7 @@ alguma delas:
   para fora, por meio da categorização dos mesmos em unidades de informação cada
   vez mais abstratas. Esse processo indutivo gera diversas idas e vindas entre
   os temas encontrados e a base de dados, até o momento em que os pesquisadores
-  estabeleçam um conjunto compreensivo de temas;
+  estabeleçam um conjunto extensivo de temas;
   
   \item \textbf{Visão do participante}. Trabalhos qualitativos focam na visão do
   participante sobre o objeto em estudo, e não na visão que o pesquisador ou a
@@ -78,8 +77,8 @@ alguma delas:
   
   \item \textbf{Projeto emergente}. O processo de pesquisa qualitativa é
   emergente. Isso significa que o processo não deve ser completamente descrito
-  desde o começo, mas sim modificado de acordo com o início da coleta dos dados
-  no campo de pesquisa. A ideia chave por trás da pesquisa qualitativa é
+  desde o começo, mas sim modificado de acordo com o início da coleta dos dados. 
+  A ideia chave por trás da pesquisa qualitativa é
   aprender sobre o problema com os participantes e direcionar a pesquisa para
   obter aquela informação;
   
@@ -89,7 +88,7 @@ alguma delas:
   do problema. Ao final do relatório da pesquisa, leitores também fazem suas
   críticas, oferecendo ainda novas interpretações para o estudo. Com os
   leitores, participantes e pesquisadores fazendo interpretações, múltiplas
-  visões do problema podem emergir;
+  visões do problema podem emergir.
   
 \end{enumerate} 
 
@@ -103,12 +102,12 @@ usados separadamente \cite{creswell}.
 Possíveis diferentes abordagens podem ser levadas em conta em estudos mistos. Eles podem começar com estudos
 qualitativos de exploração, seguidos de um estudo quantitativo com uma população maior de forma a
 generalizar os resultados para a população. Alternativamente, o estudo pode começar com um estudo quantitativo
-no qual uma teoria ou conceito é estado, seguido de um estudo qualitativo, envolvendo exploração detalhada
+no qual uma teoria ou conceito é testado, seguido de um estudo qualitativo, envolvendo exploração detalhada
 de alguns casos ou indivíduos \cite{creswell}.
 
-Reconhecendo que todos possuem limitações, pesquisadores perceberam que um viés de um método pode ser eliminado
+Reconhecendo que todos possuem limitações, pesquisadores perceberam que um viés de um método pode ser reduzido
 por um outro método, e para isso devem sempre tentar triangular conjuntos de dados diferentes.
-Por exemplo, os resultados de um método pode ajudar a identificar participantes a serem estudados por um outro método.
+Por exemplo, os resultados de um método podem ajudar a identificar participantes a serem estudados por um outro método.
 Dados qualitativos e quantitativos podem ser unidos em um único conjunto de dados ou seus resultados usados
 lado a lado para que um reforçe as ideias do outro \cite{creswell}.
 
@@ -139,36 +138,31 @@ abaixo:
 Participantes de diferentes empresas de desenvolvimento de software do mercado
 brasileiro foram selecionados. Todos eles foram solicitados a resolver 
 alguns problemas utilizando Java, dentro de um período de tempo limitado. 
-Os participantes utilizaram TDD em um problema, e a não utilizaram
-TDD no outro. Os problemas resolvidos bem como em qual deles o participante
-deveria utilizar TDD será randomizada, afim de diminuir o problema do aprendizado.
+Os participantes utilizaram TDD em um problema, e não utilizaram
+no outro. Os problemas resolvidos bem como em qual deles o participante
+deveria utilizar TDD será randomizada, a fim de diminuir o problema do aprendizado.
 
-Todas as implementações feitas foram salvas, para que nós tenhamos a possibilidade
-de calcular métricas de código sob elas. Ao final do exercício, todos participantes
+Todas as implementações feitas foram salvas, para posterior
+cálculo de métricas de código. Ao final do exercício, todos participantes
 também responderam um questionário, sobre seu desempenho na resolução dos problemas.
 Em seguida, uma análise inicial serviu para filtrar os candidatos
 mais interessantes, que foram posteriormente entrevistados. 
 Todos os dados gerados no processo, 
 como código produzido e as entrevistas, foram analisados.
 
-A intenção deste estudo é obter informações relevantes sobre como os
-praticantes de TDD utilizam a prática para influenciar o projeto de suas
-classes. Na tentativa de capturar o máximo de informações possíveis, esse estudo
-inclui análises dos códigos produzidos e das entrevistas com os participantes.
-
-As sub-seções abaixo detalham cada um dos pontos levantados acima.
+As sub-seções a seguir detalham cada um dos pontos levantados.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Participantes da pesquisa}
 \label{sec:planejamento-participantes}
 
 Desenvolvedores atuantes no mercado de 
-software brasileiro forma selecionados para participarem da pesquisa.
-Certos critérios foram levados em consideração no momento de convidar os participantes:
+software brasileiro foram selecionados para participarem da pesquisa.
+Os participantes foram convidados e avaliados de acordo com certos critérios:
 
 \begin{itemize}
 	\item \textbf{Experiência em TDD.} Convidamos praticantes com diferentes
-	níveis de experiência. Programadores inexperientes em TDD (pouco conhecimento teórico e prático)
+	níveis de experiência. Eles foram categorizados em orogramadores inexperientes em TDD (pouco conhecimento teórico e prático)
 	e programadores com experiência em TDD (praticantes frequentes há no mínimo 3 anos).
 	
 	\item \textbf{Experiência em desenvolvimento de software.} Participantes podem ser
@@ -188,15 +182,15 @@ Certos critérios foram levados em consideração no momento de convidar os part
 Esses pontos foram avaliados por meio de um questionário, 
 respondido por todos os participantes antes do início do estudo. 
 Este questionário, além de perguntar qual a experiência
-do participante (de maneira quantitativa -- em anos), 
-continha questões onde o participante
+do participante (de maneira quantitativa, em anos), 
+continha questões nas quais o participante
 podia falar sobre sua expêriencia em projeto orientado a objetos,
 Java e TDD de forma mais aberta.
 Uma cópia deste questionário
 pode ser encontrada no Apêndice \ref{ape:questionario-inicio}.
 
 O objetivo de trazer participantes com as mais diferentes experiências em desenvolvimento
-de software e TDD é discutir os pontos abaixo:
+de software e TDD é fazer análises para os seguintes grupos:
 
 \begin{itemize}
 	\item \textbf{Experientes em desenvolvimento de software e em TDD:} 
@@ -220,82 +214,80 @@ de software e TDD é discutir os pontos abaixo:
 \subsection{Execução do estudo}
 \label{sec:execucao}	
 
-Todos os participantes foram convidados a resolver os exercícios pré-preparados. 
-Para que isso aconteça sem maiores problema, nós criamos um caderno
-de exercícios que foi seguido pelo participante.
+Todos os participantes foram convidados a resolver os exercícios preparados. 
+Para isso, criamos um caderno de exercícios que foi seguido pelo participante.
 
-Os participantes terão duas horas para resolver todos os exercícios. 
-Todos os códigos serão salvos ao final do estudo para que possam ser analisados junto
+Os participantes tiveram duas horas para resolver todos os exercícios. 
+Todos os códigos foram salvos ao final do estudo para que possam ser analisados junto
 com os dados das entrevistas.
-O tempo foi considerado suficiente para que o participante resolvesse todos eles. 
+O tempo foi considerado suficiente para que o participante resolvesse todos os
+exercícios. 
 
 Os participantes não podiam se comunicar durante o exercício, e cada um deles recebeu
 os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
 pode ocorrer durante a resolução dos problemas. 
 
-O participante recebeu dois exercícios. Em um deles, o participante praticou TDD; no outro,
+Cada participante recebeu dois exercícios. Em um deles, o participante praticou TDD; no outro,
 ele programou sem a prática. A razão disso
 é fazer com que o participante exercite ambos estilos de desenvolvimento (com e sem TDD)
 e tenha mais embasamento para ser entrevistado nas próximas etapas do estudo. 
 Cada participante recebeu instruções claras no caderno de exercícios 
-sobre quais exercícios deverão ser feitos
+sobre quais exercícios deveriam ser feitos
 com TDD. A escolha desses exercícios também foi randomizada na tentativa de diminuir
 o efeito do aprendizado.
 
 Ao final, todos responderam a um questionário online, 
 que continha perguntas sobre a qualidade
-do código que ele acabou de produzir. Esse questionário
+do código que acabaram de produzir. Esse questionário
 é melhor detalhado na Seção \ref{sec:questionario}.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Problemas Propostos}
 \label{sec:exercicios}
 
-Foram propostos quatro problemas que devem ser resolvidos pelos participantes, utilizando
-linguagem Java. Participantes deverão utilizar JUnit \footnote{\url{http://www.junit.org}. 
-Último acesso em 18 de Julho de 2011} para a escrita de testes
-automatizados de unidade. O objetivo desses exercícios é simular problemas de projeto de classes 
+Foram propostos quatro problemas que deveriam ser resolvidos pelos participantes, utilizando
+linguagem Java. O objetivo desses exercícios é simular problemas de projeto de classes 
 recorrentes em diversos projetos de software. Os enunciados encontram-se no Apêndice 
 \ref{ape:exercicios}.
 Na Tabela \ref{tab:problemas-exercicios}, apresentamos a relação entre uma má
 implementação dos exercícios e os princípios de projeto de classes feridos por
 ela.
 
-Foi dito ao participante que os exercícios simulam problemas do mundo real, e ele deve
-ter em mente que as soluções geradas por ele serão mantidas por uma outra equipe.
+Foi dito ao participante que os exercícios simulam problemas do mundo real, e ele deveria
+ter em mente que as soluções geradas supostamente seriam mantidas por uma outra equipe.
 Por esse motivo, será solicitado ao participante que implemente a solução mais elegante e flexível 
 possível.
 
 O primeiro exercício pede ao participante que implemente uma calculadora de salário, em que
 o algoritmo de cálculo varia de acordo com o cargo do funcionário. Em uma implementação
-procedural e mais difícil de ser mantida, esse problema seria resolvido através de uma
+procedural e mais difícil de ser mantida, esse problema seria resolvido por meio de uma
 sequência de "ifs"; todo novo cargo obrigaria o desenvolvedor a acrescentar mais um "if" 
 nessa classe. Uma implementação mais flexível teria cada algoritmo de cálculo em uma 
 classe separada.
 
 O segundo exercício pede que o participante implemente o processo de geração de uma nota fiscal e, após
 esse processo, a nota gerada deve passar por diversos outros processos, como envio por e-mail, envio
-para um sistema terceiro, persistir na base de dados, etc. Possíveis más implementações incluem a 
+para um sistema externo, persistir na base de dados, etc. Possíveis más implementações incluem a 
 implementação de uma única classe que faria todo o processo, ou uma classe altamente acoplada.
 Uma solução mais elegante seria extrair cada responsabilidade em uma classe diferente e compô-las
-através, por exemplo, da implementação do padrão Observer \cite{gof}.
+por meio, por exemplo, da implementação do padrão Observer \cite{gof}.
 
 O terceiro exercício pede ao participante a implementação de um simples processador de boletos que
 deve marcar a fatura como paga, caso a soma de pagamentos seja maior ou igual ao valor da fatura. 
 Em uma implementação elegante, o comportamento de marcar a fatura como paga deveria estar encapsulado, e 
 ficar dentro da classe "Fatura", ou entidade similar criada pelo participante.
 
-No quarto exercício, o participante deverá escrever um algoritmo responsável por filtrar faturas de
+No quarto exercício, o participante deveria escrever um algoritmo responsável por filtrar faturas de
 acordo com diferentes critérios. Em uma implementação procedural, esse único algoritmo seria
 responsável por validar todos os critérios. Mas, por serem complexos, esses filtros deveriam ser divididos em 
-várias classes, ao invés de uma única classe responsável por todos esses critérios.
+várias classes, em vez de ficarem em uma única classe responsável por todos os critérios.
 
 
 \begin{table}
 	\centering
 	\begin{tabular}{| l | l | l | }
 		\hline
-		Exercício & Mau Cheiro & Princípios\\
+		Exercício & Mau Cheiro & Princípios A Serem Seguidos\\
 		
 		\hline
 		
@@ -314,14 +306,14 @@ Os exercícios propostos são baseados em um workshop criado pelo autor desta pe
 foi aplicado para 2 turmas diferentes, uma delas dentro do Agile Brazil 2011, o
 maior evento brasileiro de métodos ágeis, que tinha um público heterogêneo, e uma delas para
 uma das turmas do curso de Ciência da Computação do Instituto de Matemática e Estatística da Universidade
-de São Paulo, onde o público era constituído quase que em sua maioria de alunos de graduação. 
+de São Paulo, na qual o público era constituído em sua maioria de alunos de graduação. 
 
 Neste workshop, os participantes, além de receberem os mesmos
 exercícios, também possuíam um código-fonte inicial do exercício, e a tarefa era
 apenas finalizar a solução. No entanto, o código-fonte inicial enviesava o participante a gerar
 uma má implementação. O resultado de ambas as turmas foram semelhantes; alguns participantes
 não perceberam a má qualidade do código inicial e apenas deram prosseguimento ao código
-de má qualidade, Outros perceberam os problemas e refatoraram os códigos em busca
+de má qualidade. Outros perceberam os problemas e refatoraram os códigos em busca
 de um melhor projeto de classes. Ambas as turmas gostaram dos exercícios
 propostos.
 
@@ -331,13 +323,13 @@ propostos.
 \label{sec:questionario}
 
 Como mencionado anteriormente, ao final dos exercícios o participante responderam a um questionário.
-Algumas perguntas foram abertas, nas quais o participante poderá dar uma opinião mais embasada sobre o assunto,
-e outras serão fechadas, escolhendo um valor dentro de uma escala
+Algumas perguntas foram abertas, nas quais o participante podia dar uma opinião mais embasada sobre o assunto,
+e outras foram fechadas, escolhendo um valor dentro de uma escala
 Likert com 5 valores.
 
 Para melhor explicar cada questão encontrada no questionário, dividimo-as em pequenos blocos. 
-Na Tabela \ref{tab:questionario-pos}, nós apresentamos
-as informações que são extraídas desse questionário, e qual o objetivo de cada uma delas. Uma cópia
+Na Tabela \ref{tab:questionario-pos}, apresentamos
+as informações extraídas desse questionário, e qual o objetivo de cada uma delas. Uma cópia
 do mesmo pode ser encontrada no Apêndice \ref{ape:questionario-pos}.
 
 \begin{table}
@@ -351,7 +343,7 @@ do mesmo pode ser encontrada no Apêndice \ref{ape:questionario-pos}.
 		\hline
 		
 		O estudo &
-		Este bloco visa obter a opinião dos participantes sobre o estudo, como clareza dos
+		Este bloco objetiva obter a opinião dos participantes sobre o estudo, como clareza dos
 		exercícios. O objetivo é aumentar a validade do estudo.
 		Além disso, entender se os exercícios propostos são parecidos com os problemas encontrados no mundo
 		real ajudam a aumentar a possibilidade de generalização do estudo.
@@ -376,11 +368,11 @@ do mesmo pode ser encontrada no Apêndice \ref{ape:questionario-pos}.
 %% ------------------------------------------------------------------------- %%
 \subsection{Escolha de candidatos para a entrevista}
 
-Após a implementação, os dados colhidos serão parcialmente analisados. O intuito
-é encontrar, dentre todos os participantes, aqueles com dados mais relevantes
+Após a implementação, os dados colhidos foram parcialmente analisados. O intuito
+foi encontrar, dentre todos os participantes, aqueles com dados mais relevantes
 e que mereçam ser aprofundados.
 Para isso, informações como qualidade dos códigos gerados, grupo que participa
-do estudo, e respostas no questionário influenciarão na escolha.
+do estudo e respostas no questionário influenciaram na escolha.
 
 O procedimento adotado para escolha dos candidatos foi:
 
@@ -404,8 +396,8 @@ O procedimento adotado para escolha dos candidatos foi:
 
 A entrevista foi semi-estruturada, dando liberdade ao
 pesquisador para mudar o rumo das perguntas, caso se fizesse necessário.
-Além disso, todas as perguntas são abertas, permitindo que o desenvolvedor dê
-uma resposta ampla sobre o assunto. Uma cópia da entrevista pode ser encontrada
+Além disso, todas as perguntas foram abertas, permitindo que o desenvolvedor desse
+uma resposta ampla sobre o assunto. Uma cópia do roteiro da entrevista pode ser encontrada
 no Apêndice \ref{ape:entrevista}.
 
 O processo de entrevista é composto por uma breve introdução da pesquisa, tomando
@@ -414,42 +406,35 @@ caracterizar o perfil do participante; perguntas como qual a experiência do
 desenvolvedor em desenvolvimento de software e TDD são necessárias para ajudar o
 pesquisador no entendimento das respostas dadas. Além disso, perguntas sobre
 referências, livros e outros pontos de informação nas quais o participante lê a
-respeito da prática servem para que nós entendamos o embasamento teórico
+respeito da prática servem para que entendamos o embasamento teórico
 do praticante sobre TDD. Apesar das perguntas já terem sido feitas durante
 o questionário inicial, essa parte inicial é importante para tranquilizar
 o participante, e possibilitar com que ele esteja mais confiante e fale
 mais durante as perguntas mais cruciais.
 
-Em seguida, nós perguntaremos os principais pontos da pesquisa.
-Para isso, nós faremos uso não só de perguntas abertas, mas também
-voltaremos aos códigos gerados durante o exercício, para que as respostas se tornem técnicas e
-específicas, caso necessário. A ideia é fazer com que o participante nos explique
+Em seguida, nós perguntamos os principais pontos da pesquisa.
+Para isso, fizemos uso não só de perguntas abertas, mas também
+voltamos aos códigos gerados durante o exercício, para que as respostas se tornassem técnicas e
+específicas, caso necessário. A ideia foi fazer com que o participante nos explicasse
 como que o projeto de classes daquele exercício foi concebido.
 
 Uma vez que as decisões tomadas por um programador durante a atividade de projeto de classes
 podem ser influenciadas por vários diferentes fatores, 
-as perguntas serão feitas de modo que o participante triangule suas respostas,
+as perguntas foram feitas de modo que o participante triangule suas respostas,
 e tente isolar o máximo possível a atividade de TDD dos outros possíveis fatores
-de influência. Participantes que não articularem bem suas respostas deverão ser eliminados
+de influência. Participantes que não articulassem bem suas respostas seriam ser eliminados
 durante o processo de análise.
 
-Durante toda a entrevista, nós tomamos nota sobre as principais observações
-de cada participante. Quando, por algum motivo, o participante mencionar qualquer
-informação relacionado a TDD e projeto de classes, é nosso dever anotar e destacar esse ponto
-nas observações, para que, ao final da entrevista, o assunto seja retomado com 
-o participante, pedindo para que ele fale mais a respeito daquele ponto específico.
-
-Todas as entrevistas serão gravadas, para que o pesquisador possa fazer a
-transcrição e reveja os dados a qualquer momento durante o processo. Além disso,
-o pesquisador também tomará notas, capturando informações como reações dos 
+Todas as entrevistas foram gravadas para que nós pudéssemos fazer a
+transcrição e rever os dados a qualquer momento durante o processo. Além disso,
+nós também tomamos notas, capturando informações como reações dos 
 participantes a determinadas perguntas, ou qualquer outra informação relevante. 
-As entrevistas também serão feitas em dias diferentes de acordo com a disponibilidade
+As entrevistas também foram feitas em dias diferentes de acordo com a disponibilidade
 de cada participante.
 
 Entrevistas, de maneira geral, tendem a ser úteis já que os participantes podem prover dados históricos 
 sobre o objeto em estudo.
 Além disso, entrevistas nos permitem o controle sobre as questões a serem feitas.
-
 Mas, um possível problema é que as entrevistas geralmente provêm informações indiretas, 
 filtradas por meio da visão dos participantes. Além disso, a presença do pesquisador pode 
 intimidar o participante ou enviesar as respostas.
@@ -460,37 +445,37 @@ formalizar, em palavras, o que conhecem ou estão pensando.
 %% ------------------------------------------------------------------------- %%
 \subsection{Métricas de código}
 
-Com o código-fonte em mãos, é possível ainda utilizar-se de métricas de código
+Com o código-fonte em mãos, é possível utilizar-se de métricas de código
 para avaliar sua qualidade.
 
-As métricas sugeridas são:
+As métricas utilizadas foram:
 
 \begin{enumerate}
-	\item Complexidade Ciclomática: Optamos por utilizar o algoritmo de complexidade ciclomática criado
+	\item \textbf{Complexidade Ciclomática}: Optamos por utilizar o algoritmo de complexidade ciclomática criado
 	por McCabe \cite{mccabe}. Uma simples explicação desse algoritmo seria que, para cada método, um contador
 	é incrementado sempre que um if, for, while, case, catch, E lógico, OU lógico, ou if ternário aparece.
 	Todos os métodos tem ainda seus contadores iniciados com 1. 
 	
-	\item \textit{Fan-Out}: Este algoritmo conta o número de classes que uma classe conhece e faz uso \cite{lorenz}.
+	\item \textbf{\textit{Fan-Out}}: Essa métrica conta o número de classes que uma classe conhece e faz uso \cite{lorenz}.
 	
-	\item Falta de Coesão dos Métodos: A versão implementada do algoritmo de falta de coesão dos métodos 
+	\item \textbf{Falta de Coesão dos Métodos}: A versão implementada do algoritmo de falta de coesão dos métodos 
 	(ou, do inglês, \textit{Lack of Cohesion of Methods (LCOM)}) foi a sugerida por Henderson-Sellers \cite{lcom-hs}.
 	Neste algoritmo, uma classe é considerada altamente coesa se e somente se todos os seus métodos usam
 	todos seus atributos de instância. Neste caso, a métrica resulta em zero. 
 	
-	\item Quantidade de Linhas por Método: Este algoritmo conta o número de linhas em cada método de
+	\item \textbf{Quantidade de Linhas por Método}: Essa métrica conta o número de linhas em cada método de
 	cada classe. Linhas em branco dentro dos métodos também entram na conta.
 	
-	\item Quantidade de Métodos: O algoritmo conta o número de métodos por classe.
+	\item \textbf{Quantidade de Métodos}: A métrica conta o número de métodos por classe.
 	
 \end{enumerate}
 
-Todas as métricas citadas já são de uso conhecido na academia. Para calcular estas
+Todas as métricas citadas já são de uso conhecido na academia. Para calcular essas
 métricas, nós implementamos nossa própria ferramenta. O motivo para tal é que
 grande parte das ferramentas existentes fazem uso de código compilado, e não
 apenas do código-fonte. Nossa ferramenta possui bateria de testes automatizados
 e código-fonte aberto \footnote{\url{http://www.github.com/mauricioaniche/msr-asserts}. 
-Último acesso em 10 de Fevereiro de 2012.}
+Último acesso em 10 de Fevereiro de 2012.}.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Avaliação do Especialista}
@@ -505,12 +490,12 @@ As categorias nas quais eles deveriam avaliar eram: \textit{Simplicidade}, \text
 \textit{Qualidade do Projeto de Classes}.
 Em cada uma dessas categorias, os especialistas puderam dar notas entre
 1 (ruim) e 5 (bom), ou optar por não avaliar aquele exercício.
-Como é possível que alguns participantes não terminem o exercício, o especialista
+Como alguns participantes não terminaram o exercício, o especialista
 foi avisado de que ele deve avaliar inclusive a "intenção" de projeto de classes criado
 pelo participante, e não só o código atual. 
 
-Para que a opinião do especialista seja imparcial, ele \textbf{não} sabia a qual grupo
-pertence e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de TDD).
+Para que a opinião do especialista fosse imparcial, ele \textbf{não} sabia a qual grupo
+pertencia e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de TDD).
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise dos dados}
@@ -521,31 +506,44 @@ Figura \ref{fig:analise-dados}, ilustra o processo de análise utilizado
 nessa pesquisa. Apesar de parecer uma abordagem em cascata, ele é na prática 
 iterativo, visto que os passos são interconectados. 
 
+\begin{figure}[h]
+  \centering
+  \includegraphics[scale=0.5]{analisedados}
+  \caption{Processo de análise dos dados}
+  \label{fig:analise-dados}
+\end{figure}
+
+
 A princípio, todos os dados recolhidos foram reunidos e preparados. As entrevistas
 foram transcritas, assim como as observações feitas sobre as gravações das implementações.
 A seguir, para que nós possamos buscar por erros no processo de transcrição, todos
 os dados foram re-lidos. Essa primeira leitura também serviu para nós termos
 uma ideia inicial das informações ali presentes.
 
-O processo de codificação e o agrupamento
-por temas foi então realizado, e, por fim apareceram como maiores
+O processo de codificação e o agrupamento por temas foi então realizado. 
+Os códigos gerados eram derivados da opinião dos participantes, e os mesmos 
+eram constantemente revistos e unidos, quando dois códigos eram similares.
+Além disso, quando o participante mencionava algum padrão de \textit{feedback},
+um código diferente era dado para esse trecho, para que nós o pudéssemos encontrá-lo
+facilmente durante a escrita deste texto.
+Os códigos que mais foram relacionados apareceram como maiores
 contribuições da pesquisa qualitativa, durante o processo de interpretação dos
-dados. O software utilizado para o processo de codificação foi
+dados. 
+
+O software utilizado para o processo de codificação foi
 o \textit{Atlas.ti} \footnote{\url{http://www.atlasti.com/}. Último acesso em 3
 de maio de 2011.}, produzido na Alemanha, que nos possibilitou 
 organizar textos e juntá-los com códigos e anotações. 
 
 Além disso, as métricas calculadas foram utilizadas na busca por alguma diferença
-estatisticamente significante entre códigos produzidos com e sem TDD.
- 
-Testes estatísticos para análise de variância serão utilizados
+estatisticamente significante entre códigos produzidos com e sem TDD. 
+Testes estatísticos para análise de variância foram utilizados
 para verificar se TDD influencia nas mesmas.
 A variância dos dados obtidos na opinião do especialista sobre cada código-fonte gerado
 será utilizado também como entrada para algoritmos estatísticos. 
-Como estes dados não devem seguir uma distribuição normal, o teste
+Como esses dados não seguem uma distribuição normal, o teste
 de Wilcoxon foi escolhido. Este é um teste de hipotése não-paramétrico,
-usado para comparar duas amostras e verificar se a diferença da média das populações
-são diferentes.
+usado para comparar duas amostras e verificar se há diferença da média das populações.
 Comparamos os valores encontrados
 para as métricas de complexidade ciclomática, acoplamento eferente, falta
 de coesão dos métodos, número de linhas por métodos, e quantidade de métodos
@@ -556,13 +554,6 @@ Durante o processo, o pesquisador constantemente validou toda e qualquer
 informação colhida e, quando se fez necessário, a coleta de qualquer entrevista,
 observação ou métrica foi refeita. 
 
-\begin{figure}
-  \centering
-  \includegraphics[scale=0.5]{analisedados}
-  \caption{Processo de análise dos dados}
-  \label{fig:analise-dados}
-\end{figure}
-
  %% ------------------------------------------------------------------------- %%
 \section{Validade e Confiabilidade do Estudo}
 \label{sec:planejamento-validacao}
@@ -571,25 +562,25 @@ Para garantir a confiabilidade deste estudo, nós realizamos os
 seguintes procedimentos:
 
 \begin{itemize}
-	\item \textbf{Checar as transcrições}. O objetivo é garantir que nenhum erro
-	óbvio seja cometido;
+	\item \textbf{Checar as transcrições}. O objetivo foi garantir que nenhum erro
+	óbvio tenha sido cometido;
 
 	\item \textbf{Verificação de pesquisador auxiliar}. Um pesquisador auxiliar
-	checará a interpretação dos dados gerada por esta pesquisa;
+	checou a interpretação dos dados gerada por esta pesquisa;
 	
-	\item \textbf{Rastreabilidade dos dados}. Todos os dados colhidos são
+	\item \textbf{Rastreabilidade dos dados}. Todos os dados colhidos foram
 	preservados em forma eletrônica.
 
 \end{itemize}
 
-A validade do estudo será buscada por alguns procedimentos executados pelos
+A validade do estudo foi buscada por alguns procedimentos executados pelos
 pesquisadores, dentre eles:
 
 \begin{itemize}
 	\item \textbf{Triangulação de diferentes fontes de dados}. A pesquisa foi
-	realizada com participantes que possuem diferentes experiências, e diferentes
-	fontes de dados serão colhidas, como questionários, entrevistas, código gerado e 
-	opinião do especialista;
+	realizada com participantes com diferentes experiências, e diferentes
+	fontes de dados foram colhidas, como questionários, entrevistas, código gerado e 
+	opinião de especialistas;
 
 	\item \textbf{Prover descrição rica e detalhada sobre o ambiente}. A riqueza
 	dos detalhes mostra a qualidade do estudo, além de possibilitar a repetição do
@@ -607,8 +598,8 @@ que qualquer pesquisador interessado em replicar o experimento terá um
 arcabouço sólido para comparação \cite{merriam-1998}. A análise de
 dados também foi relatada em detalhes para que os leitores tenham uma visão
 clara sobre o método utilizado na pesquisa. 
-Além disso, essa pesquisa também é acompanhada pelo orientador do pesquisador,
-que constantemente valida e discute os pontos levantados nesse planejamento.
+Além disso, esta pesquisa também foi acompanhada pelo meu orientador,
+que constantemente validou e discutiu os pontos levantados nesse planejamento.
 
 %% ------------------------------------------------------------------------- %%
 \section{Papel do Pesquisador}
@@ -619,10 +610,10 @@ processo de captura dos dados, bem como seu preparo e interpretação final.
 Creswell \cite{creswell}, citando Locke \cite{locke}, lembra
 que a contribuição do investigador para o contexto da pesquisa pode ser útil e
 positiva. Além do mais, o pesquisador é responsável por
-identificar todos os valores pessoais, pressuposições e vieses deste estudo.
+identificar todos os valores pessoais, pressuposições e vieses do estudo.
 
 O autor desta pesquisa tem formação em Ciência da Computação, e desenvolve software há 9
-anos, pratica TDD diariamente nos últimos 3 anos, e possui profundos
+anos, pratica TDD diariamente nos últimos 3 anos e possui profundos
 conhecimentos teóricos e práticos sobre orientação a objetos e métodos ágeis.
 Além disso, o autor palestrou sobre TDD em eventos da indústria brasileira
 de desenvolvimento de software, como a Agile Brazil 2010, o .NET Architects
@@ -636,7 +627,7 @@ orientados a objetos.
 
 Esta pesquisa pode revelar desenvolvedores que produzem projeto de classes não
 satisfátorios ou não utilizam a prática corretamente.
-Por esse motivo, todos os dados colhidos pelo pesquisador serão mantidos em
+Por esse motivo, todos os dados colhidos pelo pesquisador foram mantidos em
 sigilo e todos os nomes de desenvolvedores e projetos omitidos, conforme acordo 
 assinado entre o pesquisador e a participante.
 
@@ -650,7 +641,7 @@ como exercícios, gravação de vídeo, protocolo e roteiro de entrevista.
 
 Com os resultados do estudo piloto, o pesquisador fez melhorias
 nos diversos instrumentos de pesquisa.
-Vale ressaltar que as pessoas que participarem do estudo piloto não foram reutilizados no
+Vale ressaltar que as pessoas que participaram do estudo piloto não foram reutilizadas no
 estudo final.
 
 Na primeira versão, o participante deveria implementar todos os quatro exercícios em 2 horas.
@@ -699,15 +690,12 @@ passando atrás das máquinas para ver como estavam indo, na tentativa
 de evitar qualquer possível alteração de comportamento pela nossa presença.
 Ao final de cada intervalo de 50 minutos, nós avisámos para eles finalizarem
 a linha de raciocínio e partir para o próximo exercício.
-Apesar de não haver nenhuma restrição explícita sobre isso, não houveram
-conversas entre os participantes. Todos eles trabalharam sozinho
-durante toda a implementação.
 
 Todo o experimento ocorreu bem, com exceção do que foi executado
-dentro da universidade. Além de diversos problemas de infra-estrutura,
-como a falta de espaço disponível para alguns alunos, que impedia até mesmo
+dentro da universidade. Além de diversos problemas de infra estrutura,
+como a falta de espaço em disco disponível para alguns alunos, que impedia até mesmo
 o JUnit de executar, todos os participantes conseguiram fazer apenas
-1 exercício. Diante desta situação, optamos por deixá-los implementar
+1 exercício. Diante dessa situação, optamos por deixá-los implementar
 o mesmo exercício até o final da aula já que, após os 50 minutos iniciais,
 nós observamos que pouco código havia sido escrito. Outro problema levantado
 foi que alguns alunos não se mostraram muito dispostos a participar
@@ -718,7 +706,7 @@ muito receptivos para o estudo. Um ponto que se mostrou bem útil
 para convencer participantes da indústria a participar foi a proposta
 posterior de nós apresentarmos os resultados encontrados em uma palestra.
 
-Ao final da execução do estudo em cada empresa, nós colhetávamos
+Ao final da execução do estudo em cada empresa, nós guardávamos
 os dados gerados (código-fonte e caderno de questões assinado),
 e dávamos o nome da pasta do participante, de acordo com
 o seguinte formato: \textit{id-nome-combinação}. O id aponta
@@ -742,15 +730,146 @@ O roteiro de entrevistas sofreu uma pequena mudança ao final da primeira entrev
 já que percebemos que comunicar ao participante que o código que ele produziu
 \textit{não apresenta um bom projeto de classes} não era uma tarefa fácil, e talvez, não ética. 
 Optamos por perguntar sobre como aquele projeto de classes foi construído, mesmo que ele
-não estivesse bem construído.
+não estivesse bem construído em nossa opinião.
 
 Para manter um padrão, nós sempre perguntávamos primeiro sobre o exercício que ele
 fez com TDD, independente da ordem que ele implementou no dia da execução. Notamos
-que muitos participantes discutiram sobre os exercícios e possíveis implementações com seus colegas.
+que muitos participantes discutiram sobre os exercícios e possíveis implementações com seus colegas
+após a realização do exercício.
 
 Dos três especialistas convidados a avaliar os códigos produzidos, apenas um não
 completou a tarefa. Sugerimos a todos eles, antes do início da avaliação, que avaliassem
 não só a quantidade de código escrito, mas as decisões de projeto de classes tomadas por aquele
 participante. Para que os especialistas avaliassem cada código gerado, nós implementamos
-uma simples aplicação web, onde eles tinham acesso a qualquer momento, e podiam parar ou continuar
+uma aplicação web, que eles tinham acesso a qualquer momento, e podiam parar ou continuar
 a avaliar na hora que preferissem.
+
+
+\section{Descrição dos participantes}
+\label{sec:desc-participantes}
+
+Conforme mencionado, o estudo foi executado em dois ambientes diferentes: em empresas de software
+do mercado brasileiro e na academia. Como ambos estudos foram executados de maneira independente,
+descrevemos cada grupo de maneira separada nas sub-seções \ref{findings-desc-industria} e \ref{findings-desc-academia}.
+
+\subsection{Participantes da Indústria}
+\label{findings-desc-industria}
+
+Ao todo tivemos 25 participantes, de 6 diferentes empresas.
+Os participantes da indústria, em sua maioria, eram pessoas com pouca experiência em TDD.
+40\% deles disseram utilizar a prática há no máximo um ano. 52\% deles praticam TDD
+entre 1 e 3 anos. Apenas 4\% praticou entre três e quatro anos, e nenhum participante
+possuía mais experiência do que isso. Na Figura \ref{fig:exp-tdd-industria}, mostramos
+a distribuição da experiência da prática de TDD entre os participantes.
+
+Os números são um pouco diferentes quando se trata da experiência em desenvolvimento
+de software. 24\% dos participantes desenvolve software entre 4 e 5 anos.
+28\% deles faz isso entre 6 e 10 anos. 20\% possui até 2 anos de experiência.
+Na Figura \ref{fig:exp-sw-industria}, mostramos a distribuição.
+
+Entrando em aspectos mais técnicos, 64\% dos participantes afirmaram programar em Java. Entretanto,
+36\% disseram que não trabalham com Java no seu dia a dia. Todos eles afirmam conhecer JUnit,
+e só 12\% diz nunca ter ouvido falar sobre o conceito de objetos dublês\footnote{Objetos dublê ou, do inglês, 
+\textit{mock objects}, são objetos criados durante um teste de unidade, e que imitam o comportamento de um
+outro objeto concreto. Geralmente são muito utilizados quando queremos isolar nosso teste de outras classes
+do sistema. Mais informações sobre objetos dublês podem ser encontrados em \cite{mocks}.}. De fato, 64\% deles
+aplicam objetos dublês durante suas atividades de desenvolvimento. Com relação a conhecimentos
+em orientação a objetos, na pergunta aberta do questionário, grande parte deles 
+afirmou que possuem uma boa experiência e alguns
+chegam até a afirmam que dominam o assunto. Poucos disseram que possuem conhecimentos
+básicos. Na Tabela \ref{tab:exp-industria},
+apresentamos o conhecimento dos participantes em relação a Java, JUnit e objetos dublês.
+
+Em relação à experiência com TDD,
+podemos afirmar que metade dos participantes ainda está experimentando a prática, enquanto
+outros já a tem mais consolidada. Isso é positivo, já que foi possível capturar informações
+da prática de TDD por pessoas com diferentes níveis de maturidade.
+
+Em relação ao alto número de pessoas que não utilizam Java, isso se deve ao fato de uma das
+empresas fazer uso de PHP para seu trabalho do dia a dia. No entanto, nós conhecemos a equipe
+e verificamos que, apesar de não utilizarem a linguagem constantemente, eles não tiveram
+problema algum durante a execução dos exercícios.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.6]{findings/experiencia-tdd-industria.png}
+  \caption{Experiência dos participantes da indústria com TDD}
+  \label{fig:exp-tdd-industria}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{findings/experiencia-sw-industria.png}
+  \caption{Experiência dos participantes da indústria com desenvolvimento de software em geral}
+  \label{fig:exp-sw-industria}
+\end{figure}
+
+\subsection{Participantes da Academia}
+\label{findings-desc-academia}
+
+Os participantes da academia que participaram do estudo, 21 no total, possuem baixíssima experiência,
+tanto em TDD quanto em desenvolvimento de software em geral. Surpreendentemente, 90\%
+dos participantes afirmaram não conhecer Java, e 61\% disseram não conhecer TDD.
+Em contraste com essa informação, todos eles afirmaram conhecer JUnit, e 76\% afirmaram
+conhecer objetos dublês na teoria. 
+Na Figura \ref{fig:exp-tdd-academia}, mostramos a experiência dos participantes em TDD, e
+na Tabela \ref{tab:exp-academia} apresentamos a experiência deles em Java, JUnit, e objetos
+dublês.
+
+Em relação a experiência de desenvolvimento de software, apenas 23\% afirmaram não
+ter nenhuma experiência, enquanto que por volta de 43\% afirmaram possuir
+entre 2 a 4 anos de experiência. Nenhum participante possuía experiência superior a isso.
+Na Figura \ref{fig:exp-sw-academia}, mostramos a distribuição por completo.
+
+De acordo com os dados, percebemos que grande parte dos participantes não conhecem a linguagem ou
+mesmo a prática de TDD. A linguagem foi realmente um problema: durante a execução, percebemos
+que muitos deles faziam buscas por elementos simples da linguagem Java, como manipulação de arrays
+e listas, ou mesmo por manipulação de texto.
+
+Isso explica o baixo desempenho dos alunos da academia durante
+o experimento. Nenhum deles conseguiu terminar os dois exercícios propostos. Por esse
+motivo, nenhum aluno foi selecionado para o processo de entrevista. Entretanto,
+os códigos-fonte produzidos foram utilizados no processo de análise quantitativa.
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.6]{findings/experiencia-tdd-academia.png}
+  \caption{Experiência dos estudantes da academia com TDD}
+  \label{fig:exp-tdd-academia}
+\end{figure}
+
+\begin{figure}[h!]
+  \centering
+  \includegraphics[scale=0.5]{findings/experiencia-sw-academia.png}
+  \caption{Experiência dos estudantes da academia com desenvolvimento de software em geral}
+  \label{fig:exp-sw-academia}
+\end{figure}
+
+
+\begin{table}
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+		Ferramenta & Participantes que conhecem & Participantes que não conhecem\\
+		\hline
+		Java & 16 & 9\\
+		JUnit & 25 & 0\\
+		Objetos Dublê & 16 (utilizam no dia a dia), 6 (na teoria) & 3\\
+		\hline
+	\end{tabular}
+	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da indústria}
+	\label{tab:exp-industria}
+\end{table}
+
+\begin{table}
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+		Ferramenta & Participantes que conhecem & Participantes que não conhecem\\
+		\hline
+		Java & 2 & 19\\
+		JUnit & 21 & 0\\
+		Objetos Dublê & 2 (utilizam no dia a dia), 16 (na teoria) & 3\\
+		\hline
+	\end{tabular}
+	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da academia}
+	\label{tab:exp-academia}
+\end{table}

@@ -110,7 +110,7 @@ framexrightmargin=10pt
 \thispagestyle{empty}
 \begin{center}
     \vspace*{2.3cm}
-    \textbf{\Large{Como a prática de TDD Influencia no \\Projeto de Classes em Sistemas Orientados a Objetos}}\\
+    \textbf{\Large{Como a prática de TDD Influencia o \\Projeto de Classes em Sistemas Orientados a Objetos}}\\
     
     \vspace*{1.2cm}
     \Large{Mauricio Finavaro Aniche}
@@ -135,47 +135,43 @@ framexrightmargin=10pt
     \normalsize{São Paulo, Março de 2012}
 \end{center}
 
-% ---------------------------------------------------------------------------- %
-% Página de rosto (só para a versão final)
-% ---------------------------------------------------------------------------- %
-%\newpage
-%\thispagestyle{empty}
-%    \begin{center}
-%        \vspace*{2.3 cm}
-%        \textbf{\Large{Título do trabalho a ser apresentado à \\
-%        CPG para a dissertação/tese}}\\
-%        \vspace*{2 cm}
-%    \end{center}
+\newpage
+\thispagestyle{empty}
+    \begin{center}
+        \vspace*{2.3 cm}
+        \textbf{\Large{Como a prática de TDD Influencia o \\Projeto de Classes em Sistemas Orientados a Objetos}}\\
+        \vspace*{2 cm}
+    \end{center}
 
-%    \vskip 2cm
+    \vskip 2cm
 
-%    \begin{flushright}
-    % Este exemplar corresponde à redação\\
-    % final da dissertação/tese devidamente corrigida\\
-    % e defendida por (Nome Completo do Aluno)\\
-    % e aprovada pela Comissão Julgadora.
-    %
-%	Esta versão definitiva da tese/dissertação\\
-%	contém as correções e alterações sugeridas pela\\
-%	Comissão Julgadora durante a defesa realizada\\
-%    por (Nome Completo do Aluno) em 4/5/2010.
-
-%    \vskip 2cm
-
-%    \end{flushright}
-%    \vskip 4.2cm
-
-%    \begin{quote}
-%    \noindent Comissão Julgadora:
+    \begin{flushright}
+     Este exemplar corresponde à redação\\
+     final da dissertação/tese devidamente corrigida\\
+     e defendida por Mauricio Finavaro Aniche\\
+     e aprovada pela Comissão Julgadora.
     
-%    \begin{itemize}
-%		\item Profa. Dra. Nome Completo (orientadora) - IME-USP [sem ponto final]
-%		\item Prof. Dr. Nome Completo - IME-USP [sem ponto final]
-%		\item Prof. Dr. Nome Completo - IMPA [sem ponto final]
-%    \end{itemize}
+	Esta versão definitiva da tese/dissertação\\
+	contém as correções e alterações sugeridas pela\\
+	Comissão Julgadora durante a defesa realizada\\
+    por Mauricio Finavaro Aniche em 25/4/2012.
+
+    \vskip 2cm
+
+    \end{flushright}
+    \vskip 4.2cm
+
+    \begin{quote}
+    \noindent Comissão Julgadora:
+    
+    \begin{itemize}
+		\item Prof. Dr. Marco Aurélio Gerosa (orientador) - IME-USP
+		\item Prof. Dr. Ismar Frango Silveira - Mackenzie
+		\item Prof. Dr. Rafael Prikladnicki - PUC-RS
+    \end{itemize}
       
-%    \end{quote}
-%\pagebreak
+    \end{quote}
+\pagebreak
 
 \pagenumbering{roman}     % começamos a numerar 
 
@@ -185,21 +181,23 @@ framexrightmargin=10pt
 Em primeiro lugar, gostaria de agradecer a meu orientador, Prof. Dr. Marco Aurélio
 Gerosa, que, ao longo destes três anos me ensinou mais do que eu poderia imaginar.
 Entrei no mestrado com o intuito de aprender sobre TDD, e saí de lá entendendo
-melhor sobre ciência. 
-Lições essas que levarei para toda minha vida na academia e indústria.
+melhor sobre ciência. Lições essas que levarei para toda minha vida na academia e indústria.
+Aproveito também para agradecer os profs. Drs. Ismar Frango Silveira e Rafael
+Prikladnicki, que aceitaram participar da banca avaliadora
+e deram excelentes sugestões durante a qualificação.
 
 Gostaria também de agradecer aos amigos Gustavo Oliva e Mauricio de Diana, que
-criticaram a pesquisa durante todo o tempo, me fazendo pensar novamente sobre
+criticaram a pesquisa durante todo o tempo, fazendo-me pensar novamente sobre
 várias das minhas crenças em engenharia de software. Gostaria muito que continuássemos
 nosso grupo de pesquisa, pois devo a vocês grande parte do que aprendi no mestrado.
 
-Agradeço também a minha família e namorada, por terem me dado todo o suporte
+Agradeço também a minha família, amigos e namorada, por terem me dado todo o suporte
 emocional que precisei ao longo desta caminhada. Uma menção especial ao meu pai,
 que me presentou com um livro de programação para crianças quando eu tinha por volta
 de 9 anos. Talvez, sem esse presente, essa pesquisa nunca teria acontecido.
 
 Agradeço aos meus amigos de trabalho da Locaweb e Caelum Ensino e Inovação, 
-por aguentar meus discursos e palestras sobre TDD, e mostrar os diferentes
+por aguentar meus discursos e palestras sobre TDD, e mostrar diferentes
 pontos de vista. Isso me ajudou a entender mais sobre a prática, o que resultou
 em uma discussão mais rica ao longo do trabalho.
 
@@ -217,20 +215,17 @@ Um forte abraço a todos!
 
 Desenvolvimento Guiado por Testes (TDD) é uma das práticas sugeridas na Programação
 Extrema. A mecânica da prática é simples: o programador escreve o teste antes
-de escrever o código. É, portanto, fácil inferir que a prática de TDD é uma
+de escrever o código. É, portanto, possível inferir que a prática de TDD é uma
 prática de testes de software. Entretanto, muitos autores de livros 
-conhecidos pela indústria e academia, como Robert Martin, Steve Freeman e 
-Dave Astels afirmam que os efeitos da prática vão além. Segundo eles,
-TDD pode ajudar o desenvolvedor durante o processo de criação do projeto classes,
+conhecidos pela indústria e academia
+afirmam que os efeitos da prática vão além. Segundo eles,
+TDD ajuda o desenvolvedor durante o processo de criação do projeto classes,
 fazendo-os criar classes menos acopladas e mais coesas.
 
-Entretanto, entender como a prática guia o desenvolvedor durante esse processo
-não é fácil. Grande parte dos trabalhos estão interessados em descobrir se
-a prática de TDD faz diferença na qualidade do código gerado, mas poucos são os 
-autores que tentam discutir como a prática realmente auxilia.
-Além disso, é notável a crescente adoção da prática de TDD por parte da indústria. E,
-dado nosso estudo realizado dentro de um evento de métodos ágeis, percebemos que
-mesmo os praticantes não entender ou conseguem expressar bem como a prática
+Entretanto, grande parte dos trabalhos da literatura são voltados a descobrir se
+a prática faz diferença na qualidade do código gerado, mas poucos são os 
+autores que discutem como a prática realmente auxilia.
+Mesmo os praticantes não entendem ou conseguem expressar bem como a prática
 os guia.
 
 Este trabalho tem por objetivo compreender melhor os efeitos de TDD e como sua prática 
@@ -238,13 +233,14 @@ influencia o desenvolvedor durante o processo de projeto de sistemas orientados 
 Para alcançar o objetivo, este estudo faz uso de uma combinação entre um experimento controlado 
 inicial, na qual participantes foram
 convidados a resolver exercícios pré-elaborados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
-estudo qualitativo detalhou como a prática influenciou as decisões de projeto de classes dos participantes.
+estudo qualitativo detalhou como a prática influenciou as decisões de projeto.
 
-Ao final, encontramos que a prática de TDD não melhora o projeto de classes naturalmente, mas sim
-dá \textit{feedback} constante ao desenvolvedor que, por sua vez, utiliza de sua experiência
-e conhecimento para melhorá-lo. Esse estudo também levantou esses possíveis \textit{feedbacks} da
-prática e os catalogou. Esses padrões encontrados podem ser úteis para desenvolvedores
-que queiram encontrar maneiras de validar o projeto de classes em desenvolvimento.
+Ao final, observamos que a prática de TDD pode guiar o desenvolvedor durante o processo
+de criação do projeto de classes por meio de constantes \textit{feedbacks} sobre a qualidade
+do projeto. Esses \textit{feedbacks} alertam desenvolvedores sobre possíveis problemas,
+como alto acoplamento ou baixa coesão. Os desenvolvedores, por sua vez, devem interpretar
+e melhorar o projeto de classes. Este trabalho catalogou e nomeou os padrões de
+\textit{feedback} percebidos pelos participantes.
 
 \noindent \textbf{Palavras-chave:} Desenvolvimento Guiado por Testes, Sistemas Orientados
 a Objetos, Projeto de Classes, Qualidade Interna de Código.
@@ -252,34 +248,30 @@ a Objetos, Projeto de Classes, Qualidade Interna de Código.
 % ---------------------------------------------------------------------------- %
 \chapter*{Abstract}
 
-Test-Driven Development (TDD) is one of the most known practices of Extreme
+Test-Driven Development (TDD) is one of the suggested practices in Extreme
 Programming (XP). The mechanical is simple: the developer writes a test before
-writing the implementation. It is possible to infer that the practice is then 
-a software testing technique. However, many famous book authors, such as 
-Robert Martin, Steve Freeman, and Dave Astels suggest that the effects of the practice
-can go beyond. According to them, TDD can help developers during the class design creation
+writing the implementation. Thus, TDD is often seen as
+a software testing technique. However, many famous book authors suggest that
+TDD can help developers during the class design creation
 process, enabling developers to create less coupled highly cohesive classes.
 
-It is really hard to understand how TDD influences on the software development
-process. Most part of the studies are interested on finding the difference between
-a TDD'd and a non-TDD'd code. Only a few of them try to discuss how the practice
-really supports class design. In addition, it is easy to notice the increasing
-adoption of the practice by the industry. And, given our study
-inside an agile software development conference, we noticed that even practitioners
+Most part of the academic studies are interested on finding the difference between
+a TDD'd and a non-TDD'd code. Only a few of them discuss how the practice
+really supports class design. Even practitioners
 do not understand how the practice guides them.
 
-This work aims to understand better the effects and how TDD influences the
+This work aims to understand better the effects of TDD and how the practice influences the
 practitioner during the class design process in object-oriented systems. 
 This work uses a combination of a initial controlled experiment, in which the participants
-were invited to solve a few prepared exercises using TDD and, based on data gathered on this,
-another qualitative study explored, in detail, the way TDD influenced the design decisions
+were invited to solve a few prepared exercises using TDD and, based on gathered data,
+a qualitative study explored, in detail, the way TDD influenced the design decisions
 taken by the participants.
 
-At the end, we observed that the practice of TDD does not improve the class design naturally, but
-gives constant feedback to developers that make use of their own experience and knowledge to
-improve it. This study also categorized the possible feedback the practice can give. These
-patterns can be very handful to developers that want to find another ways to validate
-their class design under development.
+At the end, we observed that the practice of TDD can guide developers during the 
+class design creation process through constant feedback about its quality.
+These feedbacks alert developers about possible problems, such as high coupling or
+low cohesion. Developers then should interpret and improve the class design accordingly.
+This study also catalogues the TDD feedback patterns perceived by the participants.
 
 \noindent \textbf{Keywords:} Test-Driven Development, Object-Oriented
 Systems, Class Design, Internal Code Quality.
@@ -291,11 +283,11 @@ Systems, Class Design, Internal Code Quality.
 % ---------------------------------------------------------------------------- %
 \chapter{Lista de Abreviaturas}
 \begin{tabular}{ll}
-         TDD         & Desenvolvimento Guiado por Testes\\ 
+         TDD         & Desenvolvimento Guiado por Testes (do inglês, \emph{Test-Driven Development})\\ 
          
          XP          & Programação Extrema (do inglês, \emph{Extreme Programming})\\
 		 
-		 BDUF		 & Projeto de Classe Criado de Uma Só Vez \textit{Big Design Up-Front}\\
+		 BDUF		 & Projeto de Classe Criado de Uma Só Vez (\textit{Big Design Up-Front})\\
 		 
 		 PRU		 & Princípio da Responsabilidade Única (\emph{Single Responsibility
 		 Principle})\\
@@ -303,7 +295,7 @@ Systems, Class Design, Internal Code Quality.
 		 PID		 & Princípio da Inversão de Dependências (\emph{Single Responsibility
 		 Principle})\\ 
 		 
-		 PAF		 & Princípio do Aberto-Fechado (\emph{Open-CLosed Principle})\\
+		 PAF		 & Princípio do Aberto-Fechado (\emph{Open-Closed Principle})\\
 		 
 		 PSL	 	 & Princípio da Substituição de Liskov (\emph{Liskov Substitution
 		 Principle})\\

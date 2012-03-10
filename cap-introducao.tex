@@ -2,66 +2,53 @@
 \chapter{Introdução}
 \label{cap:introducao}
 
-Desenvolvimento Guiado por Testes, em uma tradução do termo
+Desenvolvimento Guiado por Testes, tradução do termo
 em inglês \textit{Test-Driven Development (TDD)},
 é uma das práticas sugeridas pela Programação
-Extrema (XP) \cite{XPExplained}. A prática é baseada em um pequeno ciclo de
-desenvolvimento, na qual o desenvolvedor deve sempre escrever um teste antes
+Extrema (XP) \cite{XPExplained}. A prática é baseada em um pequeno ciclo, 
+no qual o desenvolvedor escreve um teste antes
 de implementar a funcionalidade esperada e, depois, com o código
-passando no recém-criado teste, o desenvolvedor refatora para 
+passando no recém-criado teste, refatora para 
 remover possíveis duplicação de dados e de código \cite{TDDByExample}.
 
-A prática de TDD, portanto, faz com que o desenvolvedor só escreva código
-que seja coberto por um teste. Por esse motivo, é natural relacionar a prática
-de TDD com a área de teste de software. Mas, além desse apelo sobre
-a qualidade externa do código, um discurso comum entre os praticantes de TDD
-é os efeitos da prática também sobre a qualidade interna do código.
-Muitos autores de livros conhecidos pela indústria e academia, como
-Robert Martin, Steve Freeman e Dave Stels, afirmam que a prática de TDD
-promove uma melhoria significativa no projeto de classes, auxiliando
-o programador a criar classes mais coesas e menos acopladas 
-\cite{TDDByExample} \cite{GOOS} \cite{astels-tdd}.
-
-A possibilidade de auxiliar o desenvolvedor durante o processo de criação
-do projeto de classes é bem visto pelos desenvolvedores, em especial
-os praticantes de Programação Extrema. Afinal, é senso comum que
-criar classes que possuam baixo acoplamento e alta coesão demanda
-um esforço grande por parte dos desenvolvedores e que, ao longo do tempo,
-a qualidade do projeto de classes tende a cair. A prática de TDD então
-auxiliaria o desenvolvedor a tomar as melhores decisões de projeto
-de classes.
-
-Dado todas as possíveis vantagens existentes por meio da prática de TDD,
-a adoção da mesma pela indústria tem crescido cada vez mais. 
+A adoção de TDD da mesma pela indústria tem crescido cada vez mais. 
 Em um questionário de 2010 para descobrir quais práticas eram feitas por times
 ágeis \cite{wambler-survey-agile}, Scott Ambler mostrou que 53\% dos times ágeis
 adotaram TDD como uma maneira para validar o trabalho feito.
-Outro questionário, de 2008, também realizado por Ambler
-\cite{wambler-survey-tdd}, focado em TDD, mostra que 57\% dos desenvolvedores 
-utilizam TDD como técnica para capturar informações de projeto de classes.
-Números similares podem ser observados nos questionários anuais da Version One onde,
-em sua versão de 2012 \cite{versionone-2012}, mostrou que 40\% dos times ágeis tem feito uso da prática.
+Números similares podem ser observados nos questionários anuais da Version One, que,
+em sua versão de 2012 \cite{versionone-2012} mostrou que 40\% dos times ágeis têm 
+feito uso da prática.
+
+Com a prática de TDD, um desenvolvedor só escreve código
+que seja coberto por um teste. Por esse motivo, é comum relacionar a prática
+de TDD com a área de teste de software. Mas, além do ponto sobre
+a qualidade externa do código, um discurso comum entre os praticantes de TDD
+na indústria é os efeitos da prática também sobre a qualidade interna do código.
+Muitos autores de livros conhecidos pela indústria e academia, como
+Kent Beck \cite{TDDByExample}, Robert Martin \cite{agile-ppp}, 
+Steve Freeman \cite{GOOS} e Dave Astels \cite{astels-tdd}, afirmam que a prática de TDD
+promove uma melhoria significativa no projeto de classes, auxiliando
+o programador a criar classes mais coesas e menos acopladas.
 
 Entretanto, a maneira na qual a prática de TDD guia o desenvolvedor
 durante o processo de criação do projeto de classes não é clara. Observamos
-isso de maneira empírica, em nosso estudo qualitativo com praticantes de TDD, feito dentro de um
-evento de desenvolvimento ágil brasileiro, na qual entrevistamos dez
+isso em nosso estudo qualitativo com praticantes de TDD, feito dentro de um
+evento de desenvolvimento ágil brasileiro, no qual entrevistamos dez
 participantes da conferência sobre os efeitos de TDD e, para nossa surpresa,
-nenhum deles soube afirmar, com clareza, como a prática os guia em direção
+nenhum soube afirmar, com clareza, como a prática os guia em direção
 a um bom projeto de classes \cite{aniche-wbma}.
 Siniaalto e Abrahamsson \cite{alarming-results} também
 compartilham dessa opinião e, além disso, notaram que os efeitos de TDD podem 
 não ser tão automáticos ou evidentes como o esperado.
-Os próprios trabalhos relacionados, melhor discutidos na Seção \ref{cap:trabalhos-relacionados},
-apenas avaliam se a prática de TDD faz alguma diferença na qualidade dos códigos produzidos
-com a prática. Poucos deles possuem um estudo qualitativo, detalhando como a prática
+Os próprios trabalhos relacionados, discutidos na Seção \ref{cap:trabalhos-relacionados},
+apenas avaliam se a prática de TDD faz diferença na qualidade dos códigos produzidos.
+Poucos deles possuem um estudo qualitativo, detalhando como a prática
 faz tal diferença.
 
-Por esses motivos, entender os efeitos da prática de TDD é extremamente importante.
 Com essa informação em mãos, os desenvolvedores saberiam, de forma mais clara,
 como utilizar a prática de TDD para obter uma maior qualidade no processo de criação
-do projeto de classes. Entretanto, entender estas razões não é tarefa fácil. 
-Conduzir uma pesquisa no mundo real, e não em laboratório, 
+do projeto de classes. Entretanto, para entender essas razões é necessário
+conduzir uma pesquisa no mundo real, o que  
 implica um equilíbrio entre o nível de controle
 e o grau de realismo. Uma situação realista é, geralmente, complexa e 
 não determinística, dificultando o entendimento sobre o que acontece. Por outro
@@ -74,8 +61,8 @@ diversos fatores humanos e é totalmente sensível ao contexto em que ele está
 inserido, 
 este estudo fez uso de uma combinação entre um experimento controlado inicial, 
 no qual participantes foram convidados a resolver exercícios utilizando TDD e, 
-a partir dos dados colhidos, um outro estudo qualitativo entrou em 
-detalhes objetivando entender como a prática influenciou as decisões de projeto 
+a partir dos dados colhidos, um outro estudo qualitativo foi 
+feito objetivando entender como a prática influenciou as decisões de projeto 
 dos participantes.
 
 %% ------------------------------------------------------------------------- %%
@@ -83,22 +70,17 @@ dos participantes.
 
 Esta pesquisa possui diversas motivações. A primeira delas é a crescente
 popularidade da prática de TDD, tanto por parte da indústria, quanto 
-por parte da academia. O número de desenvolvedores -- experientes e inexperientes --
-que aplicam TDD cresce cada vez mais, e isso pode ser empiricamente
-observado através do número de participantes em palestras de TDD nos
-eventos de desenvolvimento de software brasileiros, vagas de emprego
-que pedem que o desenvolvedor conheça a prática, etc.
-
-Conforme discutido anteriormente, os efeitos da prática de TDD são
+por parte da academia. Além disso,
+conforme discutido anteriormente, os efeitos da prática de TDD são
 comumente mencionados por autores de livros, mas pouco explorados. 
 Entender como a prática de TDD pode influenciar no processo
 de criação do projeto de classes pode trazer grandes benefícios
 aos desenvolvedores de software de maneira geral.
 Ao saber de maneira mais precisa
-como a prática influencia, poderiam maximizar o uso da prática e obter
+como a prática influencia, poderiam melhorar o uso da prática e obter
 informações sobre seu projeto de classes mais frequentemente.
 
-Além disso, essas informações podem ainda pode servir de apoio à decisão da 
+Além disso, essas informações podem ainda podem servir de apoio à decisão da 
 adoção da prática de TDD nos times de desenvolvimento.
 
 
@@ -106,7 +88,7 @@ adoção da prática de TDD nos times de desenvolvimento.
 \section{Caracterização da Pesquisa}
 
 Este trabalho
-visa compreender a influencia de TDD no projeto de classes.
+visa a compreender a influencia de TDD no projeto de classes.
 Para isso, avaliamos a relação entre a prática de 
 TDD
 e as decisões de projeto de classes tomadas pelos desenvolvedores no processo de 
@@ -138,17 +120,16 @@ abaixo:
 %% ------------------------------------------------------------------------- %%
 \section{Contribuições}
 
-As contribuições deste trabalho para com a área de engenharia de software
+As contribuições deste trabalho para a área de engenharia de software
 são:
 
 \begin{enumerate}
-	
-	\item Planejamento de um estudo qualitativo sobre os efeitos da prática
-	de TDD no projeto de classes, bem como lições aprendidas sobre a execução do mesmo;
-	
 	\item Padrões de \textit{feedback} da prática de TDD que guiam os desenvolvedores
 	ao longo do processo de criação do projeto de classes;
-	
+
+	\item Protocolo de um estudo qualitativo sobre os efeitos da prática
+	de TDD no projeto de classes, bem como lições aprendidas sobre a execução do mesmo;
+		
 \end{enumerate}
 
 %% ------------------------------------------------------------------------- %%
@@ -158,16 +139,17 @@ Este trabalho está dividido da seguinte maneira:
 
 \begin{itemize}
 	\item O Capítulo \ref{cap:tdd} discute sobre a prática de TDD, com ênfase no
-	ponto de vista do projeto de classes;
-  
-	\item O Capítulo \ref{cap:trabalhos-relacionados} mostra trabalhos já
+	ponto de vista do projeto de classes, e mostra trabalhos já
 	realizados pela academia sobre os efeitos de TDD;
 
 	\item O Capítulo \ref{cap:qualitativo-planejamento} discute o planejamento e execução do estudo,
 	bem como o processo de captura de dados e análise;
 
-	\item O Capítulo \ref{cap:discussao} apresenta os resultados encontrados e
-	os discute;
+	\item O Capítulo \ref{cap:discussao} apresenta os resultados encontrados no estudo qualitativo 
+	e os discute;
+	
+	\item O Capítulo \ref{cap:analise-quantitativa} apresenta os resultados encontrados no 
+	estudo quantitativo e os discute;	
 	
 	\item O Capítulo \ref{cap:ameacas} discute as possíveis ameaças aos resultados
 	encontrados na pesquisa;

@@ -3,33 +3,33 @@
 \label{cap:tdd}
 
 Métodos ágeis de desenvolvimento de software focam em constante
-\textit{feedback}, seja ele da equipe em relação ao cliente, seja da equipe em relação à
-qualidade (interna e externa) do código produzido \cite{AgileManifesto}. Por
-esse motivo, muitas das práticas sugeridas por métodos ágeis visam aumentar a 
+\textit{feedback}, seja ele da equipe em relação ao cliente, seja da
+qualidade (interna e externa) do código produzido à equipe \cite{AgileManifesto}.
+Com isso, muitas das práticas sugeridas por métodos ágeis visam aumentar a 
 quantidade e a qualidade desse \textit{feedback}; a ideia da programação pareada, por
 exemplo, é dar \textit{feedback} sobre o código durante sua escrita.
 
-Desenvolvimento Guiado por Testes (TDD), popularizada por Kent Beck por meio de seu livro
+Desenvolvimento Guiado por Testes (TDD), prática popularizada por Kent Beck por meio de seu livro
 \textit{TDD: By Example} em 2001 \cite{TDDByExample}, é mais uma das práticas
 ágeis na qual o foco é dar \textit{feedback}. TDD tem grande importância durante o ciclo
 de desenvolvimento uma vez que, conforme sugerido pelas práticas ágeis, o projeto de classes de um
 software deve emergir à medida que o software cresce. E, para responder
-rapidamente a essas alterações, é necessário um constante \textit{feedback} sobre a
+rapidamente a essa evolução, é necessário um constante \textit{feedback} sobre a
 qualidade interna e externa do código.
 
 TDD é uma prática de desenvolvimento de software que se baseia na repetição de
 um pequeno ciclo de atividades. Primeiramente, o desenvolvedor escreve um
-teste que falha. Em seguida, deve fazê-lo passar, implementando a
-funcionalidade desejada. Por fim, refatora o código para remover toda e qualquer
+teste que falha. Em seguida, o faz passar, implementando a
+funcionalidade desejada. Por fim, refatora o código para remover qualquer
 duplicação de dados ou de código gerada pelo processo.
 Além disso, simplicidade deve ser também algo intrínseco ao processo; o praticante
-deve buscar sempre escrever o teste mais simples que falhe e escrever a implementação mais simples
+busca escrever o teste mais simples que falhe e escrever a implementação mais simples
 que faça o teste passar.
 Esse ciclo
 é também conhecido como 
 "Vermelho-Verde-Refatora" (ou \textit{"Red-Green-Refactor"}), uma vez que lembra as cores que um 
-desenvolvedor normalmente vê quando faz TDD: o vermelho geralmente significa que
-o teste está falhando, e o verde quando o teste foi executado com sucesso.
+desenvolvedor normalmente vê quando faz TDD: o vermelho significa que
+o teste está falhando, e o verde que o teste foi executado com sucesso.
 
 Este capítulo aborda a prática de TDD, bem como cita
 seus possíveis efeitos no processo de desenvolvimento de software, conforme relatado pela
@@ -54,8 +54,7 @@ Embora a criação de testes seja algo intrínseco ao processo, é dito que TDD 
 auxilia o desenvolvedor a criar classes mais flexíveis, mais coesas e
 menos acopladas. Os testes são a ferramenta que o programador utiliza para
 validar o projeto de classes criado. Por esse motivo, muitos se referem a TDD como
-\textit{Projeto de Classes Guiado por Testes}, ou seja, projeto de classes guiado pelos testes
-\cite{tdd-taxonomy}.
+\textit{Projeto de Classes Guiado por Testes} \cite{tdd-taxonomy}.
 
 Autores como Kent Beck \cite{aim-fire}, Dave Astels \cite{astels-tdd} e
 Robert Martin \cite{bob-martin} afirmam que TDD é, na verdade, uma prática de
@@ -80,16 +79,13 @@ prática de programação que instrui desenvolvedores a escrever código novo
 apenas se um teste automatizado estiver falhando, e a eliminar duplicação. O
 objetivo de TDD é 'código claro que funcione'"}.
 
-Janzen levantou esse problema nas definições e culpa até o próprio nome da prática, uma vez
+Janzen levantou esse problema nas definições e comenta que um possível 
+motivo é o próprio nome da prática, uma vez
 que ela possui a palavra ``testes'', mas não contém a palavra \textit{``projeto''} 
 \cite{tdd-really-improve}.
 Segundo ele, uma definição mais clara é a de que TDD é a arte de produzir testes
-automatizados para código de produção, usando esse processo para guiar o projeto e a programação.
-Para cada pequeno pedaço de funcionalidade, o desenvolvedor deve primeiro
-escrever um teste que especifique e valide o que o código irá fazer. O
-programador então produz somente o código necessário para fazer esse teste
-passar. Em seguida, ele refatora (simplifica e clareia) tanto o código de produção
-quanto o código de testes \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
+automatizados para código de produção, usando esse processo para guiar o 
+projeto e a programação \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
 %% ------------------------------------------------------------------------- %%
 \section{Possíveis Efeitos no Projeto de Classes}
@@ -111,12 +107,12 @@ soluções mais complexas do que elas precisam ser, tornando o código, a longo
 prazo, o mais simples possível.
 
 No entanto, apesar de muito ser dito sobre os efeitos de projeto de classes, e alguns deles
-até serem demonstrados em estudos (conforme citado no Capítulo \ref{cap:trabalhos-relacionados}), 
+até serem demonstrados em estudos (conforme citado na Seção \ref{cap:trabalhos-relacionados}), 
 pouco se sabe como a prática realmente influencia os desenvolvedores no momento da criação do
 projeto das classes.
 
-Para que possamos discutir sobre projeto de classes de maneira uniforme,
-discutimos no Apêndice \ref{ape:design},
+Para que possamos definir o que esperamos de um projeto de classes,
+discutimos no Apêndice \ref{ape:design}
 bons príncipios de projeto de classes orientados a objetos, que serão utilizados
 na avaliação dos códigos produzidos pelos participantes deste estudo.
 
@@ -148,7 +144,7 @@ escrevendo testes apenas após a implementação, mostrou uma redução
 no número de defeitos no grupo que utilizava TDD. 
 Além disso, os defeitos que foram encontrados eram 
 corrigidos mais rapidamente pelo grupo que utilizou TDD. O estudo feito por 
-Damm et al \cite{damn-lundberg-e-olson} também mostra uma redução
+Damm \textit{et al.} \cite{damn-lundberg-e-olson} também mostra uma redução
 em torno de 40\% a 50\% na quantidade de defeitos.
 
 O estudo feito por George e Williams \cite{george-e-williams} mostrou que,
@@ -158,7 +154,7 @@ caixa-preta do que códigos produzidos por grupos que não utilizavam TDD. Esse
 código também apresentou uma cobertura de testes entre 92\% a 98\%. Uma análise
 qualitativa mostrou que 87.5\% dos programadores acreditam que TDD facilitou o 
 entendimento dos requisitos e 95.8\% acreditam que TDD reduziu o tempo gasto com
-debug. 78\% também acreditam que TDD aumentou a produtividade da equipe. 
+depuração. 78\% também acreditam que TDD aumentou a produtividade da equipe. 
 Entretanto, apenas 50\% dos participantes disseram que TDD ajuda a diminuir o tempo de 
 desenvolvimento. Sobre qualidade, 92\% pensam que TDD ajuda a manter um
 código de maior qualidade e 79\% acreditam que ele promove um projeto de classes mais simples.
@@ -168,7 +164,7 @@ projetos de código aberto. Segundo eles, a produtividade caiu quando TDD foi
 adotado completamente, mas em compensação o número de problemas diminuiu 
 consideravelmente.
 
-Nagappan \cite{nagappan-ms} mostrou um estudo de caso na Microsoft e na IBM e os
+Nagappan \cite{nagappan-ms} conduziu estudos de caso na Microsoft e na IBM e os
 resultados indicaram que o número de defeitos de quatro produtos diminuiu de 
 40\% a 90\% em relação à projetos similares que não usaram TDD. Entretanto, o 
 estudo mostrou também que TDD aumentou o tempo inicial de desenvolvimento entre 15\%
@@ -176,7 +172,7 @@ a 35\%. Langr \cite{langr} apontou que TDD aumenta a qualidade código, provê u
 facilidade maior de manutenção e ajuda a produzir 33\% mais testes comparados  a
 abordagens tradicionais.
 
-Um estudo feito por Erdogmus \textit{et al} \cite{erdogmus-morisio} com 24 estudantes de
+Um estudo feito por Erdogmus \textit{et al.} \cite{erdogmus-morisio} com 24 estudantes de
 graduação mostrou que TDD aumenta a produtividade. Entretanto nenhuma diferença 
 de qualidade no código foi encontrada.
 
@@ -194,13 +190,13 @@ que as classes não testadas e os métodos eram, na média, 43\% menos complexos
 do que os não-testados.
 
 Dogsa e Batic \cite{dogsa-batic} também encontraram uma melhora no
-projeto de classes feita com TDD. Mas, segundo os autores, esse projeto de classes é 
+projeto de classes feita com TDD. Mas, segundo os autores, essa melhora é 
 consequência da simplicidade que a prática de TDD agrega ao processo. Eles
 também  afirmaram que a bateria de testes de regressão gerada durante a prática 
 possibilita ao desenvolvedor a constante refatoração do código.
 
 Li \cite{angela-li} propôs um estudo qualitativo para
-entender a eficácia de TDD. Por meio de um estudo de caso, Angela coletou as 
+entender a eficácia de TDD. Por meio de um estudo de caso, ela coletou as 
 percepções de benefícios que praticantes de TDD têm sobre a prática. Para isso ela
 fez uso de cinco entrevistas semi-estruturadas realizadas em empresas de software de 
 Auckland, Nova Zelândia. Os resultados das entrevistas foram analisados e alinhados
@@ -226,7 +222,7 @@ ajudar no nível de gerenciamento de dependências entre classes. Segundo ele, o
 programador deve utilizar TDD, mas ficar atento a possíveis problemas de projeto de classes.
 
 O estudo de Muller e Hagner \cite{muller-e-hagner} apontou que TDD não resulta
-em melhor qualidade ou produtividade. Entretanto, os estudantes perceberam um 
+em melhor qualidade ou produtividade. Entretanto, os estudantes avaliados perceberam um 
 melhor reúso dos códigos produzidos com TDD. Steinberg \cite{steinberg} mostrou
 que código produzido com TDD é mais coeso e menos acoplado. Os estudantes também
 reportaram que os defeitos eram mais fáceis de serem corrigidos. A pesquisa feita
@@ -235,10 +231,10 @@ TDD tem 45\% menos defeitos e faz o programador se sentir mais a vontade
 com ele.
 
 Aprender TDD também não é tarefa fácil. Mugridge \cite{mugridge} identificou
-dois desafios principais em ensinar TDD nos últimos dois anos: fazer os estudantes
+dois desafios principais em ensinar TDD: fazer os estudantes
 pensarem novamente sobre o projeto de classes, e fazê-los se envolver com essa nova
-abordagem. Além disso, é difícil ensinar testes de unidade, projeto de classes e refatoração
-de maneira explícita para os estudantes. Contudo, segundo Proulx \cite{proulx}, a partir do momento em que
+abordagem. 
+Contudo, segundo Proulx \cite{proulx}, a partir do momento em que
 o estudante aprende TDD, ele tende a ter uma melhor performance em disciplinas
 de orientação a objetos. Segundo ele, essa melhora é percebida inclusive pelos
 empregadores desses alunos. 
@@ -259,17 +255,32 @@ quais trabalhos apontaram efeitos no projeto de classes.
 		
 		\multirow{2}{*}{Simplicidade}                          & Quantitativo & \cite{janzen-arch-improvement}, \cite{janzen-saiedian} \\
 		                                           			   & Qualitativo  & \cite{angela-li}, \cite{george-e-williams}\\
+		
+		\hline
+		
 		Facilidade de manutenção                               & Quantitativo & \cite{langr}\\
+		
+		\hline
+		
 		\multirow{2}{*}{Melhor utilização de conceitos de orientação a objetos} & Quantitativo & \cite{janzen-saiedian}\\
-		 													   & Qualitativo  & \cite{angela-li}\\
+		 													   & Qualitativo  & \cite{angela-li}, \cite{proulx}\\
+		
+		\hline
+		
 		Separação de responsabilidades                         & Quantitativo & \cite{janzen-saiedian}, \cite{steinberg}\\
+		
+		\hline
+		
 		Menor acoplamento                                      & Quantitativo & \cite{janzen-saiedian}, \cite{steinberg}\\
+		
+		\hline
+		
 		Maior reúso de classes                                 & Quantitativo & \cite{muller-e-hagner} \\
 
 		\hline
 
 	\end{tabular}
-	\caption{Relação entre Conceitos de Orientação a Objetos e Estudos Já Executados com a Prática de TDD}
+	\caption{Relação entre efeitos de TDD e estudos na literatura}
 	\label{tab:comparativo}
 \end{table}
 
@@ -282,23 +293,22 @@ Siniaalto \cite{tdd-body-of-evidence}.
 %% ------------------------------------------------------------------------- %%
 \subsection{Discussão}
 
-Como visto anteriormente, poucos trabalhos avaliam os efeitos de TDD sobre o
+Como apresentado, poucos trabalhos avaliam os efeitos de TDD sobre o
 projeto de classes. Quando o fazem, apenas discutem quais os efeitos da prática
 e não exatamente \textbf{como} TDD os influencia. Josefsson
 \cite{josefsson}, em sua discussão sobre a necessidade de uma fase de projeto
 arquitetural e os efeitos de TDD nesse quesito, chega à mesma conclusão. Segundo
 ele, os estudos sobre TDD encontrados na literatura atual são muito limitados e
 não são generalizáveis. Por esse motivo, os ditos efeitos que TDD têm 
-sobre o projeto de classes não podem ser provados. Apesar desse artigo ser datado de 2004, e
-muitos trabalhos terem sido realizados após essa data, o autor deste trabalho ainda acredita 
-que os efeitos de TDD ainda não foram provados pela literatura atual.
+sobre o projeto de classes não podem ser provados. Com base no levantamento
+bibliográfico realizado, acreditamos que esta limitação se mantém.
 
 Grande parte desses estudos também não levam em conta a experiência do
 programador que está praticando TDD. Geralmente esse ponto é discutido apenas 
 na seção de ameaças à validade do estudo. Janzen, em seu doutorado, percebeu que
 desenvolvedores mais maduros obtêm mais benefícios de TDD, escrevendo classes
 mais simples. Além disso, desenvolvedores maduros que experimentam a prática
-tendem a optar por TDD mais facilmente do que desenvolvedores menos experientes
+tendem a optar por TDD mais do que desenvolvedores menos experientes
 \cite{janzen-phd}.
 
 Os trabalhos que analisam TDD do ponto de vista de projeto de classes, no entanto, não
@@ -308,11 +318,11 @@ doutorado de Janzen foi inconclusiva no que diz respeito à influência de TDD n
 acoplamento e na coesão \cite{janzen-phd}. 
 
 Além disso, outro ponto fortemente relacionado com projeto de classes é a simplicidade e
-facilidade de evolução. Um projeto de classes rígido, que não possibilita mudanças de maneira
-fácil, é difícil de ser medido de maneira quantitativa. Complexidade
+facilidade de evolução. Um projeto de classes rígido, não favorável a mudanças,  é difícil de ser 
+avaliado de maneira quantitativa. Complexidade
 desnecessária também é totalmente subjetiva. 
 
-Portanto, a crítica dessa pesquisa
+Portanto, nossa crítica
 com relação aos trabalhos relacionados é justamente na análise feita sobre os
 efeitos da prática no TDD. É necessário mais do que uma comparação analítica; o
 ponto de vista dos desenvolvedores, que atuam naquele código-fonte durante todo
@@ -331,6 +341,9 @@ realizado por Angela Li, em 2009, que apresenta um estudo qualitativo sobre os
 efeitos de TDD no processo de desenvolvimento de software \cite{angela-li}. 
 A diferença é que esta pesquisa se concentra em entender os
 efeitos de TDD no projeto de classes.
+Além disso, diferentemente de outros trabalhos qualitativos, nossas entrevistas foram
+abertas e totalmente focadas na criação do projeto de classes. Muitos argumentos interessantes
+surgiram ao fazer o programador pensar melhor a respeito sobre o assunto.
 
 O caminho em destaque da Figura \ref{fig:posicao-pesquisa} mostra a nossa posição
 em relação ao que já é encontrado na literatura.

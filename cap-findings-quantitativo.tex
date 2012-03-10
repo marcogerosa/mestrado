@@ -1,11 +1,15 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Análise Quantitativa}
+\chapter{Relação entre TDD e Projeto de Classes: Análise Quantitativa}
+\label{cap:analise-quantitativa}
+
+Na tentativa de triangular as informações levantadas no capítulo anterior,
+calculamos métricas em cima dos códigos gerados, para verificar se houve
+alguma diferença na qualidade dos códigos gerados com e sem a prática de TDD.
 
 Conforme discutido no Capítulo \ref{cap:qualitativo-planejamento}, o teste
 estatístico escolhido foi o Wilcoxon. 
 Devido ao problema que tivemos com os dados da academia, separamos a análise
 dos dados, tanto das métricas de código, quanto dos especialistas, entre academia e indústria.
-
 Nas sub-seções abaixo, discutimos os números encontrados.
 
 %% ------------------------------------------------------------------------- %%
@@ -13,10 +17,10 @@ Nas sub-seções abaixo, discutimos os números encontrados.
 
 Na Tabela \ref{metricas-industria}, mostramos os \textit{p-values} encontrados para
 a diferença entre códigos produzidos com e sem TDD na indústria. Pelos números, 
-observamos que nem em nenhum exercício houveram diferenças nas métricas
+observamos que em nenhum exercício houve diferença significativa nas métricas
 de complexidade ciclomática e acoplamento eferente. Já a métrica de falta
 de coesão dos métodos apresentou diferenças em dois exercícios (1 e 4). 
-A diferença também apareceu na quantidade de linhas por método (exercício 4),
+A diferença também apareceu na quantidade de linhas por método (exercício 4)
 e quantidade de métodos (exercício 1). Ao olhar os dados de todos os exercícios
 juntos, nenhuma métrica apontou uma diferença significativa.
 Isso nos mostra que, ao menos quantitativamente, a prática de TDD não fez
@@ -29,10 +33,10 @@ diferença nas métricas de código.
 		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
 		& Quantidade de métodos por classe \\
 		\hline
-		Exercício 1 &	0.8967	&	0.6741 &	2.04E-07* &	0.4962 &	2.99E-06* \\
-		Exercício 2	& 0.7868	&	0.764 &	0.06132 &	0.9925 &	0.7501 \\
+		Exercício 1 &	0.8967	&	0.6741 &	\cellcolor[gray]{0.8}2.04E-07* &	0.4962 &	\cellcolor[gray]{0.8}2.99E-06* \\
+		Exercício 2	& 0.7868	&	0.7640 &	0.06132 &	0.9925 &	0.7501 \\
 		Exercício 3	& 0.5463	&	0.9872 &	0.5471 &	0.7216 &	0.3972\\
-		Exercício 4	& 0.2198	&	0.1361 &	0.04891* &	0.003286* &	0.9358\\
+		Exercício 4	& 0.2198	&	0.1361 &	\cellcolor[gray]{0.8}0.04891* &	\cellcolor[gray]{0.8}0.0032* &	0.9358\\
 		\hline
 		Todos &	0.8123	&	0.5604 &	0.3278 &	0.06814 &	0.5849\\
 		\hline
@@ -42,7 +46,7 @@ diferença nas métricas de código.
 \end{table}
 
 Na Tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
-entre códigos produzidos com e sem TDD na academia. As métricas de 
+entre os códigos produzidos na academia. As métricas de 
 falta de coesão dos métodos e quantidade de métodos apresentaram
 uma diferença significativa nos exercícios 1 e 4, respectivamente.
 Ao olhar para todos os dados juntos, uma diferença significativa
@@ -57,12 +61,12 @@ o código produzido pelos participantes da academia.
 		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
 		& Quantidade de métodos por classe \\
 		\hline
-			Exercício 1	& 0.2155	&	0.07085	& 0.00714* &	0.1721	& 0.008334*\\
+			Exercício 1	& 0.2155	&	0.0708	& \cellcolor[gray]{0.8}0.0071* &	0.1721	& \cellcolor[gray]{0.8}0.0083*\\
 			Exercício 2	& 0.7244	&	0.6744	& 1 &	0.3175 &	0.5591\\
 			Exercício 3	& 0.7008	&	0.1014 &	0.5007	& 0.4292	& 0.8687\\
-			Exercício 4	& 0.343	&	0.7131 &	0.7735	& 0.7833	& 0.5522\\
+			Exercício 4	& 0.3430	&	0.7131 &	0.7735	& 0.7833	& 0.5522\\
 		\hline
-			Todos &	0.254	&	0.007676* & 0.351 & 0.2668 & 0.1706\\
+			Todos &	0.2540	&	\cellcolor[gray]{0.8}0.0076* & 0.3510 & 0.2668 & 0.1706\\
 		\hline
 	\end{tabular}
 	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na academia}
@@ -85,7 +89,7 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 		\hline
 		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
 		\hline
-		Especialista 1 &	0.4263 &	0.5235 &	0.332\\
+		Especialista 1 &	0.4263 &	0.5235 &	0.3320\\
 		Especialista 2 &	0.7447 &	0.4591 &	0.9044\\
 		\hline
 	\end{tabular}
@@ -100,7 +104,7 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
 		\hline
 		Especialista 1	& 0.8795 &	NA	& 0.4222\\
-		Especialista 2	& 0.88	& 0.5519 &	0.88\\
+		Especialista 2	& 0.8800	& 0.5519 &	0.8800\\
 		\hline
 	\end{tabular}
 	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na academia}
@@ -121,9 +125,8 @@ alcançar o objetivo.
 Nós também não conseguimos identificar, por inspeção manual, quais códigos
 eram produzidos com TDD e quais não eram pois, independente
 da prática utilizada, ambos eram muito semelhantes.
-De todos os códigos da indústria, apenas um foi completamente eliminado:
-um dos participantes não conseguiu nem começar a implementação. Suas classes
-eram completamente vazias. 
+De todos os participantes da indústria, apenas um foi completamente eliminado:
+suas classes eram completamente vazias. 
 
 
 %% ------------------------------------------------------------------------- %%
@@ -133,7 +136,7 @@ No capítulo anterior, discutimos sobre a maneira na qual a prática de TDD
 influencia no projeto de classes. Todos os padrões levantados ajudam
 o desenvolvedor a perceber possíveis problemas no projeto de classes atual.
 Entretanto, a relação das métricas calculadas em relação aos códigos
-produzidos através da prática de TDD e aos códigos produzidos sem a prática,
+produzidos usando TDD e aos códigos produzidos sem a prática,
 não apresentou diferença.
 
 Alguns motivos podem servir de explicação para este fenômeno. Conforme discutido na análise

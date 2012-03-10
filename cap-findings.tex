@@ -1,150 +1,22 @@
 %% ------------------------------------------------------------------------- %%
-\chapter{Padrões de \textit{Feedback} da Prática de TDD}
+\chapter{Relação entre TDD e Projeto de Classes: Análise Qualitativa}
 \label{cap:discussao}
 
 \section{Introdução}
 
 Neste capítulo apresentamos e discutimos sobre a análise e interpretação dos dados colhidos
-na execução deste estudo. Na Seção \ref{sec:desc-participantes}
-descrevemos o perfil dos participantes, tanto da indústria, quanto na academia. Já nas seções
-e sub-seções seguintes, apresentamos os resultados encontrados. Detalhe para a Seção 
-\ref{padroes-tdd}, onde levantamos os padrões de \textit{feedback} que a prática de TDD
+na execução deste estudo. Em particular, na Seção 
+\ref{padroes-tdd}, levantamos os padrões de \textit{feedback} que a prática de TDD
 pode dar ao desenvolvedor.
 
-\section{Descrição dos participantes}
-\label{sec:desc-participantes}
-
-Conforme mencionado, o estudo foi executado em dois ambientes diferentes: em empresas de software
-do mercado brasileiro e na academia. Como ambos estudos foram executados de maneira independente,
-descrevemos cada grupo de maneira separada nas sub-seções \ref{findings-desc-industria} e \ref{findings-desc-academia}.
-
-\subsection{Participantes da Indústria}
-\label{findings-desc-industria}
-
-Ao todo tivemos 25 participantes, de 6 diferentes empresas.
-Os participantes da indústria, em sua maioria, são pessoas com pouca experiência em TDD.
-40\% deles disseram utilizar a prática há no máximo um ano. 52\% deles praticam TDD
-entre 1 e 3 anos. Apenas 4\% pratica entre três e quatro anos, e nenhum participante
-possui mais experiência do que isso. Na Figura \ref{fig:exp-tdd-industria}, mostramos
-a distribuição da experiência da prática de TDD entre os participantes.
-
-Os números são um pouco diferentes quando se trata da experiência em desenvolvimento
-de software. Por volta de 24\% dos participantes desenvolve software entre 4 e 5 anos.
-28\% deles faz isso entre 6 e 10 anos. Entretanto, 20\% possui até 2 anos de experiência.
-Na Figura \ref{fig:exp-sw-industria}, mostramos a distribuição.
-
-Entrando em aspectos mais técnicos, 64\% dos participantes afirmam conhecer Java. Entretanto,
-36\% dizem não trabalharem com Java no seu dia-a-dia. Todos eles afirmam conhecer JUnit,
-e só 12\% diz nunca ter ouvido falar sobre o conceito de objetos dublês\footnote{Objetos dublê ou, do inglês, 
-\textit{mock objects}, são objetos criados durante um teste de unidade, e que imitam o comportamento de um
-outro objeto concreto. Geralmente são muito utilizados quando queremos isolar nosso teste de outras classes
-do sistema. Mais informações sobre objetos dublês podem ser encontrados em \cite{mocks}.}. De fato, 64\% deles
-aplicam objetos dublês durante suas atividades de desenvolvimento. Com relação a conhecimentos
-em orientação a objetos, na pergunta aberta do questionário, grande parte deles 
-afirmaram que possuem uma boa experiência e alguns
-chegam até a afirmam que dominam o assunto. Poucos disseram que possuem conhecimentos
-básicos. Na Tabela \ref{tab:exp-industria},
-apresentamos o conhecimento dos participantes em relação a Java, JUnit e objetos dublês.
-
-Esses dados nos mostram que a amostra selecionada se assemelha ao mundo real, onde
-encontramos desde desenvolvedores mais experientes até novatos. Em relação a experiência com TDD,
-podemos afirmar que metade dos participantes ainda está experimentando a prática, enquanto
-outros já a tem mais consolidada. Isso é positivo, já que foi possível capturar informações
-da prática de TDD por pessoas com diferentes níveis de maturidade.
-
-Em relação ao alto número de pessoas que não utilizam Java, isso se deve ao fato de uma das
-empresas fazer uso de PHP para seu trabalho do dia-a-dia. No entanto, nós conhecemos a equipe
-e verificamos que, apesar de não utilizarem a linguagem constantemente, eles não tiveram
-problema algum durante a execução dos exercícios.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.6]{findings/experiencia-tdd-industria.png}
-  \caption{Experiência dos participantes da indústria com TDD}
-  \label{fig:exp-tdd-industria}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.5]{findings/experiencia-sw-industria.png}
-  \caption{Experiência dos participantes da indústria com desenvolvimento de software em geral}
-  \label{fig:exp-sw-industria}
-\end{figure}
-
-\subsection{Participantes da Academia}
-\label{findings-desc-academia}
-
-Os participantes da academia que participaram do estudo, 21 no total, possuem baixíssima experiência,
-tanto em TDD quanto em desenvolvimento de software em geral. Surpreendentemente, 90\%
-dos participantes afirmaram não conhecer Java, e 61\% disseram não conhecer TDD.
-Em contraste com essa informação, todos eles afirmaram conhecer JUnit, e 76\% afirmaram
-conhecer objetos dublês na teoria. 
-Na Figura \ref{fig:exp-tdd-academia}, mostramos a experiência dos participantes em TDD, e
-na Tabela \ref{tab:exp-academia} apresentamos a experiência deles em Java, JUnit, e objetos
-dublês.
-
-Em relação a experiência de desenvolvimento de software, apenas 23\% afirmaram não
-ter nenhuma experiência, enquanto que por volta de 43\% afirmaram possuir
-entre 2 a 4 anos de experiência. Nenhum participante com experiência superior a isso.
-Na Figura \ref{fig:exp-sw-academia}, mostramos a distribuição por completo.
-
-De acordo com os dados, percebemos que grande parte dos participantes não conhecem a linguagem ou
-mesmo a prática de TDD. A linguagem foi realmente um problema: durante a execução, percebemos
-que muitos deles faziam buscas por elementos simples da linguagem Java, como manipulação de arrays
-e listas, ou mesmo por manipulação de texto.
-
-Isso explica o baixo desempenho dos alunos da academia durante
-o experimento. Nenhum deles conseguiu terminar os dois exercícios propostos. Por esse
-motivo, nenhum aluno foi selecionado para o processo de entrevista. Entretanto,
-os códigos-fonte produzidos serão utilizados no processo de análise quantitativa.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.6]{findings/experiencia-tdd-academia.png}
-  \caption{Experiência dos estudantes da academia com TDD}
-  \label{fig:exp-tdd-academia}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.5]{findings/experiencia-sw-academia.png}
-  \caption{Experiência dos estudantes da academia com desenvolvimento de software em geral}
-  \label{fig:exp-sw-academia}
-\end{figure}
-
-
-\begin{table}
-	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
-		\hline
-		Ferramenta & Participantes que conhecem & Participantes que não conhecem\\
-		\hline
-		Java & 16 & 9\\
-		JUnit & 25 & 0\\
-		Objetos Dublê & 16 (utilizam no dia-a-dia), 6 (na teoria) & 3\\
-		\hline
-	\end{tabular}
-	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da indústria}
-	\label{tab:exp-industria}
-\end{table}
-
-\begin{table}
-	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
-		\hline
-		Ferramenta & Participantes que conhecem & Participantes que não conhecem\\
-		\hline
-		Java & 2 & 19\\
-		JUnit & 21 & 0\\
-		Objetos Dublê & 2 (utilizam no dia-a-dia), 16 (na teoria) & 3\\
-		\hline
-	\end{tabular}
-	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da academia}
-	\label{tab:exp-academia}
-\end{table}
+Um ponto interessante a ser notado é que os participantes, independente de experiência
+em TDD ou em desenvolvimento de software, comentaram pontos similares. Por esse motivo,
+não separamos a discussão pelas categorias levantadas no Capítulo \ref{cap:qualitativo-planejamento}.
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise das Entrevistas}
 
-Diferente do esperado, a maioria absoluta dos participantes afirmaram que 
+Diferente do esperado, a maioria absoluta dos participantes afirmou que 
 a prática de TDD não faria com que seus projetos de classes fosse de alguma forma diferente, caso tivessem
 feito ambos os exercícios com a prática.
 A principal justificativa dada pelos participantes foi que a experiência e o conhecimento prévio
@@ -153,7 +25,7 @@ participantes, por exemplo, afirmou que um desenvolvedor sem conhecimento em alg
 citadas criaria um bom projeto de classes somente por praticar TDD.
 
 Dois bons exemplos foram dados pelos participantes, que ajudam a reforçar esse ponto. Um deles
-comentou que fez uso de um padrão de projetos \cite{gof} que aprendeu apenas alguns dias atrás.
+comentou que fez uso de um padrão de projetos \cite{gof} que aprendeu apenas alguns dias antes.
 Outro participante mencionou que seus estudos sobre os princípios SOLID (discutidos no Apêndice \ref{ape:design})
 o ajudaram durante os exercícios. Segue o trecho mencionado pelo participante:
 
@@ -164,7 +36,7 @@ coisa nova, só dou manutenção no código."}
 \end{framed}
 
 Além do mais, o único participante da indústria que nunca havia
-praticado TDD afirmou que não sentiu diferença nenhuma no processo de criação de classes durante
+praticado TDD afirmou que não sentiu diferença no processo de criação de classes durante
 a prática.
 Curioso é que esse mesmo participante que nunca praticou TDD afirmou que "sabia que TDD era uma prática de projeto de classes",
 diferentemente dos participantes mais experientes que sempre afirmavam que TDD não é só uma prática de projeto de classes,
@@ -178,7 +50,7 @@ Uma frase que exemplifica isso foi dita por um dos participantes:
 
 \begin{framed}
 \textit{"[TDD] acho que tem muita relação com qualidade do código e testes 
-de regrassão. Acho que as duas principais vantagens que eu tenho quando uso TDD é isso: o código
+de regressão. Acho que as duas principais vantagens que eu tenho quando uso TDD é isso: o código
 fica melhor e depois eu tenho a segurança dos testes de regressão para refatorar."}
 \end{framed}
 
@@ -201,8 +73,8 @@ mais confortável de escrever código sem teste."}
 \end{framed}
 
 Segundo eles, TDD pode ajudar no processo de projeto de classes, mas, para isso,
-o desenvolvedor deve possuir certa experiência em desenvolvimento de software
-para que isso aconteça. Grande parte dos participantes afirmaram que o 
+o desenvolvedor deve possuir certa experiência em desenvolvimento de software. 
+Grande parte dos participantes afirmaram que o 
 projeto de classes criado surgiu de experiências e aprendizados passados.
 Segundo eles, a melhor opção é unir a prática de TDD com a experiência:
 
@@ -220,17 +92,17 @@ levantados pelos participantes, bem como discutimos sobre o tópico.
 Onze participantes afirmaram que, durante o processo de criação de projeto de classes, a mudança de ideia é
 constante, afinal pouco se conhece do problema, e de como a classe deve ser construída. Este foi o ponto
 mais comentado pelos participantes. Segundo eles,
-uma vantagem íntriseca do TDD é a suíte de testes gerada. Essa suíte possibilita ao desenvolvedor
-muda de ideia e refatorar todo o projeto de classes com segurança.
+uma vantagem intríseca do TDD é a suíte de testes gerada. Essa suíte possibilita ao desenvolvedor
+mudar de ideia e refatorar todo o projeto de classes com segurança.
 A segurança, segundo eles, é fator importante para mudanças de projeto de classes ou mesmo de implementação:
 
 \begin{framed}
 \textit{"Sim, me dá a chance de aprender pelo caminho e fazer algumas coisas diferentes. (...) O teste te dá segurança."}
 \end{framed}
 
-Um participante inclusive mencionou uma experiência real, onde o TDD fez a diferença. Segundo ele,
+Um participante inclusive mencionou uma experiência real, na qual o TDD fez a diferença. Segundo ele,
 em muitos momentos ele mudava completamente de ideia sobre a implementação, e confiava na bateria
-de testes para garantir que o comportamento esperado:
+de testes para garantir o comportamento esperado:
 
 \begin{framed}
 \textit{"No TCC da pós, eu estava desenvolvendo uma ferramenta que trabalhava com manipulação de código, e fiz
@@ -290,7 +162,7 @@ melhor quando você pensa pequeno. Se você pensa grande, pra mim é óbvio que 
 alguma coisa faltando."}
 \end{framed}
 
-Essa afirmação vai de encontro ao discurso comum das metodologias ágeis.
+Essa afirmação é similar ao discurso comum das metodologias ágeis.
 Equipes que seguem as ideias ágeis optam por não fazer o chamado \textit{big design up-front (BDUF)},
 e deixam que o projeto de classes evolua ao longo do tempo, mantendo o código o mais claro e
 simples possível, e refatorando sempre que há necessidade. Decisões de
@@ -299,7 +171,7 @@ projeto de classes são tomadas com a consciência de que elas serão alteradas 
 
 Um deles comentou inclusive da falta de foco que o programador tem quando não pratica TDD.
 Ao ter um objetivo curto (que, no caso do praticante de TDD, é fazer o teste passar), o
-desenvolve se concentra mais para alcançá-lo:
+desenvolvedor se concentra mais para alcançá-lo:
 
 \begin{framed}
 \textit{"Talvez sejamos pessoas desfocadas naturalmente. Você vê uma coisa e já te dá vontade
@@ -356,8 +228,8 @@ antes de começar. Com TDD, você é obrigado a pensar, o TDD faz você parar e 
 \end{framed}
 
 \begin{framed}
-\textit{"Como eu primeiro penso no que eu vou precisar a partir dos testes, ou seja, eu preciso que tenho
-isso e aquilo, o teste me faz pensar antes de sair desenvolvendo. Com os testes eu paro pra pensar antes.
+\textit{"Como eu primeiro penso no que eu vou precisar a partir dos testes, ou seja, eu preciso
+disso e daquilo, o teste me faz pensar antes de sair desenvolvendo. Com os testes eu paro pra pensar antes.
 Aí acredito que nós consigamos pensar melhor, numa solução mais bacana."}
 \end{framed}
 
@@ -365,9 +237,12 @@ Um dos participantes foi ainda mais preciso na sua declaração. Segundo ele, o 
 TDD, por não pensar no projeto de classes criado, acaba por não fazer bom uso da orientação a objetos.
 E, novamente, isso se deve à velocidade com que desenvolvedores sem TDD escrevem código. Ao contrário,
 TDD força o programador a desacelerar, possibilitando-o a pensar melhor sobre o que está fazendo:
+
+\begin{framed}
 \textit{"Porque sem o TDD, no calor do momento, você vai acoplando, vai herdando, vai agregando, e não pensa
 que no futuro isso possa dar algum problema. Com TDD, você é forçado a ir mais devagar, dá tempo de pensar melhor nas
 coisas."}
+\end{framed}
 
 O teste, no fim, é o primeiro cliente da classe que o programador ainda está por escrever e 
 isso o faz pensar melhor a respeito do comportamento que ele espera da classe. Além disso,
@@ -387,7 +262,7 @@ que as vezes o especificador não pegava. (...)."}
 
 Seguindo a mesma linha de raciocínio, outro participante comentou sobre a possibilidade
 do teste servir como documentação para outros desenvolvedores. Segundo ele, quando um outro desenvolvedor
-que ler o teste, ele entenderá o que aquela classe faz ou qual sua importância para o sistema:
+ler o teste, ele entenderá o que aquela classe faz ou qual sua importância para o sistema:
 
 \begin{framed}
 \textit{"Quando estou escrevendo meu rascunho, eu tenho a liberdade de pensar o máximo possível para quando alguém
@@ -403,7 +278,11 @@ tradicional, o tempo entre a escrita do código de produção e o código
 de testes é muito grande. O TDD, ao solicitar que o desenvolvedor
 escreva o teste antes, também faz com que o desenvolvedor receba o \textit{feedback} que
 os testes podem dar mais cedo:
+
+\begin{framed}
 \textit{"Você ia olhar pro teste, e falar: "Está legal? Não está?", e ia fazer de novo."}
+\end{framed}
+
 Na Figura \ref{fig:tdd-feedback}, ilustramos
 a diferença entre a quantidade de \textit{feedback} durante a prática de TDD em relação
 ao desenvolvimento tradicional.
@@ -417,7 +296,7 @@ ao desenvolvimento tradicional.
 
 A velocidade em que a prática de TDD dá \textit{feedback} ao desenvolvedor possibilita que o mesmo
 tome decisões sobre o código enquanto o custo de mudança ainda é
-baixo. O trabalho de Vanderburg \cite{vanderburg} também confirma este ponto.
+baixo. O trabalho de Vanderburg \cite{vanderburg} também confirma esse ponto.
 Ele diz que TDD dá \textit{feedback} em questão de
 minutos e, em questão de tempo, só é inferior à programação pareada. O gráfico,
 baseado no trabalho dele, pode ser visto na Figura
@@ -430,8 +309,8 @@ baseado no trabalho dele, pode ser visto na Figura
   \label{fig:agile-feedback}
 \end{figure}
 
-Um participante comentou que, com o teste, você pode observar
-e criticar o código que escreveu no momento logo após a escrita do mesmo.
+Um participante comentou que, com o teste, o desenvolvedor pode observar
+e criticar o código que escreveu no momento logo após a escrita.
 E essa crítica, de forma contínua, faz com que o desenvolvedor acabe
 por pensar constantemente no código que está produzindo:
 
@@ -440,7 +319,7 @@ por pensar constantemente no código que está produzindo:
 não percebe isso até que você use o teste."}
 \end{framed}
 
-Diminuir o tempo entre o código e o teste também o ajuda a desenvolver código
+Diminuir o tempo entre a escrita do código e a escrita do teste também o ajuda a desenvolver código
 que efetivamente resolve o problema. Segundo os participantes, na maneira tradicional, 
 o desenvolvedor escreve muito código antes de saber se o mesmo funciona:
 
@@ -452,7 +331,7 @@ você consegue mais rápido ver se aquela parte pequena funciona ou não (...)"}
 
 \subsection{Busca pela testabilidade}
 
-Talvez o principal ponto pela qual a prática ajude os desenvolvedores no projeto de classes 
+Talvez o principal ponto pelo qual a prática ajude os desenvolvedores no projeto de classes 
 seja pela constante busca pela testabilidade. É possível inferir que, quando se 
 começa a escrita do código pelo seu teste, o código de produção deve ser, necessariamente,
 possível de testar.
@@ -480,16 +359,16 @@ busca por um bom projeto de classes, acaba escrevendo código mais
 testável.
 
 Mas, os participantes foram ainda mais longe. Durante as entrevistas,
-vários deles mencionaram diversos padrões que encontram nos testes,
+vários deles mencionaram diversos padrões que encontram no \textit{feedback} dos testes,
 e que os fazem pensar sobre os possíveis problemas de acoplamento,
-coesão, falta de abstração, e etc, na classe que estão criando.
-Esses padrões são melhor discutidos na Seção \ref{padroes-tdd}.
+coesão, falta de abstração, etc., na classe que estão criando.
+Esses padrões são melhor discutidos a seguir.
 
 \section{Padrões de \textit{Feedback} de TDD}
 \label{padroes-tdd}
 
 Na busca pela testabilidade, o desenvolvedor é encorajado a escrever um
-código que seja facilmente testável. Códigos como esse possuem algumas
+código que seja facilmente testável. Códigos assim possuem algumas
 características interessantes, como a facilidade para invocar o comportamento
 esperado, a não necessidade de pré-condições complicadas e a explicitação de
 todas as dependências que a classe possui.
@@ -498,24 +377,24 @@ Outros autores já comentaram que
 TDD encoraja o programador a escrever componentes fracamente acoplados, de
 maneira que eles possam ser testados de maneira isolada e, em um nível maior,
 combinados com outros componentes.
-Programar voltado para interfaces é uma prática de orientação a objetos há muito
+Programar voltado para a criação de abstrações é uma prática de orientação a objetos há muito
 tempo conhecida. Pensar em classes e dar maior foco à maneira com que
-elas se relacionam do que com o modo que determinado comportamento será implementado
+elas se relacionam do que com o modo no qual determinado comportamento será implementado
 torna-se mais natural ao praticar TDD \cite{GOOS}. 
 
-Como mencionado acima, grande parte do \textit{feedback} que os testes
+Como mencionado anteriormente, grande parte do \textit{feedback} que os testes
 dão, acontecem no momento em que o programador encontra dificuldades para a
-escrita do mesmo. Esta seção discute padrões levantados pelos praticantes
+escrita dos mesmos. Esta seção discute padrões levantados pelos praticantes
 que os levam a crer que há um problema de projeto de classes no código
 que está sendo testado.
 
-\subsection{Coesão}
+\subsection{Padrões Ligados à Coesão}
 
 Quando um único método necessita de diversos testes para garantir seu comportamento,
-indica que o método em questão é complexo e/ou possui diversas responsabilidades.
-Esse padrão faz sentido já que códigos como esse possui geralmente diversos caminhos
+o método em questão provavelmente é complexo e/ou possui diversas responsabilidades.
+Códigos assim possuem geralmente diversos caminhos
 diferentes e tendem a alterar muitos atributos internos do objeto, obrigando o desenvolvedor
-a criar muitos testes, caso queira ter uma alta cobertura de testes nesta classe.
+a criar muitos testes, caso queira ter uma alta cobertura de testes.
 A esse padrão, demos o nome de \textbf{Muitos Testes Para Um Método}.
 
 O mesmo pode ser entendido quando o desenvolvedor escreve muitos testes para a 
@@ -529,19 +408,19 @@ sente a necessidade de escrever cenários de teste muito grandes para uma
 em códigos que lidam com muitos objetos e fazem muita coisa. Nomeamos
 esse padrão de \textbf{Cenário Muito Grande}.
 
-Um padrão não explicitamente levantado pelos participantes, que notado
+Um padrão não explicitamente levantado pelos participantes, mas notado
 por nós, é quando o desenvolvedor sente a necessidade de se testar
 um método que não é público. Métodos privados geralmente servem para 
 transformar o método público em algo mais fácil de ler. Ao desejar
-testá-lo de maneira isolada, o programador pode estar de frente com
+testá-lo de maneira isolada, o programador pode estar de frente a
 um método que possua uma responsabilidade suficiente para ser
 alocada em uma outra classe. A esse padrão, chamamos de 
 \textbf{Testes em Método Que Não É Público}.
 
-\subsection{Acoplamento}
+\subsection{Padrões Ligados à Acoplamento}
 
-Quando o programador faz uso abusivo de objetos dublês para testar uma
-única classe, indica que a classe sob teste possui problemas
+O uso abusivo de objetos dublês para testar uma
+única classe indica que a classe sob teste possui problemas
 de acoplamento. É possível deduzir que uma classe que faz uso de muitos
 objetos dublês depende de muitas classes, e portanto, tende a ser
 uma classe instável. A esse padrão, demos o nome de \textbf{Objetos Dublê em Excesso}.
@@ -550,32 +429,35 @@ Outro padrão percebido por nós é a criação de objetos dublês que não
 são utilizados em alguns métodos de testes. Isso geralmente acontece quando
 a classe é altamente acoplada, e o resultado da ação de uma dependência não
 interfere na outra. Quando isso acontece, o programador acaba por escrever
-conjuntos de testes, onde alguns deles lidam com parte dos objetos dublês,
-enquanto a outra parte lida com a outra parte. Isso indica um alto acoplamento 
-da classe, que precisa ser refatorado. A esse padrão demos o nome de
+conjuntos de testes, sendo que alguns deles lidam com um sub-conjunto dos objetos dublês,
+enquanto outros testes lidam com o outro sub-conjunto de objetos dublês. 
+Isso indica um alto acoplamento 
+da classe, que precisa ser refatorada. A esse padrão demos o nome de
 \textbf{Objetos Dublê Não Utilizados}.
 
 
-\subsection{Falta de abstração}
+\subsection{Padrões Ligados à Falta de Abstração}
 
-Quando, dado uma nova funcionalidade, o programador precisa propagar
-a mesma alteração em diferentes testes, indica a falta de uma abstração 
-correta para evitar a repetição do código que provavelmente existe. A 
-esse padrão demos o nome de \textbf{Mesma Alteração Em Diferentes Testes}.
+A falta de abstração geralmente faz com que uma simples mudança precise
+ser feita em diferentes pontos do código. Quando uma mudança acontece e 
+o programador é obrigado a fazer a mesma alteração em diferentes testes,
+isso indica a falta de uma abstração correta para evitar a 
+repetição desnecessária de código.
+A esse padrão demos o nome de \textbf{Mesma Alteração Em Diferentes Testes}.
 Analogamente, o programador pode perceber a mesma coisa
 quando ele começa a criar testes repetidos para entidades diferentes.
 Chamamos esse padrão de \textbf{Testes Repetidos Para Entidades Diferentes}.
 
 Quando o desenvolvedor começa o teste e percebe que a interface pública da classe
-que está sendo criada não está amigável, pode indicar que abstração
+não está amigável, pode indicar que abstração
 corrente não é clara o suficiente e poderia ser melhorada. A esse padrão,
 chamamos de \textbf{Interface Não Amigável}.
 
-Outro padrão não mencionado explícitamente pelos participantes, 
+Outro padrão não mencionado explícitamente pelos participantes 
 é a existência da palavra \textit{"se"} no nome do teste. Testes que
 possuem nomes como esse geralmente indicam a existência de um \textit{"if"} na implementação
 do código de produção. Essas diversas condições podem, geralmente, ser refatoradas e,
-através do uso de poliformismo, serem eliminadas. A falta de abstração nesse caso
+por meio do uso de poliformismo, serem eliminadas. A falta de abstração nesse caso
 é evidenciada pelo padrão \textbf{Condicional No Nome Do Teste}.
 
 \subsection{Relação dos padrões com os princípios de projeto de classes}
@@ -583,7 +465,7 @@ através do uso de poliformismo, serem eliminadas. A falta de abstração nesse 
 É possível relacionar os padrões de \textit{feedback} levantados pelos participantes
 com os mau cheiros de projeto de classes comentados nesta pesquisa. Na Tabela \ref{tab:relacao-padroes},
 mostramos essa relação, e como esses padrões podem efetivamente ajudar o desenvolvedor
-a programador por problemas no seu projeto de classes.
+a procurar por problemas no seu projeto de classes.
 
 
 \begin{table}[h!]
