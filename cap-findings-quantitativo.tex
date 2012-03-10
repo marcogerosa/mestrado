@@ -5,6 +5,9 @@
 Na tentativa de triangular as informações levantadas no capítulo anterior,
 calculamos métricas em cima dos códigos gerados, para verificar se houve
 alguma diferença na qualidade dos códigos gerados com e sem a prática de TDD.
+Os valores utilizados para o cálculo podem ser encontrados no Apêndice 
+\ref{ape:valores} deste estudo.
+
 
 Conforme discutido no Capítulo \ref{cap:qualitativo-planejamento}, o teste
 estatístico escolhido foi o Wilcoxon. 
@@ -16,7 +19,8 @@ Nas sub-seções abaixo, discutimos os números encontrados.
 \section{Métricas de código}
 
 Na Tabela \ref{metricas-industria}, mostramos os \textit{p-values} encontrados para
-a diferença entre códigos produzidos com e sem TDD na indústria. Pelos números, 
+a diferença entre códigos produzidos com e sem TDD na indústria. 
+Pelos números, 
 observamos que em nenhum exercício houve diferença significativa nas métricas
 de complexidade ciclomática e acoplamento eferente. Já a métrica de falta
 de coesão dos métodos apresentou diferenças em dois exercícios (1 e 4). 
@@ -73,7 +77,94 @@ o código produzido pelos participantes da academia.
 	\label{metricas-academia}
 \end{table}
 
+Já nas Tabelas \ref{valores-exp-cc-industria}, \ref{valores-exp-fanout-industria}, \ref{valores-exp-lcom-industria}, 
+\ref{valores-exp-metodos-industria} e \ref{valores-exp-linhas-industria},
+calculamos os \textit{p-values} das métricas, separando-as 
+por experiência em desenvolvimento de software e TDD na indústria. Os valores para o grupo
+experiente em TDD e não experiente em desenvolvimento de software não foi calculado, já que nenhum
+participante se enquadrou nele.
+
+Pelos números, percebemos 
+que a métrica de coesão foi a única que apresentou uma diferença significativa entre desenvolvedores
+experientes, tanto em TDD quanto em desenvolvimento de software.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+		 Complexidade Ciclomática & Experiente em TDD & Não experiente em TDD \\
+		\hline
+			Experiente em Desenvolvimento de Software 		& 0.09933	&	0.8976\\
+			\hline
+			Não Experiente em Desenvolvimento de Software 	& NA		&	0.4462\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença na Complexidade Ciclomática entre experientes e não experientes na indústria}
+	\label{valores-exp-cc-industria}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+		 \textit{Fan-Out} & Experiente em TDD & Não experiente em TDD \\
+		\hline
+			Experiente em Desenvolvimento de Software 		& 0.1401	&	0.6304\\
+			\hline
+			Não Experiente em Desenvolvimento de Software 	& NA		&	0.2092\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença no \textit{Fan-Out} entre experientes e não experientes na indústria}
+	\label{valores-exp-fanout-industria}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+		 Falta de Coesão nos Métodos & Experiente em TDD & Não experiente em TDD \\
+		\hline
+			Experiente em Desenvolvimento de Software 		& \cellcolor[gray]{0.8}0.03061*	&	0.1284\\
+			\hline
+			Não Experiente em Desenvolvimento de Software 	& NA		&	0.0888\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença na falta de coesão nos métodos entre experientes e não experientes na indústria}
+	\label{valores-exp-lcom-industria}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+		 Quantidade de Métodos por Classe & Experiente em TDD & Não experiente em TDD \\
+		\hline
+			Experiente em Desenvolvimento de Software 		& 0.09933	&	0.8976\\
+			\hline
+			Não Experiente em Desenvolvimento de Software 	& NA		&	0.4462\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença na quantidade de métodos por classe entre experientes e não experientes na indústria}
+	\label{valores-exp-metodos-industria}
+\end{table}
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
+		\hline
+		 Linhas por Método & Experiente em TDD & Não experiente em TDD \\
+		\hline
+			Experiente em Desenvolvimento de Software 		& 0.0513	&	0.4319\\
+			\hline
+			Não Experiente em Desenvolvimento de Software 	& NA		&	0.5776\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} encontrados para a diferença no número de linhas por método entre experientes e não experientes na indústria}
+	\label{valores-exp-linhas-industria}
+\end{table}
+
 %% ------------------------------------------------------------------------- %%
+\newpage
 \section{Especialistas}
 
 Ambos os especialistas não encontraram diferenças entre códigos produzidos
