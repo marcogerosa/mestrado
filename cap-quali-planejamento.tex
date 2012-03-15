@@ -63,7 +63,7 @@ algumas delas:
   
   \item \textbf{Múltiplas fontes de dados}. Pesquisas qualitativas geralmente
   colhem informações de múltiplas fontes de dados, como entrevistas,
-  observações e documentos.
+  observações e documentos;
   
   \item \textbf{Análise dos dados indutiva}. Os dados são analisados de dentro
   para fora, por meio da categorização dos mesmos em unidades de informação cada
@@ -140,7 +140,7 @@ brasileiro foram selecionados. Todos eles foram solicitados a resolver
 alguns problemas utilizando Java, dentro de um período de tempo limitado. 
 Os participantes utilizaram TDD em um problema, e não utilizaram
 no outro. Os problemas resolvidos bem como em qual deles o participante
-deveria utilizar TDD será randomizada, a fim de diminuir o problema do aprendizado.
+deveria utilizar TDD foram randomizados, a fim de diminuir o problema do aprendizado.
 
 Todas as implementações feitas foram salvas, para posterior
 cálculo de métricas de código. Ao final do exercício, todos participantes
@@ -162,7 +162,7 @@ Os participantes foram convidados e avaliados de acordo com certos critérios:
 
 \begin{itemize}
 	\item \textbf{Experiência em TDD.} Convidamos praticantes com diferentes
-	níveis de experiência. Eles foram categorizados em orogramadores inexperientes em TDD (pouco conhecimento teórico e prático)
+	níveis de experiência. Eles foram categorizados em programadores inexperientes em TDD (pouco conhecimento teórico e prático)
 	e programadores com experiência em TDD (praticantes frequentes há no mínimo 3 anos).
 	
 	\item \textbf{Experiência em desenvolvimento de software.} Participantes podem ser
@@ -225,7 +225,7 @@ exercícios.
 
 Os participantes não podiam se comunicar durante o exercício, e cada um deles recebeu
 os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
-pode ocorrer durante a resolução dos problemas. 
+pudesse ocorrer durante a resolução dos problemas. 
 
 Cada participante recebeu dois exercícios. Em um deles, o participante praticou TDD; no outro,
 ele programou sem a prática. A razão disso
@@ -484,7 +484,7 @@ e código-fonte aberto \footnote{\url{http://www.github.com/mauricioaniche/msr-a
 Dois especialistas foram convidados a analisar os códigos-fonte e a dar notas para cada
 um deles. Apesar das métricas de código nos darem informações
 preciosas sobre a qualidade do código, a opinião de um especialista, baseada
-em sua experiência passada, pode ser bastante enriquecedoura.
+em sua experiência passada, pode ser bastante enriquecedora.
 
 As categorias nas quais eles deveriam avaliar eram: \textit{Simplicidade}, \textit{Testabilidade} e
 \textit{Qualidade do Projeto de Classes}.
@@ -540,7 +540,7 @@ estatisticamente significante entre códigos produzidos com e sem TDD.
 Testes estatísticos para análise de variância foram utilizados
 para verificar se TDD influencia nas mesmas.
 A variância dos dados obtidos na opinião do especialista sobre cada código-fonte gerado
-será utilizado também como entrada para algoritmos estatísticos. 
+foi utilizada também como entrada para algoritmos estatísticos. 
 Como esses dados não seguem uma distribuição normal, o teste
 de Wilcoxon foi escolhido. Este é um teste de hipotése não-paramétrico,
 usado para comparar duas amostras e verificar se há diferença da média das populações.
@@ -666,14 +666,14 @@ repetidas. Após o término, removemos essas questões e deixamos o roteiro de e
 
 Como os estudos foram executados fisicamente em muitas das empresas selecionadas,
 nós acabamos por ajudar na organização do ambiente, mesmo a equipe tendo 
-recebido o caderno de questões, com as instruções da instalação
+recebido o caderno de questões com as instruções da instalação
 alguns dias antes. A ideia era também gravar a implementação dos alunos,
 mas dificuldades em se encontrar um software de vídeo para as diferentes
 plataformas, e arquivos muito grandes, impossibilitaram a gravação.
 
 Todos os participantes eram avisados de que tinham por volta de 50 minutos
 por exercício. Eles também sabiam que, mesmo que não terminassem o exercício,
-deveriam focam sempre na qualidade do código gerado. Eles também eram solicitados
+deveriam focar sempre na qualidade do código gerado. Eles também eram solicitados
 a implementar um projeto de classes flexível para os problemas. A frase que dizíamos para
 eles era geralmente: \textit{"Levem os exercícios para o mundo real, onde um outro
 desenvolvedor deverá manter o código gerado. Lembrem-se de implementar o código mais fácil possível
@@ -685,14 +685,14 @@ exercícios, e até mesmo sobre procedimentos que os participantes podiam
 adotar durante a execução. Um deles, por exemplo, perguntou se poderia
 refatorar o código durante a implementação sem TDD. 
 Nós também não os pressionávamos em nenhum momento. Eles ficavam,
-cada um suas máquinas, trabalhando na implementação. Não ficávamos 
+cada um em suas máquinas, trabalhando na implementação. Não ficávamos 
 passando atrás das máquinas para ver como estavam indo, na tentativa
 de evitar qualquer possível alteração de comportamento pela nossa presença.
-Ao final de cada intervalo de 50 minutos, nós avisámos para eles finalizarem
+Ao final de cada intervalo de 50 minutos, nós avisávamos para eles finalizarem
 a linha de raciocínio e partir para o próximo exercício.
 
 Todo o experimento ocorreu bem, com exceção do que foi executado
-dentro da universidade. Além de diversos problemas de infra estrutura,
+dentro da universidade. Além de diversos problemas de infraestrutura,
 como a falta de espaço em disco disponível para alguns alunos, que impedia até mesmo
 o JUnit de executar, todos os participantes conseguiram fazer apenas
 1 exercício. Diante dessa situação, optamos por deixá-los implementar
@@ -772,11 +772,11 @@ Entrando em aspectos mais técnicos, 64\% dos participantes afirmaram programar 
 e só 12\% diz nunca ter ouvido falar sobre o conceito de objetos dublês\footnote{Objetos dublê ou, do inglês, 
 \textit{mock objects}, são objetos criados durante um teste de unidade, e que imitam o comportamento de um
 outro objeto concreto. Geralmente são muito utilizados quando queremos isolar nosso teste de outras classes
-do sistema. Mais informações sobre objetos dublês podem ser encontrados em \cite{mocks}.}. De fato, 64\% deles
+do sistema. Mais informações sobre objetos dublês podem ser encontradas em \cite{mocks}.}. De fato, 64\% deles
 aplicam objetos dublês durante suas atividades de desenvolvimento. Com relação a conhecimentos
 em orientação a objetos, na pergunta aberta do questionário, grande parte deles 
 afirmou que possuem uma boa experiência e alguns
-chegam até a afirmam que dominam o assunto. Poucos disseram que possuem conhecimentos
+chegam até a afirmar que dominam o assunto. Poucos disseram que possuem conhecimentos
 básicos. Na Tabela \ref{tab:exp-industria},
 apresentamos o conhecimento dos participantes em relação a Java, JUnit e objetos dublês.
 
