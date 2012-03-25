@@ -1,9 +1,3 @@
-# 
-# makefile para a compilação do documento
-#
-# Sáb Jun 23 21:13:37 BRT 2007
-#
-
 BASE_NAME = dissertacao
 
 LATEX     = latex

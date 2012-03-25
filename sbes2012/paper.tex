@@ -1,6 +1,6 @@
-
 \documentclass[conference]{IEEEtran}
 
+\usepackage[numbers,square,sort,nonamebreak,comma]{natbib}  % citação
 \usepackage{framed}
 \usepackage[table]{xcolor}
 \usepackage[T1]{fontenc}
@@ -10,20 +10,35 @@
 \urlstyle{same}
 
 \begin{document}
-
+	
 \title{Como a Prática de TDD Influencia o Projeto de Classes em Sistemas Orientados a Objetos}
 
 \author{\IEEEauthorblockN{Mauricio Aniche, Marco Aurélio Gerosa}
 \IEEEauthorblockA{Instituto de Matemática e Estatística\\
 Universidade de São Paulo\\
-\{aniche, gerosa\}@ime.usp.br}
-}
+\{aniche, gerosa\}@ime.usp.br}}
 
 \maketitle
 
-\begin{abstract}
-%\boldmath
-The abstract goes here.
+\begin{abstract} 
+	Desenvolvimento Guiado por Testes (TDD) é uma das práticas sugeridas na Programação
+	Extrema. Apesar de soar como uma prática de testes de software, muitos autores de livros 
+	conhecidos pela indústria e academia
+	afirmam que os efeitos da prática vão além. Segundo eles,
+	TDD ajuda o desenvolvedor durante o processo de criação do projeto classes,
+	fazendo-os criar classes menos acopladas e mais coesas.
+	Este trabalho tem por objetivo compreender melhor os efeitos de TDD e como sua prática 
+	influencia o desenvolvedor durante o processo de projeto de sistemas orientados a objetos.
+	Para alcançar o objetivo, este estudo faz uso de uma combinação entre um experimento controlado 
+	inicial, na qual participantes foram
+	convidados a resolver exercícios pré-elaborados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
+	estudo qualitativo detalhou como a prática influenciou as decisões de projeto.
+	Ao final, observamos que a prática de TDD pode guiar o desenvolvedor durante o processo
+	de criação do projeto de classes por meio de constantes \textit{feedbacks} sobre a qualidade
+	do projeto. Esses \textit{feedbacks} alertam desenvolvedores sobre possíveis problemas,
+	como alto acoplamento ou baixa coesão. Os desenvolvedores, por sua vez, devem interpretar
+	e melhorar o projeto de classes. Este trabalho catalogou e nomeou os padrões de
+	\textit{feedback} percebidos pelos participantes.
 \end{abstract}
 
 \IEEEpeerreviewmaketitle
@@ -108,6 +123,7 @@ são:
 		
 \end{enumerate}
 
+%% ------------------------------------------------------------------------- %%
 \section{Desenvolvimento Guiado por Testes}
 
 Métodos ágeis de desenvolvimento de software focam em constante
@@ -218,11 +234,6 @@ No entanto, apesar de muito ser dito sobre os efeitos de projeto de classes, e a
 até serem demonstrados em estudos (conforme citado na Seção \ref{cap:trabalhos-relacionados}), 
 pouco se sabe como a prática realmente influencia os desenvolvedores no momento da criação do
 projeto das classes.
-
-Para que possamos definir o que esperamos de um projeto de classes,
-discutimos no Apêndice \ref{ape:design}
-bons príncipios de projeto de classes orientados a objetos, que serão utilizados
-na avaliação dos códigos produzidos pelos participantes deste estudo.
 
 %% ------------------------------------------------------------------------- %%
 \section{Trabalhos Relacionados}
@@ -386,6 +397,7 @@ o dia de trabalho deve ser levado em consideração.
 
 
 \section{Planejamento e Execução do Estudo} 
+\label{sec:planejamento}
 
 Conduzir um estudo experimental em engenharia de software sempre foi uma
 atividade difícil. Uma das razões para isso é o fator humano, muito presente 
@@ -464,26 +476,9 @@ como código produzido e as entrevistas, foram analisados.
 
 Desenvolvedores atuantes no mercado de 
 software brasileiro foram selecionados para participarem da pesquisa.
-Os participantes foram convidados e avaliados de acordo com certos critérios:
-
-\begin{itemize}
-	\item \textbf{Experiência em TDD.} Convidamos praticantes com diferentes
-	níveis de experiência. Eles foram categorizados em programadores inexperientes em TDD (pouco conhecimento teórico e prático)
-	e programadores com experiência em TDD (praticantes frequentes há no mínimo 3 anos).
-	
-	\item \textbf{Experiência em desenvolvimento de software.} Participantes podem ser
-	experientes (com no mínimo 3 anos de desenvolvimento e bons conhecimentos em orientação a objetos) ou 
-	inexperientes (com no máximo 1 ano de desenvolvimento e pouco conhecimento de orientação a objetos).
-
-	\item \textbf{Conhecimentos em Java.} 
-	Participantes devem ter experiência em Java, já que os problemas deverão ser resolvidos
-	nessa linguagem.	
-	
-	\item \textbf{Conhecimentos em Testes de Unidade.} Todos os participantes devem ser
-	familiarizados com a escrita de testes de unidade, independente do seu conhecimento
-	em TDD.
-
-\end{itemize}
+Os participantes foram convidados e avaliados de acordo com sua experiência em TDD,
+em desenvolvimento de software, em Java e em testes de unidade. A única exigência
+era que o desenvolvedor já soubesse como escrever testes de unidade.
 
 Esses pontos foram avaliados por meio de um questionário, 
 respondido por todos os participantes antes do início do estudo. 
@@ -492,7 +487,6 @@ do participante (de maneira quantitativa, em anos),
 continha questões nas quais o participante
 podia falar sobre sua expêriencia em projeto orientado a objetos,
 Java e TDD de forma mais aberta.
-
 
 \subsection{Execução do estudo}
 \label{sec:execucao}	
@@ -528,8 +522,7 @@ do código que acabaram de produzir.
 
 Foram propostos quatro problemas que deveriam ser resolvidos pelos participantes, utilizando
 linguagem Java. O objetivo desses exercícios é simular problemas de projeto de classes 
-recorrentes em diversos projetos de software. Os enunciados encontram-se no Apêndice 
-\ref{ape:exercicios}.
+recorrentes em diversos projetos de software. 
 Na Tabela \ref{tab:problemas-exercicios}, apresentamos a relação entre uma má
 implementação dos exercícios e os princípios de projeto de classes feridos por
 ela.
@@ -538,31 +531,6 @@ Foi dito ao participante que os exercícios simulam problemas do mundo real, e e
 ter em mente que as soluções geradas supostamente seriam mantidas por uma outra equipe.
 Por esse motivo, será solicitado ao participante que implemente a solução mais elegante e flexível 
 possível.
-
-O primeiro exercício pede ao participante que implemente uma calculadora de salário, em que
-o algoritmo de cálculo varia de acordo com o cargo do funcionário. Em uma implementação
-procedural e mais difícil de ser mantida, esse problema seria resolvido por meio de uma
-sequência de "ifs"; todo novo cargo obrigaria o desenvolvedor a acrescentar mais um "if" 
-nessa classe. Uma implementação mais flexível teria cada algoritmo de cálculo em uma 
-classe separada.
-
-O segundo exercício pede que o participante implemente o processo de geração de uma nota fiscal e, após
-esse processo, a nota gerada deve passar por diversos outros processos, como envio por e-mail, envio
-para um sistema externo, persistir na base de dados, etc. Possíveis más implementações incluem a 
-implementação de uma única classe que faria todo o processo, ou uma classe altamente acoplada.
-Uma solução mais elegante seria extrair cada responsabilidade em uma classe diferente e compô-las
-por meio, por exemplo, da implementação do padrão Observer \cite{gof}.
-
-O terceiro exercício pede ao participante a implementação de um simples processador de boletos que
-deve marcar a fatura como paga, caso a soma de pagamentos seja maior ou igual ao valor da fatura. 
-Em uma implementação elegante, o comportamento de marcar a fatura como paga deveria estar encapsulado, e 
-ficar dentro da classe "Fatura", ou entidade similar criada pelo participante.
-
-No quarto exercício, o participante deveria escrever um algoritmo responsável por filtrar faturas de
-acordo com diferentes critérios. Em uma implementação procedural, esse único algoritmo seria
-responsável por validar todos os critérios. Mas, por serem complexos, esses filtros deveriam ser divididos em 
-várias classes, em vez de ficarem em uma única classe responsável por todos os critérios.
-
 
 \begin{table}
 	\centering
@@ -595,28 +563,8 @@ de São Paulo, na qual o público era constituído em sua maioria de alunos de g
 
 Com o código-fonte em mãos, é possível utilizar-se de métricas de código
 para avaliar sua qualidade.
-
-As métricas utilizadas foram:
-
-\begin{enumerate}
-	\item \textbf{Complexidade Ciclomática}: Optamos por utilizar o algoritmo de complexidade ciclomática criado
-	por McCabe \cite{mccabe}. Uma simples explicação desse algoritmo seria que, para cada método, um contador
-	é incrementado sempre que um if, for, while, case, catch, E lógico, OU lógico, ou if ternário aparece.
-	Todos os métodos tem ainda seus contadores iniciados com 1. 
-	
-	\item \textbf{\textit{Fan-Out}}: Essa métrica conta o número de classes que uma classe conhece e faz uso \cite{lorenz}.
-	
-	\item \textbf{Falta de Coesão dos Métodos}: A versão implementada do algoritmo de falta de coesão dos métodos 
-	(ou, do inglês, \textit{Lack of Cohesion of Methods (LCOM)}) foi a sugerida por Henderson-Sellers \cite{lcom-hs}.
-	Neste algoritmo, uma classe é considerada altamente coesa se e somente se todos os seus métodos usam
-	todos seus atributos de instância. Neste caso, a métrica resulta em zero. 
-	
-	\item \textbf{Quantidade de Linhas por Método}: Essa métrica conta o número de linhas em cada método de
-	cada classe. Linhas em branco dentro dos métodos também entram na conta.
-	
-	\item \textbf{Quantidade de Métodos}: A métrica conta o número de métodos por classe.
-	
-\end{enumerate}
+As métricas utilizadas foram: complexidade ciclomática \cite{mccabe}, \textit{Fan-Out} \cite{lorenz},
+falta de coesão dos métodos \cite{lcom-hs}, quantidade de linhas por método e quantidade de métodos.
 
 Todas as métricas citadas já são de uso conhecido na academia. Para calcular essas
 métricas, nós implementamos nossa própria ferramenta. O motivo para tal é que
@@ -645,7 +593,7 @@ pelo participante, e não só o código atual.
 Para que a opinião do especialista fosse imparcial, ele \textbf{não} sabia a qual grupo
 pertencia e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de TDD).
 
-
+%% ------------------------------------------------------------------------- %%
 \subsection{Entrevistas}
 \label{sec:planejamento-estrategia-entrevistas}
 
@@ -691,8 +639,6 @@ de cada participante.
 Na tentativa de triangular as informações levantadas no capítulo anterior,
 calculamos métricas em cima dos códigos gerados, para verificar se houve
 alguma diferença na qualidade dos códigos gerados com e sem a prática de TDD.
-Os valores utilizados para o cálculo podem ser encontrados no Apêndice 
-\ref{ape:valores} deste estudo.
 
 O teste estatístico escolhido foi o Wilcoxon. 
 Devido ao problema que tivemos com os dados da academia, separamos a análise
@@ -761,8 +707,7 @@ o código produzido pelos participantes da academia.
 	\label{metricas-academia}
 \end{table*}
 
-Já nas Tabelas \ref{valores-exp-cc-industria}, \ref{valores-exp-fanout-industria}, \ref{valores-exp-lcom-industria}, 
-\ref{valores-exp-metodos-industria} e \ref{valores-exp-linhas-industria},
+Já na Tabela \ref{valores-separados},
 calculamos os \textit{p-values} das métricas, separando-as 
 por experiência em desenvolvimento de software e TDD na indústria. Os valores para o grupo
 experiente em TDD e não experiente em desenvolvimento de software não foram calculados, já que nenhum
@@ -772,83 +717,48 @@ Pelos números, percebemos
 que a métrica de coesão foi a única que apresentou uma diferença significativa entre desenvolvedores
 experientes, tanto em TDD quanto em desenvolvimento de software.
 
-\begin{table}[h!]
+\begin{table}
 	\centering
 	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | }
 		\hline
-		 Complexidade Ciclomática & Experiente em TDD & Não experiente em TDD \\
+		  & Experiente em TDD & Não experiente em TDD \\
+		\hline
+			\multicolumn{3}{|l|}{Complexidade Ciclomática} \\
 		\hline
 			Experiente em Desenvolvimento de Software 		& 0.09933	&	0.8976\\
 			\hline
 			Não Experiente em Desenvolvimento de Software 	& NA		&	0.4462\\
 		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença na Complexidade Ciclomática entre experientes e não experientes na indústria}
-	\label{valores-exp-cc-industria}
-\end{table}
-
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | }
-		\hline
-		 \textit{Fan-Out} & Experiente em TDD & Não experiente em TDD \\
+			\multicolumn{3}{|l|}{\textit{Fan-Out}}\\
 		\hline
 			Experiente em Desenvolvimento de Software 		& 0.1401	&	0.6304\\
 			\hline
 			Não Experiente em Desenvolvimento de Software 	& NA		&	0.2092\\
 		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença no \textit{Fan-Out} entre experientes e não experientes na indústria}
-	\label{valores-exp-fanout-industria}
-\end{table}
-
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | }
-		\hline
-		 Falta de Coesão nos Métodos & Experiente em TDD & Não experiente em TDD \\
+			\multicolumn{3}{|l|}{Falta de Coesão dos Métodos}\\
 		\hline
 			Experiente em Desenvolvimento de Software 		& \cellcolor[gray]{0.8}0.03061*	&	0.1284\\
 			\hline
 			Não Experiente em Desenvolvimento de Software 	& NA		&	0.0888\\
 		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença na falta de coesão nos métodos entre experientes e não experientes na indústria}
-	\label{valores-exp-lcom-industria}
-\end{table}
-
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | }
-		\hline
-		 Quantidade de Métodos por Classe & Experiente em TDD & Não experiente em TDD \\
+			\multicolumn{3}{|l|}{Quantidade de Métodos por Classe} \\
 		\hline
 			Experiente em Desenvolvimento de Software 		& 0.09933	&	0.8976\\
 			\hline
 			Não Experiente em Desenvolvimento de Software 	& NA		&	0.4462\\
 		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença na quantidade de métodos por classe entre experientes e não experientes na indústria}
-	\label{valores-exp-metodos-industria}
-\end{table}
-
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | }
-		\hline
-		 Linhas por Método & Experiente em TDD & Não experiente em TDD \\
+			\multicolumn{3}{|l|}{Linhas por Método}\\
 		\hline
 			Experiente em Desenvolvimento de Software 		& 0.0513	&	0.4319\\
 			\hline
 			Não Experiente em Desenvolvimento de Software 	& NA		&	0.5776\\
 		\hline
 	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença no número de linhas por método entre experientes e não experientes na indústria}
-	\label{valores-exp-linhas-industria}
+	\caption{\textit{P-values} encontrados para a diferença das métricas entre experientes e não experientes na indústria}
+	\label{valores-separados}
 \end{table}
 
 %% ------------------------------------------------------------------------- %%
-\newpage
 \section{Especialistas}
 
 Ambos os especialistas não encontraram diferenças entre códigos produzidos
@@ -858,7 +768,7 @@ mostramos os \textit{p-values} encontrados para a diferença de avaliação dos 
 entre códigos produzidos com e sem TDD na indústria e academia, respectivamente.
 
 
-\begin{table}[h!]
+\begin{table}
 	\centering
 	\begin{tabular}{| p{2cm} | c | c | c | }
 		\hline
@@ -872,7 +782,7 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 	\label{tab:especialistas-industria}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}
 	\centering
 	\begin{tabular}{| p{2cm} | c | c | c | }
 		\hline
@@ -890,7 +800,7 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 
 Nada nvo aqui, bla bla bla
 
-
+%% ------------------------------------------------------------------------- %%
 \section{Análise Qualitativa}
 
 Nesta seção apresentamos e discutimos sobre a análise e interpretação dos dados colhidos
@@ -900,7 +810,7 @@ pode dar ao desenvolvedor.
 
 Um ponto interessante a ser notado é que os participantes, independente de experiência
 em TDD ou em desenvolvimento de software, comentaram pontos similares. Por esse motivo,
-não separamos a discussão pelas categorias levantadas na Seção \ref{cap:qualitativo-planejamento}.
+não separamos a discussão pelas categorias levantadas na Seção \ref{sec:planejamento}.
 
 \subsection{Análise das Entrevistas}
 
@@ -914,7 +824,7 @@ citadas criaria um bom projeto de classes somente por praticar TDD.
 
 Dois bons exemplos foram dados pelos participantes, que ajudam a reforçar esse ponto. Um deles
 comentou que fez uso de um padrão de projetos \cite{gof} que aprendeu apenas alguns dias antes.
-Outro participante mencionou que seus estudos sobre os princípios SOLID (discutidos no Apêndice \ref{ape:design})
+Outro participante mencionou que seus estudos sobre os princípios SOLID
 o ajudaram durante os exercícios. Segue o trecho mencionado pelo participante:
 
 \begin{framed}
@@ -931,17 +841,6 @@ diferentemente dos participantes mais experientes que sempre afirmavam que TDD n
 mas também de testes. Isso indica, de certa forma, que a popularidade dos efeitos de TDD no projeto de classes, por mais
 que nada tenha sido provado, é grande.
 
-Quando perguntados sobre o que é TDD, muitos dos participantes lembraram sobre
-os efeitos da prática na qualidade externa e a segurança que isso traz
-ao desenvolvedor.
-Uma frase que exemplifica isso foi dita por um dos participantes:
-
-\begin{framed}
-\textit{"[TDD] acho que tem muita relação com qualidade do código e testes 
-de regressão. Acho que as duas principais vantagens que eu tenho quando uso TDD é isso: o código
-fica melhor e depois eu tenho a segurança dos testes de regressão para refatorar."}
-\end{framed}
-
 Entretanto, apesar do TDD não guiar o desenvolvedor diretamente para um bom projeto de classes,
 todos eles afirmaram que enxergam benefícios na prática de TDD, mesmo do
 ponto de vista de projeto de classes. Muitos deles, inclusive, mencionaram a dificuldade
@@ -951,13 +850,6 @@ de parar de usar TDD:
 \textit{"Você vai fazer alguma coisa, você acaba pensando já nos testes que você vai fazer. É difícil 
 falar assim: "programa sem pensar nos testes!" Depois que você acostuma, você não sabe outra
 maneira de programar..."}
-\end{framed}
-
-\begin{framed}
-\textit{"É complicado se disciplinar [a praticar TDD], mas conforme vai passando o tempo, 
-você percebe que a curva para se manter o projeto fica bem menos íngreme, 
-começa a perceber os benefícios e aí vicia. Você acaba não se sentindo
-mais confortável de escrever código sem teste."}
 \end{framed}
 
 Segundo eles, TDD pode ajudar no processo de projeto de classes, mas, para isso,
@@ -1227,7 +1119,7 @@ seria complexo assim que pronto, ao olho da métrica, pode aparentar ser simples
 
 \subsubsection{Influência do pesquisador}
 
-Como discutido no capítulo \ref{cap:qualitativo-planejamento}, o pesquisador possui
+Como discutido no capítulo \ref{sec:planejamento}, o pesquisador possui
 um papel fundamental em pesquisas qualitativas. Mas isso pode fazer com que
 a interpretação dos resultados seja influenciada pelo contexto, experiências,
 e até viéses do próprio pesquisador.
@@ -1281,15 +1173,7 @@ foi revisado pelos autores desta pesquisa e, ao final, consideramos que todos
 eles fazem sentido.
 No entanto, podem haver ainda mais padrões a serem descobertos.
 
-
-
-
-
-
-
-
-
-
+%% ------------------------------------------------------------------------- %%
 \section{Conclusão}
 
 Neste trabalho, provemos evidência empírica sobre os benefícios da prática de TDD
@@ -1342,22 +1226,12 @@ algum tipo de metodologia ágil pois, ao conhecer os padrões aqui catalogados,
 os desenvolvedores poderão perceber problemas de projeto mais cedo e
 melhorar seu projeto de classes.
 
-
-
 \section*{Agradecimentos}
-
 
 agradeco as empresas
 
-
-\begin{thebibliography}{1}
-
-\bibitem{IEEEhowto:kopka}
-H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
-  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
-
-\end{thebibliography}
-
+\bibliographystyle{IEEEtran}
+\bibliography{paper}
 
 % that's all folks
 \end{document}
