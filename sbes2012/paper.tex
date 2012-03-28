@@ -1,3 +1,4 @@
+%% ------------------------------------------------------------------------- %%
 \documentclass[conference]{IEEEtran}
 
 \usepackage[numbers,square,sort,nonamebreak,comma]{natbib}  % citação
@@ -43,6 +44,7 @@ Universidade de São Paulo\\
 
 \IEEEpeerreviewmaketitle
 
+%% ------------------------------------------------------------------------- %%
 \section{Introdução}
 
 Desenvolvimento Guiado por Testes, tradução do termo
@@ -115,11 +117,12 @@ As contribuições deste trabalho para a área de engenharia de software
 são:
 
 \begin{enumerate}
+	
 	\item Padrões de \textit{feedback} da prática de TDD que guiam os desenvolvedores
 	ao longo do processo de criação do projeto de classes;
 
 	\item Protocolo de um estudo qualitativo sobre os efeitos da prática
-	de TDD no projeto de classes, bem como lições aprendidas sobre a execução do mesmo;
+	de TDD no projeto de classes, bem como lições aprendidas sobre a execução do mesmo.
 		
 \end{enumerate}
 
@@ -358,6 +361,7 @@ o estudante aprende TDD, ele tende a ter uma melhor performance em disciplinas
 de orientação a objetos. Segundo ele, essa melhora é percebida inclusive pelos
 empregadores desses alunos.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Discussão}
 
 Como apresentado, poucos trabalhos avaliam os efeitos de TDD sobre o
@@ -395,7 +399,7 @@ efeitos da prática no TDD. É necessário mais do que uma comparação analíti
 ponto de vista dos desenvolvedores, que atuam naquele código-fonte durante todo
 o dia de trabalho deve ser levado em consideração.
 
-
+%% ------------------------------------------------------------------------- %%
 \section{Planejamento e Execução do Estudo} 
 \label{sec:planejamento}
 
@@ -428,11 +432,14 @@ nos resultados encontrados, e como TDD e a prática de escrever o teste
 antes do código real realmente guiam o programador 
 em direção a essas melhorias.
 
-Para entendê-las, este estudo faz uso de uma combinação entre um experimento controlado inicial, no qual participantes foram
-convidados a resolver exercícios pré-preparados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
-estudo qualitativo entrou em detalhes sobre como a prática influenciou as decisões de projeto de classes dos participantes.
-Este capítulo detalha o planejamento do estudo, bem como o processo de análise dos dados colhidos.
+Para entendê-las, este estudo faz uso de uma combinação entre um experimento 
+controlado inicial, no qual participantes foram convidados a resolver exercícios 
+pré-preparados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
+estudo qualitativo entrou em detalhes sobre como a prática influenciou as decisões de 
+projeto de classes dos participantes. Este capítulo detalha o planejamento do estudo, 
+bem como o processo de análise dos dados colhidos.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Questões de pesquisa}
 
 Os objetivo principal deste estudo é \textbf{entender a relação da prática de TDD 
@@ -453,6 +460,7 @@ abaixo:
 
 \end{enumerate}
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Projeto da pesquisa}
 
 Participantes de diferentes empresas de desenvolvimento de software do mercado
@@ -470,7 +478,7 @@ mais interessantes, que foram posteriormente entrevistados.
 Todos os dados gerados no processo, 
 como código produzido e as entrevistas, foram analisados.
 
-
+%% ------------------------------------------------------------------------- %%
 \subsection{Participantes da pesquisa}
 \label{sec:planejamento-participantes}
 
@@ -488,6 +496,7 @@ continha questões nas quais o participante
 podia falar sobre sua expêriencia em projeto orientado a objetos,
 Java e TDD de forma mais aberta.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Execução do estudo}
 \label{sec:execucao}	
 
@@ -517,6 +526,7 @@ Ao final, todos responderam a um questionário online,
 que continha perguntas sobre a qualidade
 do código que acabaram de produzir.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Problemas Propostos}
 \label{sec:exercicios}
 
@@ -558,7 +568,7 @@ maior evento brasileiro de métodos ágeis, que tinha um público heterogêneo, 
 uma das turmas do curso de Ciência da Computação do Instituto de Matemática e Estatística da Universidade
 de São Paulo, na qual o público era constituído em sua maioria de alunos de graduação. 
 
-
+%% ------------------------------------------------------------------------- %%
 \subsection{Métricas de código}
 
 Com o código-fonte em mãos, é possível utilizar-se de métricas de código
@@ -634,6 +644,7 @@ participantes a determinadas perguntas, ou qualquer outra informação relevante
 As entrevistas também foram feitas em dias diferentes de acordo com a disponibilidade
 de cada participante.
 
+%% ------------------------------------------------------------------------- %%
 \section{Análise Quantitativa}
 
 Na tentativa de triangular as informações levantadas no capítulo anterior,
@@ -796,9 +807,13 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 	\label{tab:especialistas-academia}
 \end{table}
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Discussão}
 
-Nada nvo aqui, bla bla bla
+Pelos valores apresentados acima, percebe-se que a prática de TDD 
+aparentemente não influencia no projeto de classes. 
+
+Assim como muitos dos estudos citados, TDD aparentemente não pro
 
 %% ------------------------------------------------------------------------- %%
 \section{Análise Qualitativa}
@@ -812,6 +827,7 @@ Um ponto interessante a ser notado é que os participantes, independente de expe
 em TDD ou em desenvolvimento de software, comentaram pontos similares. Por esse motivo,
 não separamos a discussão pelas categorias levantadas na Seção \ref{sec:planejamento}.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Análise das Entrevistas}
 
 Diferente do esperado, a maioria absoluta dos participantes afirmou que 
@@ -864,7 +880,7 @@ Não acredito que TDD sozinho consiga fazer as coisas ficarem boas. Tem outros c
 para as coisas ficarem boas."}
 \end{framed}
 
-
+%% ------------------------------------------------------------------------- %%
 \subsection{\textit{Feedback} mais rápido}
 
 A grande maioria dos participantes também comentaram que uma diferença que percebem
@@ -898,6 +914,7 @@ como você diminui muito o tempo entre escrever um programa que funcione e testa
 você consegue mais rápido ver se aquela parte pequena funciona ou não (...)"}
 \end{framed}
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Busca pela testabilidade}
 
 Talvez o principal ponto pelo qual a prática ajude os desenvolvedores no projeto de classes 
@@ -933,6 +950,7 @@ e que os fazem pensar sobre os possíveis problemas de acoplamento,
 coesão, falta de abstração, etc., na classe que estão criando.
 Esses padrões são melhor discutidos a seguir.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Padrões de \textit{Feedback} de TDD}
 \label{padroes-tdd}
 
@@ -957,6 +975,7 @@ escrita dos mesmos. Esta seção discute padrões levantados pelos praticantes
 que os levam a crer que há um problema de projeto de classes no código
 que está sendo testado.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Padrões Ligados à Coesão}
 
 Quando um único método necessita de diversos testes para garantir seu comportamento,
@@ -986,6 +1005,7 @@ um método que possua uma responsabilidade suficiente para ser
 alocada em uma outra classe. A esse padrão, chamamos de 
 \textbf{Testes em Método Que Não É Público}.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Padrões Ligados ao Acoplamento}
 
 O uso abusivo de objetos dublês para testar uma
@@ -1004,7 +1024,7 @@ Isso indica um alto acoplamento
 da classe, que precisa ser refatorada. A esse padrão demos o nome de
 \textbf{Objetos Dublê Não Utilizados}.
 
-
+%% ------------------------------------------------------------------------- %%
 \subsection{Padrões Ligados à Falta de Abstração}
 
 A falta de abstração geralmente faz com que uma simples mudança precise
@@ -1029,6 +1049,7 @@ do código de produção. Essas diversas condições podem, geralmente, ser refa
 por meio do uso de poliformismo, serem eliminadas. A falta de abstração nesse caso
 é evidenciada pelo padrão \textbf{Condicional No Nome Do Teste}.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Relação dos padrões com os princípios de projeto de classes}
 
 É possível relacionar os padrões de \textit{feedback} levantados pelos participantes
@@ -1064,24 +1085,22 @@ a procurar por problemas no seu projeto de classes.
 	\label{tab:relacao-padroes}
 \end{table}
 
-
-
-
-
-
-
+%% ------------------------------------------------------------------------- %%
 \section{Ameaças à Validade}
 \label{cap:ameacas}
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Validade de Construção}
 
 Uma pesquisa é válida do ponto de vista de construção quando seus instrumentos realmente
 medem as informações necessárias para o estudo.
 
+%% ------------------------------------------------------------------------- %%
 \subsubsection{Exercícios de pequeno porte}
 
 Os exercícios propostos são pequenos perto de um projeto real. Todos os exercícios propostos contém
-problemas localizados de projeto de classes. E, uma vez que esta pesquisa tenta avaliar os efeitos de TDD no projeto de classes, 
+problemas localizados de projeto de classes. E, uma vez que esta pesquisa tenta avaliar os 
+efeitos de TDD no projeto de classes, 
 acreditamos que os problemas conseguem simular de forma satisfatória
 problemas de projeto de classes que desenvolvedores encaram no dia a dia de trabalho.
 
@@ -1091,6 +1110,7 @@ Todos os participantes da indústria afirmaram que os problemas se parecem com o
 no dia a dia de trabalho. Já os participantes da academia afirmaram que não sabiam dizer, afinal não
 possuíam experiência prática.
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Validade interna}
 
 Uma pesquisa tem alta validade interna quando ela é capaz de diminuir o valor das hipóteses alternativas, mostrando
@@ -1101,6 +1121,7 @@ forma empírica não podem ser explicadas por outros fatores.
 
 As sub-seções abaixo discutem as possíveis ameaças à validade interna.
 
+%% ------------------------------------------------------------------------- %%
 \subsubsection{Efeitos recentes de TDD na memória}
 
 Por serem entrevistados pouco tempo depois da resolução dos exercícios, os participantes tínham
@@ -1111,12 +1132,14 @@ Para diminuir esse viés, os participantes fizeram alguns exercícios também
 sem TDD, para que ambos os estilos de desenvolvimento (com e sem TDD) estivessem
 recentes em sua memória.
 
+%% ------------------------------------------------------------------------- %%
 \subsubsection{Exercícios inacabados}
 
 Alguns participantes não terminaram suas implementações dos exercícios. Isso
 pode influenciar na análise quantitativa, afinal, um projeto de classes que
 seria complexo assim que pronto, ao olho da métrica, pode aparentar ser simples.
 
+%% ------------------------------------------------------------------------- %%
 \subsubsection{Influência do pesquisador}
 
 Como discutido no capítulo \ref{sec:planejamento}, o pesquisador possui
@@ -1128,6 +1151,7 @@ para a entrevista.
 Para diminuir esse problema, revisamos todas as análises,
 buscando por conclusões incorretas ou não tão claras. 
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Validade externa}
 
 Uma pesquisa possui validade externa quando ela possibilita ao pesquisador 
@@ -1136,6 +1160,7 @@ generalizar os resultados obtidos a outras populações ou outros contextos.
 As sub-seções abaixo discutem as possíveis ameaças à validade externa
 desta pesquisa.
 
+%% ------------------------------------------------------------------------- %%
 \subsubsection{Desejabilidade social}
 
 Enviesamento pela desejabilidade social é o termo científico usado para descrever
@@ -1153,6 +1178,7 @@ que responderam as perguntas de forma superficial, apenas repetindo a literatura
 isso não aconteceu. Em sua maioria, poucas foram as respostas nas quais os participantes
 foram superficiais. Nestes casos, essas respostas foram eliminadas da análise.
 
+%% ------------------------------------------------------------------------- %%
 \subsubsection{Quantidade de participantes insuficiente}
 
 Apesar de termos feito contato
@@ -1161,11 +1187,13 @@ objetivando encontrar um bom número de participantes para a pesquisa,
 a quantidade de participantes final do estudo pode não ser suficiente para generalizar
 os resultados encontrados. 
 
+%% ------------------------------------------------------------------------- %%
 \subsection{Validade de Conclusão}
 
 A validade de conclusão discute se os pontos as quais a pesquisa chegou realmente
 fazem sentido.
 
+%% ------------------------------------------------------------------------- %%
 \subsubsection{Padrões encontrados}
 
 Os padrões levantados pelos participantes durante o processo de entrevistas
@@ -1226,13 +1254,16 @@ algum tipo de metodologia ágil pois, ao conhecer os padrões aqui catalogados,
 os desenvolvedores poderão perceber problemas de projeto mais cedo e
 melhorar seu projeto de classes.
 
+%% ------------------------------------------------------------------------- %%
 \section*{Agradecimentos}
 
 agradeco as empresas
 
+%% ------------------------------------------------------------------------- %%
 \bibliographystyle{IEEEtran}
 \bibliography{paper}
 
 % that's all folks
 \end{document}
 
+%% ------------------------------------------------------------------------- %%
