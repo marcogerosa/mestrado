@@ -24,21 +24,14 @@ Universidade de São Paulo\\
 \begin{abstract} 
 	Desenvolvimento Guiado por Testes (TDD) é uma das práticas sugeridas na Programação
 	Extrema. Apesar de soar como uma prática de testes de software, muitos autores de livros 
-	conhecidos pela indústria e academia
-	afirmam que os efeitos da prática vão além. Segundo eles,
-	TDD ajuda o desenvolvedor durante o processo de criação do projeto classes,
-	fazendo-os criar classes menos acopladas e mais coesas.
+	conhecidos pela indústria e academia afirmam que a prática pode influenciar no projeto de classes.
 	Este trabalho tem por objetivo compreender melhor os efeitos de TDD e como sua prática 
 	influencia o desenvolvedor durante o processo de projeto de sistemas orientados a objetos.
 	Para alcançar o objetivo, este estudo faz uso de uma combinação entre um experimento controlado 
-	inicial, na qual participantes foram
-	convidados a resolver exercícios pré-elaborados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
-	estudo qualitativo detalhou como a prática influenciou as decisões de projeto.
+	inicial e um estudo qualitativo com desenvolvedores da indústria de software brasileira.
 	Ao final, observamos que a prática de TDD pode guiar o desenvolvedor durante o processo
 	de criação do projeto de classes por meio de constantes \textit{feedbacks} sobre a qualidade
-	do projeto. Esses \textit{feedbacks} alertam desenvolvedores sobre possíveis problemas,
-	como alto acoplamento ou baixa coesão. Os desenvolvedores, por sua vez, devem interpretar
-	e melhorar o projeto de classes. Este trabalho catalogou e nomeou os padrões de
+	do projeto. Este trabalho catalogou e nomeou os padrões de
 	\textit{feedback} percebidos pelos participantes.
 \end{abstract}
 
@@ -158,23 +151,6 @@ Esse ciclo
 desenvolvedor normalmente vê quando faz TDD: o vermelho significa que
 o teste está falhando, e o verde que o teste foi executado com sucesso.
 
-Este capítulo aborda a prática de TDD, bem como cita
-seus possíveis efeitos no processo de desenvolvimento de software, conforme relatado pela
-literatura.
-
-%% ------------------------------------------------------------------------- %%
-\subsection{Benefícios de TDD}
-
-Uma consequência da prática de TDD é a bateria de testes de unidade gerada.
-A prática ajuda o programador a evitar erros de regressão, em que a implementação de
-uma nova funcionalidade quebra uma outra funcionalidade já existente no sistema.
-Essa bateria também provê segurança durante as
-constantes refatorações de código que são feitas durante o processo de
-desenvolvimento.
-A quantidade de código coberto pelos testes também tende a ser alta, uma vez que o
-desenvolvedor deve sempre escrever um teste antes de implementar uma nova
-funcionalidade. 
-
 É comum relacionar TDD a práticas de testes de software. No entanto, apesar de constar o
 termo ``teste'' no nome, TDD não é visto apenas como uma prática de testes.
 Embora a criação de testes seja algo intrínseco ao processo, é dito que TDD também 
@@ -215,30 +191,6 @@ automatizados para código de produção, usando esse processo para guiar o
 projeto e a programação \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Possíveis Efeitos no Projeto de Classes}
-
-Como mencionado anteriormente, os praticantes de TDD acreditam que os testes de unidade
-podem ajudá-los a criar um projeto de classes de qualidade. Uma das explicações mais
-populares para esse fenômeno é a relação
-entre um código que possui uma alta testabilidade, ou seja, é fácil de ser testado
-por meio de um teste de unidade, e um projeto de classes de alta qualidade \cite{feathers-synergy}.
-
-TDD também sugere que o programador dê sempre pequenos passos (conhecidos pelo termo em
-inglês, \textit{baby steps}): deve-se escrever testes sempre para a menor
-funcionalidade possível, escrever o código mais simples que faça o teste passar
-e fazer apenas uma refatoração por vez \cite{TDDByExample}.
-Uma justificativa para tal é a de que, quanto maior o passo que o programador dá, mais
-tempo ele leva para concluí-lo e, consequentemente, ele fica mais tempo
-sem \textit{feedback} sobre o código. Além disso, faz com que o programador não crie
-soluções mais complexas do que elas precisam ser, tornando o código, a longo
-prazo, o mais simples possível.
-
-No entanto, apesar de muito ser dito sobre os efeitos de projeto de classes, e alguns deles
-até serem demonstrados em estudos (conforme citado na Seção \ref{cap:trabalhos-relacionados}), 
-pouco se sabe como a prática realmente influencia os desenvolvedores no momento da criação do
-projeto das classes.
-
-%% ------------------------------------------------------------------------- %%
 \section{Trabalhos Relacionados}
 \label{cap:trabalhos-relacionados}
 
@@ -250,49 +202,19 @@ do que esta pesquisa propõe, muitos desses estudos optaram por um
 maior controle no experimento, e os realizaram dentro de ambientes acadêmicos 
 com estudantes dos mais diversos cursos de computação.
 
-Janzen \cite{janzen-arch-improvement} mostrou que programadores que usam TDD na 
-indústria produziram código que passaram em, aproximadamente, 50\% mais testes 
-caixa-preta do que o código produzido por grupos de controle que não usavam TDD.
-O grupo que usava TDD gastou menos tempo depurando. Janzen também 
+Janzen \cite{janzen-arch-improvement} 
 apontou que a complexidade dos algoritmos era muito menor e a quantidade e
 cobertura dos testes era maior nos códigos escritos com TDD.
-
-Outros trabalhos realizados na indústria também apresentam resultados parecidos.
-Um estudo feito por Maximillien e Williams \cite{max-e-williams} mostrou uma
-redução de 40-50\% na quantidade de defeitos e um impacto mínimo na
-produtividade quando programadores usaram TDD. Outro estudo feito por Lui e
-Chan \cite{lui-e-chan} comparando dois grupos, um utilizando TDD e o outro 
-escrevendo testes apenas após a implementação, mostrou uma redução  
-no número de defeitos no grupo que utilizava TDD. 
-Além disso, os defeitos que foram encontrados eram 
-corrigidos mais rapidamente pelo grupo que utilizou TDD. O estudo feito por 
-Damm \textit{et al.} \cite{damn-lundberg-e-olson} também mostra uma redução
-em torno de 40\% a 50\% na quantidade de defeitos.
+Langr \cite{langr} apontou que TDD aumenta a qualidade código, provê uma 
+facilidade maior de manutenção e ajuda a produzir 33\% mais testes comparado a
+abordagens tradicionais.
 
 O estudo feito por George e Williams \cite{george-e-williams} mostrou que,
 apesar de TDD poder reduzir inicialmente a produtividade dos desenvolvedores 
-mais inexperientes, o código produzido passou entre 18\% a 50\% mais em testes 
-caixa-preta do que códigos produzidos por grupos que não utilizavam TDD. Esse
-código também apresentou uma cobertura de testes entre 92\% a 98\%. Uma análise
-qualitativa mostrou que 87.5\% dos programadores acreditam que TDD facilitou o 
-entendimento dos requisitos e 95.8\% acreditam que TDD reduziu o tempo gasto com
-depuração. 78\% também acreditam que TDD aumentou a produtividade da equipe. 
-Entretanto, apenas 50\% dos participantes disseram que TDD ajuda a diminuir o tempo de 
-desenvolvimento. Sobre qualidade, 92\% pensam que TDD ajuda a manter um
-código de maior qualidade e 79\% acreditam que ele promove um projeto de classes mais simples.
-
-Turnu \textit{et al.} \cite{turnu-tdd-opensouce} discutem produtividade em
-projetos de código aberto. Segundo eles, a produtividade caiu quando TDD foi
-adotado completamente, mas em compensação o número de problemas diminuiu 
-consideravelmente.
-
-Nagappan \cite{nagappan-ms} conduziu estudos de caso na Microsoft e na IBM e os
-resultados indicaram que o número de defeitos de quatro produtos diminuiu de 
-40\% a 90\% em relação a projetos similares que não usaram TDD. Entretanto, o 
-estudo mostrou também que TDD aumentou o tempo inicial de desenvolvimento entre 15\%
-a 35\%. Langr \cite{langr} apontou que TDD aumenta a qualidade código, provê uma 
-facilidade maior de manutenção e ajuda a produzir 33\% mais testes comparado a
-abordagens tradicionais.
+mais inexperientes, uma análise
+qualitativa mostrou que 92\% pensam que TDD ajuda a manter um
+código de maior qualidade e 79\% acreditam que ele promove um projeto 
+de classes mais simples.
 
 Um estudo feito por Erdogmus \textit{et al.} \cite{erdogmus-morisio} com 24 estudantes de
 graduação mostrou que TDD aumenta a produtividade. Entretanto, nenhuma diferença 
@@ -303,10 +225,7 @@ de alunos (cada um deles usando uma abordagem diferente: TDD, testes depois, sem
 testes) mostrou que o código produzido pelo time que fez TDD usou melhor os
 conceitos de orientação a objetos e as responsabilidades foram separadas em 13 
 diferentes classes, enquanto os outros times produziram um código mais
-procedural. O time de TDD também produziu mais código e entregou mais
-funcionalidades. Os testes produzidos por esse time tiveram duas vezes mais
-asserções que os outros e cobriram 86\% mais possíveis caminhos no código 
-do que o time \textit{test-last}. 
+procedural. 
 As classes testadas tinham valores de acoplamento 104\% menor do 
 que as classes não testadas e os métodos eram, na média, 43\% menos complexos 
 do que os não-testados.
@@ -347,19 +266,7 @@ O estudo de Muller e Hagner \cite{muller-e-hagner} apontou que TDD não resulta
 em melhor qualidade ou produtividade. Entretanto, os estudantes avaliados perceberam um 
 melhor reúso dos códigos produzidos com TDD. Steinberg \cite{steinberg} mostrou
 que código produzido com TDD é mais coeso e menos acoplado. Os estudantes também
-reportaram que os defeitos eram mais fáceis de serem corrigidos. A pesquisa feita
-por Edwards \cite{edwards}, com 59 estudantes, mostrou que o código produzido com
-TDD tem 45\% menos defeitos e faz o programador se sentir mais à vontade
-com ele.
-
-Aprender TDD também não é tarefa fácil. Mugridge \cite{mugridge} identificou
-dois desafios principais em ensinar TDD: fazer os estudantes
-pensarem novamente sobre o projeto de classes, e fazê-los se envolver com essa nova
-abordagem. 
-Contudo, segundo Proulx \cite{proulx}, a partir do momento em que
-o estudante aprende TDD, ele tende a ter uma melhor performance em disciplinas
-de orientação a objetos. Segundo ele, essa melhora é percebida inclusive pelos
-empregadores desses alunos.
+reportaram que os defeitos eram mais fáceis de serem corrigidos. 
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Discussão}
@@ -471,12 +378,55 @@ no outro. Os problemas resolvidos bem como em qual deles o participante
 deveria utilizar TDD foram randomizados, a fim de diminuir o problema do aprendizado.
 
 Todas as implementações feitas foram salvas, para posterior
-cálculo de métricas de código. Ao final do exercício, todos participantes
+cálculo de métricas de código. 
+As métricas utilizadas foram: complexidade ciclomática \cite{mccabe}, \textit{Fan-Out} \cite{lorenz},
+falta de coesão dos métodos \cite{lcom-hs}, quantidade de linhas por método e quantidade de métodos.
+
+Todas as métricas citadas já são de uso conhecido na academia. Para calcular essas
+métricas, nós implementamos nossa própria ferramenta. O motivo para tal é que
+grande parte das ferramentas existentes fazem uso de código compilado, e não
+apenas do código-fonte. Nossa ferramenta possui bateria de testes automatizados
+e código-fonte aberto \footnote{\url{http://www.github.com/mauricioaniche/msr-asserts}. 
+Último acesso em 10 de Fevereiro de 2012.}.
+
+Além disso, dois especialistas foram convidados a analisar os códigos-fonte e a dar notas para cada
+um deles. Apesar das métricas de código nos darem informações
+preciosas sobre a qualidade do código, a opinião de um especialista, baseada
+em sua experiência passada, pode ser bastante enriquecedora.
+
+As categorias nas quais eles deveriam avaliar eram: \textit{Simplicidade}, \textit{Testabilidade} e
+\textit{Qualidade do Projeto de Classes}.
+Em cada uma dessas categorias, os especialistas puderam dar notas entre
+1 (ruim) e 5 (bom), ou optar por não avaliar aquele exercício.
+Como alguns participantes não terminaram o exercício, o especialista
+foi avisado de que ele deve avaliar inclusive a "intenção" de projeto de classes criado
+pelo participante, e não só o código atual. 
+Para que a opinião do especialista fosse imparcial, ele \textbf{não} sabia a qual grupo
+pertencia e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de TDD).
+
+Ao final do exercício, todos participantes
 também responderam um questionário, sobre seu desempenho na resolução dos problemas.
 Em seguida, uma análise inicial serviu para filtrar os candidatos
 mais interessantes, que foram posteriormente entrevistados. 
-Todos os dados gerados no processo, 
-como código produzido e as entrevistas, foram analisados.
+
+A entrevista foi semi-estruturada, dando liberdade ao
+pesquisador para mudar o rumo das perguntas, caso se fizesse necessário.
+Além disso, todas as perguntas foram abertas, permitindo que o desenvolvedor desse
+uma resposta ampla sobre o assunto.
+
+Uma vez que as decisões tomadas por um programador durante a atividade de projeto de classes
+podem ser influenciadas por vários diferentes fatores, 
+as perguntas foram feitas de modo que o participante triangule suas respostas,
+e tente isolar o máximo possível a atividade de TDD dos outros possíveis fatores
+de influência. Participantes que não articulassem bem suas respostas seriam ser eliminados
+durante o processo de análise.
+
+Todas as entrevistas foram gravadas para que nós pudéssemos fazer a
+transcrição e rever os dados a qualquer momento durante o processo. Além disso,
+nós também tomamos notas, capturando informações como reações dos 
+participantes a determinadas perguntas, ou qualquer outra informação relevante. 
+As entrevistas também foram feitas em dias diferentes de acordo com a disponibilidade
+de cada participante.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Participantes da pesquisa}
@@ -495,36 +445,6 @@ do participante (de maneira quantitativa, em anos),
 continha questões nas quais o participante
 podia falar sobre sua expêriencia em projeto orientado a objetos,
 Java e TDD de forma mais aberta.
-
-%% ------------------------------------------------------------------------- %%
-\subsection{Execução do estudo}
-\label{sec:execucao}	
-
-Todos os participantes foram convidados a resolver os exercícios preparados. 
-Para isso, criamos um caderno de exercícios que foi seguido pelo participante.
-
-Os participantes tiveram duas horas para resolver todos os exercícios. 
-Todos os códigos foram salvos ao final do estudo para que possam ser analisados junto
-com os dados das entrevistas.
-O tempo foi considerado suficiente para que o participante resolvesse todos os
-exercícios. 
-
-Os participantes não podiam se comunicar durante o exercício, e cada um deles recebeu
-os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
-pudesse ocorrer durante a resolução dos problemas. 
-
-Cada participante recebeu dois exercícios. Em um deles, o participante praticou TDD; no outro,
-ele programou sem a prática. A razão disso
-é fazer com que o participante exercite ambos estilos de desenvolvimento (com e sem TDD)
-e tenha mais embasamento para ser entrevistado nas próximas etapas do estudo. 
-Cada participante recebeu instruções claras no caderno de exercícios 
-sobre quais exercícios deveriam ser feitos
-com TDD. A escolha desses exercícios também foi randomizada na tentativa de diminuir
-o efeito do aprendizado.
-
-Ao final, todos responderam a um questionário online, 
-que continha perguntas sobre a qualidade
-do código que acabaram de produzir.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Problemas Propostos}
@@ -569,82 +489,6 @@ uma das turmas do curso de Ciência da Computação do Instituto de Matemática 
 de São Paulo, na qual o público era constituído em sua maioria de alunos de graduação. 
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Métricas de código}
-
-Com o código-fonte em mãos, é possível utilizar-se de métricas de código
-para avaliar sua qualidade.
-As métricas utilizadas foram: complexidade ciclomática \cite{mccabe}, \textit{Fan-Out} \cite{lorenz},
-falta de coesão dos métodos \cite{lcom-hs}, quantidade de linhas por método e quantidade de métodos.
-
-Todas as métricas citadas já são de uso conhecido na academia. Para calcular essas
-métricas, nós implementamos nossa própria ferramenta. O motivo para tal é que
-grande parte das ferramentas existentes fazem uso de código compilado, e não
-apenas do código-fonte. Nossa ferramenta possui bateria de testes automatizados
-e código-fonte aberto \footnote{\url{http://www.github.com/mauricioaniche/msr-asserts}. 
-Último acesso em 10 de Fevereiro de 2012.}.
-
-%% ------------------------------------------------------------------------- %%
-\subsection{Avaliação do Especialista}
-\label{sec:planejamento-especialista}
-
-Dois especialistas foram convidados a analisar os códigos-fonte e a dar notas para cada
-um deles. Apesar das métricas de código nos darem informações
-preciosas sobre a qualidade do código, a opinião de um especialista, baseada
-em sua experiência passada, pode ser bastante enriquecedora.
-
-As categorias nas quais eles deveriam avaliar eram: \textit{Simplicidade}, \textit{Testabilidade} e
-\textit{Qualidade do Projeto de Classes}.
-Em cada uma dessas categorias, os especialistas puderam dar notas entre
-1 (ruim) e 5 (bom), ou optar por não avaliar aquele exercício.
-Como alguns participantes não terminaram o exercício, o especialista
-foi avisado de que ele deve avaliar inclusive a "intenção" de projeto de classes criado
-pelo participante, e não só o código atual. 
-
-Para que a opinião do especialista fosse imparcial, ele \textbf{não} sabia a qual grupo
-pertencia e como cada código-fonte analisado foi desenvolvido (com ou sem a prática de TDD).
-
-%% ------------------------------------------------------------------------- %%
-\subsection{Entrevistas}
-\label{sec:planejamento-estrategia-entrevistas}
-
-A entrevista foi semi-estruturada, dando liberdade ao
-pesquisador para mudar o rumo das perguntas, caso se fizesse necessário.
-Além disso, todas as perguntas foram abertas, permitindo que o desenvolvedor desse
-uma resposta ampla sobre o assunto.
-
-O processo de entrevista é composto por uma breve introdução da pesquisa, tomando
-o cuidado para não enviesar o participante, seguida de algumas perguntas que visam
-caracterizar o perfil do participante; perguntas como qual a experiência do
-desenvolvedor em desenvolvimento de software e TDD são necessárias para ajudar o
-pesquisador no entendimento das respostas dadas. Além disso, perguntas sobre
-referências, livros e outros pontos de informação nas quais o participante lê a
-respeito da prática servem para que entendamos o embasamento teórico
-do praticante sobre TDD. Apesar das perguntas já terem sido feitas durante
-o questionário inicial, essa parte inicial é importante para tranquilizar
-o participante, e possibilitar com que ele esteja mais confiante e fale
-mais durante as perguntas mais cruciais.
-
-Em seguida, nós perguntamos os principais pontos da pesquisa.
-Para isso, fizemos uso não só de perguntas abertas, mas também
-voltamos aos códigos gerados durante o exercício, para que as respostas se tornassem técnicas e
-específicas, caso necessário. A ideia foi fazer com que o participante nos explicasse
-como que o projeto de classes daquele exercício foi concebido.
-
-Uma vez que as decisões tomadas por um programador durante a atividade de projeto de classes
-podem ser influenciadas por vários diferentes fatores, 
-as perguntas foram feitas de modo que o participante triangule suas respostas,
-e tente isolar o máximo possível a atividade de TDD dos outros possíveis fatores
-de influência. Participantes que não articulassem bem suas respostas seriam ser eliminados
-durante o processo de análise.
-
-Todas as entrevistas foram gravadas para que nós pudéssemos fazer a
-transcrição e rever os dados a qualquer momento durante o processo. Além disso,
-nós também tomamos notas, capturando informações como reações dos 
-participantes a determinadas perguntas, ou qualquer outra informação relevante. 
-As entrevistas também foram feitas em dias diferentes de acordo com a disponibilidade
-de cada participante.
-
-%% ------------------------------------------------------------------------- %%
 \section{Análise Quantitativa}
 
 Na tentativa de triangular as informações levantadas no capítulo anterior,
@@ -652,7 +496,7 @@ calculamos métricas em cima dos códigos gerados, para verificar se houve
 alguma diferença na qualidade dos códigos gerados com e sem a prática de TDD.
 
 O teste estatístico escolhido foi o Wilcoxon. 
-Devido ao problema que tivemos com os dados da academia, separamos a análise
+Para uma melhor análise, separamos a análise
 dos dados, tanto das métricas de código, quanto dos especialistas, entre academia e indústria.
 Nas sub-seções abaixo, discutimos os números encontrados.
 
@@ -808,17 +652,14 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 \end{table}
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Discussão}
-
-Pelos valores apresentados acima, percebe-se que a prática de TDD 
-aparentemente não influencia no projeto de classes. 
-
-Assim como muitos dos estudos citados, TDD aparentemente não pro
-
-%% ------------------------------------------------------------------------- %%
 \section{Análise Qualitativa}
 
-Nesta seção apresentamos e discutimos sobre a análise e interpretação dos dados colhidos
+Os valores apresentados acima corroboram com muitos dos estudos
+apresentados anteriormente. Aparentemente TDD não influencia no projeto de classes.
+Mas, conforme já previsto, é necessário um estudo qualitativo para 
+entender os reais efeitos da prática no projeto de classes.
+
+Nesta seção apresentamos e discutimos sobre a análise e interpretação dos dados qualitativos colhidos
 na execução deste estudo. Em particular, na Seção 
 \ref{padroes-tdd}, levantamos os padrões de \textit{feedback} que a prática de TDD
 pode dar ao desenvolvedor.
@@ -1257,11 +1098,13 @@ melhorar seu projeto de classes.
 %% ------------------------------------------------------------------------- %%
 \section*{Agradecimentos}
 
-agradeco as empresas
+Agradeçemos às empresas que aceitaram participar deste estudo: Bluesoft,
+Amil, e WebGoal (São Paulo e Poços de Caldas). Além disso, agradecemos aos
+desenvolvedores que participaram da pesquisa de forma independente.
 
 %% ------------------------------------------------------------------------- %%
 \bibliographystyle{IEEEtran}
-\bibliography{paper}
+\footnotesize{\bibliography{paper}}
 
 % that's all folks
 \end{document}
