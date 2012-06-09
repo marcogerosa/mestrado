@@ -2,17 +2,12 @@
 \chapter{Relação entre TDD e Projeto de Classes: Análise Quantitativa}
 \label{cap:analise-quantitativa}
 
-Na tentativa de triangular as informações levantadas no capítulo anterior,
+Na tentativa de encontrar os ditos efeitos de TDD sobre o projeto de classes,
 calculamos métricas em cima dos códigos gerados, para verificar se houve
 alguma diferença na qualidade dos códigos gerados com e sem a prática de TDD.
-Os valores utilizados para o cálculo podem ser encontrados no Apêndice 
-\ref{ape:valores} deste estudo.
-
 
 Conforme discutido no Capítulo \ref{cap:qualitativo-planejamento}, o teste
 estatístico escolhido foi o Wilcoxon. 
-Devido ao problema que tivemos com os dados da academia, separamos a análise
-dos dados, tanto das métricas de código, quanto dos especialistas, entre academia e indústria.
 Nas sub-seções abaixo, discutimos os números encontrados.
 
 %% ------------------------------------------------------------------------- %%
@@ -47,34 +42,6 @@ diferença nas métricas de código.
 	\end{tabular}
 	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na indústria}
 	\label{metricas-industria}
-\end{table}
-
-Na Tabela \ref{metricas-academia}, apontamos os \textit{p-values} das diferenças encontradas
-entre os códigos produzidos na academia. As métricas de 
-falta de coesão dos métodos e quantidade de métodos apresentaram
-uma diferença significativa nos exercícios 1 e 4, respectivamente.
-Ao olhar para todos os dados juntos, uma diferença significativa
-apareceu também na métrica de acoplamento eferente.
-Podemos então concluir que a prática de TDD também não afetou
-o código produzido pelos participantes da academia.
-
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
-		\hline
-		Exercício & Complexi- dade ciclomática & Acoplamento eferente & Falta de coesão dos métodos & Número de linhas por método 
-		& Quantidade de métodos por classe \\
-		\hline
-			Exercício 1	& 0.2155	&	0.0708	& \cellcolor[gray]{0.8}0.0071* &	0.1721	& \cellcolor[gray]{0.8}0.0083*\\
-			Exercício 2	& 0.7244	&	0.6744	& 1 &	0.3175 &	0.5591\\
-			Exercício 3	& 0.7008	&	0.1014 &	0.5007	& 0.4292	& 0.8687\\
-			Exercício 4	& 0.3430	&	0.7131 &	0.7735	& 0.7833	& 0.5522\\
-		\hline
-			Todos &	0.2540	&	\cellcolor[gray]{0.8}0.0076* & 0.3510 & 0.2668 & 0.1706\\
-		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre códigos com e sem TDD na academia}
-	\label{metricas-academia}
 \end{table}
 
 Já nas Tabelas \ref{valores-exp-cc-industria}, \ref{valores-exp-fanout-industria}, \ref{valores-exp-lcom-industria}, 
@@ -168,10 +135,10 @@ experientes, tanto em TDD quanto em desenvolvimento de software.
 \section{Especialistas}
 
 Ambos os especialistas não encontraram diferenças entre códigos produzidos
-com e sem TDD, tanto na indústria, quanto na academia. Nas Tabelas 
-\ref{tab:especialistas-industria} e \ref{tab:especialistas-academia},
+com e sem TDD. Na Tabela
+\ref{tab:especialistas-industria},
 mostramos os \textit{p-values} encontrados para a diferença de avaliação dos especialistas
-entre códigos produzidos com e sem TDD na indústria e academia, respectivamente.
+entre códigos produzidos com e sem TDD.
 
 
 \begin{table}[h!]
@@ -186,20 +153,6 @@ entre códigos produzidos com e sem TDD na indústria e academia, respectivament
 	\end{tabular}
 	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na indústria}
 	\label{tab:especialistas-industria}
-\end{table}
-
-\begin{table}[h!]
-	\centering
-	\begin{tabular}{| p{5cm} | c | c | c | }
-		\hline
-		Especialista & Projeto de classes & Testabilidade & Simplicidade\\
-		\hline
-		Especialista 1	& 0.8795 &	NA	& 0.4222\\
-		Especialista 2	& 0.8800	& 0.5519 &	0.8800\\
-		\hline
-	\end{tabular}
-	\caption{\textit{P-values} encontrados para a diferença entre as análises dos especialistas com e sem TDD na academia}
-	\label{tab:especialistas-academia}
 \end{table}
 
 %% ------------------------------------------------------------------------- %%
@@ -223,29 +176,15 @@ suas classes eram completamente vazias.
 %% ------------------------------------------------------------------------- %%
 \section{Discussão}
 
-No capítulo anterior, discutimos sobre a maneira na qual a prática de TDD
-influencia no projeto de classes. Todos os padrões levantados ajudam
-o desenvolvedor a perceber possíveis problemas no projeto de classes atual.
-Entretanto, a relação das métricas calculadas em relação aos códigos
-produzidos usando TDD e aos códigos produzidos sem a prática
-não apresentou diferença.
+Os valores apresentados anteriormente corroboram com muitos dos trabalhos relacionados. 
+Aparentemente TDD não influencia a ponto de alterar 
+de maneira significativa os valores das métricas de acoplamento, coesão e simplicidade.
+Porém, isso é incoerente com o sentimento comum no mercado de que praticar TDD
+traz benefícios para o projeto de classes. 
 
-Alguns motivos podem servir de explicação para este fenômeno. Conforme discutido na análise
-qualitativa, os padrões levantados pelos
-participantes apenas ajudam o desenvolvedor a perceber possíveis problemas
-de projeto de classes. É tarefa do desenvolvedor utilizá-los para
-refatorar o código atual. 
+Conforme previsto, neste estudo conduzimos
+uma etapa qualitativa para entender como se procede essa influência, do ponto
+de vista dos desenvolvedores. Tal estudo parece vital para a real compreensão
+dos efeitos da prática. A análise qualitativa é encontrada no capítulo a seguir.
 
-Uma possibilidade é que os desenvolvedores não perceberam ou deixaram
-de interpretar o \textit{feedback} dado pelo teste no momento do desenvolvimento.
-Talvez até pela falta de conhecimento mais "explícito" sobre o padrão, afinal
-todos os participantes discutiram esses padrões conosco de maneira informal. 
-Além disso, conforme discutido no Capítulo \ref{cap:ameacas}, um possível
-problema dos números encontrados é o de que muitos participantes não terminaram
-sua implementação. Isso pode confundir o valor das métricas e, consequentemente,
-o teste estatístico.
-
-Mas, indiferente do resultado quantitativo, os padrões levantados pelos 
-desenvolvedores fazem sentido e, quando interpretados, podem ajudar os desenvolvedores
-a melhorar o seu projeto de classes.
 

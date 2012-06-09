@@ -40,10 +40,15 @@ nos resultados encontrados, e como TDD e a prática de escrever o teste
 antes do código real realmente guiam o programador 
 em direção a essas melhorias.
 
-Para entendê-las, este estudo faz uso de uma combinação entre um experimento controlado inicial, no qual participantes foram
-convidados a resolver exercícios pré-preparados utilizando TDD e, a partir dos dados colhidos nesse estudo, um outro
-estudo qualitativo entrou em detalhes sobre como a prática influenciou as decisões de projeto de classes dos participantes.
-Este capítulo detalha o planejamento do estudo, bem como o processo de análise dos dados colhidos.
+Para entendê-las, neste trabalho optamos por um estudo exploratório
+essencialmente qualitativo,
+no qual participantes foram convidados a resolver exercícios 
+pré-preparados utilizando TDD e, a partir 
+dos dados colhidos nessa primeira parte, detalhes sobre como a prática influenciou as 
+decisões de projeto de classes foram extraídos dos participantes através de 
+entrevistas.
+Este capítulo detalha o planejamento do estudo, bem como o processo 
+de análise dos dados colhidos.
 
 
 %% ------------------------------------------------------------------------- %%
@@ -114,7 +119,8 @@ lado a lado para que um reforçe as ideias do outro \cite{creswell}.
 %% ------------------------------------------------------------------------- %%
 \section{Questões de pesquisa}
 
-Os objetivo principal deste estudo é \textbf{entender a relação da prática de TDD 
+Conforme já mencionado na introdução, 
+o objetivo principal deste estudo é \textbf{entender a relação da prática de TDD 
 e as decisões de projeto de classes tomadas pelo programador durante o processo de 
 projeto de sistemas orientados a objetos}.
 Para compreendê-la, tenta-se responder às questões listadas
@@ -138,19 +144,23 @@ abaixo:
 Participantes de diferentes empresas de desenvolvimento de software do mercado
 brasileiro foram selecionados. Todos eles foram solicitados a resolver 
 alguns problemas utilizando Java, dentro de um período de tempo limitado. 
-Os participantes utilizaram TDD em um problema, e não utilizaram
+Os participantes utilizaram TDD em um problema, e não o utilizaram
 no outro. Os problemas resolvidos bem como em qual deles o participante
 deveria utilizar TDD foram randomizados, a fim de diminuir o problema do aprendizado.
 
 Todas as implementações feitas foram salvas, para posterior
 cálculo de métricas de código. Ao final do exercício, todos participantes
 também responderam um questionário, sobre seu desempenho na resolução dos problemas.
-Em seguida, uma análise inicial serviu para filtrar os candidatos
+Em seguida, uma análise filtrou os candidatos
 mais interessantes, que foram posteriormente entrevistados. 
 Todos os dados gerados no processo, 
 como código produzido e as entrevistas, foram analisados.
 
-As sub-seções a seguir detalham cada um dos pontos levantados.
+As sub-seções a seguir detalham cada um dos pontos levantados. A ordem das
+sub-seções também representam a ordem de execução dos passos do estudo, uma vez
+que o executamos de maneira sequêncial.
+Um roteiro mais resumido e pronto para ser utilizado em replicações também pode
+ser encontrado no Apêndice \ref{ape:protocolo-resumido}.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Participantes da pesquisa}
@@ -158,24 +168,26 @@ As sub-seções a seguir detalham cada um dos pontos levantados.
 
 Desenvolvedores atuantes no mercado de 
 software brasileiro foram selecionados para participarem da pesquisa.
-Os participantes foram convidados e avaliados de acordo com certos critérios:
+Nenhum critério rígido de seleção foi utilizado. Dada a dificuldade de se
+encontrar desenvolvedores e empresas interessadas em participar de
+estudos científicos, todos os que se candidataram, foram utilizados no estudo.
+
+Para melhor análise futura, os participantes foram avaliados de acordo com
+certos critérios:
 
 \begin{itemize}
-	\item \textbf{Experiência em TDD.} Convidamos praticantes com diferentes
-	níveis de experiência. Eles foram categorizados em programadores inexperientes em TDD (pouco conhecimento teórico e prático)
-	e programadores com experiência em TDD (praticantes frequentes há no mínimo 3 anos).
+	\item \textbf{Experiência em TDD.} Eles foram categorizados em programadores inexperientes 
+	em TDD (pouco conhecimento teórico e prático) e programadores com experiência
+	em TDD (praticantes frequentes há no mínimo 3 anos).
 	
 	\item \textbf{Experiência em desenvolvimento de software.} Participantes podem ser
 	experientes (com no mínimo 3 anos de desenvolvimento e bons conhecimentos em orientação a objetos) ou 
 	inexperientes (com no máximo 1 ano de desenvolvimento e pouco conhecimento de orientação a objetos).
 
-	\item \textbf{Conhecimentos em Java.} 
-	Participantes devem ter experiência em Java, já que os problemas deverão ser resolvidos
-	nessa linguagem.	
+	\item \textbf{Conhecimentos em Java.} Nível de conhecimento na linguagem Java.
 	
-	\item \textbf{Conhecimentos em Testes de Unidade.} Todos os participantes devem ser
-	familiarizados com a escrita de testes de unidade, independente do seu conhecimento
-	em TDD.
+	\item \textbf{Conhecimentos em Testes de Unidade.} Conhecimento em testes
+	de unidade e na prática de TDD.
 
 \end{itemize}
 
@@ -211,17 +223,23 @@ de software e TDD é fazer análises para os seguintes grupos:
 \end{itemize}
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Execução do estudo}
+\subsection{Resolução dos problemas propostos}
 \label{sec:execucao}	
 
 Todos os participantes foram convidados a resolver os exercícios preparados. 
 Para isso, criamos um caderno de exercícios que foi seguido pelo participante.
+Esse caderno de exercícios continha nada mais do que os exercícios selecionados
+para aquele participante, com a instrução de ``praticar ou não'' TDD.
 
-Os participantes tiveram duas horas para resolver todos os exercícios. 
-Todos os códigos foram salvos ao final do estudo para que possam ser analisados junto
-com os dados das entrevistas.
+Os participantes tiveram duas horas para resolver todos os exercícios. Embora
+não houvesse nenhuma regra definida, ao final da primeira hora, nós os
+avisavámos para que pudessem controlar melhor o tempo e sugeríamos que eles 
+partissem para o segundo exercício. 
+
+Todos os códigos foram salvos ao final do estudo para que pudessem ser 
+analisados junto com os dados das entrevistas.
 O tempo foi considerado suficiente para que o participante resolvesse todos os
-exercícios. 
+exercícios (através do questionário respondido após a resolução dos exercícios). 
 
 Os participantes não podiam se comunicar durante o exercício, e cada um deles recebeu
 os exercícios em ordens diferentes, para tentar diminuir o fator de aprendizado que 
@@ -251,7 +269,10 @@ recorrentes em diversos projetos de software. Os enunciados encontram-se no Apê
 \ref{ape:exercicios}.
 Na Tabela \ref{tab:problemas-exercicios}, apresentamos a relação entre uma má
 implementação dos exercícios e os princípios de projeto de classes feridos por
-ela.
+ela. As boas práticas de projeto de classes que foram utilizados ao longo deste
+estudo são baseadas nos príncipios catalogados por Martin \ref{bob-martin} e
+conhecidos pelo acrônimo \textit{SOLID}. No Apêndice \ref{ape:design},
+discutimos esses princípios em detalhes.
 
 Foi dito ao participante que os exercícios simulam problemas do mundo real, e ele deveria
 ter em mente que as soluções geradas supostamente seriam mantidas por uma outra equipe.
@@ -270,7 +291,7 @@ esse processo, a nota gerada deve passar por diversos outros processos, como env
 para um sistema externo, persistir na base de dados, etc. Possíveis más implementações incluem a 
 implementação de uma única classe que faria todo o processo, ou uma classe altamente acoplada.
 Uma solução mais elegante seria extrair cada responsabilidade em uma classe diferente e compô-las
-por meio, por exemplo, da implementação do padrão Observer \cite{gof}.
+por meio, por exemplo, da implementação do padrão \textit{Observer} \cite{gof}.
 
 O terceiro exercício pede ao participante a implementação de um simples processador de boletos que
 deve marcar a fatura como paga, caso a soma de pagamentos seja maior ou igual ao valor da fatura. 
@@ -314,8 +335,8 @@ apenas finalizar a solução. No entanto, o código-fonte inicial enviesava o pa
 uma má implementação. O resultado de ambas as turmas foram semelhantes; alguns participantes
 não perceberam a má qualidade do código inicial e apenas deram prosseguimento ao código
 de má qualidade. Outros perceberam os problemas e refatoraram os códigos em busca
-de um melhor projeto de classes. Ambas as turmas gostaram dos exercícios
-propostos.
+de um melhor projeto de classes. Ambas as turmas avaliaram positivamente os
+exercícios propostos.
 
 
 %% ------------------------------------------------------------------------- %%
@@ -379,11 +400,11 @@ O procedimento adotado para escolha dos candidatos foi:
 \begin{enumerate}
 	\item Leitura dos questionário inicial e pós-experimento respondidos pelo participante.
 	
-	\item Avaliação do código gerado, levando-se em conta qual foi resolvido com TDD e qual
-	foi resolvido sem TDD.
+	\item Avaliação do código gerado, levando-se em conta qual foi resolvido com
+	TDD e qual foi resolvido sem TDD.
 	
 	\item Geração de relatório para cada participante, descrevendo as opiniões do participante
-	e o ponto de vista do autor da pesquisa sobre os dados colhidos até então.
+	e o nosso ponto de vista sobre os dados colhidos até então.
 	
 	\item Candidatos que apresentaram códigos de qualidade ou alguma divergência entre códigos
 	feitos com TDD e sem TDD (por exemplo, um com mais qualidade do que o outro), que merecesse
@@ -477,6 +498,11 @@ apenas do código-fonte. Nossa ferramenta possui bateria de testes automatizados
 e código-fonte aberto \footnote{\url{http://www.github.com/mauricioaniche/msr-asserts}. 
 Último acesso em 10 de Fevereiro de 2012.}.
 
+A escolha das métricas foi meramente por conveniência. Como mencionado acima,
+as ferramentas existentes não são fáceis de serem utilizadas e, por esse motivo,
+selecionamos métricas que poderiam ser facilmente implementadas por nós
+a tempo de realizar o estudo.
+
 %% ------------------------------------------------------------------------- %%
 \subsection{Avaliação do Especialista}
 \label{sec:planejamento-especialista}
@@ -541,14 +567,19 @@ Testes estatísticos para análise de variância foram utilizados
 para verificar se TDD influencia nas mesmas.
 A variância dos dados obtidos na opinião do especialista sobre cada código-fonte gerado
 foi utilizada também como entrada para algoritmos estatísticos. 
-Como esses dados não seguem uma distribuição normal, o teste
-de Wilcoxon foi escolhido. Este é um teste de hipotése não-paramétrico,
+
+Como esses dados não seguem uma distribuição normal, o \textbf{teste
+de Wilcoxon} foi escolhido. Este é um teste de hipotése não-paramétrico,
 usado para comparar duas amostras e verificar se há diferença da média das populações.
-Comparamos os valores encontrados
-para as métricas de complexidade ciclomática, acoplamento eferente, falta
+O teste de Wilcoxon recebe dois conjuntos de dados como entrada, que são os
+conjuntos na qual ele procurará por diferenças nas médias.
+
+Executamos o teste de Wilcoxon diversas vezes, uma para cada métrica de código
+que calculamos: complexidade ciclomática, acoplamento eferente, falta
 de coesão dos métodos, número de linhas por métodos, e quantidade de métodos
-por classe nos códigos produzidos com TDD com as métricas colhidas dos
-códigos produzidos sem TDD.
+por classe. Para cada uma dessas métricas, separamos o conjunto de valores
+encontrados pela métrica em códigos não produzidos com TDD, do conjunto de
+valores para códigos produzidos com TDD.
 
 Durante o processo, o pesquisador constantemente validou toda e qualquer
 informação colhida e, quando se fez necessário, a coleta de qualquer entrevista,
@@ -577,10 +608,6 @@ A validade do estudo foi buscada por alguns procedimentos executados pelos
 pesquisadores, dentre eles:
 
 \begin{itemize}
-	\item \textbf{Triangulação de diferentes fontes de dados}. A pesquisa foi
-	realizada com participantes com diferentes experiências, e diferentes
-	fontes de dados foram colhidas, como questionários, entrevistas, código gerado e 
-	opinião de especialistas;
 
 	\item \textbf{Prover descrição rica e detalhada sobre o ambiente}. A riqueza
 	dos detalhes mostra a qualidade do estudo, além de possibilitar a repetição do
@@ -661,6 +688,9 @@ mas sim trabalhar com qualidade.
 Já o terceiro piloto nos ajudou a melhorar o roteiro de entrevista. Percebemos a existência de diversas perguntas
 repetidas. Após o término, removemos essas questões e deixamos o roteiro de entrevistas mais simples.
 
+Infelizmente não conseguimos executar mais pilotos, devido a falta de
+tempo e disponibilidade de possíveis participantes.
+
 \section{Execução do estudo}
 \label{subsec:particularidades-execucao}
 
@@ -724,8 +754,8 @@ era lembrar sobre suas decisões, e nos possibilitar perguntas específicas
 sobre o projeto de classes gerado.
 
 Em média, as entrevistas levavam 30 minutos. Quando o participante comentava
-algo interessante, nós fugíamos do roteiro para permitir que ele falasse mais do assunto,
-e anotávamos o ponto para que, ao final, fosse possível discutir novamente sobre o assunto.
+algo interessante, nós adaptávamos o roteiro para permitir que ele falasse mais
+do assunto, e anotávamos o ponto para que, ao final, fosse possível discutir novamente sobre o assunto.
 O roteiro de entrevistas sofreu uma pequena mudança ao final da primeira entrevista,
 já que percebemos que comunicar ao participante que o código que ele produziu
 \textit{não apresenta um bom projeto de classes} não era uma tarefa fácil, e talvez, não ética. 
@@ -748,13 +778,6 @@ a avaliar na hora que preferissem.
 \section{Descrição dos participantes}
 \label{sec:desc-participantes}
 
-Conforme mencionado, o estudo foi executado em dois ambientes diferentes: em empresas de software
-do mercado brasileiro e na academia. Como ambos estudos foram executados de maneira independente,
-descrevemos cada grupo de maneira separada nas sub-seções \ref{findings-desc-industria} e \ref{findings-desc-academia}.
-
-\subsection{Participantes da Indústria}
-\label{findings-desc-industria}
-
 Ao todo tivemos 25 participantes, de 6 diferentes empresas.
 Os participantes da indústria, em sua maioria, eram pessoas com pouca experiência em TDD.
 40\% deles disseram utilizar a prática há no máximo um ano. 52\% deles praticam TDD
@@ -767,28 +790,6 @@ de software. 24\% dos participantes desenvolve software entre 4 e 5 anos.
 28\% deles faz isso entre 6 e 10 anos. 20\% possui até 2 anos de experiência.
 Na Figura \ref{fig:exp-sw-industria}, mostramos a distribuição.
 
-Entrando em aspectos mais técnicos, 64\% dos participantes afirmaram programar em Java. Entretanto,
-36\% disseram que não trabalham com Java no seu dia a dia. Todos eles afirmam conhecer JUnit,
-e só 12\% diz nunca ter ouvido falar sobre o conceito de objetos dublês\footnote{Objetos dublê ou, do inglês, 
-\textit{mock objects}, são objetos criados durante um teste de unidade, e que imitam o comportamento de um
-outro objeto concreto. Geralmente são muito utilizados quando queremos isolar nosso teste de outras classes
-do sistema. Mais informações sobre objetos dublês podem ser encontradas em \cite{mocks}.}. De fato, 64\% deles
-aplicam objetos dublês durante suas atividades de desenvolvimento. Com relação a conhecimentos
-em orientação a objetos, na pergunta aberta do questionário, grande parte deles 
-afirmou que possuem uma boa experiência e alguns
-chegam até a afirmar que dominam o assunto. Poucos disseram que possuem conhecimentos
-básicos. Na Tabela \ref{tab:exp-industria},
-apresentamos o conhecimento dos participantes em relação a Java, JUnit e objetos dublês.
-
-Em relação à experiência com TDD,
-podemos afirmar que metade dos participantes ainda está experimentando a prática, enquanto
-outros já a tem mais consolidada. Isso é positivo, já que foi possível capturar informações
-da prática de TDD por pessoas com diferentes níveis de maturidade.
-
-Em relação ao alto número de pessoas que não utilizam Java, isso se deve ao fato de uma das
-empresas fazer uso de PHP para seu trabalho do dia a dia. No entanto, nós conhecemos a equipe
-e verificamos que, apesar de não utilizarem a linguagem constantemente, eles não tiveram
-problema algum durante a execução dos exercícios.
 
 \begin{figure}[h!]
   \centering
@@ -804,46 +805,18 @@ problema algum durante a execução dos exercícios.
   \label{fig:exp-sw-industria}
 \end{figure}
 
-\subsection{Participantes da Academia}
-\label{findings-desc-academia}
-
-Os participantes da academia que participaram do estudo, 21 no total, possuem baixíssima experiência,
-tanto em TDD quanto em desenvolvimento de software em geral. Surpreendentemente, 90\%
-dos participantes afirmaram não conhecer Java, e 61\% disseram não conhecer TDD.
-Em contraste com essa informação, todos eles afirmaram conhecer JUnit, e 76\% afirmaram
-conhecer objetos dublês na teoria. 
-Na Figura \ref{fig:exp-tdd-academia}, mostramos a experiência dos participantes em TDD, e
-na Tabela \ref{tab:exp-academia} apresentamos a experiência deles em Java, JUnit, e objetos
-dublês.
-
-Em relação a experiência de desenvolvimento de software, apenas 23\% afirmaram não
-ter nenhuma experiência, enquanto que por volta de 43\% afirmaram possuir
-entre 2 a 4 anos de experiência. Nenhum participante possuía experiência superior a isso.
-Na Figura \ref{fig:exp-sw-academia}, mostramos a distribuição por completo.
-
-De acordo com os dados, percebemos que grande parte dos participantes não conhecem a linguagem ou
-mesmo a prática de TDD. A linguagem foi realmente um problema: durante a execução, percebemos
-que muitos deles faziam buscas por elementos simples da linguagem Java, como manipulação de arrays
-e listas, ou mesmo por manipulação de texto.
-
-Isso explica o baixo desempenho dos alunos da academia durante
-o experimento. Nenhum deles conseguiu terminar os dois exercícios propostos. Por esse
-motivo, nenhum aluno foi selecionado para o processo de entrevista. Entretanto,
-os códigos-fonte produzidos foram utilizados no processo de análise quantitativa.
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.6]{findings/experiencia-tdd-academia.png}
-  \caption{Experiência dos estudantes da academia com TDD}
-  \label{fig:exp-tdd-academia}
-\end{figure}
-
-\begin{figure}[h!]
-  \centering
-  \includegraphics[scale=0.5]{findings/experiencia-sw-academia.png}
-  \caption{Experiência dos estudantes da academia com desenvolvimento de software em geral}
-  \label{fig:exp-sw-academia}
-\end{figure}
+Entrando em aspectos mais técnicos, 64\% dos participantes afirmaram programar em Java. Entretanto,
+36\% disseram que não trabalham com Java no seu dia a dia. Todos eles afirmam conhecer JUnit,
+e só 12\% diz nunca ter ouvido falar sobre o conceito de objetos dublês\footnote{Objetos dublê ou, do inglês, 
+\textit{mock objects}, são objetos criados durante um teste de unidade, e que imitam o comportamento de um
+outro objeto concreto. Geralmente são muito utilizados quando queremos isolar nosso teste de outras classes
+do sistema. Mais informações sobre objetos dublês podem ser encontradas em \cite{mocks}.}. De fato, 64\% deles
+aplicam objetos dublês durante suas atividades de desenvolvimento. Com relação a conhecimentos
+em orientação a objetos, na pergunta aberta do questionário, grande parte deles 
+afirmou que possuem uma boa experiência e alguns
+chegam até a afirmar que dominam o assunto. Poucos disseram que possuem conhecimentos
+básicos. Na Tabela \ref{tab:exp-industria},
+apresentamos o conhecimento dos participantes em relação a Java, JUnit e objetos dublês.
 
 
 \begin{table}
@@ -860,16 +833,12 @@ os códigos-fonte produzidos foram utilizados no processo de análise quantitati
 	\label{tab:exp-industria}
 \end{table}
 
-\begin{table}
-	\begin{tabular}{ | p{5cm} | p{5cm} | p{5cm} | }
-		\hline
-		Ferramenta & Participantes que conhecem & Participantes que não conhecem\\
-		\hline
-		Java & 2 & 19\\
-		JUnit & 21 & 0\\
-		Objetos Dublê & 2 (utilizam no dia a dia), 16 (na teoria) & 3\\
-		\hline
-	\end{tabular}
-	\caption{Experiência em Java, JUnit, e Objetos Dublê dos participantes da academia}
-	\label{tab:exp-academia}
-\end{table}
+Em relação à experiência com TDD,
+podemos afirmar que metade dos participantes ainda está experimentando a prática, enquanto
+outros já a tem mais consolidada. Isso é positivo, já que foi possível capturar informações
+da prática de TDD por pessoas com diferentes níveis de maturidade.
+
+Em relação ao alto número de pessoas que não utilizam Java, isso se deve ao fato de uma das
+empresas fazer uso de PHP para seu trabalho do dia a dia. No entanto, nós conhecemos a equipe
+e verificamos que, apesar de não utilizarem a linguagem constantemente, eles não tiveram
+problema algum durante a execução dos exercícios.

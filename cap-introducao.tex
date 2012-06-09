@@ -11,20 +11,12 @@ de implementar a funcionalidade esperada e, depois, com o código
 passando no recém-criado teste, refatora para 
 remover possíveis duplicação de dados e de código \cite{TDDByExample}.
 
-A adoção de TDD da mesma pela indústria tem crescido cada vez mais. 
-Em um questionário de 2010 para descobrir quais práticas eram feitas por times
-ágeis \cite{wambler-survey-agile}, Scott Ambler mostrou que 53\% dos times ágeis
-adotaram TDD como uma maneira para validar o trabalho feito.
-Números similares podem ser observados nos questionários anuais da Version One, que,
-em sua versão de 2012 \cite{versionone-2012} mostrou que 40\% dos times ágeis têm 
-feito uso da prática.
-
 Com a prática de TDD, um desenvolvedor só escreve código
 que seja coberto por um teste. Por esse motivo, é comum relacionar a prática
 de TDD com a área de teste de software. Mas, além do ponto sobre
 a qualidade externa do código, um discurso comum entre os praticantes de TDD
 na indústria é os efeitos da prática também sobre a qualidade interna do código.
-Muitos autores de livros conhecidos pela indústria e academia, como
+Autores de livros conhecidos pela indústria e academia, como
 Kent Beck \cite{TDDByExample}, Robert Martin \cite{agile-ppp}, 
 Steve Freeman \cite{GOOS} e Dave Astels \cite{astels-tdd}, afirmam que a prática de TDD
 promove uma melhoria significativa no projeto de classes, auxiliando
@@ -59,11 +51,21 @@ estudo \cite{guidelines-case-study}.
 Baseando-se no fato de que o processo de desenvolvimento de software envolve 
 diversos fatores humanos e é totalmente sensível ao contexto em que ele está 
 inserido, 
-este estudo fez uso de uma combinação entre um experimento controlado inicial, 
-no qual participantes foram convidados a resolver exercícios utilizando TDD e, 
-a partir dos dados colhidos, um outro estudo qualitativo foi 
-feito objetivando entender como a prática influenciou as decisões de projeto 
-dos participantes.
+neste trabalho optamos por um estudo exploratório
+essencialmente qualitativo,
+no qual participantes foram convidados a resolver exercícios 
+pré-preparados utilizando TDD e, a partir 
+dos dados colhidos nessa primeira parte, detalhes sobre como a prática influenciou as 
+decisões de projeto de classes foram extraídos dos participantes através de 
+entrevistas.
+
+Ao final do estudo, acabamos por encontrar diversos padrões de \textit{feedback}
+que a prática de TDD dá ao desenvolvedor ao longo do projeto de classes. Esses
+padrões podem ser interpretados como pequenas evidências que o desenvolvedor,
+ao praticar TDD, encontra sobre possíveis mau cheiros em seu código. Esses
+padrões são extraídos pelo desenvolvedor através do teste de unidade que é
+escrito pelo desenvolvedor enquanto pratica TDD. Eles foram discutidos
+e detalhados no Capítulo \ref{cap:discussao}.
 
 %% ------------------------------------------------------------------------- %%
 \section{Motivação}
@@ -76,13 +78,20 @@ comumente mencionados por autores de livros, mas pouco explorados.
 Entender como a prática de TDD pode influenciar no processo
 de criação do projeto de classes pode trazer grandes benefícios
 aos desenvolvedores de software de maneira geral.
+
+Descobrir problemas de projeto de classes sempre foi um grande problema
+encontrado pela indústria. Como descrito pela Lei da Evolução de Software
+\cite{lehman}, códigos tendem a perder qualidade ao longo do tempo. Qualquer
+prática que ajude desenvolvedores a encontrar de forma mais rápida possíveis
+problemas em seus códigos, deve ser estudada e avaliada pelas equipes de
+desenvolvimento. TDD é frequentemente mencionado como uma possível prática para
+ajudar o desenvolvedor na árdua tarefa de criar projetos de classes flexíveis.
+
 Ao saber de maneira mais precisa
-como a prática influencia, poderiam melhorar o uso da prática e obter
-informações sobre seu projeto de classes mais frequentemente.
-
-Além disso, essas informações podem ainda servir de apoio à decisão da 
-adoção da prática de TDD nos times de desenvolvimento.
-
+como a prática de TDD influencia no projeto de classes, desenvolvedores poderiam
+fazer melhor uso da prática, obter informações sobre seu projeto de classes
+de maneira mais frequente, e diminuir a velocidade na qual códigos
+tendem a degradar.
 
 %% ------------------------------------------------------------------------- %%
 \section{Caracterização da Pesquisa}
