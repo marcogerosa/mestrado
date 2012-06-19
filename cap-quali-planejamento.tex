@@ -168,11 +168,11 @@ ser encontrado no Apêndice \ref{ape:protocolo-resumido}.
 
 Desenvolvedores atuantes no mercado de 
 software brasileiro foram selecionados para participarem da pesquisa.
-Nenhum critério rígido de seleção foi utilizado. Dada a dificuldade de se
+Dada a dificuldade de se
 encontrar desenvolvedores e empresas interessadas em participar de
 estudos científicos, todos os que se candidataram, foram utilizados no estudo.
 
-Para melhor análise futura, os participantes foram avaliados de acordo com
+Para análise futura, os participantes foram avaliados de acordo com
 certos critérios:
 
 \begin{itemize}
@@ -406,8 +406,10 @@ O procedimento adotado para escolha dos candidatos foi:
 	\item Geração de relatório para cada participante, descrevendo as opiniões do participante
 	e o nosso ponto de vista sobre os dados colhidos até então.
 	
-	\item Candidatos que apresentaram códigos de qualidade ou alguma divergência entre códigos
-	feitos com TDD e sem TDD (por exemplo, um com mais qualidade do que o outro), que merecesse
+	\item Candidatos que apresentaram códigos de qualidade ou alguma divergência entre as respostas
+	no questionário e os códigos feitos com TDD e sem TDD 
+	(por exemplo, participante comentou no questionário que TDD o ajudou no projeto de classes,
+	mas não percebemos uma melhora no projeto de classes no código que ele produziu), que merecesse
 	atenção especial, foram selecionados para a entrevista.
 \end{enumerate}
 
@@ -491,17 +493,13 @@ As métricas utilizadas foram:
 	
 \end{enumerate}
 
-Todas as métricas citadas já são de uso conhecido na academia. Para calcular essas
+Todas as métricas citadas já são de uso conhecido na academia e indústria, e de fácil implementação. 
+Para calcular essas
 métricas, nós implementamos nossa própria ferramenta. O motivo para tal é que
 grande parte das ferramentas existentes fazem uso de código compilado, e não
 apenas do código-fonte. Nossa ferramenta possui bateria de testes automatizados
 e código-fonte aberto \footnote{\url{http://www.github.com/mauricioaniche/msr-asserts}. 
 Último acesso em 10 de Fevereiro de 2012.}.
-
-A escolha das métricas foi meramente por conveniência. Como mencionado acima,
-as ferramentas existentes não são fáceis de serem utilizadas e, por esse motivo,
-selecionamos métricas que poderiam ser facilmente implementadas por nós
-a tempo de realizar o estudo.
 
 %% ------------------------------------------------------------------------- %%
 \subsection{Avaliação do Especialista}
@@ -570,7 +568,7 @@ foi utilizada também como entrada para algoritmos estatísticos.
 
 Como esses dados não seguem uma distribuição normal, o \textbf{teste
 de Wilcoxon} foi escolhido. Este é um teste de hipotése não-paramétrico,
-usado para comparar duas amostras e verificar se há diferença da média das populações.
+usado para comparar duas amostras e verificar se há diferença na média das populações.
 O teste de Wilcoxon recebe dois conjuntos de dados como entrada, que são os
 conjuntos na qual ele procurará por diferenças nas médias.
 
@@ -778,7 +776,8 @@ a avaliar na hora que preferissem.
 \section{Descrição dos participantes}
 \label{sec:desc-participantes}
 
-Ao todo tivemos 25 participantes, de 6 diferentes empresas.
+Ao todo tivemos 25 participantes, de 6 diferentes empresas de pequeno porte do mercado
+brasileiro \footnote{Consideramos empresas de pequeno porte aquelas que tem menos de 50 funcionários.}.
 Os participantes da indústria, em sua maioria, eram pessoas com pouca experiência em TDD.
 40\% deles disseram utilizar a prática há no máximo um ano. 52\% deles praticam TDD
 entre 1 e 3 anos. Apenas 4\% praticou entre três e quatro anos, e nenhum participante
