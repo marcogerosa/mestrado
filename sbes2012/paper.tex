@@ -516,7 +516,7 @@ problema algum durante a execução dos exercícios.
 \label{sec:exercicios}
 
 Foram propostos quatro problemas que deveriam ser resolvidos pelos participantes, utilizando
-linguagem Java \footnote{O enunciado dos exercícios pode ser encontrado 
+linguagem Java \footnote{Os enunciados dos exercícios podem ser encontrados 
 em \url{http://gist.github.com/3024328}. Último acesso em 30 de junho de 2012}. 
 O objetivo desses exercícios foi simular problemas de projeto de classes 
 recorrentes em diversos projetos de software. 
@@ -585,7 +585,7 @@ diferença nas métricas de código.
 	\centering
 	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
 		\hline
-		\textbf{Exercício} & \textbf{Complexi-} \textbf{dade ciclomática} & \textbf{Acoplamento eferente} & \textbf{Falta de coesão dos métodos} & \textbf{Número de linhas por método} 
+		\textbf{Exercício} & \textbf{Complexidade ciclomática} & \textbf{Acoplamento eferente} & \textbf{Falta de coesão dos métodos} & \textbf{Número de linhas por método} 
 		& \textbf{Quantidade de métodos por classe} \\
 		\hline
 		Exercício 1 &	0.8967	&	0.6741 &	\cellcolor[gray]{0.8}2.04E-07* &	0.4962 &	\cellcolor[gray]{0.8}2.99E-06* \\
@@ -1044,33 +1044,7 @@ trazendo um melhor significado à afirmação de que a prática melhora o projet
 Além de corroborar com os estudos quantativos da literatura, este estudo
 foi além, e observou padrões de \textit{feedback} que aparecem
 no momento em que o desenvolvedor utiliza TDD, e que, na prática, o guia durante
-o desenvolvimento.
-
-A prática de TDD \textbf{pode} influenciar no processo de criação do projeto de classes.
-No entanto, ao contrário do que é comentado pela indústria,
-\textbf{a prática de TDD não guia o desenvolvedor para um bom projeto de classes
-de forma automática}; a experiência e conhecimento 
-do desenvolvedor são fundamentais ao criar software orientado a objetos.
-
-A prática, por meio dos seus possíveis \textit{feedbacks} em relação ao
-projeto de classes, discutidos
-em profundidade na Seção \ref{padroes-tdd}, pode servir de guia
-para o desenvolvedor. Esses \textit{feedbacks}, quando observados, fazem
-com que o desenvolvedor perceba problemas de projeto de classes de
-forma antecipada, facilitando a refatoração do código (Q1 e Q2).
-
-Ao escrever um teste de unidade para uma determinada classe, o desenvolvedor
-é obrigado a passar sempre pelos mesmos passos. Todo teste de unidade é composto
-de um conjunto de linhas responsáveis por montar o cenário do teste, um conjunto
-de linhas que executam a ação sob teste e, por fim, um conjunto de linhas que
-garantem que o comportamento foi executado de acordo com o esperado.
-
-Uma dificuldade na escrita de qualquer um desses conjuntos pode implicar
-em problemas no projeto de classes. Por exemplo, uma classe que para
-ser testada necessita de grandes cenários, pode nos indicar que a classe
-sob teste possui pré-condições muito complicadas. Já dificuldades na hora
-de executar a ação sob teste pode nos indicar que a interface pública dessa
-classe não é amigável (Q3). 
+o desenvolvimento. 
 
 Espera-se que, com estes padrões catalogados, desenvolvedores atentem-se mais
 aos possíveis \textit{feedbacks} que a prática de TDD fornece e, utilizem-os
@@ -1085,10 +1059,50 @@ o desenvolvedor sobre o possível mau cheiro de projeto.
 Além disso, a busca por mais padrões como os levantados aqui pode aumentar ainda 
 mais o \textit{feedback} dado pela prática. 
 
+
+Nas sub-seções abaixo, respondemos cada uma das questões levantadas
+por este trabalho.
+
+\subsection{Qual a influência de TDD no projeto de classes?}
+
+A prática de TDD \textbf{pode} influenciar no processo de criação do projeto de classes.
+No entanto, ao contrário do que é comentado pela indústria,
+\textbf{a prática de TDD não guia o desenvolvedor para um bom projeto de classes
+de forma automática}; a experiência e conhecimento 
+do desenvolvedor são fundamentais ao criar software orientado a objetos.
+
+A prática, por meio dos seus possíveis \textit{feedbacks} em relação ao
+projeto de classes, discutidos
+em profundidade na Seção \ref{padroes-tdd}, pode servir de guia
+para o desenvolvedor. Esses \textit{feedbacks}, quando observados, fazem
+com que o desenvolvedor perceba problemas de projeto de classes de
+forma antecipada, facilitando a refatoração do código (Q1 e Q2).
+
 \textbf{Portanto, essa é a forma na qual a prática guia o desenvolvedor para
 um melhor projeto de classes: dando retorno constante sobre os possíveis problemas
 existentes no atual projeto de classes. É tarefa do desenvolvedor perceber
 estes problemas e melhorar o projeto de acordo.}
+
+\subsection{Qual a relação entre TDD e as tomadas de decisões de projeto
+feitas por um desenvolvedor?}
+
+O desenvolvedor que pratica TDD escreve os testes antes do código.
+Isso faz com que o teste de unidade que está sendo escrito sirva de
+rascunho para o desenvolvedor. \textbf{Ao observar o código do teste de unidade com atenção,
+o desenvolvedor pode perceber problemas no projeto de classes que está criando.
+Problemas esses como classes que possuem diversas responsabilidades
+ou que possuem muitas dependências}. 
+
+\subsection{Como a prática de TDD influencia o programador no processo de  
+projeto de classes, do ponto de vista do acoplamento, coesão e complexidade?}
+
+Ao escrever um teste de unidade para uma determinada classe, o desenvolvedor
+é obrigado a passar sempre pelos mesmos passos: a escrita do cenário, a execução
+da ação sob teste e, por fim, a garantia que o comportamento foi executado 
+de acordo com o esperado.
+\textbf{Uma dificuldade na escrita de qualquer uma dessas partes pode implicar
+em problemas no projeto de classes}. O desenvolvedor, atento, percebe e 
+melhora seu projeto de classes de acordo.
 
 %% ------------------------------------------------------------------------- %%
 \section*{Agradecimentos}
