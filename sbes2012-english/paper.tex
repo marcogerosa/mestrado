@@ -929,73 +929,129 @@ a quantidade de participantes final do estudo pode não ser suficiente para gene
 os resultados encontrados. 
 
 %% ------------------------------------------------------------------------- %%
-\section{Conclusão}
-
-Neste trabalho, discutimos e entendemos como a prática de TDD pode
-fazer a diferença no dia a dia de um desenvolvedor de software,
-trazendo um melhor significado à afirmação de que a prática melhora o projeto de classes.
-Além de corroborar com os estudos quantativos da literatura, este estudo
-foi além, e observou padrões de \textit{feedback} que aparecem
-no momento em que o desenvolvedor utiliza TDD, e que, na prática, o guia durante
-o desenvolvimento. 
-
-Espera-se que, com esses padrões catalogados, desenvolvedores atentem-se mais
-aos possíveis \textit{feedbacks} que a prática de TDD fornece e, utilizem-os
-para melhorar a qualidade dos seus projetos de classe. O ensino de TDD também
-pode ser beneficiado por este trabalho, já que professores podem fazer uso dos padrões
-aqui levantados e mostrar ao aluno como a prática pode efetivamente guiar
-o desenvolvedor para um projeto de classes melhor.
-
-Um possível trabalho futuro
-é a criação de ferramentas que automaticamente detectam esses padrões e notifiquem
-o desenvolvedor sobre o possível mau cheiro de projeto. 
-Além disso, a busca por mais padrões como os levantados aqui pode aumentar ainda 
-mais o \textit{feedback} dado pela prática. 
+\section{Conclusion}
+%\section{Conclusão}
 
 
-Nas sub-seções abaixo, respondemos cada uma das questões levantadas
-por este trabalho.
+In this study, we discuss and understand how the TDD practices can make the
+difference in the routine of a software developer, bringing a better meaning
+to the statement that the practice improves the classes design.
+In addition to endorse the quantitative studies form the literature, this study
+goes beyond and analyzes feedback patterns that are showed in the moment when
+the developer uses TDD and, in practice, guides him during the development.
 
-\subsection{Qual a influência de TDD no projeto de classes?}
+%Neste trabalho, discutimos e entendemos como a prática de TDD pode
+%fazer a diferença no dia a dia de um desenvolvedor de software,
+%trazendo um melhor significado à afirmação de que a prática melhora o projeto de classes.
+%Além de corroborar com os estudos quantativos da literatura, este estudo
+%foi além, e observou padrões de \textit{feedback} que aparecem
+%no momento em que o desenvolvedor utiliza TDD, e que, na prática, o guia durante
+%o desenvolvimento. 
 
-A prática de TDD \textbf{pode} influenciar no processo de criação do projeto de classes.
-No entanto, ao contrário do que é comentado pela indústria,
-\textbf{a prática de TDD não guia o desenvolvedor para um bom projeto de classes
-de forma automática}; a experiência e conhecimento 
-do desenvolvedor são fundamentais ao criar software orientado a objetos.
+It is expected, with this cataloged patterns, that developers pay more attention
+to the potential feedbacks that TDD brings and, use them to improving their class
+design. The teaching of TDD can also be be assisted by this study, considering
+that teachers can use the patterns raised here and show to students
+how the practice can, actually guide the developer to a better class design.
 
-A prática, por meio dos seus possíveis \textit{feedback} em relação ao
-projeto de classes, discutidos
-em profundidade na Seção \ref{padroes-tdd}, pode servir de guia
-para o desenvolvedor. Esses \textit{feedback}, quando observados, fazem
-com que o desenvolvedor perceba problemas de projeto de classes de
-forma antecipada, facilitando a refatoração do código (Q1 e Q2).
 
-\textbf{Portanto, esta é a forma na qual a prática guia o desenvolvedor para
-um melhor projeto de classes: dando retorno constante sobre os possíveis problemas
-existentes no atual projeto de classes. É tarefa do desenvolvedor perceber
-esses problemas e melhorar o projeto de acordo.}
+%Espera-se que, com esses padrões catalogados, desenvolvedores atentem-se mais
+%aos possíveis \textit{feedbacks} que a prática de TDD fornece e, utilizem-os
+%para melhorar a qualidade dos seus projetos de classe. O ensino de TDD também
+%pode ser beneficiado por este trabalho, já que professores podem fazer uso dos padrões
+%aqui levantados e mostrar ao aluno como a prática pode efetivamente guiar
+%o desenvolvedor para um projeto de classes melhor.
 
-\subsection{Qual a relação entre TDD e as tomadas de decisões de projeto
-feitas por um desenvolvedor?}
+A possible future work is the developing of tools that automatically detects this patterns
+and warn the developer about a possible code smell in design. Besides that,
+the search for more patterns like the showed here can improve even more the feedback
+provided by the practice.
 
-O desenvolvedor que pratica TDD escreve os testes antes do código.
-Isso faz com que o teste de unidade que está sendo escrito sirva de
-rascunho para o desenvolvedor. \textbf{Ao observar o código do teste de unidade com atenção,
-o desenvolvedor pode perceber problemas no projeto de classes que está criando.
-Problemas esses como classes que possuem diversas responsabilidades
-ou que possuem muitas dependências}. 
+%Um possível trabalho futuro
+%é a criação de ferramentas que automaticamente detectam esses padrões e notifiquem
+%o desenvolvedor sobre o possível mau cheiro de projeto. 
+%Além disso, a busca por mais padrões como os levantados aqui pode aumentar ainda 
+%mais o \textit{feedback} dado pela prática. 
 
-\subsection{Como a prática de TDD influencia o programador no processo de  
-projeto de classes, do ponto de vista do acoplamento, coesão e complexidade?}
+In below subsections, we answer each of the questions raised by this study.
 
-Ao escrever um teste de unidade para uma determinada classe, o desenvolvedor
-é obrigado a passar sempre pelos mesmos passos: a escrita do cenário, a execução
-da ação sob teste e, por fim, a garantia que o comportamento foi executado 
-de acordo com o esperado.
-\textbf{Uma dificuldade na escrita de qualquer uma dessas partes pode implicar
-em problemas no projeto de classes}. O desenvolvedor, atento, percebe e 
-melhora seu projeto de classes de acordo.
+%Nas sub-seções abaixo, respondemos cada uma das questões levantadas
+%por este trabalho.
+
+\subsection{What is the influence of TDD in class design?}
+%\subsection{Qual a influência de TDD no projeto de classes?}
+
+The practice of TDD \textbf{can} affect the creating process of class design. However,
+unlike of the comments made by the industry, \textbf{the TDD practice cannot guide the
+developer to a good class design automatically}; the experience and knowledge of
+developer are essential to develop of oriented object software.
+
+%A prática de TDD \textbf{pode} influenciar no processo de criação do projeto de classes.
+%No entanto, ao contrário do que é comentado pela indústria,
+%\textbf{a prática de TDD não guia o desenvolvedor para um bom projeto de classes
+%de forma automática}; a experiência e conhecimento 
+%do desenvolvedor são fundamentais ao criar software orientado a objetos.
+
+The practice, through the possibles feedbacks about of class design, heavily
+discussed in Section \ref{padroes-tdd}, can be a guide to the developer.
+This feedbacks, when noted, make the developer realize problems in class
+design beforehand, easing code refactoring (Q1 and Q2).
+
+%A prática, por meio dos seus possíveis \textit{feedback} em relação ao
+%projeto de classes, discutidos
+%em profundidade na Seção \ref{padroes-tdd}, pode servir de guia
+%para o desenvolvedor. Esses \textit{feedback}, quando observados, fazem
+%com que o desenvolvedor perceba problemas de projeto de classes de
+%forma antecipada, facilitando a refatoração do código (Q1 e Q2).
+
+\textbf{Therefore, this is the way how the practice guides the developer to
+a better class design; giving constant feedback about potential issues in
+current class design. It is a developer's task to realize this issues and
+respectively, improve the design. }
+
+%\textbf{Portanto, esta é a forma na qual a prática guia o desenvolvedor para
+%um melhor projeto de classes: dando retorno constante sobre os possíveis problemas
+%existentes no atual projeto de classes. É tarefa do desenvolvedor perceber
+%esses problemas e melhorar o projeto de acordo.}
+
+\subsection{What is the relation between TDD and design decisions made by
+a developer?}
+
+%\subsection{Qual a relação entre TDD e as tomadas de decisões de projeto
+%feitas por um desenvolvedor?}
+
+The developer that uses TDD writes tests before the code. This make
+the current unit test be treated as a draft by the developer.
+\textbf{Noting carefully the code of the unit test, the developer can
+realize issues in class design that he is writing. Issues like 
+classes with too many responsibilities or with too many dependencies}.
+
+%O desenvolvedor que pratica TDD escreve os testes antes do código.
+%Isso faz com que o teste de unidade que está sendo escrito sirva de
+%rascunho para o desenvolvedor. \textbf{Ao observar o código do teste de unidade com atenção,
+%o desenvolvedor pode perceber problemas no projeto de classes que está criando.
+%Problemas esses como classes que possuem diversas responsabilidades
+%ou que possuem muitas dependências}. 
+
+\subsection{How the TDD practice affects the programmer in the process of designing
+classes, about the coupling, cohesion and complexity?}
+%\subsection{Como a prática de TDD influencia o programador no processo de  
+%projeto de classes, do ponto de vista do acoplamento, coesão e complexidade?}
+
+Writing a unit test to a specific class, the developer is forced to follow
+the same steps: the writing of scenery, the execution of the action being
+tested and lastly the assurance of the behavior was executed like the
+expected.
+\textbf{Any trouble writing this steps, can imply issues in the class design}. 
+The aware developer, notices and improves the respectively design class.
+
+%Ao escrever um teste de unidade para uma determinada classe, o desenvolvedor
+%é obrigado a passar sempre pelos mesmos passos: a escrita do cenário, a execução
+%da ação sob teste e, por fim, a garantia que o comportamento foi executado 
+%de acordo com o esperado.
+%\textbf{Uma dificuldade na escrita de qualquer uma dessas partes pode implicar
+%em problemas no projeto de classes}. O desenvolvedor, atento, percebe e 
+%melhora seu projeto de classes de acordo.
 
 %% ------------------------------------------------------------------------- %%
 \section*{Acknowledgement}
