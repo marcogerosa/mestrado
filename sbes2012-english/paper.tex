@@ -1,0 +1,1014 @@
+%% ------------------------------------------------------------------------- %%
+\documentclass[conference]{IEEEtran}
+
+\usepackage[numbers,square,sort,nonamebreak,comma]{natbib}  % citação
+\usepackage{framed}
+\usepackage{flushend}
+\usepackage[table]{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage[brazil, english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex,plainpages=false,pdfpagelabels,pagebackref,colorlinks=true,citecolor=black,linkcolor=black,urlcolor=black,filecolor=black,bookmarksopen=true]{hyperref} % links em preto
+\urlstyle{same}
+\begin{document}
+	
+\title{How the Practice of TDD Influences Class Design in Object-Oriented Systems: \\Feedback Patterns to the Developer}
+
+\author{\IEEEauthorblockN{Mauricio Finavaro Aniche, Marco Aurélio Gerosa}
+\IEEEauthorblockA{Institute of Mathematics and Statistics\\
+University of São Paulo\\
+\{aniche, gerosa\}@ime.usp.br}}
+
+\maketitle
+
+\begin{abstract} 
+	Despite that Test-Driven Development (TDD) appears to be a software testing practice, 
+	many developers affirm that the practice influence on class design. This study aimed
+	to better understand the effects of TDD and how the practice influences developers
+	during class design on object-oriented systems. 
+	We conducted an essentially qualitative exploratory study in which participants
+	were invited to implement some exercises using TDD and, based on the data gathered,
+	we gathered details of how the practice influenced design decisions from the
+	participants using interviews.
+	We noticed that the practice of TDD drives
+	developers during class design by means of constant feedback about its quality. This study
+	also named and catalogued feedback patterns perceived by the developers.
+\end{abstract}
+
+\IEEEpeerreviewmaketitle
+
+%% ------------------------------------------------------------------------- %%
+\section{Introdução}
+
+Test-Driven Development (TDD) is one of the suggested practices
+by Extreme Programming (XP) \cite{XPExplained}. The practice is based on
+a small cycle, in which the developer writes a test before to implement
+the expected functionality and, with the code passing on the
+test, the developer refactors it to remove possible code 
+and data duplication \cite{TDDByExample}.
+
+The adoption of TDD by the industry has been growing. In a 2010 survey to discover
+which practices were used by agile teams, Scott Ambler showerd that 53\% of all teams
+that replied the survey adopted TDD as a way to validate the work done
+\cite{wambler-survey-agile}. Similar numbers can be found on the annual surveys from
+Version One that, in the 2012 version \cite{versionone-2012}, showed that
+40\% of the respondent teams have been using the practice.
+
+When using TDD, a developer only writes code that is covered by a test. Because
+of that, it is common to relate the practice of TDD with software testing. However,
+a common speech among TDD practitioners is its effects on the internal code quality.
+Many authors, well-known by industry and academia, such as Kent Beck \cite{TDDByExample}, 
+Robert Martin \cite{agile-ppp}, Steve Freeman \cite{GOOS}, and Dave Astels \cite{astels-tdd}, 
+state (without scientific evidence) that the practice of TDD promotes a significative
+improvement on class design, helping the developer to create more cohesive less coupled
+classes.
+
+On the other hand, the way in which the practice of TDD guides the developer
+through class design is not clear. We observed that in our qualitative study
+with TDD practitioners, inside of a brazilian agile event. We interview
+ten participants about TDD effects \cite{aniche-wbma} and, for our surprise,
+none of them could satisfactory explain how the practice guides them to better
+designs.
+Siniaalto and Abrahamsson \cite{alarming-results} also share this opinion. They also
+noticed that the effects of TDD can not be as automatic as the expected for most people.
+The related work, discussed in Section \ref{cap:trabalhos-relacionados},
+only evaluates if the practice of TDD makes difference in the produced code. Only a few
+of them contain a qualitative study that details how the practice does that difference.
+With this information, developers would know how to use the practice of TDD in order to 
+better create class design.
+
+To understand these reasons, it is necessary to conduct a research on the real world, which
+implies on a balance between control and realism. A realistic situation is usually
+complex and non deterministic, which makes the comprehension of the phenomenon much
+harder. On the other hand, increasing the control of the experiment reduces the
+degree of realism, which can take the real factors of influence out of the study
+scope \cite{guidelines-case-study}.
+
+Based on the fact that the software development process involves many
+human factors and is totally sensitive to the context that it belongs,
+we conduct an essencially qualitative exploratory study in which professionals
+from industry were invited to implemnet some prepared exercises using TDD and,
+based on the gathered data, we investigate the details of how the practice influenced
+the participants' class design decisions through interviews.
+
+%% ------------------------------------------------------------------------- %%
+\section{Test-Driven Development}
+
+Agile software development methods focus on constant feedback. It can happen
+between the team and the customer or even between the team and the
+internal or external quality \cite{AgileManifesto}. Many of the suggested practices
+aim to increase the quantity and quality of the feedback; the idea of pair programming,
+as an example, is to give feedback about the code during its writing.
+
+Test-Driven Development, popularized by Kent Beck through his book, \textit{TDD: By Example} (2011)
+\cite{TDDByExample}, is one of the practices in which the focus is to give feedback. TDD has
+a big importance during the software development cycle because, as suggested by the agile
+practices, the class design of a system should emerge as software grows. And, in order
+to quickly respond to this evolution, a constant feedback about internal and external code
+quality is needed.
+
+TDD is a software development practice that is based on a repetition of a small
+cycle. First, developers should write a failing test. Then, they make it pass,
+by implementing the desired functionality. After that, they refactor the code
+to remove code or data duplication that was generated by the process. Besides that,
+simplicity is intrisec to the process: the practitioner tries to write the simplest
+test that fails and tries to write the simplest implementation that makes the
+test pass. This cycle is also known as "Red-Green-Refactor", as it remembers the
+colors that a developer usually sees when doing TDD: the red means that a test
+is failing, and green means that the test passes succesfully.
+
+It is common to relate TDD to software testing practices. Although the creation
+of tests is intrisec to the process, it is also said that TDD helps developers
+to create more flexible, cohesive, and less coupled classes. The tests are the
+tool used by developers to evaluate the class design that is being developed.
+Because of that, many developers refers to TDD 
+as \textit{Test-Driven Design} \cite{tdd-taxonomy}.
+
+Authors such as Kent Beck \cite{aim-fire}, Dave Astels \cite{astels-tdd}, and
+Robert Martin \cite{bob-martin} state that TDD is, in fact, a class design
+technique \cite{tdd-taxonomy} \cite{aim-fire}.
+In their opinion, the change in the tradicional development cycle, although very simple,
+aggregates many other benefits to the produced code: more simplicity, less coupling, and
+a high cohesion. Ward Cunningham, one of the Extreme Programming pioneers, summarizes
+the discussion in one statement: \textit{"Test-First programming is not a testing technique"} 
+\cite{aim-fire}.
+According to Janzen, a more clear definition is the one that says that TDD is the 
+art of producing automated tests to production code, and use this process to guide
+the class design and programming \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
+
+It is a known fact that class design tend to loose quality during the software evolution.
+However, it is hard to discuss quality in terms of class design. In this study context,
+we used the SOLID principles, detailed in Martin's work \cite{bob-martin}, which are
+mentioned in the section below.
+
+%% ------------------------------------------------------------------------- %%
+\section{Quality of Class Design}
+
+It is said that a class design is \textit{rotting} when it becomes hard
+to evolve, the code reuse becomes more complicated than replicate the piece
+of code, or the cost of doing any changes in the calss design becomes high.
+Martin \cite{bob-martin} enumerated a few symptoms of a rotten class design,
+also known as \textit{class design smells}. They are similar to \textit{code smells},
+except that they belong to a higher level: they are present in the general structure
+of the software instead of being located in just a single piece of code.
+
+These symptoms can be measured subjectively and, sometimes, objectively. Usually
+they are caused by violations of one or more class design principles.
+In this study, we make use of the symptoms that were enumarated by him: 
+rigidity, fragility, imobility, viscosity, opacity, needless complexity and
+needless repetition. Besides, we also refer to the principles known as SOLID:
+Single Responsibility Principle (SRP), Open-Closed Principle (OCP),
+Liskov Substitutive Principle (LSP), Interface Segregration Principle (ISP), and
+Dependency Inversion Principle (DIP) \cite{bob-martin}.
+
+%% ------------------------------------------------------------------------- %%
+\section{Related Work}
+\label{cap:trabalhos-relacionados}
+
+Many empirical studies have been done in order to evaluate the effects of TDD.
+In most of them, the effects of the practice in the class design is not taken
+into account, and only the effect on external quality are measured. In addition,
+in contrary to what this study proposes, many of them chosed
+to had a bigger control in the experiment. They also have done it inside of the academic
+environment, with students that belong to the most different computer courses.
+
+Janzen \cite{janzen-arch-improvement} showed that the complexity of the algorithms
+were much smaller and the code coverage was higher in code written with TDD.
+Langr \cite{langr} showed that TDD increases code quality, facilitates
+maintenance, and helps to produce 33\% more tests when compared to traditional
+approaches.
+
+The study done by George e Williams \cite{george-e-williams} showed that,
+although TDD can initially reduce the productivity of the more inexperienced
+developers, a qualitative analysis showed that 92\% of the developers think
+that TDD helps to maintain the quality of the code, and 79\% believes that
+the practice promotes a simpler class design.
+
+A study by Erdogmus \textit{et al.} \cite{erdogmus-morisio} with 24 undergraduate students
+showed that TDD increases productivity. However, no difference in code quality
+was found.
+
+Another study by Janzen \cite{janzen-saiedian} with three different group
+of students (each one of them using a different approach: TDD, test last, no tests)
+showed that the code produced by the TDD team made better use of object-oriented
+concepts, and responsibilities were better splitted into different classes,
+while other teams produced a more procedural code. Also, tested classes were
+104\% less coupled than non-tested classes, and methods were 43\%, on average, less complex
+than the non-tested ones.
+
+Dogsa and Batic \cite{dogsa-batic} also found an improvement on class design when
+using TDD. But, according to the authors, the improvement is a consequence of the simplicity
+TDD aggregates to the process. They also affirmed that the test suites created during
+the practice favors the constant code refactoring.
+
+
+Li \cite{angela-li} proposed a qualitative study to understand the efficacy of TDD.
+In a case study, she collected the perceptions of TDD practitioners about the
+benefits of the practices. To achieve that, she interviewed five developers
+from software companies in Auckland, Australia. The results of the interview
+were analyzed and discussed in terms of code quality, software quality, and
+programmer's productivity. Regarding code quality, Li concluded that TDD
+guides developers to simpler and better designed classes. In addition, the main
+factors that contribute to these benefits are the confidence to refactor and
+modify code, a higher code coverage, a deeper understanding of the requirements,
+the ease of compreehending code, a reduced error scope, and the elevated
+satisfaction of the developers.
+
+The TDD practitioner usually makes uses of other agile practices, such as
+pair programming. It difficults the evaluation of the practice.
+Madeyski \cite{madeyski-package-dependencies} observed the results
+among groups that practiced TDD, groups that practiced pair programming,
+and the combination between them, and he was not able to show a significant
+difference between teams that use TDD and teams that use pair programming
+in terms of class package dependency management. However, when combining
+the results, he found that TDD can help managing dependencies in class level.
+According to him, developers should use TDD, but they should be aware of 
+problems in class design.
+
+Muller and Hagner \cite{muller-e-hagner} showed that TDD does not result in
+better quality of productivity. Steinberg \cite{steinberg} showed that
+code produced with TDD is more cohesive and less couple. Students also reported
+that defect were easier to fix.
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Discussion}
+
+As presented, only a few studies evaluated the effects of TDD on class design.
+And, when they do, they only discuss what the effects are and not exactly
+\textbf{how} TDD has influenced. Josefsson \cite{josefsson}, in his discussion
+about the need of an architectural phase and the effects of TDD in this matter,
+comes to the same conclusion. According to him, the studies about TDD that are
+found in the current literature are very limited and, because of that, the
+"known" effects of the practice in class design can not be explained. Based on
+our literature review, we believe that this limitation still exists.
+
+Most part of these studies also does not take into account the experience
+of the developer that is practicing TDD. Usually they only discuss it
+during threats to validity. Janzen \cite{janzen-phd}, in his PhD, perceived
+that mature developers obtain more benefits from the practice, writing simpler
+classes. Besides, mature developers tend to choose TDD more often than
+less experienced developers.
+
+However, studies that analyze TDD from the class design point of view does not
+come to a conclusive results; many of them even affirm that the effects of TDD
+is not that different from those teams that do not practice it. Even the Janzen's PhD
+thesis was inconclusive regarding the influence of the practice in coupling
+and cohesion \cite{janzen-phd}. 
+
+In addition, another strong point related to class design is simplicity and
+the ease to evolve. A rigid class design that does not favor changes is hard
+to be evaluated quantitatively. Needless complexity is also subjective.
+Therefore, it is necessary more than an analytical comparison; the
+developer's point of view should be taken into account.
+
+%% ------------------------------------------------------------------------- %%
+\section{Planning and Execution of the Study} 
+\label{sec:planejamento}
+
+Conducting an experimental exploratory study in software engineering has always
+been a complex task. As suggested by the agile practices \cite{AgileManifesto}, 
+one of the reasons is the human factor, very present in 
+the software development process. Because of that, the analytic research
+paradigm is not enough to investigate complex real cases that involves people
+and their interactions with technology \cite{guidelines-case-study}.
+
+A qualitative research is a way to explore and understand the influence that
+individuals or groups put on a social or human problem. The research process
+involves emerging questions and procedures, data are usually gathered through
+the point of view from the participants, with the analyzis done in an inductive
+way, from a very specific to a general theme, and with the researcher interpreting
+the meaning of these data. Data captured by qualitative studies are usually
+represented by words and figures. The final report contains a flexible structure.
+Researchers that are dedicated to this kind of research support the inductive style and
+the importance of showing the complexity of the situation \cite{creswell}.
+
+As discussed in Section \ref{cap:trabalhos-relacionados}, many studies evaluated
+TDD, and a few of them even found an improvement on class design, such as
+less coupling, high cohesion, and more simplicity. Most of them focus on
+the effects of the practice in the produced code, but only a few of them try to understand
+the possible influence of the practice on the quality of it, and how TDD really guides
+developers through these improvements.
+
+To achieve our goal, we choosed to conduct an essencially 
+exploratory qualitative study with developers in industry. Participants
+were invited to implement a set of pre-prepared exercises. After that,
+they were interview about how the practice influenced them in their
+class design decisions. This section details the planning as well as
+the data analysis process.
+
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Research questions}
+
+The main goal of this study is \textbf{to understand the relationship between
+the practice of TDD and class design decisions taken by programmers in object-oriented
+systems}. To compreehend them, we answered the questions below:
+
+\begin{enumerate}
+
+	\item What is the influence of TDD on class design?
+
+	\item What is the relationship between TDD and the class design decisions take
+	by a programmer?
+
+	\item How does the practice of TDD influence class design in terms of coupling, 
+	cohesion, and complexity?
+
+\end{enumerate}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Research design}
+
+Participants from different software development companies in the brazilian
+market were selected. The participants' profile is discussed in sub-section
+\ref{sec:planejamento-participantes}. All of them were invited to implement
+a few problems using Java during a defined timebox. Participants practiced
+TDD in one problem and did not practice in the other. The problems
+as well as the definition of each of them should be implemented using TDD were
+randomized in order to reduce bias.
+
+All implementations were saved to posterior code metrics calculation.
+Through them, we obtained relevant information about design quality (cohesion, 
+coupling, and simplicity). The chosen metrics were cyclomatic complexity \cite{mccabe},
+Fan-Out \cite{lorenz}, lack of cohesion of methods \cite{lcom-hs}, lines per method,
+and quantity of methods. All these metrics are well-known in academia.
+
+To calculate these metrics, we implemented our own tool. The reason is that
+most part of the existant tools make use of compiled code (instead of pure source
+code). Our tool contains an automated test suite and an open source
+\footnote{\url{http://www.metricminer.org.br}. 
+Last access on July, the 6th, 2012.}.
+
+In addition, two specialists were invited to analyze the source code and give a score
+to each one of them. Although the usefulness of the information passed by the code metrics,
+the opinion of a specialist is enriching.
+
+They evaluated the code based on three different categories: \textit{Simplicity}, \textit{Testability},
+and \textit{Class Design Quality}. In each category, specialists should score from 1 (bad) to
+5 (good) or choose not to evaluate that exercise. As a few participants did not finish the
+implementation, specialists were warned to evaluate the intention of the participant and not
+only the produced code.
+To reduce the bias, the specialists did not know what code was written with TDD.
+
+At the end of the exercise, all participants filled out a survey about their performance
+on the exercises. After that, an initial analysis filtered the participants that
+were interviewed posteriorly. The selection of the participants were based on
+their answers on the survey plus the produced source code. Participants that implemented
+a good solution on one problem but not on the other were selected. Besides, participants
+that mentioned possible effects of the practice on class design were also interviewed.
+
+The interview was semi-structured, giving some freedom to the researcher, so we were
+able to change questions, if necessary. In addition, all questions were open, giving the
+opportunity to the participant to talk deeper about the subject.
+
+Once that the decisions taken by a programmer during the class design activity can be
+influenced by many different factors, the questions were made to make participants
+to triangulate their answers and to make them try to isolate the practice of TDD from
+the other possible factors of influence. Participants that did not articulate well
+the answers were removed from the analysis process.
+
+All interviews were recorded so we were able to transcript and validate all
+the captured data. In addition, we took some notes about participants' reactions
+to specific questions. The interviews were made in different days,
+according to their availability.
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Participants' profile}
+\label{sec:planejamento-participantes}
+
+Developers from the brazilian software development market were invited to be part
+of this research. The participants were evaluated according to their experience in TDD,
+software development, Java, and unit tests. The only requirement was that the participant
+should already knew how to write an unit test.
+
+All participants filled out a survey before the start of the study. In this survey,
+besides questioning their experience (quantitavely), it also contained open questions in which
+the participant could tell about his experience in object-oriented systems, Java, and
+TDD in a more detailed way.
+
+We had 25 participants from 6 different companies. The participants, in their majority,
+were not experienced in TDD. 40\% of them affirmed to use TDD for no more than a year.
+52\% of them practice TDD from 1 to 3 years. Only 4\% practiced TDD from 3 to 4
+years, and no participant was more experienced than that.
+
+The numbers are a little different when talking about their experience in software
+development. 24\% of them work with software development for the last 4 or 5 years.
+28\% of them do that from 6 to 10 years. Only 20\% of them develop software for less
+than 2 years. 64\% of the participants use Java. However, 36\% of them do not use
+Java in their daily work. All of them know JUnit and 64\% use mock objects 
+\footnote{Mock objects are objects created during a unit test. They mock the behavior 
+of a concrete object. Usually they are used to isolate the unit test from the other classes. 
+More information about it can be found on \cite{mocks}.}
+during their development activities.
+Only 12\% has never heard about mock objects. When talking about object-orientation,
+in the open question, most part of the participants affirmed to have a good experience
+on it. Some of them even affirmed to master the subject. Only a few of them affirmed
+to have basic knowledge about OO.
+
+We can also affirm that half of the participants are still trying the practice. The others
+are more experienced and have already consolidated the practice. This is positive, as it
+was possible to capture informations from people with different levels of maturity.
+
+The elevated number of participants that do not use Java in their daily work is consequence
+of a company that uses PHP. However, we checked that, although they do not use Java constantly,
+they did not have troubles during the implementation of the exercises.
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Proposed Problems}
+\label{sec:exercicios}
+
+We proposed four problems that should be implemented by the participants using Java
+\footnote{The exercises can be found at \url{http://gist.github.com/3024328}. Last access on July, the 30th, 2012.}. 
+The goal was to simulate recurrent class design problems in several software projects.
+In Table \ref{tab:problemas-exercicios}, we present the relation of a bad implementation of
+the exercises and class design principles that were not followed.
+
+It was said to participants that the exercises simulate real world problems and that their code
+would be supposely maintained by another team. Because of that, participants were asked to
+implement the most elegant and flexible solution possible.
+
+\begin{table}
+	\centering
+	\begin{tabular}{| l | l | l | }
+		\hline
+		\textbf{Exercise} & \textbf{Smell} & \textbf{Principles to}\\
+		& & \textbf{be Followed}\\
+		
+		\hline
+		
+		Exercise 1 & Rigidity, Needless Complexity & SRP, OCP \\
+		Exercise 2 & Fragility, Viscosity, Imobility & SRP, DIP, OCP \\
+		Exercise 3 & Rigidity, Fragility & SRP\\
+		Exercise 4 & Fragility, Viscosity, Imobility & OCP, SRP, DIP \\
+		
+		\hline
+	\end{tabular}
+	\caption{Proposed exercises and class design smells}
+	\label{tab:problemas-exercicios}
+\end{table}
+
+%% ------------------------------------------------------------------------- %%
+\section{Quantitative Analysis}
+
+To triangulate the information of the qualitative analysis, we calculated
+code metrics to check whether there was a difference in code produced
+with the practice of TDD.
+We analysed
+264 production classes (831 methods, 2520 lines) and
+73 test classes (225 methods, 1832 lines).
+
+The statistical test used was the Wilcoxon. It is a non parametric hypothesis test
+used to compare two samples and to check whether there is a difference in the mean
+of both samples. Therefore, we used Wilcoxon to compare the mean between
+the code metrics in code produced with and without TDD. The significance level
+used was the standard (0.05).
+
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Code metrics}
+
+In Table \ref{metricas-industria}, we showed the \textit{p-values} found for
+the difference between code produced with and without TDD. By the numbers,
+we observed that there was no significant difference in cyclomatic complexity
+and efferent coupling.
+Lack of cohesion of methods was different in two exercises (1 and 4). A difference
+also appeared on the quantity of lines in a method (exercise 4) and quantity of
+methods (exercise 1).
+
+When looking to the data of all exercises together, no metric presented a significant
+difference. We concluded that, at least quantitatively, the practice of TDD did not
+make any difference in code metrics.
+
+\begin{table*}
+	\centering
+	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} | p{2cm} |}
+		\hline
+		\textbf{Exercise} & \textbf{Cyclomatic Complexity} & \textbf{Efferent coupling} & \textbf{Lack of Cohesion of Methods} & \textbf{Number of lines per method} 
+		& \textbf{Quantity of methods per class} \\
+		\hline
+		Exercise 1 &	0.8967	&	0.6741 &	\cellcolor[gray]{0.8}2.04E-07* &	0.4962 &	\cellcolor[gray]{0.8}2.99E-06* \\
+		Exercise 2	& 0.7868	&	0.7640 &	0.06132 &	0.9925 &	0.7501 \\
+		Exercise 3	& 0.5463	&	0.9872 &	0.5471 &	0.7216 &	0.3972\\
+		Exercise 4	& 0.2198	&	0.1361 &	\cellcolor[gray]{0.8}0.04891* &	\cellcolor[gray]{0.8}0.0032* &	0.9358\\
+		\hline
+		All together &	0.8123	&	0.5604 &	0.3278 &	0.06814 &	0.5849\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} found for the difference between code produced with and without TDD}
+	\label{metricas-industria}
+\end{table*}
+
+
+In Table \ref{valores-separados}, we calculated the \textit{p-values} of the metric,
+splliting them by experience in software development and TDD. The values for the group that
+was experienced in TDD and not experience in software development was not calculated as no
+participant fits on it.
+
+By the numbers, we perceived that cohesion was the only metric that presented a significant
+different in developers that are experienced in software development and TDD.
+
+\begin{table}
+	\centering
+	\begin{tabular}{ | p{3cm} | p{2cm} | p{2cm} | }
+		\hline
+		  & \textbf{Experience in TDD} & \textbf{No experience in TDD} \\
+		\hline
+			\multicolumn{3}{|l|}{Cyclomatic Complexity} \\
+		\hline
+			Experience in Software Development 		& 0.09933	&	0.8976\\
+			\hline
+			No Experience in Software Development 	& NA		&	0.4462\\
+		\hline
+			\multicolumn{3}{|l|}{Fan-Out}\\
+		\hline
+			Experience in Software Development 		& 0.1401	&	0.6304\\
+			\hline
+			No Experience in Software Development 	& NA		&	0.2092\\
+		\hline
+			\multicolumn{3}{|l|}{Lack of Cohesion of Methods}\\
+		\hline
+			Experience in Software Development 		& \cellcolor[gray]{0.8}0.03061*	&	0.1284\\
+			\hline
+			No Experience in Software Development 	& NA		&	0.0888\\
+		\hline
+			\multicolumn{3}{|l|}{Quantity of Methods per Class} \\
+		\hline
+			Experience in Software Development 		& 0.09933	&	0.8976\\
+			\hline
+			No Experience in Software Development 	& NA		&	0.4462\\
+		\hline
+			\multicolumn{3}{|l|}{Lines per Method}\\
+		\hline
+			Experience in Software Development 		& 0.0513	&	0.4319\\
+			\hline
+			No Experience in Software Development 	& NA		&	0.5776\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} found for the difference in metrics between experienced and non experienced participants}
+	\label{valores-separados}
+\end{table}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Specialists}
+
+In Table
+\ref{tab:especialistas-industria}, we presented the \textit{p-values} found for the
+difference in the specialists' evaluation on code produced with and without TDD.
+By the numbers, we observed that both specialists did not find any difference.
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{| p{2cm} | c | c | c | }
+		\hline
+		\textbf{Specialist} & \textbf{Class Design} & \textbf{Testability} & \textbf{Simplicity}\\
+		\hline
+		Specialist 1 &	0.4263 &	0.5235 &	0.3320\\
+		Specialist 2 &	0.7447 &	0.4591 &	0.9044\\
+		\hline
+	\end{tabular}
+	\caption{\textit{P-values} found for the difference in specialists' analysis}
+	\label{tab:especialistas-industria}
+\end{table}
+
+%% ------------------------------------------------------------------------- %%
+\section{Qualitative Analysis}
+
+The values presented before corroborate with many of the related work.
+Apparently TDD does not influence the code to the point of changing
+the metric values for coupling, cohesion, and simplicity. However, this is
+incoerent to the industry common feeling of the positive effects of TDD on class design.
+As expected, in this study we conducted a qualitative analysis to understand
+how this influence goes from the point of view of the developers.
+
+In this section we present and discuss about the analysis and interpretation of
+the qualitative data gathered during the execution of this study. In particular,
+in Section \ref{padroes-tdd}, we defined some patterns about the feedback the practice
+of TDD gives to the developer.
+
+An interesting point is that the participants, regardless their experience on TDD or
+software development, commented similar points. Because of that, we did not separate
+discussions in the categories presented in Section \ref{sec:planejamento}.
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Interview analysis}
+
+Different from what was expected, a majority of the participants affirmed that the
+practice of TDD would not change the class design produced by them during the exercises
+they did not use the practice.
+The main justification was that experience and previous knowledge in object-orientation
+guided them during the class design. All participants agreed that a developer with no
+knowledge in any of the mentioned areas would create a good class design only by practicing
+TDD.
+
+Two good examples that reinforce the point were given by the participants. One of them
+said that made use of a design pattern \cite{gof} that has learned a few days before. Another
+participant mentioned that his studies on SOLID principles helped him during the exercises.
+The transcription below were extracted from the interviews:
+
+\begin{framed}
+	\textit{"It was even funny. I am reading the Design Patterns (book), and it discusses about polymorphism. 
+	My implementation was based on that, because I've never done something like that before (...), here I rarely
+	create new stuff, I just maintain legacy code."}
+\end{framed}
+
+In addition, the only participant from industry that has never practiced TDD before
+affirmed that he did not feel any improvement in the class design when practicing.
+Curiously, this participant said that he already knew that "TDD was a design technique".
+It somehow indicates that the popularity of the effects of TDD in class design
+is big.
+That opinion wa slightly different from the experienced participants, 
+that affirm that TDD is not only about design, but also about testing.
+
+However, in contrary to the fact that TDD does not guide developers directly to a
+good class design, all participants believe that TDD has positive effects in class design.
+Many of them even mentioned the difficult when trying to stop using TDD:
+
+\begin{framed}
+
+	\textit{"When you are about to implement something, you end up thinking on the tests that you will do. 
+	It is hard to think like "write code without thinking on tests!". As soon as you get used to it, 
+	you just don't know another way to write code..."}
+	
+\end{framed}
+
+According to them, TDD can help during class design process but, in order to achieve that,
+the developer should have certain experience in software development. Most of participants
+affirmed that their class designs were based on their experiences and past learnings.
+In their opinion, the best option is to join the practice of TDD and experience:
+
+\begin{framed}
+
+	\textit{"The ideal is to put both things together [experience and TDD] (...) 
+	I don't believe that TDD by itself could make things get better. There are many other
+	concepts [that a developer should know] to make things good."}
+
+\end{framed}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{\textit{Feedback} mais rápido}
+
+A grande maioria dos participantes também comentaram que uma diferença que percebem
+no momento que praticam TDD é o \textit{feedback} mais constante. Na maneira
+tradicional, o tempo entre a escrita do código de produção e o código
+de testes é muito grande. O TDD, ao solicitar que o desenvolvedor
+escreva o teste antes, também faz com que o desenvolvedor receba o \textit{feedback} que
+os testes podem dar mais cedo:
+
+\begin{framed}
+\textit{"Você ia olhar para o teste, e falar: "Está legal? Não está?", e ia fazer de novo."}
+\end{framed}
+
+Um participante comentou que, com o teste, o desenvolvedor pode observar
+e criticar o código que escreveu no momento logo após a escrita.
+Essa crítica, de forma contínua, faz com que o desenvolvedor acabe
+por pensar constantemente no código que está produzindo:
+
+\begin{framed}
+\textit{"Quando você faz o teste, você vê logo o que não gostou do método daquele jeito (...), você
+não percebe isso até que você use o teste."}
+\end{framed}
+
+Diminuir o tempo entre a escrita do código e a escrita do teste também o ajuda a desenvolver código
+que efetivamente resolve o problema. Segundo os participantes, na maneira tradicional, 
+o desenvolvedor escreve muito código antes de saber se ele funciona:
+
+\begin{framed}
+\textit{"[O teste] não é só uma especificação; ele tem que de fato funcionar. Então,
+como você diminui muito o tempo entre escrever um programa que funcione e testar aquilo,
+você consegue mais rápido ver se aquela parte pequena funciona ou não (...)"}
+\end{framed}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Busca pela testabilidade}
+
+Talvez o principal ponto pelo qual a prática ajude os desenvolvedores no projeto de classes 
+seja pela constante busca pela testabilidade. É possível inferir que, quando se 
+começa a escrita do código pelo seu teste, o código de produção deve ser, necessariamente,
+possível de testar.
+
+Por outro lado, quando o código não é fácil de ser testado, os desenvolvedores
+entendem isso como um mau cheiro de projeto de classes. Quando isso acontece,
+os desenvolvedores geralmente tentam refatorar o código para possibilitar que
+os mesmos sejam testados mais facilmente.
+Um dos participantes, inclusive, afirmou que leva isso como uma regra:
+se está difícil testar, é possível melhorar.
+
+\begin{framed}
+\textit{"Eu utilizo isso como uma regra: sempre que está muito complexo [o teste],
+acho que nós temos que parar e refatorar, porque, na minha opinião, dá
+pra ficar mais simples."}
+\end{framed}
+
+Esse ponto já foi levantado por Feathers \cite{feathers-synergy}.
+Quanto mais difícil for a escrita do teste, maior a chance da existência de
+algum problema de projeto de classes. Segundo ele, 
+existe uma sinergia muito grande entre uma classe com alta testabilidade e um bom projeto de classes: 
+se o programador busca por testabilidade, acaba criando um bom projeto de classes; se 
+busca por um bom projeto de classes, acaba escrevendo código mais
+testável.
+
+Na busca pela testabilidade, o desenvolvedor é encorajado a escrever um
+código que seja facilmente testável. Códigos assim possuem algumas
+características interessantes, como a facilidade para invocar o comportamento
+esperado, a não necessidade de pré-condições complicadas e a explicitação de
+todas as dependências que a classe possui.
+
+Mas, os participantes foram ainda mais longe. Durante as entrevistas,
+vários deles mencionaram diversos padrões que encontram no \textit{feedback} dos testes,
+e que os fazem pensar sobre os possíveis problemas de acoplamento,
+coesão, falta de abstração etc., na classe que estão criando.
+Esses padrões são melhor discutidos a seguir.
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Padrões de \textit{Feedback} de TDD}
+\label{padroes-tdd}
+
+Como mencionado anteriormente, grande parte do \textit{feedback} que os testes
+dão, acontece no momento em que o programador encontra dificuldades para a
+escrita dos mesmos. Esta seção discute padrões levantados pelos praticantes
+que os levam a crer que há um problema de projeto de classes no código
+que está sendo testado.
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Padrões Ligados à Coesão}
+
+Quando um único método necessita de diversos testes para garantir seu comportamento,
+o método em questão provavelmente é complexo e/ou possui diversas responsabilidades.
+Códigos assim possuem geralmente diversos caminhos
+diferentes e tendem a alterar muitos atributos internos do objeto, obrigando o desenvolvedor
+a criar muitos testes, caso queira ter uma alta cobertura de testes.
+A esse padrão, demos o nome de \textbf{Muitos Testes Para Um Método}.
+
+Também pode ser entendido quando o desenvolvedor escreve muitos testes para a 
+classe como um todo. Classes que expõem muitos métodos para o mundo de fora
+também tendem a possuir muitas responsabilidades. Chamamos esse padrão
+de \textbf{Muitos Testes Para Uma Classe}.
+
+Outro problema de coesão pode ser encontrado quando o programador
+sente a necessidade de escrever cenários de teste muito grandes para uma
+única classe ou método. É possível inferir que essa necessidade surge 
+em códigos que lidam com muitos objetos e fazem muita coisa. Nomeamos
+esse padrão de \textbf{Cenário Muito Grande}.
+
+Um padrão não explicitamente levantado pelos participantes, mas notado
+por nós, é quando o desenvolvedor sente a necessidade de testar
+um método que não é público. Métodos privados geralmente servem para 
+transformar o método público em algo mais fácil de ler. Ao desejar
+testá-lo de maneira isolada, o programador pode ter encontrado
+um método que possua uma responsabilidade suficiente para ser
+alocada em uma outra classe. A esse padrão, chamamos de 
+\textbf{Testes em Método Que Não É Público}.
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Padrões Ligados ao Acoplamento}
+
+O uso abusivo de objetos dublês para testar uma
+única classe indica que a classe sob teste possui problemas
+de acoplamento. É possível deduzir que uma classe que faz uso de muitos
+objetos dublês depende de muitas classes, e portanto, tende a ser
+uma classe instável. A esse padrão, demos o nome de \textbf{Objetos Dublê em Excesso}.
+
+Outro padrão percebido por nós é a criação de objetos dublês que não
+são utilizados em alguns métodos de testes. Isso geralmente acontece quando
+a classe é altamente acoplada, e o resultado da ação de uma dependência não
+interfere na outra. Quando isso acontece, o programador acaba por escrever
+conjuntos de testes, sendo que alguns deles lidam com um sub-conjunto dos objetos dublês,
+enquanto outros testes lidam com o outro sub-conjunto de objetos dublês. 
+Isso indica um alto acoplamento 
+da classe, que precisa ser refatorada. A esse padrão demos o nome de
+\textbf{Objetos Dublê Não Utilizados}. Esse padrão poderia também ser classificado
+como um padrão de coesão, já que essa classe claramente possui também mais de uma
+única responsabilidade.
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Padrões Ligados à Abstrações Incorretas}
+
+A falta de abstração geralmente faz com que uma simples mudança precise
+ser feita em diferentes pontos do código. Quando uma mudança acontece e 
+o programador é obrigado a fazer a mesma alteração em diferentes testes,
+isso indica a falta de uma abstração correta para evitar a 
+repetição desnecessária de código.
+A esse padrão damos o nome de \textbf{Mesma Alteração Em Diferentes Testes}.
+Analogamente, o programador pode perceber a mesma coisa
+quando ele começa a criar testes repetidos para entidades diferentes.
+Chamamos esse padrão de \textbf{Testes Repetidos Para Entidades Diferentes}.
+
+Quando o desenvolvedor começa o teste e percebe que a interface pública da classe
+não é fácil de ser utilizada, pode indicar que abstração
+corrente não é clara o suficiente e poderia ser melhorada. A esse padrão,
+chamamos de \textbf{Interface Não Amigável}.
+
+Outro padrão não mencionado explícitamente pelos participantes 
+é a existência da palavra \textit{"se"} no nome do teste. Testes que
+possuem nomes como esse geralmente indicam a existência de um \textit{"if"} na implementação
+do código de produção. Essas diversas condições podem, geralmente, ser refatoradas e,
+por meio do uso de poliformismo, serem eliminadas. A falta de abstração nesse caso
+é evidenciada pelo padrão \textbf{Condicional No Nome Do Teste}.
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Relação dos padrões com os princípios de projeto de classes}
+
+É possível relacionar os padrões de \textit{feedback} levantados pelos participantes
+com os mau cheiros de projeto de classes comentados neste trabalho. 
+Na Tabela \ref{tab:relacao-padroes},
+mostramos essa relação, e como esses padrões podem efetivamente ajudar o desenvolvedor
+a procurar por problemas no seu projeto de classes.
+
+
+\begin{table}[h!]
+	\centering
+	\begin{tabular}{| p{2.5cm} | p{2.5cm} | p{2cm} | }
+		\hline
+
+		\textbf{Padrão} & \textbf{Possíveis Mau Cheiros de Projeto de Classes} & \textbf{Possíveis Princípios Feridos}\\
+		
+		\hline
+
+		Muitos Testes Para Um Método                   & Complexidade Desnecessária, Opacidade   & PRU \\ \hline
+		Muitos Testes Para Uma Classe                  & Complexidade Desnecessária, Opacidade   & PRU \\ \hline
+		Cenário Muito Grande                           & Opacidade, Fragilidade                  & PRU \\ \hline
+		Testes Em Método Que Não É Público             & Complexidade Desnecessária              & PRU, PAF \\ \hline
+		Objetos Dublê em Excesso                       & Fragilidade                             & PID, PAF \\ \hline
+		Objetos Dublês Não Utilizados                  & Fragilidade                             & PID, PAF \\ \hline
+		Mesma Alteração Em Diferentes Testes           & Fragilidade, Rigidez                    & PRU \\ \hline
+		Testes Idênticos Para Entidades Diferentes     & Repetição Desnecessária, Rigidez        & PRU  \\ \hline
+		Interface Não Amigável                         & Opacidade                               & ISP \\ \hline
+		Condicional No Nome Do Teste                   & Rigidez, Fragilidade                    & PRU, PAF \\
+
+		\hline
+		
+	\end{tabular}
+	\caption{Relação entre os padrões de \textit{feedback} de TDD e mau cheiros de projeto de classes}
+	\label{tab:relacao-padroes}
+\end{table}
+
+%% ------------------------------------------------------------------------- %%
+\section{Ameaças à Validade}
+\label{cap:ameacas}
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Validade de Construção}
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Exercícios de pequeno porte}
+
+Os exercícios propostos são pequenos perto de um projeto real. Entretanto, todos os exercícios propostos contém
+problemas localizados de projeto de classes. Uma vez que esta pesquisa avalia os 
+efeitos de TDD no projeto de classes, 
+acreditamos que os problemas conseguem simular de forma satisfatória
+problemas de projeto de classes que desenvolvedores encaram no dia a dia de trabalho.
+
+Além disso, ao final do exercício, os participantes responderam a uma pergunta sobre a semelhança
+entre os problemas de projeto de classes propostos e os problemas encontrados no mundo real.
+Todos os participantes da indústria afirmaram que os problemas se parecem com os que eles enfrentam
+no dia a dia de trabalho. 
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Validade interna}
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Efeitos recentes de TDD na memória}
+
+Muitos dos participantes da indústria afirmaram que utilizam TDD no seu dia a dia de trabalho.
+Isso pode fazer com que o participante
+não avalie friamente as vantagens e desvantagens do desenvolvimento sem TDD. 
+
+Para diminuir esse viés, os participantes fizeram alguns exercícios também
+sem TDD, para que ambos os estilos de desenvolvimento (com e sem TDD) estivessem
+recentes em sua memória.
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Exercícios}
+
+Alguns participantes também não terminaram suas implementações dos exercícios. Isso
+pode influenciar na análise quantitativa, afinal, um projeto de classes que
+seria complexo assim que pronto, ao olho da métrica, pode aparentar ser simples.
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Influência do pesquisador}
+
+O pesquisador possui
+um papel fundamental em pesquisas qualitativas. Mas isso pode fazer com que
+a interpretação dos resultados seja influenciada pelo contexto, experiências,
+e até viéses do próprio pesquisador.
+Neste estudo, a nossa opinião teve forte influência na seleção dos candidatos
+para a entrevista.
+Além disso, os exercícios foram criados pelos pesquisadores dessa pesquisa e, 
+de certa forma, podem ter influenciado a prática de TDD.
+Para diminuir esse problema, revisamos todas as análises,
+buscando por conclusões incorretas ou não tão claras. 
+
+%% ------------------------------------------------------------------------- %%
+\subsection{Validade externa}
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Desejabilidade social}
+
+Enviesamento pela desejabilidade social é o termo científico usado para descrever
+a tendência de que alguns participantes respondam a questões de modo que serão
+bem vistos pelos outros membros da comunidade \cite{crowne}.
+Métodos ágeis e TDD possuem um discurso forte. A comunidade brasileira de métodos
+ágeis ainda é nova e percebe-se de maneira empírica que muitos repetem o discurso
+sem grande experiência ou embasamento no assunto.
+No caso desta pesquisa, um possível viés é o participante responder o que
+a literatura diz sobre TDD, e não exatamente o que ele pratica e sente sobre
+os efeitos da prática. 
+
+Para diminuir esse viés, eliminaríamos do processo de análise os participantes
+que responderam às perguntas de forma superficial, apenas repetindo a literatura. Na prática,
+isso não aconteceu. Em sua maioria, poucas foram as respostas nas quais os participantes
+foram superficiais. Nesses casos, essas respostas foram eliminadas da análise.
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Quantidade de participantes insuficiente}
+
+Apesar de termos feito contato
+com diversas empresas e grupos de desenvolvimento de software,
+objetivando encontrar um bom número de participantes para a pesquisa,
+a quantidade de participantes final do estudo pode não ser suficiente para generalizar
+os resultados encontrados. 
+
+%% ------------------------------------------------------------------------- %%
+\section{Conclusão}
+
+Neste trabalho, discutimos e entendemos como a prática de TDD pode
+fazer a diferença no dia a dia de um desenvolvedor de software,
+trazendo um melhor significado à afirmação de que a prática melhora o projeto de classes.
+Além de corroborar com os estudos quantativos da literatura, este estudo
+foi além, e observou padrões de \textit{feedback} que aparecem
+no momento em que o desenvolvedor utiliza TDD, e que, na prática, o guia durante
+o desenvolvimento. 
+
+Espera-se que, com esses padrões catalogados, desenvolvedores atentem-se mais
+aos possíveis \textit{feedbacks} que a prática de TDD fornece e, utilizem-os
+para melhorar a qualidade dos seus projetos de classe. O ensino de TDD também
+pode ser beneficiado por este trabalho, já que professores podem fazer uso dos padrões
+aqui levantados e mostrar ao aluno como a prática pode efetivamente guiar
+o desenvolvedor para um projeto de classes melhor.
+
+Um possível trabalho futuro
+é a criação de ferramentas que automaticamente detectam esses padrões e notifiquem
+o desenvolvedor sobre o possível mau cheiro de projeto. 
+Além disso, a busca por mais padrões como os levantados aqui pode aumentar ainda 
+mais o \textit{feedback} dado pela prática. 
+
+
+Nas sub-seções abaixo, respondemos cada uma das questões levantadas
+por este trabalho.
+
+\subsection{Qual a influência de TDD no projeto de classes?}
+
+A prática de TDD \textbf{pode} influenciar no processo de criação do projeto de classes.
+No entanto, ao contrário do que é comentado pela indústria,
+\textbf{a prática de TDD não guia o desenvolvedor para um bom projeto de classes
+de forma automática}; a experiência e conhecimento 
+do desenvolvedor são fundamentais ao criar software orientado a objetos.
+
+A prática, por meio dos seus possíveis \textit{feedback} em relação ao
+projeto de classes, discutidos
+em profundidade na Seção \ref{padroes-tdd}, pode servir de guia
+para o desenvolvedor. Esses \textit{feedback}, quando observados, fazem
+com que o desenvolvedor perceba problemas de projeto de classes de
+forma antecipada, facilitando a refatoração do código (Q1 e Q2).
+
+\textbf{Portanto, esta é a forma na qual a prática guia o desenvolvedor para
+um melhor projeto de classes: dando retorno constante sobre os possíveis problemas
+existentes no atual projeto de classes. É tarefa do desenvolvedor perceber
+esses problemas e melhorar o projeto de acordo.}
+
+\subsection{Qual a relação entre TDD e as tomadas de decisões de projeto
+feitas por um desenvolvedor?}
+
+O desenvolvedor que pratica TDD escreve os testes antes do código.
+Isso faz com que o teste de unidade que está sendo escrito sirva de
+rascunho para o desenvolvedor. \textbf{Ao observar o código do teste de unidade com atenção,
+o desenvolvedor pode perceber problemas no projeto de classes que está criando.
+Problemas esses como classes que possuem diversas responsabilidades
+ou que possuem muitas dependências}. 
+
+\subsection{Como a prática de TDD influencia o programador no processo de  
+projeto de classes, do ponto de vista do acoplamento, coesão e complexidade?}
+
+Ao escrever um teste de unidade para uma determinada classe, o desenvolvedor
+é obrigado a passar sempre pelos mesmos passos: a escrita do cenário, a execução
+da ação sob teste e, por fim, a garantia que o comportamento foi executado 
+de acordo com o esperado.
+\textbf{Uma dificuldade na escrita de qualquer uma dessas partes pode implicar
+em problemas no projeto de classes}. O desenvolvedor, atento, percebe e 
+melhora seu projeto de classes de acordo.
+
+%% ------------------------------------------------------------------------- %%
+\section*{Acknowledgement}
+
+Agradeçemos às empresas que aceitaram participar deste estudo: Caelum, Bluesoft,
+Amil e WebGoal (São Paulo e Poços de Caldas). Além disso, agradecemos aos
+desenvolvedores que participaram da pesquisa de forma independente.
+
+%% ------------------------------------------------------------------------- %%
+\bibliographystyle{IEEEtran}
+\footnotesize{\bibliography{paper}}
+
+% that's all folks
+\end{document}
+
+%% ------------------------------------------------------------------------- %
