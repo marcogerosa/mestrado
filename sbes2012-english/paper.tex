@@ -38,7 +38,7 @@ University of São Paulo\\
 \IEEEpeerreviewmaketitle
 
 %% ------------------------------------------------------------------------- %%
-\section{Introdução}
+\section{Introduction}
 
 Test-Driven Development (TDD) is one of the suggested practices
 by Extreme Programming (XP) \cite{XPExplained}. The practice is based on
@@ -645,7 +645,7 @@ In their opinion, the best option is to join the practice of TDD and experience:
 \end{framed}
 
 %% ------------------------------------------------------------------------- %%
-\subsection{\textit{Feedback} mais rápido}
+\subsection{Rapid Feedback}
 
 A grande maioria dos participantes também comentaram que uma diferença que percebem
 no momento que praticam TDD é o \textit{feedback} mais constante. Na maneira
@@ -679,109 +679,98 @@ você consegue mais rápido ver se aquela parte pequena funciona ou não (...)"}
 \end{framed}
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Busca pela testabilidade}
+\subsection{The search for testability}
 
-Talvez o principal ponto pelo qual a prática ajude os desenvolvedores no projeto de classes 
-seja pela constante busca pela testabilidade. É possível inferir que, quando se 
-começa a escrita do código pelo seu teste, o código de produção deve ser, necessariamente,
-possível de testar.
+Maybe the main reason the practice of TDD helps developers in their class design is
+by the constant search for testability. It is possible to infer that,
+when starting to produce code by its test, the production code should be, necessarily,
+possible to be tested.
 
-Por outro lado, quando o código não é fácil de ser testado, os desenvolvedores
-entendem isso como um mau cheiro de projeto de classes. Quando isso acontece,
-os desenvolvedores geralmente tentam refatorar o código para possibilitar que
-os mesmos sejam testados mais facilmente.
-Um dos participantes, inclusive, afirmou que leva isso como uma regra:
-se está difícil testar, é possível melhorar.
+On the other hand, when code is not easy to be tested, developers understand that
+as a class design smell. When it happens, developers usually try to refactor
+the code to make it easier to be tested. One participant also affirmed that
+take it as a rule: if it is hard to test, then the code can be improved.
 
 \begin{framed}
-\textit{"Eu utilizo isso como uma regra: sempre que está muito complexo [o teste],
-acho que nós temos que parar e refatorar, porque, na minha opinião, dá
-pra ficar mais simples."}
+	\textit{"I take it as a rule: everything it is very complex [the test],
+	I think we should stop and refactor because, in my opinion, it can be simpler."}	
 \end{framed}
 
-Esse ponto já foi levantado por Feathers \cite{feathers-synergy}.
-Quanto mais difícil for a escrita do teste, maior a chance da existência de
-algum problema de projeto de classes. Segundo ele, 
-existe uma sinergia muito grande entre uma classe com alta testabilidade e um bom projeto de classes: 
-se o programador busca por testabilidade, acaba criando um bom projeto de classes; se 
-busca por um bom projeto de classes, acaba escrevendo código mais
-testável.
+That point was already raised by Feathers \cite{feathers-synergy}.
+The harder is to write the test, the bigger the chance of a class design smell.
+According to him, there is a big synergy between a high testable class and
+a good class design: if the developers is looking for testability, he ends up
+creating a good class design; if he is looking for a good class design, he ends
+up writing testable code.
 
-Na busca pela testabilidade, o desenvolvedor é encorajado a escrever um
-código que seja facilmente testável. Códigos assim possuem algumas
-características interessantes, como a facilidade para invocar o comportamento
-esperado, a não necessidade de pré-condições complicadas e a explicitação de
-todas as dependências que a classe possui.
+In that search for testability, developers are encouraged to write code
+that is easily testable. Codes like that contain a few interesting
+characteristics, such as the ease of invoke the expected behavior,
+the non need of complicated pre-conditions, and the explicit declaration
+of all dependencies.
 
-Mas, os participantes foram ainda mais longe. Durante as entrevistas,
-vários deles mencionaram diversos padrões que encontram no \textit{feedback} dos testes,
-e que os fazem pensar sobre os possíveis problemas de acoplamento,
-coesão, falta de abstração etc., na classe que estão criando.
-Esses padrões são melhor discutidos a seguir.
+The participants went deep further. During the interviews, many of them
+mentioned about many patterns they have found in unit tests. These patterns
+make them think about possible design problems in the class they are building.
+All these patterns are discussed in the following sub-sections.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Padrões de \textit{Feedback} de TDD}
+\subsection{TDD Feedback Patterns}
 \label{padroes-tdd}
 
-Como mencionado anteriormente, grande parte do \textit{feedback} que os testes
-dão, acontece no momento em que o programador encontra dificuldades para a
-escrita dos mesmos. Esta seção discute padrões levantados pelos praticantes
-que os levam a crer que há um problema de projeto de classes no código
-que está sendo testado.
+As mentioned before, most part of the feedback a test can give occurs in the moment
+that the developer finds a difficulty when writing the test. This sub-section discusses
+patterns mentioned by the participants that make them believe that there is a
+problem in the class design.
 
 %% ------------------------------------------------------------------------- %%
-\subsubsection{Padrões Ligados à Coesão}
+\subsubsection{Patterns Related to Cohesion}
 
-Quando um único método necessita de diversos testes para garantir seu comportamento,
-o método em questão provavelmente é complexo e/ou possui diversas responsabilidades.
-Códigos assim possuem geralmente diversos caminhos
-diferentes e tendem a alterar muitos atributos internos do objeto, obrigando o desenvolvedor
-a criar muitos testes, caso queira ter uma alta cobertura de testes.
-A esse padrão, demos o nome de \textbf{Muitos Testes Para Um Método}.
+When only one method requires too many unit tests to assure its behavior,
+it is probably too complex and/or contains many different responsibilities.
+Codes like that usually contain many different paths and tend to update
+many internal attributes of the object. In those cases, the developer
+are required to write many tests to cover all the possible scenarios.
+We call this pattern \textbf{Many Tests to a Method}.
 
-Também pode ser entendido quando o desenvolvedor escreve muitos testes para a 
-classe como um todo. Classes que expõem muitos métodos para o mundo de fora
-também tendem a possuir muitas responsabilidades. Chamamos esse padrão
-de \textbf{Muitos Testes Para Uma Classe}.
+The same idea can be generalized to the class. Classes that expose too 
+many methods to the external world also tend to have many responsibilities.
+Classes like that should be refactored as well.
+We call this pattern \textbf{Many Tests to a Class}.
 
-Outro problema de coesão pode ser encontrado quando o programador
-sente a necessidade de escrever cenários de teste muito grandes para uma
-única classe ou método. É possível inferir que essa necessidade surge 
-em códigos que lidam com muitos objetos e fazem muita coisa. Nomeamos
-esse padrão de \textbf{Cenário Muito Grande}.
+Another cohesion problem can be found when a developer feels the need
+of writing big scenarios for only one class or method. It is possible to infer
+that this need emerges in classes that deal with too many objects or
+contain too many responsibilities. We call it \textbf{Too Big Scenario}.
 
-Um padrão não explicitamente levantado pelos participantes, mas notado
-por nós, é quando o desenvolvedor sente a necessidade de testar
-um método que não é público. Métodos privados geralmente servem para 
-transformar o método público em algo mais fácil de ler. Ao desejar
-testá-lo de maneira isolada, o programador pode ter encontrado
-um método que possua uma responsabilidade suficiente para ser
-alocada em uma outra classe. A esse padrão, chamamos de 
-\textbf{Testes em Método Que Não É Público}.
+One pattern that was not explicitly mentioned by the participants, but
+noticed by us, is when a developer feels the need to test a method
+that is not public. Private methods usually helps to transform a public method
+into something more easier to be read. When trying to test it in an isolated
+way, the developer may have found a method that contains too much responsibility.
+That responsibility can be moved to a different class. We call it \textbf{Tests in Non Public Methods}.
 
 %% ------------------------------------------------------------------------- %%
-\subsubsection{Padrões Ligados ao Acoplamento}
+\subsubsection{Patterns Related to Coupling}
 
-O uso abusivo de objetos dublês para testar uma
-única classe indica que a classe sob teste possui problemas
-de acoplamento. É possível deduzir que uma classe que faz uso de muitos
-objetos dublês depende de muitas classes, e portanto, tende a ser
-uma classe instável. A esse padrão, demos o nome de \textbf{Objetos Dublê em Excesso}.
+The abusive use of mock objects to test a single class indicates that
+the class under test has coupling issues. It is possible to infer that a class
+that makes use of many mock objects depends upon many classes and, therefore,
+tend to be an unstable class. We call it \textbf{Too Many Mock Objects}.
 
-Outro padrão percebido por nós é a criação de objetos dublês que não
-são utilizados em alguns métodos de testes. Isso geralmente acontece quando
-a classe é altamente acoplada, e o resultado da ação de uma dependência não
-interfere na outra. Quando isso acontece, o programador acaba por escrever
-conjuntos de testes, sendo que alguns deles lidam com um sub-conjunto dos objetos dublês,
-enquanto outros testes lidam com o outro sub-conjunto de objetos dublês. 
-Isso indica um alto acoplamento 
-da classe, que precisa ser refatorada. A esse padrão demos o nome de
-\textbf{Objetos Dublê Não Utilizados}. Esse padrão poderia também ser classificado
-como um padrão de coesão, já que essa classe claramente possui também mais de uma
-única responsabilidade.
+Another pattern perceived by us is the creation of mock objects that are
+not used in some test methods. That usually happens when the class
+is highly coupled, and the result of one dependency does not infer in
+the other. When it happens, the programmer ends up writing a set of tests,
+in which some of them deal with a subset of mock objects, while other
+tests deal with the other subset of mock objects. It indicates that
+the class is highly coupled and needs to be refactored. We call it
+\textbf{Non Used Mock Objects}.
 
 %% ------------------------------------------------------------------------- %%
-\subsubsection{Padrões Ligados à Abstrações Incorretas}
+\subsubsection{Patterns Related to Abstractions}
+
+
 
 A falta de abstração geralmente faz com que uma simples mudança precise
 ser feita em diferentes pontos do código. Quando uma mudança acontece e 
