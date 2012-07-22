@@ -317,7 +317,7 @@ systems}. To compreehend them, we answered the questions below:
 \end{enumerate}
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Research design}
+\subsection{Research Design}
 
 Participants from different software development companies in the brazilian
 market were selected. The participants' profile is discussed in sub-section
@@ -373,7 +373,7 @@ to specific questions. The interviews were made in different days,
 according to their availability.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Participants' profile}
+\subsection{Participants' Profile}
 \label{sec:planejamento-participantes}
 
 Developers from the brazilian software development market were invited to be part
@@ -647,39 +647,36 @@ In their opinion, the best option is to join the practice of TDD and experience:
 %% ------------------------------------------------------------------------- %%
 \subsection{Rapid Feedback}
 
-A grande maioria dos participantes também comentaram que uma diferença que percebem
-no momento que praticam TDD é o \textit{feedback} mais constante. Na maneira
-tradicional, o tempo entre a escrita do código de produção e o código
-de testes é muito grande. O TDD, ao solicitar que o desenvolvedor
-escreva o teste antes, também faz com que o desenvolvedor receba o \textit{feedback} que
-os testes podem dar mais cedo:
+The majority of the participants also commented that one difference that is
+perceived when they practice TDD is the constant feedback. In traditional way,
+the time between the production code writing and test code writing is too big.
+When practicing TDD, developers are forced to write the test first, and receive all
+feedback a test can give sooner.
 
 \begin{framed}
-\textit{"Você ia olhar para o teste, e falar: "Está legal? Não está?", e ia fazer de novo."}
+	\textit{"You would look to test and say: "Is it ok? Is it not?", and would do it again."}
 \end{framed}
 
-Um participante comentou que, com o teste, o desenvolvedor pode observar
-e criticar o código que escreveu no momento logo após a escrita.
-Essa crítica, de forma contínua, faz com que o desenvolvedor acabe
-por pensar constantemente no código que está produzindo:
+A participant commented that, with the test, developers can observe
+and criticize the code they are writing. As it is done constantly,
+developers end up continuously thinking about the code and its
+quality:
 
 \begin{framed}
-\textit{"Quando você faz o teste, você vê logo o que não gostou do método daquele jeito (...), você
-não percebe isso até que você use o teste."}
-\end{framed}
+	\textit{"When you write the test, you soon perceive what you don't like about it (...), 
+	you don't perceive that until you start using tests."}
 
-Diminuir o tempo entre a escrita do código e a escrita do teste também o ajuda a desenvolver código
-que efetivamente resolve o problema. Segundo os participantes, na maneira tradicional, 
-o desenvolvedor escreve muito código antes de saber se ele funciona:
+Reduce the time between the code writing and test writing also helps developers to
+create code that effectively solves the problem. According to the participants, in traditional
+way, developers write too many code before actually knowing if it works:
 
 \begin{framed}
-\textit{"[O teste] não é só uma especificação; ele tem que de fato funcionar. Então,
-como você diminui muito o tempo entre escrever um programa que funcione e testar aquilo,
-você consegue mais rápido ver se aquela parte pequena funciona ou não (...)"}
-\end{framed}
+	\textit{"[The test] is not only a specification; it should actually work. So, as you really reduce
+	the time between writing a software that works and to test it, you end up perceiving if that
+	part works or not quicker (...)"}
 
 %% ------------------------------------------------------------------------- %%
-\subsection{The search for testability}
+\subsection{The Search for Testability}
 
 Maybe the main reason the practice of TDD helps developers in their class design is
 by the constant search for testability. It is possible to infer that,
@@ -770,172 +767,145 @@ the class is highly coupled and needs to be refactored. We call it
 %% ------------------------------------------------------------------------- %%
 \subsubsection{Patterns Related to Abstractions}
 
+The lack of an abstraction usually makes that a simple change needs to
+be done in different pieces of code. When the requirement changes and
+developers are obligated to do the same change in different tests,
+that may indicate a lack of a correct abstraction to represent the problem
+and avoid the code repetition. We call it \textbf{Same Change in Different Tests}.
+Analogously, developers can perceive the same thing when they create the
+same tests for different entities. We call it \textbf{Repeated Tests for Different Entities}.
 
+When a developer starts the test and notices that the public interface of the class
+is not easy to be consumed, it may indicate that the current abstraction is not
+clear enough and can be improved. We call it \textbf{Non Friendly Interface}.
 
-A falta de abstração geralmente faz com que uma simples mudança precise
-ser feita em diferentes pontos do código. Quando uma mudança acontece e 
-o programador é obrigado a fazer a mesma alteração em diferentes testes,
-isso indica a falta de uma abstração correta para evitar a 
-repetição desnecessária de código.
-A esse padrão damos o nome de \textbf{Mesma Alteração Em Diferentes Testes}.
-Analogamente, o programador pode perceber a mesma coisa
-quando ele começa a criar testes repetidos para entidades diferentes.
-Chamamos esse padrão de \textbf{Testes Repetidos Para Entidades Diferentes}.
-
-Quando o desenvolvedor começa o teste e percebe que a interface pública da classe
-não é fácil de ser utilizada, pode indicar que abstração
-corrente não é clara o suficiente e poderia ser melhorada. A esse padrão,
-chamamos de \textbf{Interface Não Amigável}.
-
-Outro padrão não mencionado explícitamente pelos participantes 
-é a existência da palavra \textit{"se"} no nome do teste. Testes que
-possuem nomes como esse geralmente indicam a existência de um \textit{"if"} na implementação
-do código de produção. Essas diversas condições podem, geralmente, ser refatoradas e,
-por meio do uso de poliformismo, serem eliminadas. A falta de abstração nesse caso
-é evidenciada pelo padrão \textbf{Condicional No Nome Do Teste}.
+Also, the existence of the word \textit{"if"} in the name of test is another
+pattern. Tests that contain a name like that usually indicate the existence
+of an "if" in the production code. Those many condition might be refactored and,
+through use of polymorphism, be eliminated. We call it \textbf{Conditional in Test's name}.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Relação dos padrões com os princípios de projeto de classes}
+\subsection{Relationship between Patterns and Class Design Principles}
 
-É possível relacionar os padrões de \textit{feedback} levantados pelos participantes
-com os mau cheiros de projeto de classes comentados neste trabalho. 
-Na Tabela \ref{tab:relacao-padroes},
-mostramos essa relação, e como esses padrões podem efetivamente ajudar o desenvolvedor
-a procurar por problemas no seu projeto de classes.
-
+It is possible to relate feedback patterns raises by the participants with the class design
+smells mentioned in this study.
+In Table \ref{tab:relacao-padroes}, we present the relationship and how the patterns
+can help developers to search for class design problems.
 
 \begin{table}[h!]
 	\centering
 	\begin{tabular}{| p{2.5cm} | p{2.5cm} | p{2cm} | }
 		\hline
 
-		\textbf{Padrão} & \textbf{Possíveis Mau Cheiros de Projeto de Classes} & \textbf{Possíveis Princípios Feridos}\\
+		\textbf{Pattern} & \textbf{Class Design Smell} & \textbf{Not Followed Principles}\\
 		
 		\hline
 
-		Muitos Testes Para Um Método                   & Complexidade Desnecessária, Opacidade   & PRU \\ \hline
-		Muitos Testes Para Uma Classe                  & Complexidade Desnecessária, Opacidade   & PRU \\ \hline
-		Cenário Muito Grande                           & Opacidade, Fragilidade                  & PRU \\ \hline
-		Testes Em Método Que Não É Público             & Complexidade Desnecessária              & PRU, PAF \\ \hline
-		Objetos Dublê em Excesso                       & Fragilidade                             & PID, PAF \\ \hline
-		Objetos Dublês Não Utilizados                  & Fragilidade                             & PID, PAF \\ \hline
-		Mesma Alteração Em Diferentes Testes           & Fragilidade, Rigidez                    & PRU \\ \hline
-		Testes Idênticos Para Entidades Diferentes     & Repetição Desnecessária, Rigidez        & PRU  \\ \hline
-		Interface Não Amigável                         & Opacidade                               & ISP \\ \hline
-		Condicional No Nome Do Teste                   & Rigidez, Fragilidade                    & PRU, PAF \\
+		Many Tests to a Method                   & Needless Complexity, Opacity   & SRP \\ \hline
+		Many Tests to a Class                  & Needless Complexity, Opacity   & SRP \\ \hline
+		Too Big Scenario                           & Opacity, Fragility                  & SRP \\ \hline
+		Tests in non Public Method             & Needless Complexity              & SRP, OCP \\ \hline
+		Too Many Mock Objects                       & Fragility                             & DIP, OCP \\ \hline
+		Non Used Mock Objects                  & Fragility                             & DIP, OCP \\ \hline
+		Same Change in Different Tests           & Fragility, Rigidity                    & SRP \\ \hline
+		Repeated Tests for Different Entities     & Needless Repetition, Rigidity        & SRP  \\ \hline
+		Non Friendly Interface                         & Opacity                               & ISP \\ \hline
+		Conditional in Test's name                   & Rigidity, Fragility                    & SRP, OCP \\
 
 		\hline
 		
 	\end{tabular}
-	\caption{Relação entre os padrões de \textit{feedback} de TDD e mau cheiros de projeto de classes}
+	\caption{Relationship between TDD feedback patterns and class design smells}
 	\label{tab:relacao-padroes}
 \end{table}
 
 %% ------------------------------------------------------------------------- %%
-\section{Ameaças à Validade}
+\section{Threats to Validity}
 \label{cap:ameacas}
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Validade de Construção}
+\subsection{Construction Validity}
 
 %% ------------------------------------------------------------------------- %%
-\subsubsection{Exercícios de pequeno porte}
+\subsubsection{Small Exercises}
 
-Os exercícios propostos são pequenos perto de um projeto real. Entretanto, todos os exercícios propostos contém
-problemas localizados de projeto de classes. Uma vez que esta pesquisa avalia os 
-efeitos de TDD no projeto de classes, 
-acreditamos que os problemas conseguem simular de forma satisfatória
-problemas de projeto de classes que desenvolvedores encaram no dia a dia de trabalho.
+The proposed exercises are small compared to a real project. However, all exercises
+contain localized class design problems. Once that this study evaluates the effects
+of TDD in class design, we believe the exercises can simulate real design problems
+satisfactory.
 
-Além disso, ao final do exercício, os participantes responderam a uma pergunta sobre a semelhança
-entre os problemas de projeto de classes propostos e os problemas encontrados no mundo real.
-Todos os participantes da indústria afirmaram que os problemas se parecem com os que eles enfrentam
-no dia a dia de trabalho. 
+Besides, at the end of the implementation, participants replied a question about the
+similarity between the exercises and real world problems. All of them affirmed that
+the problems found in exercises are very closed to the ones they deal in real world.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Validade interna}
+\subsection{Internal validity}
 
 %% ------------------------------------------------------------------------- %%
-\subsubsection{Efeitos recentes de TDD na memória}
+\subsubsection{Recent effects of TDD in Participants' Mind}
 
-Muitos dos participantes da indústria afirmaram que utilizam TDD no seu dia a dia de trabalho.
-Isso pode fazer com que o participante
-não avalie friamente as vantagens e desvantagens do desenvolvimento sem TDD. 
+Many participants use TDD in their daily work. It can bias the participant so he
+won't be able to analyze the advantages and disadvantages of the practice.
 
-Para diminuir esse viés, os participantes fizeram alguns exercícios também
-sem TDD, para que ambos os estilos de desenvolvimento (com e sem TDD) estivessem
-recentes em sua memória.
+To reduce the bias, participants implemented one exercise without TDD, so both
+development practices are fresh in their minds.
 
 %% ------------------------------------------------------------------------- %%
-\subsubsection{Exercícios}
+\subsubsection{Non Finished Exercises}
 
-Alguns participantes também não terminaram suas implementações dos exercícios. Isso
-pode influenciar na análise quantitativa, afinal, um projeto de classes que
-seria complexo assim que pronto, ao olho da métrica, pode aparentar ser simples.
-
-%% ------------------------------------------------------------------------- %%
-\subsubsection{Influência do pesquisador}
-
-O pesquisador possui
-um papel fundamental em pesquisas qualitativas. Mas isso pode fazer com que
-a interpretação dos resultados seja influenciada pelo contexto, experiências,
-e até viéses do próprio pesquisador.
-Neste estudo, a nossa opinião teve forte influência na seleção dos candidatos
-para a entrevista.
-Além disso, os exercícios foram criados pelos pesquisadores dessa pesquisa e, 
-de certa forma, podem ter influenciado a prática de TDD.
-Para diminuir esse problema, revisamos todas as análises,
-buscando por conclusões incorretas ou não tão claras. 
+Some participants did not finish their implementation. That can influence que
+quantitative analysis, as a design that would be complex at the end, looks simple
+to an automated code metric.
 
 %% ------------------------------------------------------------------------- %%
-\subsection{Validade externa}
+\subsubsection{Reserarcher's infuence}
+
+The research is a fundamental key in qualitative research. It can influence
+the interpretation of the results because of this past experiences.
+In this study, our opinion had a strong influence on the participants selection
+to the interview.
+
+Besides, the exercises were created by us and, somehow, it may have influenced
+the TDD practiced. To reduce this problem, we reviewed all analysis, looking for
+non clear or incorrect conclusions.
+
 
 %% ------------------------------------------------------------------------- %%
-\subsubsection{Desejabilidade social}
-
-Enviesamento pela desejabilidade social é o termo científico usado para descrever
-a tendência de que alguns participantes respondam a questões de modo que serão
-bem vistos pelos outros membros da comunidade \cite{crowne}.
-Métodos ágeis e TDD possuem um discurso forte. A comunidade brasileira de métodos
-ágeis ainda é nova e percebe-se de maneira empírica que muitos repetem o discurso
-sem grande experiência ou embasamento no assunto.
-No caso desta pesquisa, um possível viés é o participante responder o que
-a literatura diz sobre TDD, e não exatamente o que ele pratica e sente sobre
-os efeitos da prática. 
-
-Para diminuir esse viés, eliminaríamos do processo de análise os participantes
-que responderam às perguntas de forma superficial, apenas repetindo a literatura. Na prática,
-isso não aconteceu. Em sua maioria, poucas foram as respostas nas quais os participantes
-foram superficiais. Nesses casos, essas respostas foram eliminadas da análise.
+\subsection{External Validity}
 
 %% ------------------------------------------------------------------------- %%
-\subsubsection{Quantidade de participantes insuficiente}
+\subsubsection{Desirability bias}
 
-Apesar de termos feito contato
-com diversas empresas e grupos de desenvolvimento de software,
-objetivando encontrar um bom número de participantes para a pesquisa,
-a quantidade de participantes final do estudo pode não ser suficiente para generalizar
-os resultados encontrados. 
+Desirability bias is the scientific term used to describe the tendency of some participants
+to reply questions in a way that they will be accepted by the other members
+of community \cite{crowne}.
+Agile methods and TDD have a strong speech. The brazilian agile community is still
+young and it is possible to empirically perceive that many developers just
+repeat the speech without a great experience or knowledge of the subject.
+
+In this study context, a possible bias would be a participant that replies
+what the literature says, and not exactly what s/he feels about the practice.
+To reduce the bias, we eliminated participants that replied questions superficially.
+In practice that did not happen. Only a few answers were superficially (and these
+ones were eliminated).
+
+%% ------------------------------------------------------------------------- %%
+\subsubsection{Quantity of participants}
+
+Although we contacted many different companies and software development groups,
+que number of participants invited may not be enough to generalize the findings.
 
 %% ------------------------------------------------------------------------- %%
 \section{Conclusion}
 %\section{Conclusão}
 
 
-In this study, we discuss and understand how the TDD practices can make the
+In this study, we discuss and understand how the TDD practice can make the
 difference in the routine of a software developer, bringing a better meaning
 to the statement that the practice improves the classes design.
-In addition to endorse the quantitative studies form the literature, this study
+In addition, besides endorsing the quantitative studies form the literature, this study
 goes beyond and analyzes feedback patterns that are showed in the moment when
 the developer uses TDD and, in practice, guides him during the development.
-
-%Neste trabalho, discutimos e entendemos como a prática de TDD pode
-%fazer a diferença no dia a dia de um desenvolvedor de software,
-%trazendo um melhor significado à afirmação de que a prática melhora o projeto de classes.
-%Além de corroborar com os estudos quantativos da literatura, este estudo
-%foi além, e observou padrões de \textit{feedback} que aparecem
-%no momento em que o desenvolvedor utiliza TDD, e que, na prática, o guia durante
-%o desenvolvimento. 
 
 It is expected, with this cataloged patterns, that developers pay more attention
 to the potential feedbacks that TDD brings and, use them to improving their class
@@ -944,110 +914,55 @@ that teachers can use the patterns raised here and show to students
 how the practice can, actually guide the developer to a better class design.
 
 
-%Espera-se que, com esses padrões catalogados, desenvolvedores atentem-se mais
-%aos possíveis \textit{feedbacks} que a prática de TDD fornece e, utilizem-os
-%para melhorar a qualidade dos seus projetos de classe. O ensino de TDD também
-%pode ser beneficiado por este trabalho, já que professores podem fazer uso dos padrões
-%aqui levantados e mostrar ao aluno como a prática pode efetivamente guiar
-%o desenvolvedor para um projeto de classes melhor.
-
 A possible future work is the developing of tools that automatically detects this patterns
 and warn the developer about a possible code smell in design. Besides that,
 the search for more patterns like the showed here can improve even more the feedback
 provided by the practice.
 
-%Um possível trabalho futuro
-%é a criação de ferramentas que automaticamente detectam esses padrões e notifiquem
-%o desenvolvedor sobre o possível mau cheiro de projeto. 
-%Além disso, a busca por mais padrões como os levantados aqui pode aumentar ainda 
-%mais o \textit{feedback} dado pela prática. 
-
 In below subsections, we answer each of the questions raised by this study.
 
-%Nas sub-seções abaixo, respondemos cada uma das questões levantadas
-%por este trabalho.
-
 \subsection{What is the influence of TDD in class design?}
-%\subsection{Qual a influência de TDD no projeto de classes?}
 
 The practice of TDD \textbf{can} affect the creating process of class design. However,
-unlike of the comments made by the industry, \textbf{the TDD practice cannot guide the
+unlike the comments made by the industry, \textbf{the TDD practice cannot guide the
 developer to a good class design automatically}; the experience and knowledge of
 developer are essential to develop of oriented object software.
 
-%A prática de TDD \textbf{pode} influenciar no processo de criação do projeto de classes.
-%No entanto, ao contrário do que é comentado pela indústria,
-%\textbf{a prática de TDD não guia o desenvolvedor para um bom projeto de classes
-%de forma automática}; a experiência e conhecimento 
-%do desenvolvedor são fundamentais ao criar software orientado a objetos.
-
-The practice, through the possibles feedbacks about of class design, heavily
+The practice, through the possibles feedbacks on class design, heavily
 discussed in Section \ref{padroes-tdd}, can be a guide to the developer.
-This feedbacks, when noted, make the developer realize problems in class
-design beforehand, easing code refactoring (Q1 and Q2).
-
-%A prática, por meio dos seus possíveis \textit{feedback} em relação ao
-%projeto de classes, discutidos
-%em profundidade na Seção \ref{padroes-tdd}, pode servir de guia
-%para o desenvolvedor. Esses \textit{feedback}, quando observados, fazem
-%com que o desenvolvedor perceba problemas de projeto de classes de
-%forma antecipada, facilitando a refatoração do código (Q1 e Q2).
+These feedback, when noted, make the developer realize problems in class
+design beforehand, facilitating code refactoring (Q1 and Q2).
 
 \textbf{Therefore, this is the way how the practice guides the developer to
 a better class design; giving constant feedback about potential issues in
 current class design. It is a developer's task to realize this issues and
 respectively, improve the design. }
 
-%\textbf{Portanto, esta é a forma na qual a prática guia o desenvolvedor para
-%um melhor projeto de classes: dando retorno constante sobre os possíveis problemas
-%existentes no atual projeto de classes. É tarefa do desenvolvedor perceber
-%esses problemas e melhorar o projeto de acordo.}
-
 \subsection{What is the relation between TDD and design decisions made by
 a developer?}
 
-%\subsection{Qual a relação entre TDD e as tomadas de decisões de projeto
-%feitas por um desenvolvedor?}
-
 The developer that uses TDD writes tests before the code. This make
-the current unit test be treated as a draft by the developer.
-\textbf{Noting carefully the code of the unit test, the developer can
+the current unit test to be treated as a draft by the developer.
+\textbf{Noticing carefully the code of the unit test, the developer can
 realize issues in class design that he is writing. Issues like 
 classes with too many responsibilities or with too many dependencies}.
 
-%O desenvolvedor que pratica TDD escreve os testes antes do código.
-%Isso faz com que o teste de unidade que está sendo escrito sirva de
-%rascunho para o desenvolvedor. \textbf{Ao observar o código do teste de unidade com atenção,
-%o desenvolvedor pode perceber problemas no projeto de classes que está criando.
-%Problemas esses como classes que possuem diversas responsabilidades
-%ou que possuem muitas dependências}. 
-
 \subsection{How the TDD practice affects the programmer in the process of designing
 classes, about the coupling, cohesion and complexity?}
-%\subsection{Como a prática de TDD influencia o programador no processo de  
-%projeto de classes, do ponto de vista do acoplamento, coesão e complexidade?}
 
-Writing a unit test to a specific class, the developer is forced to follow
-the same steps: the writing of scenery, the execution of the action being
+When writing a unit test to a specific class, the developer is forced to follow
+the same steps: the writing of the scenario, the execution of the action being
 tested and lastly the assurance of the behavior was executed like the
 expected.
 \textbf{Any trouble writing this steps, can imply issues in the class design}. 
 The aware developer, notices and improves the respectively design class.
 
-%Ao escrever um teste de unidade para uma determinada classe, o desenvolvedor
-%é obrigado a passar sempre pelos mesmos passos: a escrita do cenário, a execução
-%da ação sob teste e, por fim, a garantia que o comportamento foi executado 
-%de acordo com o esperado.
-%\textbf{Uma dificuldade na escrita de qualquer uma dessas partes pode implicar
-%em problemas no projeto de classes}. O desenvolvedor, atento, percebe e 
-%melhora seu projeto de classes de acordo.
-
 %% ------------------------------------------------------------------------- %%
 \section*{Acknowledgement}
 
-Agradeçemos às empresas que aceitaram participar deste estudo: Caelum, Bluesoft,
-Amil e WebGoal (São Paulo e Poços de Caldas). Além disso, agradecemos aos
-desenvolvedores que participaram da pesquisa de forma independente.
+We thank to the companies that participated in this study: Caelum, Bluesoft,
+Amil e WebGoal (São Paulo and Poços de Caldas). Besides, we thank the
+developers that took part of this research independently.
 
 %% ------------------------------------------------------------------------- %%
 \bibliographystyle{IEEEtran}
