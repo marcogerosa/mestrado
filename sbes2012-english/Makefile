@@ -9,14 +9,10 @@ ps: $(BASE_NAME).ps
 
 $(BASE_NAME).pdf: $(BASE_NAME).tex 
 	$(PDFLATEX) $<
-	$(BIBTEX) $(BASE_NAME) 
-	$(PDFLATEX) $< 
 	$(PDFLATEX) $<
 
 $(BASE_NAME).ps: $(BASE_NAME).tex 
 	$(LATEX) $<
-	$(BIBTEX) $(BASE_NAME) 
-	$(LATEX) $< 
 	$(LATEX) $<
 
 clean:
