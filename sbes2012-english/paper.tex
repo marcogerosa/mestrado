@@ -107,8 +107,22 @@ from the industry were invited to implement some prepared exercises using TDD an
 based on the gathered data, we investigated the details of how the practice influenced
 the participants' class design decisions by means of interviews.
 
+As a result of this study, we raised a few unit tests patterns, which gives developers
+feedback on the quality of their class design. These patterns can be used by developers
+to improve their class design cheaply.
+
+This paper is divided as follows: in Section \ref{sec:tdd}, we discuss the principles
+of Test-Driven Development; in Section \ref{cap:trabalhos-relacionados}, we present
+some related work of this research; in Section \ref{sec:planejamento}, we describe the
+study design; in Sections \ref{sec:quantitative} and \ref{sec:qualitative}, we present
+our quantitative and qualitative results, respectively; in Section \ref{cap:ameacas},
+we discuss the threats to validity of this research; in Section \ref{sec:conclusion},
+we summarize the findings of this paper.
+
+
 %% ------------------------------------------------------------------------- %%
 \section{Test-Driven Development}
+\label{sec:tdd}
 
 Agile software development methods focus on constant feedback \cite{AgileManifesto}. 
 Many of the suggested practices
@@ -153,11 +167,7 @@ the class design and programming \cite{agilealliance-tdd} \cite{tdd-taxonomy}.
 
 It is a known fact that class design tends to lose quality during the software evolution \cite{evolution-lehman}.
 However, it is hard to discuss quality in terms of class design. In this study context,
-we used the SOLID principles, detailed in Martin's work \cite{bob-martin}, which are
-mentioned in the following section.
-
-%% ------------------------------------------------------------------------- %%
-\section{Quality of Class Design}
+we used the SOLID principles, detailed in Martin's work \cite{bob-martin}.
 
 It is said that a class design is \textit{rotting} when it becomes hard
 to evolve, the code reuse becomes more complicated than replicating the piece
@@ -466,6 +476,7 @@ implement the most elegant and flexible solution possible.
 
 %% ------------------------------------------------------------------------- %%
 \section{Quantitative Analysis}
+\label{sec:quantitative}
 
 To triangulate the information of the qualitative analysis, we calculated
 code metrics to check whether there was a difference in code produced
@@ -589,6 +600,7 @@ By the numbers, we observed that both specialists did not find any difference.
 
 %% ------------------------------------------------------------------------- %%
 \section{Qualitative Analysis}
+\label{sec:qualitative}
 
 The values presented above corroborate with many of the related work.
 Apparently TDD does not influence the code to the point of changing
@@ -913,6 +925,7 @@ the number of participants invited may not have been enough to generalize the fi
 
 %% ------------------------------------------------------------------------- %%
 \section{Conclusion}
+\label{sec:conclusion}
 %\section{Conclusão}
 
 
